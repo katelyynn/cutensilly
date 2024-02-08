@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title id="page-title" translate="no">owo - kate design</title>
+    <meta name="theme-color" content="#000000">
+    <!-- mobile iOS support -->
+    <link rel="apple-touch-icon" href="https://cutensilly.org/img/ios.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="/owo/css/reset.css">
+    <link rel="stylesheet" href="/owo/css/style.css">
+    <link rel="stylesheet" href="/owo/css/style-lfm.css">
+    <!-- icon -->
+    <link rel="shortcut icon" type="ico" href="/img/katie4k-small.webp"/>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
+    <!-- icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- tooltips -->
+    <script src="https://unpkg.com/@popperjs/core@2" defer></script>
+    <script src="https://unpkg.com/tippy.js@6" defer></script>
+</head>
+<body>
+    <!-- overlays -->
+    <div class="overlay center-full" id="hook_windows">
+        <div class="window" id="window_meow">
+            <header>
+                <h5>Window title</h5>
+            </header>
+            <main>
+                <p>Window content</p>
+            </main>
+            <footer>
+                <a role="button" class="btn primary" onclick="example_blerp()">
+                    <span class="text">Accept things</span>
+                </a>
+                <a role="button" class="btn" onclick="kill_window('meow')">
+                    <span class="text">Close</span>
+                </a>
+            </footer>
+        </div>
+    </div>
+    <div class="overlay center">
+        <div class="chips" id="hook_chips"></div>
+    </div>
+    <link rel="stylesheet" href="/owo/css/modal.css">
+    <script src="/owo/js/modal.js"></script>
+    <script src="/owo/js/input.js"></script>
+    <script>
+        create_chip('its done :33','success');
+        create_chip('hai uhm..... erm..... ^-^','warn');
+        create_chip('erm... wgat happened','error');
+        create_chip('bleh :3');
+        function example_blerp() {
+            create_chip('hiya window has closed :3','success');
+            kill_window('meow');
+        }
+    </script>
+    <!-- content -->
+    <link rel="stylesheet" href="/owo/css/snow.css">
+    <link rel="stylesheet" href="/owo/css/landing.css">
+    <link rel="stylesheet" href="/owo/css/panel.css">
+    <link rel="stylesheet" href="/owo/css/flex.css">
+    <link rel="stylesheet" href="/owo/css/button.css">
+    <link rel="stylesheet" href="/owo/css/input.css">
+    <link rel="stylesheet" href="/owo/css/card.css">
+    <link rel="stylesheet" href="/owo/css/avatar.css">
+    <link rel="stylesheet" href="/owo/css/status.css">
+    <link rel="stylesheet" href="/owo/css/grid.css">
+    <main class="panel-container">
+        <section class="panel flex flex-column flex-gap" style="--gap: 10px;">
+            <h5 class="sub">Sub title</h5>
+            <h5>Panel title</h5>
+            <p>Panel description, just some text here to fill up space. Catgirls are a popular concept often found in anime, manga, and various forms of media where characters possess a combination of human and feline traits. These characters typically have human bodies with cat-like ears, tails, and sometimes other cat-like features such as whiskers or sharp feline eyes. The appeal of catgirls lies in their blend of human and animal characteristics, creating a cute and whimsical aesthetic that many people find endearing.</p>
+            <div class="sep"></div>
+            <div class="btn-row">
+                <a role="button" class="btn">
+                    <span class="text">Button</span>
+                </a>
+                <a role="button" class="btn primary">
+                    <span class="text">Button</span>
+                </a>
+                <a role="button" class="btn outline">
+                    <span class="text">Button</span>
+                </a>
+                <a role="button" class="btn mimic">
+                    <span class="text">Button</span>
+                </a>
+            </div>
+            <div class="sep"></div>
+            <input placeholder="This is an input...">
+            <select>
+                <option value="meow">meow</option>
+                <option value="meow">meow</option>
+                <option value="meow">meow</option>
+                <option value="meow">meow</option>
+                <option value="meow">meow</option>
+            </select>
+            <div class="btn-row">
+                <input placeholder="This is an input...">
+                <a role="button" class="btn">
+                    <span class="text">Button</span>
+                </a>
+                <select>
+                    <option value="meow">meow</option>
+                    <option value="meow">meow</option>
+                    <option value="meow">meow</option>
+                    <option value="meow">meow</option>
+                    <option value="meow">meow</option>
+                </select>
+                <a role="button" class="btn">
+                    <span class="text">Button</span>
+                </a>
+            </div>
+            <div class="btn-row">
+                <div class="checkbox">
+                    <input type="checkbox" id="meow">
+                    <label for="meow">meow</label>
+                </div>
+                <div class="checkbox">
+                    <input type="radio" id="meow">
+                    <label for="meow">meow</label>
+                </div>
+            </div>
+        </section>
+        <section class="panel flex flex-column flex-gap" style="--gap: 10px;">
+            <h5>Modal controls</h5>
+            <div class="btn-row">
+                <a role="button" class="btn" onclick="create_chip(`${Math.random()}`,'warn')">
+                    <span class="text">Send notification</span>
+                </a>
+                <a role="button" class="btn" onclick="create_window('Window title','<p>Window content</p>',[
+                    {
+                        'type': 'primary',
+                        'text': 'hai',
+                        'onclick': 'example_blerp()'
+                    },
+                    {
+                        'text': 'close',
+                        'onclick': 'kill_window(\'meow\')'
+                    }
+                ],'meow')">
+                    <span class="text">Create window</span>
+                </a>
+                <a role="button" class="btn" onclick="create_window('Window title',`<p>Window content</p><br><img src='https://cutensilly.org/img/amoled.png'>`,[
+                    {
+                        'type': 'primary',
+                        'text': 'hai',
+                        'onclick': 'example_blerp()'
+                    },
+                    {
+                        'text': 'close',
+                        'onclick': 'kill_window(\'meow\')'
+                    }
+                ],'meow','paintbrush')">
+                    <span class="text">Create window (has image)</span>
+                </a>
+            </div>
+            <div class="sep"></div>
+            <div class="btn-row">
+                <a role="button" class="btn" onclick="create_form_window('Phone ringtone','',[
+                    {
+                        'id': 'blerp',
+                        'text': 'blerp'
+                    },
+                    {
+                        'id': 'shiggy',
+                        'text': 'shiggy'
+                    }
+                ],[
+                    {
+                        'type': 'primary',
+                        'text': 'Okay',
+                        'onclick': 'example_blerp()'
+                    },
+                    {
+                        'text': 'Cancel',
+                        'onclick': 'kill_window(\'ringtone\')'
+                    }
+                ],'ringtone')">
+                    <span class="text">Set ringtone</span>
+                </a>
+            </div>
+        </section>
+        <section class="panel flex flex-column flex-gap" style="--gap: 10px;">
+            <h5>Cards</h5>
+            <div class="cards">
+                <a class="card">
+                    <header>
+                        <img src="https://media.discordapp.net/attachments/973652851823878274/1141178034641195028/IMG_20230411_165606_550.png">
+                    </header>
+                    <main>
+                        <h5>Cool stuff</h5>
+                        <p>blerp :3 blehhh hehe ^-^</p>
+                    </main>
+                </a>
+                <div class="card has-footer">
+                    <header>
+                        <img src="https://media.discordapp.net/attachments/973652851823878274/1141178034641195028/IMG_20230411_165606_550.png">
+                    </header>
+                    <main>
+                        <h5>Cool stuff</h5>
+                        <p>blerp :3 blehhh hehe ^-^</p>
+                    </main>
+                    <footer>
+                        <a role="button" class="btn primary" onclick="example_blerp()">
+                            <span class="text">Accept things</span>
+                        </a>
+                        <a role="button" class="btn" onclick="kill_window('meow')">
+                            <span class="text">Close</span>
+                        </a>
+                    </footer>
+                </div>
+            </div>
+        </section>
+        <section class="panel flex flex-column flex-gap" style="--gap: 10px;">
+            <h5>Avatars</h5>
+            <br>
+            <h5>Default</h5>
+            <div class="avatar-grid-sample">
+                <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar shadow large">
+                <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar shadow medium">
+                <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar shadow small">
+                <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar shadow extra-small">
+            </div>
+            <div class="sep"></div>
+            <h5>Circular</h5>
+            <div class="avatar-grid-sample">
+                <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar circular shadow large">
+                <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar circular shadow medium">
+                <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar circular shadow small">
+                <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar circular shadow extra-small">
+            </div>
+        </section>
+        <section class="panel flex flex-column flex-gap" style="--gap: 10px;">
+            <h5>Status</h5>
+            <br>
+            <h5>Default</h5>
+            <div class="avatar-grid-sample">
+                <div class="badge">Badge</div>
+                <div class="badge red">Badge</div>
+                <div class="badge orange">Badge</div>
+                <div class="badge green">Badge</div>
+                <div class="badge blue">Badge</div>
+                <div class="badge purple">Badge</div>
+                <div class="badge pink">Badge</div>
+            </div>
+            <h5>Tag</h5>
+            <div class="avatar-grid-sample">
+                <div class="tag">Badge</div>
+                <div class="tag red">Badge</div>
+                <div class="tag orange">Badge</div>
+                <div class="tag green">Badge</div>
+                <div class="tag blue">Badge</div>
+                <div class="tag purple">Badge</div>
+                <div class="tag pink">Badge</div>
+            </div>
+            <h5>Tag-Mono</h5>
+            <div class="avatar-grid-sample">
+                <div class="tag-mono">Badge</div>
+                <div class="tag-mono red">Badge</div>
+                <div class="tag-mono orange">Badge</div>
+                <div class="tag-mono green">Badge</div>
+                <div class="tag-mono blue">Badge</div>
+                <div class="tag-mono purple">Badge</div>
+                <div class="tag-mono pink">Badge</div>
+            </div>
+            <div class="sep"></div>
+            <h5>Status dot</h5>
+            <div class="avatar-grid-sample">
+                <div class="status-dot online"></div>
+                <div class="status-dot away"></div>
+                <div class="status-dot dnd"></div>
+                <div class="status-dot offline"></div>
+            </div>
+            <div class="avatar-grid-sample">
+                <div class="status online">
+                    <div class="status-dot"></div>
+                    <span class="text">Online</span>
+                </div>
+                <div class="status away">
+                    <div class="status-dot"></div>
+                    <span class="text">Away</span>
+                </div>
+                <div class="status dnd">
+                    <div class="status-dot"></div>
+                    <span class="text">Do Not Disturb</span>
+                </div>
+                <div class="status offline">
+                    <div class="status-dot"></div>
+                    <span class="text">Offline</span>
+                </div>
+            </div>
+        </section>
+        <section class="side-by-side content">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/feat.png">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="--gap: 10px;">
+                <h3>woa..</h3>
+                <p class="text-18">so awesome n cool n cute n whateva i would put here im not rlly sure jus filling space uwu owo</p>
+            </div>
+        </section>
+        <section class="side-by-side content right">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/feat.png">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="--gap: 10px;">
+                <h3>woa..</h3>
+                <p class="text-18">so awesome n cool n cute n whateva i would put here im not rlly sure jus filling space uwu owo</p>
+            </div>
+        </section>
+        <section class="panel flex flex-column flex-gap" style="--gap: 10px;">
+            <h5>Listing items</h5>
+            <br>
+            <h5>Default</h5>
+            <div class="item-grid">
+                <div class="item">
+                    <div class="image">
+                        <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar extra-extra-small circular">
+                    </div>
+                    <div class="text">
+                        <h5>blerp</h5>
+                        <p>hai :3</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar extra-extra-small square">
+                    </div>
+                    <div class="text">
+                        <h5>blerp <div class="badge green">10</div></h5>
+                        <p>hai :3</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar extra-extra-small">
+                    </div>
+                    <div class="text">
+                        <h5>blerp <div class="badge green">10</div></h5>
+                        <p>hai :3</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar extra-extra-small circular">
+                    </div>
+                    <div class="text">
+                        <h5>blerp</h5>
+                        <p class="text-14">owo owo uwu :3 haiiii owo henlo !!!!! owo owo uwu :3 haiiii owo henlo !!!!! </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar extra-extra-small square">
+                    </div>
+                    <div class="text">
+                        <h5>blerp <div class="badge green">10</div></h5>
+                        <p>hai :3</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar extra-extra-small">
+                    </div>
+                    <div class="text">
+                        <h5>blerp <div class="badge green">10</div></h5>
+                        <p>hai :3</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="gap" style="--gap: 40px"></div>
+        <footer class="content">
+            <span class="main" id="footer.main">
+                <a class="over hide" href="https://github.com/katelmao/blahaj/blob/uwu/LICENSE" target="_blank">kate 2023</a>
+            </span>
+            <span class="links" id="footelinks">
+                <a href="https://github.c/katelmao/blahaj">View Source</a>
+            </span>
+        </footer>
+    </main>
+</body>
+<script>
+    lucide.createIcons();
+</script>

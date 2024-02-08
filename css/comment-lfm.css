@@ -1,0 +1,107 @@
+.comments {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.comments.padding {
+    padding: 10px 0;
+}
+
+.comments[data-comment-depth="1"] {
+    padding-left: 85px;
+}
+
+.comment {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+.comment.has-input {
+    margin-bottom: 10px;
+}
+
+.comment .cover {
+    width: 48px;
+}
+
+.comment .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.comment p {
+    padding: 0;
+}
+
+.comment-header {
+    color: hsl(var(--l2));
+    text-decoration: none;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.comment-footer {
+    font-size: 12px;
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+    color: hsl(var(--c3));
+}
+.comment-footer a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.comment .vote {
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voter {
+    padding: 3px 10px;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 1px 10px;
+    background-color: hsl(var(--b6));
+    color: hsl(var(--c1));
+    border: 2px solid hsl(var(--b4));
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+.voter:hover {
+    border-color: hsl(160, calc(var(--saturation)*65%), calc(var(--lightness)*75%));
+	box-shadow: 0 0 20px hsla(160, calc(var(--saturation)*65%), calc(var(--lightness)*75%),30%);
+}
+.voter:active {
+    transform: scale(0.95);
+}
+
+/* voted! */
+.voter.active {
+    background-color: hsl(160, calc(var(--saturation)*65%), calc(var(--lightness)*75%));
+    border-color: hsl(160, calc(var(--saturation)*65%), calc(var(--lightness)*75%));
+    box-shadow: 0 0 60px hsla(160, calc(var(--saturation)*65%), calc(var(--lightness)*75%),55%) !important;
+    color: hsl(var(--b6));
+    font-weight: 700;
+}
+.voter.active:hover {
+    background-color: hsla(160, calc(var(--saturation)*65%), calc(var(--lightness)*75%), 70%);
+}
+
+
+.comment .input {
+    flex: 1;
+}
+.comment-input {
+    width: 100%;
+    --top: 8px;
+    --sides: 8px;
+    height: 70px;
+    resize: none;
+}

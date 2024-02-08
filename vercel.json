@@ -1,0 +1,29 @@
+{
+    "cleanUrls": true,
+    "redirects": [
+        {
+            "source": "/socials",
+            "destination": "/"
+        },
+        {
+            "source": "/me",
+            "destination": "/"
+        },
+        {
+            "source": "/about",
+            "destination": "/"
+        },
+        {
+            "source": "/counter",
+            "destination": "https://cdn.discordapp.com/emojis/1014010020419080303.gif?size=96&quality=lossless"
+        },
+        {
+            "source": "/lfm",
+            "destination": "/bleh/fm"
+        },
+        {
+            "source": "/lfm/hue",
+            "destination": "/bleh/fm/customise"
+        }
+    ]
+}

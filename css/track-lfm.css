@@ -1,0 +1,75 @@
+.tracklist {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+.tracklist.padding {
+    padding: 10px 0;
+}
+
+.track:not(.avatar) {
+    display: flex;
+    gap: 20px;
+    padding: 6px 20px;
+    font-size: 14px;
+    transition: background-color 0.08s;
+}
+.track:not(.avatar):nth-child(odd) {
+    background-color: hsla(var(--b4), 25%);
+}
+.track:not(.avatar):hover {
+    background-color: hsla(var(--b4), 80%);
+}
+
+.track .cover {
+    display: flex;
+    align-items: center;
+}
+
+.track .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    flex: 1;
+}
+.track .title {
+    color: hsl(var(--c2));
+    width: fit-content;
+}
+.track .artist {
+    color: hsl(var(--c3));
+    width: fit-content;
+}
+
+.track :is(.title, .artist):not(:is(:hover, :active, :focus)) {
+    text-decoration: none;
+}
+
+.track .date {
+    display: flex;
+    align-items: center;
+    color: hsl(var(--c3));
+    font-size: 13px;
+}
+
+.track.realtime {
+    background-color: hsl(var(--base-hue), calc(var(--saturation)*45%), calc(var(--lightness)*40%)) !important;
+    box-shadow: 0px 0 100px 50px hsla(var(--l4), 45%);
+}
+.track.realtime:hover {
+    background-color: hsl(var(--base-hue), calc(var(--saturation)*45%), calc(var(--lightness)*45%)) !important;
+}
+
+.track.realtime .title {
+    color: hsl(var(--c1));
+}
+.track.realtime :is(.artist, .date) {
+    color: hsl(var(--c2));
+}
+
+.track .plays {
+    display: flex;
+    align-items: center;
+    min-width: 40%;
+}

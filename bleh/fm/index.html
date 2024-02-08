@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title id="page-title" translate="no">bleh2.fm (kate's bleh theme for last.fm)</title>
+    <meta name="title" content="bleh2.fm (kate's bleh theme for last.fm)">
+    <meta name="description" content="a sleek, minimalistic refresh with customisable accent colours and addons!">
+    <meta name="keywords" content="kate, katie, last, lastfm, last.fm, lfm, music, streaming, stat, statistics, theme, skin, lastfm skin, lastfm theme, lastfm stylus, stylus theme, stylus, lastfm minimal, lastfm sleek, lastfm dark theme, lastfm dark">
+    <meta property="og:site_name" content="kate">
+    <meta property="og:type" content="website">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://cutensilly.org/lfm">
+    <meta property="og:title" content="bleh2.fm (kate's bleh theme for last.fm)">
+    <meta property="og:description" content="a sleek, minimalistic refresh with customisable accent colours and addons!">
+    <meta property="og:image" content="https://cutensilly.org/img/bleh2-main.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="theme-color" content="#000000">
+    <!-- mobile iOS support -->
+    <link rel="apple-touch-icon" href="https://cutensilly.org/img/ios.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="/owo/css/reset.css">
+    <link rel="stylesheet" href="/owo/css/style.css">
+    <link rel="stylesheet" href="/css/style-lfm.css">
+    <!-- icon -->
+    <link rel="shortcut icon" type="ico" href="/img/katie4k-small.webp"/>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- tooltips -->
+    <!--<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+    <script src="https://unpkg.com/tippy.js@6" defer></script>-->
+</head>
+<body style="--base-hue: 255">
+    <!-- overlays -->
+    <div class="overlay center-full" id="hook_windows"></div>
+    <div class="overlay center">
+        <div class="chips" id="hook_chips"></div>
+    </div>
+    <link rel="stylesheet" href="/owo/css/modal.css">
+    <script src="/owo/js/modal.js"></script>
+    <script src="/owo/js/input.js"></script>
+    <script src="/js/windows.js"></script>
+    <!-- content -->
+    <!--<link rel="stylesheet" href="/owo/css/snow.css">-->
+    <link rel="stylesheet" href="/owo/css/landing.css">
+    <link rel="stylesheet" href="/owo/css/panel.css">
+    <link rel="stylesheet" href="/owo/css/flex.css">
+    <link rel="stylesheet" href="/owo/css/button.css">
+    <link rel="stylesheet" href="/owo/css/avatar.css">
+    <link rel="stylesheet" href="/owo/css/status.css">
+    <link rel="stylesheet" href="/owo/css/input.css">
+    <link rel="stylesheet" href="/owo/css/grid.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
+
+        :root, body {
+            --font: IBM Plex Sans JP, Spline Sans, Inter, Roboto, Noto Sans, Noto Sans JP, sans-serif;
+        }
+    </style>
+    <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.07"></div>
+    <div class="bg-grad med-bg" style="background: linear-gradient(180deg, hsla(var(--l3), 20%) 0%, hsl(var(--b6)) 100%); z-index: 0"></div>
+    <main class="panel-container">
+        <div class="gap" style="--gap: 110px"></div>
+        <section class="side-by-side content right">
+            <div class="cover has-gallery">
+                <div class="gallery" id="gallery">
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-main.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile view</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-oled-accent.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with 'oled' and 'album covers' addons)</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-album-custom.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="disc-album"></i>Album view (with 'album covers' addon)</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-artist.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="star"></i>Artist view</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-library.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="library-big"></i>Library view</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-shoutbox.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="messages-square"></i>Shoutbox view</figcaption>
+                    </figure>
+
+                </div>
+                <button class="btn icon-btn arrow-l" onclick="change(-1)">
+                    <i class="icon w-20" data-lucide="chevron-left"></i>
+                </button>
+                <button class="btn icon-btn arrow-r" onclick="change(1)">
+                    <i class="icon w-20" data-lucide="chevron-right"></i>
+                </button>
+            </div>
+            <script src="/js/home-gallery.js"></script>
+            <style>
+                .gallery figure {
+                    /*display: none;*/
+                    position: absolute;
+                    width: 600px;
+                    transition-property: left, opacity;
+                    transition-duration: 1.2s, 0.6s;
+                    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+                }
+                figure {
+                    text-align: center;
+                }
+                figcaption {
+                    margin-top: 10px;
+                    color: hsl(var(--c3));
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .gallery {
+                    display: flex;
+                    position: relative;
+                    width: 600px;
+                    aspect-ratio: 375 / 225;
+                    /*height: 390px;*/
+                    /*overflow: hidden;*/
+                }
+                .has-gallery .icon-btn {
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -20px;
+                }
+                .has-gallery .arrow-l {
+                    left: -20px;
+                }
+                .has-gallery .arrow-r {
+                    right: -20px;
+                }
+
+                .has-gallery {
+                    position: relative;
+                }
+            </style>
+            <div class="text flex flex-column flex-gap" style="--gap: 20px">
+                <a href="https://last.fm/user/cutensilly" target="_blank" style="width: min-content">
+                    <img class="pfp" style="width: 60px;" src="/img/shiggy.gif">
+                </a>
+                <h1 class="hi kate" style="font-size: 127px; line-height: 100px; position: relative; left: -8px">bleh<sup>2 BETA</sup></h1>
+                <h2>a <i class="hi kate">cute</i> theme for <a class="hi no-underline" href="https://last.fm">last.fm</a></h2>
+                <div class="gap" style="--gap: 0"></div>
+                <p class="text-18">a <i id="sneek">sleek</i>, minimalistic refresh with customisable accent colours and addons!</p>
+                <!--<h3 class="small-head installed-only" id="theme-ver">Latest version!</h3>-->
+                <div class="btn-row">
+                    <a role="button" class="btn primary installed2-only" href="/bleh/fm/customise">
+                        <span class="text">Customise your bleh</span>
+                        <i class="icon w-16" data-lucide="sparkles"></i>
+                    </a>
+                    <a role="button" class="btn primary installed2-only" id="theme-update" href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css" target="_blank">
+                        <span class="text" id="theme-ver">Update</span>
+                        <i class="icon w-16" data-lucide="refresh-ccw"></i>
+                    </a>
+                    <a role="button" class="btn primary shine uninstalled2-only" onclick="create_install_window2()" id="install-btn">
+                        <span class="text">Click to install</span>
+                        <i class="icon w-16" data-lucide="chevron-right"></i>
+                    </a>
+                    <a role="button" class="btn outline installed2-only" href="https://github.com/katelyynn/bleh/issues" target="_blank">
+                        <span class="text">Report bugs</span>
+                        <i class="icon w-16" data-lucide="external-link"></i>
+                    </a>
+                    <h5 class="sub warn uninstalled2-only">This is a beta release! Not everything is finished</h5>
+                </div>
+                <h5 class="sub warn installed2-only">This is a beta release! Not everything is finished</h5>
+            </div>
+        </section>
+        <div class="gap" style="--gap: 40px"></div>
+        <div class="gap" style="--gap: 10px"></div>
+        <style>
+            .item-grid {
+                grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+                gap: 60px 30px;
+                margin-top: 20px;
+            }
+
+            .item-grid .item {
+                gap: 20px;
+                padding: 15px 80px 15px 15px;
+                background-color: hsla(var(--b5), 50%);
+                border-radius: 10px;
+            }
+
+            .item-grid .item .image {
+                align-items: baseline;
+                height: 100%;
+            }
+
+            .item-grid .item .text {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                line-height: 20px;
+            }
+
+            .item-grid .item .text h5 {
+                gap: 10px;
+                font-size: 18px;
+            }
+        </style>
+        <section class="content flex flex-column flex-gap flex-align-center full-width uninstalled2-only" style="--gap: 20px">
+            <h5 class="sub" id="style_addons">Features</h5>
+            <p>Key features in bleh2 to enhance your experience.</p>
+            <div class="item-grid" style="width: 100%">
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="layout-dashboard"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Refreshing, sleek design</h5>
+                        <p>Try out the new <i class="hi">grid and icon-based interface</i>, complete with a full dark theme.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="moon-star"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Even easier on the eyes.</h5>
+                        <p>Find the default theme too bright? Try out the <i class="hi">OLED theme</i>, available as an addon.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="paintbrush"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Choose your favourite colour</h5>
+                        <p>Apply a splash of custom colour to the theme using the <a class="hi" href="/bleh/fm/customise">theme customiser</a>!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="refresh-ccw"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Kept updated</h5>
+                        <p>The theme updates to fit with any new last.fm changes (rare) along with general theme changes.</p>
+                    </div>
+                </div>
+                <!--<div class="item">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="moon-star"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>blerp</h5>
+                        <p>blerp</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="moon-star"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>blerp</h5>
+                        <p>blerp</p>
+                    </div>
+                </div>-->
+            </div>
+        </section>
+        <div class="gap uninstalled2-only" style="--gap: 40px"></div>
+        <div class="gap uninstalled2-only" style="--gap: 10px"></div>
+        <section class="content flex flex-column flex-gap flex-align-center uninstalled2-only" style="--gap: 20px">
+            <h5 class="sub" id="install">Installing bleh!!</h5>
+            <h3>peaked your interest?</h3>
+            <p class="text-18">click the big purple button to install now :3</p>
+            <a role="button" class="btn primary shine" onclick="create_install_window2()" id="install-btn-2">
+                <span class="text">Click to install</span>
+                <i class="icon w-16" data-lucide="chevron-right"></i>
+            </a>
+        </section>
+        <div class="gap uninstalled2-only" style="--gap: 150px"></div>
+        <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
+            <h5 class="sub" id="style_addons">Style addons</h5>
+            <p>These are extra styles you can install to enhance your experience :3</p>
+            <h5 class="sub warn">Sorry, not all addons are currently available for bleh2.</h5>
+            <h5 class="sub warn uninstalled2-only">The theme must be installed for addons to be available.</h5>
+            <div class="item-grid" style="width: 100%">
+                <div class="item install2" id="install-oled" onclick="create_theme_window('bleh2-oled')">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="moon-star"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>OLED theme</h5>
+                        <p>Special theme addon for the eyes.</p>
+                    </div>
+                </div>
+                <div class="item install2" id="install-accent" onclick="create_theme_window('bleh2-accent')">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="paintbrush"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Album covers<div class="badge" data-kate-type="wip">WIP</div></h5>
+                        <p>Match the page colour to the album cover!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--<section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
+            <h5 class="sub" id="style_addons">Style addons</h5>
+            <p>These are extra styles you can install to enhance your experience :3</p>
+            <h5 class="sub warn uninstalled-only">The theme must be installed for addons to be available.</h5>
+            <div class="install-grid">
+                <div class="install" id="install-winter-haters" onclick="create_theme_window('winter-haters')">
+                    <div class="kate-icon">
+                        <i class="icon w-24" data-lucide="snowflake"></i>
+                    </div>
+                    <h5><i class="hi">undo winter effects</i></h5>
+                    <p>(limited for winter) removes the effects if u hate them</p>
+                </div>
+                <div class="install" id="install-amoled" onclick="create_theme_window('amoled')">
+                    <div class="kate-icon">
+                        <i class="icon w-24" data-lucide="moon-star"></i>
+                    </div>
+                    <h5><i class="hi">amoled</i></h5>
+                    <p>special addon for a darker feel!</p>
+                </div>
+                <div class="install" id="install-accent" onclick="create_theme_window('accent')">
+                    <div class="kate-icon">
+                        <i class="icon w-24" data-lucide="paintbrush"></i>
+                    </div>
+                    <h5><i class="hi">album covers</i><div class="badge" data-kate-type="wip">WIP</div></h5>
+                    <p>match the page accent to the album cover :3</p>
+                </div>
+                <div class="install unavailable" id="install-light" onclick="create_theme_window('light')">
+                    <div class="kate-icon">
+                        <i class="icon w-24" data-lucide="sun"></i>
+                    </div>
+                    <h5><i class="hi">light</i><div class="sub" data-kate-type="alpha">Alpha</div></h5>
+                    <p>special addon for a brighter feel!</p>
+                </div>
+                <!--<div class="install" id="install-covers" onclick="create_theme_window('covers')">
+                    <div class="kate-icon">
+                        <i class="icon w-24" data-lucide="gallery-vertical-end"></i>
+                    </div>
+                    <h5><i class="hi">custom covers</i><div class="badge" data-kate-type="wip">WIP</div></h5>
+                    <p>slightly tweaked album covers..</p>
+                </div>
+                <div class="install unavailable" id="install-performance" onclick="create_theme_window('performance')">
+                    <div class="kate-icon">
+                        <i class="icon w-24" data-lucide="chevrons-down"></i>
+                    </div>
+                    <h5><i class="hi">performance</i></h5>
+                    <p>lower intensity of blurs n glows</p>
+                </div>-->
+                <!--<div class="install unavailable" id="install-motion" onclick="create_theme_window('motion')">
+                    <div class="kate-icon">
+                        <i class="icon w-24" data-lucide="move-diagonal"></i>
+                    </div>
+                    <h5><i class="hi">reduced motion</i></h5>
+                    <p>remove significant page animations</p>
+                </div>
+            </div>
+        </section>-->
+        <div class="gap installed-only" style="--gap: 40px"></div>
+        <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
+            <h5 class="sub" id="script_addons">Script addons</h5>
+            <p>warning: these can be a bit unstable and are not coded <i class="i">the best</i></p>
+            <h5 class="sub warn uninstalled-only">The theme must be installed for addons to be available.</h5>
+            <div class="install-grid">
+                <div class="install" id="install-feat" onclick="create_theme_window('feat',true)">
+                    <div class="kate-icon">
+                        <i class="icon w-24" data-lucide="star"></i>
+                    </div>
+                    <h5><i class="hi">feat. artists</i></h5>
+                    <p>display featured artists in a cuter way</p>
+                </div>
+                <div class="install" id="install-chart" onclick="create_theme_window('chart',true)">
+                    <div class="kate-icon">
+                        <i class="icon w-24" data-lucide="hash"></i>
+                    </div>
+                    <h5><i class="hi">chart colours</i></h5>
+                    <p>apply colour based on charting position</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<footer>
+    <div class="footer-inner" bis_skin_checked="1">
+        <span class="main" id="footer.main">
+            <a class="over hide" href="https://github.com/katelyynn/bleh/blob/uwu/LICENSE" target="_blank" bis_skin_checked="1">kate 2022-2023</a>
+        </span>
+        <span class="links" id="footer.links">
+            <a href="https://github.com/katelyynn/bleh/" bis_skin_checked="1">View Source</a>
+        </span>
+    </div>
+</footer>
+<script src="/js/addons2.js"></script>
+<script>lucide.createIcons();</script>

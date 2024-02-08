@@ -1,0 +1,42 @@
+body:after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("https://raw.githubusercontent.com/coolesding/shiggycord/v3/img/snow.gif") !important;
+    background-repeat: repeat;
+    z-index: 10000000;
+    pointer-events: none;
+    opacity: 0.3;
+}
+body:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-image: url('/img/snow-min.png') !important;
+    background-repeat: repeat-x;
+    z-index: 100000;
+    pointer-events: none;
+}
+
+.btn {
+    background-image: url('/img/ice.png') !important;
+}
+.btn.primary {
+    background-image: url('/img/snow-min.png') !important;
+    background-position-y: -2px;
+}
+
+:root, body {
+    /* chilly */
+    --base-hue: 201 !important;
+    --saturation: 0.8;
+    --lightness: 1.1;
+    --invert-btn: hsl(var(--b6));
+}
+
+[style^="background-image: url(/img/shiggy.png);"] {
+    background-image: url('/img/shiggy-chilly.png') !important;
+}

@@ -1,0 +1,153 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: none;
+    transition: background-color 0.2s;
+}
+.overlay.center {
+    display: flex;
+    justify-content: center;
+}
+.overlay.center-full {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#hook_windows:not(:empty) {
+    background-color: hsla(var(--d6),80%);
+    backdrop-filter: blur(5px);
+    pointer-events: auto;
+}
+
+
+/* window */
+.window {
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(var(--d5));
+    pointer-events: auto;
+    border-radius: 10px;
+    box-shadow: var(--raise-3);
+    max-width: 490px;
+    animation: chip_in 0.3s;
+    animation-timing-function: var(--trans-function);
+}
+.window.center {
+    text-align: center;
+}
+.window header {
+    padding: 20px;
+}
+.window main {
+    padding: 5px 20px 10px;
+}
+
+.window header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    user-select: none;
+}
+.window header > .icon {
+    display: flex;
+    align-items: center;
+    height: 18px;
+}
+.window header h5 {
+    flex: 1;
+}
+
+.window img {
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: var(--raise-0);
+}
+
+.window footer {
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+    margin: 20px 20px 0;
+    padding: 20px 0;
+    border-top: 1px solid hsl(var(--d4));
+}
+
+
+/* chips */
+.chips {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+.chip {
+    --top: 12px;
+    --sides: 24px;
+    --indent: 0.97;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    min-width: 200px;
+    overflow: hidden;
+    gap: 10px;
+    background-color: hsla(var(--d5),60%);
+    color: hsl(var(--l1));
+    padding: var(--top) var(--sides);
+    border-radius: 50px;
+    pointer-events: auto;
+    cursor: pointer;
+    animation: chip_in 0.3s;
+    animation-timing-function: var(--trans-function);
+    transition-property: background-color, transform;
+    transition-duration: var(--trans);
+    transition-timing-function: var(--trans-function);
+}
+.chip:hover {
+    background-color: hsla(var(--d4),60%);
+}
+
+@keyframes chip_in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chip.removing, .window.removing {
+    animation: chip_out 0.3s;
+}
+
+@keyframes chip_out {
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chip.success {
+    --base-hue: 160;
+}
+.chip.warn {
+    --base-hue: 35;
+}
+.chip.error {
+    --base-hue: -2;
+}

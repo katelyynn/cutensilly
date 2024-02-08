@@ -1,0 +1,66 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    color: hsl(var(--c2));
+    background-color: var(--bg);
+    box-shadow: var(--raise-1);
+    cursor: pointer;
+
+    --bg: hsla(var(--b4),70%);
+    --bg-hov: hsla(var(--b3),70%);
+
+    transition-property: background-color, transform, box-shadow;
+    transition-duration: var(--trans);
+    transition-timing-function: var(--trans-function);
+}
+.card:not(.has-footer) {
+    --indent: 0.99;
+}
+
+.card:hover {
+    background-color: var(--bg-hov);
+}
+
+.card.accent {
+    --bg: hsl(var(--d3));
+    --bg-hov: hsl(var(--d4));
+}
+
+.card header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card header img {
+    object-fit: cover;
+    width: 100%;
+    transition-property: transform;
+    transition-duration: calc(var(--trans) * 2);
+}
+.card:hover header img {
+    transform: scale(1.06);
+}
+
+.card main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.card footer {
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 10px;
+}

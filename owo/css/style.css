@@ -1,0 +1,258 @@
+/*
+    owo
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+
+:root, body {
+    --font: 'Spline Sans', Inter, -apple-system, BlinkMacSystemFont, Roboto, "Noto Sans JP", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --base-hue: 255;
+    --saturation: 1;
+    --lightness: 1;
+
+    --accessibility-saturation: 1;
+    --accessibility-lightness: 1;
+
+    /* shadow */
+    --raise-0: 0 2px 3px 0 hsla(var(--b6), 0.18);
+    --raise-1: 0 3px 5px 2px hsla(var(--b6), 0.3);
+    --raise-2: 0 5px 10px 5px hsla(var(--b6), 0.38);
+    --raise-3: 0 8px 14px 10px hsla(var(--b6), 0.48);
+    --raise-4: 0 12px 19px 14px hsla(var(--b6), 0.58);
+    --raise-5: 0 17px 26px 19px hsla(var(--b6), 0.68);
+    --raise-6: 0 25px 32px 26px hsla(var(--b6), 0.78);
+    --raise-7: 0 36px 38px 32px hsla(var(--b6), 0.88);
+
+    /* so me */
+    --trans: 0.15s;
+    --trans-function: cubic-bezier(.25,.75,.5,1.25);
+}
+
+:root, body,
+.chip, .window,
+.badge, .tag-mono, .tag,
+.status-dot, .status,
+/* lfm */ .install,
+.panel
+{
+    /* b1-6 */
+    --b1: var(--base-hue), calc(var(--accessibility-saturation)*13%), 30%;
+    --b2: var(--base-hue), calc(var(--accessibility-saturation)*13%), 23%;
+    --b3: var(--base-hue), calc(var(--accessibility-saturation)*11%), 18%;
+    /* card hover */
+    --b4: var(--base-hue), calc(var(--accessibility-saturation)*9%), 15%;
+    /* card */
+    --b5: var(--base-hue), calc(var(--accessibility-saturation)*6%), 10%;
+    /* content */
+    --b6: var(--base-hue), calc(var(--accessibility-saturation)*4%), 7%;
+    /* body */
+    /* d1-6 */
+    --d1: var(--base-hue), calc(var(--saturation)*20%), calc(var(--lightness)*35%);
+    --d2: var(--base-hue), calc(var(--saturation)*20%), calc(var(--lightness)*30%);
+    --d3: var(--base-hue), calc(var(--saturation)*20%), calc(var(--lightness)*25%);
+    --d4: var(--base-hue), calc(var(--saturation)*20%), calc(var(--lightness)*20%);
+    /* tab bar */
+    --d5: var(--base-hue), calc(var(--saturation)*20%), calc(var(--lightness)*15%);
+    /* header */
+    --d6: var(--base-hue), calc(var(--saturation)*20%), calc(var(--lightness)*10%);
+    /* l1-4 */
+    --l1: var(--base-hue), calc(var(--saturation)*72%), calc(var(--lightness)*85%);
+    --l2: var(--base-hue), calc(var(--saturation)*65%), calc(var(--lightness)*75%);
+    --l3: var(--base-hue), calc(var(--saturation)*57%), calc(var(--lightness)*70%);
+    /* link */
+    --l4: var(--base-hue), calc(var(--saturation)*52%), calc(var(--lightness)*50%);
+    /* c1-2 */
+    --c1: var(--base-hue), calc(var(--saturation)*40%), 100%;
+    --c2: var(--base-hue), calc(var(--saturation)*60%), 90%;
+    /* subcontent */
+    --c3: var(--base-hue), calc(var(--saturation)*10%), 60%;
+    --c4: var(--c2), 75%;
+    /* can invert */
+    --c1-can-invert: var(--base-hue), calc(var(--saturation)*40%), calc(var(--invert-eligible)*100%);
+    /* custom */
+    --b0: var(--base-hue), calc(var(--saturation)*8%), 52%;
+    --l5: var(--base-hue), calc(var(--saturation)*45%), 26%;
+    --ba5: var(--base-hue), calc(var(--saturation)*6%), 12%, 75%;
+    --ba6: var(--base-hue), calc(var(--saturation)*8%), 7%, 94%;
+
+    /* text shadows */
+    --bb5: var(--base-hue), calc(var(--saturation)*8%), 15%, 70%;
+
+    /* colours */
+    --red: -2;
+    --orange: 25;
+    --green: 145;
+    --blue: 210;
+    --purple: 270;
+    --pink: 333;
+
+    --pro-colour: 33;
+
+    /* accents */
+    --accent-background: var(--base-hue), calc(var(--saturation)*56%), calc(var(--lightness)*26%);
+    /* targets */
+    --target: var(--base-hue), calc(var(--saturation)*100%), calc(var(--lightness)*70%), 60%;
+    --target-raise: var(--base-hue), calc(var(--saturation)*100%), calc(var(--lightness)*70%), 40%;
+
+    --btn-saturation: calc(var(--saturation)*65%);
+    --btn-lightness: calc(var(--lightness)*75%);
+
+    color: hsl(var(--c2));
+    accent-color: hsl(var(--l1));
+}
+
+
+body {
+    background: hsl(var(--b6));
+    color: hsl(var(--c2));
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 18px;
+    overflow: overlay;
+    accent-color: hsl(var(--l1));
+    color-scheme: light dark;
+}
+
+* {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll);
+}
+
+h1, h2, h3, h4, h5 {
+    color: hsl(var(--c1));
+    user-select: none;
+}
+h1, h2 {
+    font-weight: 600;
+}
+h3 {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 32px;
+}
+h3 {
+    font-size: 26px;
+}
+h4 {
+    font-size: 20px;
+}
+
+
+img {
+    user-select: none;
+}
+
+
+/* indent on click */
+:is(
+    .btn,
+    .chip,
+    [type="radio"], [type="checkbox"],
+    .card:not(.has-footer)
+):active
+{
+    transform: scale(var(--indent));
+}
+
+
+/* links */
+a:not(:is(.btn, .card)) {
+    color: hsl(var(--l2));
+    transition-property: color;
+    transition-duration: var(--trans);
+    text-underline-offset: 3px;
+}
+a:not(:is(.btn, .card)):hover {
+    color: hsl(var(--l3));
+}
+
+
+.sep {
+    width: 100%;
+    height: 1px;
+    background-color: hsl(var(--b4));
+    margin: 10px 0;
+}
+.gap {
+    width: 100%;
+    height: var(--gap);
+}
+
+
+footer.content {
+    width: 100%;
+    color: hsl(var(--c3));
+    display: flex;
+    justify-content: space-between;
+}
+
+footer.content a:not(.btn) {
+    color: hsl(var(--c3));
+    text-decoration: none;
+}
+footer.content a:not(.btn):hover {
+    color: hsla(var(--c3),80%);
+}
+
+
+/* icon */
+svg.icon {
+    width: var(--w);
+    height: var(--w);
+}
+
+.w-16 {
+    --w: 16px;
+    stroke-width: 2.5;
+}
+.w-18 {
+    --w: 18px;
+    stroke-width: 2.5;
+}
+.w-20 {
+    --w: 20px;
+    stroke-width: 2.25;
+}
+.w-24 {
+    --w: 24px;
+}
+.w-28 {
+    --w: 28px;
+}
+.w-32 {
+    --w: 32px;
+}
+
+
+.text-12 {
+    font-size: 12px;
+    line-height: 14px;
+}
+.text-14 {
+    font-size: 14px;
+    line-height: 16px;
+}
+.text-16 {
+    font-size: 16px;
+    line-height: 18px;
+}
+.text-18 {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+
+.figure {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--raise-1);
+}
+.figure img {
+    width: 100%;
+}

@@ -1,0 +1,66 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+}
+
+.hero .content {
+    width: 100%;
+    max-width: 70%;
+}
+
+
+.side-by-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+.side-by-side > .cover {
+    max-width: 600px;
+}
+.side-by-side > .text {
+    max-width: 600px;
+}
+
+.side-by-side.right > .text {
+    order: -1;
+}
+
+
+.avatar-grid-sample {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* sub */
+h5.sub {
+    --top: 11px;
+    --sides: 16px;
+    background-color: hsla(var(--d4),40%);
+    color: hsl(var(--l1));
+    padding: var(--top) var(--sides);
+    border-radius: 10px;
+    width: fit-content;
+}
+
+
+.bg {
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    z-index: 0;
+}
+.big-bg, .med-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 105vh;
+    display: block
+}
+.med-bg {
+    height: 75vh;
+}

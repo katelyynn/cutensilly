@@ -1,0 +1,23 @@
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 10px;
+}
+
+.item-grid .item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.item-grid .item .image {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.item-grid .item .text h5 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

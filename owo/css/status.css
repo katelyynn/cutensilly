@@ -1,0 +1,90 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    color: hsl(var(--l3));
+}
+.badge:before {
+    content: '';
+    display: inline-flex;
+    background-color: hsl(var(--l3));
+    width: 7px;
+    height: 7px;
+    border-radius: 50px;
+    margin-right: 7px;
+}
+
+:is(.badge, .tag-mono, .tag)         { --saturation: 0.3;                             }
+:is(.badge, .tag-mono, .tag).red     { --base-hue: var(--red); --saturation: 1;       }
+:is(.badge, .tag-mono, .tag).orange  { --base-hue: var(--orange); --saturation: 1;    }
+:is(.badge, .tag-mono, .tag).green   { --base-hue: var(--green); --saturation: 1;     }
+:is(.badge, .tag-mono, .tag).blue    { --base-hue: var(--blue); --saturation: 1;      }
+:is(.badge, .tag-mono, .tag).purple  { --base-hue: var(--purple); --saturation: 1;    }
+:is(.badge, .tag-mono, .tag).pink    { --base-hue: var(--pink); --saturation: 1;      }
+
+.tag, .tag-mono {
+    background-color: hsl(var(--l3));
+    color: hsl(var(--b6));
+    padding: 1px 14px;
+    line-height: 21px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tag-mono {
+    background-color: hsla(var(--b6), 90%);
+    color: hsl(var(--l3));
+}
+
+.loader {
+    display: flex;
+    gap: 5px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.loader.extra .info {
+    display: none;
+}
+
+
+.status-dot {
+    display: block;
+    width: 14px;
+    height: 14px;
+    aspect-ratio: 1 / 1;
+    border: 4px solid hsl(var(--l3));
+    border-radius: 50%;
+    position: relative;
+}
+.status-dot svg {
+    --w: 10px;
+    stroke-width: 3.5;
+    aspect-ratio: 1 / 1;
+    color: hsl(var(--b6));
+    position: absolute;
+    top: -2px;
+    left: -2px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: hsl(var(--l3));
+    font-weight: 500;
+}
+
+.online  { --base-hue: var(--green);     }
+.away    { --base-hue: var(--orange);    }
+.dnd     { --base-hue: var(--red);       }
+.offline { --base-hue: 255; --saturation: 0;  }
+
+.updated {
+    --base-hue: var(--green);
+}
+.updated .status-dot {
+    background-color: hsl(var(--l3));
+}

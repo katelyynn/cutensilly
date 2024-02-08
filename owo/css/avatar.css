@@ -1,0 +1,65 @@
+.avatar {
+    width: var(--size);
+    height: var(--size);
+    background-color: hsl(var(--b4));
+    object-fit: contain;
+    border-radius: var(--radius, 33%);
+}
+.avatar.square {
+    border-radius: unset;
+}
+
+/* sizes */
+.avatar.extra-extra-small {
+    --size: 32px;
+    --radius: 20%; /* avatarcard parity */
+}
+.avatar.track {
+    --size: 40px;
+    --radius: 10%;
+}
+.avatar.extra-small {
+    --size: 48px;
+    --radius: 20%; /* avatarcard parity */
+}
+.avatar.kinda-small {
+    --size: 64px;
+    --radius: 20%; /* avatarcard parity */
+}
+.avatar.small {
+    --size: 80px;
+}
+.avatar.medium {
+    --size: 96px;
+}
+.avatar.large {
+    --size: 148px;
+}
+.avatar.large-2 {
+    --size: 190px;
+}
+.avatar.extra-large {
+    --size: 240px;
+}
+
+/* manga */
+.avatar.long {
+    width: initial;
+    aspect-ratio: 7 / 10; /* ref. 133x190 */
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+/* circular */
+.avatar.circular {
+    border-radius: 50%;
+}
+
+/* shadow */
+.avatar.shadow {
+    box-shadow: var(--raise-0);
+}
+
+.avatar.pixel {
+    image-rendering: pixelated;
+}
