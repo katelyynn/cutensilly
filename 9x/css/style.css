@@ -38,12 +38,12 @@ body {
     line-height: 16px;
     user-select: none;
     overflow: hidden;
-    cursor: url('/img/arrow.png'), auto;
+    cursor: url('../img/arrow.png'), auto;
     height: fit-content;
 }
 
 a {
-    cursor: url('/img/arrow.png'), auto;
+    cursor: url('../img/arrow.png'), auto;
 }
 
 body, [data-theme="light"] {
@@ -118,7 +118,7 @@ button:not(.item)/*, ::-webkit-scrollbar-button:single-button, ::-webkit-scrollb
     text-decoration: none;
     box-sizing: border-box;
     width: fit-content;
-    cursor: url('/img/arrow.png'), auto;
+    cursor: url('../img/arrow.png'), auto;
 }
 button:not(:is(:disabled, .item)):active/*, ::-webkit-scrollbar-button:single-button:active, ::-webkit-scrollbar-thumb:active*/, .button:active {
     box-shadow: inset -1px -1px hsl(var(--b2)), inset 1px 1px hsl(var(--b7)), inset -2px -2px hsl(var(--b3)), inset 2px 2px hsl(var(--b5)) !important;
@@ -147,7 +147,7 @@ button:not(:is(:disabled, .item)):active :is(.icon, p) {
     max-width: 610px; /* 410 */
     max-height: 448px;
     pointer-events: auto;
-    cursor: url('/img/arrow.png'), auto;
+    cursor: url('../img/arrow.png'), auto;
     width: fit-content;
     z-index: 10;
 }
@@ -308,7 +308,7 @@ button[data-action="max"]:after {
     right: 0;
     bottom: 0;
     /*pointer-events: none;*/
-    cursor: url('/img/arrow.png'), auto;
+    cursor: url('../img/arrow.png'), auto;
 }
 
 
@@ -319,7 +319,7 @@ button[data-action="max"]:after {
 .web {
     width: 220px;
     min-height: 180px;
-    background-image: url(/img/web.png);
+    background-image: url('../img/web.png');
     padding: 16px;
     background-repeat: no-repeat;
 }
@@ -366,7 +366,7 @@ button[data-action="max"]:after {
     border: none;
     background: unset;
     font: inherit;
-    cursor: url('/img/arrow.png'), auto;
+    cursor: url('../img/arrow.png'), auto;
 }
 
 .item:focus {
