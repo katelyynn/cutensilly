@@ -23,7 +23,7 @@ body
 /* text + links */
 body,
 .avatar,
-.colourful
+.btn
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
     --c2: var(--hue), calc(var(--sat) * 14%), 70%;
