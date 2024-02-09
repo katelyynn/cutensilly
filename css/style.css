@@ -22,7 +22,8 @@ body
 
 /* text + links */
 body,
-.avatar
+.avatar,
+.colourful
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
     --c2: var(--hue), calc(var(--sat) * 14%), 70%;
@@ -83,6 +84,27 @@ button, .btn {
 :is(button, .btn):active {
     transform: translateX(3px) translateY(3px);
     box-shadow: var(--shadow-hover);
+}
+
+.colourful {
+    --back: unset;
+    --colour: hsl(var(--l2));
+    --border: 1px solid hsl(var(--l2));
+    --shadow: 3px 3px 0 0 hsla(var(--l2), 30%);
+}
+.brand {
+    --sat: 1;
+    --lit: 1;
+}
+
+.modrinth {
+    --hue: 110;
+}
+.lastfm {
+    --hue: -2;
+}
+.pmc {
+    --hue: 160;
 }
 
 .primary {
@@ -241,4 +263,25 @@ li:before {
 }
 .tippy-content {
     padding: 2px 4px;
+}
+
+
+
+
+/*     MOBILE     */
+@media (max-width: 920px) {
+    body {
+        padding: 8px;
+    }
+    main {
+        width: 100%;
+    }
+}
+@media (max-width: 720px) {
+    .direction-row {
+        flex-direction: column;
+    }
+    .hidden {
+        display: none;
+    }
 }
