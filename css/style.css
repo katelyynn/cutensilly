@@ -1,0 +1,205 @@
+/* kate-cli */
+
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+:root, body {
+    --hue: 255;
+    --sat: 1;
+    --lit: 1;
+
+    --font: IBM Plex Mono, Iosevka, JetBrains Mono, Roboto Mono, monospace, sans-serif;
+    --font-size: 13px;
+    --line-height: calc(var(--font-size) + 4px);
+}
+
+/* backgrounds */
+body
+{
+    --b5: var(--hue), 0%, 7%;
+    --b6: var(--hue), 0%, 0%;
+}
+
+/* text + links */
+body
+{
+    --c1: var(--hue), calc(var(--sat) * 40%), 100%;
+    --c2: var(--hue), calc(var(--sat) * 14%), 70%;
+    --c3: var(--hue), calc(var(--sat) * 7%), 35%;
+
+    --l2: var(--hue), calc(var(--sat) * 50%), calc(var(--lit) * 73%);
+    --l3: var(--hue), calc(var(--sat) * 60%), calc(var(--lit) * 60%);
+    --l4: var(--hue), calc(var(--sat) * 70%), calc(var(--lit) * 50%);
+}
+
+::-moz-selection {
+    background: hsl(var(--l4));
+    color: hsl(var(--c2)) !important;
+}
+::selection {
+    background: hsl(var(--l4));
+    color: hsl(var(--c2)) !important;
+}
+
+
+body {
+    background: hsl(var(--b6));
+    color: hsl(var(--c2));
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    font-family: var(--font);
+    cursor: default;
+    box-sizing: border-box;
+}
+
+
+
+
+/*     buttons     */
+button, .btn {
+    --back: unset;
+    --colour: hsl(var(--c2));
+    --border: 1px solid hsl(var(--c3));
+    --shadow: 3px 3px 0 0 hsla(var(--c3), 30%);
+    --shadow-hover: unset;
+    padding: 4px 6px;
+    appearance: unset;
+    background: var(--back);
+    color: var(--colour);
+    border: var(--border);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: inherit;
+    transition-property: box-shadow, background, color, border, transform;
+    transition-duration: 0.1s;
+    transition-timing-function: ease;
+}
+
+:is(button, .btn):active {
+    transform: translateX(3px) translateY(3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.primary {
+    --back: hsl(var(--l2));
+    --colour: hsl(var(--b6));
+    --border: 1px solid hsl(var(--c2));
+    --shadow: 3px 3px 0 0 hsla(var(--l3), 50%);
+}
+
+
+
+
+/*     card     */
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border: 1px solid hsl(var(--c3));
+    box-shadow: 3px 3px 0 0 hsla(var(--c3), 30%);
+}
+
+
+.preview {
+    width: 100%;
+    border: 1px solid hsl(var(--c3));
+    box-shadow: 2px 2px 0 0 hsla(var(--c3), 30%);
+    margin-bottom: 8px;
+}
+.preview img {
+    width: 100%;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 900px;
+}
+
+
+.flex {
+    display: flex;
+    gap: 8px;
+}
+.justify-center {
+    justify-content: center;
+}
+.align-center {
+    align-items: center;
+}
+.direction-col {
+    flex-direction: column;
+}
+.direction-row {
+    flex-direction: row;
+}
+
+.big-gap {
+    gap: 48px;
+}
+
+
+.left {
+    width: 350px;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+h1 {
+    color: hsl(var(--c1));
+}
+h2 {
+    color: hsl(var(--c3));
+}
+h1:before, h2:before {
+    content: '#';
+}
+
+
+.project-lists {
+    margin-top: 12px;
+}
+
+
+li:before {
+    content: '~ ';
+}
+
+.project-list li:hover {
+    color: hsl(var(--l2));
+}
+
+
+.btn-grid {
+    margin-top: 8px;
+}
+
+
+/*     TOOLTIP     */
+.tippy-box {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: unset;
+    background-color: hsl(var(--b6));
+    border: 1px solid hsl(var(--c3));
+    box-shadow: 2px 2px 0 0 hsla(var(--c3), 30%), 1px 1px 0 3px hsl(var(--b6));
+}
+.tippy-content {
+    padding: 2px 4px;
+}

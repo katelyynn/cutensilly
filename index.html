@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <title>kate@cutensilly.org</title>
+    <meta name="title" content="kate@cutensilly.org">
+    <meta name="description" content="my cute n silly site">
+    <meta property="og:title" content="kate@cutensilly.org">
+    <meta property="og:description" content="my cute n silly site">
+    <!-- copy paste -->
+    <link rel="shortcut icon" type="ico" href="img/favi.png"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <meta property="og:site_name" content="kate world">
+    <meta property="og:type" content="website">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://cutensilly.org/">
+    <meta property="og:image" content="https://cutensilly.org/img/preview.png">
+    <meta property="og:image:width" content="1100">
+    <meta property="og:image:height" content="900">
+    <meta name="theme-color" content="#000080">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+</head>
+<body>
+    <main>
+        <section class="card">
+            <h1>haiii</h1>
+            <p>im kate :3 i do some silly web dev and also work on minecraft projects!!</p>
+        </section>
+        <section class="card direction-row big-gap">
+            <div class="left">
+                <h1>some stuff i've made</h1>
+                <p style="width: 300px">select a project that peaks ur interest to view it in more detail</p>
+                <div class="project-lists">
+                    <div class="project-list">
+                        <h2>full games</h2>
+                        <ul>
+                            <li onclick="view_project('laser-tag')">laser-tag</li>
+                            <li onclick="view_project('skyplex')">skyplex</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right hidden" id="project-side">
+                <div class="preview">
+                    <img id="project-image" alt="project image">
+                </div>
+                <h1 id="project-title"></h1>
+                <p id="project-bio"></p>
+                <div class="btn-grid" id="project-links"></div>
+            </div>
+        </section>
+        <section class="card">
+            <h1>find me elsewhere</h1>
+            <p>im all over kinda a bit</p>
+            <div class="btn-grid">
+                <a class="btn" href="https://github.com/katelyynn" target="_blank">github</a>
+                <a class="btn" href="https://github.com/katelyynn" target="_blank">github</a>
+                <button>blehh</button>
+                <button class="primary">blehh</button>
+            </div>
+        </section>
+        <section class="card">
+            <h1>friends</h1>
+            <div class="btn-grid">
+                <a class="btn" href="https://2lay.net" target="_blank" id="2lay">ashley@2lay.net</a>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="js/cli.js"></script>
