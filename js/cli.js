@@ -91,6 +91,48 @@ let projects = {
             }
         ],
         copyright: '2022-2024 (c) kate GPL-3.0'
+    },
+    'infection': {
+        bio: 'gather resources for 8 mins before one player is infected - with the goal to kill and infect all remaining survivors. if any survivors remain once the timer reaches zero, the infected have failed.',
+        links: [
+            {
+                type: 'modrinth',
+                link: 'https://modrinth.com/datapack/infection'
+            },
+            {
+                type: 'sauce2',
+                link: 'https://github.com/katelyynn/infection'
+            }
+        ],
+        copyright: '2021-2024 (c) kate GPL-3.0'
+    },
+    'lava-rising': {
+        bio: 'get time to prepare before the lava begins to engulf the world from the very bottom to the very top, who will win?',
+        links: [
+            {
+                type: 'modrinth',
+                link: 'https://modrinth.com/datapack/lavarising'
+            },
+            {
+                type: 'sauce2',
+                link: 'https://github.com/katelyynn/lavarising'
+            }
+        ],
+        copyright: '2021-2024 (c) kate GPL-3.0'
+    },
+    'snow-rising': {
+        bio: 'a fun, and very chilly, spin-off of Lava Rising. powder snow will engulf the world from the very bottom to the very top, who will win?',
+        links: [
+            {
+                type: 'modrinth',
+                link: 'https://modrinth.com/datapack/snowrising'
+            },
+            {
+                type: 'sauce2',
+                link: 'https://github.com/katelyynn/snowrising'
+            }
+        ],
+        copyright: '2022-2024 (c) kate GPL-3.0'
     }
 };
 
