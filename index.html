@@ -35,12 +35,22 @@
                 <h1>some stuff i've made</h1>
                 <p style="width: 300px">select a project that peaks ur interest to view it in more detail</p>
                 <div class="project-lists">
-                    <div class="project-list">
-                        <h2>full games</h2>
-                        <ul>
-                            <li onclick="view_project('laser-tag')">laser-tag</li>
-                            <li onclick="view_project('skyplex')">skyplex</li>
-                        </ul>
+                    <div class="list-left">
+                        <div class="project-list">
+                            <h2>full games</h2>
+                            <ul>
+                                <li onclick="view_project('laser-tag')">laser-tag</li>
+                                <li onclick="view_project('skyplex')">skyplex</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="project-list">
+                            <h2>cool projects</h2>
+                            <ul>
+                                <li onclick="view_project('bleh')">bleh</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,6 +61,7 @@
                 <h1 id="project-title"></h1>
                 <p id="project-bio"></p>
                 <div class="btn-grid" id="project-links"></div>
+                <a class="copyright" id="project-copyright" target="_blank"></a>
             </div>
         </section>
         <section class="card">

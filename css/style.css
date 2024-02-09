@@ -105,10 +105,11 @@ button, .btn {
 
 
 .preview {
-    width: 100%;
     border: 1px solid hsl(var(--c3));
     box-shadow: 2px 2px 0 0 hsla(var(--c3), 30%);
     margin-bottom: 8px;
+    display: flex;
+    aspect-ratio: 16 / 9;
 }
 .preview img {
     width: 100%;
@@ -173,6 +174,8 @@ h1:before, h2:before {
 
 .project-lists {
     margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -186,7 +189,21 @@ li:before {
 
 
 .btn-grid {
+    display: flex;
+    gap: 8px;
     margin-top: 8px;
+}
+
+
+.copyright {
+    font-size: 11px;
+    color: hsl(var(--c3));
+    margin-top: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: inherit;
+    display: block;
+    width: fit-content;
 }
 
 
