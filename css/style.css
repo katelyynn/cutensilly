@@ -21,7 +21,8 @@ body
 }
 
 /* text + links */
-body
+body,
+.avatar
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
     --c2: var(--hue), calc(var(--sat) * 14%), 70%;
@@ -181,6 +182,10 @@ i {
 
 .avatar {
     height: 48px;
+    box-shadow: 2px 2px 0 0 hsla(var(--l3), 50%);
+    --hue: 190;
+    --sat: 1;
+    --lit: 1;
 }
 
 
