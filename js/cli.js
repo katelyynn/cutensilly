@@ -3,7 +3,7 @@
 
 let projects = {
     'laser-tag': {
-        bio: 'a WIP(!) massive crossbow-based Minecraft shooter game which aims to contain a variety of minigames, maps, and advanced configuration.',
+        bio: 'a <i>WIP</i> massive crossbow-based Minecraft shooter game which aims to contain a variety of minigames, maps, and advanced configuration.',
         links: [
             {
                 type: 'sauce',
@@ -13,7 +13,7 @@ let projects = {
         copyright: '2022-2024 (c) kate GPL-3.0'
     },
     'skyplex': {
-        bio: 'a WIP(!) vanilla RPG-esc, vaguely Hypixel Skyblock-inspired experience in Minecraft - featuring professions, leveling, xp boosters, quests, shops, and more planned.',
+        bio: 'a <i>WIP</i> vanilla RPG-esc, vaguely Hypixel Skyblock-inspired experience in Minecraft - featuring professions, leveling, xp boosters, quests, shops, and more planned.',
         links: [
             {
                 type: 'sauce',
@@ -43,7 +43,7 @@ function view_project(id) {
     document.getElementById('project-side').classList.remove('hidden');
 
     document.getElementById('project-title').textContent = id;
-    document.getElementById('project-bio').textContent = projects[id].bio;
+    document.getElementById('project-bio').innerHTML = projects[id].bio;
 
     document.getElementById('project-copyright').textContent = projects[id].copyright;
     document.getElementById('project-copyright').setAttribute('href',projects[id].links[0].link);

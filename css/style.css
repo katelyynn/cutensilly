@@ -172,10 +172,27 @@ h1:before, h2:before {
 }
 
 
+i {
+    padding: 0 2px;
+    background: hsl(var(--c2));
+    color: hsl(var(--b6));
+}
+
+
+.avatar {
+    height: 48px;
+}
+
+
 .project-lists {
     margin-top: 12px;
     display: flex;
     justify-content: space-between;
+}
+.project-lists > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 
