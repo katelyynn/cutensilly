@@ -133,6 +133,25 @@ let projects = {
             }
         ],
         copyright: '2022-2024 (c) kate GPL-3.0'
+    },
+    'vip': {
+        bio: 'protect the VIP - you probably know of it under a different name. each team is assigned a VIP, who must be kept alive for the team to win. last team remaining wins.',
+        links: [
+            {
+                type: 'modrinth',
+                link: 'https://modrinth.com/datapack/vip'
+            },
+            {
+                type: 'sauce2',
+                link: 'https://github.com/katelyynn/vip'
+            }
+        ],
+        copyright: '2022-2024 (c) kate GPL-3.0'
+    },
+    'bridge': {
+        bio: 'a heavy <i>WIP</i> take on the classic bridge duels trope seen throughout minecraft, aiming for full customisation and in-built maps.',
+        links: [],
+        copyright: '2022-2024 (c) kate GPL-3.0'
     }
 };
 
@@ -144,7 +163,7 @@ function view_project(id) {
     document.getElementById('project-bio').innerHTML = projects[id].bio;
 
     document.getElementById('project-copyright').textContent = projects[id].copyright;
-    document.getElementById('project-copyright').setAttribute('href',projects[id].links[0].link);
+    //try { document.getElementById('project-copyright').setAttribute('href',projects[id].links[0].link); } catch(e) {}
 
     document.getElementById('project-image').setAttribute('src',`../img/project/${id}.png`);
 
