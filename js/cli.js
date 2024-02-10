@@ -121,7 +121,7 @@ let projects = {
         copyright: '2021-2024 (c) kate GPL-3.0'
     },
     'snow-rising': {
-        bio: 'a fun, and very chilly, spin-off of Lava Rising. powder snow will engulf the world from the very bottom to the very top, who will win?',
+        bio: 'a fun, and very chilly, spin-off of lava rising. powder snow will engulf the world from the very bottom to the very top, who will win?',
         links: [
             {
                 type: 'modrinth',
@@ -135,7 +135,7 @@ let projects = {
         copyright: '2022-2024 (c) kate GPL-3.0'
     },
     'vip': {
-        bio: 'protect the VIP - you probably know of it under a different name. each team is assigned a VIP, who must be kept alive for the team to win. last team remaining wins.',
+        bio: 'aka. "protect the president" - each team is assigned a vip, who must be kept alive for the team to win. last team remaining wins.',
         links: [
             {
                 type: 'modrinth',

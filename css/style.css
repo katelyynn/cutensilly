@@ -45,7 +45,8 @@ body,
 
 
 body {
-    background: hsl(var(--b6));
+    background-color: hsl(var(--b6));
+    /*background-image: url('../img/wall.png');*/
     color: hsl(var(--c2));
     font-size: var(--font-size);
     line-height: var(--line-height);
