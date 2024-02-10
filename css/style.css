@@ -66,6 +66,8 @@ button, .btn {
     --shadow: 3px 3px 0 0 hsla(var(--c3), 30%);
     --shadow-hover: unset;
     padding: 4px 6px;
+    height: 27px;
+    box-sizing: border-box;
     appearance: unset;
     background: var(--back);
     color: var(--colour);
@@ -73,10 +75,13 @@ button, .btn {
     box-shadow: var(--shadow);
     text-decoration: none;
     display: inline-flex;
+    align-items: center;
+    gap: 4px;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     cursor: inherit;
+    user-select: none;
     transition-property: box-shadow, background, color, border, transform;
     transition-duration: 0.1s;
     transition-timing-function: ease;
@@ -113,6 +118,19 @@ button, .btn {
     --colour: hsl(var(--b6));
     --border: 1px solid hsl(var(--c2));
     --shadow: 3px 3px 0 0 hsla(var(--l3), 50%);
+}
+
+:is(button, .btn) .icon {
+    width: 10px;
+    height: 10px;
+    mask-image: var(--mask);
+    -webkit-mask-image: var(--mask);
+    background-color: currentColor;
+    position: relative;
+    bottom: 1px;
+}
+.icon.external {
+    --mask: url('../img/icon-link.png');
 }
 
 
@@ -209,6 +227,9 @@ i {
     --hue: 190;
     --sat: 1;
     --lit: 1;
+}
+img {
+    user-select: none;
 }
 
 

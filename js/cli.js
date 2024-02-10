@@ -176,15 +176,15 @@ function view_project(id) {
         elem.setAttribute('href',this_link.link);
 
         if (this_link.type == 'sauce') {
-            elem.textContent = 'view sauce';
+            elem.innerHTML = 'view sauce<div class="icon external"></div>';
             elem.classList.add('primary');
         } else if (this_link.type == 'sauce2') {
-            elem.textContent = 'view sauce';
+            elem.innerHTML = 'view sauce<div class="icon external"></div>';
         } else if (this_link.type == 'site') {
-            elem.textContent = 'view site';
+            elem.innerHTML = 'view site<div class="icon external"></div>';
             elem.classList.add('primary');
         } else if (this_link.type == 'modrinth') {
-            elem.textContent = 'view on modrinth';
+            elem.innerHTML = 'view on modrinth<div class="icon external"></div>';
             elem.classList.add('primary','brand','modrinth');
         }
 
