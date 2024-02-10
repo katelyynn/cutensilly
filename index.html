@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <head>
-    <title>welcome to kate world</title>
-    <meta name="title" content="welcome to kate world">
-    <meta name="description" content="Registered to: kate, she/her">
-    <meta property="og:title" content="welcome to kate world">
-    <meta property="og:description" content="Registered to: kate, she/her">
+    <title>kate@cutensilly.org</title>
+    <meta name="title" content="kate@cutensilly.org">
+    <meta name="description" content="my cute n silly site">
+    <meta property="og:title" content="kate@cutensilly.org">
+    <meta property="og:description" content="my cute n silly site">
     <!-- copy paste -->
-    <link rel="shortcut icon" type="ico" href="img/win.png"/>
+    <link rel="shortcut icon" type="ico" href="img/favi.png"/>
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <meta property="og:site_name" content="kate world">
+    <meta property="og:site_name" content="cutensilly.org">
     <meta property="og:type" content="website">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="og:url" content="https://cutensilly.org/">
@@ -25,285 +25,85 @@
     <script src="https://unpkg.com/tippy.js@6"></script>
 </head>
 <body>
-    <main class="desktop">
-        <div class="items" style="max-width: 90px">
-            <button class="item">
-                <img src="img/win_32.png">
-                <p>kate world</p>
-            </button>
-            <button class="item">
-                <img src="img/windows_three.png">
-                <p>find me</p>
-            </button>
-            <button class="item">
-                <img src="img/template_32.png">
-                <p>creations</p>
-            </button>
-        </div>
-    </main>
-    <footer class="taskbar">
-        <button data-action="start">
-            <img class="icon" src="img/start.png">
-            <p>Start</p>
-        </button>
-        <div class="tasks"></div>
-        <div class="tray">
-            <div class="tray-items">
-                <a href="https://www.2lay.net" target="_blank" id="tray-2lay">
-                    <img src="img/tray_2lay.png">
-                </a>
+    <main>
+        <section class="card direction-row" style="gap: 8px">
+            <div class="left" style="width: unset">
+                <img src="https://avatars.githubusercontent.com/u/46572320?v=4" class="avatar" alt="avatar">
             </div>
-            <p class="time" id="time">00:00</p>
-        </div>
-    </footer>
-    <script>
-        tippy(document.getElementById('tray-2lay'), {
-            content: `<i>friend:</i> 2lay's site`,
-            arrow: false,
-            followCursor: true,
-            animation: false,
-            allowHTML: true
-        });
-    </script>
-    <main class="windows">
-        <div class="window" style="position: relative; inset: 206px auto auto 8px;">
-            <header>
-                <img class="icon" src="img/win.png">
-                <p>welcome to kate world</p>
-                <button data-action="close"></button>
-            </header>
-            <main>
-                <div class="inset alt welcome panes">
-                    <div class="left-pane">
-                        <img src="img/kate.png">
-                    </div>
-                    <div class="right-pane welcome-items">
-                        <div class="welcome-item">
-                            <h2>System:</h2>
-                            <p>cutensilly.org</p>
-                            <p>4.10.1998</p>
-                            <p>2020 - 2024</p>
+            <div class="right" style="max-width: 550px">
+                <h1>haiii</h1>
+                <p>im kate :3 (she/her) whenever im not burned out i like to make games via minecraft datapacks, silly web dev, and silly random things ^^</p>
+            </div>
+        </section>
+        <section class="card direction-row big-gap">
+            <div class="left">
+                <h1>some stuff i've made</h1>
+                <p style="width: 300px">select a project that peaks ur interest to view it in more detail</p>
+                <div class="project-lists">
+                    <div class="list-left">
+                        <div class="project-list">
+                            <h2>full games</h2>
+                            <ul>
+                                <li onclick="view_project('laser-tag')">laser-tag <i>WIP</i></li>
+                                <li onclick="view_project('skyplex')">skyplex <i>WIP</i></li>
+                                <li onclick="view_project('bridge')">bridge <i>WIP</i></li>
+                            </ul>
                         </div>
-                        <div class="welcome-item">
-                            <h2>Registered to:</h2>
-                            <p>kate</p>
-                            <p>she/her</p>
+                        <div class="project-list">
+                            <h2>tools / qol</h2>
+                            <ul>
+                                <li onclick="view_project('clover')">clover</li>
+                                <li onclick="view_project('viola')">viola</li>
+                                <li onclick="view_project('entity-count')">entity-count</li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-        <div class="window" style="max-width: 500px; position: relative; inset: -170px auto auto 530px;">
-            <header>
-                <img class="icon" src="img/exec.png">
-                <p>where to find me</p>
-                <button data-action="close"></button>
-            </header>
-            <main>
-                <div class="inset panes">
-                    <div class="left-pane web">
-                        <img class="icon" src="img/windows_three.png">
-                        <h1>find me elsewhere</h1>
-                        <p>This folder contains links to my presence on various platforms.</p>
-                    </div>
-                    <div class="right-pane items">
-                        <a class="item" href="https://last.fm/user/cutensilly">
-                            <img src="img/media_shortcut.png">
-                            <p>Last.fm</p>
-                        </a>
-                        <a class="item" href="https://github.com/katelyynn">
-                            <img src="img/console_shortcut.png">
-                            <p>GitHub</p>
-                        </a>
-                        <a class="item" href="https://modrinth.com/user/kate">
-                            <img src="img/modrinth_shortcut.png">
-                            <p>Modrinth</p>
-                        </a>
-                        <a class="item" href="https://planetminecraft.com/member/katee">
-                            <img src="img/world_shortcut.png">
-                            <p>PlanetMC</p>
-                        </a>
-                        <button class="item" onclick="show_pronouns()">
-                            <img src="img/contact_shortcut.png">
-                            <p>Pronouns</p>
-                        </button>
-                        <a class="item" href="https://namemc.com/katehaj.1">
-                            <img src="img/globe_shortcut.png">
-                            <p>NameMC</p>
-                        </a>
-                    </div>
-                </div>
-            </main>
-            <footer>
-                <div class="inset-footer">
-                    6 items
-                </div>
-                <div class="inset-footer">
-                    <img class="icon" src="img/exec.png">
-                    where to find me
-                </div>
-            </footer>
-        </div>
-        <div class="window" style="max-width: 620px; position: relative; inset: -50px auto auto 330px;">
-            <header>
-                <img class="icon" src="img/template.png">
-                <p>what have i made?</p>
-                <button data-action="close"></button>
-            </header>
-            <main>
-                <div class="inset panes">
-                    <div class="left-pane web">
-                        <img class="icon" src="img/template_32.png">
-                        <h1>what have i made?</h1>
-                        <p>This folder contains links to some of my projects i've made. The first three are much bigger unfinished projects.</p>
-                    </div>
-                    <div class="right-pane items" id="items_ive_made">
-                        <!-- gets filled in below -->
-                    </div>
-                </div>
-            </main>
-            <footer>
-                <div class="inset-footer">
-                    16 items
-                </div>
-                <div class="inset-footer">
-                    <img class="icon" src="img/template.png">
-                    what have i made?
-                </div>
-            </footer>
-        </div>
-        <div class="window" id="preview_window" style="max-width: 758px; width: 758px; position: relative; inset: -450px auto auto 650px; display: none;">
-            <header>
-                <img class="icon" src="img/template.png">
-                <p>project preview</p>
-                <button data-action="close" onclick="hide_preview()"></button>
-            </header>
-            <main>
-                <div class="inset panes">
-                    <div class="left-pane web">
-                        <img class="icon" src="img/template_32.png">
-                        <h1 id="preview_title"></h1>
-                        <p id="preview_bio"></p>
-                        <a class="button" id="preview_go" target="_blank" style="margin-top: 20px">View more</a>
-                    </div>
-                    <div class="right-pane">
-                        <img id="preview_img" alt="Preview image">
-                    </div>
-                </div>
-            </main>
-            <footer>
-                <div class="inset-footer">
-
-                </div>
-                <div class="inset-footer">
-                    <img class="icon" src="img/template.png">
-                    project preview
-                </div>
-            </footer>
-        </div>
-        <div class="window" id="pronouns_window" style="position: relative; inset: -627px auto auto 994px; display: none;">
-            <header>
-                <img class="icon" src="img/contact_16.png">
-                <p>pronouns</p>
-                <button data-action="close" onclick="hide_pronouns()"></button>
-            </header>
-            <footer class="top auto" id="prn-flags"></footer>
-            <main>
-                <div class="inset panes">
-                    <div class="right-pane welcome-items">
-                        <div class="welcome-item" id="prn-names">
-                            <h2>Names:</h2>
-                        </div>
-                        <div class="welcome-item" id="prn-honorifics">
-                            <h2>Honorifics:</h2>
+                        <div class="project-list">
+                            <h2>event games</h2>
+                            <ul>
+                                <li onclick="view_project('achievement-race')">achievement-race</li>
+                                <li onclick="view_project('infection')">infection</li>
+                                <li onclick="view_project('lava-rising')">lava-rising</li>
+                                <li onclick="view_project('snow-rising')">snow-rising</li>
+                                <li onclick="view_project('vip')">vip</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="right-pane welcome-items">
-                        <div class="welcome-item" id="prn-pronouns">
-                            <h2>Pronouns:</h2>
-                        </div>
-                        <div class="welcome-item" id="prn-person n family">
-                            <h2>Person / family:</h2>
-                        </div>
-                    </div>
-                    <div class="right-pane welcome-items">
-                        <div class="welcome-item" id="prn-compliments">
-                            <h2>Compliments:</h2>
-                        </div>
-                        <div class="welcome-item" id="prn-relationships">
-                            <h2>Relationships:</h2>
+                    <div class="list-right">
+                        <div class="project-list">
+                            <h2>cool projects</h2>
+                            <ul>
+                                <li onclick="view_project('bleh')">bleh</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </main>
-        </div>
+            </div>
+            <div class="right hidden" id="project-side">
+                <div class="preview">
+                    <img id="project-image" alt="project image">
+                </div>
+                <h1 id="project-title"></h1>
+                <p id="project-bio"></p>
+                <div class="btn-grid" id="project-links"></div>
+                <a class="copyright" id="project-copyright" target="_blank"></a>
+            </div>
+        </section>
+        <section class="card">
+            <h1>find me elsewhere</h1>
+            <p>im all over kinda a bit</p>
+            <div class="btn-grid">
+                <a class="btn" href="https://github.com/katelyynn" target="_blank">github<div class="icon external"></div></a>
+                <a class="btn colourful brand modrinth" href="https://modrinth.com/user/kate" target="_blank">modrinth<div class="icon external"></div></a>
+                <a class="btn colourful brand lastfm" href="https://last.fm/user/cutensilly" target="_blank">last.fm<div class="icon external"></div></a>
+                <a class="btn colourful brand pmc" href="https://planetminecraft.com/member/katee" target="_blank">planetminecraft<div class="icon external"></div></a>
+            </div>
+        </section>
+        <section class="card">
+            <h1>friends</h1>
+            <div class="btn-grid">
+                <a class="btn" href="https://2lay.net" target="_blank" id="2lay">ashley@2lay.net<div class="icon external"></div></a>
+            </div>
+        </section>
     </main>
 </body>
-<script src="/js/pronouns.js"></script>
-<script>
-    let i_made = [
-        {id:'bleh',link:'/bleh/fm/',bio:'a complete visual overhaul for last.fm, incomplete but good enough at this stage. check out the site for more information and tweaks.'},
-        {id:'laser-tag',link:'https://github.com/katelyynn/laser-tag',bio:'a WIP(!) massive crossbow-based Minecraft shooter game which aims to contain a variety of minigames, maps, and advanced configuration.'},
-        {id:'skyplex',link:'https://github.com/katelyynn/skyplex',bio:'a WIP(!) vanilla RPG-esc, vaguely Hypixel Skyblock-inspired experience in Minecraft - featuring professions, leveling, xp boosters, quests, shops, and more planned.'},
-        {id:'survival-games',link:'https://github.com/katelyynn/survival-games',bio:'host your very own Survival Games in Minecraft! Featuring supply crates, custom world border movement, in-built loot tables with a range of tiers, spawn mechanics, and a fun time :3'},
-        {id:'viola',link:'https://modrinth.com/resourcepack/viola',bio:'my sleek, modern, and purple UI pack for Minecraft.'},
-        {id:'clover',link:'https://modrinth.com/datapack/clover',bio:'all-in-one datapack/mod for pronouns & name colours in chat.'},
-        {id:'achievement-race',link:'https://modrinth.com/datapack/achievementrace',bio:'each achievement gives a set amount of points, based on a range of factors. to start, 6 achievements are 2x multiplied for game variety. the player with the most points after 45 mins is the winner!'},
-        {id:'survival-games-map',link:'https://planetminecraft.com/project/gsot-survival-games/',bio:'play in a custom-built survival games map, powered by the bundled survival games datapack. built by the GSOT team (which included me!).'},
-        {id:'trades',link:'https://github.com/katelyynn/trades',bio:'easily generate villager trades using a simple JSON input (and potential GUI interface someday).'},
-        {id:'infection',link:'https://modrinth.com/datapack/infection',bio:'gather resources for 8 mins before one player is infected - with the goal to kill and infect all remaining survivors. if any survivors remain once the timer reaches zero, the infected have failed.'},
-        {id:'playtime-tracker',link:'https://modrinth.com/datapack/playtimetracker',bio:'track your world playtime and display it in days, hours, minutes, and seconds.'},
-        {id:'entity-count',link:'https://modrinth.com/datapack/entitycount',bio:'count all entities currently loaded throughout your world.'},
-        {id:'lava-rising',link:'https://modrinth.com/datapack/lavarising',bio:'get time to prepare before the lava begins to engulf the world from the very bottom to the very top, who will win?'},
-        {id:'snow-rising',link:'https://modrinth.com/datapack/snowrising',bio:'a fun, and very chilly, spin-off of Lava Rising. powder snow will engulf the world from the very bottom to the very top, who will win?'},
-        {id:'vip',link:'https://modrinth.com/datapack/vip',bio:'protect the VIP - you probably know of it under a different name. each team is assigned a VIP, who must be kept alive for the team to win. last team remaining wins.'},
-        {id:'bridge',link:'https://github.com/katelyynn/bridge',bio:'a heavy WIP(!) take on the classic Bridge Duels trope seen throughout Minecraft, aiming for full customisation and in-built maps.'},
-    ];
-
-    let em_items = document.getElementById('items_ive_made');
-    for (let item in i_made) {
-        let elem = document.createElement('button');
-        elem.classList.add('item');
-        elem.setAttribute('onclick',`open_preview(${item})`);
-        elem.innerHTML = (`
-            <img src="img/template_shortcut.png">
-            <p>${i_made[item].id}</p>
-        `);
-        em_items.appendChild(elem);
-    };
-
-    function open_preview(id) {
-        document.getElementById('preview_title').textContent = i_made[id].id;
-        document.getElementById('preview_bio').textContent = i_made[id].bio;
-        document.getElementById('preview_img').setAttribute('src',`img/preview_${i_made[id].id}.png`);
-        document.getElementById('preview_go').setAttribute('href',i_made[id].link);
-        document.getElementById('preview_window').style.removeProperty('display');
-    }
-    function hide_preview() {
-        document.getElementById('preview_window').style.setProperty('display','none');
-    }
-
-    function show_pronouns() {
-        document.getElementById('pronouns_window').style.removeProperty('display');
-    }
-    function hide_pronouns() {
-        document.getElementById('pronouns_window').style.setProperty('display','none');
-    }
-
-    $(function() {
-        $('.window').draggable({ containment: '.windows', handle: 'header' });
-        $('.item').draggable({});
-    });
-
-    set_time();
-    setInterval(set_time, 100);
-
-    function set_time() {
-        let date = new Date();
-        let hours = '0' + date.getHours();
-        let mins = '0' + date.getMinutes();
-        let secs = '0' + date.getSeconds();
-
-        document.getElementById('time').textContent = hours.substr(-2) + ':' + mins.substr(-2);
-    }
-</script>
+<script src="js/cli.js"></script>
