@@ -23,7 +23,7 @@ body
 /* text + links */
 body,
 .avatar,
-.btn
+button, .btn
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
     --c2: var(--hue), calc(var(--sat) * 14%), 70%;
@@ -122,15 +122,27 @@ button, .btn {
 
 :is(button, .btn) .icon {
     width: 10px;
-    height: 10px;
+    height: 100%;
     mask-image: var(--mask);
     -webkit-mask-image: var(--mask);
+    mask-position: 0 3px;
+    mask-repeat: no-repeat;
     background-color: currentColor;
-    position: relative;
-    bottom: 1px;
 }
 .icon.external {
     --mask: url('../img/icon-link.png');
+}
+.icon.arrow {
+    --mask: url('../img/icon-arrow.png');
+}
+.icon.download {
+    --mask: url('../img/icon-download.png');
+}
+.icon.home {
+    --mask: url('../img/icon-home.png');
+}
+.icon.fail {
+    --mask: url('../img/icon-fail.png');
 }
 
 
@@ -227,6 +239,25 @@ i {
     --hue: 190;
     --sat: 1;
     --lit: 1;
+}
+.fake-avatar {
+    width: 27px;
+    height: 27px;
+    background-color: hsl(var(--l2));
+    box-shadow: 2px 2px 0 0 hsla(var(--l3), 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --hue: -2;
+    --sat: 1;
+    --lit: 1;
+}
+.fake-avatar .icon {
+    width: 10px;
+    height: 10px;
+    mask-image: var(--mask);
+    -webkit-mask-image: var(--mask);
+    background-color: hsl(var(--b6));
 }
 img {
     user-select: none;
