@@ -1,6 +1,23 @@
 // cli
 
 
+let theme = localStorage.getItem('saved_theme') || 'dark';
+save_theme(theme);
+
+function toggle_theme() {
+    if (theme == 'dark')
+        save_theme('light');
+    else
+        save_theme('dark');
+}
+
+function save_theme(new_theme) {
+    document.body.setAttribute('data-theme',new_theme);
+    localStorage.setItem('saved_theme',new_theme);
+    theme = new_theme;
+}
+
+
 let projects = {
     'laser-tag': {
         bio: 'a <i>WIP</i> massive crossbow-based minecraft shooter game which aims to contain a variety of minigames, maps, and advanced configuration.',

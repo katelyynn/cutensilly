@@ -14,16 +14,23 @@
 }
 
 /* backgrounds */
-body
+[data-theme="dark"]
 {
     --b5: var(--hue), 0%, 7%;
     --b6: var(--hue), 0%, 0%;
 }
+[data-theme="light"]
+{
+    --b5: var(--hue), 0%, 93%;
+    --b6: var(--hue), 0%, 100%;
+}
 
 /* text + links */
-body,
-.avatar,
-button, .btn
+[data-theme="dark"],
+[data-theme="dark"] :is(
+    .avatar,
+    button, .btn
+)
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
     --c2: var(--hue), calc(var(--sat) * 14%), 70%;
@@ -32,6 +39,20 @@ button, .btn
     --l2: var(--hue), calc(var(--sat) * 50%), calc(var(--lit) * 73%);
     --l3: var(--hue), calc(var(--sat) * 60%), calc(var(--lit) * 60%);
     --l4: var(--hue), calc(var(--sat) * 70%), calc(var(--lit) * 50%);
+}
+[data-theme="light"],
+[data-theme="light"] :is(
+    .avatar,
+    button, .btn
+)
+{
+    --c1: var(--hue), calc(var(--sat) * 6%), 0%;
+    --c2: var(--hue), calc(var(--sat) * 4%), 25%;
+    --c3: var(--hue), calc(var(--sat) * 10%), 30%;
+
+    --l2: var(--hue), calc(var(--sat) * 40%), calc(var(--lit) * 55%);
+    --l3: var(--hue), calc(var(--sat) * 50%), calc(var(--lit) * 55%);
+    --l4: var(--hue), calc(var(--sat) * 60%), calc(var(--lit) * 25%);
 }
 
 ::-moz-selection {
@@ -53,6 +74,9 @@ body {
     font-family: var(--font);
     cursor: default;
     box-sizing: border-box;
+    transition-property: box-shadow, background, color, border, transform;
+    transition-duration: 2s;
+    transition-timing-function: ease;
 }
 
 
@@ -116,7 +140,7 @@ button, .btn {
 .primary {
     --back: hsl(var(--l2));
     --colour: hsl(var(--b6));
-    --border: 1px solid hsl(var(--c2));
+    --border: 1px solid hsl(var(--l2));
     --shadow: 3px 3px 0 0 hsla(var(--l3), 50%);
 }
 
@@ -217,9 +241,15 @@ main {
 
 h1 {
     color: hsl(var(--c1));
+    transition-property: box-shadow, background, color, border, transform;
+    transition-duration: 2s;
+    transition-timing-function: ease;
 }
 h2 {
     color: hsl(var(--c3));
+    transition-property: box-shadow, background, color, border, transform;
+    transition-duration: 2s;
+    transition-timing-function: ease;
 }
 h1:before, h2:before {
     content: '#';
@@ -230,6 +260,9 @@ i {
     padding: 0 2px;
     background: hsl(var(--c2));
     color: hsl(var(--b6));
+    transition-property: box-shadow, background, color, border, transform;
+    transition-duration: 2s;
+    transition-timing-function: ease;
 }
 
 
