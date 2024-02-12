@@ -133,6 +133,12 @@ button, .btn {
 .lastfm {
     --hue: -2;
 }
+.rym {
+    --hue: 200;
+}
+.discogs {
+    --hue: 35;
+}
 .pmc {
     --hue: 160;
 }
@@ -350,6 +356,7 @@ li:before {
 }
 .tippy-content {
     padding: 2px 4px;
+    color: hsl(var(--c2));
 }
 
 

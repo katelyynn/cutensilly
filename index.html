@@ -98,6 +98,8 @@
                 <a class="btn" href="https://github.com/katelyynn" target="_blank">github<div class="icon external"></div></a>
                 <a class="btn colourful brand modrinth" href="https://modrinth.com/user/kate" target="_blank">modrinth<div class="icon external"></div></a>
                 <a class="btn colourful brand lastfm" href="https://last.fm/user/cutensilly" target="_blank">last.fm<div class="icon external"></div></a>
+                <a class="btn colourful brand rym" id="btn-rym" href="https://rateyourmusic.com/~kateshapedbox" target="_blank">music ratings<div class="icon external"></div></a>
+                <a class="btn colourful brand discogs" id="btn-discogs" href="https://www.discogs.com/user/katenyaa/collection" target="_blank">music collection<div class="icon external"></div></a>
                 <a class="btn colourful brand pmc" href="https://planetminecraft.com/member/katee" target="_blank">planetminecraft<div class="icon external"></div></a>
             </div>
         </section>
@@ -109,4 +111,16 @@
         </section>
     </main>
 </body>
+<script>
+    tippy(document.getElementById('btn-rym'), {
+        content: 'rateyourmusic',
+        arrow: false,
+        allowHTML: true
+    });
+    tippy(document.getElementById('btn-discogs'), {
+        content: 'discogs',
+        arrow: false,
+        allowHTML: true
+    });
+</script>
 <script src="js/cli.js"></script>
