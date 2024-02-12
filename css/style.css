@@ -274,10 +274,11 @@ i {
 
 .avatar {
     height: 48px;
-    box-shadow: 2px 2px 0 0 hsla(var(--l3), 50%);
+    /*box-shadow: 2px 2px 0 0 hsla(var(--l3), 50%);
     --hue: 190;
     --sat: 1;
-    --lit: 1;
+    --lit: 1;*/
+    box-shadow: 2px 2px 0 0 hsla(var(--c3), 30%);
 }
 .fake-avatar {
     width: 27px;
