@@ -25,7 +25,7 @@ let style_addons = [
     'winter-haters'
 ]
 let latest_versions = {
-    'main': 2024.0101,
+    'main': 2024.0320,
     'amoled': 2023.1210,
     'accent': 2023.0922,
     'light': 2023.0808,

@@ -18,9 +18,9 @@ let style_addons = [
     'bleh2-accent'
 ]
 let latest_versions = {
-    'main': 2024.0311,
-    'bleh2-oled': 2024.0106,
-    'bleh2-accent': 2024.0106
+    'main': 2024.0320,
+    'bleh2-oled': 2024.0320,
+    'bleh2-accent': 2024.0320,
 }
 let any_updates_available = false;
 let sent_update_notif = false;
