@@ -54,6 +54,7 @@
     <link rel="stylesheet" href="/owo/css/avatar.css">
     <link rel="stylesheet" href="/owo/css/status.css">
     <link rel="stylesheet" href="/owo/css/input.css">
+    <link rel="stylesheet" href="/owo/css/grid.css">
     <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.07"></div>
     <div class="bg-grad med-bg" style="background: linear-gradient(180deg, hsla(var(--l3), 20%) 0%, hsl(var(--b6)) 100%); z-index: 0"></div>
     <main class="panel-container">
@@ -61,13 +62,10 @@
         <section class="side-by-side content right">
             <link rel="stylesheet" href="/owo/css/fm/preview.css">
             <div class="text flex flex-align-center flex-column flex-gap" style="--gap: 20px">
-                <a href="https://last.fm/user/cutensilly" target="_blank">
-                    <img class="pfp" style="width: 60px;" src="/img/shiggy.gif">
-                </a>
-                <h2 class="hi kate" style="font-size: 87px; line-height: 70px; position: relative; left: -8px;">
-                    <a href="/bleh/fm/bleh2" style="text-decoration: none">bleh<sup>2 BETA</sup></a>
+                <h2 class="hi kate" style="font-size: 60px; line-height: 44px;">
+                    <a href="/bleh/fm/" style="text-decoration: none">bleh<sup>2 BETA</sup></a>
                 </h2>
-                <h3>custom colour picker</h3>
+                <h4>theme settings</h4>
             </div>
         </section>
         <div class="gap" style="--gap: 40px"></div>
@@ -79,8 +77,69 @@
                 <i class="icon w-16" data-lucide="refresh-ccw"></i>
             </a>
         </section>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            .control-panel {
+                grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            }
+
+            .btn.control-panel-item {
+                --top: 16px;
+                --sides: 16px;
+                --bg: transparent;
+                --bg-hov: hsla(var(--b2), 20%);
+                --bg-atv: hsla(var(--b2), 40%);
+                box-shadow: none;
+                width: 100%;
+                justify-content: left;
+            }
+            .btn.control-panel-item .text {
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+            }
+            .btn.control-panel-item h5 {
+                color: hsl(var(--c1));
+                font-size: 16px;
+            }
+            .btn.control-panel-item p {
+                font-weight: 400;
+                color: hsl(var(--c3));
+                font-size: 14px;
+            }
+        </style>
         <section class="panel lfm-preview" id="main">
-            <div class="rows">
+            <div class="rows" data-page="home">
+                <div class="row separator" style="grid-template-columns: unset;">
+                    <div>
+                        <h5>What are you looking for?</h5>
+                        <div class="item-grid control-panel">
+                            <a class="btn control-panel-item item" href="#accent">
+                                <div class="image">
+                                    <i class="icon w-32" data-lucide="paintbrush"></i>
+                                </div>
+                                <div class="text">
+                                    <h5>Customise your accent colour</h5>
+                                    <p>Enjoy last.fm in a fresh coat of paint.</p>
+                                </div>
+                            </a>
+                            <a class="btn control-panel-item item" href="#gloss">
+                                <div class="image">
+                                    <i class="icon w-32" data-lucide="disc-album"></i>
+                                </div>
+                                <div class="text">
+                                    <h5>Adjust image gloss</h5>
+                                    <p>Change the opacity of album/artist cover's gloss.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rows" data-page="accent" id="accent">
                 <div class="row separator">
                     <div>
                         <h5>Customise your accent colour</h5>
@@ -122,26 +181,6 @@
                         </div>
                     </div>
                     <div>
-                        <h5>Export into bleh2 theme</h5>
-                        <div class="copy-code">
-                            <pre id="copy"></pre>
-                            <button class="btn mimic icon-btn" data-clipboard-target="#copy">
-                                <i class="icon w-20" data-lucide="copy"></i>
-                            </button>
-                        </div>
-                        <div class="hint">
-                            <ol class="steps">
-                                <li>Install <a href="https://github.com/katelmao/lastfm-bleh/raw/uwu/lastfm-hue.user.css" target="_blank">this extension</a></li>
-                                <li>Open either the <strong class="margin"><img src="/img/chrome-extension.png"> Chrome</strong> or <strong class="margin"><img src="/img/firefox-extension.png"> Firefox</strong> buttons</li>
-                                <li>Click the <strong class="margin"><img src="/img/stylus.png"> Stylus</strong> entry inside the menu</li>
-                                <li>Find <code>bleh2 (hue)</code> and hit the <strong class="margin"><i class="icon w-16" data-lucide="pencil"></i> Edit</strong> button</li>
-                                <li>Copy the values here into the newly opened tab</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
                         <h5>Preview</h5>
                         <div class="pallete">
                             <!--<div style="--col: hsl(var(--l1))"></div>
@@ -161,6 +200,64 @@
                     </div>
                 </div>
             </div>
+            <div class="rows" data-page="gloss" id="gloss">
+                <div class="row">
+                    <div>
+                        <h5>Adjust image gloss</h5>
+                        <div class="slider-container">
+                            <div class="heading">Opacity</div>
+                            <div class="slider">
+                                <input type="range" min="0" max="1" value="0.2" step="0.05" oninput="update_value(this.value, 'gloss')">
+                                <p id="value-gloss">0.2</p>
+                            </div>
+                            <div class="hint">
+                                <p style="left: 0">0</p>
+                                <p style="left: 20%">0.2</p>
+                                <p style="left: 100%">1</p>
+                            </div>
+                        </div>
+                        <p class="caption">If you really aren't a fan, setting to 0 obviously hides it completely.</p>
+                    </div>
+                    <div>
+                        <h5>Preview</h5>
+                        <div class="pallete" style="height: fit-content">
+                            <div class="album-cover" style="background: #000"></div>
+                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/b897255bf422baa93a42536af293f9f8.jpg')"></div>
+                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/ece37f683016f2c7bf5222254e2eb5a1.jpg')"></div>
+                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/3f0266af96efa67250bed3c87e6deb45.jpg')"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .caption {
+                    font-size: 14px;
+                    margin-top: 12px;
+                    color: hsl(var(--c3));
+                }
+
+                .album-cover {
+                    aspect-ratio: 1 / 1;
+                    position: relative;
+                    overflow: hidden;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border: 1px solid hsl(var(--b4));
+                    box-sizing: border-box;
+                }
+                .album-cover:after {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background-image: url(/img/gloss.svg) !important;
+                    background-size: 100% !important;
+                    opacity: var(--gloss, 0.2);
+                    pointer-events: none;
+                    padding: unset !important;
+                    box-shadow: unset !important;
+                }
+            </style>
             <script>
                 new ClipboardJS('.btn');
                 function open_tutorial() {
@@ -255,6 +352,26 @@
                 </div>
             </div>-->
         </section>
+        <section class="panel lfm-preview" id="export">
+            <div>
+                <h5>Export into bleh2 theme</h5>
+                <div class="copy-code">
+                    <pre id="copy"></pre>
+                    <button class="btn mimic icon-btn" data-clipboard-target="#copy">
+                        <i class="icon w-20" data-lucide="copy"></i>
+                    </button>
+                </div>
+                <div class="hint">
+                    <ol class="steps">
+                        <li>Install <a href="https://github.com/katelmao/lastfm-bleh/raw/uwu/lastfm-hue.user.css" target="_blank">this extension</a></li>
+                        <li>Open either the <strong class="margin"><img src="/img/chrome-extension.png"> Chrome</strong> or <strong class="margin"><img src="/img/firefox-extension.png"> Firefox</strong> buttons</li>
+                        <li>Click the <strong class="margin"><img src="/img/stylus.png"> Stylus</strong> entry inside the menu</li>
+                        <li>Find <code>bleh2 (settings)</code> / <code>bleh2 (hue)</code> and hit the <strong class="margin"><i class="icon w-16" data-lucide="pencil"></i> Edit</strong> button</li>
+                        <li>Copy the values here into the newly opened tab</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
         <link rel="stylesheet" href="/css/track-lfm.css">
         <div class="gap" style="--gap: 10px"></div>
     </main>
@@ -264,7 +381,8 @@
         hue: 255,
         saturation: 1,
         lightness: 1,
-        invert: 'var(--b7)'
+        invert: 'var(--b7)',
+        gloss: 0.2
     };
     function update_value(value, type) {
         document.body.style.setProperty(`--${type}`,value);
@@ -289,7 +407,8 @@
         copy.innerHTML = (`--hue: ${bleh.hue};
 --sat: ${bleh.saturation};
 --lit: ${bleh.lightness};
---ovr: ${bleh.invert};`);
+--ovr: ${bleh.invert};
+--gloss-opacity: ${bleh.gloss};`);
     }
 
     update_copy();
@@ -297,7 +416,7 @@
 <footer>
     <div class="footer-inner" bis_skin_checked="1">
         <span class="main" id="footer.main">
-            <a class="over hide" href="https://github.com/katelmao/lastfm-bleh/blob/uwu/LICENSE" target="_blank" bis_skin_checked="1">kate 2022-2023</a>
+            <a class="over hide" href="https://github.com/katelmao/lastfm-bleh/blob/uwu/LICENSE" target="_blank" bis_skin_checked="1">kate 2022-2024</a>
         </span>
         <span class="links" id="footer.links">
             <a href="https://github.com/katelmao/lastfm-bleh" bis_skin_checked="1">View Source</a>

@@ -2,10 +2,10 @@
     owo
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
 
 :root, body {
-    --font: 'Spline Sans', Inter, -apple-system, BlinkMacSystemFont, Roboto, "Noto Sans JP", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font: IBM Plex Sans JP, Inter, -apple-system, BlinkMacSystemFont, Roboto, "Noto Sans JP", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --base-hue: 255;
     --saturation: 1;
     --lightness: 1;
@@ -68,6 +68,7 @@
     --c3: var(--base-hue), calc(var(--saturation)*10%), 60%;
     --c4: var(--c2), 75%;
     /* can invert */
+    --ov-c1: var(--c1);
     --c1-can-invert: var(--base-hue), calc(var(--saturation)*40%), calc(var(--invert-eligible)*100%);
     /* custom */
     --b0: var(--base-hue), calc(var(--saturation)*8%), 52%;
