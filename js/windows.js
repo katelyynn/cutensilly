@@ -154,14 +154,14 @@ function create_theme_window(type,show_warning = false) {
 function create_install_window() {
     create_window('hey!','<strong>Real quick,</strong> you are about to install a <i class="hi">legacy version</i> of bleh that is <i class="hi">no longer supported</i>. Are you sure?',[
         {
-            'text': 'Cancel',
-            'onclick': 'kill_windows()',
-            'type': 'mimic'
-        },
-        {
             'text': 'Continue',
             'onclick': `continue_with_bleh1()`,
             'type': 'mimic'
+        },
+        {
+            'text': 'Cancel',
+            'onclick': 'kill_windows()',
+            'type': 'primary'
         }
     ],'install_theme')
 }
