@@ -18,7 +18,7 @@ let style_addons = [
     'bleh2-accent'
 ]
 let latest_versions = {
-    'main': 2024.0321,
+    'main': 2024.0330,
     'bleh2-oled': 2024.0320,
     'bleh2-accent': 2024.0320,
 }
