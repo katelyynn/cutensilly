@@ -1,14 +1,14 @@
 /* kate-cli */
 
 @import url('reset.css');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root, body {
     --hue: 255;
     --sat: 1;
     --lit: 1;
 
-    --font: IBM Plex Mono, Iosevka, JetBrains Mono, Roboto Mono, monospace, sans-serif;
+    --font: JetBrains Mono, Roboto Mono, monospace, sans-serif;
     --font-size: 13px;
     --line-height: calc(var(--font-size) + 4px);
 }
@@ -132,6 +132,9 @@ button, .btn {
 }
 .lastfm {
     --hue: -2;
+}
+.soundcloud {
+    --hue: 15;
 }
 .rym {
     --hue: 200;
