@@ -31,8 +31,8 @@
             "destination": "/bleh/fm/customise/"
         },
         {
-            "source": "/hateful",
-            "destination": "/bleh/fm/hateful"
+            "source": "/hateful/",
+            "destination": "/bleh/fm/hateful/"
         }
     ]
 }
