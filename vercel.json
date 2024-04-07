@@ -20,11 +20,19 @@
         },
         {
             "source": "/lfm",
-            "destination": "/bleh/fm"
+            "destination": "/bleh/fm/"
+        },
+        {
+            "source": "/bleh",
+            "destination": "/bleh/fm/"
         },
         {
             "source": "/lfm/hue",
-            "destination": "/bleh/fm/customise"
+            "destination": "/bleh/fm/customise/"
+        },
+        {
+            "source": "/hateful",
+            "destination": "/bleh/fm/hateful"
         }
     ]
 }
