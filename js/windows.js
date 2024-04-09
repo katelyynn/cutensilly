@@ -8,33 +8,6 @@ let theme_windows = {
         'description': '(limited for winter) removes the effects if u hate them',
         'image': '/img/shiggy-chilly.png'
     },
-    'amoled': {
-        'icon': 'moon-star',
-        'name': 'amoled',
-        'description': 'special addon for a darker feel!',
-        'image': '/img/amoled.png'
-    },
-    'accent': {
-        'icon': 'paintbrush',
-        'name': 'album covers',
-        'description': 'match the page accent to the album cover :3<br><br>note: only a select amount of albums are supported, a suggestions thread will be open soon!!',
-        'image': '/img/accent.png',
-        'status': 'wip'
-    },
-    'light': {
-        'icon': 'sun',
-        'name': 'light',
-        'description': 'special addon for a brighter feel!',
-        'image': '/img/light.png',
-        'status': 'alpha'
-    },
-    'performance': {
-        'icon': 'chevrons-down',
-        'name': 'performance',
-        'description': 'lower intensity of blurs n glows',
-        'image': '/img/performance.png',
-        'status': 'alpha'
-    },
     'feat': {
         'icon': 'star',
         'name': 'feat. artists',
@@ -46,19 +19,6 @@ let theme_windows = {
         'name': 'chart colours',
         'description': 'apply colour based on charting position',
         'image': '/img/chart.png'
-    },
-    'motion': {
-        'icon': 'move-diagonal',
-        'name': 'reduced motion',
-        'description': 'remove significant page animations',
-        'image': '/img/motion.png'
-    },
-    'covers': {
-        'icon': 'gallery-vertical-end',
-        'name': 'custom covers',
-        'description': 'slightly tweaked album covers..',
-        'image': '/img/covers.png',
-        'status': 'wip'
     },
     'bleh2-oled': {
         'icon': 'moon-star',
@@ -151,24 +111,6 @@ function create_theme_window(type,show_warning = false) {
 }
 
 
-function create_install_window() {
-    create_window('hey!','<strong>Real quick,</strong> you are about to install a <i class="hi">legacy version</i> of bleh that is <i class="hi">no longer supported</i>. Are you sure?',[
-        {
-            'text': 'Continue',
-            'onclick': `continue_with_bleh1()`,
-            'type': 'mimic'
-        },
-        {
-            'text': 'Cancel',
-            'onclick': 'kill_windows()',
-            'type': 'primary'
-        }
-    ],'install_theme')
-}
-function continue_with_bleh1() {
-    kill_windows();
-    create_install_window2();
-}
 function create_install_window2() {
     create_window('hey!','<strong>This theme uses the <a href="https://github.com/openstyles/stylus#releases" target="_blank">Stylus</a> browser extension.</strong><br><br>Ensure you have it installed before continuing.',[
         {
