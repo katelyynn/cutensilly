@@ -366,17 +366,13 @@
         saturation: 1,
         lightness: 1,
         invert: 'var(--b7)',
-        gloss: 'unset',
-        'main-width': 'unset',
-        'sidebar-width': 'unset'
+        gloss: 0.2,
+        'main-width': 902
     };
     function update_value(value, type) {
         document.body.style.setProperty(`--${type}`,value);
         document.getElementById(`value-${type}`).textContent = value;
         if (type == 'base-hue') bleh.hue = value;
-        else if (type == 'main-width' && value == 902) bleh['main-width'] = 'unset';
-        else if (type == 'sidebar-width' && value == 400) bleh['sidebar-width'] = 'unset';
-        else if (type == 'gloss' && value == 0.2) bleh.gloss = 'unset';
         else               bleh[type] = value;
 
         if (bleh.hue > 228 && bleh.hue < 252 && bleh.lightness < 0.75) {
@@ -402,16 +398,7 @@
 --lit: ${bleh.lightness};
 --ovr: ${bleh.invert};
 --gloss-opacity: ${bleh.gloss};
---cards-main-width: ${show(bleh['main-width'])};
---cards-sidebar-width: ${show(bleh['sidebar-width'])};`);
-    }
-
-    function show(text) {
-        if (text == 'unset') {
-            return text;
-        } else {
-            return `${text}px`;
-        }
+--cards-main-width: ${bleh['main-width']};`);
     }
 
     update_copy();
