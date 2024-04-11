@@ -196,6 +196,16 @@ input[type="range"]::-moz-range-thumb {
     letter-spacing: 0.8px;
     color: hsl(var(--c2));
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.slider-container .heading p {
+    flex: 1;
+}
+.slider-container .heading .btn {
+    --top: 3px;
+    --sides: 7px;
 }
 
 
@@ -253,11 +263,13 @@ ol li:before {
     content: counter(list);
     aspect-ratio: 1 / 1;
     width: 30px;
-    border-radius: 50px;
+    border-radius: 6px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: hsla(var(--l2), 25%);
+    background-color: hsla(var(--l3), 25%);
+    font-size: 14px;
+    font-weight: 500;
     margin-right: 12px;
 }
 

@@ -135,6 +135,15 @@
                                     <p>Change the opacity of album/artist cover's gloss.</p>
                                 </div>
                             </a>
+                            <a class="btn control-panel-item item" href="#cards">
+                                <div class="image">
+                                    <i class="icon w-32" data-lucide="layout-dashboard"></i>
+                                </div>
+                                <div class="text">
+                                    <h5>Adjust card width</h5>
+                                    <p>Change the size of bleh2.</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -144,9 +153,9 @@
                     <div>
                         <h5>Customise your accent colour</h5>
                         <div class="slider-container">
-                            <div class="heading">Accent colour</div>
+                            <div class="heading"><p>Accent colour</p><button class="btn reset" onclick="reset_value('base-hue',255)">Reset to default</button></div>
                             <div class="slider">
-                                <input type="range" min="0" max="360" value="255" oninput="update_value(this.value, 'base-hue')">
+                                <input type="range" min="0" max="360" value="255" id="slider-base-hue" oninput="update_value(this.value, 'base-hue')">
                                 <p id="value-base-hue">255</p>
                             </div>
                             <div class="hint">
@@ -156,9 +165,9 @@
                             </div>
                         </div>
                         <div class="slider-container">
-                            <div class="heading">Saturation</div>
+                            <div class="heading"><p>Saturation</p><button class="btn reset" onclick="reset_value('saturation',1)">Reset to default</button></div>
                             <div class="slider">
-                                <input type="range" min="0" max="1.5" value="1" step="0.025" oninput="update_value(this.value, 'saturation')">
+                                <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-saturation" oninput="update_value(this.value, 'saturation')">
                                 <p id="value-saturation">1</p>
                             </div>
                             <div class="hint">
@@ -168,9 +177,9 @@
                             </div>
                         </div>
                         <div class="slider-container">
-                            <div class="heading">Lightness</div>
+                            <div class="heading"><p>Lightness</p><button class="btn reset" onclick="reset_value('lightness',1)">Reset to default</button></div>
                             <div class="slider">
-                                <input type="range" min="0" max="1.5" value="1" step="0.025" oninput="update_value(this.value, 'lightness')">
+                                <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-lightness" oninput="update_value(this.value, 'lightness')">
                                 <p id="value-lightness">1</p>
                             </div>
                             <div class="hint">
@@ -183,11 +192,18 @@
                     <div>
                         <h5>Preview</h5>
                         <div class="pallete">
-                            <!--<div style="--col: hsl(var(--l1))"></div>
-                            <div style="--col: hsl(var(--l2))"></div>-->
+                            <!--<div style="--col: hsl(var(--l1))"></div>-->
+                            <div style="--col: hsl(var(--l2-c))"></div>
+                            <div style="--col: hsl(var(--l3-c))"></div>
+                            <div style="--col: hsl(var(--l4-c))"></div>
+                        </div>
+                        <div class="pallete" style="margin-top: 5px">
+                            <!--<div style="--col: hsl(var(--l1))"></div>-->
+                            <div style="--col: hsl(var(--l2))"></div>
                             <div style="--col: hsl(var(--l3))"></div>
                             <div style="--col: hsl(var(--l4))"></div>
                         </div>
+                        <p class="caption">The top row of colours are used when visiblity is always required (like links for example), they can only be so dark.</p>
                         <div class="sep"></div>
                         <div class="btn-row">
                             <button class="btn" style="font-size: 14px">Example button</button>
@@ -201,13 +217,13 @@
                 </div>
             </div>
             <div class="rows" data-page="gloss" id="gloss">
-                <div class="row">
+                <div class="row separator">
                     <div>
                         <h5>Adjust image gloss</h5>
                         <div class="slider-container">
-                            <div class="heading">Opacity</div>
+                            <div class="heading"><p>Opacity</p><button class="btn reset" onclick="reset_value('gloss',0.2)">Reset to default</button></div>
                             <div class="slider">
-                                <input type="range" min="0" max="1" value="0.2" step="0.05" oninput="update_value(this.value, 'gloss')">
+                                <input type="range" min="0" max="1" value="0.2" step="0.05" id="slider-gloss" oninput="update_value(this.value, 'gloss')">
                                 <p id="value-gloss">0.2</p>
                             </div>
                             <div class="hint">
@@ -226,8 +242,45 @@
                             <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/ece37f683016f2c7bf5222254e2eb5a1.jpg')"></div>
                             <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/3f0266af96efa67250bed3c87e6deb45.jpg')"></div>
                         </div>
+                        <div class="pallete" style="height: fit-content; margin-top: 5px">
+                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/9cf52a295077533afeb5c00a5fca692f.jpg')"></div>
+                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/b0962b3df3e930c581bc69618d6c3281.jpg')"></div>
+                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/e39eb31f874f4a5c4afa836845141437.jpg')"></div>
+                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/a78bbd5ff0184115902f403212f04976.jpg')"></div>
+                        </div>
                     </div>
                 </div>
+                <div class="rows" data-page="cards" id="cards">
+                    <div class="row">
+                        <div>
+                            <h5>Adjust card width</h5>
+                            <div class="slider-container">
+                                <div class="heading"><p>Main width</p><button class="btn reset" onclick="reset_value('main-width',902)">Reset to default</button></div>
+                                <div class="slider">
+                                    <input type="range" min="700" max="1300" value="902" step="20" id="slider-main-width" oninput="update_value(this.value, 'main-width')">
+                                    <p id="value-main-width">902</p>
+                                </div>
+                                <div class="hint">
+                                    <p style="left: 0">700</p>
+                                    <p style="left: calc((202 / 600) * 100%)">902</p>
+                                    <p style="left: 100%">1300</p>
+                                </div>
+                            </div>
+                            <p class="caption">The default is not a perfect 900 due to chart grid sizing.</p>
+                            <!--<div class="slider-container">
+                                <div class="heading"><p>Sidebar width</p><button class="btn reset" onclick="reset_value('sidebar-width',400)">Reset to default</button></div>
+                                <div class="slider">
+                                    <input type="range" min="400" max="800" value="400" step="20" id="slider-sidebar-width" oninput="update_value(this.value, 'sidebar-width')">
+                                    <p id="value-sidebar-width">400</p>
+                                </div>
+                                <div class="hint">
+                                    <p style="left: 0">400</p>
+                                    <p style="left: 100%">800</p>
+                                </div>
+                            </div>-->
+                            <p class="caption">Keep in mind your screen resolution when adjusting.</p>
+                        </div>
+                    </div>
             </div>
             <style>
                 .caption {
@@ -282,75 +335,6 @@
                     );
                 }
             </script>
-            <!--<div class="rows">
-                <div class="row">
-                    <div>
-                        <h5>Tracklist</h5>
-                        <div class="tracklist">
-                            <div class="track realtime">
-                                <span class="cover">
-                                    <img class="avatar track" src="https://lastfm.freetls.fastly.net/i/u/64s/ddee3b871289a6cda0e3c7d4b4580d62.jpg">
-                                </span>
-                                <span class="info">
-                                    <a class="title" href="https://last.fm/music/brakence/_/hypochondriac" target="_blank">hypochondriac</a>
-                                    <a class="artist" href="https://last.fm/music/brakence" target="_blank">brakence</a>
-                                </span>
-                                <span class="date">
-                                    now!
-                                </span>
-                            </div>
-                            <div class="track">
-                                <span class="cover">
-                                    <img class="avatar track" src="https://lastfm.freetls.fastly.net/i/u/64s/f77f46d6c5c94f1188f0f315e376357c.jpg">
-                                </span>
-                                <span class="info">
-                                    <a class="title" href="https://last.fm/music/50landing/_/slowly" target="_blank">slowly</a>
-                                    <a class="artist" href="https://last.fm/music/50landing" target="_blank">50landing</a>
-                                </span>
-                                <span class="date">
-                                    2 minutes ago
-                                </span>
-                            </div>
-                            <div class="track">
-                                <span class="cover">
-                                    <img class="avatar track" src="https://lastfm.freetls.fastly.net/i/u/64s/f248f6eb5d2a24a9ce49a979b79525e7.jpg">
-                                </span>
-                                <span class="info">
-                                    <a class="title" href="https://last.fm/music/nomu./_/dumb" target="_blank">dumb</a>
-                                    <a class="artist" href="https://last.fm/music/nomu." target="_blank">nomu.</a>
-                                </span>
-                                <span class="date">
-                                    5 minutes ago
-                                </span>
-                            </div>
-                            <div class="track">
-                                <span class="cover">
-                                    <img class="avatar track" src="https://lastfm.freetls.fastly.net/i/u/64s/cc9f76fee0008500969ceb6aaea39aba.jpg">
-                                </span>
-                                <span class="info">
-                                    <a class="title" href="https://last.fm/music/ericdoa/_/plea" target="_blank">plea</a>
-                                    <a class="artist" href="https://last.fm/music/ericdoa" target="_blank">ericdoa</a>
-                                </span>
-                                <span class="date">
-                                    7 minutes ago
-                                </span>
-                            </div>
-                            <div class="track">
-                                <span class="cover">
-                                    <img class="avatar track" src="https://lastfm.freetls.fastly.net/i/u/64s/5e9ada703257cacef32eeba9e6e14bdd.jpg">
-                                </span>
-                                <span class="info">
-                                    <a class="title" href="https://last.fm/music/glaive/_/or are you drunk%3F i can never tell" target="_blank">or are you drunk? i can never tell</a>
-                                    <a class="artist" href="https://last.fm/music/glaive" target="_blank">glaive</a>
-                                </span>
-                                <span class="date">
-                                    10 minutes ago
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
         </section>
         <section class="panel lfm-preview" id="export">
             <div>
@@ -363,10 +347,10 @@
                 </div>
                 <div class="hint">
                     <ol class="steps">
-                        <li>Install <a href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-hue.user.css" target="_blank">this extension</a></li>
-                        <li>Open either the <strong class="margin"><img src="/img/chrome-extension.png"> Chrome</strong> or <strong class="margin"><img src="/img/firefox-extension.png"> Firefox</strong> buttons</li>
+                        <li>Install <a href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-hue.user.css" target="_blank">this extension (click to open)</a></li>
+                        <li>Open your extension menu (either <strong class="margin"><img src="/img/chrome-extension.png"> Chrome</strong> or <strong class="margin"><img src="/img/firefox-extension.png"> Firefox</strong>)</li>
                         <li>Click the <strong class="margin"><img src="/img/stylus.png"> Stylus</strong> entry inside the menu</li>
-                        <li>Find <code>bleh2 (settings)</code> / <code>bleh2 (hue)</code> and hit the <strong class="margin"><i class="icon w-16" data-lucide="pencil"></i> Edit</strong> button</li>
+                        <li>Find <code>bleh2 (hue)</code> / <code>bleh2 (settings)</code> and hit the <strong class="margin"><i class="icon w-16" data-lucide="pencil"></i> Edit</strong> button</li>
                         <li>Copy the values here into the newly opened tab</li>
                     </ol>
                 </div>
@@ -382,12 +366,17 @@
         saturation: 1,
         lightness: 1,
         invert: 'var(--b7)',
-        gloss: 0.2
+        gloss: 'unset',
+        'main-width': 'unset',
+        'sidebar-width': 'unset'
     };
     function update_value(value, type) {
         document.body.style.setProperty(`--${type}`,value);
         document.getElementById(`value-${type}`).textContent = value;
         if (type == 'base-hue') bleh.hue = value;
+        else if (type == 'main-width' && value == 902) bleh['main-width'] = 'unset';
+        else if (type == 'sidebar-width' && value == 400) bleh['sidebar-width'] = 'unset';
+        else if (type == 'gloss' && value == 0.2) bleh.gloss = 'unset';
         else               bleh[type] = value;
 
         if (bleh.hue > 228 && bleh.hue < 252 && bleh.lightness < 0.75) {
@@ -403,12 +392,26 @@
 
         update_copy();
     }
+    function reset_value(value, def) {
+        document.getElementById(`slider-${value}`).value = def;
+        update_value(def, value);
+    }
     function update_copy() {
         copy.innerHTML = (`--hue: ${bleh.hue};
 --sat: ${bleh.saturation};
 --lit: ${bleh.lightness};
 --ovr: ${bleh.invert};
---gloss-opacity: ${bleh.gloss};`);
+--gloss-opacity: ${bleh.gloss};
+--cards-main-width: ${show(bleh['main-width'])};
+--cards-sidebar-width: ${show(bleh['sidebar-width'])};`);
+    }
+
+    function show(text) {
+        if (text == 'unset') {
+            return text;
+        } else {
+            return `${text}px`;
+        }
     }
 
     update_copy();
@@ -436,10 +439,33 @@
 </script>
 <script>lucide.createIcons();</script>
 <style>
-    .btn {
-        --top: 7px;
-        --sides: 12px;
-        border-radius: 6px;
+    a:not(:is(.btn, .card)) {
+        color: hsl(var(--l3-c));
+    }
+    :root, body, .chip, .window, .badge, .tag-mono, .tag, .status-dot, .status, .install, .panel {
+        --hue: var(--base-hue);
+        --sat: var(--saturation);
+        --lit: var(--lightness);
+
+        --c1: var(--hue), calc(var(--sat) * 40%), 100%;
+		--c2: var(--hue), calc(var(--sat) * 60%), 90%;
+		--c3: var(--hue), calc(var(--sat) * 10%), 60%;
+		--ov-c1: var(--c1);
+
+		--l2: var(--hue), calc(var(--sat) * 50%), calc(var(--lit) * 83%);
+		--l3: var(--hue), calc(var(--sat) * 60%), calc(var(--lit) * 70%);
+		--l4: var(--hue), calc(var(--sat) * 70%), calc(var(--lit) * 50%);
+
+		--l2-c: var(--hue), calc(var(--sat) * 50%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 83%);
+		--l3-c: var(--hue), calc(var(--sat) * 60%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 70%);
+		--l4-c: var(--hue), calc(var(--sat) * 70%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 50%);
+
+		--h2: var(--l2-c);
+		--h3: var(--l3-c);
+		--h4: var(--l4-c);
+
+		--icon: var(--c2);
+
         /* any additional highlights */
 		--b3: var(--hue), calc(var(--sat) * 6%), 28%;
 
@@ -452,17 +478,33 @@
         /* root */
         --b6: var(--hue), calc(var(--sat) * 12%), 10%;
         --b7: 0, 0%, 0%;
-
-        --c1: var(--hue), calc(var(--sat) * 40%), 100%;
-		--c2: var(--hue), calc(var(--sat) * 60%), 90%;
-		--c3: var(--hue), calc(var(--sat) * 10%), 60%;
-
-		--l3: var(--hue), calc(var(--sat) * 60%), calc(var(--lit) * 70%);
-		--l4: var(--hue), calc(var(--sat) * 70%), calc(var(--lit) * 50%);
+    }
+    .btn {
+        --top: 7px;
+        --sides: 12px;
+        --bg: hsl(var(--b4));
+		--bg-hov: hsla(var(--b4), 80%);
+		--bg-atv: hsla(var(--b4), 60%);
+        border-radius: 6px;
 
         color: hsl(var(--c2));
     }
     .btn.primary, .chartlist-bar .text {
         color: hsl(var(--ovr, var(--b7)));
+    }
+
+    .chartlist-bar {
+        background: linear-gradient(90deg, hsla(var(--c2), 25%) 7%, hsl(var(--b4)) 35%);
+        border-radius: 4px;
+    }
+    .chartlist-bar .fill {
+        background-color: hsl(var(--l3)) !important;
+		box-shadow: 0px 0px 16px hsla(var(--l3), 50%);
+        border-radius: 4px;
+    }
+
+    .chartlist-bar .text {
+        padding: 0 10px;
+        margin: unset;
     }
 </style>
