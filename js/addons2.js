@@ -15,12 +15,14 @@ function install_theme() {
 let style_addons = [
     'main',
     'bleh2-oled',
-    'bleh2-accent'
+    'bleh2-accent',
+    'bleh2-light'
 ]
 let latest_versions = {
     'main': 2024.0412,
     'bleh2-oled': 2024.0407,
     'bleh2-accent': 2024.0320,
+    'bleh2-light': 2024.0412
 }
 let any_updates_available = false;
 let sent_update_notif = false;
@@ -66,7 +68,7 @@ function query_versions() {
         document.getElementById('theme-update').classList.remove('ultra-shine');
         document.getElementById('theme-update').style.removeProperty('--base-hue');
     } else if (need_updates.main != -2) {
-        document.getElementById('theme-ver').textContent = 'Update';
+        document.getElementById('theme-ver').textContent = `Update to ${latest_versions.main}`;
         document.getElementById('theme-update').style.setProperty('--base-hue','130');
         if (!sent_update_notif) create_chip('You have a theme update available!','success')
         sent_update_notif = true;

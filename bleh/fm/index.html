@@ -79,7 +79,13 @@
                         <div class="main-image">
                             <img src="/img/bleh2-oled-accent.png">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with oled addon & a customised colour)</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with oled theme addon & a customised colour)</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-addon-light.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with light theme addon)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
@@ -183,12 +189,12 @@
                 <!--<h3 class="small-head installed-only" id="theme-ver">Latest version!</h3>-->
                 <div class="btn-row">
                     <a role="button" class="btn primary installed2-only" href="/bleh/fm/customise">
-                        <span class="text">Customise your bleh</span>
                         <i class="icon w-16" data-lucide="sparkles"></i>
+                        <span class="text">Customise your bleh</span>
                     </a>
                     <a role="button" class="btn primary installed2-only" id="theme-update" href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css" target="_blank">
-                        <span class="text" id="theme-ver">Update</span>
                         <i class="icon w-16" data-lucide="refresh-ccw"></i>
+                        <span class="text" id="theme-ver">Update</span>
                     </a>
                     <a role="button" class="btn primary shine uninstalled2-only" onclick="create_install_window2()" id="install-btn">
                         <span class="text">Click to install</span>
@@ -348,7 +354,18 @@
                     </div>
                     <div class="text">
                         <h5>OLED theme</h5>
-                        <p>Special theme addon for the eyes.</p>
+                        <p>bleh2, but very dark.</p>
+                    </div>
+                </div>
+                <div class="item install2" id="install-light" onclick="create_theme_window('bleh2-light')">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="sun"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Light theme</h5>
+                        <p>bleh2, but very light.</p>
                     </div>
                 </div>
                 <div class="item install2" id="install-accent" onclick="create_theme_window('bleh2-accent')">

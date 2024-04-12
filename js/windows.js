@@ -23,7 +23,7 @@ let theme_windows = {
     'bleh2-oled': {
         'icon': 'moon-star',
         'name': 'OLED theme',
-        'description': 'Special theme addon for the eyes.',
+        'description': 'bleh2, but very dark.',
         'image': '/img/bleh2-addon-oled.png'
     },
     'bleh2-accent': {
@@ -31,6 +31,13 @@ let theme_windows = {
         'name': 'Album covers',
         'description': 'Match the page colour to the album cover!',
         'image': '/img/bleh2-addon-accent.png',
+        'status': 'wip'
+    },
+    'bleh2-light': {
+        'icon': 'sun',
+        'name': 'Light theme',
+        'description': 'bleh2, but very light.',
+        'image': '/img/bleh2-addon-light.png',
         'status': 'wip'
     }
 }
