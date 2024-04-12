@@ -23,18 +23,18 @@
 :is(.badge, .tag-mono, .tag).pink    { --base-hue: var(--pink); --saturation: 1;      }
 
 .tag, .tag-mono {
-    background-color: hsl(var(--l3));
-    color: hsl(var(--b6));
-    padding: 1px 14px;
-    line-height: 21px;
+    background-color: hsl(var(--l3-c));
+    color: hsl(var(--b7));
+    padding: 1px 8px;
+    line-height: 16px;
     border-radius: 50px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
 }
 
 .tag-mono {
     background-color: hsla(var(--b6), 90%);
-    color: hsl(var(--l3));
+    color: hsl(var(--l3-c));
 }
 
 .loader {

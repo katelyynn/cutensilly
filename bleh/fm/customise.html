@@ -30,7 +30,7 @@
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- icons -->
-    <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+    <script src="/js/lucide.js"></script>
     <!-- tooltips -->
     <!--<script src="https://unpkg.com/@popperjs/core@2" defer></script>
     <script src="https://unpkg.com/tippy.js@6" defer></script>-->
@@ -129,6 +129,15 @@
                     <div class="text">
                         <h5>Adjust image gloss</h5>
                         <p>Change the opacity of album/artist cover's gloss.</p>
+                    </div>
+                </a>
+                <a class="btn control-panel-item item" href="#nav">
+                    <div class="image">
+                        <i class="icon w-24" data-lucide="bell"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Manage extra header navigation</h5>
+                        <p>Show or hide your notifications, inbox, and settings.</p>
                     </div>
                 </a>
                 <a class="btn control-panel-item item" href="#cards">
@@ -264,6 +273,37 @@
     </main>
     <main class="panel-container double">
         <div class="main">
+            <section class="panel lfm-preview" id="nav">
+                <h5>Manage extra header navigation<div class="tag">New</div></h5>
+                <div class="toggle-container">
+                    <div class="heading">
+                        <p>Show extra navigation</p>
+                    </div>
+                    <div class="toggle-wrap">
+                        <button class="toggle" id="toggle-nav" onclick="toggle_value('nav',['unset','none'])" aria-checked="true">
+                            <div class="dot"></div>
+                        </button>
+                    </div>
+                </div>
+                <p class="caption">Quick links and visibility for your notifications, inbox, and settings are now available in the header.<br>You can choose to hide them if you prefer the minimalism.</p>
+            </section>
+        </div>
+        <div class="sidebar">
+            <section class="panel">
+                <img class="img" id="nav-img" src="/img/nav-shown.png">
+            </section>
+            <style>
+                .img {
+                    width: 100%;
+                    border-radius: 1px solid hsl(var(--b4));
+                    border-radius: var(--item-med-radius);
+                    box-shadow: var(--card-shadow);
+                }
+            </style>
+        </div>
+    </main>
+    <main class="panel-container double">
+        <div class="main">
             <section class="panel lfm-preview" id="main">
                 <h5>Adjust card width</h5>
                 <div class="slider-container">
@@ -353,7 +393,9 @@
         lightness: 1,
         invert: 'var(--b7)',
         gloss: 0.2,
-        'cards-main-width': 902
+        'cards-main-width': 902,
+        nav: 'unset',
+        auth_bubble: 'none'
     };
     function update_value(value, type) {
         document.documentElement.style.setProperty(`--${type}`,fix_v(type, value));
@@ -384,7 +426,9 @@
 --lit: ${bleh.lightness};
 --ovr: ${bleh.invert};
 --gloss-opacity: ${bleh.gloss};
---cards-main-width: ${fix_v('cards-main-width', bleh['cards-main-width'])};`);
+--cards-main-width: ${fix_v('cards-main-width', bleh['cards-main-width'])};
+--head-small-nav: ${bleh.nav};
+--auth-badge: ${bleh.auth_bubble};`);
     }
     function fix_v(type, value) {
         if (type == 'cards-main-width') {
@@ -392,6 +436,26 @@
         } else {
             return value;
         }
+    }
+    function toggle_value(value, types) {
+        if (bleh[value] == types[0]) {
+            bleh[value] = types[1];
+            document.getElementById(`toggle-${value}`).setAttribute('aria-checked',false);
+
+            if (value == 'nav') {
+                document.getElementById('nav-img').setAttribute('src','/img/nav-hidden.png');
+                bleh.auth_bubble = 'flex';
+            }
+        } else {
+            bleh[value] = types[0];
+            document.getElementById(`toggle-${value}`).setAttribute('aria-checked',true);
+
+            if (value == 'nav') {
+                document.getElementById('nav-img').setAttribute('src','/img/nav-shown.png');
+                bleh.auth_bubble = types[1];
+            }
+        }
+        update_copy();
     }
 
     update_copy();
@@ -406,15 +470,4 @@
         <a href="https://github.com/katelyynn/cutensilly">View source</a>
     </span>
 </footer>
-<script>
-    setInterval(function() {
-        if (versions.main < 2023.0920) {
-            document.getElementById('warning').style.setProperty('display','flex');
-            document.getElementById('main').classList.add('dimmed');
-        } else {
-            document.getElementById('warning').style.setProperty('display','none');
-            document.getElementById('main').classList.remove('dimmed');
-        }
-    }, 60);
-</script>
 <script>lucide.createIcons();</script>

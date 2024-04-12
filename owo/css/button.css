@@ -5,6 +5,7 @@
 }
 
 
+.toggle,
 .btn {
     --bg: hsl(var(--b4));
     --bg-hov: hsla(var(--b4), 80%);
@@ -40,10 +41,12 @@
     height: 32px;
 }
 
+.toggle:hover,
 .btn:hover {
     background-color: var(--bg-hov);
     transition: none;
 }
+.toggle:active,
 .btn:active {
     background-color: var(--bg-atv);
 }
@@ -57,6 +60,7 @@
 }
 
 
+.toggle[aria-checked="true"],
 .btn.primary {
     --bg: hsl(var(--h3));
     --bg-hov: hsla(var(--h3), 80%);

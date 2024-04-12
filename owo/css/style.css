@@ -165,6 +165,8 @@ h4 {
 }
 h5 {
     margin-bottom: 12px;
+    display: flex;
+    gap: var(--card-gap);
 }
 
 
@@ -179,7 +181,8 @@ img {
     .chip,
     [type="radio"], [type="checkbox"],
     .card:not(.has-footer),
-    .install2
+    .install2,
+    .toggle
 ):active
 {
     transform: scale(var(--indent));
