@@ -47,10 +47,8 @@ function query_versions() {
     try {
     if (need_updates.main > -2 && need_updates.main < 1) {
         document.getElementById('theme-update').classList.remove('primary');
-        document.getElementById('theme-update').classList.add('outline');
     } else {
         document.getElementById('theme-update').classList.add('primary');
-        document.getElementById('theme-update').classList.remove('outline');
     }
 
     if (need_updates.main > -2) {
