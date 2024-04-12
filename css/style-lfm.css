@@ -4,12 +4,6 @@
     display: none;
 }
 
-
-.install, .install2
-{
-    transition-timing-function: var(--trans);
-}
-
 #install_theme {
     min-height: initial;
 }
@@ -40,31 +34,16 @@
     margin-top: 16px;
     width: 100%;
 }
-.install {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 24px 12px;
-    border-radius: 10px;
-    transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s, border-color 0.25s;
-    cursor: pointer;
-    border: 2px solid transparent;
-    text-align: center;
-    position: relative;
-    /* b5 */
-    background-color: hsla(var(--base-hue), calc(var(--saturation)*6%), 12%, 30%);
-}
-:is(.install, .install2):is([data-kate-status="-1"], [data-kate-status="0"]) {
+.install2:is([data-kate-status="-1"], [data-kate-status="0"]) {
     border-color: hsla(var(--base-hue), calc(var(--saturation)*52%), calc(var(--lightness)*70%), 20%);
 }
-:is(.install, .install2)[data-kate-status="1"] {
+.install2[data-kate-status="1"] {
     --base-hue: 160;
     border-color: hsla(160, calc(var(--saturation)*52%), calc(var(--lightness)*70%), 80%);
 }
 
-:is(.install, .install2):is([data-kate-status="-1"], [data-kate-status="0"]):before,
-:is(.install, .install2)[data-kate-status="1"]:before
+.install2:is([data-kate-status="-1"], [data-kate-status="0"]):before,
+.install2[data-kate-status="1"]:before
 {
     content: '';
     position: absolute;
@@ -73,33 +52,58 @@
     right: 0;
     bottom: 0;
 }
-:is(.install, .install2):is([data-kate-status="-1"], [data-kate-status="0"]):before {
+.install2:is([data-kate-status="-1"], [data-kate-status="0"]):before {
     background: linear-gradient(180deg, hsla(var(--base-hue), calc(var(--saturation)*52%), calc(var(--lightness)*70%), 5%) 0%, transparent 100%);
 }
-:is(.install, .install2)[data-kate-status="1"]:before {
+.install2[data-kate-status="1"]:before {
     background: linear-gradient(180deg, hsla(160, calc(var(--saturation)*52%), calc(var(--lightness)*70%), 10%) 0%, transparent 100%);
 }
 
-:is(.install, .install2), :is(.install, .install2).unavailable {
+.install2, .install2.unavailable {
     pointer-events: none;
     opacity: 0.3;
     border-style: dashed;
 }
-:is(.install, .install2):hover {
-    transform: translateY(-2px);
-    box-shadow: var(--raise-0);
-    background-color: hsla(var(--b4),60%);
+
+.install2 {
+    --bg: hsl(var(--b5));
+    --bg-hov: hsla(var(--b5), 80%);
+    --bg-atv: hsla(var(--b5), 60%);
+    --col: hsl(var(--c2));
+    --indent: 0.985;
+    background-color: var(--bg);
+    color: var(--col);
+    transition-property: background-color, transform !important;
+    transition-duration: var(--trans) !important;
+    transition-timing-function: var(--trans-function) !important;
+    cursor: pointer;
 }
-:is(.install, .install2) p {
-    font-size: 15px;
+.install2:hover {
+    transition: none !important;
+    background-color: var(--bg-hov);
 }
-:is(.install, .install2) h5 {
+.install2:active {
+    background-color: var(--bg-atv);
+}
+
+.install2.primary {
+    --bg: hsla(var(--h3), 10%);
+    --bg-hov: hsla(var(--h3), 15%);
+    --bg-atv: hsla(var(--h3), 20%);
+    --col: hsl(var(--c2));
+    border-color: hsl(var(--l3-c)) !important;
+}
+
+.install2 p {
+    font-size: var(--font-size);
+}
+.install2 h5 {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-:is(.install, .install2):after {
+.install2:after {
     content: '';
     padding: 5px 12px;
     background-color: hsl(var(--l3));
@@ -115,19 +119,19 @@
     transform: translateX(6px) translateY(-6px);
     transition: opacity 0.25s, transform 0.25s;
 }
-:is(.install, .install2):is([data-kate-status="-1"], [data-kate-status="0"]):after,
-:is(.install, .install2)[data-kate-status="1"]:after
+.install2:is([data-kate-status="-1"], [data-kate-status="0"]):after,
+.install2[data-kate-status="1"]:after
 {
     transform: translateX(0) translateY(0);
     opacity: 1;
 }
 
-:is(.install, .install2):is([data-kate-status="-1"], [data-kate-status="0"]):after,
-:is(.install, .install2)[data-kate-status="1"]:after
+.install2:is([data-kate-status="-1"], [data-kate-status="0"]):after,
+.install2[data-kate-status="1"]:after
 {
     content: 'Installed';
 }
-:is(.install, .install2)[data-kate-status="1"]:after {
+.install2[data-kate-status="1"]:after {
     content: 'Update available';
     background-color: hsl(160, calc(var(--saturation)*52%), calc(var(--lightness)*70%));
 }
@@ -137,10 +141,10 @@
 }
 
 .hi {
-    color: hsl(var(--l2));
+    color: hsl(var(--l3-c));
 }
 .hi.kate {
-    background: linear-gradient(180deg, hsl(var(--c1)) 0%, hsl(var(--l3)) 100%);
+    background: linear-gradient(180deg, hsl(var(--c1)) 0%, hsl(var(--l3-c)) 100%);
     /*background: linear-gradient(336deg, #FFD966 0%, #FF84BF 54.70%, #84FFFF 100%);*/
     background-clip: text;
     -webkit-background-clip: text;
@@ -295,13 +299,15 @@ h2 {
 
 
 .kate-icon {
-    background-color: hsl(var(--d5));
-    border-radius: 5px;
+    background-color: hsl(var(--b4));
+    border-radius: var(--item-med-radius);
     color: hsl(var(--l1));
-    padding: 12px;
-    height: 48px;
-    width: fit-content;
+    height: 40px;
+    aspect-ratio: 1 / 1;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .icon {
     top: 0 !important;

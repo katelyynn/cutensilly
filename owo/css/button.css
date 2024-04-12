@@ -1,47 +1,48 @@
 .btn-row {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 
 
 .btn {
-    --top: 11px;
-    --sides: 24px;
+    --bg: hsl(var(--b4));
+    --bg-hov: hsla(var(--b4), 80%);
+    --bg-atv: hsla(var(--b4), 60%);
+    --col: hsl(var(--c2));
     --indent: 0.985;
-    padding: var(--top) var(--sides);
+    padding: var(--padding, 7px 12px);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     width: fit-content;
     background-color: var(--bg);
-    color: hsl(var(--c1));
-    font-weight: 500;
-    box-shadow: var(--raise-1);
-    border-radius: 10px;
+    color: var(--col);
+    font-weight: var(--font-weight-medium);
+    box-shadow: var(--shadow, var(--interact-shadow));
+    border-radius: var(--item-med-radius);
     cursor: pointer;
     user-select: none;
     text-decoration: none !important;
     border: none;
     font-family: var(--font);
-
-    --bg: hsl(var(--b2));
-    --bg-hov: hsla(var(--b2), 80%);
-    --bg-atv: hsla(var(--b2), 60%);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
 
     transition-property: background-color, transform, box-shadow, color;
     transition-duration: var(--trans);
     transition-timing-function: var(--trans-function);
 }
 .btn.icon-btn {
-    --sides: var(--top);
+    --padding: 7px;
     aspect-ratio: 1 / 1;
-    height: 40px;
+    height: 32px;
 }
 
 .btn:hover {
     background-color: var(--bg-hov);
+    transition: none;
 }
 .btn:active {
     background-color: var(--bg-atv);
@@ -57,24 +58,23 @@
 
 
 .btn.primary {
-    --bg: hsl(var(--base-hue), var(--btn-saturation), var(--btn-lightness));
-    --bg-hov: hsla(var(--base-hue), var(--btn-saturation), var(--btn-lightness), 80%);
-    --bg-atv: hsla(var(--base-hue), var(--btn-saturation), var(--btn-lightness), 60%);
-    /*text-shadow: 0 2px 4px hsla(var(--b6),60%);*/
-    color: var(--invert-btn, hsl(var(--b6)));
+    --bg: hsl(var(--h3));
+    --bg-hov: hsla(var(--h3), 80%);
+    --bg-atv: hsla(var(--h3), 60%);
+    --col: hsl(var(--ovr, var(--b7)));
 }
 
 .btn.outline {
     --bg: transparent;
-    --bg-hov: hsla(var(--base-hue), var(--btn-saturation), var(--btn-lightness), 10%);
-    --bg-atv: hsla(var(--base-hue), var(--btn-saturation), var(--btn-lightness), 15%);
-    box-shadow: inset -0.2px 0 0 1px hsl(var(--c1));
+    --bg-hov: hsla(var(--b4), 30%);
+    --bg-atv: hsla(var(--b4), 50%);
+    --shadow: inset -0.2px 0 0 1px hsl(var(--c1));
 }
 .btn.outline:hover {
-    box-shadow: inset -0.2px 0 0 1px hsl(var(--c2));
+    --shadow: inset -0.2px 0 0 1px hsl(var(--c2));
 }
 
-.btn.mimic {
+.btn.mimic, .btn.reset {
     --bg: hsla(var(--l3), 4%);
     --bg-hov: hsla(var(--l3), 15%);
     --bg-atv: hsla(var(--l3), 20%);

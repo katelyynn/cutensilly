@@ -36,13 +36,12 @@
 
 /* sub */
 h5.sub {
-    --top: 11px;
-    --sides: 16px;
-    background-color: hsla(var(--d4),40%);
-    color: hsl(var(--l1));
-    padding: var(--top) var(--sides);
-    border-radius: 10px;
+    background-color: hsla(var(--h3),30%);
+    color: hsl(var(--c1));
+    padding: 7px 12px;
+    border-radius: var(--item-med-radius);
     width: fit-content;
+    margin: unset;
 }
 
 
