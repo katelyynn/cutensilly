@@ -194,7 +194,7 @@
                         <span class="text">Click to install</span>
                         <i class="icon w-16" data-lucide="chevron-right"></i>
                     </a>
-                    <a role="button" class="btn outline installed2-only" href="https://github.com/katelyynn/bleh/issues" target="_blank">
+                    <a role="button" class="btn installed2-only" href="https://github.com/katelyynn/bleh/issues" target="_blank">
                         <span class="text">Report bugs</span>
                         <i class="icon w-16" data-lucide="external-link"></i>
                     </a>
@@ -207,16 +207,17 @@
         <div class="gap" style="--gap: 10px"></div>
         <style>
             .item-grid {
-                grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-                gap: 30px;
-                margin-top: 20px;
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: var(--card-gap);
+                margin-top: var(--card-gap);
             }
 
             .item-grid .item {
-                gap: 20px;
-                padding: 15px 80px 15px 15px;
-                background-color: hsla(var(--b5), 50%);
-                border-radius: 10px;
+                gap: var(--card-gap);
+                padding: var(--card-gap);
+                border: 1px solid hsl(var(--b4));
+                box-shadow: var(--card-shadow);
+                border-radius: var(--card-radius);
             }
 
             .item-grid .item .image {
@@ -229,11 +230,13 @@
                 flex-direction: column;
                 gap: 8px;
                 line-height: 20px;
+                color: var(--col);
             }
 
             .item-grid .item .text h5 {
-                gap: 10px;
+                gap: var(--card-gap);
                 font-size: 16px;
+                margin: unset;
             }
         </style>
         <section class="content flex flex-column flex-gap flex-align-center full-width uninstalled2-only" style="--gap: 20px">
@@ -276,6 +279,17 @@
                 <div class="item">
                     <div class="image">
                         <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="settings-2"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Customise to your liking</h5>
+                        <p>Overtime the theme becomes more customisable!! Check out the theme customiser.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon">
                             <i class="icon w-24" data-lucide="refresh-ccw"></i>
                         </div>
                     </div>
@@ -284,28 +298,17 @@
                         <p>The theme updates to fit with any new last.fm changes (rare) along with general theme changes.</p>
                     </div>
                 </div>
-                <!--<div class="item">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="moon-star"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>blerp</h5>
-                        <p>blerp</p>
-                    </div>
-                </div>
                 <div class="item">
                     <div class="image">
                         <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="moon-star"></i>
+                            <i class="icon w-24" data-lucide="triangle-alert"></i>
                         </div>
                     </div>
                     <div class="text">
-                        <h5>blerp</h5>
-                        <p>blerp</p>
+                        <h5>Hateful content blocks</h5>
+                        <p>Users who post <a href="hateful" target="_blank">hateful content</a> are automatically hidden - bleh2 does what last.fm don't.</p>
                     </div>
-                </div>-->
+                </div>
             </div>
         </section>
         <div class="gap uninstalled2-only" style="--gap: 40px"></div>
@@ -326,6 +329,17 @@
             <h5 class="sub warn">Sorry, not all addons are currently available for bleh2.</h5>
             <h5 class="sub warn uninstalled2-only">The theme must be installed for addons to be available.</h5>
             <div class="item-grid" style="width: 100%">
+                <a class="item install2 primary" href="/bleh/fm/customise">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="sparkles"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Customise your bleh</h5>
+                        <p>Open the theme customiser</p>
+                    </div>
+                </a>
                 <div class="item install2" id="install-oled" onclick="create_theme_window('bleh2-oled')">
                     <div class="image">
                         <div class="kate-icon">
@@ -350,68 +364,12 @@
                 </div>
             </div>
         </section>
-        <!--<section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
-            <h5 class="sub" id="style_addons">Style addons</h5>
-            <p>These are extra styles you can install to enhance your experience :3</p>
-            <h5 class="sub warn uninstalled-only">The theme must be installed for addons to be available.</h5>
-            <div class="install-grid">
-                <div class="install" id="install-winter-haters" onclick="create_theme_window('winter-haters')">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="snowflake"></i>
-                    </div>
-                    <h5><i class="hi">undo winter effects</i></h5>
-                    <p>(limited for winter) removes the effects if u hate them</p>
-                </div>
-                <div class="install" id="install-amoled" onclick="create_theme_window('amoled')">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="moon-star"></i>
-                    </div>
-                    <h5><i class="hi">amoled</i></h5>
-                    <p>special addon for a darker feel!</p>
-                </div>
-                <div class="install" id="install-accent" onclick="create_theme_window('accent')">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="paintbrush"></i>
-                    </div>
-                    <h5><i class="hi">album covers</i><div class="badge" data-kate-type="wip">WIP</div></h5>
-                    <p>match the page accent to the album cover :3</p>
-                </div>
-                <div class="install unavailable" id="install-light" onclick="create_theme_window('light')">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="sun"></i>
-                    </div>
-                    <h5><i class="hi">light</i><div class="sub" data-kate-type="alpha">Alpha</div></h5>
-                    <p>special addon for a brighter feel!</p>
-                </div>
-                <!--<div class="install" id="install-covers" onclick="create_theme_window('covers')">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="gallery-vertical-end"></i>
-                    </div>
-                    <h5><i class="hi">custom covers</i><div class="badge" data-kate-type="wip">WIP</div></h5>
-                    <p>slightly tweaked album covers..</p>
-                </div>
-                <div class="install unavailable" id="install-performance" onclick="create_theme_window('performance')">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="chevrons-down"></i>
-                    </div>
-                    <h5><i class="hi">performance</i></h5>
-                    <p>lower intensity of blurs n glows</p>
-                </div>-->
-                <!--<div class="install unavailable" id="install-motion" onclick="create_theme_window('motion')">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="move-diagonal"></i>
-                    </div>
-                    <h5><i class="hi">reduced motion</i></h5>
-                    <p>remove significant page animations</p>
-                </div>
-            </div>
-        </section>-->
-        <div class="gap installed-only" style="--gap: 40px"></div>
+        <div class="gap installed2-only" style="--gap: 40px"></div>
         <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
             <h5 class="sub" id="script_addons">Script addons</h5>
             <p>warning: these can be a bit unstable and are not coded <i class="i">the best</i></p>
-            <h5 class="sub warn uninstalled-only">The theme must be installed for addons to be available.</h5>
-            <div class="install-grid">
+            <h5 class="sub warn uninstalled2-only">The theme must be installed for addons to be available.</h5>
+            <!--<div class="install-grid">
                 <div class="install" id="install-feat" onclick="create_theme_window('feat',true)">
                     <div class="kate-icon">
                         <i class="icon w-24" data-lucide="star"></i>
@@ -426,19 +384,19 @@
                     <h5><i class="hi">chart colours</i></h5>
                     <p>apply colour based on charting position</p>
                 </div>
-            </div>
+            </div>-->
+            <p>Will be back soon!</p>
         </section>
     </main>
 </body>
-<footer>
-    <div class="footer-inner" bis_skin_checked="1">
-        <span class="main" id="footer.main">
-            <a class="over hide" href="https://github.com/katelyynn/bleh/blob/uwu/LICENSE" target="_blank" bis_skin_checked="1">kate 2022-2023</a>
-        </span>
-        <span class="links" id="footer.links">
-            <a href="https://github.com/katelyynn/bleh/" bis_skin_checked="1">View Source</a>
-        </span>
-    </div>
+<footer class="content">
+    <span class="main">
+        <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
+    </span>
+    <span class="links">
+        <a href="https://github.com/katelyynn/bleh">View theme source</a>
+        <a href="https://github.com/katelyynn/cutensilly">View source</a>
+    </span>
 </footer>
 <script src="/js/addons2.js"></script>
 <script>lucide.createIcons();</script>

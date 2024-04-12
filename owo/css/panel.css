@@ -1,27 +1,24 @@
 .panel-container {
-    width: 100%;
+    width: 100;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    padding: 10px 0;
+    gap: var(--card-gap);
+    padding-top: var(--card-gap);
     overflow: hidden;
 }
 
-.panel-container > section {
+.panel-container > section, .panel-container.double > div > section {
     z-index: 2;
 }
 
 .panel {
-    padding: 20px;
+    padding: var(--card-padding);
     background-color: hsl(var(--b5));
-    border-radius: 10px;
-    max-width: 1280px;
-    width: 100%;
-    transition-property: opacity, filter;
-    transition-duration: var(--trans);
-    transition-timing-function: var(--trans-function);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
 }
 .panel.dimmed {
     opacity: 0.5;
@@ -29,6 +26,30 @@
     pointer-events: none;
 }
 
-.panel-container .content {
-    max-width: 1280px;
+.panel-container.double > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: var(--card-gap);
+}
+.panel-container > .main, .main > .panel {
+    width: var(--cards-main-width);
+}
+.panel-container > .sidebar, .sidebar > .panel {
+    width: var(--cards-sidebar-width);
+}
+
+.main > .panel,
+.sidebar > .panel {
+    flex: 1;
+}
+
+.panel-container > section {
+    width: var(--cards-width);
+}
+
+
+.panel-container.double {
+    flex-direction: row;
+    align-items: stretch;
 }

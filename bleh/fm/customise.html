@@ -36,7 +36,7 @@
     <script src="https://unpkg.com/tippy.js@6" defer></script>-->
     <script src="/owo/js/clipboard.min.js"></script>
 </head>
-<body style="--base-hue: 255">
+<body>
     <!-- overlays -->
     <div class="overlay center-full" id="hook_windows"></div>
     <div class="overlay center">
@@ -58,7 +58,6 @@
     <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.07"></div>
     <div class="bg-grad med-bg" style="background: linear-gradient(180deg, hsla(var(--l3), 20%) 0%, hsl(var(--b6)) 100%); z-index: 0"></div>
     <main class="panel-container">
-        <div class="gap" style="--gap: 10px"></div>
         <section class="side-by-side content right">
             <link rel="stylesheet" href="/owo/css/fm/preview.css">
             <div class="text flex flex-align-center flex-column flex-gap" style="--gap: 20px">
@@ -68,7 +67,6 @@
                 <h4>theme settings</h4>
             </div>
         </section>
-        <div class="gap" style="--gap: 40px"></div>
         <section class="panel flex flex-column" id="warning" style="display: none; gap: 10px; --base-hue: -2">
             <h5>Warning</h5>
             <p>To use the theme customiser, you must have a version of bleh at least <strong>2023.0920</strong>. Click below to update.</p>
@@ -83,15 +81,15 @@
             }
 
             .control-panel {
-                grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             }
 
             .btn.control-panel-item {
                 --top: 16px;
                 --sides: 16px;
                 --bg: transparent;
-                --bg-hov: hsla(var(--b2), 20%);
-                --bg-atv: hsla(var(--b2), 40%);
+                --bg-hov: hsla(var(--b4), 20%);
+                --bg-atv: hsla(var(--b4), 40%);
                 box-shadow: none;
                 width: 100%;
                 justify-content: left;
@@ -102,240 +100,204 @@
                 gap: 3px;
             }
             .btn.control-panel-item h5 {
-                color: hsl(var(--c1));
-                font-size: 16px;
+                color: hsl(var(--c2));
+                font-size: var(--font-size);
+                margin: unset;
             }
             .btn.control-panel-item p {
-                font-weight: 400;
-                color: hsl(var(--c3));
-                font-size: 14px;
+                color: hsla(var(--c2), 80%);
+                font-size: var(--font-size);
+                font-weight: var(--font-weight);
             }
         </style>
         <section class="panel lfm-preview" id="main">
-            <div class="rows" data-page="home">
-                <div class="row separator" style="grid-template-columns: unset;">
-                    <div>
-                        <h5>What are you looking for?</h5>
-                        <div class="item-grid control-panel">
-                            <a class="btn control-panel-item item" href="#accent">
-                                <div class="image">
-                                    <i class="icon w-32" data-lucide="paintbrush"></i>
-                                </div>
-                                <div class="text">
-                                    <h5>Customise your accent colour</h5>
-                                    <p>Enjoy last.fm in a fresh coat of paint.</p>
-                                </div>
-                            </a>
-                            <a class="btn control-panel-item item" href="#gloss">
-                                <div class="image">
-                                    <i class="icon w-32" data-lucide="disc-album"></i>
-                                </div>
-                                <div class="text">
-                                    <h5>Adjust image gloss</h5>
-                                    <p>Change the opacity of album/artist cover's gloss.</p>
-                                </div>
-                            </a>
-                            <a class="btn control-panel-item item" href="#cards">
-                                <div class="image">
-                                    <i class="icon w-32" data-lucide="layout-dashboard"></i>
-                                </div>
-                                <div class="text">
-                                    <h5>Adjust card width</h5>
-                                    <p>Change the size of bleh2.</p>
-                                </div>
-                            </a>
-                        </div>
+            <h5>What are you looking for?</h5>
+            <div class="item-grid control-panel">
+                <a class="btn control-panel-item item" href="#accent">
+                    <div class="image">
+                        <i class="icon w-24" data-lucide="paintbrush"></i>
                     </div>
-                </div>
-            </div>
-            <div class="rows" data-page="accent" id="accent">
-                <div class="row separator">
-                    <div>
+                    <div class="text">
                         <h5>Customise your accent colour</h5>
-                        <div class="slider-container">
-                            <div class="heading"><p>Accent colour</p><button class="btn reset" onclick="reset_value('base-hue',255)">Reset to default</button></div>
-                            <div class="slider">
-                                <input type="range" min="0" max="360" value="255" id="slider-base-hue" oninput="update_value(this.value, 'base-hue')">
-                                <p id="value-base-hue">255</p>
-                            </div>
-                            <div class="hint">
-                                <p style="left: 0">0</p>
-                                <p style="left: calc((255 / 360) * 100%)">255</p>
-                                <p style="left: 100%">360</p>
-                            </div>
-                        </div>
-                        <div class="slider-container">
-                            <div class="heading"><p>Saturation</p><button class="btn reset" onclick="reset_value('saturation',1)">Reset to default</button></div>
-                            <div class="slider">
-                                <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-saturation" oninput="update_value(this.value, 'saturation')">
-                                <p id="value-saturation">1</p>
-                            </div>
-                            <div class="hint">
-                                <p style="left: 0">0</p>
-                                <p style="left: calc((1 / 1.5) * 100%)">1</p>
-                                <p style="left: 100%">1.5</p>
-                            </div>
-                        </div>
-                        <div class="slider-container">
-                            <div class="heading"><p>Lightness</p><button class="btn reset" onclick="reset_value('lightness',1)">Reset to default</button></div>
-                            <div class="slider">
-                                <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-lightness" oninput="update_value(this.value, 'lightness')">
-                                <p id="value-lightness">1</p>
-                            </div>
-                            <div class="hint">
-                                <p style="left: 0">0</p>
-                                <p style="left: calc((1 / 1.5) * 100%)">1</p>
-                                <p style="left: 100%">1.5</p>
-                            </div>
-                        </div>
+                        <p>Enjoy last.fm in a fresh coat of paint.</p>
                     </div>
-                    <div>
-                        <h5>Preview</h5>
-                        <div class="pallete">
-                            <!--<div style="--col: hsl(var(--l1))"></div>-->
-                            <div style="--col: hsl(var(--l2-c))"></div>
-                            <div style="--col: hsl(var(--l3-c))"></div>
-                            <div style="--col: hsl(var(--l4-c))"></div>
-                        </div>
-                        <div class="pallete" style="margin-top: 5px">
-                            <!--<div style="--col: hsl(var(--l1))"></div>-->
-                            <div style="--col: hsl(var(--l2))"></div>
-                            <div style="--col: hsl(var(--l3))"></div>
-                            <div style="--col: hsl(var(--l4))"></div>
-                        </div>
-                        <p class="caption">The top row of colours are used when visiblity is always required (like links for example), they can only be so dark.</p>
-                        <div class="sep"></div>
-                        <div class="btn-row">
-                            <button class="btn" style="font-size: 14px">Example button</button>
-                            <button class="btn primary" style="font-size: 14px">Example button</button>
-                            <div class="chartlist-bar">
-                                <span class="fill"></span>
-                                <span class="text">44,551 plays</span>
-                            </div>
-                        </div>
+                </a>
+                <a class="btn control-panel-item item" href="#gloss">
+                    <div class="image">
+                        <i class="icon w-24" data-lucide="disc"></i>
                     </div>
-                </div>
-            </div>
-            <div class="rows" data-page="gloss" id="gloss">
-                <div class="row separator">
-                    <div>
+                    <div class="text">
                         <h5>Adjust image gloss</h5>
-                        <div class="slider-container">
-                            <div class="heading"><p>Opacity</p><button class="btn reset" onclick="reset_value('gloss',0.2)">Reset to default</button></div>
-                            <div class="slider">
-                                <input type="range" min="0" max="1" value="0.2" step="0.05" id="slider-gloss" oninput="update_value(this.value, 'gloss')">
-                                <p id="value-gloss">0.2</p>
-                            </div>
-                            <div class="hint">
-                                <p style="left: 0">0</p>
-                                <p style="left: 20%">0.2</p>
-                                <p style="left: 100%">1</p>
-                            </div>
-                        </div>
-                        <p class="caption">If you really aren't a fan, setting to 0 obviously hides it completely.</p>
+                        <p>Change the opacity of album/artist cover's gloss.</p>
                     </div>
-                    <div>
-                        <h5>Preview</h5>
-                        <div class="pallete" style="height: fit-content">
-                            <div class="album-cover" style="background: #000"></div>
-                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/b897255bf422baa93a42536af293f9f8.jpg')"></div>
-                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/ece37f683016f2c7bf5222254e2eb5a1.jpg')"></div>
-                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/3f0266af96efa67250bed3c87e6deb45.jpg')"></div>
-                        </div>
-                        <div class="pallete" style="height: fit-content; margin-top: 5px">
-                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/9cf52a295077533afeb5c00a5fca692f.jpg')"></div>
-                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/b0962b3df3e930c581bc69618d6c3281.jpg')"></div>
-                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/e39eb31f874f4a5c4afa836845141437.jpg')"></div>
-                            <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/a78bbd5ff0184115902f403212f04976.jpg')"></div>
-                        </div>
+                </a>
+                <a class="btn control-panel-item item" href="#cards">
+                    <div class="image">
+                        <i class="icon w-24" data-lucide="layout-dashboard"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Adjust card width</h5>
+                        <p>Change the size of bleh2.</p>
+                    </div>
+                </a>
+            </div>
+    </main>
+    <main class="panel-container double">
+        <div class="main">
+            <section class="panel lfm-preview" id="main">
+                <h5>Customise your accent colour</h5>
+                <div class="pallete options">
+                    <button class="btn" style="--hue: -2" onclick="reset_value('base-hue',-2)"></button>
+                    <button class="btn" style="--hue: 10" onclick="reset_value('base-hue',10)"></button>
+                    <button class="btn" style="--hue: 35" onclick="reset_value('base-hue',35)"></button>
+                    <button class="btn" style="--hue: 85" onclick="reset_value('base-hue',85)"></button>
+                    <button class="btn" style="--hue: 115" onclick="reset_value('base-hue',115)"></button>
+                    <button class="btn" style="--hue: 155" onclick="reset_value('base-hue',155)"></button>
+                    <button class="btn" style="--hue: 185" onclick="reset_value('base-hue',185)"></button>
+                    <button class="btn" style="--hue: 222" onclick="reset_value('base-hue',222)"></button>
+                    <button class="btn" style="--hue: 255" onclick="reset_value('base-hue',255)"></button>
+                    <button class="btn" style="--hue: 333" onclick="reset_value('base-hue',333)"></button>
+                </div>
+                <div class="sep"></div>
+                <div class="slider-container">
+                    <div class="heading"><p>Accent colour</p><button class="btn reset" onclick="reset_value('base-hue',255)">Reset to default</button></div>
+                    <div class="slider">
+                        <input type="range" min="0" max="360" value="255" id="slider-base-hue" oninput="update_value(this.value, 'base-hue')">
+                        <p id="value-base-hue">255</p>
+                    </div>
+                    <div class="hint">
+                        <p style="left: 0">0</p>
+                        <p style="left: calc((255 / 360) * 100%)">255</p>
+                        <p style="left: 100%">360</p>
                     </div>
                 </div>
-                <div class="rows" data-page="cards" id="cards">
-                    <div class="row">
-                        <div>
-                            <h5>Adjust card width</h5>
-                            <div class="slider-container">
-                                <div class="heading"><p>Main width</p><button class="btn reset" onclick="reset_value('main-width',902)">Reset to default</button></div>
-                                <div class="slider">
-                                    <input type="range" min="700" max="1300" value="902" step="20" id="slider-main-width" oninput="update_value(this.value, 'main-width')">
-                                    <p id="value-main-width">902</p>
-                                </div>
-                                <div class="hint">
-                                    <p style="left: 0">700</p>
-                                    <p style="left: calc((202 / 600) * 100%)">902</p>
-                                    <p style="left: 100%">1300</p>
-                                </div>
-                            </div>
-                            <p class="caption">The default is not a perfect 900 due to chart grid sizing.</p>
-                            <!--<div class="slider-container">
-                                <div class="heading"><p>Sidebar width</p><button class="btn reset" onclick="reset_value('sidebar-width',400)">Reset to default</button></div>
-                                <div class="slider">
-                                    <input type="range" min="400" max="800" value="400" step="20" id="slider-sidebar-width" oninput="update_value(this.value, 'sidebar-width')">
-                                    <p id="value-sidebar-width">400</p>
-                                </div>
-                                <div class="hint">
-                                    <p style="left: 0">400</p>
-                                    <p style="left: 100%">800</p>
-                                </div>
-                            </div>-->
-                            <p class="caption">Keep in mind your screen resolution when adjusting.</p>
-                        </div>
+                <div class="slider-container">
+                    <div class="heading"><p>Saturation</p><button class="btn reset" onclick="reset_value('saturation',1)">Reset to default</button></div>
+                    <div class="slider">
+                        <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-saturation" oninput="update_value(this.value, 'saturation')">
+                        <p id="value-saturation">1</p>
                     </div>
-            </div>
-            <style>
-                .caption {
-                    font-size: 14px;
-                    margin-top: 12px;
-                    color: hsl(var(--c3));
-                }
-
-                .album-cover {
-                    aspect-ratio: 1 / 1;
-                    position: relative;
-                    overflow: hidden;
-                    background-size: 100%;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    border: 1px solid hsl(var(--b4));
-                    box-sizing: border-box;
-                }
-                .album-cover:after {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    background-image: url(/img/gloss.svg) !important;
-                    background-size: 100% !important;
-                    opacity: var(--gloss, 0.2);
-                    pointer-events: none;
-                    padding: unset !important;
-                    box-shadow: unset !important;
-                }
-            </style>
-            <script>
-                new ClipboardJS('.btn');
-                function open_tutorial() {
-                    let desc = (`
-                    <ol class="steps">
-                        <li>Install <a href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-hue.user.css" target="_blank">this extension</a></li>
-                        <li>Open the <code>Stylus</code> icon in your browser</li>
-                        <li>Find <code>bleh2 (hue)</code> and hit the <strong class="margin"><i class="icon w-16" data-lucide="pencil"></i> Edit</strong> button</li>
-                        <li>Copy the values into the identical ones you see :3</li>
-                    </ol>
-                    `);
-                    create_window(
-                        'Value copy tutorial',
-                        desc,
-                        [
-                            {
-                                'text': 'close',
-                                'onclick': 'kill_window(\'tutorial\')'
-                            }
-                        ],
-                        'tutorial'
-                    );
-                }
-            </script>
-        </section>
+                    <div class="hint">
+                        <p style="left: 0">0</p>
+                        <p style="left: calc((1 / 1.5) * 100%)">1</p>
+                        <p style="left: 100%">1.5</p>
+                    </div>
+                </div>
+                <div class="slider-container">
+                    <div class="heading"><p>Lightness</p><button class="btn reset" onclick="reset_value('lightness',1)">Reset to default</button></div>
+                    <div class="slider">
+                        <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-lightness" oninput="update_value(this.value, 'lightness')">
+                        <p id="value-lightness">1</p>
+                    </div>
+                    <div class="hint">
+                        <p style="left: 0">0</p>
+                        <p style="left: calc((1 / 1.5) * 100%)">1</p>
+                        <p style="left: 100%">1.5</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="sidebar">
+            <section class="panel">
+                <h5>Preview</h5>
+                <div class="pallete">
+                    <!--<div style="--col: hsl(var(--l1))"></div>-->
+                    <div style="--col: hsl(var(--l2-c))"></div>
+                    <div style="--col: hsl(var(--l3-c))"></div>
+                    <div style="--col: hsl(var(--l4-c))"></div>
+                </div>
+                <div class="pallete">
+                    <!--<div style="--col: hsl(var(--l1))"></div>-->
+                    <div style="--col: hsl(var(--l2))"></div>
+                    <div style="--col: hsl(var(--l3))"></div>
+                    <div style="--col: hsl(var(--l4))"></div>
+                </div>
+                <p class="caption">The top row of colours are used when visiblity is always required (like links for example), they can only be so dark.</p>
+                <div class="sep"></div>
+                <div class="btn-row">
+                    <button class="btn" style="font-size: 14px">Example button</button>
+                    <button class="btn primary" style="font-size: 14px">Example button</button>
+                </div>
+                <div class="sep"></div>
+                <div class="btn-row">
+                    <div class="chartlist-bar">
+                        <span class="fill"></span>
+                        <span class="text">44,551 plays</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <main class="panel-container double">
+        <div class="main">
+            <section class="panel lfm-preview" id="main">
+                <h5>Adjust image gloss</h5>
+                <div class="slider-container">
+                    <div class="heading"><p>Opacity</p><button class="btn reset" onclick="reset_value('gloss',0.2)">Reset to default</button></div>
+                    <div class="slider">
+                        <input type="range" min="0" max="1" value="0.2" step="0.05" id="slider-gloss" oninput="update_value(this.value, 'gloss')">
+                        <p id="value-gloss">0.2</p>
+                    </div>
+                    <div class="hint">
+                        <p style="left: 0">0</p>
+                        <p style="left: 20%">0.2</p>
+                        <p style="left: 100%">1</p>
+                    </div>
+                </div>
+                <p class="caption">If you really aren't a fan, setting to 0 obviously hides it completely.</p>
+            </section>
+        </div>
+        <div class="sidebar">
+            <section class="panel">
+                <h5>Preview</h5>
+                <div class="pallete albums" style="height: fit-content">
+                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/b0962b3df3e930c581bc69618d6c3281.jpg')"></div>
+                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/b897255bf422baa93a42536af293f9f8.jpg')"></div>
+                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/a78bbd5ff0184115902f403212f04976.jpg')"></div>
+                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/ece37f683016f2c7bf5222254e2eb5a1.jpg')"></div>
+                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/570021b68d3d9d2db08bc99a473303b0.jpg')"></div>
+                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/e39eb31f874f4a5c4afa836845141437.jpg')"></div>
+                </div>
+                <p class="caption">Album covers from last.fm</p>
+            </section>
+        </div>
+    </main>
+    <main class="panel-container double">
+        <div class="main">
+            <section class="panel lfm-preview" id="main">
+                <h5>Adjust card width</h5>
+                <div class="slider-container">
+                    <div class="heading"><p>Main width</p><button class="btn reset" onclick="reset_value('cards-main-width',902)">Reset to default</button></div>
+                    <div class="slider">
+                        <input type="range" min="700" max="1300" value="902" step="20" id="slider-cards-main-width" oninput="update_value(this.value, 'cards-main-width')">
+                        <p id="value-cards-main-width">902</p>
+                    </div>
+                    <div class="hint">
+                        <p style="left: 0">700</p>
+                        <p style="left: calc((202 / 600) * 100%)">902</p>
+                        <p style="left: 100%">1300</p>
+                    </div>
+                </div>
+                <p class="caption">The default is not a perfect 900 due to chart grid sizing.</p>
+                <!--<div class="slider-container">
+                    <div class="heading"><p>Sidebar width</p><button class="btn reset" onclick="reset_value('sidebar-width',400)">Reset to default</button></div>
+                    <div class="slider">
+                        <input type="range" min="400" max="800" value="400" step="20" id="slider-sidebar-width" oninput="update_value(this.value, 'sidebar-width')">
+                        <p id="value-sidebar-width">400</p>
+                    </div>
+                    <div class="hint">
+                        <p style="left: 0">400</p>
+                        <p style="left: 100%">800</p>
+                    </div>
+                </div>-->
+                <p class="caption">Keep in mind your screen resolution when adjusting.</p>
+            </section>
+        </div>
+        <div class="sidebar">
+            <section class="panel"></section>
+        </div>
+    </main>
+    <main class="panel-container">
         <section class="panel lfm-preview" id="export">
             <div>
                 <h5>Export into bleh2 theme</h5>
@@ -361,16 +323,40 @@
     </main>
 </body>
 <script>
+    new ClipboardJS('.btn');
+    function open_tutorial() {
+        let desc = (`
+        <ol class="steps">
+            <li>Install <a href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-hue.user.css" target="_blank">this extension</a></li>
+            <li>Open the <code>Stylus</code> icon in your browser</li>
+            <li>Find <code>bleh2 (hue)</code> and hit the <strong class="margin"><i class="icon w-16" data-lucide="pencil"></i> Edit</strong> button</li>
+            <li>Copy the values into the identical ones you see :3</li>
+        </ol>
+        `);
+        create_window(
+            'Value copy tutorial',
+            desc,
+            [
+                {
+                    'text': 'close',
+                    'onclick': 'kill_window(\'tutorial\')'
+                }
+            ],
+            'tutorial'
+        );
+    }
+</script>
+<script>
     let bleh = {
         hue: 255,
         saturation: 1,
         lightness: 1,
         invert: 'var(--b7)',
         gloss: 0.2,
-        'main-width': 902
+        'cards-main-width': 902
     };
     function update_value(value, type) {
-        document.body.style.setProperty(`--${type}`,value);
+        document.documentElement.style.setProperty(`--${type}`,fix_v(type, value));
         document.getElementById(`value-${type}`).textContent = value;
         if (type == 'base-hue') bleh.hue = value;
         else               bleh[type] = value;
@@ -398,20 +384,27 @@
 --lit: ${bleh.lightness};
 --ovr: ${bleh.invert};
 --gloss-opacity: ${bleh.gloss};
---cards-main-width: ${bleh['main-width']};`);
+--cards-main-width: ${fix_v('cards-main-width', bleh['cards-main-width'])};`);
+    }
+    function fix_v(type, value) {
+        if (type == 'cards-main-width') {
+            return `${value}px`;
+        } else {
+            return value;
+        }
     }
 
     update_copy();
+    update_value(0.2,'gloss');
 </script>
-<footer>
-    <div class="footer-inner" bis_skin_checked="1">
-        <span class="main" id="footer.main">
-            <a class="over hide" href="https://github.com/katelmao/lastfm-bleh/blob/uwu/LICENSE" target="_blank" bis_skin_checked="1">kate 2022-2024</a>
-        </span>
-        <span class="links" id="footer.links">
-            <a href="https://github.com/katelmao/lastfm-bleh" bis_skin_checked="1">View Source</a>
-        </span>
-    </div>
+<footer class="content">
+    <span class="main">
+        <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
+    </span>
+    <span class="links">
+        <a href="https://github.com/katelyynn/bleh">View theme source</a>
+        <a href="https://github.com/katelyynn/cutensilly">View source</a>
+    </span>
 </footer>
 <script>
     setInterval(function() {
@@ -425,73 +418,3 @@
     }, 60);
 </script>
 <script>lucide.createIcons();</script>
-<style>
-    a:not(:is(.btn, .card)) {
-        color: hsl(var(--l3-c));
-    }
-    :root, body, .chip, .window, .badge, .tag-mono, .tag, .status-dot, .status, .install, .panel {
-        --hue: var(--base-hue);
-        --sat: var(--saturation);
-        --lit: var(--lightness);
-
-        --c1: var(--hue), calc(var(--sat) * 40%), 100%;
-		--c2: var(--hue), calc(var(--sat) * 60%), 90%;
-		--c3: var(--hue), calc(var(--sat) * 10%), 60%;
-		--ov-c1: var(--c1);
-
-		--l2: var(--hue), calc(var(--sat) * 50%), calc(var(--lit) * 83%);
-		--l3: var(--hue), calc(var(--sat) * 60%), calc(var(--lit) * 70%);
-		--l4: var(--hue), calc(var(--sat) * 70%), calc(var(--lit) * 50%);
-
-		--l2-c: var(--hue), calc(var(--sat) * 50%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 83%);
-		--l3-c: var(--hue), calc(var(--sat) * 60%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 70%);
-		--l4-c: var(--hue), calc(var(--sat) * 70%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 50%);
-
-		--h2: var(--l2-c);
-		--h3: var(--l3-c);
-		--h4: var(--l4-c);
-
-		--icon: var(--c2);
-
-        /* any additional highlights */
-		--b3: var(--hue), calc(var(--sat) * 6%), 28%;
-
-        /* card border */
-        --b4: var(--hue), calc(var(--sat) * 8%), 22%;
-
-        /* card */
-        --b5: var(--hue), calc(var(--sat) * 9%), 15%;
-
-        /* root */
-        --b6: var(--hue), calc(var(--sat) * 12%), 10%;
-        --b7: 0, 0%, 0%;
-    }
-    .btn {
-        --top: 7px;
-        --sides: 12px;
-        --bg: hsl(var(--b4));
-		--bg-hov: hsla(var(--b4), 80%);
-		--bg-atv: hsla(var(--b4), 60%);
-        border-radius: 6px;
-
-        color: hsl(var(--c2));
-    }
-    .btn.primary, .chartlist-bar .text {
-        color: hsl(var(--ovr, var(--b7)));
-    }
-
-    .chartlist-bar {
-        background: linear-gradient(90deg, hsla(var(--c2), 25%) 7%, hsl(var(--b4)) 35%);
-        border-radius: 4px;
-    }
-    .chartlist-bar .fill {
-        background-color: hsl(var(--l3)) !important;
-		box-shadow: 0px 0px 16px hsla(var(--l3), 50%);
-        border-radius: 4px;
-    }
-
-    .chartlist-bar .text {
-        padding: 0 10px;
-        margin: unset;
-    }
-</style>
