@@ -89,7 +89,7 @@ function update_item(item, value=undefined, dont_modify=false) {
         document.getElementById(`value-${item}`).textContent = `${bleh[item]}${options[item].unit}`;
         document.getElementById(`slider-${item}`).value = bleh[item];
     } else if (options[item].type == 'toggle' && !dont_modify) {
-        if (bleh[item] = options[item].values[0]) {
+        if (bleh[item] == options[item].values[0]) {
             bleh[item] = options[item].values[1];
             document.getElementById(`toggle-${item}`).setAttribute('aria-checked',false);
 
