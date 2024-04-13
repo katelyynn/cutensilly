@@ -397,7 +397,7 @@ strong.margin {
     inset: 0;
     background-image: url(/img/gloss.svg) !important;
     background-size: 100% !important;
-    opacity: var(--gloss, 0.2);
+    opacity: var(--gloss-opacity, 0.2);
     pointer-events: none;
     padding: unset !important;
     box-shadow: unset !important;
