@@ -219,14 +219,14 @@ input[type="range"]::-moz-range-thumb {
 
 .toggle {
     display: flex;
-    width: 48px;
+    width: 56px;
     height: 32px;
     position: relative;
 }
 .toggle .dot {
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     left: 7px;
     border-radius: var(--item-med-radius);
     background: var(--col);
