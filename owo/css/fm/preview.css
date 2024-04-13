@@ -245,11 +245,12 @@ input[type="range"]::-moz-range-thumb {
 .lfm-preview pre {
     font-family: 'JetBrains Mono', monospace;
     padding: 14px;
-    border-radius: 10px;
+    border-radius: var(--item-med-radius);
     background-color: hsla(var(--b6), 60%);
     margin-top: 10px;
     font-size: 14px;
     line-height: 24px;
+    overflow: hidden;
 }
 .lfm-preview .copy-code {
     position: relative;
@@ -259,6 +260,14 @@ input[type="range"]::-moz-range-thumb {
     top: var(--card-padding);
     right: var(--card-padding);
     height: 40px;
+}
+
+
+.using-hue-gradient-item:not(.using-hue-gradient .using-hue-gradient-item) {
+    display: none;
+}
+.using-hue-gradient .dim-using-hue-gradient {
+    display: none;
 }
 
 
@@ -347,7 +356,7 @@ strong.margin {
 }
 .chartlist-bar .fill {
     width: 76%;
-    background-color: hsl(var(--l3));
+    background: var(--chartlist-fill);
 	box-shadow: 0px 0px 16px hsla(var(--l3), 50%);
     border-radius: var(--item-small-radius);
     position: absolute;

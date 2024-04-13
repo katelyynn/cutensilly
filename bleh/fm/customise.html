@@ -168,7 +168,13 @@
                     <button class="btn" style="--hue: 333" onclick="update_item('hue', 333)"></button>
                 </div>
                 <div class="sep"></div>
-                <div class="slider-container">
+                <div class="pallete options">
+                    <button class="btn" style="background: var(--gradient-lesbian)" onclick="update_item('hue_gradient', 'lesbian')"></button>
+                    <button class="btn" style="background: var(--gradient-trans)" onclick="update_item('hue_gradient', 'trans')"></button>
+                </div>
+                <div class="sep"></div>
+                <p class="caption using-hue-gradient-item">While a hue gradient is selected, hue adjustments are not possible.</p>
+                <div class="slider-container dim-using-hue-gradient">
                     <div class="heading"><p>Accent colour</p><button class="btn reset" onclick="reset_item('hue')">Reset to default</button></div>
                     <div class="slider">
                         <input type="range" min="0" max="360" value="255" id="slider-hue" oninput="update_item('hue', this.value)">
@@ -180,7 +186,7 @@
                         <p style="left: 100%">360</p>
                     </div>
                 </div>
-                <div class="slider-container">
+                <div class="slider-container dim-using-hue-gradient">
                     <div class="heading"><p>Saturation</p><button class="btn reset" onclick="reset_item('sat')">Reset to default</button></div>
                     <div class="slider">
                         <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-sat" oninput="update_item('sat', this.value)">
@@ -192,7 +198,7 @@
                         <p style="left: 100%">1.5</p>
                     </div>
                 </div>
-                <div class="slider-container">
+                <div class="slider-container dim-using-hue-gradient">
                     <div class="heading"><p>Lightness</p><button class="btn reset" onclick="reset_item('lit')">Reset to default</button></div>
                     <div class="slider">
                         <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-lit" oninput="update_item('lit', this.value)">

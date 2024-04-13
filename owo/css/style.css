@@ -104,6 +104,11 @@
     --gloss-opacity: 0.2;
 
     --interact-shadow: hsla(var(--b7), 0.1) 0 2px 4px 0;
+
+    --chartlist-fill: var(--hue-gradient, hsl(var(--l3)));
+
+    --gradient-lesbian: linear-gradient(to right, rgb(213, 44, 0), rgb(226, 150, 136), rgb(255, 255, 255) 45%, rgb(255, 255, 255), rgb(255, 255, 255) 55%, rgb(210, 127, 164), rgb(162, 2, 98));
+    --gradient-trans: linear-gradient(to right, rgb(85, 205, 252), rgb(179, 157, 233), rgb(247, 168, 184), rgb(246, 216, 221), rgb(255, 255, 255) 45%, rgb(255, 255, 255), rgb(255, 255, 255) 55%, rgb(246, 216, 221), rgb(247, 168, 184), rgb(179, 157, 233), rgb(85, 205, 252));
 }
 
 

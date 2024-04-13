@@ -51,6 +51,26 @@ let options = {
         value: 'none',
         values: ['none', 'flex'],
         type: null
+    },
+    hue_gradient: {
+        css: 'hue-gradient',
+        unit: '',
+        value: '',
+        values: {
+            lesbian: {
+                hue: 20,
+                sat: 1.5,
+                lit: 0.95,
+                gradient: 'linear-gradient(to right, rgb(213, 44, 0), rgb(226, 150, 136), rgb(255, 255, 255) 45%, rgb(255, 255, 255), rgb(255, 255, 255) 55%, rgb(210, 127, 164), rgb(162, 2, 98))'
+            },
+            trans: {
+                hue: 200,
+                sat: 1,
+                lit: 1,
+                gradient: 'linear-gradient(to right, rgb(85, 205, 252), rgb(179, 157, 233), rgb(247, 168, 184), rgb(246, 216, 221), rgb(255, 255, 255) 45%, rgb(255, 255, 255), rgb(255, 255, 255) 55%, rgb(246, 216, 221), rgb(247, 168, 184), rgb(179, 157, 233), rgb(85, 205, 252))'
+            }
+        },
+        type: 'hue_gradient'
     }
 }
 
@@ -71,8 +91,27 @@ function update_item(item, value=undefined, dont_modify=false) {
     if (options[item].type == 'slider')
         bleh[item] = value;
 
+    if (dont_modify) delete(bleh.hue_gradient);
+
+    // gradients
+    if (item == 'hue_gradient') {
+        bleh.hue = options.hue_gradient.values[value].hue;
+        bleh.sat = options.hue_gradient.values[value].sat;
+        bleh.lit = options.hue_gradient.values[value].lit;
+        bleh.hue_gradient = options.hue_gradient.values[value].gradient;
+
+        document.documentElement.style.setProperty(`--hue`,`${options.hue_gradient.values[value].hue}`);
+        document.documentElement.style.setProperty(`--sat`,`${options.hue_gradient.values[value].sat}`);
+        document.documentElement.style.setProperty(`--lit`,`${options.hue_gradient.values[value].lit}`);
+        document.documentElement.style.setProperty(`--hue-gradient`,`${options.hue_gradient.values[value].gradient}`);
+
+        /*document.getElementById(`value-hue`).textContent = options.hue_gradient.values[value].hue;
+        document.getElementById(`slider-hue`).value = options.hue_gradient.values[value].hue;*/
+        document.body.classList.add('using-hue-gradient');
+    }
+
     // determine --ovr value based on --hue & --lit
-    if (options[item].item == 'hue' || options[item].item == 'lit') {
+    if (item == 'hue' || item == 'lit' || item == 'hue_gradient') {
         if (bleh.hue > 228 && bleh.hue < 252 && bleh.lit < 0.75) {
             bleh.ovr = 'var(--ov-c1)';
         } else if (bleh.hue > 210 && bleh.hue < 280 && bleh.lit < 0.425) {
@@ -82,6 +121,13 @@ function update_item(item, value=undefined, dont_modify=false) {
         } else {
             bleh.ovr = 'var(--b7)';
         }
+    }
+
+    // remove gradient
+    if (item == 'hue' || item == 'lit' || item == 'sat') {
+        delete(bleh.hue_gradient);
+        document.documentElement.style.removeProperty(`--hue-gradient`);
+        document.body.classList.remove('using-hue-gradient');
     }
 
     if (options[item].type == 'slider' && !dont_modify) {
@@ -111,16 +157,18 @@ function update_item(item, value=undefined, dont_modify=false) {
     }
 
     // set variable on <htmL> aka. :root level
-    document.documentElement.style.setProperty(`--${options[item].css}`,`${bleh[item]}${options[item].unit}`);
+    if (item != 'hue_gradient')
+        document.documentElement.style.setProperty(`--${options[item].css}`,`${bleh[item]}${options[item].unit}`);
 
 
     update_copy_block();
 }
 
+new ClipboardJS('.btn');
 function update_copy_block() {
     let text = '';
     for (let item in bleh)
-        text = `${text}--${options[item].css}: ${options[item].value}${options[item].unit}<br>`;
+        text = `${text}--${options[item].css}: ${bleh[item]}${options[item].unit};<br>`;
 
     document.getElementById('copy-block').innerHTML = text;
 }
