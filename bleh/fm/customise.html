@@ -156,23 +156,30 @@
             <section class="panel lfm-preview" id="main">
                 <h5>Customise your accent colour</h5>
                 <div class="pallete options">
-                    <button class="btn" style="--hue: -2" onclick="reset_value('base-hue',-2)"></button>
-                    <button class="btn" style="--hue: 10" onclick="reset_value('base-hue',10)"></button>
-                    <button class="btn" style="--hue: 35" onclick="reset_value('base-hue',35)"></button>
-                    <button class="btn" style="--hue: 85" onclick="reset_value('base-hue',85)"></button>
-                    <button class="btn" style="--hue: 115" onclick="reset_value('base-hue',115)"></button>
-                    <button class="btn" style="--hue: 155" onclick="reset_value('base-hue',155)"></button>
-                    <button class="btn" style="--hue: 185" onclick="reset_value('base-hue',185)"></button>
-                    <button class="btn" style="--hue: 222" onclick="reset_value('base-hue',222)"></button>
-                    <button class="btn" style="--hue: 255" onclick="reset_value('base-hue',255)"></button>
-                    <button class="btn" style="--hue: 333" onclick="reset_value('base-hue',333)"></button>
+                    <button class="btn" style="--hue: -2" onclick="update_item('hue', -2)"></button>
+                    <button class="btn" style="--hue: 10" onclick="update_item('hue', 10)"></button>
+                    <button class="btn" style="--hue: 35" onclick="update_item('hue', 35)"></button>
+                    <button class="btn" style="--hue: 85" onclick="update_item('hue', 85)"></button>
+                    <button class="btn" style="--hue: 115" onclick="update_item('hue', 115)"></button>
+                    <button class="btn" style="--hue: 155" onclick="update_item('hue', 155)"></button>
+                    <button class="btn" style="--hue: 185" onclick="update_item('hue', 185)"></button>
+                    <button class="btn" style="--hue: 222" onclick="update_item('hue', 222)"></button>
+                    <button class="btn" style="--hue: 255" onclick="update_item('hue', 255)"></button>
+                    <button class="btn" style="--hue: 333" onclick="update_item('hue', 333)"></button>
+                </div>
+                <div class="sep using-hue-gradient-item"></div>
+                <div class="pallete options using-hue-gradient-item">
+                    <button class="btn" style="background: var(--gradient-lesbian)" onclick="update_item('hue_gradient', 'lesbian')"></button>
+                    <button class="btn" style="background: var(--gradient-trans)" onclick="update_item('hue_gradient', 'trans')"></button>
+                    <button class="btn" style="background: var(--gradient-fluid)" onclick="update_item('hue_gradient', 'fluid')"></button>
                 </div>
                 <div class="sep"></div>
-                <div class="slider-container">
-                    <div class="heading"><p>Accent colour</p><button class="btn reset" onclick="reset_value('base-hue',255)">Reset to default</button></div>
+                <p class="caption using-hue-gradient-item">While a hue gradient is selected, hue adjustments are not possible.</p>
+                <div class="slider-container dim-using-hue-gradient">
+                    <div class="heading"><p>Accent colour</p><button class="btn reset" onclick="reset_item('hue')">Reset to default</button></div>
                     <div class="slider">
-                        <input type="range" min="0" max="360" value="255" id="slider-base-hue" oninput="update_value(this.value, 'base-hue')">
-                        <p id="value-base-hue">255</p>
+                        <input type="range" min="0" max="360" value="255" id="slider-hue" oninput="update_item('hue', this.value)">
+                        <p id="value-hue">255</p>
                     </div>
                     <div class="hint">
                         <p style="left: 0">0</p>
@@ -180,11 +187,11 @@
                         <p style="left: 100%">360</p>
                     </div>
                 </div>
-                <div class="slider-container">
-                    <div class="heading"><p>Saturation</p><button class="btn reset" onclick="reset_value('saturation',1)">Reset to default</button></div>
+                <div class="slider-container dim-using-hue-gradient">
+                    <div class="heading"><p>Saturation</p><button class="btn reset" onclick="reset_item('sat')">Reset to default</button></div>
                     <div class="slider">
-                        <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-saturation" oninput="update_value(this.value, 'saturation')">
-                        <p id="value-saturation">1</p>
+                        <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-sat" oninput="update_item('sat', this.value)">
+                        <p id="value-sat">1</p>
                     </div>
                     <div class="hint">
                         <p style="left: 0">0</p>
@@ -192,11 +199,11 @@
                         <p style="left: 100%">1.5</p>
                     </div>
                 </div>
-                <div class="slider-container">
-                    <div class="heading"><p>Lightness</p><button class="btn reset" onclick="reset_value('lightness',1)">Reset to default</button></div>
+                <div class="slider-container dim-using-hue-gradient">
+                    <div class="heading"><p>Lightness</p><button class="btn reset" onclick="reset_item('lit')">Reset to default</button></div>
                     <div class="slider">
-                        <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-lightness" oninput="update_value(this.value, 'lightness')">
-                        <p id="value-lightness">1</p>
+                        <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-lit" oninput="update_item('lit', this.value)">
+                        <p id="value-lit">1</p>
                     </div>
                     <div class="hint">
                         <p style="left: 0">0</p>
@@ -242,9 +249,9 @@
             <section class="panel lfm-preview" id="main">
                 <h5>Adjust image gloss</h5>
                 <div class="slider-container">
-                    <div class="heading"><p>Opacity</p><button class="btn reset" onclick="reset_value('gloss',0.2)">Reset to default</button></div>
+                    <div class="heading"><p>Opacity</p><button class="btn reset" onclick="reset_item('gloss')">Reset to default</button></div>
                     <div class="slider">
-                        <input type="range" min="0" max="1" value="0.2" step="0.05" id="slider-gloss" oninput="update_value(this.value, 'gloss')">
+                        <input type="range" min="0" max="1" value="0.2" step="0.05" id="slider-gloss" oninput="update_item('gloss', this.value)">
                         <p id="value-gloss">0.2</p>
                     </div>
                     <div class="hint">
@@ -280,7 +287,7 @@
                         <p>Show extra navigation</p>
                     </div>
                     <div class="toggle-wrap">
-                        <button class="toggle" id="toggle-nav" onclick="toggle_value('nav',['unset','none'])" aria-checked="true">
+                        <button class="toggle" id="toggle-nav" onclick="update_item('nav')" aria-checked="true">
                             <div class="dot"></div>
                         </button>
                     </div>
@@ -307,10 +314,10 @@
             <section class="panel lfm-preview" id="main">
                 <h5>Adjust card width</h5>
                 <div class="slider-container">
-                    <div class="heading"><p>Main width</p><button class="btn reset" onclick="reset_value('cards-main-width',902)">Reset to default</button></div>
+                    <div class="heading"><p>Main width</p><button class="btn reset" onclick="reset_item('main_width')">Reset to default</button></div>
                     <div class="slider">
-                        <input type="range" min="700" max="1300" value="902" step="20" id="slider-cards-main-width" oninput="update_value(this.value, 'cards-main-width')">
-                        <p id="value-cards-main-width">902</p>
+                        <input type="range" min="700" max="1300" value="902" step="20" id="slider-main_width" oninput="update_item('main_width', this.value)">
+                        <p id="value-main_width">902</p>
                     </div>
                     <div class="hint">
                         <p style="left: 0">700</p>
@@ -320,7 +327,7 @@
                 </div>
                 <p class="caption">The default is not a perfect 900 due to chart grid sizing.</p>
                 <!--<div class="slider-container">
-                    <div class="heading"><p>Sidebar width</p><button class="btn reset" onclick="reset_value('sidebar-width',400)">Reset to default</button></div>
+                    <div class="heading"><p>Sidebar width</p><button class="btn reset" onclick="reset_item('sidebar-width',400)">Reset to default</button></div>
                     <div class="slider">
                         <input type="range" min="400" max="800" value="400" step="20" id="slider-sidebar-width" oninput="update_value(this.value, 'sidebar-width')">
                         <p id="value-sidebar-width">400</p>
@@ -342,8 +349,8 @@
             <div>
                 <h5>Export into bleh2 theme</h5>
                 <div class="copy-code">
-                    <pre id="copy"></pre>
-                    <button class="btn mimic icon-btn" data-clipboard-target="#copy">
+                    <pre id="copy-block"></pre>
+                    <button class="btn mimic icon-btn" data-clipboard-target="#copy-block">
                         <i class="icon w-20" data-lucide="copy"></i>
                     </button>
                 </div>
@@ -362,105 +369,7 @@
         <div class="gap" style="--gap: 10px"></div>
     </main>
 </body>
-<script>
-    new ClipboardJS('.btn');
-    function open_tutorial() {
-        let desc = (`
-        <ol class="steps">
-            <li>Install <a href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-hue.user.css" target="_blank">this extension</a></li>
-            <li>Open the <code>Stylus</code> icon in your browser</li>
-            <li>Find <code>bleh2 (hue)</code> and hit the <strong class="margin"><i class="icon w-16" data-lucide="pencil"></i> Edit</strong> button</li>
-            <li>Copy the values into the identical ones you see :3</li>
-        </ol>
-        `);
-        create_window(
-            'Value copy tutorial',
-            desc,
-            [
-                {
-                    'text': 'close',
-                    'onclick': 'kill_window(\'tutorial\')'
-                }
-            ],
-            'tutorial'
-        );
-    }
-</script>
-<script>
-    let bleh = {
-        hue: 255,
-        saturation: 1,
-        lightness: 1,
-        invert: 'var(--b7)',
-        gloss: 0.2,
-        'cards-main-width': 902,
-        nav: 'unset',
-        auth_bubble: 'none'
-    };
-    function update_value(value, type) {
-        document.documentElement.style.setProperty(`--${type}`,fix_v(type, value));
-        document.getElementById(`value-${type}`).textContent = value;
-        if (type == 'base-hue') bleh.hue = value;
-        else               bleh[type] = value;
-
-        if (bleh.hue > 228 && bleh.hue < 252 && bleh.lightness < 0.75) {
-            bleh.invert = 'var(--ov-c1)';
-        } else if (bleh.hue > 210 && bleh.hue < 280 && bleh.lightness < 0.425) {
-            bleh.invert = 'var(--ov-c1)';
-        } else if (bleh.lightness < 0.3) {
-            bleh.invert = 'var(--ov-c1)';
-        } else {
-            bleh.invert = 'var(--b7)';
-        }
-        document.body.style.setProperty(`--ovr`,bleh.invert);
-
-        update_copy();
-    }
-    function reset_value(value, def) {
-        document.getElementById(`slider-${value}`).value = def;
-        update_value(def, value);
-    }
-    function update_copy() {
-        copy.innerHTML = (`--hue: ${bleh.hue};
---sat: ${bleh.saturation};
---lit: ${bleh.lightness};
---ovr: ${bleh.invert};
---gloss-opacity: ${bleh.gloss};
---cards-main-width: ${fix_v('cards-main-width', bleh['cards-main-width'])};
---head-small-nav: ${bleh.nav};
---auth-badge: ${bleh.auth_bubble};`);
-    }
-    function fix_v(type, value) {
-        if (type == 'cards-main-width') {
-            return `${value}px`;
-        } else {
-            return value;
-        }
-    }
-    function toggle_value(value, types) {
-        if (bleh[value] == types[0]) {
-            bleh[value] = types[1];
-            document.getElementById(`toggle-${value}`).setAttribute('aria-checked',false);
-
-            if (value == 'nav') {
-                document.getElementById('nav-img').setAttribute('src','/img/nav-hidden.png');
-                bleh.auth_bubble = 'flex';
-            }
-        } else {
-            bleh[value] = types[0];
-            document.getElementById(`toggle-${value}`).setAttribute('aria-checked',true);
-
-            if (value == 'nav') {
-                document.getElementById('nav-img').setAttribute('src','/img/nav-shown.png');
-                bleh.auth_bubble = types[1];
-            }
-        }
-        update_copy();
-    }
-
-    update_copy();
-    update_value(0.2,'gloss');
-</script>
+<script src="/js/customise-bleh.js"></script>
 <footer class="content">
     <span class="main">
         <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
