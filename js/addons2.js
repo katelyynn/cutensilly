@@ -20,9 +20,9 @@ let style_addons = [
 ]
 let latest_versions = {
     'main': 2024.0415,
-    'bleh2-oled': 2024.0407,
+    'bleh2-oled': 2024.0415,
     'bleh2-accent': 2024.0320,
-    'bleh2-light': 2024.0412
+    'bleh2-light': 2024.0415
 }
 let any_updates_available = false;
 let sent_update_notif = false;
