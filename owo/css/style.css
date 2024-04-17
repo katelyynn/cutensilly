@@ -51,7 +51,8 @@
 .badge, .tag-mono, .tag,
 .status-dot, .status,
 /* lfm */ .install,
-.panel, .btn
+.panel, .btn,
+.kate-icon
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
     --c2: var(--hue), calc(var(--sat) * 60%), 90%;
@@ -126,6 +127,7 @@ body {
     letter-spacing: unset !important;
     color-scheme: dark;
     accent-color: hsl(var(--l3-c));
+    overflow-x: hidden;
 }
 body:before {
     content: '';

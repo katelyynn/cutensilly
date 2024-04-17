@@ -144,7 +144,7 @@
     color: hsl(var(--l3-c));
 }
 .hi.kate {
-    background: linear-gradient(180deg, hsl(var(--c1)) 0%, hsl(var(--l3-c)) 100%);
+    background: linear-gradient(180deg, hsl(var(--c1)) 0%, hsl(var(--l4-c)) 100%);
     /*background: linear-gradient(336deg, #FFD966 0%, #FF84BF 54.70%, #84FFFF 100%);*/
     background-clip: text;
     -webkit-background-clip: text;
@@ -299,15 +299,16 @@ h2 {
 
 
 .kate-icon {
-    background-color: hsl(var(--b4));
+    background-color: hsla(var(--h4), 25%);
     border-radius: var(--item-med-radius);
-    color: hsl(var(--l1));
+    color: hsl(var(--l2));
     height: 40px;
     aspect-ratio: 1 / 1;
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 60px hsla(var(--h4), 50%);
 }
 .icon {
     top: 0 !important;

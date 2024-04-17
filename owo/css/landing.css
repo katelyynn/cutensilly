@@ -1,10 +1,10 @@
 .hero {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 
 .hero .content {
-    width: 100%;
+    width: 100vw;
     max-width: 70%;
 }
 
@@ -36,8 +36,8 @@
 
 /* sub */
 h5.sub {
-    background-color: hsla(var(--h3),30%);
-    color: hsl(var(--c1));
+    background-color: hsla(var(--h3),15%);
+    color: hsl(var(--l2-c));
     padding: 7px 12px;
     border-radius: var(--item-med-radius);
     width: fit-content;

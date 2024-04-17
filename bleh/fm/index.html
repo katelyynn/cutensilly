@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <head>
     <!-- meta info -->
-    <title id="page-title" translate="no">bleh2.fm (kate's bleh theme for last.fm)</title>
-    <meta name="title" content="bleh2.fm (kate's bleh theme for last.fm)">
+    <title id="page-title" translate="no">bleh².fm (kate's bleh theme for last.fm)</title>
+    <meta name="title" content="bleh².fm (kate's bleh theme for last.fm)">
     <meta name="description" content="a sleek, minimalistic refresh with customisable accent colours and addons!">
     <meta name="keywords" content="kate, katie, last, lastfm, last.fm, lfm, music, streaming, stat, statistics, theme, skin, lastfm skin, lastfm theme, lastfm stylus, stylus theme, stylus, lastfm minimal, lastfm sleek, lastfm dark theme, lastfm dark">
     <meta property="og:site_name" content="kate">
     <meta property="og:type" content="website">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="og:url" content="https://cutensilly.org/lfm">
-    <meta property="og:title" content="bleh2.fm (kate's bleh theme for last.fm)">
+    <meta property="og:title" content="bleh².fm (kate's bleh theme for last.fm)">
     <meta property="og:description" content="a sleek, minimalistic refresh with customisable accent colours and addons!">
     <meta property="og:image" content="https://cutensilly.org/img/bleh2-main.png">
     <meta property="og:image:width" content="1200">
@@ -224,11 +224,13 @@
                 border: 1px solid hsl(var(--b4));
                 box-shadow: var(--card-shadow);
                 border-radius: var(--card-radius);
+                text-decoration: none;
             }
 
             .item-grid .item .image {
                 align-items: baseline;
                 height: 100%;
+                grid-area: icon;
             }
 
             .item-grid .item .text {
@@ -237,6 +239,7 @@
                 gap: 8px;
                 line-height: 20px;
                 color: var(--col);
+                grid-area: text;
             }
 
             .item-grid .item .text h5 {
@@ -244,10 +247,29 @@
                 font-size: 16px;
                 margin: unset;
             }
+
+            .install2 {
+                display: grid !important;
+                grid-template-columns: 40px auto;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                "icon text"
+                "image image";
+            }
+            .install2 .image-row {
+                grid-area: image;
+                width: 100%;
+            }
+            .install2 .image-row img {
+                width: 100%;
+                border-radius: var(--item-med-radius);
+                border: 1px solid hsl(var(--b4));
+                box-shadow: var(--card-shadow);
+            }
         </style>
         <section class="content flex flex-column flex-gap flex-align-center full-width uninstalled2-only" style="--gap: 20px">
             <h5 class="sub" id="style_addons">Features</h5>
-            <p>Key features in bleh2 to enhance your experience.</p>
+            <p>Key features in bleh² to enhance your experience.</p>
             <div class="item-grid" style="width: 100%">
                 <div class="item">
                     <div class="image">
@@ -262,18 +284,18 @@
                 </div>
                 <div class="item">
                     <div class="image">
-                        <div class="kate-icon">
+                        <div class="kate-icon" style="--hue: 210">
                             <i class="icon w-24" data-lucide="moon-star"></i>
                         </div>
                     </div>
                     <div class="text">
-                        <h5>Even easier on the eyes.</h5>
+                        <h5>Even easier on the eyes</h5>
                         <p>Find the default theme too bright? Try out the <i class="hi">OLED theme</i>, available as an addon.</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="image">
-                        <div class="kate-icon">
+                        <div class="kate-icon" style="--hue: 174">
                             <i class="icon w-24" data-lucide="paintbrush"></i>
                         </div>
                     </div>
@@ -284,7 +306,7 @@
                 </div>
                 <div class="item">
                     <div class="image">
-                        <div class="kate-icon">
+                        <div class="kate-icon" style="--hue: 300">
                             <i class="icon w-24" data-lucide="settings-2"></i>
                         </div>
                     </div>
@@ -295,7 +317,7 @@
                 </div>
                 <div class="item">
                     <div class="image">
-                        <div class="kate-icon">
+                        <div class="kate-icon" style="--hue: -2; --lit: 1.1">
                             <i class="icon w-24" data-lucide="refresh-ccw"></i>
                         </div>
                     </div>
@@ -306,13 +328,13 @@
                 </div>
                 <div class="item">
                     <div class="image">
-                        <div class="kate-icon">
+                        <div class="kate-icon" style="--hue: 15">
                             <i class="icon w-24" data-lucide="triangle-alert"></i>
                         </div>
                     </div>
                     <div class="text">
                         <h5>Hateful content blocks</h5>
-                        <p>Users who post <a href="hateful" target="_blank">hateful content</a> are automatically hidden - bleh2 does what last.fm don't.</p>
+                        <p>Users who post <a href="hateful" target="_blank">hateful content</a> are automatically hidden - bleh² does what last.fm don't.</p>
                     </div>
                 </div>
             </div>
@@ -332,10 +354,9 @@
         <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
             <h5 class="sub" id="style_addons">Style addons</h5>
             <p>These are extra styles you can install to enhance your experience :3</p>
-            <h5 class="sub warn">Sorry, not all addons are currently available for bleh2.</h5>
             <h5 class="sub warn uninstalled2-only">The theme must be installed for addons to be available.</h5>
-            <div class="item-grid" style="width: 100%">
-                <a class="item install2 primary" href="/bleh/fm/customise">
+            <div class="item-grid">
+                <a class="item install2 primary" href="/bleh/fm/customise" style="display: flex !important">
                     <div class="image">
                         <div class="kate-icon">
                             <i class="icon w-24" data-lucide="sparkles"></i>
@@ -346,6 +367,8 @@
                         <p>Open the theme customiser</p>
                     </div>
                 </a>
+            </div>
+            <div class="item-grid" style="width: 100%">
                 <div class="item install2" id="install-oled" onclick="create_theme_window('bleh2-oled')">
                     <div class="image">
                         <div class="kate-icon">
@@ -354,7 +377,10 @@
                     </div>
                     <div class="text">
                         <h5>OLED theme</h5>
-                        <p>bleh2, but very dark.</p>
+                        <p>bleh², but very dark.</p>
+                    </div>
+                    <div class="image-row">
+                        <img src="/img/bleh2-addon-oled.png">
                     </div>
                 </div>
                 <div class="item install2" id="install-light" onclick="create_theme_window('bleh2-light')">
@@ -365,7 +391,10 @@
                     </div>
                     <div class="text">
                         <h5>Light theme</h5>
-                        <p>bleh2, but very light.</p>
+                        <p>bleh², but very light.</p>
+                    </div>
+                    <div class="image-row">
+                        <img src="/img/bleh2-addon-light.png">
                     </div>
                 </div>
                 <div class="item install2" id="install-accent" onclick="create_theme_window('bleh2-accent')">
@@ -377,6 +406,9 @@
                     <div class="text">
                         <h5>Album covers<div class="badge" data-kate-type="wip">WIP</div></h5>
                         <p>Match the page colour to the album cover!</p>
+                    </div>
+                    <div class="image-row">
+                        <img src="/img/bleh2-addon-accent.png">
                     </div>
                 </div>
             </div>
