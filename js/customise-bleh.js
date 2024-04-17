@@ -77,6 +77,13 @@ let options = {
             }
         },
         type: 'hue_gradient'
+    },
+    gendered_tags: {
+        css: 'gendered-tags',
+        unit: '',
+        value: 'none',
+        values: ['none', 'flex'],
+        type: 'toggle'
     }
 }
 
@@ -149,6 +156,8 @@ function update_item(item, value=undefined, dont_modify=false) {
             if (item == 'nav') {
                 document.getElementById('nav-img').setAttribute('src','/img/nav-hidden.png');
                 bleh.auth_badge = options.auth_badge.values[1];
+            } else if (item == 'gendered_tags') {
+                document.getElementById('gendered_tags-img').setAttribute('src','/img/gendered_tags-shown.png');
             }
         } else {
             bleh[item] = options[item].values[0];
@@ -158,6 +167,8 @@ function update_item(item, value=undefined, dont_modify=false) {
             if (item == 'nav') {
                 document.getElementById('nav-img').setAttribute('src','/img/nav-shown.png');
                 bleh.auth_badge = options.auth_badge.values[0];
+            } else if (item == 'gendered_tags') {
+                document.getElementById('gendered_tags-img').setAttribute('src','/img/gendered_tags-hidden.png');
             }
         }
     }

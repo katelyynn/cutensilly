@@ -140,6 +140,15 @@
                         <p>Show or hide your notifications, inbox, and settings.</p>
                     </div>
                 </a>
+                <a class="btn control-panel-item item" href="#gendered_tags">
+                    <div class="image">
+                        <i class="icon w-24" data-lucide="tag"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Gendered music tagging</h5>
+                        <p>Show or hide legacy tags related to gender.</p>
+                    </div>
+                </a>
                 <a class="btn control-panel-item item" href="#cards">
                     <div class="image">
                         <i class="icon w-24" data-lucide="layout-dashboard"></i>
@@ -302,11 +311,35 @@
             <style>
                 .img {
                     width: 100%;
-                    border-radius: 1px solid hsl(var(--b4));
+                    border: 1px solid hsl(var(--b4));
                     border-radius: var(--item-med-radius);
-                    box-shadow: var(--card-shadow);
+                    box-shadow: var(--menu-shadow);
                 }
             </style>
+        </div>
+    </main>
+    <main class="panel-container double">
+        <div class="main">
+            <section class="panel lfm-preview" id="gendered_tags">
+                <h5>Gendered music tagging<div class="tag">New</div></h5>
+                <div class="toggle-container">
+                    <div class="heading">
+                        <p>Hide gendered tags</p>
+                    </div>
+                    <div class="toggle-wrap">
+                        <button class="toggle" id="toggle-gendered_tags" onclick="update_item('gendered_tags')" aria-checked="true">
+                            <div class="dot"></div>
+                        </button>
+                    </div>
+                </div>
+                <p class="caption">By default, gendered tags are hidden in bleh2 due to their unorganised and impossible nature.<br>Making use of the <a href="https://www.last.fm/music/Taylor+Swift/+similar" target="_blank">Similar artists</a> panels and sites like <a href="https://rateyourmusic.com" target="_blank">rateyourmusic.com</a> works in a much more related and organised way.</p>
+                <p class="caption">This includes (alphabetically) male, female, and nonbinary vocalist tags.</p>
+            </section>
+        </div>
+        <div class="sidebar">
+            <section class="panel">
+                <img class="img" id="gendered_tags-img" src="/img/gendered_tags-hidden.png">
+            </section>
         </div>
     </main>
     <main class="panel-container double">
