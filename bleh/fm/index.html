@@ -56,10 +56,14 @@
     <link rel="stylesheet" href="/owo/css/input.css">
     <link rel="stylesheet" href="/owo/css/grid.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+        :root {--font-brand: Comfortaa, var(--font)}
 
-        :root, body {
-            --font: IBM Plex Sans JP, Spline Sans, Inter, Roboto, Noto Sans, Noto Sans JP, sans-serif;
+        .hi.kate {
+            font-family: var(--font-brand);
+        }
+        .hi.kate sup {
+            font-family: var(--font);
         }
     </style>
     <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.07"></div>
