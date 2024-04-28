@@ -54,7 +54,7 @@ function install_addon(type, is_script = false) {
 function install_theme() {
     open(`https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css`);
     kill_windows();
-    create_window('Install theme','Make sure to hit \'Install style\', then you can continue.',[
+    create_window('Install theme','Make sure to hit "Install style", then you can continue.',[
         {
             'text': 'Continue',
             'onclick': `finish_theme()`
