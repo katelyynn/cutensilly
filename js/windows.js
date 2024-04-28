@@ -119,17 +119,60 @@ function create_theme_window(type,show_warning = false) {
 
 
 function create_install_window2() {
-    create_window('hey!','<strong>This theme uses the <a href="https://github.com/openstyles/stylus#releases" target="_blank">Stylus</a> browser extension.</strong><br><br>Ensure you have it installed before continuing.',[
+    create_window('hey!','<strong>This theme uses the Stylus browser extension.</strong><br><br>Do you have it installed?',[
         {
-            'text': 'Cancel',
-            'onclick': 'kill_windows()',
-            'type': 'mimic'
+            'text': 'Yes, I have Stylus',
+            'onclick': `install_theme_final()`
         },
         {
-            'text': 'Continue',
-            'onclick': `install_theme()`
+            'text': 'No, please install it',
+            'onclick': `install_stylus()`,
+            'type': 'primary'
         }
-    ],'install_theme')
+    ],'install_theme');
+}
+
+
+function install_stylus() {
+    kill_windows();
+    create_window('Install Stylus',`
+    <p>Depending on your browser, choose either option.</p>
+    <div class="browser-choices">
+        <a class="btn browser" href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne" target="_blank">
+            <img class="browser-icon" src="/img/chrome.png">
+            <p>Chrome</p>
+            <p class="caption">for Chrome, Edge, Brave, Opera</p>
+        </a>
+        <a class="btn browser" href="https://addons.mozilla.org/firefox/addon/styl-us/" target="_blank">
+            <img class="browser-icon" src="/img/firefox.png">
+            <p>Firefox</p>
+            <p class="caption">for Firefox only</p>
+        </a>
+    </div>
+    `,[
+        {
+            'text': 'Done',
+            'onclick': `install_theme_final()`
+        }
+    ],'install_stylus');
+}
+
+
+function install_theme_final() {
+    kill_windows();
+    create_window('Install theme',`
+    <p>Click the button in this window to install.</p>
+    <br>
+    <img src="/img/install-bleh2.png" alt="Screenshot showing the top-left location of the 'Install style' button">
+    <br><br>
+    <p>In the tab that opens, hit "Install style" then close the tab.</p>
+    `,[
+        {
+            'text': 'Install theme',
+            'onclick': `install_theme()`,
+            'type': 'primary'
+        }
+    ],'install_stylus');
 }
 
 

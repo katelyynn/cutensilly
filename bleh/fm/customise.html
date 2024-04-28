@@ -66,6 +66,18 @@
             font-family: var(--font);
         }
     </style>
+    <script>
+        create_window('Welcome!',`
+        <p>This is the <strong>bleh² theme customiser</strong>, allowing you to change theme colours and various other settings.</p>
+        <br>
+        <p>Have a scroll through and configure to your liking, then <strong>hit the floating button once you're ready to save</strong>.</p>
+        `,[
+            {
+                'text': 'Continue',
+                'onclick': 'kill_windows()'
+            }
+        ],'welcome_bleh2_customise');
+    </script>
     <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.07"></div>
     <div class="bg-grad med-bg" style="background: linear-gradient(180deg, hsla(var(--l3), 20%) 0%, hsl(var(--b6)) 100%); z-index: 0"></div>
     <main class="panel-container">
@@ -391,29 +403,141 @@
     <main class="panel-container">
         <section class="panel lfm-preview" id="export">
             <div>
-                <h5>Export into bleh² theme</h5>
-                <div class="copy-code">
-                    <pre id="copy-block"></pre>
-                    <button class="btn mimic icon-btn" data-clipboard-target="#copy-block">
-                        <i class="icon w-20" data-lucide="copy"></i>
-                    </button>
-                </div>
-                <div class="hint">
-                    <ol class="steps">
-                        <li>Install <a href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-hue.user.css" target="_blank">this extension (click to open)</a></li>
-                        <li>Open your extension menu (either <strong class="margin"><img src="/img/chrome-extension.png"> Chrome</strong> or <strong class="margin"><img src="/img/firefox-extension.png"> Firefox</strong>)</li>
-                        <li>Click the <strong class="margin"><img src="/img/stylus.png"> Stylus</strong> entry inside the menu</li>
-                        <li>Find <code>bleh2 (hue)</code> / <code>bleh2 (settings)</code> and hit the <strong class="margin"><i class="icon w-16" data-lucide="pencil"></i> Edit</strong> button</li>
-                        <li>Copy the values here into the newly opened tab</li>
-                    </ol>
+                <h5>Save changes into bleh² theme</h5>
+                <div class="hint steps-wrap">
+                    <div class="step">
+                        <div class="head">
+                            <div class="step-num">1</div>
+                            <p>Install this extension and <strong>close the tab</strong></p>
+                        </div>
+                        <img src="/img/customise-1-install.png">
+                    </div>
+                    <div class="step">
+                        <div class="head">
+                            <div class="step-num">2</div>
+                            <p>Copy your final code to the clipboard</p>
+                        </div>
+                        <div class="copy-code">
+                            <pre id="copy-block" style="height: 100%"></pre>
+                            <button class="btn primary" data-clipboard-target="#copy-block">
+                                <i class="icon w-20" data-lucide="copy"></i>
+                                <p>Click to copy</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="head">
+                            <div class="step-num">3</div>
+                            <p>Open your extensions menu and find Stylus or open from the toolbar</p>
+                        </div>
+                        <img src="/img/open-stylus.png">
+                    </div>
+                    <div class="step">
+                        <div class="head">
+                            <div class="step-num">4</div>
+                            <p>Locate bleh² (hue) and hit Edit</p>
+                        </div>
+                        <img src="/img/edit-stylus.png">
+                    </div>
+                    <div class="step">
+                        <div class="head">
+                            <div class="step-num">5</div>
+                            <p>Paste your code into the theme</p>
+                        </div>
+                        <img src="/img/copy-and-paste.png">
+                    </div>
                 </div>
             </div>
         </section>
         <link rel="stylesheet" href="/css/track-lfm.css">
         <div class="gap" style="--gap: 10px"></div>
     </main>
+    <style>
+        .steps-wrap {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: var(--card-gap);
+        }
+        .step .head {
+            display: flex;
+            align-items: center;
+            gap: var(--card-gap);
+            margin-bottom: 6px;
+            height: 40px;
+        }
+        .step-num {
+            width: 30px;
+            height: 100%;
+            border-radius: var(--item-med-radius);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: hsla(var(--h4), 20%);
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+        .step img {
+            width: 100%;
+            border-radius: var(--item-med-radius);
+            border: 1px solid hsl(var(--b4));
+            box-shadow: var(--card-shadow);
+        }
+    </style>
+    <div class="floating-wrap">
+        <div class="floating-confirm">
+            <p>Once you're finished, click confirm.</p>
+            <a class="btn" href="#export">Confirm</a>
+        </div>
+    </div>
 </body>
+<style>
+    .floating-wrap {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        padding: calc(var(--card-padding) * 10) 0 var(--card-padding);
+        background: linear-gradient(180deg, transparent 0%, hsl(var(--b6)) 100%);
+        pointer-events: none;
+        transition-property: transform;
+        transition-duration: calc(var(--trans) * 2);
+        transition-timing-function: var(--trans-function);
+    }
+    .floating-confirm {
+        pointer-events: auto;
+        padding: var(--card-padding);
+        background-color: hsl(var(--b5));
+        border: var(--card-border);
+        border-radius: var(--card-radius);
+        box-shadow: var(--menu-shadow);
+        display: flex;
+        align-items: center;
+        width: calc(var(--cards-width) / 2);
+    }
+    .floating-confirm p {
+        flex: 1;
+    }
+
+    .scrolled .floating-wrap {
+        transform: translateY(200px);
+    }
+</style>
 <script src="/js/customise-bleh.js"></script>
+<script>
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        console.log(scroll);
+
+        if (scroll >= 1400) {
+            document.body.classList.add("scrolled");
+        } else {
+            document.body.classList.remove("scrolled");
+        }
+    });
+</script>
 <footer class="content">
     <span class="main">
         <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>

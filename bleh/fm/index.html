@@ -65,6 +65,36 @@
         .hi.kate sup {
             font-family: var(--font);
         }
+
+
+        .browser-choices {
+            margin-top: var(--card-gap);
+            display: flex;
+            gap: var(--card-gap);
+        }
+
+        .browser {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            width: 230px;
+        }
+        .browser-icon {
+            width: 32px !important;
+            height: 32px;
+            margin: 6px 0;
+        }
+
+        .window {
+            max-width: unset;
+        }
+
+        .browser .caption {
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: var(--font-weight);
+            color: hsl(var(--c3));
+        }
     </style>
     <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.07"></div>
     <div class="bg-grad med-bg" style="background: linear-gradient(180deg, hsla(var(--l3), 20%) 0%, hsl(var(--b6)) 100%); z-index: 0"></div>
