@@ -42,6 +42,21 @@ let theme_windows = {
     }
 }
 
+
+function install_addon(type, is_script = false) {
+    let extension = 'css';
+    if (is_script) extension = 'js';
+
+    open(`https://github.com/katelyynn/bleh/raw/uwu/lastfm-${type}.user.${extension}`);
+    kill_windows();
+}
+
+function install_theme() {
+    open(`https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css`);
+    kill_windows();
+}
+
+
 let status_texts = {
     'alpha': 'Alpha',
     'wip': 'WIP'
@@ -50,8 +65,12 @@ let status_texts = {
 function create_theme_window(type,show_warning = false) {
     try {
         // status
-        let status = need_updates[type];
-        let status_str = status.toString();
+        let status = -3;
+        let status_str = '-3';
+        try {
+            status = need_updates[type];
+            status_str = status.toString();
+        } catch(e) {}
         let btn_type = undefined;
 
         let stt_text = '';
@@ -74,6 +93,10 @@ function create_theme_window(type,show_warning = false) {
             stt_text = 'Installed';
             stt_col = 'offline';
             stt_id = 'installed';
+        } else {
+            stt_text = '';
+            stt_col = 'offline';
+            stt_id = ''
         }
 
         if (status == 1 || status == -2)

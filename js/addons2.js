@@ -1,17 +1,3 @@
-function install_addon(type, is_script = false) {
-    let extension = 'css';
-    if (is_script) extension = 'js';
-
-    open(`https://github.com/katelyynn/bleh/raw/uwu/lastfm-${type}.user.${extension}`);
-    kill_windows();
-}
-
-function install_theme() {
-    open(`https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css`);
-    kill_windows();
-}
-
-
 let style_addons = [
     'main',
     'bleh2-oled',

@@ -90,7 +90,7 @@
                 <h4>theme settings</h4>
             </div>
         </section>
-        <section class="panel flex flex-column" id="warning" style="display: none; gap: 10px; --base-hue: -2">
+        <section class="panel flex flex-column" id="warning" style="display: none; gap: 10px; --base-hue: -2;">
             <h5>Warning</h5>
             <p>To use the theme customiser, you must have a version of bleh at least <strong>2023.0920</strong>. Click below to update.</p>
             <a role="button" class="btn primary" href="https://github.com/katelmao/lastfm-bleh/raw/uwu/lastfm.user.css" target="_blank">
@@ -182,6 +182,54 @@
                     </div>
                 </a>
             </div>
+    </main>
+    <main class="panel-container">
+        <section class="content flex flex-column flex-gap flex-align-center full-width">
+            <div class="item-grid" style="width: 100%; margin-top: 0">
+                <div class="item install2" id="install-oled" onclick="create_theme_window('bleh2-oled')">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="moon-star"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>OLED theme</h5>
+                        <p>bleh², but very dark.</p>
+                    </div>
+                    <div class="image-row">
+                        <img src="/img/bleh2-addon-oled.png">
+                    </div>
+                </div>
+                <div class="item install2" id="install-light" onclick="create_theme_window('bleh2-light')">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="sun"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Light theme</h5>
+                        <p>bleh², but very light.</p>
+                    </div>
+                    <div class="image-row">
+                        <img src="/img/bleh2-addon-light.png">
+                    </div>
+                </div>
+                <div class="item install2" id="install-accent" onclick="create_theme_window('bleh2-accent')">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="paintbrush"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Album covers<div class="badge" data-kate-type="wip">WIP</div></h5>
+                        <p>Match the page colour to the album cover!</p>
+                    </div>
+                    <div class="image-row">
+                        <img src="/img/bleh2-addon-accent.png">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <main class="panel-container double">
         <div class="main">
@@ -491,6 +539,64 @@
     </div>
 </body>
 <style>
+    .item-grid:not(.control-panel) {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--card-gap);
+        margin-top: var(--card-gap);
+    }
+
+    .item-grid .item:not(.control-panel-item) {
+        gap: var(--card-gap);
+        padding: var(--card-gap);
+        border: 1px solid hsl(var(--b4));
+        box-shadow: var(--card-shadow);
+        border-radius: var(--card-radius);
+        text-decoration: none;
+    }
+
+    .item-grid .item:not(.control-panel-item) .image {
+        align-items: baseline;
+        height: 100%;
+        grid-area: icon;
+    }
+
+    .item-grid .item:not(.control-panel-item) .text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        line-height: 20px;
+        color: var(--col);
+        grid-area: text;
+    }
+
+    .item-grid .item:not(.control-panel-item) .text h5 {
+        gap: var(--card-gap);
+        font-size: 16px;
+        margin: unset;
+    }
+
+    .install2 {
+        display: grid !important;
+        grid-template-columns: 40px auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+        "icon text"
+        "image image";
+        pointer-events: auto !important;
+        opacity: unset !important;
+    }
+    .install2 .image-row {
+        grid-area: image;
+        width: 100%;
+    }
+    .install2 .image-row img {
+        width: 100%;
+        border-radius: var(--item-med-radius);
+        border: 1px solid hsl(var(--b4));
+        box-shadow: var(--card-shadow);
+    }
+</style>
+<style>
     .floating-wrap {
         position: fixed;
         display: flex;
@@ -531,7 +637,7 @@
         var scroll = $(window).scrollTop();
         console.log(scroll);
 
-        if (scroll >= 1400) {
+        if (scroll >= 1700) {
             document.body.classList.add("scrolled");
         } else {
             document.body.classList.remove("scrolled");
