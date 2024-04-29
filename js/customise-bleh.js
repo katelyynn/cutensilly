@@ -3,33 +3,33 @@
 
 let options = {
     hue: {
-        css: 'hue',
+        css: 'new-hue',
         unit: '',
         value: 255,
         type: 'slider'
     },
     sat: {
-        css: 'sat',
+        css: 'new-sat',
         unit: '',
         value: 1,
         type: 'slider'
     },
     lit: {
-        css: 'lit',
+        css: 'new-lit',
         unit: '',
         value: 1,
         type: 'slider'
     },
     ovr: {
-        css: 'ovr',
+        css: 'new-ovr',
         unit: '',
         value: 'var(--b7)',
         type: null
     },
     gloss: {
-        css: 'gloss-opacity',
+        css: 'new-gloss',
         unit: '',
-        value: 0.2,
+        value: 0,
         type: 'slider'
     },
     main_width: {

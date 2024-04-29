@@ -233,7 +233,7 @@
     </main>
     <main class="panel-container double">
         <div class="main">
-            <section class="panel lfm-preview" id="main">
+            <section class="panel lfm-preview" id="accent">
                 <h5>Customise your accent colour</h5>
                 <div class="pallete options">
                     <button class="btn" style="--hue: -2" onclick="update_item('hue', -2)"></button>
@@ -326,13 +326,13 @@
     </main>
     <main class="panel-container double">
         <div class="main">
-            <section class="panel lfm-preview" id="main">
+            <section class="panel lfm-preview" id="gloss">
                 <h5>Adjust image gloss</h5>
                 <div class="slider-container">
                     <div class="heading"><p>Opacity</p><button class="btn reset" onclick="reset_item('gloss')">Reset to default</button></div>
                     <div class="slider">
-                        <input type="range" min="0" max="1" value="0.2" step="0.05" id="slider-gloss" oninput="update_item('gloss', this.value)">
-                        <p id="value-gloss">0.2</p>
+                        <input type="range" min="0" max="1" value="0" step="0.05" id="slider-gloss" oninput="update_item('gloss', this.value)">
+                        <p id="value-gloss">0</p>
                     </div>
                     <div class="hint">
                         <p style="left: 0">0</p>
@@ -340,7 +340,7 @@
                         <p style="left: 100%">1</p>
                     </div>
                 </div>
-                <p class="caption">If you really aren't a fan, setting to 0 obviously hides it completely.</p>
+                <p class="caption">Previously a default of 0.2, now disabled by default.</p>
             </section>
         </div>
         <div class="sidebar">
@@ -415,7 +415,7 @@
     </main>
     <main class="panel-container double">
         <div class="main">
-            <section class="panel lfm-preview" id="main">
+            <section class="panel lfm-preview" id="cards">
                 <h5>Adjust card width</h5>
                 <div class="slider-container">
                     <div class="heading"><p>Main width</p><button class="btn reset" onclick="reset_item('main_width')">Reset to default</button></div>
@@ -497,14 +497,16 @@
                 </div>
             </div>
         </section>
-        <link rel="stylesheet" href="/css/track-lfm.css">
-        <div class="gap" style="--gap: 10px"></div>
     </main>
     <style>
         .steps-wrap {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             gap: var(--card-gap);
+        }
+        .step {
+            display: flex;
+            flex-direction: column;
         }
         .step .head {
             display: flex;

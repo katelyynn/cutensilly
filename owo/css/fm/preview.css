@@ -247,13 +247,14 @@ input[type="range"]::-moz-range-thumb {
     padding: 14px;
     border-radius: var(--item-med-radius);
     background-color: hsla(var(--b6), 60%);
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 24px;
+    color: hsl(var(--c3));
+    font-size: 12px;
+    line-height: 20px;
     overflow: hidden;
 }
 .lfm-preview .copy-code {
     position: relative;
+    flex: 1;
 }
 .lfm-preview .copy-code .btn {
     position: absolute;
@@ -381,8 +382,7 @@ strong.margin {
 
 
 .caption {
-    font-size: 14px;
-    margin-top: 12px;
+    margin-top: var(--card-gap);
     color: hsl(var(--c3));
 }
 
@@ -406,7 +406,7 @@ strong.margin {
     inset: 0;
     background-image: url(/img/gloss.svg) !important;
     background-size: 100% !important;
-    opacity: var(--gloss-opacity, 0.2);
+    opacity: var(--new-gloss, 0);
     pointer-events: none;
     padding: unset !important;
     box-shadow: unset !important;
