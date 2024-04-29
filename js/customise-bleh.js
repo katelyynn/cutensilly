@@ -175,7 +175,7 @@ function update_item(item, value=undefined, dont_modify=false) {
 
     // set variable on <htmL> aka. :root level
     if (item != 'hue_gradient')
-        document.documentElement.style.setProperty(`--${options[item].css}`,`${bleh[item]}${options[item].unit}`);
+        document.documentElement.style.setProperty(`--${options[item].css.replace('new-','')}`,`${bleh[item]}${options[item].unit}`);
 
 
     update_copy_block();
