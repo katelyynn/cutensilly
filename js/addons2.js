@@ -5,7 +5,7 @@ let style_addons = [
     'bleh2-light'
 ]
 let latest_versions = {
-    'main': 2024.0428,
+    'main': 2024.0429,
     'bleh2-oled': 2024.0415,
     'bleh2-accent': 2024.0320,
     'bleh2-light': 2024.0415
