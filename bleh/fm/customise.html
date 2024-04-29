@@ -67,16 +67,41 @@
         }
     </style>
     <script>
-        create_window('Welcome!',`
-        <p>This is the <strong>bleh² theme customiser</strong>, allowing you to change theme colours and various other settings.</p>
-        <br>
-        <p>Have a scroll through and configure to your liking, then <strong>hit the confirm button once you're ready to save</strong>.</p>
-        `,[
+        let bleh_ver = parseFloat(getComputedStyle(document.body).getPropertyValue('--bleh2-ver'));
+        console.log('Theme is reporting', bleh_ver);
+
+        if (bleh_ver < 2024.0429 || isNaN(bleh_ver)) {
+            create_window('Out of date!',`
+            <p>Due to recent changes, the theme customiser requires<br>version <strong>2024.0429</strong>, which you do not have.</p>
+            <br>
+            <p>Don't worry, updating is easy.</p>
+            `,[
             {
-                'text': 'Continue',
-                'onclick': 'kill_windows()'
-            }
-        ],'welcome_bleh2_customise');
+                    'text': 'Done',
+                    'onclick': 'try_again()'
+                },
+                {
+                    'text': 'Update',
+                    'link': 'https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css',
+                    'type': 'primary'
+                }
+            ],'welcome_bleh2_customise');
+        } else {
+            create_window('Welcome!',`
+            <p>This is the <strong>bleh² theme customiser</strong>, allowing you to change theme colours and various other settings.</p>
+            <br>
+            <p>Have a scroll through and configure to your liking, then <strong>hit the confirm button once you're ready to save</strong>.</p>
+            `,[
+                {
+                    'text': 'Continue',
+                    'onclick': 'kill_windows()'
+                }
+            ],'welcome_bleh2_customise');
+        }
+
+        function try_again() {
+            location.reload();
+        }
     </script>
     <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.07"></div>
     <div class="bg-grad med-bg" style="background: linear-gradient(180deg, hsla(var(--l3), 20%) 0%, hsl(var(--b6)) 100%); z-index: 0"></div>
@@ -89,14 +114,6 @@
                 </h2>
                 <h4>theme settings</h4>
             </div>
-        </section>
-        <section class="panel flex flex-column" id="warning" style="display: none; gap: 10px; --base-hue: -2;">
-            <h5>Warning</h5>
-            <p>To use the theme customiser, you must have a version of bleh at least <strong>2023.0920</strong>. Click below to update.</p>
-            <a role="button" class="btn primary" href="https://github.com/katelmao/lastfm-bleh/raw/uwu/lastfm.user.css" target="_blank">
-                <span class="text" id="theme-ver">Update</span>
-                <i class="icon w-16" data-lucide="refresh-ccw"></i>
-            </a>
         </section>
         <style>
             html {
