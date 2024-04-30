@@ -310,6 +310,9 @@ h2 {
     align-items: center;
     box-shadow: 0 0 60px hsla(var(--h4), 50%);
 }
+img.kate-icon {
+    background-color: transparent;
+}
 .icon {
     top: 0 !important;
 }

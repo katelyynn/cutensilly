@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title id="page-title" translate="no">bleh, by kate (cutensilly)</title>
+    <meta name="title" content="bleh, by kate (cutensilly)">
+    <meta name="description" content="a sleek, minimalistic refresh with customisable accent colours and addons!">
+    <meta name="keywords" content="kate, katie, last, lastfm, last.fm, lfm, music, streaming, stat, statistics, theme, skin, lastfm skin, lastfm theme, lastfm stylus, stylus theme, stylus, lastfm minimal, lastfm sleek, lastfm dark theme, lastfm dark">
+    <meta property="og:site_name" content="kate">
+    <meta property="og:type" content="website">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://cutensilly.org/lfm">
+    <meta property="og:title" content="bleh, by kate (cutensilly)">
+    <meta property="og:description" content="a sleek, minimalistic refresh with customisable accent colours and addons!">
+    <meta property="og:image" content="https://cutensilly.org/img/bleh2-main.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="theme-color" content="#000000">
+    <!-- mobile iOS support -->
+    <link rel="apple-touch-icon" href="https://cutensilly.org/img/ios.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="/owo/css/reset.css">
+    <link rel="stylesheet" href="/owo/css/style.css">
+    <link rel="stylesheet" href="/css/style-lfm.css">
+    <!-- icon -->
+    <link rel="shortcut icon" type="ico" href="/img/katie4k-small.webp"/>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- icons -->
+    <script src="/js/lucide.js"></script>
+    <!-- tooltips -->
+    <!--<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+    <script src="https://unpkg.com/tippy.js@6" defer></script>-->
+</head>
+<body style="--base-hue: 255">
+    <!-- overlays -->
+    <div class="overlay center-full" id="hook_windows"></div>
+    <div class="overlay center">
+        <div class="chips" id="hook_chips"></div>
+    </div>
+    <link rel="stylesheet" href="/owo/css/modal.css">
+    <script src="/owo/js/modal.js"></script>
+    <script src="/owo/js/input.js"></script>
+    <script src="/js/windows.js"></script>
+    <!-- content -->
+    <!--<link rel="stylesheet" href="/owo/css/snow.css">-->
+    <link rel="stylesheet" href="/owo/css/landing.css">
+    <link rel="stylesheet" href="/owo/css/panel.css">
+    <link rel="stylesheet" href="/owo/css/flex.css">
+    <link rel="stylesheet" href="/owo/css/button.css">
+    <link rel="stylesheet" href="/owo/css/avatar.css">
+    <link rel="stylesheet" href="/owo/css/status.css">
+    <link rel="stylesheet" href="/owo/css/input.css">
+    <link rel="stylesheet" href="/owo/css/grid.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+        :root {--font-brand: Comfortaa, var(--font)}
+
+        .hi.kate {
+            font-family: var(--font-brand);
+        }
+        .hi.kate sup {
+            font-family: var(--font);
+        }
+
+
+        .browser-choices {
+            margin-top: var(--card-gap);
+            display: flex;
+            gap: var(--card-gap);
+        }
+
+        .browser {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            width: 230px;
+        }
+        .browser-icon {
+            width: 32px !important;
+            height: 32px;
+            margin: 6px 0;
+        }
+
+        .window {
+            max-width: unset;
+        }
+
+        .browser .caption {
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: var(--font-weight);
+            color: hsl(var(--c3));
+        }
+    </style>
+    <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.07"></div>
+    <div class="bg-grad med-bg" style="background: linear-gradient(180deg, hsla(var(--l3), 20%) 0%, hsl(var(--b6)) 100%); z-index: 0"></div>
+    <main class="panel-container">
+        <div class="gap" style="--gap: 50px"></div>
+        <section>
+            <div class="text flex flex-align-center flex-column flex-gap" style="--gap: 20px">
+                <h1 class="hi kate" style="font-size: 130px; line-height: 130px">bleh<sup>BETA</sup></h1>
+                <h2>now available for last.fm & rym</h2>
+            </div>
+        </section>
+        <div class="gap" style="--gap: 50px"></div>
+        <style>
+            .item-grid {
+                grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+                gap: var(--card-gap);
+                margin-top: var(--card-gap);
+            }
+
+            .item-grid .item {
+                gap: var(--card-gap);
+                padding: var(--card-gap);
+                border: 1px solid hsl(var(--b4));
+                box-shadow: var(--card-shadow);
+                border-radius: var(--card-radius);
+                text-decoration: none;
+            }
+
+            .item-grid .item .image {
+                align-items: baseline;
+                height: 100%;
+                grid-area: icon;
+            }
+
+            .item-grid .item .text {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                line-height: 20px;
+                color: var(--col);
+                grid-area: text;
+            }
+
+            .item-grid .item .text h5 {
+                gap: var(--card-gap);
+                font-size: 16px;
+                margin: unset;
+            }
+
+            .install2 {
+                display: grid !important;
+                grid-template-columns: 40px auto;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                "icon text"
+                "image image";
+                pointer-events: auto !important;
+                opacity: unset !important;
+            }
+            .install2 .image-row {
+                grid-area: image;
+                width: 100%;
+            }
+            .install2 .image-row img {
+                width: 100%;
+                border-radius: var(--item-med-radius);
+                border: 1px solid hsl(var(--b4));
+                box-shadow: var(--card-shadow);
+            }
+        </style>
+        <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
+            <div class="item-grid" style="width: 100%">
+                <div class="item install2" id="install-oled" onclick="create_theme_window('bleh2-oled')">
+                    <div class="image">
+                        <img class="kate-icon" src="/img/lastdotfm.png" alt="Logo for last.fm" style="--hue: -2">
+                    </div>
+                    <div class="text">
+                        <h5>bleh² for last.fm</h5>
+                        <p>The world's largest social music platform.</p>
+                    </div>
+                    <div class="image-row">
+                        <img src="/img/bleh2-main.png">
+                    </div>
+                </div>
+                <div class="item install2" id="install-light" onclick="create_theme_window('bleh2-light')">
+                    <div class="image">
+                        <img class="kate-icon" src="/img/sonemic.png" alt="Logo for rateyourmusic.com's sonemic" style="--hue: 210; --sat: 2; --lit: 0.7; border-radius: 50%">
+                    </div>
+                    <div class="text">
+                        <h5>bleh for rateyourmusic.com</h5>
+                        <p>One of the largest music databases and communities online.</p>
+                    </div>
+                    <div class="image-row">
+                        <img src="/img/bleh2-main.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<footer class="content">
+    <span class="main">
+        <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
+    </span>
+    <span class="links">
+        <a href="https://github.com/katelyynn/bleh">View theme source</a>
+        <a href="https://github.com/katelyynn/cutensilly">View source</a>
+    </span>
+</footer>
+<script>lucide.createIcons();</script>

@@ -241,7 +241,7 @@ footer .links {
 
 
 /* icon */
-svg.icon {
+.icon {
     width: var(--w);
     height: var(--w);
 }
