@@ -70,7 +70,7 @@ function update_time() {
     if      (date_hours < 7)  time_of_day = 'night';
     else if (date_hours < 12) time_of_day = 'morning';
     else if (date_hours < 16) time_of_day = 'afternoon';
-    else if (date_hours < 23) time_of_day = 'afternoon-later';
+    else if (date_hours < 21) time_of_day = 'afternoon-later';
     else                      time_of_day = 'evening';
 
     document.documentElement.setAttribute('time-of-day',time_of_day);
