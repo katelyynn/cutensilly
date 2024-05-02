@@ -11,7 +11,7 @@ let search_types = {
         code: ''
     },
     'direct-url': {
-        pre: '',
+        pre: 'https://',
         code: '?'
     },
     'lastfm': {
@@ -67,11 +67,11 @@ function update_time() {
 
     // time of day
     let date_hours = date.getHours();
-    if      (date_hours < 7)  time_of_day = 'night';
-    else if (date_hours < 12) time_of_day = 'morning';
-    else if (date_hours < 16) time_of_day = 'afternoon';
-    else if (date_hours < 21) time_of_day = 'afternoon-later';
-    else                      time_of_day = 'evening';
+    if      (date_hours > 23 || date_hours < 7)  time_of_day = 'night';
+    else if (date_hours < 12)                    time_of_day = 'morning';
+    else if (date_hours < 16)                    time_of_day = 'afternoon';
+    else if (date_hours < 21)                    time_of_day = 'afternoon-later';
+    else                                         time_of_day = 'evening';
 
     document.documentElement.setAttribute('time-of-day',time_of_day);
     document.getElementById('time-of-day').textContent = time_of_day.replace('-later','');
