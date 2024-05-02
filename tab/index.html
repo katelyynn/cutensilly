@@ -71,8 +71,8 @@
     [time-of-day="morning"]         { --hue: 15;  }
     [time-of-day="afternoon"]       { --hue: 200; }
     [time-of-day="afternoon-later"] { --hue: 255; }
-    [time-of-day="evening"]         { --hue: 315; --sat: 1.3; --lit: 0.5 }
-    [time-of-day="night"]           { --hue: 340; --sat: 1.7; --lit: 0.7 }
+    [time-of-day="evening"]         { --hue: 315; --sat: 1.3; --lit: 0.7 }
+    [time-of-day="night"]           { --hue: 340; --sat: 1.7; --lit: 0.8 }
 
 
     html, body, .bg, .panel, input, svg, h5, p, .caption, .chartlist-row:not(:hover), .btn:not(:hover), strong, a:not(:hover), img {
@@ -169,6 +169,8 @@
     .chartlist-row .time {
         color: hsl(var(--c3));
         font-size: 13px;
+        position: relative;
+        padding-left: calc(12px + 6px);
     }
 
 
@@ -176,6 +178,24 @@
         --bg: var(--hue-gradient,hsla(var(--h4), 40%)) !important;
 		--bg-hov: hsla(var(--h4), 55%) !important;
 		--shadow: 0 0 50px 5px hsla(var(--h4), 35%) !important;
+    }
+    .chartlist-row[nowplaying="true"] .time {
+        color: hsl(var(--l2-c));
+    }
+    .chartlist-row[nowplaying="true"] .time:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        margin-top: -6px;
+        left: 0;
+        display: block;
+        width: 12px;
+        height: 12px;
+		background-color: currentColor;
+		--mask: url('/img/nowplaying.gif');
+		mask-image: var(--mask);
+		-webkit-mask-image: var(--mask);
+		image-rendering: pixelated;
     }
 
 
