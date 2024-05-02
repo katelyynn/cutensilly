@@ -33,7 +33,7 @@
     <div class="bg med-bg" id="bg" style="opacity: 0.3; height: 100vh; filter: blur(30px)"></div>
     <div class="bg-grad med-bg" style="background: linear-gradient(180deg, transparent 0%, hsl(var(--b6)) 100%); z-index: 0; height: 100vh"></div>
     <main class="panel-container flex-align-center hero">
-        <section class="panel flex flex-column flex-gap" style="width: 900px">
+        <section class="panel flex flex-column flex-gap" style="width: 900px; z-index: 10">
             <h5 style="display: inline">good <i id="time-of-day"></i></h5>
             <div class="input" id="search-input" data-search="web-search" style="width: 100%; position: relative;">
                 <div class="icons">
@@ -51,7 +51,7 @@
                 <p><strong>></strong> for a youtube search</p>
             </div>
         </section>
-        <section class="panel flex flex-column flex-gap" style="width: 900px">
+        <section class="panel flex flex-column flex-gap bottom-card" style="width: 900px">
             <div class="chartlist-row" id="chartlist-row">
                 <a id="chartlist-img-link">
                     <img class="image" id="chartlist-img">
@@ -81,6 +81,13 @@
 		--card-background: hsla(var(--b5), 80%);
 		--card-filter: blur(15px) saturate(150%);
 	}
+
+    .bottom-card {
+        margin-top: calc((-1 * var(--card-gap)) * 2);
+        padding-top: calc(var(--card-padding) + var(--card-gap));
+        background-color: hsla(var(--b6), 40%);
+        border: 1px solid hsla(var(--b4), 60%);
+    }
 
 
     .caption {

@@ -14,7 +14,7 @@ function get_key() {
 function request_tracks() {
     let tracks = localStorage.getItem('fm_tracks') || '';
 
-    if (tracks != '')
+    if (tracks != '' && localStorage.getItem('fm_expire') < new Date())
         load_tracks(JSON.parse(tracks));
     else
         request_new_tracks();
