@@ -56,7 +56,7 @@ function load_tracks(data) {
     }
     catch(e) {
         document.getElementById('chartlist-row').setAttribute('nowplaying','false');
-        document.getElementById('chartlist-time').textContent = tracks[0].date['#text'];
+        document.getElementById('chartlist-time').textContent = parse_date(tracks[0].date['#text']);
     }
 
     // cover
@@ -73,6 +73,12 @@ function load_tracks(data) {
 
     // artist
     document.getElementById('chartlist-artist').textContent = tracks[0].artist['#text'];
+}
+
+
+function parse_date(new_date) {
+    // lastfm returns UTC
+    return moment(`${new_date} GMT+00:00`).fromNow();
 }
 
 
