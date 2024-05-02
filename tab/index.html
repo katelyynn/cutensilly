@@ -28,8 +28,7 @@
     <link rel="stylesheet" href="/owo/css/flex.css">
     <link rel="stylesheet" href="/owo/css/button.css">
     <link rel="stylesheet" href="/owo/css/input.css">
-    <div class="bg med-bg" id="bg" style="opacity: 0.3; height: 100vh; filter: blur(30px)"></div>
-    <div class="bg-grad med-bg" style="background: linear-gradient(180deg, transparent 0%, hsl(var(--b6)) 100%); z-index: 0; height: 100vh"></div>
+    <div class="bg med-bg" id="bg" style="opacity: 0.3; height: 100vh; filter: blur(30px); mask-image: linear-gradient(0deg, transparent 0%, #000 100%);"></div>
     <main class="panel-container flex-align-center hero">
         <section class="panel flex flex-column flex-gap" style="width: 900px; z-index: 10">
             <h5 style="display: inline">good <i id="time-of-day"></i> kate</h5>
@@ -74,6 +73,13 @@
     [time-of-day="afternoon-later"] { --hue: 255; }
     [time-of-day="evening"]         { --hue: 315; --sat: 1.3; --lit: 0.5 }
     [time-of-day="night"]           { --hue: 340; --sat: 1.7; --lit: 0.7 }
+
+
+    html, body, .bg, .panel, input, svg, h5, p, .caption, .chartlist-row:not(:hover), .btn:not(:hover), strong, a:not(:hover), img {
+        transition-property: background, background-color, border-color, color, box-shadow !important;
+        transition-duration: calc(var(--trans) * 4) !important;
+        transition-timing-function: var(--trans-function) !important;
+    }
 
 
     :root {
