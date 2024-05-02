@@ -76,6 +76,7 @@
     --icon: var(--c2);
 }
 
+
 /* attributes */
 :root {
     --card-padding: 20px;
@@ -113,6 +114,120 @@
     --gradient-lesbian: linear-gradient(to right, rgb(213, 44, 0), rgb(226, 150, 136), rgb(255, 255, 255) 45%, rgb(255, 255, 255), rgb(255, 255, 255) 55%, rgb(210, 127, 164), rgb(162, 2, 98));
     --gradient-trans: linear-gradient(to right, rgb(85, 205, 252), rgb(179, 157, 233), rgb(247, 168, 184), rgb(246, 216, 221), rgb(255, 255, 255) 45%, rgb(255, 255, 255), rgb(255, 255, 255) 55%, rgb(246, 216, 221), rgb(247, 168, 184), rgb(179, 157, 233), rgb(85, 205, 252));
     --gradient-fluid: linear-gradient(to right, rgb(255, 120, 166), rgb(247, 196, 210), rgb(255, 255, 255) 23%, rgb(255, 255, 255), rgb(255, 255, 255) 28%, rgb(219, 148, 213), rgb(190, 20, 215), rgb(89, 22, 85), rgb(0, 0, 0) 73%, rgb(0, 0, 0), rgb(0, 0, 0) 78%, rgb(51, 36, 87), rgb(50, 60, 191));
+}
+
+
+[data-theme="light"], [time-of-day="morning"], [time-of-day="afternoon"] {
+    --card-shadow: hsla(var(--b7), 0.05) 0 2px 4px 0;
+
+    --menu-shadow: 2px 2px 24px 0 hsla(var(--b7), 0.15), 3px 6px 48px 16px hsla(var(--b7), 0.03);
+
+    --interact-shadow: hsla(var(--b7), 0.07) 0 2px 4px 0;
+}
+
+[data-theme="light"], [time-of-day="morning"], [time-of-day="afternoon"],
+:is([data-theme="light"], [time-of-day="morning"], [time-of-day="afternoon"]) :is(
+    .chip, .window,
+    .badge, .tag-mono, .tag,
+    .status-dot, .status,
+    /* lfm */ .install,
+    .panel, .btn,
+    .kate-icon
+)
+{
+    /* card border */
+    --b4: var(--hue), calc(var(--sat) * 6%), 89%;
+
+    /* card */
+    --b5: 0, 0%, 100%;
+
+    /* root */
+    --b6: 0, 0%, 98%;
+    --b7: 0, 0%, 0%;
+}
+
+[data-theme="light"], [time-of-day="morning"], [time-of-day="afternoon"],
+:is([data-theme="light"], [time-of-day="morning"], [time-of-day="afternoon"]) :is(
+    .chip, .window,
+    .badge, .tag-mono, .tag,
+    .status-dot, .status,
+    /* lfm */ .install,
+    .panel, .btn,
+    .kate-icon
+)
+{
+    --c1: var(--hue), calc(var(--sat) * 6%), 0%;
+    --c2: var(--hue), calc(var(--sat) * 4%), 4%;
+    --c3: var(--hue), calc(var(--sat) * 10%), 30%;
+    --ov-c1: var(--hue), calc(var(--sat) * 40%), 100%;
+
+    --l2: var(--hue), calc(var(--sat) * 40%), calc(var(--lit) * 63%);
+    --l3: var(--hue), calc(var(--sat) * 50%), calc(var(--lit) * 55%);
+    --l4: var(--hue), calc(var(--sat) * 60%), calc(var(--lit) * 25%);
+
+    --l2-c: var(--hue), calc(var(--sat) * 40%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 63%);
+    --l3-c: var(--hue), calc(var(--sat) * 50%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 55%);
+    --l4-c: var(--hue), calc(var(--sat) * 60%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 25%);
+
+    --h3: var(--hue), calc(var(--sat) * 50%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 80%);
+    --h4: var(--hue), calc(var(--sat) * 60%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 65%);
+}
+
+
+[data-theme="oled"], [time-of-day="night"] {
+    --card-shadow: hsla(var(--b7), 0.05) 0 2px 4px 0;
+
+    --menu-shadow: 2px 2px 24px 0 hsla(var(--b7), 0.15), 3px 6px 48px 16px hsla(var(--b7), 0.03);
+
+    --interact-shadow: hsla(var(--b7), 0.07) 0 2px 4px 0;
+}
+
+[data-theme="oled"], [time-of-day="night"],
+:is([data-theme="oled"], [time-of-day="night"]) :is(
+    .chip, .window,
+    .badge, .tag-mono, .tag,
+    .status-dot, .status,
+    /* lfm */ .install,
+    .panel, .btn,
+    .kate-icon
+)
+{
+    /* card border */
+    --b4: var(--hue), calc(var(--sat) * 8%), 8%;
+
+    /* card */
+    --b5: var(--hue), calc(var(--sat) * 20%), 2%;
+
+    /* root */
+    --b6: 0, 0%, 0%;
+    --b7: 0, 0%, 0%;
+}
+
+[data-theme="oled"], [time-of-day="night"],
+:is([data-theme="oled"], [time-of-day="night"]) :is(
+    .chip, .window,
+    .badge, .tag-mono, .tag,
+    .status-dot, .status,
+    /* lfm */ .install,
+    .panel, .btn,
+    .kate-icon
+)
+{
+    --c1: var(--hue), calc(var(--sat) * 40%), 100%;
+    --c2: var(--hue), calc(var(--sat) * 60%), 90%;
+    --c3: var(--hue), calc(var(--sat) * 10%), 60%;
+
+    --l3: var(--hue), calc(var(--sat) * 50%), calc(var(--lit) * 75%);
+    --l4: var(--hue), calc(var(--sat) * 60%), calc(var(--lit) * 45%);
+
+    --l3-c: var(--hue), calc(var(--sat) * 50%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 70%);
+    --l4-c: var(--hue), calc(var(--sat) * 60%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 45%);
+
+    --h2: var(--l2-c);
+    --h3: var(--l3-c);
+    --h4: var(--l4-c);
+
+    --icon: var(--c2);
 }
 
 

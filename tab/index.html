@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/owo/css/input.css">
     <main class="panel-container flex-align-center hero">
         <section class="panel flex flex-column flex-gap" style="width: 700px">
-            <h5>Search</h5>
+            <h5 style="display: inline">good <i id="time-of-day"></i></h5>
             <div class="input" id="search-input" data-search="web-search" style="width: 100%; position: relative;">
                 <div class="icons">
                     <i class="icon w-16" data-icon="web-search" data-lucide="search"></i>
@@ -52,6 +52,11 @@
 <script src="tab.js"></script>
 <script>lucide.createIcons()</script>
 <style>
+    [time-of-day="morning"]   { --hue: 15;  }
+    [time-of-day="afternoon"] { --hue: 183; }
+    [time-of-day="evening"]   { --hue: 285; }
+    [time-of-day="night"]     { --hue: 340; }
+
     .caption {
         margin-top: var(--card-gap);
         padding-top: var(--card-gap);
