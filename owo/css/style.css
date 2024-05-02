@@ -14,6 +14,8 @@
     --font-code: Spline Sans Mono, Iosevka, JetBrains Mono, Roboto Mono, monospace;
     --font-size: 14px;
     --line-height: calc(var(--font-size) + 4px);
+    --font-size-sm: 12px;
+    --line-height-sm: calc(var(--font-size-sm) + 4px);
 
     --font-weight: 400;
     --font-weight-medium: 500;

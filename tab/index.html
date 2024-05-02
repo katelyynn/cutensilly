@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title translate="no">new tab</title>
+    <meta name="theme-color" content="#000000">
+    <!-- mobile iOS support -->
+    <link rel="apple-touch-icon" href="https://cutensilly.org/img/ios.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="/owo/css/reset.css">
+    <link rel="stylesheet" href="/owo/css/style.css">
+    <!-- icon -->
+    <link rel="shortcut icon" type="ico" href="/img/katie4k-small.webp"/>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
+    <!-- icons -->
+    <script src="/js/lucide.js"></script>
+    <!-- tooltips -->
+    <script src="https://unpkg.com/@popperjs/core@2" defer></script>
+    <script src="https://unpkg.com/tippy.js@6" defer></script>
+</head>
+<body>
+    <link rel="stylesheet" href="/owo/css/landing.css">
+    <link rel="stylesheet" href="/owo/css/panel.css">
+    <link rel="stylesheet" href="/owo/css/flex.css">
+    <link rel="stylesheet" href="/owo/css/button.css">
+    <link rel="stylesheet" href="/owo/css/input.css">
+    <main class="panel-container flex-align-center hero">
+        <section class="panel flex flex-column flex-gap" style="width: 700px">
+            <h5>Search</h5>
+            <div class="input" id="search-input" data-search="web-search" style="width: 100%; position: relative;">
+                <div class="icons">
+                    <i class="icon w-16" data-icon="web-search" data-lucide="search"></i>
+                    <i class="icon w-16" data-icon="direct-url" data-lucide="square-arrow-out-up-right"></i>
+                    <!--<div data-icon="lastfm"></div>-->
+                    <i class="icon w-16" data-icon="lastfm" data-lucide="list-music"></i>
+                </div>
+                <input placeholder="" style="width: 100%" oninput="update_query(this.value)">
+            </div>
+            <div class="caption">
+                <p><strong>?</strong> for a direct url</p>
+                <p><strong>/</strong> for a last.fm search</p>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="tab.js"></script>
+<script>lucide.createIcons()</script>
+<style>
+    .caption {
+        margin-top: var(--card-gap);
+        padding-top: var(--card-gap);
+        border-top: 1px solid hsl(var(--b4));
+        color: hsl(var(--c3));
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-sm);
+        display: flex;
+        gap: var(--card-gap);
+    }
+    .caption strong {
+        padding: 0 6px;
+        background: hsl(var(--b6));
+        border-radius: var(--item-small-radius);
+    }
+
+
+    .input .icons {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        margin-top: -8px;
+        color: hsl(var(--c3));
+        display: flex;
+        width: 16px;
+        height: 16px;
+        overflow: hidden;
+    }
+    .input svg {
+        position: absolute;
+        inset: 0;
+        transform: translateX(16px);
+        opacity: 0;
+        transition-property: transform, opacity;
+        transition-duration: var(--trans);
+        transition-timing-function: var(--trans-function);
+    }
+
+    [data-search="web-search"] [data-icon="web-search"],
+    [data-search="direct-url"] [data-icon="direct-url"],
+    [data-search="lastfm"] [data-icon="lastfm"]
+    {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    /*.icons div {
+        width: 16px;
+        height: 16px;
+        mask-image: var(--mask);
+        -webkit-mask-image: var(--mask);
+        mask-size: 16px;
+        -webkit-mask-size: 16px;
+        background-color: currentColor;
+    }
+
+    [data-icon="lastfm"] {
+        --mask: url('/img/lastdotfm.svg');
+    }*/
+
+    input {
+        padding-right: calc(12px + 16px + 6px);
+    }
+</style>
