@@ -61,7 +61,7 @@
                 <p class="time" id="chartlist-time"></p>
             </div>
             <div class="caption">
-                <a class="btn" href="https://last.fm/user/cutensilly">Open profile</a>
+                <a class="btn" href="https://www.last.fm/user/cutensilly">Open profile</a>
             </div>
         </section>
     </main>
@@ -75,6 +75,13 @@
     [time-of-day="afternoon-later"] { --hue: 255; }
     [time-of-day="evening"]         { --hue: 315; --sat: 1.2; --lit: 0.8 }
     [time-of-day="night"]           { --hue: 340; --sat: 1.7; --lit: 0.7 }
+
+
+    :root {
+		--card-background: hsla(var(--b5), 80%);
+		--card-filter: blur(15px) saturate(150%);
+	}
+
 
     .caption {
         margin-top: var(--card-gap);

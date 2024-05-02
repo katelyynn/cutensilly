@@ -14,7 +14,8 @@
 
 .panel {
     padding: var(--card-padding);
-    background-color: hsl(var(--b5));
+    background-color: var(--card-background, hsl(var(--b5)));
+    backdrop-filter: var(--card-filter, none);
     border: var(--card-border);
     border-radius: var(--card-radius);
     box-shadow: var(--card-shadow);
