@@ -4,6 +4,8 @@
 let key;
 let api = false;
 
+let last_used_track = {};
+
 
 function get_key() {
     key = localStorage.getItem('fm_key') || '';
@@ -42,37 +44,41 @@ function load_tracks(data) {
     let tracks = data.recenttracks.track;
     console.log(tracks[0]);
 
-    // url
-    document.getElementById('chartlist-title').href = tracks[0].url;
-    document.getElementById('chartlist-artist').href = 'https://www.last.fm/music/' + tracks[0].artist['#text'];
-    document.getElementById('chartlist-img-link').href = 'https://www.last.fm/music/' + tracks[0].artist['#text'] + '/' + tracks[0].album['#text'];
+    if (JSON.stringify(tracks[0]) != JSON.stringify(last_used_track)) {
+        // url
+        document.getElementById('chartlist-title').href = tracks[0].url;
+        document.getElementById('chartlist-artist').href = 'https://www.last.fm/music/' + tracks[0].artist['#text'];
+        document.getElementById('chartlist-img-link').href = 'https://www.last.fm/music/' + tracks[0].artist['#text'] + '/' + tracks[0].album['#text'];
 
-    // now playing
-    try {
-        if (tracks[0]['@attr'].nowplaying == 'true') {
-            document.getElementById('chartlist-row').setAttribute('nowplaying','true');
-            document.getElementById('chartlist-time').textContent = 'Scrobbling now';
+        // now playing
+        try {
+            if (tracks[0]['@attr'].nowplaying == 'true') {
+                document.getElementById('chartlist-row').setAttribute('nowplaying','true');
+                document.getElementById('chartlist-time').textContent = 'Scrobbling now';
+            }
         }
+        catch(e) {
+            document.getElementById('chartlist-row').setAttribute('nowplaying','false');
+            document.getElementById('chartlist-time').textContent = parse_date(tracks[0].date['#text']);
+        }
+
+        // cover
+        document.getElementById('chartlist-img').src = tracks[0].image[2]['#text'];
+        document.getElementById('bg').style.setProperty('background-image',`url(${tracks[0].image[3]['#text']})`);
+
+        // info
+        //document.getElementById('music').setAttribute('track',tracks[0].name);
+        //document.getElementById('music').setAttribute('artist',tracks[0].artist['#text']);
+        //document.getElementById('music').setAttribute('album',tracks[0].album['#text']);
+
+        // track
+        document.getElementById('chartlist-title').textContent = tracks[0].name;
+
+        // artist
+        document.getElementById('chartlist-artist').textContent = tracks[0].artist['#text'];
+
+        last_used_track = tracks[0];
     }
-    catch(e) {
-        document.getElementById('chartlist-row').setAttribute('nowplaying','false');
-        document.getElementById('chartlist-time').textContent = parse_date(tracks[0].date['#text']);
-    }
-
-    // cover
-    document.getElementById('chartlist-img').src = tracks[0].image[2]['#text'];
-    document.getElementById('bg').style.setProperty('background-image',`url(${tracks[0].image[3]['#text']})`);
-
-    // info
-    //document.getElementById('music').setAttribute('track',tracks[0].name);
-    //document.getElementById('music').setAttribute('artist',tracks[0].artist['#text']);
-    //document.getElementById('music').setAttribute('album',tracks[0].album['#text']);
-
-    // track
-    document.getElementById('chartlist-title').textContent = tracks[0].name;
-
-    // artist
-    document.getElementById('chartlist-artist').textContent = tracks[0].artist['#text'];
 }
 
 
