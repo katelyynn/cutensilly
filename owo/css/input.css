@@ -1,22 +1,24 @@
 input, select, textarea {
-    --top: 11px;
-    --sides: 12px;
-    padding: var(--top) var(--sides);
-    background-color: hsla(var(--b4), 50%);
-    border: 2px solid transparent;
-    border-radius: 7px;
+    --bg: hsl(var(--b4));
+    padding: var(--padding, 7px 12px);
+    height: 32px;
+    background-color: var(--bg);
+    border: none;
+    box-shadow: var(--shadow, var(--interact-shadow));
+    border-radius: var(--item-med-radius);
     color: hsl(var(--c2));
     caret-color: hsl(var(--l1));
     font-family: var(--font);
-    font-size: 14px;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
 
-    transition-property: border-color;
+    transition-property: outline;
     transition-duration: var(--trans);
     transition-timing-function: var(--trans-function);
 }
 :is(input, select, textarea):focus {
-    border-color: hsl(var(--l1));
-    outline: none;
+    outline: 2px solid hsl(var(--l1));
+    transition: none;
 }
 
 input::placeholder, textarea::placeholder {
