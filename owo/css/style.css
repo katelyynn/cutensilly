@@ -54,7 +54,8 @@
 .status-dot, .status,
 /* lfm */ .install,
 .panel, .btn,
-.kate-icon
+.kate-icon,
+strong
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
     --c2: var(--hue), calc(var(--sat) * 60%), 90%;
@@ -153,7 +154,8 @@
     .status-dot, .status,
     /* lfm */ .install,
     .panel, .btn,
-    .kate-icon
+    .kate-icon,
+    strong
 )
 {
     --c1: var(--hue), calc(var(--sat) * 6%), 0%;
@@ -210,7 +212,8 @@
     .status-dot, .status,
     /* lfm */ .install,
     .panel, .btn,
-    .kate-icon
+    .kate-icon,
+    strong
 )
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;

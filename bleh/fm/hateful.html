@@ -36,7 +36,7 @@
     <script src="https://unpkg.com/tippy.js@6" defer></script>-->
     <script src="/owo/js/clipboard.min.js"></script>
 </head>
-<body style="--base-hue: 255">
+<body>
     <!-- overlays -->
     <div class="overlay center-full" id="hook_windows"></div>
     <div class="overlay center">
@@ -78,23 +78,58 @@
                 </h2>
             </div>
         </section>
-        <div class="gap" style="--gap: 40px"></div>
+        <div class="gap" style="--gap: 10px"></div>
         <section class="panel flex flex-column flex-gap" style="--gap: 20px;">
             <h5 class="sub">Hateful content under bleh²</h5>
-            <p>As of bleh²'s first April 2024 update, the theme now by default <strong>hides hateful content</strong> from users.</p>
+            <p>As of bleh²'s first April 2024 update, the theme now uses a constantly updating list of <strong>hateful users</strong> in order to warn users of and hide hateful shouts, notifications, direct messages, and profiles.</p>
+            <p>This list is community contributed, and no single person is responsible for it all.</p>
+            <p>Hateful content usually falls under this extract from the <a href="https://www.last.fm/help/guidelines" target="_blank">Last.fm Community Guidelines</a> (which they don't follow themselves but alas):</p>
+            <blockquote>
+                <strong>Be respectful to each other.</strong> [...] There is zero tolerance for predatory behaviour, disparaging or defamatory comments, threats, harassment, illegal activities, invading privacy, propaganda, racial hatred, [bigotry], offensive cultural behaviour, vulgar or obscene content, or other inappropriate behaviour or the revealing of other members' personal information.
+            </blockquote>
             <h5 class="sub">Defining hateful content</h5>
-            <p>For content to be blocked, it usually falls under <strong>racism, transphobia, homophobia, nazism, misogyny, harassment/bullying (which can include anything listed prior)</strong> (in no particular order).</p>
+            <p>This is by no means expected to have much of any positive effect, the <strong>Last.fm moderators</strong> are the ones responsible for fixing the mess they have caused. It's to be expected that running a site <strong>without a hate speech or spam filter</strong> will in-turn lead to a site filled with spam, harassment, and hate speech - like Last.fm says: <a href="https://www.last.fm/help/guidelines" target="_blank">"Use common sense"</a>.</p>
             <p>If this content being blocked is a problem to you, you were never forced to use the theme. The users listed are listed for a reason and only promote hatred to the site.</p>
             <p>If <strong>you, yourself are listed</strong>, I hope you can make the change for the better if not now but in the future.</p>
-            <h5 class="sub">"This is censorship! Free speech!"</h5>
-            <p>Sorry if you think this is too much, I like to try help people who really don't want to see this content, though ideally this would be last.fm's job. This is essentially a much lesser version of what last.fm could do if they cared.</p>
-            <h5 class="sub">The future</h5>
-            <p>I do hope last.fm actually sticks to their word and implements at least a hate-speech filter, as even that is currently absent. One can hope.</p>
+            <h5 class="sub">Shouldn't you report these users directly to Last.fm?</h5>
+            <p>Yes! - in fact, I (and many others) have for every single user listed. Have they been banned? <strong>99% of them no.</strong></p>
             <div class="gap" style="--gap: 20px"></div>
-            <a href="/bleh/fm/" class="btn primary">Download bleh²</a>
+            <div class="btn-row">
+                <a href="/bleh/fm/" class="btn primary">
+                    <span class="text">Download bleh²</span>
+                    <i class="icon w-16" data-lucide="chevron-right"></i>
+                </a>
+                <a href="https://www.last.fm/help/guidelines" target="_blank" class="btn primary">
+                    <span class="text">Last.fm Community Guidelines</span>
+                    <i class="icon w-16" data-lucide="square-arrow-out-up-right"></i>
+                </a>
+                <a href="https://support.last.fm/" target="_blank" class="btn primary">
+                    <span class="text">Last.fm support forum</span>
+                    <i class="icon w-16" data-lucide="square-arrow-out-up-right"></i>
+                </a>
+            </div>
         </section>
     </main>
 </body>
+<style>
+    :root {
+        --hue: -2;
+    }
+    strong {
+        color: hsl(var(--l3-c));
+    }
+
+    blockquote {
+        background: hsla(var(--h4), 20%) !important;
+		padding: 10px var(--card-gap) !important;
+		border: 2px solid transparent;
+		border-left: 2px solid hsl(var(--l3-c));
+		border-radius: var(--item-big-radius);
+		font-size: var(--font-size) !important;
+		line-height: var(--line-height) !important;
+		color: hsl(var(--c2));
+    }
+</style>
 <footer class="content">
     <span class="main">
         <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
