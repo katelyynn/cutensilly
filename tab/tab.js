@@ -30,7 +30,12 @@ let special_entries = {
     'twitch': 'https://twitch.tv/directory/following',
     'lastfm': 'https://last.fm',
     'github': 'https://github.com',
-    'rym': 'https://rateyourmusic.com'
+    'rym': 'https://rateyourmusic.com',
+    'rain': 'https://mynoise.net/NoiseMachines/thunderNoiseGenerator.php',
+    'pinterest': 'https://pinterest.co.uk',
+    'genius': 'https://genius.com',
+    'music': 'https://music.apple.com/gb',
+    'spotify': 'https://open.spotify.com'
 }
 
 
