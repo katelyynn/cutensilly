@@ -3,6 +3,7 @@
 
 let search_type = 'web-search';
 let time_of_day = 'morning';
+let special_entry = false;
 
 
 let search_types = {
@@ -24,6 +25,14 @@ let search_types = {
     }
 }
 
+let special_entries = {
+    'youtube': 'https://youtube.com',
+    'twitch': 'https://twitch.tv/directory/following',
+    'lastfm': 'https://last.fm',
+    'github': 'https://github.com',
+    'rym': 'https://rateyourmusic.com'
+}
+
 
 function update_query(value) {
     let starting_val = value[0];
@@ -36,6 +45,14 @@ function update_query(value) {
         update_search_type('youtube');
     } else {
         update_search_type('web-search');
+    }
+
+    if (value in special_entries) {
+        special_entry = value;
+        document.getElementById('search').setAttribute('data-special','true');
+    } else {
+        special_entry = false;
+        document.getElementById('search').setAttribute('data-special','false');
     }
 }
 
@@ -58,7 +75,11 @@ document.getElementById('search-input').addEventListener("keyup", function(event
 function send_result(value) {
     if (value == '' || value == '?' || value == '/') return;
 
-    window.location.href = search_types[search_type].pre + value.replace(search_types[search_type].code,'');
+    if (special_entry != false) {
+        window.location.href = special_entries[special_entry];
+    } else {
+        window.location.href = search_types[search_type].pre + value.replace(search_types[search_type].code,'');
+    }
 }
 
 

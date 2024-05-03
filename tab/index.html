@@ -40,7 +40,7 @@
                     <i class="icon w-16" data-icon="lastfm" data-lucide="list-music"></i>
                     <i class="icon w-16" data-icon="youtube" data-lucide="tv"></i>
                 </div>
-                <input id="search" placeholder="" style="width: 100%" oninput="update_query(this.value)" autofocus autocomplete="off">
+                <input id="search" data-special="false" placeholder="search anything..." style="width: 100%" oninput="update_query(this.value)" autofocus autocomplete="off">
             </div>
             <div class="caption">
                 <p><strong>?</strong> for a direct url</p>
@@ -76,8 +76,8 @@
 
 
     html, body, .bg, .panel, input, svg, h5, p, .caption, .chartlist-row:not(:hover), .btn:not(:hover), strong, a:not(:hover), img {
-        transition-property: background, background-color, border-color, color, box-shadow !important;
-        transition-duration: calc(var(--trans) * 4) !important;
+        transition-property: background, background-color, border-color, color, box-shadow, transform, opacity !important;
+        transition-duration: calc(var(--trans) * 2) !important;
         transition-timing-function: var(--trans-function) !important;
     }
 
@@ -201,7 +201,7 @@
 
     .input .icons {
         position: absolute;
-        right: 12px;
+        left: 12px;
         top: 50%;
         margin-top: -8px;
         color: hsl(var(--c3));
@@ -213,7 +213,7 @@
     .input svg {
         position: absolute;
         inset: 0;
-        transform: translateX(16px);
+        transform: translateX(-16px);
         opacity: 0;
         transition-property: transform, opacity;
         transition-duration: var(--trans);
@@ -244,6 +244,10 @@
     }*/
 
     input {
-        padding-right: calc(12px + 16px + 6px);
+        padding-left: calc(12px + 16px + 6px);
+    }
+    [data-special="true"] {
+        font-weight: 500;
+        color: hsl(var(--l3-c));
     }
 </style>
