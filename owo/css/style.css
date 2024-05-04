@@ -265,6 +265,15 @@ body:before {
     scrollbar-color: var(--scroll);
 }
 
+::selection {
+    background: hsla(var(--h4), 20%);
+    color: hsl(var(--l3-c));
+}
+::-moz-selection {
+    background: hsla(var(--h4), 20%);
+    color: hsl(var(--l3-c));
+}
+
 h1, h2, h3, h4, h5 {
     color: hsl(var(--c1));
     user-select: none;
@@ -330,7 +339,7 @@ a:not(:is(.btn, .card)) {
     width: 100%;
     height: 1px;
     background-color: hsl(var(--b4));
-    margin: 10px 0;
+    margin: var(--card-gap) 0;
 }
 .gap {
     width: 100%;

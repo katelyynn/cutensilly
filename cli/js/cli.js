@@ -182,7 +182,7 @@ function view_project(id) {
     document.getElementById('project-copyright').textContent = projects[id].copyright;
     //try { document.getElementById('project-copyright').setAttribute('href',projects[id].links[0].link); } catch(e) {}
 
-    document.getElementById('project-image').setAttribute('src',`../img/project/${id}.png`);
+    document.getElementById('project-image').setAttribute('src',`./img/project/${id}.png`);
 
     document.getElementById('project-links').innerHTML = '';
     for (let link in projects[id].links) {
