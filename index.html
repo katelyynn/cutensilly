@@ -7,12 +7,12 @@
     <meta name="description" content="my cute n silly site">
     <meta property="og:title" content="kate — cutensilly.org">
     <meta property="og:description" content="my cute n silly site">
-    <meta property="og:image" content="https://cutensilly.org/img/preview.png">
+    <meta property="og:image" content="/img/preview.png">
     <meta property="og:image:width" content="1100">
     <meta property="og:image:height" content="900">
-    <link rel="shortcut icon" type="ico" href="https://cutensilly.org/img/avi.png"/>
+    <link rel="shortcut icon" type="ico" href="/img/avi.png"/>
     <!-- mobile iOS support -->
-    <link rel="apple-touch-icon" href="https://cutensilly.org/img/avi.png">
+    <link rel="apple-touch-icon" href="/img/avi.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- display -->
     <meta charset="UTF-8">
@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/owo/css/flex.css">
     <link rel="stylesheet" href="/owo/css/button.css">
     <link rel="stylesheet" href="/owo/css/avatar.css">
+    <div class="bg med-bg" id="bg" style="opacity: 0.3; height: 100vh; filter: blur(30px); mask-image: linear-gradient(0deg, transparent 0%, #000 100%);"></div>
     <main class="panel-container flex-align-center hero">
         <section class="panel flex flex-column flex-gap" style="z-index: 10">
             <div class="avatar-wrap">
@@ -75,19 +76,32 @@
                 </a>
             </div>
         </section>
+        <section class="panel flex flex-column flex-gap">
+            <div class="chartlist-row" id="chartlist-row">
+                <a id="chartlist-img-link">
+                    <img class="image" id="chartlist-img">
+                </a>
+                <span class="text">
+                    <a class="title" id="chartlist-title"></a>
+                    <a class="artist" id="chartlist-artist"></a>
+                </span>
+                <p class="time" id="chartlist-time"></p>
+            </div>
+        </section>
     </main>
 </body>
 <script>lucide.createIcons()</script>
+<script src="/js/fm.js"></script>
 <style>
     .bottom-card {
         margin-top: calc((-1 * var(--card-gap)) * 2);
         padding-top: calc(var(--card-padding) + var(--card-gap));
-        background-color: hsla(var(--b5), 50%);
-        border: 1px solid hsla(var(--b4), 50%);
+        background-color: hsla(var(--b6), 50%);
+        border: 1px solid hsla(var(--b4), 70%);
     }
 
     .panel {
-        max-width: 400px;
+        max-width: 450px;
         width: 95% !important;
     }
 
@@ -153,5 +167,96 @@
     .github {
         --sat: 0;
         --lit: 0.8;
+    }
+
+
+    .chartlist-row {
+        --bg: hsla(var(--b4), 40%);
+        --bg-hov: hsla(var(--b4), 80%);
+        --shadow: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 3px 12px;
+        min-height: 36px;
+        max-height: 44px;
+        color: hsl(var(--c2));
+        background-color: var(--bg);
+        border-radius: var(--item-small-radius);
+        box-shadow: var(--shadow);
+        transition-property: background-color;
+        transition-duration: var(--trans);
+        transition-timing-function: var(--trans-function);
+    }
+    .chartlist-row:hover {
+        background-color: var(--bg-hov);
+        transition: none;
+    }
+
+    #chartlist-img-link {
+        display: flex;
+        align-items: center;
+    }
+
+    .chartlist-row .image {
+        width: 38px;
+        height: 38px;
+        background-color: hsl(var(--b5));
+        border-radius: var(--item-small-radius);
+        box-shadow: var(--card-shadow);
+        border: 1px solid hsl(var(--b4));
+        overflow: hidden;
+    }
+
+    .chartlist-row .text {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .chartlist-row .title {
+        text-decoration: none;
+        color: hsl(var(--c2));
+        overflow: hidden;
+    }
+    .chartlist-row .artist {
+        text-decoration: none;
+        color: hsla(var(--c2), 80%);
+    }
+
+    .chartlist-row a:hover {
+        text-decoration: underline;
+    }
+
+    .chartlist-row .time {
+        color: hsl(var(--c3));
+        font-size: 13px;
+        position: relative;
+        padding-left: calc(12px + 6px);
+    }
+
+
+    .chartlist-row[nowplaying="true"] {
+        --bg: var(--hue-gradient,hsla(var(--h4), 40%)) !important;
+        --bg-hov: hsla(var(--h4), 55%) !important;
+        --shadow: 0 0 50px 5px hsla(var(--h4), 35%) !important;
+    }
+    .chartlist-row[nowplaying="true"] .time {
+        color: hsl(var(--l2-c));
+    }
+    .chartlist-row[nowplaying="true"] .time:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        margin-top: -6px;
+        left: 0;
+        display: block;
+        width: 12px;
+        height: 12px;
+        background-color: currentColor;
+        --mask: url('/img/nowplaying.gif');
+        mask-image: var(--mask);
+        -webkit-mask-image: var(--mask);
+        image-rendering: pixelated;
     }
 </style>
