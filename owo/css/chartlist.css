@@ -1,0 +1,101 @@
+.chartlist-row {
+    --bg: hsla(var(--b4), 40%);
+    --bg-hov: hsla(var(--b4), 80%);
+    --shadow: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 3px 12px;
+    min-height: 36px;
+    max-height: 44px;
+    color: hsl(var(--c2));
+    background-color: var(--bg);
+    border-radius: var(--item-small-radius);
+    box-shadow: var(--shadow);
+    transition-property: background-color;
+    transition-duration: var(--trans);
+    transition-timing-function: var(--trans-function);
+}
+.chartlist-row:hover {
+    background-color: var(--bg-hov);
+    transition: none;
+}
+
+#chartlist-img-link {
+    display: flex;
+    align-items: center;
+}
+
+.chartlist-row .image {
+    width: 38px;
+    height: 38px;
+    background-color: hsl(var(--b5));
+    border-radius: var(--item-small-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid hsl(var(--b4));
+    overflow: hidden;
+}
+
+.chartlist-row .text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    --mask: linear-gradient(270deg, transparent 0%, black 3%);
+    --mask-repeat: no-repeat;
+    mask-image: var(--mask);
+    -webkit-mask-image: var(--mask);
+    mask-repeat: var(--mask-repeat);
+    -webkit-mask-repeat: var(--mask-repeat);
+    overflow: hidden;
+}
+
+.chartlist-row .title {
+    text-decoration: none;
+    color: hsl(var(--c2));
+    overflow: hidden;
+    text-wrap: nowrap;
+    width: 100%;
+    max-width: 430px;
+}
+.chartlist-row .artist {
+    text-decoration: none;
+    color: hsla(var(--c2), 80%);
+    text-wrap: nowrap;
+    flex: 1;
+}
+
+.chartlist-row a:hover {
+    text-decoration: underline;
+}
+
+.chartlist-row .time {
+    color: hsl(var(--c3));
+    font-size: 13px;
+    position: relative;
+    padding-left: calc(12px + 6px);
+}
+
+
+.chartlist-row[nowplaying="true"] {
+    --bg: var(--hue-gradient,hsla(var(--h4), 40%)) !important;
+    --bg-hov: hsla(var(--h4), 55%) !important;
+    --shadow: 0 0 50px 5px hsla(var(--h4), 35%) !important;
+}
+.chartlist-row[nowplaying="true"] .time {
+    color: hsl(var(--l2-c));
+}
+.chartlist-row[nowplaying="true"] .time:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    left: 0;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: currentColor;
+    --mask: url('/img/nowplaying.gif');
+    mask-image: var(--mask);
+    -webkit-mask-image: var(--mask);
+    image-rendering: pixelated;
+}
