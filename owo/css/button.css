@@ -11,7 +11,7 @@
     --bg-hov: hsla(var(--b4), 80%);
     --bg-atv: hsla(var(--b4), 60%);
     --col: hsl(var(--c2));
-    --indent: 0.985;
+    --indent: 0.98;
     padding: var(--padding, 7px 12px);
     display: flex;
     justify-content: center;
