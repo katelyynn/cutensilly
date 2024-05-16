@@ -97,6 +97,7 @@
             </div>
         </section>
     </main>
+    <img class="steamhappy" src="/img/steamhappy.png" alt="SteamHappy">
 </body>
 <script>lucide.createIcons()</script>
 <script src="/js/moment.js"></script>
@@ -166,5 +167,20 @@
     .github {
         --sat: 0;
         --lit: 0.8;
+    }
+
+
+    .steamhappy {
+        --size: 50px;
+        width: var(--size);
+        height: var(--size);
+        position: fixed;
+        top: 50%;
+        right: var(--card-gap);
+        margin-top: calc(-1 * (var(--size) / 2));
+    }
+    .steamhappy:not(:hover) {
+        opacity: 0;
+        transition: opacity var(--trans) var(--trans-function);
     }
 </style>
