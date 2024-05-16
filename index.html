@@ -221,6 +221,13 @@
         display: flex;
         flex-direction: column;
         flex: 1;
+        --mask: linear-gradient(270deg, transparent 0%, black 3%);
+		--mask-repeat: no-repeat;
+		mask-image: var(--mask);
+		-webkit-mask-image: var(--mask);
+		mask-repeat: var(--mask-repeat);
+		-webkit-mask-repeat: var(--mask-repeat);
+        overflow: hidden;
     }
 
     .chartlist-row .title {
