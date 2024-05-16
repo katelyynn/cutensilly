@@ -87,6 +87,13 @@
                 </span>
                 <p class="time" id="chartlist-time"></p>
             </div>
+            <div class="sep"></div>
+            <div class="flex flex-column flex-gap btns" style="gap: 6px">
+                <a class="btn bleh" href="/bleh/fm/">
+                    <span class="text">bleh theme for last.fm</span>
+                    <i class="icon w-16" data-lucide="chevron-right"></i>
+                </a>
+            </div>
         </section>
     </main>
 </body>
@@ -136,6 +143,8 @@
     .btns .btn {
         width: 100%;
         justify-content: space-between;
+    }
+    .btns .btn:not(.bleh) {
         --bg: hsla(var(--h4), 10%);
         --bg-hov: hsla(var(--h4), 20%);
         --bg-atv: hsla(var(--h4), 30%);
