@@ -71,7 +71,7 @@ function load_tracks(data) {
 
 
 function parse_date(new_date) {
-    return moment(new_date).fromNow();
+    return moment.unix(new_date).fromNow();
 }
 
 
