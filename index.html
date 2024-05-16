@@ -97,7 +97,7 @@
             </div>
         </section>
     </main>
-    <img class="steamhappy" src="/img/steamhappy.png" alt="SteamHappy">
+    <img class="steamhappy" style="opacity: 0" src="/img/steamhappy.png" alt="SteamHappy">
 </body>
 <script>lucide.createIcons()</script>
 <script src="/js/moment.js"></script>
@@ -178,9 +178,10 @@
         top: 50%;
         right: var(--card-gap);
         margin-top: calc(-1 * (var(--size) / 2));
-    }
-    .steamhappy:not(:hover) {
-        opacity: 0;
         transition: opacity var(--trans) var(--trans-function);
+    }
+    .steamhappy:hover {
+        opacity: 1 !important;
+        transition: none;
     }
 </style>
