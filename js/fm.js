@@ -47,7 +47,7 @@ function load_tracks(data) {
             document.getElementById('chartlist-time').textContent = '';
         } else {
             document.getElementById('chartlist-row').setAttribute('nowplaying','false');
-            document.getElementById('chartlist-time').textContent = parse_date(tracks[0].date['#text']);
+            document.getElementById('chartlist-time').textContent = parse_date(data.timestamp);
         }
 
         // cover
