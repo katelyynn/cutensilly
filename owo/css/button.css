@@ -79,8 +79,8 @@
 }
 
 .btn.mimic, .btn.reset {
-    --bg: hsla(var(--l3), 4%);
-    --bg-hov: hsla(var(--l3), 15%);
-    --bg-atv: hsla(var(--l3), 20%);
+    --bg: hsla(var(--h4), 10%);
+    --bg-hov: hsla(var(--h4), 30%);
+    --bg-atv: hsla(var(--h4), 50%);
     box-shadow: none;
 }
