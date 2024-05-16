@@ -23,7 +23,7 @@ function request_new_tracks() {
         load_tracks(JSON.parse(this.response));
 
         let api_expire = new Date();
-        api_expire.setSeconds(api_expire.getSeconds() + 20);
+        api_expire.setSeconds(api_expire.getSeconds() + 12);
         localStorage.setItem('fm_expire',api_expire);
         localStorage.setItem('fm_tracks',this.response);
     }
