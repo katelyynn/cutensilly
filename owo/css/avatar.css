@@ -57,7 +57,7 @@
 
 /* shadow */
 .avatar.shadow {
-    box-shadow: var(--raise-0);
+    box-shadow: var(--menu-shadow);
 }
 
 .avatar.pixel {
