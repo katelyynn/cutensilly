@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="/owo/css/button.css">
     <link rel="stylesheet" href="/owo/css/avatar.css">
     <link rel="stylesheet" href="/owo/css/chartlist.css">
-    <div class="bg med-bg" id="bg" style="opacity: 0.3; height: 100vh; filter: blur(30px); mask-image: linear-gradient(0deg, transparent 0%, #000 100%);"></div>
+    <div class="bg med-bg" id="bg" style="opacity: 0.3; height: 100vh; filter: blur(50px) saturate(120%); mask-image: linear-gradient(0deg, transparent 0%, #000 100%);"></div>
     <main class="panel-container flex-align-center hero">
         <section class="panel flex flex-column flex-gap" style="z-index: 10">
             <div class="avatar-wrap">
@@ -199,6 +199,19 @@
     @media (max-width: 800px) {
         .steamhappy {
             display: none;
+        }
+    }
+
+
+    .bg {
+        animation: bg_fade 2s;
+    }
+    @keyframes bg_fade {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 0.3;
         }
     }
 </style>
