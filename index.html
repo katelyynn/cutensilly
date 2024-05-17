@@ -118,6 +118,7 @@
     .panel {
         max-width: 450px;
         width: 95% !important;
+        animation: button_slide 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
 
@@ -142,11 +143,21 @@
         --col: hsl(var(--l3-c));
     }
 
+    @keyframes button_slide {
+        from {
+            transform: translateY(10px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
 
     .lastfm {
         --hue: -2;
-        --sat: 1;
-        --lit: 0.9;
+        --sat: 1.1;
     }
     .modrinth {
         --hue: 110;
@@ -159,14 +170,14 @@
         --hue: 200;
     }
     .discogs {
-        --hue: 35;
+        --hue: 40;
+        --sat: 1.2;
     }
     .pmc {
         --hue: 160;
     }
     .github {
         --sat: 0;
-        --lit: 0.8;
     }
 
 
