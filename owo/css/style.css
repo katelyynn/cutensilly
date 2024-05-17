@@ -56,7 +56,8 @@
 /* lfm */ .install,
 .panel, .btn,
 .kate-icon,
-strong
+strong,
+.badge
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
     --c2: var(--hue), calc(var(--sat) * 60%), 90%;
@@ -156,7 +157,8 @@ strong
     /* lfm */ .install,
     .panel, .btn,
     .kate-icon,
-    strong
+    strong,
+    .badge
 )
 {
     --c1: var(--hue), calc(var(--sat) * 6%), 0%;
@@ -214,7 +216,8 @@ strong
     /* lfm */ .install,
     .panel, .btn,
     .kate-icon,
-    strong
+    strong,
+    .badge
 )
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
