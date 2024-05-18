@@ -55,7 +55,7 @@ function query_versions() {
         document.getElementById('theme-update').style.removeProperty('--base-hue');
     } else if (need_updates.main != -2) {
         document.getElementById('theme-ver').textContent = `Update to ${latest_versions.main}`;
-        document.getElementById('theme-update').style.setProperty('--base-hue','130');
+        document.getElementById('theme-update').style.setProperty('-hue','130');
         if (!sent_update_notif) create_chip('You have a theme update available!','success')
         sent_update_notif = true;
     }
