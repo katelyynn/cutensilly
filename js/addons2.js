@@ -48,22 +48,32 @@ function query_versions() {
         document.getElementById('theme-update').classList.remove('ultra-shine');
         document.getElementById('theme-update').style.removeProperty('--base-hue');
     } else if (need_updates.main != -2) {
-        document.getElementById('theme-ver').textContent = `Update to ${latest_versions.main}`;
-        document.getElementById('theme-update').style.setProperty('-hue','130');
+        document.getElementById('theme-ver').textContent = `Update to ${pad_ver(latest_versions.main)}`;
+        document.getElementById('theme-update').style.setProperty('--hue','130');
         if (!sent_update_notif) create_window('One moment','There is a theme update available, click to update!',[
             {
                 'text': 'Update now',
-                'link': 'https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css'
+                'link': 'https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css',
+                'type': 'primary'
             },
             {
                 'text': 'Dismiss for now',
-                'onclick': 'exit_windows()'
+                'onclick': 'kill_windows()'
             }
         ],'update_theme');
         sent_update_notif = true;
     }
     } catch(e) {console.log(e)}
 }
+
+
+// pad version number if needed
+function pad_ver(ver) {
+    let ver_len = `${ver}`.length;
+    if (ver_len < 9) return `${ver}0`;
+    else return ver;
+}
+
 
 let versions = {};
 let need_updates = {};
