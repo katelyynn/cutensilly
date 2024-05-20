@@ -29,6 +29,16 @@ let projects = {
         ],
         copyright: '2022-2024 (c) kate GPL-3.0'
     },
+    'tulip': {
+        bio: 'a <i>WIP</i> vanilla RPG-esc, vaguely hypixel skyblock-inspired experience in minecraft - featuring professions, leveling, xp boosters, quests, shops, and more planned.',
+        links: [
+            {
+                type: 'sauce',
+                link: 'https://github.com/tulip-mc'
+            }
+        ],
+        copyright: '2022-2024 (c) kate GPL-3.0'
+    },
     'bleh': {
         bio: 'a complete visual overhaul for last.fm, incomplete but good enough at this stage. check out the site for more information and tweaks.',
         links: [
