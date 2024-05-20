@@ -26,12 +26,6 @@ function query_versions() {
         }
     }
 
-    /*if (any_updates_available) {
-        document.getElementById('chip').classList.add('shown');
-    } else {
-        document.getElementById('chip').classList.remove('shown');
-    }*/
-
     try {
     if (need_updates.main > -2 && need_updates.main < 1) {
         document.getElementById('theme-update').classList.remove('primary');
@@ -56,7 +50,16 @@ function query_versions() {
     } else if (need_updates.main != -2) {
         document.getElementById('theme-ver').textContent = `Update to ${latest_versions.main}`;
         document.getElementById('theme-update').style.setProperty('-hue','130');
-        if (!sent_update_notif) create_chip('You have a theme update available!','success')
+        if (!sent_update_notif) create_window('One moment','There is a theme update available, click to update!',[
+            {
+                'text': 'Update now',
+                'link': 'https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css'
+            },
+            {
+                'text': 'Dismiss for now',
+                'onclick': 'exit_windows()'
+            }
+        ],'update_theme');
         sent_update_notif = true;
     }
     } catch(e) {console.log(e)}
