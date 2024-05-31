@@ -161,6 +161,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    width: fit-content;
 }
 h1, h2, h3 {
     padding: 0;
