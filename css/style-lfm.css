@@ -149,7 +149,7 @@
     --g-yellow: hsl(44, 100%, 60%);
     --g-green: hsl(163, 100%, 60%);
     --g-blue: hsl(199, 79%, 60%);
-    --g-indigo: hsl(254, 26%, 60%);
+    --g-indigo: hsl(254, 46%, 60%);
     background-image: linear-gradient(90deg,
     var(--g-red) 16.6666%,
     var(--g-orange) 33.333%,
