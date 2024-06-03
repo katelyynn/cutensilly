@@ -124,7 +124,8 @@ function parse_date(new_date) {
 
 // loop
 setTimeout(function() {
-    request_tracks();
+    load_tracks(JSON.parse(ocalStorage.getItem('fm_tracks') || ''));
+    load_info(JSON.parse(ocalStorage.getItem('fm_info') || ''));
     request_info();
     setInterval(request_tracks,1000);
 },100);
