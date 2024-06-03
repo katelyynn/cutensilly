@@ -3,18 +3,22 @@
 
 
 let last_used_track = {};
+let is_requesting = false;
+let is_requesting_info = false;
 
 function request_tracks() {
     let tracks = localStorage.getItem('fm_tracks') || '';
 
     if (new Date(localStorage.getItem('fm_expire')) > new Date())
         load_tracks(JSON.parse(tracks));
-    else
+    else if (!is_requesting)
         request_new_tracks();
 }
 
 function request_new_tracks() {
     console.log('requesting new');
+    is_requesting = true;
+
     let xhr = new XMLHttpRequest();
     let url = 'https://api.cutensilly.org/fm';
     xhr.open('GET',url,true);
@@ -23,14 +27,14 @@ function request_new_tracks() {
         load_tracks(JSON.parse(this.response));
 
         let api_expire = new Date();
-        api_expire.setSeconds(api_expire.getSeconds() + 6);
+        api_expire.setSeconds(api_expire.getSeconds() + 8);
         localStorage.setItem('fm_expire',api_expire);
         localStorage.setItem('fm_tracks',this.response);
+        is_requesting = false;
     }
 
     xhr.send();
 }
-
 
 function load_tracks(data) {
     console.log(data);
@@ -77,6 +81,41 @@ function load_tracks(data) {
 }
 
 
+function request_info() {
+    let info = localStorage.getItem('fm_info') || '';
+
+    if (new Date(localStorage.getItem('fm_info_expire')) > new Date())
+        load_info(JSON.parse(info));
+    else if (!is_requesting_info)
+        request_new_info();
+}
+
+function request_new_info() {
+    console.log('requesting new info');
+    is_requesting = true;
+
+    let xhr = new XMLHttpRequest();
+    let url = 'https://api.cutensilly.org/fm/user/cutensilly';
+    xhr.open('GET',url,true);
+
+    xhr.onload = function() {
+        load_info(JSON.parse(this.response));
+
+        let api_info_expire = new Date();
+        api_info_expire.setSeconds(api_info_expire.getHours() + 2);
+        localStorage.setItem('fm_info_expire',api_info_expire);
+        localStorage.setItem('fm_info',this.response);
+        is_requesting_info = false;
+    }
+
+    xhr.send();
+}
+
+function load_info(data) {
+    document.getElementById('avatar').setAttribute('src',data.covers.extra_large);
+}
+
+
 function parse_date(new_date) {
     return moment.unix(new_date).fromNow();
 }
@@ -85,5 +124,6 @@ function parse_date(new_date) {
 // loop
 setTimeout(function() {
     request_tracks();
+    request_info();
     setInterval(request_tracks,1000);
 },100);
