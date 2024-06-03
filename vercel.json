@@ -33,6 +33,10 @@
         {
             "source": "/hateful/",
             "destination": "/bleh/fm/hateful/"
+        },
+        {
+            "source": "/u/",
+            "destination": "https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css"
         }
     ]
 }
