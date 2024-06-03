@@ -37,6 +37,14 @@
         {
             "source": "/u/",
             "destination": "https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css"
+        },
+        {
+            "source": "/u/oled/",
+            "destination": "https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-oled.user.css"
+        },
+        {
+            "source": "/u/light/",
+            "destination": "https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-light.user.css"
         }
     ]
 }
