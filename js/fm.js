@@ -92,7 +92,7 @@ function request_info() {
 
 function request_new_info() {
     console.log('requesting new info');
-    is_requesting = true;
+    is_requesting_info = true;
 
     let xhr = new XMLHttpRequest();
     let url = 'https://api.cutensilly.org/fm/user/cutensilly';
@@ -102,7 +102,7 @@ function request_new_info() {
         load_info(JSON.parse(this.response));
 
         let api_info_expire = new Date();
-        api_info_expire.setSeconds(api_info_expire.getHours() + 2);
+        api_info_expire.setHours(api_info_expire.getHours() + 2);
         localStorage.setItem('fm_info_expire',api_info_expire);
         localStorage.setItem('fm_info',this.response);
         is_requesting_info = false;
@@ -113,6 +113,7 @@ function request_new_info() {
 
 function load_info(data) {
     document.getElementById('avatar').setAttribute('src',data.covers.extra_large);
+    document.getElementById('favi').href = data.covers.extra_large;
 }
 
 
