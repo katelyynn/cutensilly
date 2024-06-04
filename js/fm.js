@@ -41,10 +41,10 @@ function load_tracks(data) {
 
     // missing album cover, last.fm bug
     // only fix is to make a new request
-    if (data.covers.medium.includes('2a96cbd8b46e442fc41c2b86b821562f.png')) {
+    /*if (data.covers.medium.includes('2a96cbd8b46e442fc41c2b86b821562f.png')) {
         setTimeout(function() {request_new_tracks()}, 500);
         return;
-    }
+    }*/
 
     if (JSON.stringify(data) != JSON.stringify(last_used_track)) {
         // url
@@ -62,8 +62,10 @@ function load_tracks(data) {
         }
 
         // cover
-        document.getElementById('chartlist-img').src = data.covers.medium;
-        document.getElementById('bg').style.setProperty('background-image',`url(${data.covers.extra_large})`);
+        if (!data.covers.medium.includes('2a96cbd8b46e442fc41c2b86b821562f.png')) {
+            document.getElementById('chartlist-img').src = data.covers.medium;
+            document.getElementById('bg').style.setProperty('background-image',`url(${data.covers.extra_large})`);
+        }
 
         // info
         //document.getElementById('music').setAttribute('track',tracks[0].name);
