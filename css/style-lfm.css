@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+    --font: Ubuntu Sans, Spline Sans, Inter, Roboto, Noto Sans, Noto Sans JP, Noto Color Emoji, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-weight: 480;
+    --font-weight-medium: 600;
+    --font-weight-bold: 700;
+}
+
+
+
 .installed-only, .btn.installed-only,
 .installed2-only, .btn.installed2-only
 {

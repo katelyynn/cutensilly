@@ -48,7 +48,7 @@ function query_versions() {
         document.getElementById('theme-update').classList.remove('ultra-shine');
         document.getElementById('theme-update').style.removeProperty('--base-hue');
     } else if (need_updates.main != -2) {
-        document.getElementById('theme-ver').textContent = `Update to ${pad_ver(latest_versions.main)}`;
+        document.getElementById('theme-ver').innerHTML = `Update to <strong>${pad_ver(latest_versions.main)}</strong>`;
         document.getElementById('theme-update').style.setProperty('--hue','130');
         if (!sent_update_notif) create_window('One moment','There is a theme update available, click to update!',[
             {
