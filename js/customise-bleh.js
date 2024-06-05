@@ -363,15 +363,11 @@ let leaving_prompt = (event) => {
     event.preventDefault();
 
     create_window('Wait!',`
-    <p>Your settings have not been saved, do you want to save now?</p>
+    <p>Your settings have not been saved, are you sure you want to exit?</p>
     `,[
         {
-            'text': 'Save',
-            'type': 'primary',
-            'onclick': 'prompt_save_settings()'
-        },
-        {
             'text': 'Cancel',
+            'type': 'primary',
             'onclick': 'kill_windows()'
         }
     ],'welcome_bleh2_customise');

@@ -389,7 +389,7 @@ strong, em {
 }
 
 
-footer {
+footer:not(.window footer) {
     padding: calc(var(--card-gap) * 8) 0;
     margin-top: 240px;
     background-color: hsla(var(--b4), 10%);
@@ -402,19 +402,20 @@ footer {
         justify-content: space-between;
         width: var(--cards-width);
     }
-}
 
-footer a:not(.btn) {
-    color: hsl(var(--c3));
-    text-decoration: none;
-}
-footer a:not(.btn):hover {
-    color: hsla(var(--c3),80%);
-}
+    a:not(.btn) {
+        color: hsl(var(--c3));
+        text-decoration: none;
 
-footer .links {
-    display: flex;
-    gap: var(--card-gap);
+        &:hover {
+            color: hsla(var(--c3),80%);
+        }
+    }
+
+    .links {
+        display: flex;
+        gap: var(--card-gap);
+    }
 }
 
 
