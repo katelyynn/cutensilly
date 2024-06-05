@@ -12,6 +12,11 @@
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 
 
 /* home gallery */
@@ -181,10 +186,12 @@ figcaption {
     }
 
     &.pad {
+        padding: calc(var(--card-gap) * 2) calc(var(--card-gap) * 6);
+    }
+    &.flex {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: calc(var(--card-gap) * 2) calc(var(--card-gap) * 6);
 
         > * {
             flex: 1;

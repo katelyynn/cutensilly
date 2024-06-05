@@ -89,6 +89,10 @@ let options = {
 
 let bleh = {};
 
+// has user saved their settings?
+let user_saved_settings = true;
+document.body.setAttribute('data-is-saved',user_saved_settings);
+
 
 function reset_all(dont_modify=false) {
     for (let item in options)
@@ -99,12 +103,24 @@ function reset_item(item, dont_modify=false) {
     update_item(item, options[item].value, dont_modify);
 }
 
-function update_item(item, value=undefined, dont_modify=false) {
-    console.log(item,value,bleh[item],options[item]);
+function update_params(params={}, dont_modify=false) {
+    for (let item in params) {
+        update_item(item, params[item], dont_modify);
+    }
+}
+
+function update_item(item, value, dont_modify=false) {
     if (options[item].type == 'slider')
         bleh[item] = value;
 
-    if (dont_modify) delete(bleh.hue_gradient);
+    if (dont_modify) {
+        delete(bleh.hue_gradient);
+    } else {
+        // user has changed a setting
+        user_saved_settings = false;
+        document.body.setAttribute('data-is-saved',user_saved_settings);
+        window.addEventListener('beforeunload', leaving_prompt);
+    }
 
     // gradients
     if (item == 'hue_gradient') {
@@ -199,6 +215,12 @@ function update_copy_block() {
     document.getElementById('copy-block').innerHTML = text;
 }
 
+function code_has_copied() {
+    user_saved_settings = true;
+    document.body.setAttribute('data-is-saved',user_saved_settings);
+    window.removeEventListener('beforeunload', leaving_prompt);
+}
+
 
 
 
@@ -247,7 +269,7 @@ function open_manual_colours_prompt() {
     create_window('Create a custom colour',`
     <p>Colours are controlled by three values: hue, saturation, and lightness. Try out the sliders to get a feel.</p>
     <br>
-    <div class="inner-preview">
+    <div class="inner-preview pad">
         <div class="pallete">
             <div style="--col: hsl(var(--l2-c))"></div>
             <div style="--col: hsl(var(--l3-c))"></div>
@@ -319,6 +341,27 @@ function open_manual_colours_prompt() {
         }
     ],'create_colour');
 }
+
+
+
+// prompt before leaving
+let leaving_prompt = (event) => {
+    event.preventDefault();
+
+    create_window('Wait!',`
+    <p>Your settings have not been saved, do you want to save now?</p>
+    `,[
+        {
+            'text': 'Save',
+            'type': 'primary',
+            'onclick': 'prompt_save_settings()'
+        },
+        {
+            'text': 'Cancel',
+            'onclick': 'kill_windows()'
+        }
+    ],'welcome_bleh2_customise');
+};
 
 
 

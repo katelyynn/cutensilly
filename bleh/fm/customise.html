@@ -96,7 +96,7 @@
                     </a>
                     <a class="btn active" href="/bleh/fm/customise">
                         <i class="icon w-20" data-lucide="palette"></i>
-                        Colours
+                        Customise
                     </a>
                 </div>
                 <div class="flex flex-column flex-gap btns separator" style="gap: 6px">
@@ -114,22 +114,112 @@
         <div class="main">
             <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
                 <h3>Colours</h3>
+                <div class="inner-preview pad">
+                    <div class="pallete">
+                        <div style="--col: hsl(var(--l2-c))"></div>
+                        <div style="--col: hsl(var(--l3-c))"></div>
+                        <div style="--col: hsl(var(--l4-c))"></div>
+                        <div style="--col: hsl(var(--l2))"></div>
+                        <div style="--col: hsl(var(--l3))"></div>
+                        <div style="--col: hsl(var(--l4))"></div>
+                    </div>
+                    <div class="sep"></div>
+                    <div class="btn-row">
+                        <button class="btn">Example button</button>
+                        <button class="btn primary">Example button</button>
+                        <div class="chartlist-bar">
+                            <span class="fill"></span>
+                            <span class="text">44,551 plays</span>
+                        </div>
+                    </div>
+                </div>
                 <h5>Presets</h5>
                 <div class="pallete options">
-                    <button class="btn" style="--hue: -2" onclick="update_item('hue', -2)"></button>
-                    <button class="btn" style="--hue: 10" onclick="update_item('hue', 10)"></button>
-                    <button class="btn" style="--hue: 35" onclick="update_item('hue', 35)"></button>
-                    <button class="btn" style="--hue: 85" onclick="update_item('hue', 85)"></button>
-                    <button class="btn" style="--hue: 115" onclick="update_item('hue', 115)"></button>
-                    <button class="btn" style="--hue: 155" onclick="update_item('hue', 155)"></button>
-                    <button class="btn" style="--hue: 185" onclick="update_item('hue', 185)"></button>
-                    <button class="btn" style="--hue: 222" onclick="update_item('hue', 222)"></button>
-                    <button class="btn" style="--hue: 255" onclick="update_item('hue', 255)"></button>
-                    <button class="btn" style="--hue: 333" onclick="update_item('hue', 333)"></button>
+                    <button class="btn" style="
+                        --hue: -2;
+                        --sat: 1;
+                        --lit: 0.8" onclick="update_params({
+                        hue: -2,
+                        sat: 1,
+                        lit: 0.8
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 10;
+                        --sat: 1;
+                        --lit: 0.9" onclick="update_params({
+                        hue: 10,
+                        sat: 1,
+                        lit: 0.9
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 35;
+                        --sat: 1.2;
+                        --lit: 1" onclick="update_params({
+                        hue: 35,
+                        sat: 1.2,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 85;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 85,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 115;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 115,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 155;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 155,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 185;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 185,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 222;
+                        --sat: 1;
+                        --lit: 0.9" onclick="update_params({
+                        hue: 222,
+                        sat: 1,
+                        lit: 0.9
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 255;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 255,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 333;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 333,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
                 </div>
                 <h5>Manual</h5>
                 <button class="btn" onclick="open_manual_colours_prompt()">
                     Create a custom colour
+                    <i class="icon w-16" data-lucide="chevron-right"></i>
                 </button>
             </section>
             <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
@@ -158,7 +248,7 @@
             </section>
             <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
                 <h3>Display</h3>
-                <div class="inner-preview pad">
+                <div class="inner-preview pad flex">
                     <div class="preview-img">
                         <img id="nav-img" src="/img/nav-shown.png">
                     </div>
@@ -174,7 +264,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="inner-preview pad gap-top">
+                <div class="inner-preview pad flex gap-top">
                     <div class="preview-img">
                         <img id="gendered_tags-img" src="/img/gendered_tags-hidden.png">
                     </div>
@@ -190,15 +280,13 @@
                         </button>
                     </div>
                 </div>
-            </section>
-        </div>
-    </main>
-    <main class="panel-container double">
-        <div class="main">
-            <section class="panel lfm-preview" id="cards">
-                <h5>Adjust card width</h5>
-                <div class="slider-container">
-                    <div class="heading"><p>Main width</p><button class="btn reset" onclick="reset_item('main_width')">Reset to default</button></div>
+                <div class="sep"></div>
+                <div class="slider-container" id="container-main_width">
+                    <button class="btn reset" onclick="reset_item('main_width')">Reset to default</button>
+                    <div class="heading">
+                        <h5>Card width</h5>
+                        <p>Keep in mind of your screen size, the default is not a perfect 900 due to chart grid sizing.</p>
+                    </div>
                     <div class="slider">
                         <input type="range" min="700" max="1300" value="902" step="20" id="slider-main_width" oninput="update_item('main_width', this.value)">
                         <p id="value-main_width">902</p>
@@ -209,71 +297,53 @@
                         <p style="left: 100%">1300</p>
                     </div>
                 </div>
-                <p class="caption">The default is not a perfect 900 due to chart grid sizing.</p>
-                <!--<div class="slider-container">
-                    <div class="heading"><p>Sidebar width</p><button class="btn reset" onclick="reset_item('sidebar-width',400)">Reset to default</button></div>
-                    <div class="slider">
-                        <input type="range" min="400" max="800" value="400" step="20" id="slider-sidebar-width" oninput="update_value(this.value, 'sidebar-width')">
-                        <p id="value-sidebar-width">400</p>
-                    </div>
-                    <div class="hint">
-                        <p style="left: 0">400</p>
-                        <p style="left: 100%">800</p>
-                    </div>
-                </div>-->
-                <p class="caption">Keep in mind your screen resolution when adjusting.</p>
             </section>
-        </div>
-        <div class="sidebar">
-            <section class="panel"></section>
         </div>
     </main>
     <main class="panel-container">
-        <section class="panel lfm-preview" id="export">
-            <div>
-                <h5>Save changes into bleh² theme</h5>
-                <div class="hint steps-wrap">
-                    <div class="step">
-                        <div class="head">
-                            <div class="step-num">1</div>
-                            <p>Install <a href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-hue.user.css" target="_blank">this extension</a> and <strong>close the tab</strong></p>
-                        </div>
-                        <img src="/img/customise-1-install.png">
+        <section class="panel flex flex-column flex-gap lfm-preview" id="export" style="gap: 20px">
+            <h3>Save changes into bleh theme</h3>
+            <div class="hint steps-wrap">
+                <div class="step">
+                    <div class="head">
+                        <div class="step-num">1</div>
+                        <p>Install <a href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-hue.user.css" target="_blank">this extension</a> and <strong>close the tab</strong></p>
                     </div>
-                    <div class="step">
-                        <div class="head">
-                            <div class="step-num">2</div>
-                            <p>Copy your final code to the clipboard</p>
-                        </div>
-                        <div class="copy-code">
-                            <pre id="copy-block" style="height: 100%"></pre>
-                            <button class="btn primary" data-clipboard-target="#copy-block">
-                                <i class="icon w-20" data-lucide="copy"></i>
-                                <p>Click to copy</p>
-                            </button>
-                        </div>
+                    <img src="/img/customise-1-install.png">
+                </div>
+                <div class="step">
+                    <div class="head">
+                        <div class="step-num">2</div>
+                        <p>Copy your final code to the clipboard</p>
                     </div>
-                    <div class="step">
-                        <div class="head">
-                            <div class="step-num">3</div>
-                            <p>Open your extensions menu and find Stylus or open from the toolbar</p>
-                        </div>
-                        <img src="/img/open-stylus.png">
+                    <div class="copy-code">
+                        <pre id="copy-block" style="height: 100%"></pre>
+                        <button class="btn primary" data-clipboard-target="#copy-block" onclick="code_has_copied()">
+                            <i class="icon w-20" data-lucide="copy"></i>
+                            <p>Click to copy</p>
+                        </button>
                     </div>
-                    <div class="step">
-                        <div class="head">
-                            <div class="step-num">4</div>
-                            <p>Locate bleh² (hue) and hit Edit</p>
-                        </div>
-                        <img src="/img/edit-stylus.png">
+                </div>
+                <div class="step">
+                    <div class="head">
+                        <div class="step-num">3</div>
+                        <p>Open your extensions menu and find Stylus or open from the toolbar</p>
                     </div>
-                    <div class="step">
-                        <div class="head">
-                            <div class="step-num">5</div>
-                            <p>Paste your code into the theme</p>
-                        </div>
-                        <img src="/img/copy-and-paste.png">
+                    <img src="/img/open-stylus.png">
+                </div>
+                <div class="step">
+                    <div class="head">
+                        <div class="step-num">4</div>
+                        <p>Locate bleh² (hue) and hit Edit</p>
                     </div>
+                    <img src="/img/edit-stylus.png">
+                </div>
+                <div class="step">
+                    <div class="head">
+                        <div class="step-num">5</div>
+                        <p>Paste your code into the theme</p>
+                    </div>
+                    <img src="/img/copy-and-paste.png">
                 </div>
             </div>
         </section>
@@ -315,8 +385,8 @@
     </style>
     <div class="floating-wrap">
         <div class="floating-confirm">
-            <p>Once you're finished, click confirm.</p>
-            <a class="btn" href="#export">Confirm</a>
+            <p>You have unsaved changes!</p>
+            <a class="btn primary" href="#export">Save changes</a>
         </div>
     </div>
 </body>
@@ -407,25 +477,15 @@
     }
     .floating-confirm p {
         flex: 1;
+        color: hsl(var(--c1));
+        font-weight: var(--font-weight-medium);
     }
 
-    .scrolled .floating-wrap {
+    [data-is-saved="true"] .floating-wrap {
         transform: translateY(200px);
     }
 </style>
 <script src="/js/customise-bleh.js"></script>
-<script>
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        console.log(scroll);
-
-        if (scroll >= 1700) {
-            document.body.classList.add("scrolled");
-        } else {
-            document.body.classList.remove("scrolled");
-        }
-    });
-</script>
 <footer>
     <div class="content">
         <span class="main">

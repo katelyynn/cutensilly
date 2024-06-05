@@ -169,6 +169,10 @@ input[type="range"]::-moz-range-thumb {
     overflow: hidden;
     height: 22px;
     border-radius: var(--item-med-radius);
+
+    input {
+        padding: unset;
+    }
 }
 .slider-container .hint {
     color: hsl(var(--c3));
@@ -176,14 +180,10 @@ input[type="range"]::-moz-range-thumb {
     position: relative;
     width: 468px;
     height: 18px;
-}
-.slider-container .hint p {
-    position: absolute;
-}
 
-.slider-container .slider input {
-    position: relative;
-    left: -14px;
+    p {
+        position: absolute;
+    }
 }
 
 .slider-container .slider p {
@@ -329,15 +329,14 @@ input[type="range"]::-moz-range-thumb {
 .pallete.options > button {
     aspect-ratio: 1 / 1;
     --bg: hsl(var(--l3));
-    --bg-hov: hsla(var(--l3), 90%);
-    --bg-atv: hsla(var(--l3), 80%);
+    --bg-hov: hsla(var(--l3), 80%);
+    --bg-atv: hsla(var(--l3), 60%);
+    --shadow: var(--card-shadow);
+    --shadow-hov: var(--shadow);
     --sat: 1;
     --lit: 1;
     width: unset;
     height: unset;
-}
-.pallete.options > button:is(:hover, :active) {
-    --sat: 1.2;
 }
 
 .pallete + .pallete {
