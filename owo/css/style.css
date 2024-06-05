@@ -332,12 +332,13 @@ h2 {
 }
 h3 {
     font-size: 24px;
+    line-height: 28px;
 }
 h4 {
     font-size: 16px;
+    line-height: 20px;
 }
 h5 {
-    margin-bottom: 12px;
     display: flex;
     gap: var(--card-gap);
 }
@@ -488,4 +489,73 @@ svg.icon {
     padding: 0 6px;
     background: hsl(var(--b6));
     border-radius: var(--item-small-radius);
+}
+
+
+
+
+/*     header     */
+body {
+    padding-top: calc(40px + (var(--card-gap) * 2));
+}
+header:not(.window header) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--card-gap) 0;
+
+    &:before {
+        content: '';
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 80px;
+        z-index: 10;
+        background: linear-gradient(0deg, transparent 0%, hsl(var(--b6)) 100%);
+        pointer-events: none;
+    }
+
+    & > .content {
+        width: var(--cards-width);
+        height: 40px;
+        display: flex;
+        align-items: center;
+        z-index: 11;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex: 1;
+
+            a:not(.btn) {
+                font-size: 26px;
+                line-height: 30px;
+                font-family: var(--font-brand);
+                text-decoration: none;
+            }
+        }
+
+        .nav {
+            display: flex;
+            a {
+                --bg: transparent;
+                --bg-hov: transparent;
+                --bg-atv: transparent;
+                --shadow: none;
+                --shadow-hov: none;
+                --padding: 11px 16px;
+                gap: 8px;
+
+                &:hover {
+                    color: hsl(var(--c1));
+                }
+            }
+        }
+    }
 }

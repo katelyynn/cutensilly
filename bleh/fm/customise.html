@@ -57,170 +57,64 @@
     <link rel="stylesheet" href="/owo/css/status.css">
     <link rel="stylesheet" href="/owo/css/input.css">
     <link rel="stylesheet" href="/owo/css/grid.css">
-    <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.2; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
-    <main class="panel-container">
-        <div class="gap" style="--gap: 60px"></div>
-        <section class="side-by-side content right">
-            <div class="text flex flex-column flex-gap" style="--gap: 20px">
-                <div class="header-wrap">
-                    <a href="https://last.fm/user/cutensilly" target="_blank">
-                        <img class="avatar circular shadow" src="/img/avi.png" alt="avatar" style="--size: 96px">
-                    </a>
-                    <div>
-                        <h1 class="hi kate logo">bleh</h1>
-                        <h2>theme customiser</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="--gap: 20px; width: 100%; max-width: 700px">
-                <h3>What are you looking for?</h3>
-                <div class="item-grid control-panel">
-                    <a class="btn control-panel-item item" href="#accent">
-                        <div class="image">
-                            <i class="icon w-24" data-lucide="paintbrush"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Customise your accent colour</h5>
-                            <p>Enjoy last.fm in a fresh coat of paint.</p>
-                        </div>
-                    </a>
-                    <a class="btn control-panel-item item" href="#gloss">
-                        <div class="image">
-                            <i class="icon w-24" data-lucide="disc"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Adjust image gloss</h5>
-                            <p>Change the opacity of album/artist cover's gloss.</p>
-                        </div>
-                    </a>
-                    <a class="btn control-panel-item item" href="#nav">
-                        <div class="image">
-                            <i class="icon w-24" data-lucide="bell"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Manage extra header navigation</h5>
-                            <p>Show or hide your notifications, inbox, and settings.</p>
-                        </div>
-                    </a>
-                    <a class="btn control-panel-item item" href="#gendered_tags">
-                        <div class="image">
-                            <i class="icon w-24" data-lucide="tag"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Gendered music tagging</h5>
-                            <p>Show or hide legacy tags related to gender.</p>
-                        </div>
-                    </a>
-                    <a class="btn control-panel-item item" href="#cards">
-                        <div class="image">
-                            <i class="icon w-24" data-lucide="layout-dashboard"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Adjust card width</h5>
-                            <p>Change the size of bleh².</p>
-                        </div>
+    <header>
+        <div class="content">
+            <div class="logo">
+                <a href="/bleh/fm">
+                    bleh
+                </a>
+                <div class="nav">
+                    <a class="btn" href="/">
+                        by cutensilly
                     </a>
                 </div>
             </div>
-        </section>
-        <div class="gap" style="--gap: 20px"></div>
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-
-            .control-panel {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                padding: var(--card-gap);
-                border: 1px solid hsl(var(--b4));
-                border-bottom: 1px solid hsl(var(--b3));
-                background-color: hsl(var(--b5));
-                border-radius: var(--item-med-radius);
-                box-shadow: var(--card-shadow);
-            }
-
-            .btn.control-panel-item {
-                --top: 16px;
-                --sides: 16px;
-                --bg: hsla(var(--b4), 20%);
-                --bg-hov: hsla(var(--b4), 40%);
-                --bg-atv: hsla(var(--b4), 60%);
-                box-shadow: none;
-                width: 100%;
-                justify-content: left;
-            }
-            .btn.control-panel-item .text {
-                display: flex;
-                flex-direction: column;
-                gap: 3px;
-            }
-            .btn.control-panel-item h5 {
-                color: hsl(var(--c2));
-                font-size: var(--font-size);
-                margin: unset;
-            }
-            .btn.control-panel-item p {
-                color: hsla(var(--c2), 80%);
-                font-size: var(--font-size);
-                font-weight: var(--font-weight);
-            }
-        </style>
-    </main>
-    <main class="panel-container">
-        <section class="content flex flex-column flex-gap flex-align-center full-width">
-            <h3 id="style_addons" style="margin-bottom: 20px">Style addons</h3>
-            <div class="item-grid" style="width: 100%">
-                <div class="item install2" id="install-oled" onclick="create_theme_window('bleh2-oled')">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="moon-star"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>OLED theme</h5>
-                        <p>bleh², but very dark.</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-oled.png">
-                    </div>
-                </div>
-                <div class="item install2" id="install-light" onclick="create_theme_window('bleh2-light')">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="sun"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Light theme</h5>
-                        <p>bleh², but very light.</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-light.png">
-                    </div>
-                </div>
-                <div class="item install2" id="install-accent" onclick="create_theme_window('bleh2-accent')" style="display: none !important">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="paintbrush"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Album covers<div class="badge" data-kate-type="wip">WIP</div></h5>
-                        <p>Match the page colour to the album cover!</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-accent.png">
-                    </div>
-                </div>
+            <div class="nav">
+                <a class="btn" href="/bleh/fm">
+                    <i class="icon w-16" data-lucide="home"></i>
+                    Home
+                </a>
+                <a class="btn" href="/bleh/fm/customise">
+                    <i class="icon w-16" data-lucide="sparkles"></i>
+                    Customise
+                </a>
             </div>
-        </section>
-        <div class="gap" style="--gap: 20px"></div>
-        <h3 style="margin-bottom: 20px">Customisation</h3>
-    </main>
+        </div>
+    </header>
+    <div class="bg med-bg installed2-only" style="background-image: url(/img/shiggy.png); opacity: 0.35; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
     <main class="panel-container double">
+        <div class="sidebar">
+            <section class="panel">
+                <div class="flex flex-column flex-gap btns" style="gap: 6px">
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="home"></i>
+                        Home
+                    </a>
+                    <a class="btn" href="/bleh/fm/themes">
+                        <i class="icon w-20" data-lucide="swatch-book"></i>
+                        Themes
+                    </a>
+                    <a class="btn active" href="/bleh/fm/customise">
+                        <i class="icon w-20" data-lucide="palette"></i>
+                        Colours
+                    </a>
+                </div>
+                <div class="flex flex-column flex-gap btns separator" style="gap: 6px">
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="refresh-ccw"></i>
+                        Updates
+                    </a>
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="info"></i>
+                        About
+                    </a>
+                </div>
+            </section>
+        </div>
         <div class="main">
-            <section class="panel lfm-preview" id="accent">
-                <h5>Customise your accent colour</h5>
+            <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
+                <h3>Colours</h3>
+                <h5>Presets</h5>
                 <div class="pallete options">
                     <button class="btn" style="--hue: -2" onclick="update_item('hue', -2)"></button>
                     <button class="btn" style="--hue: 10" onclick="update_item('hue', 10)"></button>
@@ -233,80 +127,21 @@
                     <button class="btn" style="--hue: 255" onclick="update_item('hue', 255)"></button>
                     <button class="btn" style="--hue: 333" onclick="update_item('hue', 333)"></button>
                 </div>
-                <div class="sep using-hue-gradient-item"></div>
-                <div class="pallete options using-hue-gradient-item">
-                    <button class="btn" style="background: var(--gradient-lesbian)" onclick="update_item('hue_gradient', 'lesbian')"></button>
-                    <button class="btn" style="background: var(--gradient-trans)" onclick="update_item('hue_gradient', 'trans')"></button>
-                    <button class="btn" style="background: var(--gradient-fluid)" onclick="update_item('hue_gradient', 'fluid')"></button>
-                </div>
-                <div class="sep"></div>
-                <p class="caption using-hue-gradient-item">While a hue gradient is selected, hue adjustments are not possible.</p>
-                <div class="slider-container dim-using-hue-gradient">
-                    <div class="heading"><p>Accent colour</p><button class="btn reset" onclick="reset_item('hue')">Reset to default</button></div>
-                    <div class="slider">
-                        <input type="range" min="0" max="360" value="255" id="slider-hue" oninput="update_item('hue', this.value)">
-                        <p id="value-hue">255</p>
-                    </div>
-                    <div class="hint">
-                        <p style="left: 0">0</p>
-                        <p style="left: calc((255 / 360) * 100%)">255</p>
-                        <p style="left: 100%">360</p>
-                    </div>
-                </div>
-                <div class="slider-container dim-using-hue-gradient">
-                    <div class="heading"><p>Saturation</p><button class="btn reset" onclick="reset_item('sat')">Reset to default</button></div>
-                    <div class="slider">
-                        <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-sat" oninput="update_item('sat', this.value)">
-                        <p id="value-sat">1</p>
-                    </div>
-                    <div class="hint">
-                        <p style="left: 0">0</p>
-                        <p style="left: calc((1 / 1.5) * 100%)">1</p>
-                        <p style="left: 100%">1.5</p>
-                    </div>
-                </div>
-                <div class="slider-container dim-using-hue-gradient">
-                    <div class="heading"><p>Lightness</p><button class="btn reset" onclick="reset_item('lit')">Reset to default</button></div>
-                    <div class="slider">
-                        <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-lit" oninput="update_item('lit', this.value)">
-                        <p id="value-lit">1</p>
-                    </div>
-                    <div class="hint">
-                        <p style="left: 0">0</p>
-                        <p style="left: calc((1 / 1.5) * 100%)">1</p>
-                        <p style="left: 100%">1.5</p>
-                    </div>
-                </div>
+                <h5>Manual</h5>
+                <button class="btn" onclick="open_manual_colours_prompt()">
+                    Create a custom colour
+                </button>
+            </section>
+        </div>
+    </main>
+    <main class="panel-container double">
+        <div class="main">
+            <section class="panel lfm-preview" id="accent">
+                <h5>Customise your accent colour</h5>
             </section>
         </div>
         <div class="sidebar">
             <section class="panel">
-                <h5>Preview</h5>
-                <div class="pallete">
-                    <!--<div style="--col: hsl(var(--l1))"></div>-->
-                    <div style="--col: hsl(var(--l2-c))"></div>
-                    <div style="--col: hsl(var(--l3-c))"></div>
-                    <div style="--col: hsl(var(--l4-c))"></div>
-                </div>
-                <div class="pallete">
-                    <!--<div style="--col: hsl(var(--l1))"></div>-->
-                    <div style="--col: hsl(var(--l2))"></div>
-                    <div style="--col: hsl(var(--l3))"></div>
-                    <div style="--col: hsl(var(--l4))"></div>
-                </div>
-                <p class="caption">The top row of colours are used when visiblity is always required (like links for example), they can only be so dark.</p>
-                <div class="sep"></div>
-                <div class="btn-row">
-                    <button class="btn" style="font-size: 14px">Example button</button>
-                    <button class="btn primary" style="font-size: 14px">Example button</button>
-                </div>
-                <div class="sep"></div>
-                <div class="btn-row">
-                    <div class="chartlist-bar">
-                        <span class="fill"></span>
-                        <span class="text">44,551 plays</span>
-                    </div>
-                </div>
             </section>
         </div>
     </main>

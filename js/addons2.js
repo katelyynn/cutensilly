@@ -12,7 +12,6 @@ let latest_versions = {
 }
 let any_updates_available = false;
 let sent_update_notif = false;
-let is_sneek = false;
 function query_versions() {
     any_updates_available = false;
     for (let addon in style_addons) {
@@ -26,17 +25,14 @@ function query_versions() {
         }
     }
 
+    // display version number
+    document.getElementById('current-version').textContent = versions.main;
+
     try {
     if (need_updates.main > -2 && need_updates.main < 1) {
         document.getElementById('theme-update').classList.remove('primary');
     } else {
         document.getElementById('theme-update').classList.add('primary');
-    }
-
-    if (need_updates.main > -2) {
-        document.getElementById('sneek').textContent = 'sneek';
-    } else {
-        document.getElementById('sneek').textContent = 'sleek';
     }
 
     if (need_updates.main == -1) {

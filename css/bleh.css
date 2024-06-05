@@ -76,6 +76,7 @@ figcaption {
     display: flex;
     align-items: center;
     gap: 24px;
+    margin-bottom: 20px;
 
     h1 {
         font-size: 96px;
@@ -93,7 +94,7 @@ figcaption {
     }
 }
 
-.logo {
+.logo:not(header .logo) {
     font-size: 96px;
     line-height: 96px;
     position: relative;
@@ -103,4 +104,59 @@ figcaption {
 .brand-btns {
     padding-top: 20px;
     border-top: 1px solid hsl(var(--b4));
+}
+
+
+
+
+.btns.separator {
+    margin-top: var(--card-gap);
+    padding-top: var(--card-gap);
+    border-top: 1px solid hsl(var(--b4));
+}
+.btns .btn {
+    width: 100%;
+    justify-content: unset;
+
+    &:not(.active) {
+        --bg: hsla(var(--b4), 20%);
+        --bg-hov: hsla(var(--b4), 60%);
+        --bg-atv: hsla(var(--b4), 80%);
+        --shadow: none;
+        --shadow-hov: none;
+    }
+}
+
+
+
+
+.screen-row {
+    margin: 10px 0;
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid hsl(var(--b4));
+
+    .screen-wrap {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 1;
+
+        .screen {
+            width: 120px;
+            aspect-ratio: 15 / 9;
+            border: 3px solid hsl(var(--b4));
+            border-radius: var(--item-med-radius);
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+    }
+}
+
+#window_create_colour {
+    max-width: 800px;
 }

@@ -161,7 +161,6 @@ input[type="range"]::-moz-range-thumb {
     display: flex;
     flex-direction: column;
     gap: var(--card-gap);
-    margin-top: var(--card-gap);
 }
 .slider-container .slider {
     display: flex;
@@ -278,13 +277,13 @@ input[type="range"]::-moz-range-thumb {
 
 .pallete {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 6px;
-    height: 80px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 4px;
+    height: 50px;
 }
 
 .pallete.options {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
     height: fit-content;
 }
 .pallete.options > button {

@@ -145,8 +145,10 @@ function update_item(item, value=undefined, dont_modify=false) {
 
     if (options[item].type == 'slider' && !dont_modify) {
         // text to show current slider value
-        document.getElementById(`value-${item}`).textContent = `${bleh[item]}${options[item].unit}`;
-        document.getElementById(`slider-${item}`).value = bleh[item];
+        try {
+            document.getElementById(`value-${item}`).textContent = `${bleh[item]}${options[item].unit}`;
+            document.getElementById(`slider-${item}`).value = bleh[item];
+        } catch(e) {}
     } else if (options[item].type == 'toggle' && !dont_modify) {
         if (bleh[item] == options[item].values[0]) {
             bleh[item] = options[item].values[1];
@@ -215,18 +217,96 @@ if (bleh_ver < 2024.0429 || isNaN(bleh_ver)) {
         }
     ],'welcome_bleh2_customise');
 } else {
-    create_window('Welcome to the theme customiser!',`
+    /*create_window('Welcome to the theme customiser!',`
     <p>Have a scroll through and configure to your liking, then <strong>hit the confirm button once you're ready to save</strong>.</p>
     `,[
         {
             'text': 'Continue',
             'onclick': 'kill_windows()'
         }
-    ],'welcome_bleh2_customise');
+    ],'welcome_bleh2_customise');*/
 }
 
 function try_again() {
     location.reload();
+}
+
+
+
+
+
+// create a custom colour
+function open_manual_colours_prompt() {
+    create_window('Create a custom colour',`
+    <p>Colours are controlled by three values: hue, saturation, and lightness. Try out the sliders to get a feel.</p>
+    <br>
+    <div class="slider-container dim-using-hue-gradient">
+        <div class="heading"><p>Accent colour</p><button class="btn reset" onclick="reset_item('hue')">Reset to default</button></div>
+        <div class="slider">
+            <input type="range" min="0" max="360" value="${bleh.hue}" id="slider-hue" oninput="update_item('hue', this.value)">
+            <p id="value-hue">${bleh.hue}${options.hue.unit}</p>
+        </div>
+        <div class="hint">
+            <p style="left: 0">0</p>
+            <p style="left: calc((255 / 360) * 100%)">255</p>
+            <p style="left: 100%">360</p>
+        </div>
+    </div>
+    <div class="slider-container dim-using-hue-gradient">
+        <div class="heading"><p>Saturation</p><button class="btn reset" onclick="reset_item('sat')">Reset to default</button></div>
+        <div class="slider">
+            <input type="range" min="0" max="1.5" value="${bleh.sat}" step="0.025" id="slider-sat" oninput="update_item('sat', this.value)">
+            <p id="value-sat">${bleh.sat}${options.sat.unit}</p>
+        </div>
+        <div class="hint">
+            <p style="left: 0">0</p>
+            <p style="left: calc((1 / 1.5) * 100%)">1</p>
+            <p style="left: 100%">1.5</p>
+        </div>
+    </div>
+    <div class="slider-container dim-using-hue-gradient">
+        <div class="heading"><p>Lightness</p><button class="btn reset" onclick="reset_item('lit')">Reset to default</button></div>
+        <div class="slider">
+            <input type="range" min="0" max="1.5" value="${bleh.lit}" step="0.025" id="slider-lit" oninput="update_item('lit', this.value)">
+            <p id="value-lit">${bleh.lit}${options.lit.unit}</p>
+        </div>
+        <div class="hint">
+            <p style="left: 0">0</p>
+            <p style="left: calc((1 / 1.5) * 100%)">1</p>
+            <p style="left: 100%">1.5</p>
+        </div>
+    </div>
+    <div class="sep"></div>
+    <h5>Preview</h5>
+    <div class="pallete">
+        <div style="--col: hsl(var(--l2-c))"></div>
+        <div style="--col: hsl(var(--l3-c))"></div>
+        <div style="--col: hsl(var(--l4-c))"></div>
+    </div>
+    <div class="pallete">
+        <div style="--col: hsl(var(--l2))"></div>
+        <div style="--col: hsl(var(--l3))"></div>
+        <div style="--col: hsl(var(--l4))"></div>
+    </div>
+    <p class="caption">The top row of colours are used when visiblity is always required (like links for example), they can only be so dark.</p>
+    <div class="sep"></div>
+    <div class="btn-row">
+        <button class="btn" style="font-size: 14px">Example button</button>
+        <button class="btn primary" style="font-size: 14px">Example button</button>
+    </div>
+    <div class="sep"></div>
+    <div class="btn-row">
+        <div class="chartlist-bar">
+            <span class="fill"></span>
+            <span class="text">44,551 plays</span>
+        </div>
+    </div>
+    `,[
+        {
+            'text': 'Done',
+            'onclick': 'kill_windows()'
+        }
+    ],'create_colour');
 }
 
 
