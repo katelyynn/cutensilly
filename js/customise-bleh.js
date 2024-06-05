@@ -116,10 +116,24 @@ function update_item(item, value, dont_modify=false) {
     if (dont_modify) {
         delete(bleh.hue_gradient);
     } else {
-        // user has changed a setting
-        user_saved_settings = false;
-        document.body.setAttribute('data-is-saved',user_saved_settings);
-        window.addEventListener('beforeunload', leaving_prompt);
+        // has the user changed any setting from default?
+        let temp_has_changed_setting = false;
+
+        for (let option in bleh)
+            if (bleh[option] != options[option].value)
+                temp_has_changed_setting = true;
+
+        if (temp_has_changed_setting) {
+            // user has changed a setting
+            user_saved_settings = false;
+            document.body.setAttribute('data-is-saved',user_saved_settings);
+            window.addEventListener('beforeunload', leaving_prompt);
+        } else {
+            // user has not changed a setting
+            user_saved_settings = true;
+            document.body.setAttribute('data-is-saved',user_saved_settings);
+            window.removeEventListener('beforeunload', leaving_prompt);
+        }
     }
 
     // gradients
