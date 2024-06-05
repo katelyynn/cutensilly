@@ -97,10 +97,9 @@
             color: hsl(var(--c3));
         }
     </style>
-    <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.45; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
-    <main class="panel-container">
-        <div class="gap" style="--gap: 110px"></div>
-        <section class="side-by-side content right">
+    <div class="bg big-bg" style="background-image: url(/img/shiggy.png); opacity: 0.45; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
+    <main class="panel-container hero">
+        <section class="side-by-side content right" style="flex: 1">
             <div class="cover has-gallery">
                 <div class="gallery" id="gallery">
                     <figure>
@@ -178,60 +177,6 @@
                 </button>
             </div>
             <script src="/js/home-gallery.js"></script>
-            <style>
-                .gallery figure {
-                    /*display: none;*/
-                    position: absolute;
-                    width: 600px;
-                    transition-property: left, opacity;
-                    transition-duration: 1.2s, 0.6s;
-                    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-
-                    img {
-                        box-shadow: var(--menu-shadow);
-                    }
-                }
-                figure {
-                    text-align: center;
-                }
-                figcaption {
-                    margin-top: 10px;
-                    color: hsl(var(--c2));
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 6px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.4px;
-
-                    .w-16 {
-                        --w: 14px;
-                    }
-                }
-
-                .gallery {
-                    display: flex;
-                    position: relative;
-                    width: 600px;
-                    aspect-ratio: 375 / 225;
-                }
-                .has-gallery .icon-btn {
-                    position: absolute;
-                    top: 50%;
-                    margin-top: -20px;
-                    box-shadow: var(--menu-shadow);
-                }
-                .has-gallery .arrow-l {
-                    left: -20px;
-                }
-                .has-gallery .arrow-r {
-                    right: -20px;
-                }
-
-                .has-gallery {
-                    position: relative;
-                }
-            </style>
             <div class="text flex flex-column flex-gap" style="--gap: 20px">
                 <div class="header-wrap">
                     <a href="https://last.fm/user/cutensilly" target="_blank">
@@ -244,30 +189,30 @@
                 </div>
                 <!-- -->
                 <p class="text-18">a <i id="sneek">sleek</i>, minimalistic refresh featuring customisable colours,<br><strong>light/dark/oled</strong> themes, and hateful blocking</p>
-                <div class="btn-row brand-btns">
-                    <a role="button" class="btn primary installed2-only" href="/bleh/fm/customise">
-                        <i class="icon w-16" data-lucide="sparkles"></i>
-                        <span class="text">Customise your bleh</span>
-                    </a>
-                    <a role="button" class="btn primary installed2-only" id="theme-update" href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css" target="_blank">
-                        <i class="icon w-16" data-lucide="refresh-ccw"></i>
-                        <span class="text" id="theme-ver">Update</span>
-                    </a>
-                    <a role="button" class="btn primary shine uninstalled2-only" onclick="create_install_window2()" id="install-btn">
-                        <span class="text">Install theme now</span>
-                        <i class="icon w-16" data-lucide="square-arrow-out-up-right"></i>
-                    </a>
-                    <a role="button" class="btn installed2-only" href="https://github.com/katelyynn/bleh/issues" target="_blank">
-                        <span class="text">Report bugs</span>
-                        <i class="icon w-16" data-lucide="square-arrow-out-up-right"></i>
-                    </a>
-                    <h5 class="sub warn uninstalled2-only" style="--hue: 160">bleh is now officially out of beta!</h5>
-                </div>
-                <h5 class="sub warn installed2-only" style="--hue: 160">bleh is now officially out of beta!</h5>
             </div>
         </section>
+        <section class="content flex flex-column flex-gap flex-align-center full-width" style="padding-bottom: 120px">
+            <div class="btn-row">
+                <a role="button" class="btn primary installed2-only" href="/bleh/fm/customise">
+                    <i class="icon w-16" data-lucide="sparkles"></i>
+                    <span class="text">Customise your bleh</span>
+                </a>
+                <a role="button" class="btn primary installed2-only" id="theme-update" href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css" target="_blank">
+                    <i class="icon w-16" data-lucide="refresh-ccw"></i>
+                    <span class="text" id="theme-ver">Update</span>
+                </a>
+                <a role="button" class="btn primary shine brand uninstalled2-only" onclick="create_install_window2()" id="install-btn">
+                    <span class="text">CLICK TO INSTALL</span>
+                </a>
+                <a role="button" class="btn installed2-only" href="https://github.com/katelyynn/bleh/issues" target="_blank">
+                    <span class="text">Report bugs</span>
+                    <i class="icon w-16" data-lucide="square-arrow-out-up-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+    <main class="panel-container">
         <div class="gap" style="--gap: 40px"></div>
-        <div class="gap" style="--gap: 10px"></div>
         <style>
             .item-grid {
                 grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

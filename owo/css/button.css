@@ -24,7 +24,7 @@
     color: var(--col);
     font-weight: var(--font-weight-medium);
     box-shadow: var(--shadow);
-    border-radius: var(--item-med-radius);
+    border-radius: var(--radius, var(--item-med-radius));
     cursor: pointer;
     user-select: none;
     text-decoration: none !important;
@@ -36,6 +36,16 @@
     transition-property: background-color, transform, box-shadow, color;
     transition-duration: var(--trans);
     transition-timing-function: var(--trans-function);
+
+
+    &.brand {
+        --padding: 16px 20px;
+        --radius: 16px;
+        --font-size: 18px;
+        --line-height: 22px;
+        gap: 12px;
+        font-weight: 700;
+    }
 }
 .btn.icon-btn {
     --padding: 7px;

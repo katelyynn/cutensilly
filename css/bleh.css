@@ -14,6 +14,63 @@
 
 
 
+/* home gallery */
+.gallery figure {
+    /*display: none;*/
+    position: absolute;
+    width: 600px;
+    transition-property: left, opacity;
+    transition-duration: 1.2s, 0.6s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    img {
+        box-shadow: var(--menu-shadow);
+    }
+}
+figure {
+    text-align: center;
+}
+figcaption {
+    margin-top: 10px;
+    color: hsl(var(--c2));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+
+    .w-16 {
+        --w: 14px;
+    }
+}
+
+.gallery {
+    display: flex;
+    position: relative;
+    width: 600px;
+    aspect-ratio: 375 / 225;
+}
+.has-gallery .icon-btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    box-shadow: var(--menu-shadow);
+}
+.has-gallery .arrow-l {
+    left: -20px;
+}
+.has-gallery .arrow-r {
+    right: -20px;
+}
+
+.has-gallery {
+    position: relative;
+}
+
+
+
+
 /* home */
 .header-wrap {
     display: flex;
