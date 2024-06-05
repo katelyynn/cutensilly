@@ -74,9 +74,9 @@
                     <i class="icon w-16" data-lucide="home"></i>
                     Home
                 </a>
-                <a class="btn" href="/bleh/fm/customise">
-                    <i class="icon w-16" data-lucide="sparkles"></i>
-                    Customise
+                <a class="btn" href="https://github.com/katelyynn/bleh" target="_blank">
+                    <i class="icon w-16" data-lucide="code"></i>
+                    Source code
                 </a>
             </div>
         </div>
@@ -99,7 +99,7 @@
                         Customise
                     </a>
                 </div>
-                <div class="flex flex-column flex-gap btns separator" style="gap: 6px">
+                <!--<div class="flex flex-column flex-gap btns separator" style="gap: 6px">
                     <a class="btn" href="/bleh/fm">
                         <i class="icon w-20" data-lucide="refresh-ccw"></i>
                         Updates
@@ -108,7 +108,7 @@
                         <i class="icon w-20" data-lucide="info"></i>
                         About
                     </a>
-                </div>
+                </div>-->
             </section>
         </div>
         <div class="main">
@@ -390,64 +390,6 @@
         </div>
     </div>
 </body>
-<style>
-    .item-grid:not(.control-panel) {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: var(--card-gap);
-        margin-top: var(--card-gap);
-    }
-
-    .item-grid .item:not(.control-panel-item) {
-        gap: var(--card-gap);
-        padding: var(--card-gap);
-        border: 1px solid hsl(var(--b4));
-        border-bottom: 1px solid hsl(var(--b3));
-        box-shadow: var(--card-shadow);
-        border-radius: var(--card-radius);
-        text-decoration: none;
-    }
-
-    .item-grid .item:not(.control-panel-item) .image {
-        align-items: baseline;
-        height: 100%;
-        grid-area: icon;
-    }
-
-    .item-grid .item:not(.control-panel-item) .text {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        line-height: 20px;
-        color: var(--col);
-        grid-area: text;
-    }
-
-    .item-grid .item:not(.control-panel-item) .text h5 {
-        gap: var(--card-gap);
-        font-size: 16px;
-        margin: unset;
-    }
-
-    .install2 {
-        display: grid !important;
-        grid-template-columns: 40px auto;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-        "icon text"
-        "image image";
-        pointer-events: auto !important;
-        opacity: unset !important;
-    }
-    .install2 .image-row {
-        grid-area: image;
-        width: 100%;
-    }
-    .install2 .image-row img {
-        width: 100%;
-        border-radius: var(--item-med-radius);
-        box-shadow: var(--card-shadow);
-    }
-</style>
 <style>
     .floating-wrap {
         position: fixed;

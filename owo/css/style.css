@@ -496,7 +496,7 @@ svg.icon {
 
 /*     header     */
 body {
-    padding-top: calc(40px + (var(--card-gap) * 2));
+    padding-top: calc(40px + var(--card-gap));
 }
 header:not(.window header) {
     position: fixed;

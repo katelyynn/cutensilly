@@ -276,3 +276,75 @@ figcaption {
         width: 100%;
     }
 }
+
+
+
+.setting-items {
+    display: flex;
+    gap: var(--card-gap);
+
+    .side-left:not(.full) {
+        width: 488px;
+    }
+
+    .side-left.full {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 6px;
+    }
+
+    .side-right {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 6px;
+
+        .btn {
+            width: unset;
+            justify-content: unset;
+        }
+    }
+
+    .setting-item {
+        --bg: hsla(var(--b4), 40%);
+        --bg-hov: hsla(var(--b4), 60%);
+        --bg-atv: hsla(var(--b4), 80%);
+        --shadow: none;
+        --shadow-hov: none;
+        gap: 9px 12px;
+        --padding: 7px 16px;
+        --radius: var(--card-radius);
+
+        .icon {
+            padding: 6px;
+            background-color: hsl(var(--h3));
+            color: hsl(var(--b7));
+            border-radius: 50%;
+        }
+
+        &.has-image {
+            display: grid !important;
+            grid-template-columns: 32px auto;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+            "icon text"
+            "image image";
+            --padding: 9px 16px;
+
+            .text {
+                text-align: left;
+            }
+
+            .image-row {
+                grid-area: image;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    border-radius: var(--item-med-radius);
+                    box-shadow: var(--card-shadow);
+                }
+            }
+        }
+    }
+}

@@ -114,9 +114,9 @@
                     <i class="icon w-16" data-lucide="home"></i>
                     Home
                 </a>
-                <a class="btn" href="/bleh/fm/customise">
-                    <i class="icon w-16" data-lucide="sparkles"></i>
-                    Customise
+                <a class="btn" href="https://github.com/katelyynn/bleh" target="_blank">
+                    <i class="icon w-16" data-lucide="code"></i>
+                    Source code
                 </a>
             </div>
         </div>
@@ -238,66 +238,9 @@
         </section>
     </main>
     <main class="panel-container uninstalled2-only">
-        <style>
-            .item-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: var(--card-gap);
-                margin-top: var(--card-gap);
-            }
-
-            .item-grid .item {
-                gap: var(--card-gap);
-                padding: var(--card-gap);
-                border: 1px solid hsl(var(--b4));
-                border-bottom: 1px solid hsl(var(--b3));
-                box-shadow: var(--card-shadow);
-                border-radius: var(--card-radius);
-                text-decoration: none;
-            }
-
-            .item-grid .item .image {
-                align-items: baseline;
-                height: 100%;
-                grid-area: icon;
-            }
-
-            .item-grid .item .text {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-                font-size: 16px;
-                line-height: 20px;
-                color: var(--col);
-                grid-area: text;
-            }
-
-            .item-grid .item .text h5 {
-                gap: var(--card-gap);
-                font-size: 16px;
-                margin: unset;
-            }
-
-            .install2 {
-                display: grid !important;
-                grid-template-columns: 40px auto;
-                grid-template-rows: auto auto;
-                grid-template-areas:
-                "icon text"
-                "image image";
-            }
-            .install2 .image-row {
-                grid-area: image;
-                width: 100%;
-            }
-            .install2 .image-row img {
-                width: 100%;
-                border-radius: var(--item-med-radius);
-                box-shadow: var(--card-shadow);
-            }
-        </style>
         <section class="content flex flex-column flex-gap flex-align-center full-width uninstalled2-only" style="--gap: 20px">
             <h3 id="style_addons">Key features</h3>
-            <p class="text-16">Key features in bleh² to enhance your experience.</p>
+            <p class="text-16">Key features in bleh to enhance your experience.</p>
             <div class="item-grid" style="width: 100%">
                 <div class="item">
                     <div class="image">
@@ -379,7 +322,7 @@
         <div class="gap uninstalled2-only" style="--gap: 120px"></div>
         <!-- -->
     </main>
-    <main class="panel-container double">
+    <main class="panel-container double" id="dashboard">
         <div class="sidebar">
             <section class="panel">
                 <div class="flex flex-column flex-gap btns" style="gap: 6px">
@@ -396,7 +339,7 @@
                         Customise
                     </a>
                 </div>
-                <div class="flex flex-column flex-gap btns separator" style="gap: 6px">
+                <!--<div class="flex flex-column flex-gap btns separator" style="gap: 6px">
                     <a class="btn" href="/bleh/fm">
                         <i class="icon w-20" data-lucide="refresh-ccw"></i>
                         Updates
@@ -405,7 +348,7 @@
                         <i class="icon w-20" data-lucide="info"></i>
                         About
                     </a>
-                </div>
+                </div>-->
             </section>
         </div>
         <div class="main">
@@ -437,95 +380,34 @@
                         </a>
                     </div>
                 </div>
+                <h4>Recommended settings</h4>
+                <div class="setting-items">
+                    <div class="side-left">
+                        <a class="btn setting-item has-image" href="/bleh/fm/themes">
+                            <div class="image">
+                                <i class="icon w-32" data-lucide="swatch-book"></i>
+                            </div>
+                            <span class="text">
+                                <h5>Themes</h5>
+                                <p>Choose between light, dark, and oled.</p>
+                            </span>
+                            <div class="image-row">
+                                <img src="/img/bleh2-addon-oled.png">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="side-right">
+                        <a class="btn setting-item" href="/bleh/fm/customise">
+                            <i class="icon w-32" data-lucide="palette"></i>
+                            <span class="text">
+                                <h5>Colours</h5>
+                                <p>Pick your favourite!</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
             </section>
         </div>
-    </main>
-    <main class="panel-container">
-        <!-- -->
-        <section class="content flex flex-column flex-gap flex-align-center full-width uninstalled2-only" style="--gap: 20px">
-            <h3 id="style_addons">Style addons</h3>
-            <h5 class="sub warn uninstalled2-only">The theme must be installed for addons to be available.</h5>
-            <div class="item-grid">
-                <a class="item install2 primary" href="/bleh/fm/customise" style="display: flex !important">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="sparkles"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Customise your bleh</h5>
-                        <p>Open the theme customiser</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item-grid" style="width: 100%">
-                <div class="item install2" id="install-oled" onclick="create_theme_window('bleh2-oled')">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="moon-star"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>OLED theme</h5>
-                        <p>bleh, but very dark.</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-oled.png">
-                    </div>
-                </div>
-                <div class="item install2" id="install-light" onclick="create_theme_window('bleh2-light')">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="sun"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Light theme</h5>
-                        <p>bleh, but very light.</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-light.png">
-                    </div>
-                </div>
-                <div class="item install2" id="install-accent" onclick="create_theme_window('bleh2-accent')" style="display: none !important">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="paintbrush"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Album covers<div class="badge" data-kate-type="wip">WIP</div></h5>
-                        <p>Match the page colour to the album cover!</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-accent.png">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="gap installed2-only" style="--gap: 40px"></div>
-        <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px; display: none !important">
-            <h5 class="sub" id="script_addons">Script addons</h5>
-            <p>warning: these can be a bit unstable and are not coded <i class="i">the best</i></p>
-            <h5 class="sub warn uninstalled2-only">The theme must be installed for addons to be available.</h5>
-            <!--<div class="install-grid">
-                <div class="install" id="install-feat" onclick="create_theme_window('feat',true)">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="star"></i>
-                    </div>
-                    <h5><i class="hi">feat. artists</i></h5>
-                    <p>display featured artists in a cuter way</p>
-                </div>
-                <div class="install" id="install-chart" onclick="create_theme_window('chart',true)">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="hash"></i>
-                    </div>
-                    <h5><i class="hi">chart colours</i></h5>
-                    <p>apply colour based on charting position</p>
-                </div>
-            </div>-->
-            <p>Will be back soon!</p>
-        </section>
     </main>
 </body>
 <footer>

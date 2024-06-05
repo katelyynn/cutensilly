@@ -17,12 +17,13 @@ function query_versions() {
     for (let addon in style_addons) {
         get_version(style_addons[addon]);
         check_update(style_addons[addon]);
+    }
 
-        if (style_addons[addon] != 'main') {
-            try {
-            document.getElementById(`install-${style_addons[addon]}`).setAttribute('data-kate-status',`${need_updates[style_addons[addon]]}`);
-            } catch(e) {}
-        }
+    // hide dashboard on main page
+    if (isNaN(versions.main)) {
+        document.getElementById('dashboard').style.setProperty('display','none');
+    } else {
+        document.getElementById('dashboard').style.removeProperty('display');
     }
 
     // display version number
