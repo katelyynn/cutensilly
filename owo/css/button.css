@@ -85,7 +85,7 @@
     --shadow: inset -0.2px 0 0 1px hsl(var(--c2));
 }
 
-.btn.mimic, .btn.reset {
+.btn.mimic {
     --bg: hsla(var(--h4), 10%);
     --bg-hov: hsla(var(--h4), 30%);
     --bg-atv: hsla(var(--h4), 50%);

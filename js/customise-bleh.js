@@ -134,6 +134,8 @@ function update_item(item, value=undefined, dont_modify=false) {
         } else {
             bleh.ovr = 'var(--b7)';
         }
+
+        document.documentElement.style.setProperty(`--ovr`,bleh.ovr);
     }
 
     // remove gradient
@@ -148,6 +150,11 @@ function update_item(item, value=undefined, dont_modify=false) {
         try {
             document.getElementById(`value-${item}`).textContent = `${bleh[item]}${options[item].unit}`;
             document.getElementById(`slider-${item}`).value = bleh[item];
+
+            if (bleh[item] != options[item].value)
+                document.getElementById(`container-${item}`).classList.add('modified');
+            else
+                document.getElementById(`container-${item}`).classList.remove('modified');
         } catch(e) {}
     } else if (options[item].type == 'toggle' && !dont_modify) {
         if (bleh[item] == options[item].values[0]) {
@@ -240,8 +247,31 @@ function open_manual_colours_prompt() {
     create_window('Create a custom colour',`
     <p>Colours are controlled by three values: hue, saturation, and lightness. Try out the sliders to get a feel.</p>
     <br>
-    <div class="slider-container dim-using-hue-gradient">
-        <div class="heading"><p>Accent colour</p><button class="btn reset" onclick="reset_item('hue')">Reset to default</button></div>
+    <div class="inner-preview">
+        <div class="pallete">
+            <div style="--col: hsl(var(--l2-c))"></div>
+            <div style="--col: hsl(var(--l3-c))"></div>
+            <div style="--col: hsl(var(--l4-c))"></div>
+            <div style="--col: hsl(var(--l2))"></div>
+            <div style="--col: hsl(var(--l3))"></div>
+            <div style="--col: hsl(var(--l4))"></div>
+        </div>
+        <div class="sep"></div>
+        <div class="btn-row">
+            <button class="btn">Example button</button>
+            <button class="btn primary">Example button</button>
+            <div class="chartlist-bar">
+                <span class="fill"></span>
+                <span class="text">44,551 plays</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="slider-container dim-using-hue-gradient" id="container-hue">
+        <button class="btn reset" onclick="reset_item('hue')">Reset to default</button>
+        <div class="heading">
+            <h5>Accent colour</h5>
+        </div>
         <div class="slider">
             <input type="range" min="0" max="360" value="${bleh.hue}" id="slider-hue" oninput="update_item('hue', this.value)">
             <p id="value-hue">${bleh.hue}${options.hue.unit}</p>
@@ -252,8 +282,11 @@ function open_manual_colours_prompt() {
             <p style="left: 100%">360</p>
         </div>
     </div>
-    <div class="slider-container dim-using-hue-gradient">
-        <div class="heading"><p>Saturation</p><button class="btn reset" onclick="reset_item('sat')">Reset to default</button></div>
+    <div class="slider-container dim-using-hue-gradient" id="container-sat">
+        <button class="btn reset" onclick="reset_item('sat')">Reset to default</button>
+        <div class="heading">
+            <h5>Saturation</h5>
+        </div>
         <div class="slider">
             <input type="range" min="0" max="1.5" value="${bleh.sat}" step="0.025" id="slider-sat" oninput="update_item('sat', this.value)">
             <p id="value-sat">${bleh.sat}${options.sat.unit}</p>
@@ -264,8 +297,11 @@ function open_manual_colours_prompt() {
             <p style="left: 100%">1.5</p>
         </div>
     </div>
-    <div class="slider-container dim-using-hue-gradient">
-        <div class="heading"><p>Lightness</p><button class="btn reset" onclick="reset_item('lit')">Reset to default</button></div>
+    <div class="slider-container dim-using-hue-gradient" id="container-lit">
+        <button class="btn reset" onclick="reset_item('lit')">Reset to default</button>
+        <div class="heading">
+            <h5>Lightness</h5>
+        </div>
         <div class="slider">
             <input type="range" min="0" max="1.5" value="${bleh.lit}" step="0.025" id="slider-lit" oninput="update_item('lit', this.value)">
             <p id="value-lit">${bleh.lit}${options.lit.unit}</p>
@@ -274,31 +310,6 @@ function open_manual_colours_prompt() {
             <p style="left: 0">0</p>
             <p style="left: calc((1 / 1.5) * 100%)">1</p>
             <p style="left: 100%">1.5</p>
-        </div>
-    </div>
-    <div class="inner-preview gap-top">
-        <div class="pallete">
-            <div style="--col: hsl(var(--l2-c))"></div>
-            <div style="--col: hsl(var(--l3-c))"></div>
-            <div style="--col: hsl(var(--l4-c))"></div>
-        </div>
-        <div class="pallete">
-            <div style="--col: hsl(var(--l2))"></div>
-            <div style="--col: hsl(var(--l3))"></div>
-            <div style="--col: hsl(var(--l4))"></div>
-        </div>
-        <p class="caption">The top row of colours are used when visiblity is always required (like links for example), they can only be so dark.</p>
-        <div class="sep"></div>
-        <div class="btn-row">
-            <button class="btn" style="font-size: 14px">Example button</button>
-            <button class="btn primary" style="font-size: 14px">Example button</button>
-        </div>
-        <div class="sep"></div>
-        <div class="btn-row">
-            <div class="chartlist-bar">
-                <span class="fill"></span>
-                <span class="text">44,551 plays</span>
-            </div>
         </div>
     </div>
     `,[

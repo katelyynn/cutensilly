@@ -133,41 +133,40 @@
                 </button>
             </section>
             <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
-                <h3>Gloss</h3>
-                <div class="slider-container">
-                    <div class="heading"><p>Opacity</p><button class="btn reset" onclick="reset_item('gloss')">Reset to default</button></div>
+                <h3>Artwork</h3>
+                <div class="inner-preview pad">
+                    <div class="pallete albums" style="height: fit-content">
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/1569198c4cf0a3b2ff8728975e8359fa.jpg')"></div>
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/b897255bf422baa93a42536af293f9f8.jpg')"></div>
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/a78bbd5ff0184115902f403212f04976.jpg')"></div>
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/ddee3b871289a6cda0e3c7d4b4580d62.jpg')"></div>
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/570021b68d3d9d2db08bc99a473303b0.jpg')"></div>
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/e39eb31f874f4a5c4afa836845141437.jpg')"></div>
+                    </div>
+                </div>
+                <div class="slider-container" id="container-gloss">
+                    <button class="btn reset" onclick="reset_item('gloss')">Reset to default</button>
+                    <div class="heading">
+                        <h5>Gloss overlay</h5>
+                        <p>Previously a default of 0.2, now disabled by default.</p>
+                    </div>
                     <div class="slider">
                         <input type="range" min="0" max="1" value="0" step="0.05" id="slider-gloss" oninput="update_item('gloss', this.value)">
                         <p id="value-gloss">0</p>
                     </div>
                 </div>
-                <p class="caption">Previously a default of 0.2, now disabled by default.</p>
             </section>
-        </div>
-    </main>
-    <main class="panel-container double">
-        <div class="sidebar">
-            <section class="panel">
-                <h5>Preview</h5>
-                <div class="pallete albums" style="height: fit-content">
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/1569198c4cf0a3b2ff8728975e8359fa.jpg')"></div>
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/b897255bf422baa93a42536af293f9f8.jpg')"></div>
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/a78bbd5ff0184115902f403212f04976.jpg')"></div>
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/ddee3b871289a6cda0e3c7d4b4580d62.jpg')"></div>
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/570021b68d3d9d2db08bc99a473303b0.jpg')"></div>
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/e39eb31f874f4a5c4afa836845141437.jpg')"></div>
+            <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
+                <h3>Display</h3>
+                <div class="inner-preview pad">
+                    <div class="preview-img">
+                        <img id="nav-img" src="/img/nav-shown.png">
+                    </div>
                 </div>
-                <p class="caption">Album covers from last.fm</p>
-            </section>
-        </div>
-    </main>
-    <main class="panel-container double">
-        <div class="main">
-            <section class="panel lfm-preview" id="nav">
-                <h5>Manage extra header navigation<div class="tag">New</div></h5>
                 <div class="toggle-container">
                     <div class="heading">
-                        <p>Show extra navigation</p>
+                        <h5>Show extra navigation</h5>
+                        <p>Quick links and visibility for your notifications, inbox, and settings are now available in the header.</p>
                     </div>
                     <div class="toggle-wrap">
                         <button class="toggle" id="toggle-nav" onclick="update_item('nav')" aria-checked="true">
@@ -175,30 +174,15 @@
                         </button>
                     </div>
                 </div>
-                <p class="caption">Quick links and visibility for your notifications, inbox, and settings are now available in the header.<br>You can choose to hide them if you prefer the minimalism.</p>
-            </section>
-        </div>
-        <div class="sidebar">
-            <section class="panel">
-                <img class="img" id="nav-img" src="/img/nav-shown.png">
-            </section>
-            <style>
-                .img {
-                    width: 100%;
-                    border: 1px solid hsl(var(--b4));
-                    border-radius: var(--item-med-radius);
-                    box-shadow: var(--menu-shadow);
-                }
-            </style>
-        </div>
-    </main>
-    <main class="panel-container double">
-        <div class="main">
-            <section class="panel lfm-preview" id="gendered_tags">
-                <h5>Gendered music tagging<div class="tag">New</div></h5>
+                <div class="inner-preview pad gap-top">
+                    <div class="preview-img">
+                        <img id="gendered_tags-img" src="/img/gendered_tags-hidden.png">
+                    </div>
+                </div>
                 <div class="toggle-container">
                     <div class="heading">
-                        <p>Hide gendered tags</p>
+                        <h5>Hide gendered tags</h5>
+                        <p>By default, gendered tags are hidden in bleh² due to their unorganised and impossible nature.</p>
                     </div>
                     <div class="toggle-wrap">
                         <button class="toggle" id="toggle-gendered_tags" onclick="update_item('gendered_tags')" aria-checked="true">
@@ -206,13 +190,6 @@
                         </button>
                     </div>
                 </div>
-                <p class="caption">By default, gendered tags are hidden in bleh² due to their unorganised and impossible nature.<br>Making use of the <a href="https://www.last.fm/music/Taylor+Swift/+similar" target="_blank">Similar artists</a> panels and sites like <a href="https://rateyourmusic.com" target="_blank">rateyourmusic.com</a> works in a much more related and organised way.</p>
-                <p class="caption">This includes (alphabetically) female, male, and nonbinary vocalist tags.</p>
-            </section>
-        </div>
-        <div class="sidebar">
-            <section class="panel">
-                <img class="img" id="gendered_tags-img" src="/img/gendered_tags-hidden.png">
             </section>
         </div>
     </main>

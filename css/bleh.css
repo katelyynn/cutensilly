@@ -163,11 +163,46 @@ figcaption {
 
 
 .inner-preview {
-    background-color: hsla(var(--b6), 60%);
+    border: 1px solid hsl(var(--b4));
+    background-color: hsl(var(--b6));
     padding: var(--card-gap);
     border-radius: var(--item-med-radius);
 
     &.gap-top {
         margin-top: var(--card-gap);
+    }
+
+    pointer-events: none;
+    user-select: none;
+
+    /* instant colour change */
+    button, .chartlist-bar .text {
+        transition: none !important;
+    }
+
+    &.pad {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: calc(var(--card-gap) * 2) calc(var(--card-gap) * 6);
+
+        > * {
+            flex: 1;
+        }
+    }
+}
+
+.preview-img {
+    width: 100%;
+    border-radius: var(--item-med-radius);
+    box-shadow: var(--menu-shadow);
+    max-height: 120px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100%;
     }
 }
