@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/owo/css/reset.css">
     <link rel="stylesheet" href="/owo/css/style.css">
     <link rel="stylesheet" href="/css/style-lfm.css">
+    <link rel="stylesheet" href="/css/bleh.css">
     <!-- icon -->
     <link rel="shortcut icon" type="ico" href="/img/katie4k-small.webp"/>
     <!-- jquery -->
@@ -96,8 +97,7 @@
             color: hsl(var(--c3));
         }
     </style>
-    <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.07"></div>
-    <div class="bg-grad med-bg" style="background: linear-gradient(180deg, hsla(var(--l3), 20%) 0%, hsl(var(--b6)) 100%); z-index: 0"></div>
+    <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.45; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
     <main class="panel-container">
         <div class="gap" style="--gap: 110px"></div>
         <section class="side-by-side content right">
@@ -186,17 +186,27 @@
                     transition-property: left, opacity;
                     transition-duration: 1.2s, 0.6s;
                     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+                    img {
+                        box-shadow: var(--menu-shadow);
+                    }
                 }
                 figure {
                     text-align: center;
                 }
                 figcaption {
                     margin-top: 10px;
-                    color: hsl(var(--c3));
+                    color: hsl(var(--c2));
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    gap: 10px;
+                    gap: 6px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.4px;
+
+                    .w-16 {
+                        --w: 14px;
+                    }
                 }
 
                 .gallery {
@@ -204,13 +214,12 @@
                     position: relative;
                     width: 600px;
                     aspect-ratio: 375 / 225;
-                    /*height: 390px;*/
-                    /*overflow: hidden;*/
                 }
                 .has-gallery .icon-btn {
                     position: absolute;
                     top: 50%;
                     margin-top: -20px;
+                    box-shadow: var(--menu-shadow);
                 }
                 .has-gallery .arrow-l {
                     left: -20px;
@@ -224,15 +233,18 @@
                 }
             </style>
             <div class="text flex flex-column flex-gap" style="--gap: 20px">
-                <a href="https://last.fm/user/cutensilly" target="_blank" style="width: min-content">
-                    <img class="pfp" style="width: 60px;" src="/img/shiggy.gif">
-                </a>
-                <h1 class="hi kate" style="font-size: 100px; line-height: 100px; position: relative; left: -8px">bleh</h1>
-                <h2>a <i class="hi kate">cutensilly</i> theme for <a class="hi no-underline" href="https://last.fm">last.fm</a></h2>
-                <div class="gap" style="--gap: 0"></div>
-                <p class="text-18">a <i id="sneek">sleek</i>, minimalistic refresh featuring customisable colours, <strong>light/dark/oled</strong> themes, and hateful blocking</p>
-                <!--<h3 class="small-head installed-only" id="theme-ver">Latest version!</h3>-->
-                <div class="btn-row">
+                <div class="header-wrap">
+                    <a href="https://last.fm/user/cutensilly" target="_blank">
+                        <img class="avatar circular shadow" src="/img/avi.png" alt="avatar" style="--size: 96px">
+                    </a>
+                    <div>
+                        <h1 class="hi kate logo">bleh</h1>
+                        <h2>a <i class="hi kate">cutensilly</i> theme for <a class="hi no-underline" href="https://last.fm">last.fm</a></h2>
+                    </div>
+                </div>
+                <!-- -->
+                <p class="text-18">a <i id="sneek">sleek</i>, minimalistic refresh featuring customisable colours,<br><strong>light/dark/oled</strong> themes, and hateful blocking</p>
+                <div class="btn-row brand-btns">
                     <a role="button" class="btn primary installed2-only" href="/bleh/fm/customise">
                         <i class="icon w-16" data-lucide="sparkles"></i>
                         <span class="text">Customise your bleh</span>
@@ -242,12 +254,12 @@
                         <span class="text" id="theme-ver">Update</span>
                     </a>
                     <a role="button" class="btn primary shine uninstalled2-only" onclick="create_install_window2()" id="install-btn">
-                        <span class="text">Click to install</span>
-                        <i class="icon w-16" data-lucide="chevron-right"></i>
+                        <span class="text">Install theme now</span>
+                        <i class="icon w-16" data-lucide="square-arrow-out-up-right"></i>
                     </a>
                     <a role="button" class="btn installed2-only" href="https://github.com/katelyynn/bleh/issues" target="_blank">
                         <span class="text">Report bugs</span>
-                        <i class="icon w-16" data-lucide="external-link"></i>
+                        <i class="icon w-16" data-lucide="square-arrow-out-up-right"></i>
                     </a>
                     <h5 class="sub warn uninstalled2-only" style="--hue: 160">bleh is now officially out of beta!</h5>
                 </div>
@@ -282,6 +294,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
+                font-size: 16px;
                 line-height: 20px;
                 color: var(--col);
                 grid-area: text;
@@ -313,8 +326,8 @@
             }
         </style>
         <section class="content flex flex-column flex-gap flex-align-center full-width uninstalled2-only" style="--gap: 20px">
-            <h5 class="sub" id="style_addons">Features</h5>
-            <p>Key features in bleh² to enhance your experience.</p>
+            <h3 id="style_addons">Key features</h3>
+            <p class="text-16">Key features in bleh² to enhance your experience.</p>
             <div class="item-grid" style="width: 100%">
                 <div class="item">
                     <div class="image">
@@ -384,10 +397,8 @@
                 </div>
             </div>
         </section>
-        <div class="gap uninstalled2-only" style="--gap: 40px"></div>
-        <div class="gap uninstalled2-only" style="--gap: 10px"></div>
+        <div class="gap uninstalled2-only" style="--gap: 120px"></div>
         <section class="content flex flex-column flex-gap flex-align-center uninstalled2-only" style="--gap: 20px">
-            <h5 class="sub" id="install">Installing bleh!!</h5>
             <h3>peaked your interest?</h3>
             <p class="text-18">click the big purple button to install now :3</p>
             <a role="button" class="btn primary shine" onclick="create_install_window2()" id="install-btn-2">
@@ -395,10 +406,9 @@
                 <i class="icon w-16" data-lucide="chevron-right"></i>
             </a>
         </section>
-        <div class="gap uninstalled2-only" style="--gap: 150px"></div>
+        <div class="gap uninstalled2-only" style="--gap: 120px"></div>
         <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
-            <h5 class="sub" id="style_addons">Style addons</h5>
-            <p>These are extra styles you can install to enhance your experience :3</p>
+            <h3 id="style_addons">Style addons</h3>
             <h5 class="sub warn uninstalled2-only">The theme must be installed for addons to be available.</h5>
             <div class="item-grid">
                 <a class="item install2 primary" href="/bleh/fm/customise" style="display: flex !important">
@@ -483,14 +493,16 @@
         </section>
     </main>
 </body>
-<footer class="content">
-    <span class="main">
-        <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
-    </span>
-    <span class="links">
-        <a href="https://github.com/katelyynn/bleh">View theme source</a>
-        <a href="https://github.com/katelyynn/cutensilly">View source</a>
-    </span>
+<footer>
+    <div class="content">
+        <span class="main">
+            <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
+        </span>
+        <span class="links">
+            <a href="https://github.com/katelyynn/bleh">View theme source</a>
+            <a href="https://github.com/katelyynn/cutensilly">View source</a>
+        </span>
+    </div>
 </footer>
 <script src="/js/addons2.js"></script>
 <script>lucide.createIcons();</script>
