@@ -160,7 +160,7 @@ input[type="range"]::-moz-range-thumb {
 .slider-container {
     display: flex;
     flex-direction: column;
-    gap: var(--card-gap);
+    gap: 6px;
 }
 .slider-container .slider {
     display: flex;
@@ -168,7 +168,7 @@ input[type="range"]::-moz-range-thumb {
     gap: var(--card-gap);
     overflow: hidden;
     height: 22px;
-    border-radius: var(--item-small-radius);
+    border-radius: var(--item-med-radius);
 }
 .slider-container .hint {
     color: hsl(var(--c3));
@@ -194,8 +194,9 @@ input[type="range"]::-moz-range-thumb {
 
 .toggle-container .heading,
 .slider-container .heading {
-    color: hsl(var(--c2));
+    color: hsl(var(--c1));
     font-size: var(--font-size);
+    font-weight: var(--font-weight-medium);
     display: flex;
     align-items: center;
     width: 100%;
@@ -270,10 +271,6 @@ input[type="range"]::-moz-range-thumb {
     display: none;
 }
 
-
-.hint {
-    margin-top: var(--card-gap);
-}
 
 .pallete {
     display: grid;

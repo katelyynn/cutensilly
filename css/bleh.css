@@ -160,3 +160,14 @@ figcaption {
 #window_create_colour {
     max-width: 800px;
 }
+
+
+.inner-preview {
+    background-color: hsla(var(--b6), 60%);
+    padding: var(--card-gap);
+    border-radius: var(--item-med-radius);
+
+    &.gap-top {
+        margin-top: var(--card-gap);
+    }
+}

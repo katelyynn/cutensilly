@@ -276,29 +276,29 @@ function open_manual_colours_prompt() {
             <p style="left: 100%">1.5</p>
         </div>
     </div>
-    <div class="sep"></div>
-    <h5>Preview</h5>
-    <div class="pallete">
-        <div style="--col: hsl(var(--l2-c))"></div>
-        <div style="--col: hsl(var(--l3-c))"></div>
-        <div style="--col: hsl(var(--l4-c))"></div>
-    </div>
-    <div class="pallete">
-        <div style="--col: hsl(var(--l2))"></div>
-        <div style="--col: hsl(var(--l3))"></div>
-        <div style="--col: hsl(var(--l4))"></div>
-    </div>
-    <p class="caption">The top row of colours are used when visiblity is always required (like links for example), they can only be so dark.</p>
-    <div class="sep"></div>
-    <div class="btn-row">
-        <button class="btn" style="font-size: 14px">Example button</button>
-        <button class="btn primary" style="font-size: 14px">Example button</button>
-    </div>
-    <div class="sep"></div>
-    <div class="btn-row">
-        <div class="chartlist-bar">
-            <span class="fill"></span>
-            <span class="text">44,551 plays</span>
+    <div class="inner-preview gap-top">
+        <div class="pallete">
+            <div style="--col: hsl(var(--l2-c))"></div>
+            <div style="--col: hsl(var(--l3-c))"></div>
+            <div style="--col: hsl(var(--l4-c))"></div>
+        </div>
+        <div class="pallete">
+            <div style="--col: hsl(var(--l2))"></div>
+            <div style="--col: hsl(var(--l3))"></div>
+            <div style="--col: hsl(var(--l4))"></div>
+        </div>
+        <p class="caption">The top row of colours are used when visiblity is always required (like links for example), they can only be so dark.</p>
+        <div class="sep"></div>
+        <div class="btn-row">
+            <button class="btn" style="font-size: 14px">Example button</button>
+            <button class="btn primary" style="font-size: 14px">Example button</button>
+        </div>
+        <div class="sep"></div>
+        <div class="btn-row">
+            <div class="chartlist-bar">
+                <span class="fill"></span>
+                <span class="text">44,551 plays</span>
+            </div>
         </div>
     </div>
     `,[

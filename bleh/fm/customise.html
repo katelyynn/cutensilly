@@ -132,38 +132,20 @@
                     Create a custom colour
                 </button>
             </section>
-        </div>
-    </main>
-    <main class="panel-container double">
-        <div class="main">
-            <section class="panel lfm-preview" id="accent">
-                <h5>Customise your accent colour</h5>
-            </section>
-        </div>
-        <div class="sidebar">
-            <section class="panel">
-            </section>
-        </div>
-    </main>
-    <main class="panel-container double">
-        <div class="main">
-            <section class="panel lfm-preview" id="gloss">
-                <h5>Adjust image gloss</h5>
+            <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
+                <h3>Gloss</h3>
                 <div class="slider-container">
                     <div class="heading"><p>Opacity</p><button class="btn reset" onclick="reset_item('gloss')">Reset to default</button></div>
                     <div class="slider">
                         <input type="range" min="0" max="1" value="0" step="0.05" id="slider-gloss" oninput="update_item('gloss', this.value)">
                         <p id="value-gloss">0</p>
                     </div>
-                    <div class="hint">
-                        <p style="left: 0">0</p>
-                        <p style="left: 20%">0.2</p>
-                        <p style="left: 100%">1</p>
-                    </div>
                 </div>
                 <p class="caption">Previously a default of 0.2, now disabled by default.</p>
             </section>
         </div>
+    </main>
+    <main class="panel-container double">
         <div class="sidebar">
             <section class="panel">
                 <h5>Preview</h5>
