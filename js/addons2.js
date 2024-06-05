@@ -26,38 +26,23 @@ function query_versions() {
     }
 
     // display version number
-    document.getElementById('current-version').textContent = versions.main;
-
     try {
-    if (need_updates.main > -2 && need_updates.main < 1) {
-        document.getElementById('theme-update').classList.remove('primary');
-    } else {
-        document.getElementById('theme-update').classList.add('primary');
-    }
+    document.getElementById('current-version').textContent = versions.main;
+    document.getElementById('latest-version').textContent = latest_versions.main;
 
+    // update action
     if (need_updates.main == -1) {
-        document.getElementById('theme-ver').textContent = 'Downgrade';
-        document.getElementById('theme-update').classList.remove('ultra-shine');
-        document.getElementById('theme-update').style.removeProperty('--base-hue');
+        document.getElementById('update-action').classList.remove('update');
+        document.getElementById('update-action').classList.add('downgrade');
+        document.getElementById('update-text').textContent = 'Downgrade';
     } else if (need_updates.main == 0) {
-        document.getElementById('theme-ver').textContent = 'Reinstall';
-        document.getElementById('theme-update').classList.remove('ultra-shine');
-        document.getElementById('theme-update').style.removeProperty('--base-hue');
+        document.getElementById('update-action').classList.remove('update');
+        document.getElementById('update-action').classList.remove('downgrade');
+        document.getElementById('update-text').textContent = 'Reinstall';
     } else if (need_updates.main != -2) {
-        document.getElementById('theme-ver').innerHTML = `Update to <strong>${pad_ver(latest_versions.main)}</strong>`;
-        document.getElementById('theme-update').style.setProperty('--hue','130');
-        if (!sent_update_notif) create_window('One moment','There is a theme update available, click to update!',[
-            {
-                'text': 'Update now',
-                'link': 'https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css',
-                'type': 'primary'
-            },
-            {
-                'text': 'Dismiss for now',
-                'onclick': 'kill_windows()'
-            }
-        ],'update_theme');
-        sent_update_notif = true;
+        document.getElementById('update-action').classList.add('update');
+        document.getElementById('update-action').classList.remove('downgrade');
+        document.getElementById('update-text').textContent = 'Update';
     }
     } catch(e) {console.log(e)}
 }

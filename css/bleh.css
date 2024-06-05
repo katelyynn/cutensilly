@@ -120,15 +120,30 @@ figcaption {
     border-top: 1px solid hsl(var(--b4));
 }
 .btns .btn {
+    --shadow: none;
+    --shadow-hov: none;
     width: 100%;
     justify-content: unset;
+    position: relative;
 
     &:not(.active) {
-        --bg: hsla(var(--b4), 20%);
-        --bg-hov: hsla(var(--b4), 60%);
-        --bg-atv: hsla(var(--b4), 80%);
-        --shadow: none;
-        --shadow-hov: none;
+        --bg: transparent;
+        --bg-hov: hsla(var(--b4), 20%);
+        --bg-atv: hsla(var(--b4), 40%);
+    }
+
+    &.active {
+        &:before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 14px;
+            border-radius: 50px;
+            background-color: hsl(var(--l3-c));
+            left: 0;
+            top: 50%;
+            margin-top: -7px;
+        }
     }
 }
 
@@ -158,6 +173,54 @@ figcaption {
             display: flex;
             flex-direction: column;
             gap: 4px;
+        }
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        .action {
+            --bg: hsla(var(--b4), 20%);
+            --bg-hov: hsla(var(--b4), 60%);
+            --bg-atv: hsla(var(--b4), 80%);
+            --shadow: none;
+            --shadow-hov: var(--shadow);
+            --padding: 7px 16px;
+            gap: 12px;
+            text-decoration: none;
+
+            .icon {
+                padding: 6px;
+                background-color: hsl(var(--h3));
+                color: hsl(var(--b7));
+                border-radius: 50%;
+            }
+
+            &.update {
+                --bg: hsla(var(--h4), 10%);
+                --bg-hov: hsla(var(--h4), 20%);
+                --bg-atv: hsla(var(--h4), 40%);
+                --shadow: 0 0 30px 15px hsla(var(--h4), 8%);
+                --hue: 160;
+                --sat: 1;
+                --lit: 1;
+            }
+            &.downgrade {
+                --bg: hsla(var(--h4), 10%);
+                --bg-hov: hsla(var(--h4), 20%);
+                --bg-atv: hsla(var(--h4), 40%);
+                --hue: -2;
+                --sat: 1;
+                --lit: 1;
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
         }
     }
 }
