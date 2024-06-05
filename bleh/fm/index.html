@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <head>
     <!-- meta info -->
-    <title id="page-title" translate="no">bleh².fm (kate's bleh theme for last.fm)</title>
+    <title id="page-title" translate="no">bleh — a cutensilly theme for last.fm</title>
     <meta name="title" content="bleh².fm (kate's bleh theme for last.fm)">
-    <meta name="description" content="a sleek, minimalistic refresh with customisable accent colours and addons!">
+    <meta name="description" content="a sleek, minimalistic refresh featuring customisable colours, light/dark/oled themes, and hateful blocking">
     <meta name="keywords" content="kate, katie, last, lastfm, last.fm, lfm, music, streaming, stat, statistics, theme, skin, lastfm skin, lastfm theme, lastfm stylus, stylus theme, stylus, lastfm minimal, lastfm sleek, lastfm dark theme, lastfm dark">
     <meta property="og:site_name" content="kate">
     <meta property="og:type" content="website">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="og:url" content="https://cutensilly.org/lfm">
-    <meta property="og:title" content="bleh².fm (kate's bleh theme for last.fm)">
-    <meta property="og:description" content="a sleek, minimalistic refresh with customisable accent colours and addons!">
+    <meta property="og:title" content="bleh — a cutensilly theme for last.fm">
+    <meta property="og:description" content="a sleek, minimalistic refresh featuring customisable colours, light/dark/oled themes, and hateful blocking">
     <meta property="og:image" content="https://cutensilly.org/img/bleh2-main.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -157,7 +157,18 @@
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="activity"></i>Obsession view</figcaption>
                     </figure>
-
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-obsession-create.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="activity"></i>Obsession creation view</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-event.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="calendar"></i>Event view</figcaption>
+                    </figure>
                 </div>
                 <button class="btn icon-btn arrow-l" onclick="change(-1)">
                     <i class="icon w-20" data-lucide="chevron-left"></i>
@@ -216,10 +227,10 @@
                 <a href="https://last.fm/user/cutensilly" target="_blank" style="width: min-content">
                     <img class="pfp" style="width: 60px;" src="/img/shiggy.gif">
                 </a>
-                <h1 class="hi kate" style="font-size: 100px; line-height: 100px; position: relative; left: -8px">bleh<sup>(leaving) beta</sup></h1>
-                <h2>a <i class="hi kate">cute</i> theme for <a class="hi no-underline" href="https://last.fm">last.fm</a></h2>
+                <h1 class="hi kate" style="font-size: 100px; line-height: 100px; position: relative; left: -8px">bleh</h1>
+                <h2>a <i class="hi kate">cutensilly</i> theme for <a class="hi no-underline" href="https://last.fm">last.fm</a></h2>
                 <div class="gap" style="--gap: 0"></div>
-                <p class="text-18">a <i id="sneek">sleek</i>, minimalistic refresh with customisable accent colours and addons!</p>
+                <p class="text-18">a <i id="sneek">sleek</i>, minimalistic refresh featuring customisable colours, <strong>light/dark/oled</strong> themes, and hateful blocking</p>
                 <!--<h3 class="small-head installed-only" id="theme-ver">Latest version!</h3>-->
                 <div class="btn-row">
                     <a role="button" class="btn primary installed2-only" href="/bleh/fm/customise">
@@ -238,9 +249,9 @@
                         <span class="text">Report bugs</span>
                         <i class="icon w-16" data-lucide="external-link"></i>
                     </a>
-                    <h5 class="sub warn uninstalled2-only">This is a beta release! Not everything is finished</h5>
+                    <h5 class="sub warn uninstalled2-only" style="--hue: 160">bleh is now officially out of beta!</h5>
                 </div>
-                <h5 class="sub warn installed2-only">This is a beta release! Not everything is finished</h5>
+                <h5 class="sub warn installed2-only" style="--hue: 160">bleh is now officially out of beta!</h5>
             </div>
         </section>
         <div class="gap" style="--gap: 40px"></div>
@@ -411,7 +422,7 @@
                     </div>
                     <div class="text">
                         <h5>OLED theme</h5>
-                        <p>bleh², but very dark.</p>
+                        <p>bleh, but very dark.</p>
                     </div>
                     <div class="image-row">
                         <img src="/img/bleh2-addon-oled.png">
@@ -425,13 +436,13 @@
                     </div>
                     <div class="text">
                         <h5>Light theme</h5>
-                        <p>bleh², but very light.</p>
+                        <p>bleh, but very light.</p>
                     </div>
                     <div class="image-row">
                         <img src="/img/bleh2-addon-light.png">
                     </div>
                 </div>
-                <div class="item install2" id="install-accent" onclick="create_theme_window('bleh2-accent')">
+                <div class="item install2" id="install-accent" onclick="create_theme_window('bleh2-accent')" style="display: none !important">
                     <div class="image">
                         <div class="kate-icon">
                             <i class="icon w-24" data-lucide="paintbrush"></i>
@@ -448,7 +459,7 @@
             </div>
         </section>
         <div class="gap installed2-only" style="--gap: 40px"></div>
-        <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
+        <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px; display: none !important">
             <h5 class="sub" id="script_addons">Script addons</h5>
             <p>warning: these can be a bit unstable and are not coded <i class="i">the best</i></p>
             <h5 class="sub warn uninstalled2-only">The theme must be installed for addons to be available.</h5>

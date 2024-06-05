@@ -80,7 +80,8 @@
 .panel, .btn,
 .kate-icon,
 strong,
-.badge
+.badge,
+.sub
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
     --c2: var(--hue), calc(var(--sat) * 60%), 90%;
@@ -181,7 +182,8 @@ strong,
     .panel, .btn,
     .kate-icon,
     strong,
-    .badge
+    .badge,
+    .sub
 )
 {
     --c1: var(--hue), calc(var(--sat) * 6%), 0%;
@@ -240,7 +242,8 @@ strong,
     .panel, .btn,
     .kate-icon,
     strong,
-    .badge
+    .badge,
+    .sub
 )
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
@@ -456,7 +459,7 @@ svg.icon {
 }
 
 
-.caption {
+.caption:not(.browser .caption) {
     margin-top: var(--card-gap);
     padding-top: var(--card-gap);
     border-top: 1px solid hsl(var(--b4));
