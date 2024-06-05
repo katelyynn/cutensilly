@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title id="page-title" translate="no">bleh themes — cutensilly.org</title>
+    <meta name="title" content="bleh themes — cutensilly.org">
+    <meta name="description" content="a sleek, minimalistic refresh featuring customisable colours, light/dark/oled themes, and hateful blocking">
+    <meta name="keywords" content="kate, katie, last, lastfm, last.fm, lfm, music, streaming, stat, statistics, theme, skin, lastfm skin, lastfm theme, lastfm stylus, stylus theme, stylus, lastfm minimal, lastfm sleek, lastfm dark theme, lastfm dark">
+    <meta property="og:site_name" content="kate">
+    <meta property="og:type" content="website">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://cutensilly.org/bleh/fm">
+    <meta property="og:title" content="bleh themes — cutensilly.org">
+    <meta property="og:description" content="a sleek, minimalistic refresh featuring customisable colours, light/dark/oled themes, and hateful blocking">
+    <meta property="og:image" content="/img/bleh2-main.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="theme-color" content="#000000">
+    <!-- mobile iOS support -->
+    <link rel="apple-touch-icon" href="https://cutensilly.org/img/ios.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="/owo/css/reset.css">
+    <link rel="stylesheet" href="/owo/css/style.css">
+    <link rel="stylesheet" href="/css/style-lfm.css">
+    <link rel="stylesheet" href="/css/bleh.css">
+    <link rel="stylesheet" href="/owo/css/fm/preview.css">
+    <!-- icon -->
+    <link rel="shortcut icon" type="ico" href="/img/avi.png"/>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- icons -->
+    <script src="/js/lucide.js"></script>
+    <!-- tooltips -->
+    <!--<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+    <script src="https://unpkg.com/tippy.js@6" defer></script>-->
+    <script src="/owo/js/clipboard.min.js"></script>
+</head>
+<body>
+    <!-- overlays -->
+    <div class="overlay center-full" id="hook_windows"></div>
+    <div class="overlay center">
+        <div class="chips" id="hook_chips"></div>
+    </div>
+    <link rel="stylesheet" href="/owo/css/modal.css">
+    <script src="/owo/js/modal.js"></script>
+    <script src="/owo/js/input.js"></script>
+    <script src="/js/windows.js"></script>
+    <!-- content -->
+    <link rel="stylesheet" href="/owo/css/landing.css">
+    <link rel="stylesheet" href="/owo/css/panel.css">
+    <link rel="stylesheet" href="/owo/css/flex.css">
+    <link rel="stylesheet" href="/owo/css/button.css">
+    <link rel="stylesheet" href="/owo/css/avatar.css">
+    <link rel="stylesheet" href="/owo/css/status.css">
+    <link rel="stylesheet" href="/owo/css/input.css">
+    <link rel="stylesheet" href="/owo/css/grid.css">
+    <header>
+        <div class="content">
+            <div class="logo">
+                <a href="/bleh/fm">
+                    bleh
+                </a>
+                <div class="nav">
+                    <a class="btn" href="/">
+                        by cutensilly
+                    </a>
+                </div>
+            </div>
+            <div class="nav">
+                <a class="btn" href="/bleh/fm">
+                    <i class="icon w-16" data-lucide="home"></i>
+                    Home
+                </a>
+                <a class="btn" href="https://github.com/katelyynn/bleh" target="_blank">
+                    <i class="icon w-16" data-lucide="code"></i>
+                    Source code
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="bg med-bg installed2-only" style="background-image: url(/img/shiggy.png); opacity: 0.35; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
+    <main class="panel-container double">
+        <div class="sidebar">
+            <section class="panel">
+                <div class="flex flex-column flex-gap btns" style="gap: 6px">
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="home"></i>
+                        Home
+                    </a>
+                    <a class="btn active" href="/bleh/fm/themes">
+                        <i class="icon w-20" data-lucide="swatch-book"></i>
+                        Themes
+                    </a>
+                    <a class="btn" href="/bleh/fm/customise">
+                        <i class="icon w-20" data-lucide="palette"></i>
+                        Customise
+                    </a>
+                </div>
+                <!--<div class="flex flex-column flex-gap btns separator" style="gap: 6px">
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="refresh-ccw"></i>
+                        Updates
+                    </a>
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="info"></i>
+                        About
+                    </a>
+                </div>-->
+            </section>
+        </div>
+        <div class="main">
+            <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
+                <h3>Themes</h3>
+                <p>Themes can be installed into bleh using additional styles.</p>
+                <h4>Dark</h4>
+                <div class="setting-items">
+                    <div class="side-left full">
+                        <button class="btn setting-item has-image">
+                            <div class="image">
+                                <i class="icon w-32" data-lucide="moon"></i>
+                            </div>
+                            <span class="text">
+                                <h5>Dark</h5>
+                                <p>This is the default theme.</p>
+                            </span>
+                            <div class="image-row">
+                                <img src="/img/bleh2-main.png">
+                            </div>
+                        </button>
+                        <button class="btn setting-item has-image" onclick="create_theme_window('bleh2-oled')">
+                            <div class="image">
+                                <i class="icon w-32" data-lucide="moon-star"></i>
+                            </div>
+                            <span class="text">
+                                <h5>OLED</h5>
+                                <p>Ultra blackout.</p>
+                            </span>
+                            <div class="image-row">
+                                <img src="/img/bleh2-addon-oled.png">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <h4>Light</h4>
+                <div class="setting-items">
+                    <div class="side-left full">
+                        <button class="btn setting-item has-image" onclick="create_theme_window('bleh2-light')">
+                            <div class="image">
+                                <i class="icon w-32" data-lucide="sun"></i>
+                            </div>
+                            <span class="text">
+                                <h5>Light</h5>
+                                <p>Low saturation, brightly coloured.</p>
+                            </span>
+                            <div class="image-row">
+                                <img src="/img/bleh2-addon-light.png">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+<footer>
+    <div class="content">
+        <span class="main">
+            <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
+        </span>
+        <span class="links">
+            <a href="https://github.com/katelyynn/bleh">View theme source</a>
+            <a href="https://github.com/katelyynn/cutensilly">View source</a>
+        </span>
+    </div>
+</footer>
+<script>lucide.createIcons();</script>

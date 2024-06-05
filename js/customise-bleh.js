@@ -89,6 +89,10 @@ let options = {
 
 let bleh = {};
 
+// has user saved their settings?
+let user_saved_settings = true;
+document.body.setAttribute('data-is-saved',user_saved_settings);
+
 
 function reset_all(dont_modify=false) {
     for (let item in options)
@@ -99,12 +103,38 @@ function reset_item(item, dont_modify=false) {
     update_item(item, options[item].value, dont_modify);
 }
 
-function update_item(item, value=undefined, dont_modify=false) {
-    console.log(item,value,bleh[item],options[item]);
+function update_params(params={}, dont_modify=false) {
+    for (let item in params) {
+        update_item(item, params[item], dont_modify);
+    }
+}
+
+function update_item(item, value, dont_modify=false) {
     if (options[item].type == 'slider')
         bleh[item] = value;
 
-    if (dont_modify) delete(bleh.hue_gradient);
+    if (dont_modify) {
+        delete(bleh.hue_gradient);
+    } else {
+        // has the user changed any setting from default?
+        let temp_has_changed_setting = false;
+
+        for (let option in bleh)
+            if (bleh[option] != options[option].value)
+                temp_has_changed_setting = true;
+
+        if (temp_has_changed_setting) {
+            // user has changed a setting
+            user_saved_settings = false;
+            document.body.setAttribute('data-is-saved',user_saved_settings);
+            window.addEventListener('beforeunload', leaving_prompt);
+        } else {
+            // user has not changed a setting
+            user_saved_settings = true;
+            document.body.setAttribute('data-is-saved',user_saved_settings);
+            window.removeEventListener('beforeunload', leaving_prompt);
+        }
+    }
 
     // gradients
     if (item == 'hue_gradient') {
@@ -134,6 +164,8 @@ function update_item(item, value=undefined, dont_modify=false) {
         } else {
             bleh.ovr = 'var(--b7)';
         }
+
+        document.documentElement.style.setProperty(`--ovr`,bleh.ovr);
     }
 
     // remove gradient
@@ -145,8 +177,15 @@ function update_item(item, value=undefined, dont_modify=false) {
 
     if (options[item].type == 'slider' && !dont_modify) {
         // text to show current slider value
-        document.getElementById(`value-${item}`).textContent = `${bleh[item]}${options[item].unit}`;
-        document.getElementById(`slider-${item}`).value = bleh[item];
+        try {
+            document.getElementById(`value-${item}`).textContent = `${bleh[item]}${options[item].unit}`;
+            document.getElementById(`slider-${item}`).value = bleh[item];
+
+            if (bleh[item] != options[item].value)
+                document.getElementById(`container-${item}`).classList.add('modified');
+            else
+                document.getElementById(`container-${item}`).classList.remove('modified');
+        } catch(e) {}
     } else if (options[item].type == 'toggle' && !dont_modify) {
         if (bleh[item] == options[item].values[0]) {
             bleh[item] = options[item].values[1];
@@ -190,6 +229,12 @@ function update_copy_block() {
     document.getElementById('copy-block').innerHTML = text;
 }
 
+function code_has_copied() {
+    user_saved_settings = true;
+    document.body.setAttribute('data-is-saved',user_saved_settings);
+    window.removeEventListener('beforeunload', leaving_prompt);
+}
+
 
 
 
@@ -215,19 +260,118 @@ if (bleh_ver < 2024.0429 || isNaN(bleh_ver)) {
         }
     ],'welcome_bleh2_customise');
 } else {
-    create_window('Welcome to the theme customiser!',`
+    /*create_window('Welcome to the theme customiser!',`
     <p>Have a scroll through and configure to your liking, then <strong>hit the confirm button once you're ready to save</strong>.</p>
     `,[
         {
             'text': 'Continue',
             'onclick': 'kill_windows()'
         }
-    ],'welcome_bleh2_customise');
+    ],'welcome_bleh2_customise');*/
 }
 
 function try_again() {
     location.reload();
 }
+
+
+
+
+
+// create a custom colour
+function open_manual_colours_prompt() {
+    create_window('Create a custom colour',`
+    <p>Colours are controlled by three values: hue, saturation, and lightness. Try out the sliders to get a feel.</p>
+    <br>
+    <div class="inner-preview pad">
+        <div class="pallete">
+            <div style="--col: hsl(var(--l2-c))"></div>
+            <div style="--col: hsl(var(--l3-c))"></div>
+            <div style="--col: hsl(var(--l4-c))"></div>
+            <div style="--col: hsl(var(--l2))"></div>
+            <div style="--col: hsl(var(--l3))"></div>
+            <div style="--col: hsl(var(--l4))"></div>
+        </div>
+        <div class="sep"></div>
+        <div class="btn-row">
+            <button class="btn">Example button</button>
+            <button class="btn primary">Example button</button>
+            <div class="chartlist-bar">
+                <span class="fill"></span>
+                <span class="text">44,551 plays</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="slider-container dim-using-hue-gradient" id="container-hue">
+        <button class="btn reset" onclick="reset_item('hue')">Reset to default</button>
+        <div class="heading">
+            <h5>Accent colour</h5>
+        </div>
+        <div class="slider">
+            <input type="range" min="0" max="360" value="${bleh.hue}" id="slider-hue" oninput="update_item('hue', this.value)">
+            <p id="value-hue">${bleh.hue}${options.hue.unit}</p>
+        </div>
+        <div class="hint">
+            <p style="left: 0">0</p>
+            <p style="left: calc((255 / 360) * 100%)">255</p>
+            <p style="left: 100%">360</p>
+        </div>
+    </div>
+    <div class="slider-container dim-using-hue-gradient" id="container-sat">
+        <button class="btn reset" onclick="reset_item('sat')">Reset to default</button>
+        <div class="heading">
+            <h5>Saturation</h5>
+        </div>
+        <div class="slider">
+            <input type="range" min="0" max="1.5" value="${bleh.sat}" step="0.025" id="slider-sat" oninput="update_item('sat', this.value)">
+            <p id="value-sat">${bleh.sat}${options.sat.unit}</p>
+        </div>
+        <div class="hint">
+            <p style="left: 0">0</p>
+            <p style="left: calc((1 / 1.5) * 100%)">1</p>
+            <p style="left: 100%">1.5</p>
+        </div>
+    </div>
+    <div class="slider-container dim-using-hue-gradient" id="container-lit">
+        <button class="btn reset" onclick="reset_item('lit')">Reset to default</button>
+        <div class="heading">
+            <h5>Lightness</h5>
+        </div>
+        <div class="slider">
+            <input type="range" min="0" max="1.5" value="${bleh.lit}" step="0.025" id="slider-lit" oninput="update_item('lit', this.value)">
+            <p id="value-lit">${bleh.lit}${options.lit.unit}</p>
+        </div>
+        <div class="hint">
+            <p style="left: 0">0</p>
+            <p style="left: calc((1 / 1.5) * 100%)">1</p>
+            <p style="left: 100%">1.5</p>
+        </div>
+    </div>
+    `,[
+        {
+            'text': 'Done',
+            'onclick': 'kill_windows()'
+        }
+    ],'create_colour');
+}
+
+
+
+// prompt before leaving
+let leaving_prompt = (event) => {
+    event.preventDefault();
+
+    create_window('Wait!',`
+    <p>Your settings have not been saved, are you sure you want to exit?</p>
+    `,[
+        {
+            'text': 'Cancel',
+            'type': 'primary',
+            'onclick': 'kill_windows()'
+        }
+    ],'welcome_bleh2_customise');
+};
 
 
 

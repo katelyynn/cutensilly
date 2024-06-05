@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://cutensilly.org/lfm">
     <meta property="og:title" content="bleh — a cutensilly theme for last.fm">
     <meta property="og:description" content="a sleek, minimalistic refresh featuring customisable colours, light/dark/oled themes, and hateful blocking">
-    <meta property="og:image" content="https://cutensilly.org/img/bleh2-main.png">
+    <meta property="og:image" content="/img/bleh2-main.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="theme-color" content="#000000">
@@ -97,10 +97,34 @@
             color: hsl(var(--c3));
         }
     </style>
-    <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.45; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
-    <main class="panel-container">
-        <div class="gap" style="--gap: 110px"></div>
-        <section class="side-by-side content right">
+    <header>
+        <div class="content">
+            <div class="logo">
+                <a href="/bleh/fm">
+                    bleh
+                </a>
+                <div class="nav">
+                    <a class="btn" href="/">
+                        by cutensilly
+                    </a>
+                </div>
+            </div>
+            <div class="nav">
+                <a class="btn" href="/bleh/fm">
+                    <i class="icon w-16" data-lucide="home"></i>
+                    Home
+                </a>
+                <a class="btn" href="https://github.com/katelyynn/bleh" target="_blank">
+                    <i class="icon w-16" data-lucide="code"></i>
+                    Source code
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="bg big-bg uninstalled2-only" style="background-image: url(/img/shiggy.png); opacity: 0.45; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
+    <div class="bg med-bg installed2-only" style="background-image: url(/img/shiggy.png); opacity: 0.35; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
+    <main class="panel-container hero uninstalled2-only">
+        <section class="side-by-side content right" style="flex: 1">
             <div class="cover has-gallery">
                 <div class="gallery" id="gallery">
                     <figure>
@@ -178,60 +202,6 @@
                 </button>
             </div>
             <script src="/js/home-gallery.js"></script>
-            <style>
-                .gallery figure {
-                    /*display: none;*/
-                    position: absolute;
-                    width: 600px;
-                    transition-property: left, opacity;
-                    transition-duration: 1.2s, 0.6s;
-                    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-
-                    img {
-                        box-shadow: var(--menu-shadow);
-                    }
-                }
-                figure {
-                    text-align: center;
-                }
-                figcaption {
-                    margin-top: 10px;
-                    color: hsl(var(--c2));
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 6px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.4px;
-
-                    .w-16 {
-                        --w: 14px;
-                    }
-                }
-
-                .gallery {
-                    display: flex;
-                    position: relative;
-                    width: 600px;
-                    aspect-ratio: 375 / 225;
-                }
-                .has-gallery .icon-btn {
-                    position: absolute;
-                    top: 50%;
-                    margin-top: -20px;
-                    box-shadow: var(--menu-shadow);
-                }
-                .has-gallery .arrow-l {
-                    left: -20px;
-                }
-                .has-gallery .arrow-r {
-                    right: -20px;
-                }
-
-                .has-gallery {
-                    position: relative;
-                }
-            </style>
             <div class="text flex flex-column flex-gap" style="--gap: 20px">
                 <div class="header-wrap">
                     <a href="https://last.fm/user/cutensilly" target="_blank">
@@ -243,91 +213,34 @@
                     </div>
                 </div>
                 <!-- -->
-                <p class="text-18">a <i id="sneek">sleek</i>, minimalistic refresh featuring customisable colours,<br><strong>light/dark/oled</strong> themes, and hateful blocking</p>
-                <div class="btn-row brand-btns">
-                    <a role="button" class="btn primary installed2-only" href="/bleh/fm/customise">
-                        <i class="icon w-16" data-lucide="sparkles"></i>
-                        <span class="text">Customise your bleh</span>
-                    </a>
-                    <a role="button" class="btn primary installed2-only" id="theme-update" href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css" target="_blank">
-                        <i class="icon w-16" data-lucide="refresh-ccw"></i>
-                        <span class="text" id="theme-ver">Update</span>
-                    </a>
-                    <a role="button" class="btn primary shine uninstalled2-only" onclick="create_install_window2()" id="install-btn">
-                        <span class="text">Install theme now</span>
-                        <i class="icon w-16" data-lucide="square-arrow-out-up-right"></i>
-                    </a>
-                    <a role="button" class="btn installed2-only" href="https://github.com/katelyynn/bleh/issues" target="_blank">
-                        <span class="text">Report bugs</span>
-                        <i class="icon w-16" data-lucide="square-arrow-out-up-right"></i>
-                    </a>
-                    <h5 class="sub warn uninstalled2-only" style="--hue: 160">bleh is now officially out of beta!</h5>
-                </div>
-                <h5 class="sub warn installed2-only" style="--hue: 160">bleh is now officially out of beta!</h5>
+                <p class="text-18">a sleek, minimalistic refresh featuring customisable colours,<br><strong>light/dark/oled</strong> themes, and hateful blocking</p>
             </div>
         </section>
-        <div class="gap" style="--gap: 40px"></div>
-        <div class="gap" style="--gap: 10px"></div>
-        <style>
-            .item-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: var(--card-gap);
-                margin-top: var(--card-gap);
-            }
-
-            .item-grid .item {
-                gap: var(--card-gap);
-                padding: var(--card-gap);
-                border: 1px solid hsl(var(--b4));
-                border-bottom: 1px solid hsl(var(--b3));
-                box-shadow: var(--card-shadow);
-                border-radius: var(--card-radius);
-                text-decoration: none;
-            }
-
-            .item-grid .item .image {
-                align-items: baseline;
-                height: 100%;
-                grid-area: icon;
-            }
-
-            .item-grid .item .text {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-                font-size: 16px;
-                line-height: 20px;
-                color: var(--col);
-                grid-area: text;
-            }
-
-            .item-grid .item .text h5 {
-                gap: var(--card-gap);
-                font-size: 16px;
-                margin: unset;
-            }
-
-            .install2 {
-                display: grid !important;
-                grid-template-columns: 40px auto;
-                grid-template-rows: auto auto;
-                grid-template-areas:
-                "icon text"
-                "image image";
-            }
-            .install2 .image-row {
-                grid-area: image;
-                width: 100%;
-            }
-            .install2 .image-row img {
-                width: 100%;
-                border-radius: var(--item-med-radius);
-                box-shadow: var(--card-shadow);
-            }
-        </style>
+        <section class="content flex flex-column flex-gap flex-align-center full-width" style="padding-bottom: 120px">
+            <div class="btn-row">
+                <a role="button" class="btn primary brand installed2-only" href="/bleh/fm/customise">
+                    <i class="icon w-20" data-lucide="sparkles"></i>
+                    <span class="text">Customise your bleh</span>
+                </a>
+                <a role="button" class="btn primary brand installed2-only" id="theme-update" href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css" target="_blank">
+                    <i class="icon w-20" data-lucide="refresh-ccw"></i>
+                    <span class="text" id="theme-ver">Update</span>
+                </a>
+                <a role="button" class="btn primary shine brand uninstalled2-only" onclick="create_install_window2()" id="install-btn">
+                    <span class="text">Click to install</span>
+                    <i class="icon w-20" data-lucide="chevron-right"></i>
+                </a>
+                <a role="button" class="btn brand installed2-only" href="https://github.com/katelyynn/bleh/issues" target="_blank">
+                    <span class="text">Report bugs</span>
+                    <i class="icon w-20" data-lucide="square-arrow-out-up-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+    <main class="panel-container uninstalled2-only">
         <section class="content flex flex-column flex-gap flex-align-center full-width uninstalled2-only" style="--gap: 20px">
             <h3 id="style_addons">Key features</h3>
-            <p class="text-16">Key features in bleh² to enhance your experience.</p>
+            <p class="text-16">Key features in bleh to enhance your experience.</p>
             <div class="item-grid" style="width: 100%">
                 <div class="item">
                     <div class="image">
@@ -407,90 +320,94 @@
             </a>
         </section>
         <div class="gap uninstalled2-only" style="--gap: 120px"></div>
-        <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
-            <h3 id="style_addons">Style addons</h3>
-            <h5 class="sub warn uninstalled2-only">The theme must be installed for addons to be available.</h5>
-            <div class="item-grid">
-                <a class="item install2 primary" href="/bleh/fm/customise" style="display: flex !important">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="sparkles"></i>
+        <!-- -->
+    </main>
+    <main class="panel-container double" id="dashboard">
+        <div class="sidebar">
+            <section class="panel">
+                <div class="flex flex-column flex-gap btns" style="gap: 6px">
+                    <a class="btn active" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="home"></i>
+                        Home
+                    </a>
+                    <a class="btn" href="/bleh/fm/themes">
+                        <i class="icon w-20" data-lucide="swatch-book"></i>
+                        Themes
+                    </a>
+                    <a class="btn" href="/bleh/fm/customise">
+                        <i class="icon w-20" data-lucide="palette"></i>
+                        Customise
+                    </a>
+                </div>
+                <!--<div class="flex flex-column flex-gap btns separator" style="gap: 6px">
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="refresh-ccw"></i>
+                        Updates
+                    </a>
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="info"></i>
+                        About
+                    </a>
+                </div>-->
+            </section>
+        </div>
+        <div class="main">
+            <section class="panel flex flex-column flex-gap" style="gap: 20px">
+                <h3>Home</h3>
+                <p>An overview of what you have currently installed and what is available to you.</p>
+                <div class="screen-row">
+                    <div class="screen-wrap">
+                        <img class="screen" src="/img/bleh2-main.png" alt="bleh">
+                        <div class="text">
+                            <h5>bleh</h5>
+                            <p>Version <i id="current-version"></i></p>
                         </div>
                     </div>
-                    <div class="text">
-                        <h5>Customise your bleh</h5>
-                        <p>Open the theme customiser</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item-grid" style="width: 100%">
-                <div class="item install2" id="install-oled" onclick="create_theme_window('bleh2-oled')">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="moon-star"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>OLED theme</h5>
-                        <p>bleh, but very dark.</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-oled.png">
+                    <div class="actions">
+                        <a class="btn action" id="update-action" href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css" target="_blank">
+                            <i class="icon w-32" data-lucide="refresh-ccw"></i>
+                            <span class="text">
+                                <h5 id="update-text">Update</h5>
+                                <p>Version <i id="latest-version"></i></p>
+                            </span>
+                        </a>
+                        <a class="btn action" href="https://github.com/katelyynn/bleh/issues" target="_blank">
+                            <i class="icon w-32" data-lucide="git-merge"></i>
+                            <span class="text">
+                                <h5>Issues</h5>
+                                <p>Report bugs</p>
+                            </span>
+                        </a>
                     </div>
                 </div>
-                <div class="item install2" id="install-light" onclick="create_theme_window('bleh2-light')">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="sun"></i>
-                        </div>
+                <h4>Recommended settings</h4>
+                <div class="setting-items">
+                    <div class="side-left">
+                        <a class="btn setting-item has-image" href="/bleh/fm/themes">
+                            <div class="image">
+                                <i class="icon w-32" data-lucide="swatch-book"></i>
+                            </div>
+                            <span class="text">
+                                <h5>Themes</h5>
+                                <p>Choose between light, dark, and oled.</p>
+                            </span>
+                            <div class="image-row">
+                                <img src="/img/bleh2-addon-oled.png">
+                            </div>
+                        </a>
                     </div>
-                    <div class="text">
-                        <h5>Light theme</h5>
-                        <p>bleh, but very light.</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-light.png">
-                    </div>
-                </div>
-                <div class="item install2" id="install-accent" onclick="create_theme_window('bleh2-accent')" style="display: none !important">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="paintbrush"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Album covers<div class="badge" data-kate-type="wip">WIP</div></h5>
-                        <p>Match the page colour to the album cover!</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-accent.png">
+                    <div class="side-right">
+                        <a class="btn setting-item" href="/bleh/fm/customise">
+                            <i class="icon w-32" data-lucide="palette"></i>
+                            <span class="text">
+                                <h5>Colours</h5>
+                                <p>Pick your favourite!</p>
+                            </span>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
-        <div class="gap installed2-only" style="--gap: 40px"></div>
-        <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px; display: none !important">
-            <h5 class="sub" id="script_addons">Script addons</h5>
-            <p>warning: these can be a bit unstable and are not coded <i class="i">the best</i></p>
-            <h5 class="sub warn uninstalled2-only">The theme must be installed for addons to be available.</h5>
-            <!--<div class="install-grid">
-                <div class="install" id="install-feat" onclick="create_theme_window('feat',true)">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="star"></i>
-                    </div>
-                    <h5><i class="hi">feat. artists</i></h5>
-                    <p>display featured artists in a cuter way</p>
-                </div>
-                <div class="install" id="install-chart" onclick="create_theme_window('chart',true)">
-                    <div class="kate-icon">
-                        <i class="icon w-24" data-lucide="hash"></i>
-                    </div>
-                    <h5><i class="hi">chart colours</i></h5>
-                    <p>apply colour based on charting position</p>
-                </div>
-            </div>-->
-            <p>Will be back soon!</p>
-        </section>
+            </section>
+        </div>
     </main>
 </body>
 <footer>

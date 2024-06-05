@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://cutensilly.org/bleh/fm">
     <meta property="og:title" content="bleh theme customiser — cutensilly.org">
     <meta property="og:description" content="a sleek, minimalistic refresh featuring customisable colours, light/dark/oled themes, and hateful blocking">
-    <meta property="og:image" content="https://cutensilly.org/img/bleh2-main.png">
+    <meta property="og:image" content="/img/bleh2-main.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="theme-color" content="#000000">
@@ -57,300 +57,206 @@
     <link rel="stylesheet" href="/owo/css/status.css">
     <link rel="stylesheet" href="/owo/css/input.css">
     <link rel="stylesheet" href="/owo/css/grid.css">
-    <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.2; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
-    <main class="panel-container">
-        <div class="gap" style="--gap: 60px"></div>
-        <section class="side-by-side content right">
-            <div class="text flex flex-column flex-gap" style="--gap: 20px">
-                <div class="header-wrap">
-                    <a href="https://last.fm/user/cutensilly" target="_blank">
-                        <img class="avatar circular shadow" src="/img/avi.png" alt="avatar" style="--size: 96px">
-                    </a>
-                    <div>
-                        <h1 class="hi kate logo">bleh</h1>
-                        <h2>theme customiser</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="--gap: 20px; width: 100%; max-width: 700px">
-                <h3>What are you looking for?</h3>
-                <div class="item-grid control-panel">
-                    <a class="btn control-panel-item item" href="#accent">
-                        <div class="image">
-                            <i class="icon w-24" data-lucide="paintbrush"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Customise your accent colour</h5>
-                            <p>Enjoy last.fm in a fresh coat of paint.</p>
-                        </div>
-                    </a>
-                    <a class="btn control-panel-item item" href="#gloss">
-                        <div class="image">
-                            <i class="icon w-24" data-lucide="disc"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Adjust image gloss</h5>
-                            <p>Change the opacity of album/artist cover's gloss.</p>
-                        </div>
-                    </a>
-                    <a class="btn control-panel-item item" href="#nav">
-                        <div class="image">
-                            <i class="icon w-24" data-lucide="bell"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Manage extra header navigation</h5>
-                            <p>Show or hide your notifications, inbox, and settings.</p>
-                        </div>
-                    </a>
-                    <a class="btn control-panel-item item" href="#gendered_tags">
-                        <div class="image">
-                            <i class="icon w-24" data-lucide="tag"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Gendered music tagging</h5>
-                            <p>Show or hide legacy tags related to gender.</p>
-                        </div>
-                    </a>
-                    <a class="btn control-panel-item item" href="#cards">
-                        <div class="image">
-                            <i class="icon w-24" data-lucide="layout-dashboard"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Adjust card width</h5>
-                            <p>Change the size of bleh².</p>
-                        </div>
+    <header>
+        <div class="content">
+            <div class="logo">
+                <a href="/bleh/fm">
+                    bleh
+                </a>
+                <div class="nav">
+                    <a class="btn" href="/">
+                        by cutensilly
                     </a>
                 </div>
             </div>
-        </section>
-        <div class="gap" style="--gap: 20px"></div>
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-
-            .control-panel {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                padding: var(--card-gap);
-                border: 1px solid hsl(var(--b4));
-                border-bottom: 1px solid hsl(var(--b3));
-                background-color: hsl(var(--b5));
-                border-radius: var(--item-med-radius);
-                box-shadow: var(--card-shadow);
-            }
-
-            .btn.control-panel-item {
-                --top: 16px;
-                --sides: 16px;
-                --bg: hsla(var(--b4), 20%);
-                --bg-hov: hsla(var(--b4), 40%);
-                --bg-atv: hsla(var(--b4), 60%);
-                box-shadow: none;
-                width: 100%;
-                justify-content: left;
-            }
-            .btn.control-panel-item .text {
-                display: flex;
-                flex-direction: column;
-                gap: 3px;
-            }
-            .btn.control-panel-item h5 {
-                color: hsl(var(--c2));
-                font-size: var(--font-size);
-                margin: unset;
-            }
-            .btn.control-panel-item p {
-                color: hsla(var(--c2), 80%);
-                font-size: var(--font-size);
-                font-weight: var(--font-weight);
-            }
-        </style>
-    </main>
-    <main class="panel-container">
-        <section class="content flex flex-column flex-gap flex-align-center full-width">
-            <h3 id="style_addons" style="margin-bottom: 20px">Style addons</h3>
-            <div class="item-grid" style="width: 100%">
-                <div class="item install2" id="install-oled" onclick="create_theme_window('bleh2-oled')">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="moon-star"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>OLED theme</h5>
-                        <p>bleh², but very dark.</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-oled.png">
-                    </div>
-                </div>
-                <div class="item install2" id="install-light" onclick="create_theme_window('bleh2-light')">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="sun"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Light theme</h5>
-                        <p>bleh², but very light.</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-light.png">
-                    </div>
-                </div>
-                <div class="item install2" id="install-accent" onclick="create_theme_window('bleh2-accent')" style="display: none !important">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="paintbrush"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Album covers<div class="badge" data-kate-type="wip">WIP</div></h5>
-                        <p>Match the page colour to the album cover!</p>
-                    </div>
-                    <div class="image-row">
-                        <img src="/img/bleh2-addon-accent.png">
-                    </div>
-                </div>
+            <div class="nav">
+                <a class="btn" href="/bleh/fm">
+                    <i class="icon w-16" data-lucide="home"></i>
+                    Home
+                </a>
+                <a class="btn" href="https://github.com/katelyynn/bleh" target="_blank">
+                    <i class="icon w-16" data-lucide="code"></i>
+                    Source code
+                </a>
             </div>
-        </section>
-        <div class="gap" style="--gap: 20px"></div>
-        <h3 style="margin-bottom: 20px">Customisation</h3>
-    </main>
-    <main class="panel-container double">
-        <div class="main">
-            <section class="panel lfm-preview" id="accent">
-                <h5>Customise your accent colour</h5>
-                <div class="pallete options">
-                    <button class="btn" style="--hue: -2" onclick="update_item('hue', -2)"></button>
-                    <button class="btn" style="--hue: 10" onclick="update_item('hue', 10)"></button>
-                    <button class="btn" style="--hue: 35" onclick="update_item('hue', 35)"></button>
-                    <button class="btn" style="--hue: 85" onclick="update_item('hue', 85)"></button>
-                    <button class="btn" style="--hue: 115" onclick="update_item('hue', 115)"></button>
-                    <button class="btn" style="--hue: 155" onclick="update_item('hue', 155)"></button>
-                    <button class="btn" style="--hue: 185" onclick="update_item('hue', 185)"></button>
-                    <button class="btn" style="--hue: 222" onclick="update_item('hue', 222)"></button>
-                    <button class="btn" style="--hue: 255" onclick="update_item('hue', 255)"></button>
-                    <button class="btn" style="--hue: 333" onclick="update_item('hue', 333)"></button>
-                </div>
-                <div class="sep using-hue-gradient-item"></div>
-                <div class="pallete options using-hue-gradient-item">
-                    <button class="btn" style="background: var(--gradient-lesbian)" onclick="update_item('hue_gradient', 'lesbian')"></button>
-                    <button class="btn" style="background: var(--gradient-trans)" onclick="update_item('hue_gradient', 'trans')"></button>
-                    <button class="btn" style="background: var(--gradient-fluid)" onclick="update_item('hue_gradient', 'fluid')"></button>
-                </div>
-                <div class="sep"></div>
-                <p class="caption using-hue-gradient-item">While a hue gradient is selected, hue adjustments are not possible.</p>
-                <div class="slider-container dim-using-hue-gradient">
-                    <div class="heading"><p>Accent colour</p><button class="btn reset" onclick="reset_item('hue')">Reset to default</button></div>
-                    <div class="slider">
-                        <input type="range" min="0" max="360" value="255" id="slider-hue" oninput="update_item('hue', this.value)">
-                        <p id="value-hue">255</p>
-                    </div>
-                    <div class="hint">
-                        <p style="left: 0">0</p>
-                        <p style="left: calc((255 / 360) * 100%)">255</p>
-                        <p style="left: 100%">360</p>
-                    </div>
-                </div>
-                <div class="slider-container dim-using-hue-gradient">
-                    <div class="heading"><p>Saturation</p><button class="btn reset" onclick="reset_item('sat')">Reset to default</button></div>
-                    <div class="slider">
-                        <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-sat" oninput="update_item('sat', this.value)">
-                        <p id="value-sat">1</p>
-                    </div>
-                    <div class="hint">
-                        <p style="left: 0">0</p>
-                        <p style="left: calc((1 / 1.5) * 100%)">1</p>
-                        <p style="left: 100%">1.5</p>
-                    </div>
-                </div>
-                <div class="slider-container dim-using-hue-gradient">
-                    <div class="heading"><p>Lightness</p><button class="btn reset" onclick="reset_item('lit')">Reset to default</button></div>
-                    <div class="slider">
-                        <input type="range" min="0" max="1.5" value="1" step="0.025" id="slider-lit" oninput="update_item('lit', this.value)">
-                        <p id="value-lit">1</p>
-                    </div>
-                    <div class="hint">
-                        <p style="left: 0">0</p>
-                        <p style="left: calc((1 / 1.5) * 100%)">1</p>
-                        <p style="left: 100%">1.5</p>
-                    </div>
-                </div>
-            </section>
         </div>
+    </header>
+    <div class="bg med-bg installed2-only" style="background-image: url(/img/shiggy.png); opacity: 0.35; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
+    <main class="panel-container double">
         <div class="sidebar">
             <section class="panel">
-                <h5>Preview</h5>
-                <div class="pallete">
-                    <!--<div style="--col: hsl(var(--l1))"></div>-->
-                    <div style="--col: hsl(var(--l2-c))"></div>
-                    <div style="--col: hsl(var(--l3-c))"></div>
-                    <div style="--col: hsl(var(--l4-c))"></div>
+                <div class="flex flex-column flex-gap btns" style="gap: 6px">
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="home"></i>
+                        Home
+                    </a>
+                    <a class="btn" href="/bleh/fm/themes">
+                        <i class="icon w-20" data-lucide="swatch-book"></i>
+                        Themes
+                    </a>
+                    <a class="btn active" href="/bleh/fm/customise">
+                        <i class="icon w-20" data-lucide="palette"></i>
+                        Customise
+                    </a>
                 </div>
-                <div class="pallete">
-                    <!--<div style="--col: hsl(var(--l1))"></div>-->
-                    <div style="--col: hsl(var(--l2))"></div>
-                    <div style="--col: hsl(var(--l3))"></div>
-                    <div style="--col: hsl(var(--l4))"></div>
-                </div>
-                <p class="caption">The top row of colours are used when visiblity is always required (like links for example), they can only be so dark.</p>
-                <div class="sep"></div>
-                <div class="btn-row">
-                    <button class="btn" style="font-size: 14px">Example button</button>
-                    <button class="btn primary" style="font-size: 14px">Example button</button>
-                </div>
-                <div class="sep"></div>
-                <div class="btn-row">
-                    <div class="chartlist-bar">
-                        <span class="fill"></span>
-                        <span class="text">44,551 plays</span>
-                    </div>
-                </div>
+                <!--<div class="flex flex-column flex-gap btns separator" style="gap: 6px">
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="refresh-ccw"></i>
+                        Updates
+                    </a>
+                    <a class="btn" href="/bleh/fm">
+                        <i class="icon w-20" data-lucide="info"></i>
+                        About
+                    </a>
+                </div>-->
             </section>
         </div>
-    </main>
-    <main class="panel-container double">
         <div class="main">
-            <section class="panel lfm-preview" id="gloss">
-                <h5>Adjust image gloss</h5>
-                <div class="slider-container">
-                    <div class="heading"><p>Opacity</p><button class="btn reset" onclick="reset_item('gloss')">Reset to default</button></div>
+            <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
+                <h3>Colours</h3>
+                <div class="inner-preview pad">
+                    <div class="pallete">
+                        <div style="--col: hsl(var(--l2-c))"></div>
+                        <div style="--col: hsl(var(--l3-c))"></div>
+                        <div style="--col: hsl(var(--l4-c))"></div>
+                        <div style="--col: hsl(var(--l2))"></div>
+                        <div style="--col: hsl(var(--l3))"></div>
+                        <div style="--col: hsl(var(--l4))"></div>
+                    </div>
+                    <div class="sep"></div>
+                    <div class="btn-row">
+                        <button class="btn">Example button</button>
+                        <button class="btn primary">Example button</button>
+                        <div class="chartlist-bar">
+                            <span class="fill"></span>
+                            <span class="text">44,551 plays</span>
+                        </div>
+                    </div>
+                </div>
+                <h5>Presets</h5>
+                <div class="pallete options">
+                    <button class="btn" style="
+                        --hue: -2;
+                        --sat: 1;
+                        --lit: 0.8" onclick="update_params({
+                        hue: -2,
+                        sat: 1,
+                        lit: 0.8
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 10;
+                        --sat: 1;
+                        --lit: 0.9" onclick="update_params({
+                        hue: 10,
+                        sat: 1,
+                        lit: 0.9
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 35;
+                        --sat: 1.2;
+                        --lit: 1" onclick="update_params({
+                        hue: 35,
+                        sat: 1.2,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 85;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 85,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 115;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 115,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 155;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 155,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 185;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 185,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 222;
+                        --sat: 1;
+                        --lit: 0.9" onclick="update_params({
+                        hue: 222,
+                        sat: 1,
+                        lit: 0.9
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 255;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 255,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                    <button class="btn" style="
+                        --hue: 333;
+                        --sat: 1;
+                        --lit: 1" onclick="update_params({
+                        hue: 333,
+                        sat: 1,
+                        lit: 1
+                    })"></button>
+                </div>
+                <h5>Manual</h5>
+                <button class="btn" onclick="open_manual_colours_prompt()">
+                    Create a custom colour
+                    <i class="icon w-16" data-lucide="chevron-right"></i>
+                </button>
+            </section>
+            <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
+                <h3>Artwork</h3>
+                <div class="inner-preview pad">
+                    <div class="pallete albums" style="height: fit-content">
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/1569198c4cf0a3b2ff8728975e8359fa.jpg')"></div>
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/b897255bf422baa93a42536af293f9f8.jpg')"></div>
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/a78bbd5ff0184115902f403212f04976.jpg')"></div>
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/ddee3b871289a6cda0e3c7d4b4580d62.jpg')"></div>
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/570021b68d3d9d2db08bc99a473303b0.jpg')"></div>
+                        <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/e39eb31f874f4a5c4afa836845141437.jpg')"></div>
+                    </div>
+                </div>
+                <div class="slider-container" id="container-gloss">
+                    <button class="btn reset" onclick="reset_item('gloss')">Reset to default</button>
+                    <div class="heading">
+                        <h5>Gloss overlay</h5>
+                        <p>Previously a default of 0.2, now disabled by default.</p>
+                    </div>
                     <div class="slider">
                         <input type="range" min="0" max="1" value="0" step="0.05" id="slider-gloss" oninput="update_item('gloss', this.value)">
                         <p id="value-gloss">0</p>
                     </div>
-                    <div class="hint">
-                        <p style="left: 0">0</p>
-                        <p style="left: 20%">0.2</p>
-                        <p style="left: 100%">1</p>
+                </div>
+            </section>
+            <section class="panel flex flex-column flex-gap lfm-preview" style="gap: 20px">
+                <h3>Display</h3>
+                <div class="inner-preview pad flex">
+                    <div class="preview-img">
+                        <img id="nav-img" src="/img/nav-shown.png">
                     </div>
                 </div>
-                <p class="caption">Previously a default of 0.2, now disabled by default.</p>
-            </section>
-        </div>
-        <div class="sidebar">
-            <section class="panel">
-                <h5>Preview</h5>
-                <div class="pallete albums" style="height: fit-content">
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/1569198c4cf0a3b2ff8728975e8359fa.jpg')"></div>
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/b897255bf422baa93a42536af293f9f8.jpg')"></div>
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/a78bbd5ff0184115902f403212f04976.jpg')"></div>
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/ddee3b871289a6cda0e3c7d4b4580d62.jpg')"></div>
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/570021b68d3d9d2db08bc99a473303b0.jpg')"></div>
-                    <div class="album-cover" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/e39eb31f874f4a5c4afa836845141437.jpg')"></div>
-                </div>
-                <p class="caption">Album covers from last.fm</p>
-            </section>
-        </div>
-    </main>
-    <main class="panel-container double">
-        <div class="main">
-            <section class="panel lfm-preview" id="nav">
-                <h5>Manage extra header navigation<div class="tag">New</div></h5>
                 <div class="toggle-container">
                     <div class="heading">
-                        <p>Show extra navigation</p>
+                        <h5>Show extra navigation</h5>
+                        <p>Quick links and visibility for your notifications, inbox, and settings are now available in the header.</p>
                     </div>
                     <div class="toggle-wrap">
                         <button class="toggle" id="toggle-nav" onclick="update_item('nav')" aria-checked="true">
@@ -358,30 +264,15 @@
                         </button>
                     </div>
                 </div>
-                <p class="caption">Quick links and visibility for your notifications, inbox, and settings are now available in the header.<br>You can choose to hide them if you prefer the minimalism.</p>
-            </section>
-        </div>
-        <div class="sidebar">
-            <section class="panel">
-                <img class="img" id="nav-img" src="/img/nav-shown.png">
-            </section>
-            <style>
-                .img {
-                    width: 100%;
-                    border: 1px solid hsl(var(--b4));
-                    border-radius: var(--item-med-radius);
-                    box-shadow: var(--menu-shadow);
-                }
-            </style>
-        </div>
-    </main>
-    <main class="panel-container double">
-        <div class="main">
-            <section class="panel lfm-preview" id="gendered_tags">
-                <h5>Gendered music tagging<div class="tag">New</div></h5>
+                <div class="inner-preview pad flex gap-top">
+                    <div class="preview-img">
+                        <img id="gendered_tags-img" src="/img/gendered_tags-hidden.png">
+                    </div>
+                </div>
                 <div class="toggle-container">
                     <div class="heading">
-                        <p>Hide gendered tags</p>
+                        <h5>Hide gendered tags</h5>
+                        <p>By default, gendered tags are hidden in bleh² due to their unorganised and impossible nature.</p>
                     </div>
                     <div class="toggle-wrap">
                         <button class="toggle" id="toggle-gendered_tags" onclick="update_item('gendered_tags')" aria-checked="true">
@@ -389,22 +280,13 @@
                         </button>
                     </div>
                 </div>
-                <p class="caption">By default, gendered tags are hidden in bleh² due to their unorganised and impossible nature.<br>Making use of the <a href="https://www.last.fm/music/Taylor+Swift/+similar" target="_blank">Similar artists</a> panels and sites like <a href="https://rateyourmusic.com" target="_blank">rateyourmusic.com</a> works in a much more related and organised way.</p>
-                <p class="caption">This includes (alphabetically) female, male, and nonbinary vocalist tags.</p>
-            </section>
-        </div>
-        <div class="sidebar">
-            <section class="panel">
-                <img class="img" id="gendered_tags-img" src="/img/gendered_tags-hidden.png">
-            </section>
-        </div>
-    </main>
-    <main class="panel-container double">
-        <div class="main">
-            <section class="panel lfm-preview" id="cards">
-                <h5>Adjust card width</h5>
-                <div class="slider-container">
-                    <div class="heading"><p>Main width</p><button class="btn reset" onclick="reset_item('main_width')">Reset to default</button></div>
+                <div class="sep"></div>
+                <div class="slider-container" id="container-main_width">
+                    <button class="btn reset" onclick="reset_item('main_width')">Reset to default</button>
+                    <div class="heading">
+                        <h5>Card width</h5>
+                        <p>Keep in mind of your screen size, the default is not a perfect 900 due to chart grid sizing.</p>
+                    </div>
                     <div class="slider">
                         <input type="range" min="700" max="1300" value="902" step="20" id="slider-main_width" oninput="update_item('main_width', this.value)">
                         <p id="value-main_width">902</p>
@@ -415,71 +297,53 @@
                         <p style="left: 100%">1300</p>
                     </div>
                 </div>
-                <p class="caption">The default is not a perfect 900 due to chart grid sizing.</p>
-                <!--<div class="slider-container">
-                    <div class="heading"><p>Sidebar width</p><button class="btn reset" onclick="reset_item('sidebar-width',400)">Reset to default</button></div>
-                    <div class="slider">
-                        <input type="range" min="400" max="800" value="400" step="20" id="slider-sidebar-width" oninput="update_value(this.value, 'sidebar-width')">
-                        <p id="value-sidebar-width">400</p>
-                    </div>
-                    <div class="hint">
-                        <p style="left: 0">400</p>
-                        <p style="left: 100%">800</p>
-                    </div>
-                </div>-->
-                <p class="caption">Keep in mind your screen resolution when adjusting.</p>
             </section>
-        </div>
-        <div class="sidebar">
-            <section class="panel"></section>
         </div>
     </main>
     <main class="panel-container">
-        <section class="panel lfm-preview" id="export">
-            <div>
-                <h5>Save changes into bleh² theme</h5>
-                <div class="hint steps-wrap">
-                    <div class="step">
-                        <div class="head">
-                            <div class="step-num">1</div>
-                            <p>Install <a href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-hue.user.css" target="_blank">this extension</a> and <strong>close the tab</strong></p>
-                        </div>
-                        <img src="/img/customise-1-install.png">
+        <section class="panel flex flex-column flex-gap lfm-preview" id="export" style="gap: 20px">
+            <h3>Save changes into bleh theme</h3>
+            <div class="hint steps-wrap">
+                <div class="step">
+                    <div class="head">
+                        <div class="step-num">1</div>
+                        <p>Install <a href="https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-hue.user.css" target="_blank">this extension</a> and <strong>close the tab</strong></p>
                     </div>
-                    <div class="step">
-                        <div class="head">
-                            <div class="step-num">2</div>
-                            <p>Copy your final code to the clipboard</p>
-                        </div>
-                        <div class="copy-code">
-                            <pre id="copy-block" style="height: 100%"></pre>
-                            <button class="btn primary" data-clipboard-target="#copy-block">
-                                <i class="icon w-20" data-lucide="copy"></i>
-                                <p>Click to copy</p>
-                            </button>
-                        </div>
+                    <img src="/img/customise-1-install.png">
+                </div>
+                <div class="step">
+                    <div class="head">
+                        <div class="step-num">2</div>
+                        <p>Copy your final code to the clipboard</p>
                     </div>
-                    <div class="step">
-                        <div class="head">
-                            <div class="step-num">3</div>
-                            <p>Open your extensions menu and find Stylus or open from the toolbar</p>
-                        </div>
-                        <img src="/img/open-stylus.png">
+                    <div class="copy-code">
+                        <pre id="copy-block" style="height: 100%"></pre>
+                        <button class="btn primary" data-clipboard-target="#copy-block" onclick="code_has_copied()">
+                            <i class="icon w-20" data-lucide="copy"></i>
+                            <p>Click to copy</p>
+                        </button>
                     </div>
-                    <div class="step">
-                        <div class="head">
-                            <div class="step-num">4</div>
-                            <p>Locate bleh² (hue) and hit Edit</p>
-                        </div>
-                        <img src="/img/edit-stylus.png">
+                </div>
+                <div class="step">
+                    <div class="head">
+                        <div class="step-num">3</div>
+                        <p>Open your extensions menu and find Stylus or open from the toolbar</p>
                     </div>
-                    <div class="step">
-                        <div class="head">
-                            <div class="step-num">5</div>
-                            <p>Paste your code into the theme</p>
-                        </div>
-                        <img src="/img/copy-and-paste.png">
+                    <img src="/img/open-stylus.png">
+                </div>
+                <div class="step">
+                    <div class="head">
+                        <div class="step-num">4</div>
+                        <p>Locate bleh² (hue) and hit Edit</p>
                     </div>
+                    <img src="/img/edit-stylus.png">
+                </div>
+                <div class="step">
+                    <div class="head">
+                        <div class="step-num">5</div>
+                        <p>Paste your code into the theme</p>
+                    </div>
+                    <img src="/img/copy-and-paste.png">
                 </div>
             </div>
         </section>
@@ -521,69 +385,11 @@
     </style>
     <div class="floating-wrap">
         <div class="floating-confirm">
-            <p>Once you're finished, click confirm.</p>
-            <a class="btn" href="#export">Confirm</a>
+            <p>You have unsaved changes!</p>
+            <a class="btn primary" href="#export">Save changes</a>
         </div>
     </div>
 </body>
-<style>
-    .item-grid:not(.control-panel) {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: var(--card-gap);
-        margin-top: var(--card-gap);
-    }
-
-    .item-grid .item:not(.control-panel-item) {
-        gap: var(--card-gap);
-        padding: var(--card-gap);
-        border: 1px solid hsl(var(--b4));
-        border-bottom: 1px solid hsl(var(--b3));
-        box-shadow: var(--card-shadow);
-        border-radius: var(--card-radius);
-        text-decoration: none;
-    }
-
-    .item-grid .item:not(.control-panel-item) .image {
-        align-items: baseline;
-        height: 100%;
-        grid-area: icon;
-    }
-
-    .item-grid .item:not(.control-panel-item) .text {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        line-height: 20px;
-        color: var(--col);
-        grid-area: text;
-    }
-
-    .item-grid .item:not(.control-panel-item) .text h5 {
-        gap: var(--card-gap);
-        font-size: 16px;
-        margin: unset;
-    }
-
-    .install2 {
-        display: grid !important;
-        grid-template-columns: 40px auto;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-        "icon text"
-        "image image";
-        pointer-events: auto !important;
-        opacity: unset !important;
-    }
-    .install2 .image-row {
-        grid-area: image;
-        width: 100%;
-    }
-    .install2 .image-row img {
-        width: 100%;
-        border-radius: var(--item-med-radius);
-        box-shadow: var(--card-shadow);
-    }
-</style>
 <style>
     .floating-wrap {
         position: fixed;
@@ -613,25 +419,15 @@
     }
     .floating-confirm p {
         flex: 1;
+        color: hsl(var(--c1));
+        font-weight: var(--font-weight-medium);
     }
 
-    .scrolled .floating-wrap {
+    [data-is-saved="true"] .floating-wrap {
         transform: translateY(200px);
     }
 </style>
 <script src="/js/customise-bleh.js"></script>
-<script>
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        console.log(scroll);
-
-        if (scroll >= 1700) {
-            document.body.classList.add("scrolled");
-        } else {
-            document.body.classList.remove("scrolled");
-        }
-    });
-</script>
 <footer>
     <div class="content">
         <span class="main">

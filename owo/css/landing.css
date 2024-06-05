@@ -1,9 +1,10 @@
 .hero {
     width: 100vw;
     height: 100vh;
+    padding: unset !important;
 }
 
-.hero .content {
+.hero .content:not(.panel-container > section) {
     width: 100vw;
     max-width: 70%;
 }

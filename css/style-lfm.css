@@ -154,6 +154,7 @@
 .hi {
     color: hsl(var(--l3-c));
 }
+header .logo a:not(.btn),
 .hi.kate {
     --g-red: hsl(8, 62%, 60%);
     --g-orange: hsl(24, 86%, 60%);
