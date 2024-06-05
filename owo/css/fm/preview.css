@@ -219,7 +219,7 @@ input[type="range"]::-moz-range-thumb {
 
 .toggle {
     display: flex;
-    width: 56px;
+    width: 56px !important;
     height: 32px;
     position: relative;
 }

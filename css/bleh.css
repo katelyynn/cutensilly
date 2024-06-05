@@ -1,6 +1,17 @@
 /* bleh */
 
 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+:root {--font-brand: Comfortaa, var(--font)}
+
+.hi.kate:not(h2 i) {
+    font-family: var(--font-brand);
+}
+.hi.kate sup {
+    font-family: var(--font);
+}
+
+
 
 
 /* home */
