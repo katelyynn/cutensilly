@@ -11,9 +11,8 @@
 
 .side-by-side {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 100px;
 }
 .side-by-side > .cover {
     max-width: 600px;

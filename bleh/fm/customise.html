@@ -25,8 +25,10 @@
     <link rel="stylesheet" href="/owo/css/reset.css">
     <link rel="stylesheet" href="/owo/css/style.css">
     <link rel="stylesheet" href="/css/style-lfm.css">
+    <link rel="stylesheet" href="/css/bleh.css">
+    <link rel="stylesheet" href="/owo/css/fm/preview.css">
     <!-- icon -->
-    <link rel="shortcut icon" type="ico" href="/img/katie4k-small.webp"/>
+    <link rel="shortcut icon" type="ico" href="/img/avi.png"/>
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- icons -->
@@ -55,81 +57,94 @@
     <link rel="stylesheet" href="/owo/css/status.css">
     <link rel="stylesheet" href="/owo/css/input.css">
     <link rel="stylesheet" href="/owo/css/grid.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
-        :root {--font-brand: Comfortaa, var(--font)}
-
-        .hi.kate {
-            font-family: var(--font-brand);
-        }
-        .hi.kate sup {
-            font-family: var(--font);
-        }
-    </style>
-    <script>
-        let bleh_ver = parseFloat(getComputedStyle(document.body).getPropertyValue('--bleh2-ver'));
-        console.log('Theme is reporting', bleh_ver);
-
-        if (bleh_ver < 2024.0429 || isNaN(bleh_ver)) {
-            create_window('Out of date!',`
-            <p>Due to recent changes, the theme customiser requires<br>version <strong>2024.0429</strong>, which you do not have.</p>
-            <br>
-            <p>Don't worry, updating is easy.</p>
-            `,[
-            {
-                    'text': 'Done',
-                    'onclick': 'try_again()'
-                },
-                {
-                    'text': 'Update',
-                    'link': 'https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css',
-                    'type': 'primary'
-                }
-            ],'welcome_bleh2_customise');
-        } else {
-            create_window('Welcome!',`
-            <p>This is the <strong>bleh² theme customiser</strong>, allowing you to change theme colours and various other settings.</p>
-            <br>
-            <p>Have a scroll through and configure to your liking, then <strong>hit the confirm button once you're ready to save</strong>.</p>
-            `,[
-                {
-                    'text': 'Continue',
-                    'onclick': 'kill_windows()'
-                }
-            ],'welcome_bleh2_customise');
-        }
-
-        function try_again() {
-            location.reload();
-        }
-    </script>
-    <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.07"></div>
-    <div class="bg-grad med-bg" style="background: linear-gradient(180deg, hsla(var(--l3), 20%) 0%, hsl(var(--b6)) 100%); z-index: 0"></div>
+    <div class="bg med-bg" style="background-image: url(/img/shiggy.png); opacity: 0.2; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
     <main class="panel-container">
+        <div class="gap" style="--gap: 60px"></div>
         <section class="side-by-side content right">
-            <link rel="stylesheet" href="/owo/css/fm/preview.css">
-            <div class="text flex flex-align-center flex-column flex-gap" style="--gap: 20px">
-                <h2 class="hi kate" style="font-size: 60px; line-height: 44px;">
-                    <a href="/bleh/fm/" style="text-decoration: none">bleh</a>
-                </h2>
-                <h4>theme settings</h4>
+            <div class="text flex flex-column flex-gap" style="--gap: 20px">
+                <div class="header-wrap">
+                    <a href="https://last.fm/user/cutensilly" target="_blank">
+                        <img class="avatar circular shadow" src="/img/avi.png" alt="avatar" style="--size: 96px">
+                    </a>
+                    <div>
+                        <h1 class="hi kate logo">bleh</h1>
+                        <h2>theme customiser</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="--gap: 20px; width: 100%; max-width: 700px">
+                <h3>What are you looking for?</h3>
+                <div class="item-grid control-panel">
+                    <a class="btn control-panel-item item" href="#accent">
+                        <div class="image">
+                            <i class="icon w-24" data-lucide="paintbrush"></i>
+                        </div>
+                        <div class="text">
+                            <h5>Customise your accent colour</h5>
+                            <p>Enjoy last.fm in a fresh coat of paint.</p>
+                        </div>
+                    </a>
+                    <a class="btn control-panel-item item" href="#gloss">
+                        <div class="image">
+                            <i class="icon w-24" data-lucide="disc"></i>
+                        </div>
+                        <div class="text">
+                            <h5>Adjust image gloss</h5>
+                            <p>Change the opacity of album/artist cover's gloss.</p>
+                        </div>
+                    </a>
+                    <a class="btn control-panel-item item" href="#nav">
+                        <div class="image">
+                            <i class="icon w-24" data-lucide="bell"></i>
+                        </div>
+                        <div class="text">
+                            <h5>Manage extra header navigation</h5>
+                            <p>Show or hide your notifications, inbox, and settings.</p>
+                        </div>
+                    </a>
+                    <a class="btn control-panel-item item" href="#gendered_tags">
+                        <div class="image">
+                            <i class="icon w-24" data-lucide="tag"></i>
+                        </div>
+                        <div class="text">
+                            <h5>Gendered music tagging</h5>
+                            <p>Show or hide legacy tags related to gender.</p>
+                        </div>
+                    </a>
+                    <a class="btn control-panel-item item" href="#cards">
+                        <div class="image">
+                            <i class="icon w-24" data-lucide="layout-dashboard"></i>
+                        </div>
+                        <div class="text">
+                            <h5>Adjust card width</h5>
+                            <p>Change the size of bleh².</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
+        <div class="gap" style="--gap: 20px"></div>
         <style>
             html {
                 scroll-behavior: smooth;
             }
 
             .control-panel {
-                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                padding: var(--card-gap);
+                border: 1px solid hsl(var(--b4));
+                border-bottom: 1px solid hsl(var(--b3));
+                background-color: hsl(var(--b5));
+                border-radius: var(--item-med-radius);
+                box-shadow: var(--card-shadow);
             }
 
             .btn.control-panel-item {
                 --top: 16px;
                 --sides: 16px;
-                --bg: transparent;
-                --bg-hov: hsla(var(--b4), 20%);
-                --bg-atv: hsla(var(--b4), 40%);
+                --bg: hsla(var(--b4), 20%);
+                --bg-hov: hsla(var(--b4), 40%);
+                --bg-atv: hsla(var(--b4), 60%);
                 box-shadow: none;
                 width: 100%;
                 justify-content: left;
@@ -150,59 +165,11 @@
                 font-weight: var(--font-weight);
             }
         </style>
-        <section class="panel lfm-preview" id="main">
-            <h5>What are you looking for?</h5>
-            <div class="item-grid control-panel">
-                <a class="btn control-panel-item item" href="#accent">
-                    <div class="image">
-                        <i class="icon w-24" data-lucide="paintbrush"></i>
-                    </div>
-                    <div class="text">
-                        <h5>Customise your accent colour</h5>
-                        <p>Enjoy last.fm in a fresh coat of paint.</p>
-                    </div>
-                </a>
-                <a class="btn control-panel-item item" href="#gloss">
-                    <div class="image">
-                        <i class="icon w-24" data-lucide="disc"></i>
-                    </div>
-                    <div class="text">
-                        <h5>Adjust image gloss</h5>
-                        <p>Change the opacity of album/artist cover's gloss.</p>
-                    </div>
-                </a>
-                <a class="btn control-panel-item item" href="#nav">
-                    <div class="image">
-                        <i class="icon w-24" data-lucide="bell"></i>
-                    </div>
-                    <div class="text">
-                        <h5>Manage extra header navigation</h5>
-                        <p>Show or hide your notifications, inbox, and settings.</p>
-                    </div>
-                </a>
-                <a class="btn control-panel-item item" href="#gendered_tags">
-                    <div class="image">
-                        <i class="icon w-24" data-lucide="tag"></i>
-                    </div>
-                    <div class="text">
-                        <h5>Gendered music tagging</h5>
-                        <p>Show or hide legacy tags related to gender.</p>
-                    </div>
-                </a>
-                <a class="btn control-panel-item item" href="#cards">
-                    <div class="image">
-                        <i class="icon w-24" data-lucide="layout-dashboard"></i>
-                    </div>
-                    <div class="text">
-                        <h5>Adjust card width</h5>
-                        <p>Change the size of bleh².</p>
-                    </div>
-                </a>
-            </div>
     </main>
     <main class="panel-container">
         <section class="content flex flex-column flex-gap flex-align-center full-width">
-            <div class="item-grid" style="width: 100%; margin-top: 0">
+            <h3 id="style_addons" style="margin-bottom: 20px">Style addons</h3>
+            <div class="item-grid" style="width: 100%">
                 <div class="item install2" id="install-oled" onclick="create_theme_window('bleh2-oled')">
                     <div class="image">
                         <div class="kate-icon">
@@ -247,6 +214,8 @@
                 </div>
             </div>
         </section>
+        <div class="gap" style="--gap: 20px"></div>
+        <h3 style="margin-bottom: 20px">Customisation</h3>
     </main>
     <main class="panel-container double">
         <div class="main">
@@ -559,7 +528,7 @@
 </body>
 <style>
     .item-grid:not(.control-panel) {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: var(--card-gap);
         margin-top: var(--card-gap);
     }
@@ -568,6 +537,7 @@
         gap: var(--card-gap);
         padding: var(--card-gap);
         border: 1px solid hsl(var(--b4));
+        border-bottom: 1px solid hsl(var(--b3));
         box-shadow: var(--card-shadow);
         border-radius: var(--card-radius);
         text-decoration: none;
@@ -611,7 +581,6 @@
     .install2 .image-row img {
         width: 100%;
         border-radius: var(--item-med-radius);
-        border: 1px solid hsl(var(--b4));
         box-shadow: var(--card-shadow);
     }
 </style>
@@ -663,13 +632,15 @@
         }
     });
 </script>
-<footer class="content">
-    <span class="main">
-        <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
-    </span>
-    <span class="links">
-        <a href="https://github.com/katelyynn/bleh">View theme source</a>
-        <a href="https://github.com/katelyynn/cutensilly">View source</a>
-    </span>
+<footer>
+    <div class="content">
+        <span class="main">
+            <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
+        </span>
+        <span class="links">
+            <a href="https://github.com/katelyynn/bleh">View theme source</a>
+            <a href="https://github.com/katelyynn/cutensilly">View source</a>
+        </span>
+    </div>
 </footer>
 <script>lucide.createIcons();</script>

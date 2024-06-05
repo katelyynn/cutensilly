@@ -1,0 +1,49 @@
+/* bleh */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+:root {--font-brand: Comfortaa, var(--font)}
+
+.hi.kate:not(h2 i) {
+    font-family: var(--font-brand);
+}
+.hi.kate sup {
+    font-family: var(--font);
+}
+
+
+
+
+/* home */
+.header-wrap {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    h1 {
+        font-size: 96px;
+        line-height: 96px;
+    }
+
+    &.small .avatar {
+        --size: 32px;
+    }
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+.logo {
+    font-size: 96px;
+    line-height: 96px;
+    position: relative;
+    left: -8px;
+}
+
+.brand-btns {
+    padding-top: 20px;
+    border-top: 1px solid hsl(var(--b4));
+}

@@ -193,6 +193,45 @@ function update_copy_block() {
 
 
 
+
+// version checking & welcome prompt
+let bleh_ver = parseFloat(getComputedStyle(document.body).getPropertyValue('--bleh2-ver'));
+console.log('Theme is reporting', bleh_ver);
+
+if (bleh_ver < 2024.0429 || isNaN(bleh_ver)) {
+    create_window('Out of date!',`
+    <p>Due to recent changes, the theme customiser requires<br>version <strong>2024.0429</strong>, which you do not have.</p>
+    <br>
+    <p>Don't worry, updating is easy.</p>
+    `,[
+    {
+            'text': 'Done',
+            'onclick': 'try_again()'
+        },
+        {
+            'text': 'Update',
+            'link': 'https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css',
+            'type': 'primary'
+        }
+    ],'welcome_bleh2_customise');
+} else {
+    create_window('Welcome to the theme customiser!',`
+    <p>Have a scroll through and configure to your liking, then <strong>hit the confirm button once you're ready to save</strong>.</p>
+    `,[
+        {
+            'text': 'Continue',
+            'onclick': 'kill_windows()'
+        }
+    ],'welcome_bleh2_customise');
+}
+
+function try_again() {
+    location.reload();
+}
+
+
+
+
 // on start
 for (let item in options)
     bleh[item] = options[item].value;

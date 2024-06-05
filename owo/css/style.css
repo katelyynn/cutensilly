@@ -129,12 +129,20 @@ strong,
     --shout-inset: 52px;
 
     --menu-shadow: 2px 2px 24px 0 hsla(var(--b7), 0.35), 3px 6px 48px 16px hsla(var(--b7), 0.25);
+    --menu-overlay-shadow: 0 -250px 10px 100px hsla(var(--b6), 70%);
+    --avatar-shadow: 3px 6px 15px 10px hsla(var(--b7), 0.05);
+    --standout-shadow: 3px 6px 32px 16px hsla(var(--b7), 0.2);
 
     --noise: url('/img/noise.png');
     --gloss: url('/img/gloss.svg');
     --gloss-opacity: 0.2;
 
-    --interact-shadow: hsla(var(--b7), 0.1) 0 2px 4px 0;
+    --interactable-inset: inset hsl(var(--b3)) 0 -1px 0;
+    --interactable-outer: hsla(var(--b7), 0.3) 0 2px 3px 0;
+    --interactable-active-outer: hsla(var(--c1), 0.03) 0 2px 25px 0;
+
+    --interact-shadow: var(--interactable-inset), var(--interactable-outer);
+    --active-shadow: var(--interactable-inset), var(--interactable-outer), var(--interactable-active-outer);
 
     --chartlist-fill: var(--hue-gradient, hsl(var(--l3)));
 
@@ -380,19 +388,26 @@ strong, em {
 }
 
 
-footer.content {
-    width: var(--cards-width);
-    margin: 60px auto var(--card-gap) ;
+footer {
+    padding: calc(var(--card-gap) * 8) 0;
+    margin-top: 240px;
+    background-color: hsla(var(--b4), 10%);
     color: hsl(var(--c3));
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        width: var(--cards-width);
+    }
 }
 
-footer.content a:not(.btn) {
+footer a:not(.btn) {
     color: hsl(var(--c3));
     text-decoration: none;
 }
-footer.content a:not(.btn):hover {
+footer a:not(.btn):hover {
     color: hsla(var(--c3),80%);
 }
 
