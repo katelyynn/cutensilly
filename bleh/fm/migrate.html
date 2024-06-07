@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title id="page-title" translate="no">migrate to bleh³ — cutensilly.org</title>
+    <meta name="title" content="migrate to bleh³ — cutensilly.org">
+    <meta name="description" content="bleh is now available as an extension!! — and migrating is simple.">
+    <meta name="keywords" content="kate, katie, last, lastfm, last.fm, lfm, music, streaming, stat, statistics, theme, skin, lastfm skin, lastfm theme, lastfm stylus, stylus theme, stylus, lastfm minimal, lastfm sleek, lastfm dark theme, lastfm dark">
+    <meta property="og:site_name" content="kate">
+    <meta property="og:type" content="website">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://cutensilly.org/bleh/main">
+    <meta property="og:title" content="migrate to bleh³ — cutensilly.org">
+    <meta property="og:description" content="bleh is now available as an extension!! — and migrating is simple.">
+    <meta property="og:image" content="/img/bleh2-main.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="theme-color" content="#000000">
+    <!-- mobile iOS support -->
+    <link rel="apple-touch-icon" href="https://cutensilly.org/img/ios.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="/owo/css/reset.css">
+    <link rel="stylesheet" href="/owo/css/style.css">
+    <link rel="stylesheet" href="/css/style-lfm.css">
+    <link rel="stylesheet" href="/css/bleh.css">
+    <!-- icon -->
+    <link rel="shortcut icon" type="ico" href="/img/avi.png"/>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- icons -->
+    <script src="/js/lucide.js"></script>
+    <!-- tooltips -->
+    <!--<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+    <script src="https://unpkg.com/tippy.js@6" defer></script>-->
+</head>
+<body style="--base-hue: 255">
+    <!-- overlays -->
+    <div class="overlay center-full" id="hook_windows"></div>
+    <div class="overlay center">
+        <div class="chips" id="hook_chips"></div>
+    </div>
+    <link rel="stylesheet" href="/owo/css/modal.css">
+    <script src="/owo/js/modal.js"></script>
+    <script src="/owo/js/input.js"></script>
+    <script src="/js/windows.js"></script>
+    <!-- content -->
+    <!--<link rel="stylesheet" href="/owo/css/snow.css">-->
+    <link rel="stylesheet" href="/owo/css/landing.css">
+    <link rel="stylesheet" href="/owo/css/panel.css">
+    <link rel="stylesheet" href="/owo/css/flex.css">
+    <link rel="stylesheet" href="/owo/css/button.css">
+    <link rel="stylesheet" href="/owo/css/avatar.css">
+    <link rel="stylesheet" href="/owo/css/status.css">
+    <link rel="stylesheet" href="/owo/css/input.css">
+    <link rel="stylesheet" href="/owo/css/grid.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+        :root {--font-brand: Comfortaa, var(--font)}
+
+        h1.hi.kate {
+            font-family: var(--font-brand);
+        }
+        .hi.kate sup {
+            font-family: var(--font);
+        }
+
+
+        .browser-choices {
+            margin-top: var(--card-gap);
+            display: flex;
+            gap: var(--card-gap);
+        }
+
+        .browser {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            width: 230px;
+        }
+        .browser-icon {
+            width: 32px !important;
+            height: 32px;
+            margin: 6px 0;
+        }
+
+        .window {
+            max-width: unset;
+        }
+
+        .browser .caption {
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: var(--font-weight);
+            color: hsl(var(--c3));
+        }
+    </style>
+    <header>
+        <div class="content">
+            <div class="logo">
+                <a href="/bleh/fm">
+                    bleh
+                </a>
+                <div class="nav">
+                    <a class="btn" href="/">
+                        by cutensilly
+                    </a>
+                </div>
+            </div>
+            <div class="nav">
+                <a class="btn" href="/bleh/fm">
+                    <i class="icon w-16" data-lucide="home"></i>
+                    Home
+                </a>
+                <a class="btn" href="https://github.com/katelyynn/bleh" target="_blank">
+                    <i class="icon w-16" data-lucide="code"></i>
+                    Source code
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="bg big-bg" style="background-image: url(/img/shiggy.png); opacity: 0.25; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
+    <main class="panel-container hero">
+        <section class="content flex flex-column flex-gap flex-align-center full-width" style="gap: 20px; height: 500px; justify-content: center; text-align: center">
+            <h1 class="special hi kate">bleh has been upgraded</h1>
+            <h3>bleh is now available as an extension!! — and migrating is simple.</h3>
+        </section>
+        <section class="content flex flex-column flex-gap flex-align-center full-width" style="padding-bottom: 120px">
+            <div class="btn-row">
+                <a role="button" class="btn primary shine brand" onclick="migrate()">
+                    <span class="text">Click to migrate</span>
+                    <i class="icon w-20" data-lucide="chevron-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+    <style>
+        .special {
+            font-size: 70px;
+            line-height: 90px;
+            font-family: var(--font-brand);
+        }
+
+        .btn.brand.primary {
+            box-shadow: 0 0 100px 10px hsl(var(--h4));
+
+            footer:has(&) {
+                justify-content: center;
+            }
+        }
+
+        .steps-images {
+            display: flex;
+            gap: var(--card-gap);
+            margin-top: var(--card-gap);
+        }
+        .browser,
+        .steps-images img {
+            flex: 1;
+        }
+        .browser {
+            width: unset;
+        }
+
+        .window main {
+            text-align: center;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    </style>
+    <main class="panel-container uninstalled2-only">
+        <section class="content flex flex-column flex-gap flex-align-center full-width uninstalled2-only" style="--gap: 20px">
+            <h3 id="style_addons">Key features</h3>
+            <p class="text-16">Key features in bleh to enhance your experience.</p>
+            <div class="item-grid" style="width: 100%">
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon">
+                            <i class="icon w-24" data-lucide="layout-dashboard"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Refreshing, sleek design</h5>
+                        <p>Try out the new <i class="hi">grid and icon-based interface</i>, complete with a full dark theme.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon" style="--hue: 210">
+                            <i class="icon w-24" data-lucide="moon-star"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Even easier on the eyes</h5>
+                        <p>Find the default theme too bright? Try out the <i class="hi">OLED theme</i>, available as an addon.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon" style="--hue: 174">
+                            <i class="icon w-24" data-lucide="paintbrush"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Choose your favourite colour</h5>
+                        <p>Apply a splash of custom colour to the theme using the <a class="hi" href="/bleh/fm/customise">theme customiser</a>!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon" style="--hue: 300">
+                            <i class="icon w-24" data-lucide="settings-2"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Customise to your liking</h5>
+                        <p>Overtime the theme becomes more customisable!! Check out the theme customiser.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon" style="--hue: -2; --lit: 1.1">
+                            <i class="icon w-24" data-lucide="refresh-ccw"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Kept updated</h5>
+                        <p>The theme updates to fit with any new last.fm changes (rare) along with general theme changes.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <div class="kate-icon" style="--hue: 15">
+                            <i class="icon w-24" data-lucide="triangle-alert"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>Hateful content blocks</h5>
+                        <p>Users who post <a href="hateful" target="_blank">hateful content</a> are automatically hidden - bleh² does what last.fm don't.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="gap uninstalled2-only" style="--gap: 120px"></div>
+        <section class="content flex flex-column flex-gap flex-align-center uninstalled2-only" style="--gap: 20px">
+            <h3>peaked your interest?</h3>
+            <p class="text-18">click the big purple button to install now :3</p>
+            <a role="button" class="btn primary shine" onclick="create_install_window2()" id="install-btn-2">
+                <span class="text">Click to install</span>
+                <i class="icon w-16" data-lucide="chevron-right"></i>
+            </a>
+        </section>
+        <div class="gap uninstalled2-only" style="--gap: 120px"></div>
+        <!-- -->
+    </main>
+</body>
+<footer>
+    <div class="content">
+        <span class="main">
+            <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
+        </span>
+        <span class="links">
+            <a href="https://github.com/katelyynn/bleh">View theme source</a>
+            <a href="https://github.com/katelyynn/cutensilly">View source</a>
+        </span>
+    </div>
+</footer>
+<script src="/js/addons2.js"></script>
+<script src="/js/migrate.js"></script>
+<script>lucide.createIcons();</script>

@@ -34,8 +34,10 @@ function create_window(title, text, actions, id, icon = '', html_header = false,
         let btn = document.createElement('a');
         btn.classList.add('btn');
 
-        if (act.type != undefined)
+        if (act.type != undefined && act.type != 'brand')
             btn.classList.add(act.type);
+        else if (act.type == 'brand')
+            btn.classList.add('primary','brand');
 
         if (act.onclick != undefined)
             btn.setAttribute('onclick',act.onclick);
