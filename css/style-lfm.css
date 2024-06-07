@@ -244,8 +244,8 @@ h2 {
 }
 .main-image img {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: var(--raise-1);
+    border-radius: 20px;
+    box-shadow: var(--menu-shadow);
 }
 
 

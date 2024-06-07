@@ -146,6 +146,12 @@
                     </figure>
                     <figure>
                         <div class="main-image">
+                            <img src="/img/bleh2-settings.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="settings-2"></i>Theme settings (inside the site)</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
                             <img src="/img/bleh2-album-custom.png">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="disc"></i>Album view</figcaption>
@@ -208,23 +214,35 @@
                     </a>
                     <div>
                         <h1 class="hi kate logo">bleh</h1>
-                        <h2>a <i class="hi kate">cutensilly</i> theme for <a class="hi no-underline" href="https://last.fm">last.fm</a></h2>
+                        <h2>a <i class="hi kate">cutensilly</i> extension for <a class="hi no-underline" href="https://last.fm">last.fm</a></h2>
                     </div>
                 </div>
                 <!-- -->
-                <p class="text-18">a sleek, minimalistic refresh featuring customisable colours,<br><strong>light/dark/oled</strong> themes, and hateful blocking</p>
+                <p class="text-18">a complete overhaul for last.fm with in-built themes, colour customisation, hateful blocking, and more</p>
             </div>
         </section>
-        <section class="content flex flex-column flex-gap flex-align-center full-width" style="padding-bottom: 120px">
+        <section class="content flex flex-column flex-gap flex-align-center full-width" style="padding-bottom: 120px; gap: 30px">
             <div class="btn-row">
                 <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn">
                     <span class="text">Click to install</span>
                     <i class="icon w-20" data-lucide="chevron-right"></i>
                 </a>
             </div>
+            <div class="whats-available">
+                <h4>...or view what's available first</h4>
+                <i class="icon w-24" data-lucide="chevron-down"></i>
+            </div>
         </section>
     </main>
     <style>
+        .whats-available {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+
         .btn.brand.primary {
             box-shadow: 0 0 100px 10px hsl(var(--h4));
 
@@ -242,6 +260,32 @@
             flex: 1;
         }
     </style>
+    <main class="panel-container">
+        <section class="side-by-side content">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh2-addon-oled.png">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="gap: 20px">
+                <h2>Refreshing, sleek design for all occasions</h2>
+                <p class="text-18">Try out the new grid and icon-based interface, complete with full in-built light, dark, and oled themes.</p>
+            </div>
+        </section>
+        <section class="side-by-side content right">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh2-settings.png">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="gap: 20px">
+                <h2>Tailored to your liking</h2>
+                <p class="text-18">The extension includes an in-built settings page offering a<br><strong>colour customiser and accessibility options</strong>.</p>
+                <br>
+                <p class="text-18">Your settings can also be exported to share and imported hassle-free.</p>
+            </div>
+        </section>
+    </main>
     <main class="panel-container">
         <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
             <h3 id="style_addons">Key features</h3>
@@ -265,8 +309,8 @@
                         </div>
                     </div>
                     <div class="text">
-                        <h5>Even easier on the eyes</h5>
-                        <p>Find the default theme too bright? Try out the <i class="hi">OLED theme</i>, available as an addon.</p>
+                        <h5>For all ocassions</h5>
+                        <p>Find the default theme too bright? Too dark? Head to the settings and pick your poison.</p>
                     </div>
                 </div>
                 <div class="item">
@@ -277,7 +321,7 @@
                     </div>
                     <div class="text">
                         <h5>Choose your favourite colour</h5>
-                        <p>Apply a splash of custom colour to the theme using the <a class="hi" href="/bleh/fm/customise">theme customiser</a>!</p>
+                        <p>Apply your custom colour to all surfaces with the <i class="hi">in-built colour customiser</i>.</p>
                     </div>
                 </div>
                 <div class="item">
@@ -287,8 +331,8 @@
                         </div>
                     </div>
                     <div class="text">
-                        <h5>Customise to your liking</h5>
-                        <p>Overtime the theme becomes more customisable!! Check out the theme customiser.</p>
+                        <h5>Tailored to your liking</h5>
+                        <p>Other than colours, the extension offers <i class="hi">new settings</i> to alter your last.fm experience.</p>
                     </div>
                 </div>
                 <div class="item">
@@ -299,7 +343,7 @@
                     </div>
                     <div class="text">
                         <h5>Kept updated</h5>
-                        <p>The theme updates to fit with any new last.fm changes (rare) along with general theme changes.</p>
+                        <p>The extension updates to fit with any new last.fm changes (rare) along with general improvements.</p>
                     </div>
                 </div>
                 <div class="item">
@@ -310,7 +354,7 @@
                     </div>
                     <div class="text">
                         <h5>Hateful content blocks</h5>
-                        <p>Users who post <a href="hateful" target="_blank">hateful content</a> are automatically hidden - bleh² does what last.fm don't.</p>
+                        <p>Users who post <a href="hateful" target="_blank">hateful content</a> are automatically hidden - bleh does what last.fm don't.</p>
                     </div>
                 </div>
             </div>
