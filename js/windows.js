@@ -16,7 +16,30 @@ function install_theme() {
         }
     ],'migrate_3');
 }
+
 function finish_theme() {
+    if (chosen_browser == 'firefox') {
+        finish_theme_fully();
+    } else {
+        kill_windows();
+        create_window('Installing bleh',`
+            Unfortunately on Chrome (and related browsers) you must enable developer mode.
+            <br>Don't worry, it only takes these steps.
+            <br><br>
+            <div class="steps-images">
+                <img src="/img/config-script-1.png">
+                <img src="/img/config-script-2.png">
+            </div>
+            `,[
+            {
+                'text': 'Done!',
+                'onclick': `finish_theme_fully()`
+            }
+        ],'chrome_prompt');
+    }
+}
+
+function finish_theme_fully() {
     open('https://www.last.fm/bleh');
     kill_windows();
     create_window('Installing bleh','You may now close this tab.',[],'installation_finished');
@@ -43,23 +66,30 @@ function install_tm() {
     create_window('Install Tampermonkey',`
     <p>Depending on your browser, choose either option.</p>
     <div class="browser-choices">
-        <a class="btn browser" href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank">
+        <button class="btn browser" onclick="chosen_chrome()">
             <img class="browser-icon" src="/img/chrome.png">
             <p>Chrome</p>
             <p class="caption">for Chrome, Edge, Brave, Opera</p>
-        </a>
-        <a class="btn browser" href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank">
+        </button>
+        <button class="btn browser" onclick="chosen_firefox()">
             <img class="browser-icon" src="/img/firefox.png">
             <p>Firefox</p>
             <p class="caption">for Firefox only</p>
-        </a>
+        </button>
     </div>
-    `,[
-        {
-            'text': 'Done',
-            'onclick': `install_theme_final()`
-        }
-    ],'install_tm');
+    `,[],'install_tm');
+}
+
+function chosen_chrome() {
+    chosen_browser = 'chrome';
+    open('https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo');
+    install_theme_final();
+}
+
+function chosen_firefox() {
+    chosen_browser = 'firefox';
+    open('https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/');
+    install_theme_final();
 }
 
 
