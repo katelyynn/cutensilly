@@ -98,7 +98,7 @@ function install_theme_final() {
     create_window('Install theme',`
     Almost done! Once you have the extension installed, hit the button below to install the script.
     <br><br>
-    <img src="/img/install-script.png">
+    <img src="/img/install-script.png" style="width: 600px">
     `,[
         {
             'text': 'Install theme',
