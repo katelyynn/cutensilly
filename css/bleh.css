@@ -348,3 +348,12 @@ figcaption {
         }
     }
 }
+
+
+.side-by-side {
+    gap: 50px;
+    margin-bottom: 50px;
+}
+.side-by-side > .cover {
+    max-width: 660px !important;
+}

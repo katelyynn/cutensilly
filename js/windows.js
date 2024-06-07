@@ -47,7 +47,7 @@ function finish_theme_fully() {
 
 
 function create_install_window2() {
-    create_window('hey!','<strong>This theme uses the Tampermonkey browser extension.</strong><br><br>Do you have it installed?',[
+    /*create_window('hey!','<strong>This theme uses the Tampermonkey browser extension.</strong><br><br>Do you have it installed?',[
         {
             'text': 'Yes, I have Tampermonkey',
             'onclick': `install_theme_final()`
@@ -57,7 +57,8 @@ function create_install_window2() {
             'onclick': `install_tm()`,
             'type': 'primary'
         }
-    ],'install_theme');
+    ],'install_theme');*/
+    install_tm();
 }
 
 

@@ -260,7 +260,7 @@
             flex: 1;
         }
     </style>
-    <main class="panel-container">
+    <main class="panel-container" style="position: relative">
         <section class="side-by-side content">
             <div class="cover">
                 <div class="figure">
@@ -285,87 +285,29 @@
                 <p class="text-18">Your settings can also be exported to share and imported hassle-free.</p>
             </div>
         </section>
-    </main>
-    <main class="panel-container">
-        <section class="content flex flex-column flex-gap flex-align-center full-width" style="--gap: 20px">
-            <h3 id="style_addons">Key features</h3>
-            <p class="text-16">Key features in bleh to enhance your experience.</p>
-            <div class="item-grid" style="width: 100%">
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="layout-dashboard"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Refreshing, sleek design</h5>
-                        <p>Try out the new <i class="hi">grid and icon-based interface</i>, complete with a full dark theme.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon" style="--hue: 210">
-                            <i class="icon w-24" data-lucide="moon-star"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>For all ocassions</h5>
-                        <p>Find the default theme too bright? Too dark? Head to the settings and pick your poison.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon" style="--hue: 174">
-                            <i class="icon w-24" data-lucide="paintbrush"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Choose your favourite colour</h5>
-                        <p>Apply your custom colour to all surfaces with the <i class="hi">in-built colour customiser</i>.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon" style="--hue: 300">
-                            <i class="icon w-24" data-lucide="settings-2"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Tailored to your liking</h5>
-                        <p>Other than colours, the extension offers <i class="hi">new settings</i> to alter your last.fm experience.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon" style="--hue: -2; --lit: 1.1">
-                            <i class="icon w-24" data-lucide="refresh-ccw"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Kept updated</h5>
-                        <p>The extension updates to fit with any new last.fm changes (rare) along with general improvements.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon" style="--hue: 15">
-                            <i class="icon w-24" data-lucide="triangle-alert"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Hateful content blocks</h5>
-                        <p>Users who post <a href="hateful" target="_blank">hateful content</a> are automatically hidden - bleh does what last.fm don't.</p>
-                    </div>
+        <section class="side-by-side content">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh2-hateful.png">
                 </div>
             </div>
+            <div class="text flex flex-column flex-gap" style="gap: 20px">
+                <h2>Hiding hateful content</h2>
+                <p class="text-18">Hateful users are community-contributed and have their shouts and profiles automatically hidden.</p>
+                <br>
+                <p class="text-18">(this is configurable in the settings)</p>
+            </div>
         </section>
+        <div class="bg big-bg" style="position: absolute; height: 100%; inset: 0 !important; mix-blend-mode: multiply; background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/4277e1927f42619773627e5176cbc1e3.jpg'); z-index: -1; opacity: 0.1; --mask: linear-gradient(180deg, transparent 0%, #000 50%, transparent 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
+    </main>
+    <main class="panel-container">
         <div class="gap uninstalled2-only" style="--gap: 120px"></div>
         <section class="content flex flex-column flex-gap flex-align-center uninstalled2-only" style="--gap: 20px">
-            <h3>peaked your interest?</h3>
+            <h2>peaked your interest?</h2>
             <p class="text-18">click the big purple button to install now :3</p>
-            <a role="button" class="btn primary shine" onclick="create_install_window2()" id="install-btn-2">
+            <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn">
                 <span class="text">Click to install</span>
-                <i class="icon w-16" data-lucide="chevron-right"></i>
+                <i class="icon w-20" data-lucide="chevron-right"></i>
             </a>
         </section>
         <div class="gap uninstalled2-only" style="--gap: 120px"></div>

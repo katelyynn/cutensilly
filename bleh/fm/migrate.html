@@ -170,86 +170,52 @@
             line-height: 20px;
         }
     </style>
-    <main class="panel-container uninstalled2-only">
-        <section class="content flex flex-column flex-gap flex-align-center full-width uninstalled2-only" style="--gap: 20px">
-            <h3 id="style_addons">Key features</h3>
-            <p class="text-16">Key features in bleh to enhance your experience.</p>
-            <div class="item-grid" style="width: 100%">
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon">
-                            <i class="icon w-24" data-lucide="layout-dashboard"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Refreshing, sleek design</h5>
-                        <p>Try out the new <i class="hi">grid and icon-based interface</i>, complete with a full dark theme.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon" style="--hue: 210">
-                            <i class="icon w-24" data-lucide="moon-star"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Even easier on the eyes</h5>
-                        <p>Find the default theme too bright? Try out the <i class="hi">OLED theme</i>, available as an addon.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon" style="--hue: 174">
-                            <i class="icon w-24" data-lucide="paintbrush"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Choose your favourite colour</h5>
-                        <p>Apply a splash of custom colour to the theme using the <a class="hi" href="/bleh/fm/customise">theme customiser</a>!</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon" style="--hue: 300">
-                            <i class="icon w-24" data-lucide="settings-2"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Customise to your liking</h5>
-                        <p>Overtime the theme becomes more customisable!! Check out the theme customiser.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon" style="--hue: -2; --lit: 1.1">
-                            <i class="icon w-24" data-lucide="refresh-ccw"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Kept updated</h5>
-                        <p>The theme updates to fit with any new last.fm changes (rare) along with general theme changes.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image">
-                        <div class="kate-icon" style="--hue: 15">
-                            <i class="icon w-24" data-lucide="triangle-alert"></i>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <h5>Hateful content blocks</h5>
-                        <p>Users who post <a href="hateful" target="_blank">hateful content</a> are automatically hidden - bleh² does what last.fm don't.</p>
-                    </div>
+    <main class="panel-container">
+        <section class="side-by-side content">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh2-addon-oled.png">
                 </div>
             </div>
+            <div class="text flex flex-column flex-gap" style="gap: 20px">
+                <h2>Refreshing, sleek design for all occasions</h2>
+                <p class="text-18">Try out the new grid and icon-based interface, complete with full in-built light, dark, and oled themes.</p>
+            </div>
         </section>
+        <section class="side-by-side content right">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh2-settings.png">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="gap: 20px">
+                <h2>Tailored to your liking</h2>
+                <p class="text-18">The extension includes an in-built settings page offering a<br><strong>colour customiser and accessibility options</strong>.</p>
+                <br>
+                <p class="text-18">Your settings can also be exported to share and imported hassle-free.</p>
+            </div>
+        </section>
+        <section class="side-by-side content">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh2-hateful.png">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="gap: 20px">
+                <h2>Hiding hateful content</h2>
+                <p class="text-18">Hateful users are community-contributed and have their shouts and profiles automatically hidden.</p>
+                <br>
+                <p class="text-18">(this is configurable in the settings)</p>
+            </div>
+        </section>
+    </main>
+    <main class="panel-container">
         <div class="gap uninstalled2-only" style="--gap: 120px"></div>
         <section class="content flex flex-column flex-gap flex-align-center uninstalled2-only" style="--gap: 20px">
-            <h3>peaked your interest?</h3>
-            <p class="text-18">click the big purple button to install now :3</p>
-            <a role="button" class="btn primary shine" onclick="create_install_window2()" id="install-btn-2">
-                <span class="text">Click to install</span>
-                <i class="icon w-16" data-lucide="chevron-right"></i>
+            <h2>ready?</h2>
+            <a role="button" class="btn primary shine brand" onclick="migrate()">
+                <span class="text">Click to migrate</span>
+                <i class="icon w-20" data-lucide="chevron-right"></i>
             </a>
         </section>
         <div class="gap uninstalled2-only" style="--gap: 120px"></div>

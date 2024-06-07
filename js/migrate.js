@@ -2,7 +2,7 @@ function migrate() {
     create_window('Migrating to bleh³',`
         While previous versions of bleh were installed as styles, the latest is now (basically) an extension.
         <br><br>
-        <strong>To migrate, you must first disable the current bleh.</strong>
+        <strong>To migrate, you must first disable the current bleh theme and any addons.</strong>
         <br>
         <div class="steps-images">
             <img src="/img/open-stylus.png">
