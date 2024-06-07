@@ -468,11 +468,11 @@ svg.icon {
 
 .figure {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: var(--raise-1);
 }
 .figure img {
     width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--menu-shadow);
 }
 
 

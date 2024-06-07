@@ -45,6 +45,18 @@
         {
             "source": "/u/light/",
             "destination": "https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-light.user.css"
+        },
+        {
+            "source": "/migrate/",
+            "destination": "/bleh/fm/migrate/"
+        },
+        {
+            "source": "/bleh/fm/customise/",
+            "destination": "/bleh/fm/migrate/"
+        },
+        {
+            "source": "/bleh/fm/themes/",
+            "destination": "/bleh/fm/migrate/"
         }
     ]
 }
