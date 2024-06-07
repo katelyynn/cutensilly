@@ -17,35 +17,43 @@ function migrate() {
     ],'migrate');
 }
 
+let chosen_browser = 'chrome';
+
 function migrate_1() {
     kill_windows();
     create_window('Migrating to bleh³',`
         bleh now uses a different extension to load. Pick your browser below.
         <div class="browser-choices">
-            <a class="btn browser" href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank">
+            <button class="btn browser" onclick="chosen_chrome()">
                 <img class="browser-icon" src="/img/chrome.png">
                 <p>Chrome</p>
                 <p class="caption">for Chrome, Edge, Brave, Opera</p>
-            </a>
-            <a class="btn browser" href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank">
+            </button>
+            <button class="btn browser" onclick="chosen_firefox()">
                 <img class="browser-icon" src="/img/firefox.png">
                 <p>Firefox</p>
                 <p class="caption">for Firefox only</p>
-            </a>
+            </button>
         </div>
-        `,[
-        {
-            'text': 'Continue',
-            'type': 'primary',
-            'onclick': `migrate_2()`
-        }
-    ],'migrate_1');
+        `,[],'migrate_1');
+}
+
+function chosen_chrome() {
+    chosen_browser = 'chrome';
+    open('https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo');
+    migrate_2();
+}
+
+function chosen_firefox() {
+    chosen_browser = 'firefox';
+    open('https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/');
+    migrate_2();
 }
 
 function migrate_2() {
     kill_windows();
     create_window('Migrating to bleh³',`
-        Almost done! Once you have the extension installed, hit the button below to install the style.
+        Almost done! Once you have the extension installed, hit the button below to install the script.
         <br><br>
         <img src="/img/install-script.png">
         `,[
@@ -74,6 +82,28 @@ function migrate_3() {
 }
 
 function finish_migration() {
+    if (chosen_browser == 'firefox') {
+        finish_migration_fully();
+    } else {
+        kill_windows();
+        create_window('Migrating to bleh³',`
+            Unfortunately on Chrome (and related browsers) you must enable developer mode.
+            <br>Don't worry, it only takes these steps.
+            <br><br>
+            <div class="steps-images">
+                <img src="/img/config-script-1.png">
+                <img src="/img/config-script-2.png">
+            </div>
+            `,[
+            {
+                'text': 'Done!',
+                'onclick': `finish_migration_fully()`
+            }
+        ],'migrate_3');
+    }
+}
+
+function finish_migration_fully() {
     open('https://www.last.fm/bleh');
     kill_windows();
     create_window('Migrated to bleh³','You may now close this tab.',[],'migration_finished');
