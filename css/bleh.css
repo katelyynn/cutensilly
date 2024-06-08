@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 :root {--font-brand: Comfortaa, var(--font)}
 
-.hi.kate:not(h2 i) {
+.hi.kate:not(h2 i, p i) {
     font-family: var(--font-brand);
 }
 .hi.kate sup {
@@ -356,4 +356,50 @@ figcaption {
 }
 .side-by-side > .cover {
     max-width: 660px !important;
+}
+
+
+.frontpage-quotes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--card-gap);
+    margin-top: var(--card-padding);
+
+    .quote {
+        display: flex;
+        gap: var(--card-gap);
+        padding: var(--card-gap);
+        border: 5px solid hsla(var(--h3), 20%);
+        border-radius: 30px;
+        max-width: 620px;
+        text-decoration: none;
+        color: hsl(var(--c2));
+
+        background-color: hsla(var(--h4), 10%);
+        box-shadow: 0 0 50px hsla(var(--h4), 40%);
+
+        &.primary {
+            max-width: 910px;
+        }
+
+        .avatar {
+            --size: 64px;
+        }
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h5 {
+                font-size: 22px;
+                line-height: 26px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
 }
