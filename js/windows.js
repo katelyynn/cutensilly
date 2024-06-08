@@ -33,10 +33,17 @@ function finish_theme() {
             `,[
             {
                 'text': 'Done!',
-                'onclick': `finish_theme_fully()`
+                'onclick': `prompt_restart()`
             }
         ],'chrome_prompt');
     }
+}
+
+function prompt_restart() {
+    kill_windows();
+        create_window('Migrating to bleh³',`
+            For developer mode to take effect you must close and reopen your browser, after that you're all set.
+            `,[],'prompt_restart');
 }
 
 function finish_theme_fully() {

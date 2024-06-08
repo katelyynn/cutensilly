@@ -97,10 +97,17 @@ function finish_migration() {
             `,[
             {
                 'text': 'Done!',
-                'onclick': `finish_migration_fully()`
+                'onclick': `prompt_restart()`
             }
         ],'migrate_3');
     }
+}
+
+function prompt_restart() {
+    kill_windows();
+        create_window('Migrating to bleh³',`
+            For developer mode to take effect you must close and reopen your browser, after that you're all set.
+            `,[],'prompt_restart');
 }
 
 function finish_migration_fully() {
