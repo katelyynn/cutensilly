@@ -126,8 +126,11 @@ function parse_date(new_date) {
 
 // loop
 setTimeout(function() {
-    load_tracks(JSON.parse(localStorage.getItem('fm_tracks') || ''));
-    load_info(JSON.parse(localStorage.getItem('fm_info') || ''));
+    try {
+        load_tracks(JSON.parse(localStorage.getItem('fm_tracks') || ''));
+        load_info(JSON.parse(localStorage.getItem('fm_info') || ''));
+    } catch(e) {}
+
     request_info();
     setInterval(request_tracks,1000);
 },100);
