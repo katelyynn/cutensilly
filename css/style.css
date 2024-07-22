@@ -24,14 +24,13 @@ header {
     .logo {
         display: flex;
         justify-content: space-between;
-        height: 60px;
+        height: 40px;
 
         .logo-kate {
-            background-color: var(--accent);
-            background-image: url(/img/brand.png);
-            width: 138px;
+            background-image: url(/img/watercolour2.png);
+            width: 210px;
             display: flex;
-            height: 60px;
+            height: 40px;
         }
 
         .nav-side {
@@ -45,6 +44,7 @@ header {
                 background-color: var(--text);
                 background-image: url(/img/nav.png);
                 background-repeat: no-repeat;
+                background-position: left;
             }
         }
     }
@@ -55,7 +55,10 @@ header {
         padding: 0 12px;
         gap: 12px;
         height: 20px;
-        background-color: var(--accent);
+        background-color: #5297F9;
+        background-image: url(/img/watercolour.png);
+        background-position: right;
+        background-repeat: no-repeat;
         color: var(--text-on-accent);
         font-size: 10px;
         font-weight: bold;
