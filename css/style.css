@@ -142,7 +142,7 @@ main {
             }
 
             & > img {
-                width: 60px;
+                width: 48px;
                 border-radius: 3px;
             }
 
@@ -204,6 +204,57 @@ footer {
 
         &:hover {
             background-image: url(/img/Bitmap231.png);
+        }
+    }
+}
+
+
+.chartlist-row {
+    font-size: 11px;
+    border-top: 1px solid #ccc;
+    /*height: 34px;*/
+    height: 64px;
+    display: flex;
+    gap: 10px;
+
+    .image {
+        /*width: 34px;
+        height: 34px;*/
+        width: 64px;
+        height: 64px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .name {
+        padding: 4px 0;
+        flex: 1;
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .time {
+        padding: 4px 10px;
+        font-size: 10px;
+        color: #ccc;
+    }
+
+    &[nowplaying="true"] {
+        height: 64px;
+        background: #fffcca !important;
+
+        .image {
+            width: 64px;
+            height: 64px;
         }
     }
 }
