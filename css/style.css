@@ -125,6 +125,18 @@ main {
         .meee {
             display: flex;
             gap: 6px;
+            padding: 6px;
+            margin: -6px;
+            text-decoration: none;
+            width: fit-content;
+            color: var(--text);
+
+            &:hover {
+                border: 2px solid var(--accent);
+                margin: -8px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
 
             & > img {
                 width: 60px;
@@ -166,4 +178,29 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    a {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        text-decoration: none;
+        color: var(--text);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        padding-left: 26px;
+        height: 20px;
+        background-image: url(/img/Bitmap230.png);
+        background-repeat: no-repeat;
+        width: fit-content;
+
+        &:hover {
+            background-image: url(/img/Bitmap231.png);
+        }
+    }
 }
