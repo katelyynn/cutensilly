@@ -1,0 +1,54 @@
+:root {
+    --accent: #6699CC;
+    --text-on-accent: #fff;
+
+    --body: #fff;
+    --text: #000;
+    --font: Verdana, sans-serif;
+}
+
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+
+    .logo {
+        display: flex;
+        height: 60px;
+
+        .logo-kate {
+            background-color: var(--accent);
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        gap: 12px;
+        height: 20px;
+        background-color: var(--accent);
+        color: var(--text-on-accent);
+        font-size: 10px;
+        font-weight: bold;
+
+        a {
+            position: relative;
+            color: inherit;
+            display: flex;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
