@@ -258,3 +258,17 @@ footer {
         }
     }
 }
+
+
+hr {
+    border: none;
+    margin: unset;
+    margin-block: unset;
+    height: 10px;
+}
+
+
+.badges {
+    display: flex;
+    gap: 2px;
+}
