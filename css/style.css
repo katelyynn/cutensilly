@@ -143,6 +143,7 @@ main {
 
             & > img {
                 width: 48px;
+                height: 48px;
                 border-radius: 3px;
             }
 
@@ -160,6 +161,11 @@ main {
                 p {
                     display: flex;
                     gap: 6px;
+
+                    &.sub {
+                        font-size: 10px;
+                        color: #999;
+                    }
                 }
             }
         }
@@ -201,6 +207,7 @@ footer {
         background-image: url(/img/Bitmap230.png);
         background-repeat: no-repeat;
         width: fit-content;
+        min-width: 180px;
 
         &:hover {
             background-image: url(/img/Bitmap231.png);
