@@ -2,17 +2,24 @@
     --accent: #6699CC;
     --text-on-accent: #fff;
 
+    --html: #f8f8f8;
     --body: #fff;
     --text: #000;
     --font: Verdana, sans-serif;
 }
 
 
+html {
+    display: flex;
+    justify-content: center;
+    background-color: var(--html);
+}
 body {
-    background-color: var(--bg);
+    background-color: var(--body);
     color: var(--text);
     font-family: var(--font);
-    width: 1280px;
+    width: 1024px;
+    min-height: 100vh;
 }
 
 
