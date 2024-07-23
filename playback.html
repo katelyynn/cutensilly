@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <head>
     <!-- meta info -->
-    <title translate="no">kate — cutensilly.org</title>
+    <title translate="no">playback — cutensilly.org</title>
     <meta name="theme-color" content="#000000">
-    <meta name="title" content="kate — cutensilly.org">
+    <meta name="title" content="playback — cutensilly.org">
     <meta name="description" content="my cute n silly site">
-    <meta property="og:title" content="kate — cutensilly.org">
+    <meta property="og:title" content="playback — cutensilly.org">
     <meta property="og:description" content="my cute n silly site">
     <meta property="og:image" content="/img/preview.png">
     <meta property="og:image:width" content="1100">
@@ -38,7 +38,7 @@
         </div>
         <nav>
             <a href="/">Home</a>|
-            <a href="/where">Where Is kaaaaate</a>|
+            <a href="https://last.fm/user/cutensilly" target="_blank">Last.fm Profile</a>|
             <div class="badges">
                 <img src="/img/last.fm_badge.png">
                 <img src="/img/100female.gif">
@@ -52,22 +52,26 @@
         </div>
         <div class="content-side">
             <div class="top-win">
-                <h1>Welcome</h1>
-                <h2>To log on, click an account name</h2>
+                <h1>Listening Log</h1>
+                <h2>Music music music music music music music music music</h2>
                 <hr>
-                <a class="meee" href="/where">
-                    <img src="/img/niko.gif">
-                    <div class="text">
-                        <h3>kate</h3>
-                        <p><-- silly girl <img src="/img/asseenontv.gif"></p>
-                        <p class="sub"><strong>Pronouns: </strong> she/her</p>
+                <div class="chartlist-row" id="chartlist-row">
+                    <a class="image" id="chartlist-img-link" target="_blank">
+                        <img src="/img/niko.gif" id="chartlist-img">
+                    </a>
+                    <div class="name">
+                        <a id="chartlist-artist" target="_blank"></a> – <a id="chartlist-title" target="_blank"></a>
                     </div>
-                </a>
+                    <div class="time">
+                        <p id="chartlist-time"></p>
+                    </div>
+                </div>
                 <hr>
                 <h2>What you can do</h2>
                 <div class="quick-actions">
-                    <a href="/where">Where is she?</a>
-                    <a href="/playback">What is she listening to?</a>
+                    <a href="https://last.fm/user/cutensilly/library/artists" target="_blank">Browse top Artists</a>
+                    <a href="https://last.fm/user/cutensilly/library/albums" target="_blank">Browse top Albums</a>
+                    <a href="https://last.fm/user/cutensilly/library/tracks" target="_blank">Browse top Tracks</a>
                 </div>
             </div>
         </div>
@@ -80,3 +84,5 @@
         <p>Windows logo is © of Microsoft Corporation.</p>
     </footer>
 </body>
+<script src="/js/moment.js"></script>
+<script src="/js/fm_l.js"></script>
