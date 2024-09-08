@@ -1,0 +1,185 @@
+body {
+    font-family: "Lucida Grande", Arial, Helvetica, Verdana, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #1b1b1b;
+    background: #fff;
+
+    padding: 15px;
+    max-width: 700px;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: unset !important;
+}
+h1 {
+    color: #000;
+    font-weight: bold;
+    line-height: 1.2em;
+}
+b, strong {
+    font-weight: bold;
+}
+
+a {
+    color: #0187c5;
+    text-decoration: none;
+
+    &:hover {
+        color: #0187c5;
+        text-decoration: underline;
+    }
+}
+
+
+.profile-header-subpage-section {
+    display: flex;
+    gap: 10px;
+
+    .badge-avatar img {
+        width: 38px;
+        height: 38px;
+        padding: 1px;
+        border: 1px solid #ccc;
+        object-fit: cover;
+    }
+
+    h1 {
+        font-size: 17px;
+        margin: 0.15em 0 0 0 !important;
+        font-weight: bold;
+        line-height: 1.2em;
+        color: #0187c5;
+    }
+}
+
+.sep {
+    border-top: 1px dotted #ccc;
+    padding-top: 15px;
+}
+
+
+ul {
+    li {
+        a {
+            display: flex;
+
+            i {
+                width: 160px;
+                color: #7c7c7c;
+            }
+        }
+    }
+}
+
+
+
+
+.chartlist-row {
+    padding: unset !important;
+    align-items: start;
+    font-size: 11px;
+    line-height: 1.5em;
+    border-top: 1px solid #ccc;
+    background: unset !important;
+    --general-td-padding: 4px 10px;
+
+    display: flex;
+
+    &:hover, &:focus-within {
+        background: #bfdff4 !important;
+    }
+    &[nowplaying="true"] {
+        background: #fffcca !important;
+
+        --general-td-padding: 4px 10px;
+
+        td {
+            height: 64px;
+        }
+
+        .chartlist-image {
+            width: 64px;
+            height: 64px;
+        }
+
+        .chartlist-timestamp {
+            .chartlist-now-scrobbling {
+                &:before {
+                    background-image: var(--cdn-flatness-global-icon-eq);
+                    margin: 0 0 -2px 2px;
+                    top: 1px;
+                }
+            }
+        }
+    }
+
+    & > div {
+        padding: var(--general-td-padding);
+        height: 100%;
+        margin: unset;
+        height: 34px;
+    }
+
+    a {
+        color: #1b1b1b !important;
+    }
+
+    .chartlist-image {
+        padding: unset;
+        width: 34px;
+        height: 34px;
+        order: 0;
+        margin-right: 6px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &.chartlist-row--with-artist .chartlist-artist {
+        order: 2;
+        width: fit-content;
+        flex-shrink: 0;
+        flex-grow: 0;
+        padding-right: unset;
+        margin: unset !important;
+
+        /* adds spacing on hover */
+        &:before {
+            display: none;
+        }
+
+        &:after {
+            content: '–';
+            margin-right: 2px;
+        }
+    }
+
+    .chartlist-name {
+        order: 3;
+        padding-left: unset;
+        margin: unset !important;
+        font-weight: inherit;
+    }
+
+    .chartlist-timestamp {
+        order: 6;
+        padding: var(--general-td-padding);
+        padding-left: 10px;
+        padding-right: 5px;
+        color: var(--colour-lower);
+        font-size: 10px;
+        width: 115px;
+    }
+}
