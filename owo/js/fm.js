@@ -55,7 +55,7 @@ function load_tracks(data) {
         // now playing
         if (data.realtime == 'true') {
             document.getElementById('chartlist-row').setAttribute('nowplaying','true');
-            document.getElementById('chartlist-time').textContent = 'Scrobbling now';
+            document.getElementById('chartlist-time').textContent = '';
         } else {
             document.getElementById('chartlist-row').setAttribute('nowplaying','false');
             document.getElementById('chartlist-time').textContent = parse_date(data.timestamp);

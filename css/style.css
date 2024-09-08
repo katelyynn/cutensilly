@@ -15,6 +15,10 @@ body {
     }
 }
 
+:root {
+    --cdn-flatness-global-icon-eq: url('data:image/gif;base64,R0lGODlhDAAMALMAAP///9bW1s7Ozr29vbW1ta2traWlpZycnJSUlIyMjAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQEBQD/ACwAAAAADAAMAAAEORAEQisNQJRdKDeCIXKbKB7oYQBAiiIwcrAxnCB0DiR8wvq7X+9H3A2DSB6ix+whBs3mADBYNp+ACAAh+QQEBQD/ACwAAAAADAAMAAAEOBAEQisNQJRdKDeCIXKbKB7oYaYoggDAAbt08gJ3nexw0vc7H0BIDP6GQERwGUQMmMwBYKBkOgERACH5BAQFAP8ALAAAAAAMAAwAAAQ3EARCKw1AlF0oN4IhcpsoHuhhAECKIjBysDGc1LSd7GzS70AfQEgE9o7DW3B5GzCDA8AAwUREIwAh+QQEBQD/ACwAAAAADAAMAAAEOBAEQisNQJRdKDeCIW4AUIjioR5GuapIjBylHCd2XSZ8n+y7HhDwIwqJQx7Cx8QNmr4BYLBkIqQRACH5BAQFAP8ALAAAAAAMAAwAAAQ4EARCKw1AlF0oN4IhcpsoHuhhAECKIjBysDGc1LSd7GzS9zsfQEgM/oZARHAZRAyYzAFgoGQ6AREAIfkEBAUA/wAsAAAAAAwADAAABDgQBEIrDUCUXSg3giFymyge6GGmKOIiBwC8boLI91wnvJz4vOAPMCwGfUiiTci0DZrCAWCAaCKkEQAh+QQEBQD/ACwAAAAADAAMAAAENxAEQisNQJRdKDeCIXKbKB7oYaYoggBA6s7JC9h0osMJz+s9QHAI9Al/CKASiBgslwPAILlsAiIAIfkEBAUA/wAsAAAAAAwADAAABDYQBEIrDUCUXSg3giFymygeBwCYaIsgqqu+CQy8r5rsie4DvB7wFyTqasFkbaAMDgADhBLxjAAAIfkEBAUA/wAsAAAAAAwADAAABDcQBEIrDUCUXSg3giFymyge6GGmKIIAQOrOyQvMdKLDCc/rPUBwCPQJfwigEogYLJcDwCC5bAIiACH5BAQFAP8ALAAAAAAMAAwAAAQ3EARCKw1AlF0oN4IhcpsoHuhhpiiCAEDqzskL2HaiJzAP+Dtgr7cb/oiIoLI2WAYHgEFSiYBGAAAh+QQEBQD/ACwAAAAADAAMAAAENxAEQisNQJRdKDeCIXKbKB7oYaYo4iIHALxuQstvoicyD/g7YK+3G/6IiKDSNlgGB4BBUomARgAAOw==');
+}
+
 * {
     box-sizing: border-box;
 }
@@ -114,12 +118,25 @@ ul {
         }
 
         .chartlist-timestamp {
-            .chartlist-now-scrobbling {
-                &:before {
-                    background-image: var(--cdn-flatness-global-icon-eq);
-                    margin: 0 0 -2px 2px;
-                    top: 1px;
-                }
+            width: fit-content !important;
+            padding-left: 17px;
+            display: flex;
+            position: relative;
+
+            &:before {
+                content: '';
+                display: flex;
+                background-image: var(--cdn-flatness-global-icon-eq);
+                margin: 0 0 -2px 2px;
+                box-shadow: unset;
+                background-position: 0 0;
+                margin: unset;
+                width: 12px;
+                height: 12px;
+                transition: unset;
+                position: absolute;
+                top: 6px;
+                left: 0;
             }
         }
     }
@@ -171,6 +188,7 @@ ul {
         padding-left: unset;
         margin: unset !important;
         font-weight: inherit;
+        flex: 1;
     }
 
     .chartlist-timestamp {
@@ -178,8 +196,9 @@ ul {
         padding: var(--general-td-padding);
         padding-left: 10px;
         padding-right: 5px;
-        color: var(--colour-lower);
+        color: #999;
         font-size: 10px;
         width: 115px;
+        text-align: right;
     }
 }
