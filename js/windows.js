@@ -85,6 +85,9 @@ function install_tm() {
             <p class="caption">for Firefox only</p>
         </button>
     </div>
+    <div class="alert">
+        <strong>Do not use ESR builds of Firefox</strong> - for stability, please use stable builds of Firefox.
+    </div>
     `,[],'install_tm');
 }
 

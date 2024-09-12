@@ -81,7 +81,8 @@
 .kate-icon,
 strong,
 .badge,
-.sub
+.sub,
+.alert
 {
     --c1: var(--hue), calc(var(--sat) * 40%), 100%;
     --c2: var(--hue), calc(var(--sat) * 60%), 90%;
