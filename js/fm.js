@@ -132,5 +132,5 @@ setTimeout(function() {
     } catch(e) {}
 
     request_info();
-    setInterval(request_tracks,1000);
+    setInterval(request_tracks, 3000);
 },100);
