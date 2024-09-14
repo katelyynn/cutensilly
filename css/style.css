@@ -30,6 +30,15 @@ h1 {
     color: #000;
     font-weight: bold;
     line-height: 1.2em;
+
+    &.kate {
+        font-family: Times New Roman, serif;
+        font-size: 60px;
+        line-height: 40px;
+        font-weight: 400;
+        transform: scaleX(0.7) skewX(-5deg);
+        transform-origin: left;
+    }
 }
 b, strong {
     font-weight: bold;
