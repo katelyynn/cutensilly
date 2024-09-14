@@ -31,6 +31,10 @@ h1 {
     font-weight: bold;
     line-height: 1.2em;
 
+    a {
+        color: inherit !important;
+    }
+
     &.kate {
         font-family: Times New Roman, serif;
         font-size: 60px;
@@ -38,6 +42,25 @@ h1 {
         font-weight: 400;
         transform: scaleX(0.7) skewX(-5deg);
         transform-origin: left;
+        position: relative;
+
+        &.cute {
+            &:before {
+                content: 'cutensilly';
+                color: #D299DF;
+
+                pointer-events: none;
+
+                position: absolute;
+                top: 4px;
+                left: -20px;
+
+                font-family: ARIAL;
+                font-weight: 700;
+                transform: scaleY(0.4);
+                mix-blend-mode: overlay;
+            }
+        }
     }
 }
 b, strong {
@@ -210,4 +233,21 @@ ul {
         width: 115px;
         text-align: right;
     }
+}
+
+.disclaimer {
+    position: relative;
+
+    h1 {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+
+        font-size: 170px;
+        mix-blend-mode: color-burn;
+    }
+}
+
+.preview {
+    width: 700px;
 }
