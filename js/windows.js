@@ -85,6 +85,7 @@ function install_tm() {
             <p class="caption">for Firefox only</p>
         </button>
     </div>
+    <p class="caption no-line">There are alternatives available, such as <a href="https://violentmonkey.github.io/get-it/" target="_blank">ViolentMonkey</a>!</p>
     <div class="alert">
         <strong>Do not use ESR builds of Firefox</strong> - for stability, please use stable builds of Firefox.
     </div>
