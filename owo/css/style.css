@@ -391,17 +391,31 @@ strong, em {
 
 
 footer:not(.window footer) {
-    padding: calc(var(--card-gap) * 8) 0;
     margin-top: 240px;
-    background-color: hsla(var(--b4), 10%);
     color: hsl(var(--c3));
     display: flex;
     justify-content: center;
 
     .content {
+        border-top: 1px solid hsl(var(--b4));
+        padding: calc(var(--card-gap) * 4) 0;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         width: var(--cards-width);
+
+        .main {
+            font-size: 24px;
+            line-height: 30px;
+            font-weight: 700;
+
+            a {
+                color: hsl(var(--c2));
+
+                &:hover {
+                    color: hsla(var(--c2), 80%);
+                }
+            }
+        }
     }
 
     a:not(.btn) {
@@ -409,7 +423,8 @@ footer:not(.window footer) {
         text-decoration: none;
 
         &:hover {
-            color: hsla(var(--c3),80%);
+            color: hsla(var(--c3), 80%);
+            transition: none;
         }
     }
 
