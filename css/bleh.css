@@ -16,6 +16,16 @@ html {
     scroll-behavior: smooth;
 }
 
+.mention {
+    padding: 0 4px;
+    background-color: hsla(var(--h4), 20%);
+    border-radius: var(--item-small-radius);
+    text-decoration: none !important;
+
+    .header-wrap & {
+        background-color: hsla(var(--h3), 20%);
+    }
+}
 
 
 
@@ -42,8 +52,6 @@ figcaption {
     justify-content: center;
     align-items: center;
     gap: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
 
     .w-16 {
         --w: 14px;
