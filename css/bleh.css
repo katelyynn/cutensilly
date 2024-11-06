@@ -23,7 +23,7 @@ html {
     text-decoration: none !important;
 
     .header-wrap & {
-        background-color: hsla(var(--h3), 20%);
+        background-color: hsla(var(--h4), 20%);
     }
 }
 
@@ -108,8 +108,8 @@ figcaption {
 }
 
 .logo:not(header .logo) {
-    font-size: 96px;
-    line-height: 96px;
+    font-size: 80px;
+    line-height: 80px;
     position: relative;
     left: -8px;
 }
@@ -117,6 +117,22 @@ figcaption {
 .brand-btns {
     padding-top: 20px;
     border-top: 1px solid hsl(var(--b4));
+}
+
+
+h2.flex-header {
+    display: flex;
+    align-items: center;
+}
+.beta-badge {
+    padding: 0 6px;
+    background-color: hsl(var(--h4), 50%);
+    color: hsl(var(--l3-c));
+    box-shadow: 0 0 20px hsl(var(--h4), 50%);
+    border-radius: 9px;
+    margin-left: 6px;
+
+    font-size: var(--font-size);
 }
 
 
