@@ -367,3 +367,23 @@ ul.b {
 .preview {
     width: 700px;
 }
+
+
+.tippy-box {
+    color: #1b1b1b;
+    font-size: 10px;
+    line-height: 10px;
+    background: #fffcca;
+    border: 1px solid #ccc;
+    border-radius: unset;
+    padding: 3px 6px;
+    text-align: center;
+
+    .tippy-content {
+        padding: unset;
+
+        img {
+            width: 100%;
+        }
+    }
+}
