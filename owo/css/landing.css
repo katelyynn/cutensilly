@@ -88,7 +88,7 @@ h5.sub {
 .feature-list {
     display: flex;
     flex-direction: column;
-    gap: var(--card-gap);
+    gap: var(--card-padding);
     margin-top: var(--card-gap);
 
     .feature-list-item {
@@ -107,7 +107,7 @@ h5.sub {
             align-items: center;
 
             svg {
-                color: hsl(var(--l3-c));
+                color: hsl(var(--l2-c));
             }
         }
 
