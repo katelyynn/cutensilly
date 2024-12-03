@@ -41,10 +41,10 @@
     --b4: var(--hue), calc(var(--sat) * 8%), 22%;
 
     /* card */
-    --b5: var(--hue), calc(var(--sat) * 9%), 15%;
+    --b5: var(--hue), calc(var(--sat) * 10%), 15%;
 
     /* root */
-    --b6: var(--hue), calc(var(--sat) * 12%), 10%;
+    --b6: var(--hue), calc(var(--sat) * 14%), 10%;
     --b7: 0, 0%, 0%;
 }
 
@@ -85,10 +85,10 @@ strong,
 /* attributes */
 :root {
     --card-padding: 20px;
-    --card-radius: 8px;
+    --card-radius: var(--item-big-radius);
     --card-shadow: hsla(var(--b7), 0.25) 0 2px 4px 0;
     --card-gap: 15px;
-    --card-border: 1px solid hsl(var(--b4));
+    --card-border: unset;
 
     --cards-main-width: 902px; /* this makes it not 777, the grid looks better okay */
     --cards-sidebar-width: 400px;
@@ -273,6 +273,8 @@ body:before {
     opacity: 0.23;
     pointer-events: none;
     background-image: var(--noise);
+
+    display: none;
 }
 
 * {

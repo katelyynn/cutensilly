@@ -14,6 +14,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &.panel {
+        padding: var(--card-padding) calc(var(--card-padding) * 2);
+        box-shadow: unset;
+
+        .cover {
+            max-width: 450px !important;
+        }
+    }
 }
 .side-by-side > .cover {
     max-width: 600px;
@@ -116,7 +125,24 @@ h5.sub {
                 font-size: 16px;
                 line-height: 20px;
                 margin-top: 5px;
+                cursor: default;
             }
         }
+    }
+}
+
+.card-item-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: hsl(var(--h4), 30%);
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        color: hsl(var(--l2-c));
     }
 }
