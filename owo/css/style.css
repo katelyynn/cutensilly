@@ -550,6 +550,7 @@ header:not(.window header) {
         display: flex;
         align-items: center;
         z-index: 11;
+        padding: 0 var(--card-padding);
 
         .logo {
             display: flex;
