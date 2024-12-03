@@ -135,9 +135,8 @@
             </div>
         </div>
     </header>
-    <div class="bg big-bg" style="background-image: url(/img/shiggy.png); opacity: 0.45; --mask: linear-gradient(0deg, transparent 0%, #000 100%); mask-image: var(--mask); -webkit-mask-image: var(--mask)"></div>
-    <main class="panel-container hero">
-        <section class="side-by-side content right" style="flex: 1">
+    <main class="panel-container">
+        <section class="side-by-side content right span cut under-header" style="margin-bottom: unset; background-image: linear-gradient(180deg, hsl(var(--h4), 30%), transparent)">
             <div class="cover has-gallery">
                 <div class="gallery" id="gallery">
                     <figure>
@@ -154,55 +153,55 @@
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh3-theme-light.png">
+                            <img src="/img/bleh3-theme-light.png" loading="lazy">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Light theme selected and a custom colour)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh3-main-settings.png">
+                            <img src="/img/bleh3-main-settings.png" loading="lazy">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="settings-2"></i>bleh settings (inside the site)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh3-gallery.png">
+                            <img src="/img/bleh3-gallery.png" loading="lazy">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="gallery-vertical-end"></i>Re-designed gallery pages</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-album-custom.png">
+                            <img src="/img/bleh2-album-custom.png" loading="lazy">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="disc"></i>Album view</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-track.png">
+                            <img src="/img/bleh2-track.png" loading="lazy">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="music-3"></i>Track view</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-artist.png">
+                            <img src="/img/bleh2-artist.png" loading="lazy">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="star"></i>Artist view</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-library.png">
+                            <img src="/img/bleh2-library.png" loading="lazy">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="library-big"></i>Library view</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-library-grid.png">
+                            <img src="/img/bleh2-library-grid.png" loading="lazy">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="layout-grid"></i>Library grid view</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-obsession.png">
+                            <img src="/img/bleh2-obsession.png" loading="lazy">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="activity"></i>Obsession view</figcaption>
                     </figure>
@@ -215,30 +214,55 @@
                 </button>
             </div>
             <script src="/js/home-gallery.js"></script>
-            <div class="text flex flex-column flex-gap" style="--gap: 20px">
-                <div class="header-wrap">
-                    <a href="https://last.fm/user/cutensilly" target="_blank">
-                        <img class="avatar circular shadow" src="/img/avi.png" alt="avatar" style="--size: 96px">
-                    </a>
-                    <div>
-                        <h1 class="hi kate logo">bleh</h1>
-                        <h2>a <a class="mention" href="https://last.fm/user/cutensilly" target="_blank">@cutensilly</a> extension for <a class="hi no-underline" href="https://last.fm">last.fm</a></h2>
-                    </div>
-                </div>
-                <!-- -->
-                <p class="text-18">a <i class="hi kate">complete overhaul</i> for last.fm with in-built themes, capitalisation corrections, music title tagging decoders, colour customisation, a seasonal system, useful tweaks, and more.</p>
-            </div>
-        </section>
-        <section class="content flex flex-column flex-gap flex-align-center full-width" style="padding-bottom: 120px; gap: 30px">
-            <div class="btn-row">
-                <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn">
+            <div class="text flex flex-column flex-gap" style="--gap: 5px">
+                <h1 class="big">Music stats<br>viewed from<br>a new lens</h1>
+                <h4>Enter an alternate universe Last.fm redesigned from the ground up for usability.</h4>
+                <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn" style="margin-top: 30px">
                     <span class="text">Click to install</span>
-                    <i class="icon w-20" data-lucide="chevron-right"></i>
+                    <i class="icon w-16" data-lucide="chevron-right"></i>
                 </a>
             </div>
-            <div class="whats-available">
-                <h4>...or view what's available first</h4>
-                <i class="icon w-24" data-lucide="chevron-down"></i>
+        </section>
+        <section class="side-by-side content span cut" style="background: hsl(var(--b5))">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh3-theme-oled.png">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="--gap: 5px; flex: 1">
+                <h1>What's in it for me?</h1>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="swatch-book"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Appear just how you like</h4>
+                            <p>Enjoy a selection of four themes from the lightest to the darkest.</p>
+                            <p>Choose the colour that suits you best from a wide range of presets, the default seasonal colour, or your own personal taste!</p>
+                        </div>
+                    </div>
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="cog"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>asdkjlsdlf</h4>
+                            <p>asljkdfsdfio8wefjrgbiotjrbgfjbklvc</p>
+                            <p>aslkjsdkljgdfjlkg</p>
+                        </div>
+                    </div>
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="cog"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>asdkjlsdlf</h4>
+                            <p>asljkdfsdfio8wefjrgbiotjrbgfjbklvc</p>
+                            <p>aslkjsdkljgdfjlkg</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -252,7 +276,7 @@
 
 
         .btn.brand.primary {
-            box-shadow: 0 0 100px 10px hsl(var(--h4));
+            box-shadow: 0 0 30px 6px hsl(var(--h4), 40%);
 
             footer:has(&) {
                 justify-content: center;
@@ -283,7 +307,7 @@
         <section class="side-by-side content right">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bleh3-advanced-md.png">
+                    <img src="/img/bleh3-advanced-md.png" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 20px">
@@ -296,7 +320,7 @@
         <section class="side-by-side content">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bleh2-settings.png">
+                    <img src="/img/bleh2-settings.png" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 20px">
@@ -309,7 +333,7 @@
         <section class="side-by-side content right">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bleh3-colourful-bars.png">
+                    <img src="/img/bleh3-colourful-bars.png" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 20px">
@@ -320,7 +344,7 @@
         <section class="side-by-side content">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bleh3-language.png">
+                    <img src="/img/bleh3-language.png" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 20px">
@@ -331,7 +355,7 @@
         <section class="side-by-side content right">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bleh3-corrections.png">
+                    <img src="/img/bleh3-corrections.png" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 20px">
@@ -342,7 +366,7 @@
         <section class="side-by-side content">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bleh3-images-saved.png">
+                    <img src="/img/bleh3-images-saved.png" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 20px">
@@ -353,7 +377,7 @@
         <section class="side-by-side content right">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bleh3-settings.png">
+                    <img src="/img/bleh3-settings.png" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 20px">
@@ -364,7 +388,7 @@
         <section class="side-by-side content">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bleh3-gallery.png">
+                    <img src="/img/bleh3-gallery.png" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 20px">
@@ -373,7 +397,7 @@
             </div>
         </section>
         <div class="gap" style="--gap: 60px"></div>
-        <section class="content flex flex-column flex-gap flex-align-center" style="--gap: 20px">
+        <section class="content flex flex-column flex-gap flex-align-center span cut" style="--gap: 20px; background-color: hsl(var(--b5)); background-image: linear-gradient(180deg, hsl(var(--h4), 10%), hsl(var(--h4), 30%), hsl(var(--h4), 10%))">
             <div class="background-icon">
                 <i class="icon w-48" data-lucide="verified"></i>
             </div>

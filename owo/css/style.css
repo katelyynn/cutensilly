@@ -2,31 +2,8 @@
     owo
 */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
-
-@font-face {
-    font-family: 'IBM Plex Sans';
-    src: url('https://fonts.gstatic.com/s/ibmplexsans/v19/zYX7KVElMYYaJe8bpLHnCwDKhdTm5IVcdvfu.woff2') format('woff2');
-    unicode-range: U+002E, U+2026;
-}
-
-@font-face {
-    font-family: 'Spline Sans ALT';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('https://fonts.gstatic.com/s/splinesans/v10/_6_7ED73Uf-2WfU2LzycEbAimC0.woff2') format('woff2');
-    unicode-range: U+0049;
-}
-@font-face {
-    font-family: 'Spline Sans ALT';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url('https://fonts.gstatic.com/s/splinesans/v10/_6_7ED73Uf-2WfU2LzycEbAimC0.woff2') format('woff2');
-    unicode-range: U+0049;
-}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root {
     --hue: var(--base-hue, 255);
@@ -34,18 +11,18 @@
     --lit: var(--lightness, 1);
     --ovr: var(--invert-btn, var(--b7));
 
-    --font: Spline Sans ALT, IBM Plex Sans, IBM Plex Sans JP, Spline Sans, Inter, Roboto, Noto Sans, Noto Sans JP, Noto Color Emoji, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font: Ubuntu Sans, Spline Sans, Inter, Roboto, Noto Sans, Noto Sans JP, Noto Color Emoji, -apple-system, BlinkMacSystemFont, sans-serif;
     --font-code: Spline Sans Mono, Iosevka, JetBrains Mono, Roboto Mono, monospace;
     --font-size: 14px;
     --line-height: calc(var(--font-size) + 4px);
     --font-size-sm: 12px;
     --line-height-sm: calc(var(--font-size-sm) + 4px);
 
-    --font-weight: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 500;
+    --font-weight: 480;
+    --font-weight-medium: 650;
+    --font-weight-bold: 730;
 
-    --trans: 0.4s;
+    --trans: 0.3s;
 	--trans-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 }
 
@@ -318,22 +295,29 @@ h1, h2, h3, h4, h5 {
     color: hsl(var(--c1));
     user-select: none;
 }
-h1 {
-    font-weight: 800;
-}
+h3,
+h4,
 h5 {
     font-weight: var(--font-weight-medium);
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 30px;
+    line-height: 34px;
+
+    &.big {
+        font-size: 46px;
+        line-height: 48px;
+        margin-bottom: 10px;
+    }
 }
 h2 {
-    font-size: 32px;
-}
-h3 {
     font-size: 24px;
     line-height: 28px;
+}
+h3 {
+    font-size: 20px;
+    line-height: 24px;
 }
 h4 {
     font-size: 16px;
