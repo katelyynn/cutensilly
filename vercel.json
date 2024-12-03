@@ -3,60 +3,20 @@
     "trailingSlash": true,
     "redirects": [
         {
-            "source": "/socials",
-            "destination": "/"
+            "source": "/lfm/",
+            "destination": "/bleh/"
         },
         {
-            "source": "/me",
-            "destination": "/"
+            "source": "/bleh/fm/",
+            "destination": "/bleh/"
         },
         {
-            "source": "/about",
-            "destination": "/"
+            "source": "/bleh/u/",
+            "destination": "https://github.com/katelyynn/bleh/raw/uwu/fm/bleh.user.js"
         },
         {
-            "source": "/counter",
-            "destination": "https://cdn.discordapp.com/emojis/1014010020419080303.gif?size=96&quality=lossless"
-        },
-        {
-            "source": "/lfm",
-            "destination": "/bleh/fm/"
-        },
-        {
-            "source": "/bleh",
-            "destination": "/bleh/fm/"
-        },
-        {
-            "source": "/lfm/hue",
-            "destination": "/bleh/fm/customise/"
-        },
-        {
-            "source": "/hateful/",
-            "destination": "/bleh/fm/hateful/"
-        },
-        {
-            "source": "/u/",
-            "destination": "https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2.user.css"
-        },
-        {
-            "source": "/u/oled/",
-            "destination": "https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-oled.user.css"
-        },
-        {
-            "source": "/u/light/",
-            "destination": "https://github.com/katelyynn/bleh/raw/uwu/lastfm-bleh2-light.user.css"
-        },
-        {
-            "source": "/migrate/",
-            "destination": "/bleh/fm/migrate/"
-        },
-        {
-            "source": "/bleh/fm/customise/",
-            "destination": "/bleh/fm/migrate/"
-        },
-        {
-            "source": "/bleh/fm/themes/",
-            "destination": "/bleh/fm/migrate/"
+            "source": "/bleh/u/css",
+            "destination": "https://github.com/katelyynn/bleh/raw/uwu/fm/bleh.user.css"
         }
     ]
 }
