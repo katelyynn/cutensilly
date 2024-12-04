@@ -49,7 +49,12 @@ function prompt_restart() {
 function finish_theme_fully() {
     open('https://www.last.fm/bleh');
     kill_windows();
-    create_window('Installing bleh','You may now close this tab.',[],'installation_finished');
+    create_window('Installing bleh',`
+    You may now close this tab.
+    <div class="alert">
+        <strong>Things not looking right?</strong> - head over to the <a href="https://github.com/katelyynn/bleh/wiki/FAQ">FAQ</a> or <a href="https://github.com/katelyynn/bleh/issues/new/choose">report a bug</a>
+    </div>
+    `,[],'installation_finished');
 }
 
 
@@ -87,7 +92,7 @@ function install_tm() {
     </div>
     <p class="caption no-line">There are alternatives available, such as <a href="https://violentmonkey.github.io/get-it/" target="_blank">ViolentMonkey</a>!</p>
     <div class="alert">
-        <strong>Do not use ESR builds of Firefox</strong> - for stability, please use stable builds of Firefox.
+        <strong>Use a regular browser if possible</strong> - older versions (such as ESR builds) of browsers are known to cause issues
     </div>
     `,[],'install_tm');
 }

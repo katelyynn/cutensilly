@@ -89,15 +89,14 @@
 
         .alert {
             padding: 7px 12px;
-            background-color: hsl(var(--h3));
-            box-shadow: 0 0 20px hsl(var(--h4));
-            color: hsl(var(--b6));
+            background-color: hsl(var(--h4), 20%);
+            color: hsl(var(--l2-c));
             --hue: -2;
             --sat: 1;
             --lit: 1;
 
             margin-top: 15px;
-            border-radius: var(--item-med-radius);
+            border-radius: var(--item-big-radius);
         }
 
         .window {
@@ -517,7 +516,6 @@
         </span>
     </div>
 </footer>
-<script src="/js/addons2.js"></script>
 <script>lucide.createIcons();</script>
 <script>
     let configures = document.body.querySelectorAll('.configured-in-settings');
