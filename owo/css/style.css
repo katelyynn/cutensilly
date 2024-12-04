@@ -111,11 +111,6 @@ strong,
     --avatar-shadow: 3px 6px 15px 10px hsla(var(--b7), 0.05);
     --standout-shadow: 3px 6px 32px 16px hsla(var(--b7), 0.2);
 
-    --noise: url('/img/noise.png');
-    --gloss: url('/img/gloss.svg');
-    --gloss-opacity: 0.2;
-
-    --interactable-inset: inset hsl(var(--b3)) 0 -1px 0;
     --interactable-outer: hsla(var(--b7), 0.3) 0 2px 3px 0;
     --interactable-active-outer: hsla(var(--c1), 0.03) 0 2px 25px 0;
 
