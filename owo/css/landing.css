@@ -54,6 +54,11 @@
             border-radius: unset;
         }
     }
+    &.no-shadow {
+        img {
+            box-shadow: unset;
+        }
+    }
 }
 
 .grid-margin {

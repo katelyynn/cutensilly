@@ -137,19 +137,34 @@
     </header>
     <main class="panel-container">
         <section class="side-by-side content right span cut under-header" style="margin-bottom: unset; background-image: linear-gradient(180deg, hsl(var(--h4), 30%), transparent)">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh3-theme-dark.png">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="--gap: 5px">
+                <h1 class="big">Music stats<br>viewed from<br>a new lens</h1>
+                <h4>Enter an alternate universe Last.fm redesigned from the ground up for usability.</h4>
+                <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn" style="margin-top: 30px">
+                    <span class="text">Click to install</span>
+                    <i class="icon w-16" data-lucide="chevron-right"></i>
+                </a>
+            </div>
+        </section>
+        <section class="side-by-side content span cut grid-margin" style="background: hsl(var(--b5))">
             <div class="cover has-gallery">
                 <div class="gallery" id="gallery">
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh3-theme-dark.png">
+                            <img src="/img/bleh3-main-settings.png" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile view</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="settings-2"></i>bleh settings (inside the site)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh3-theme-oled.png">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Midnight theme selected)</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Midnight theme selected and a custom colour)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
@@ -159,33 +174,27 @@
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh3-main-settings.png" loading="lazy">
-                        </div>
-                        <figcaption><i class="icon w-16" data-lucide="settings-2"></i>bleh settings (inside the site)</figcaption>
-                    </figure>
-                    <figure>
-                        <div class="main-image">
                             <img src="/img/bleh3-gallery.png" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="gallery-vertical-end"></i>Re-designed gallery pages</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="gallery-vertical-end"></i>Redesigned gallery pages</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh2-album-custom.png" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="disc"></i>Album view</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="disc"></i>Album view (showcasing auto page colouring from cover art)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh2-track.png" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="music-3"></i>Track view</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="music-3"></i>Track view (with a custom colour)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh2-artist.png" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="star"></i>Artist view</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="star"></i>Artist view (with a custom colour)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
@@ -214,21 +223,6 @@
                 </button>
             </div>
             <script src="/js/home-gallery.js"></script>
-            <div class="text flex flex-column flex-gap" style="--gap: 5px">
-                <h1 class="big">Music stats<br>viewed from<br>a new lens</h1>
-                <h4>Enter an alternate universe Last.fm redesigned from the ground up for usability.</h4>
-                <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn" style="margin-top: 30px">
-                    <span class="text">Click to install</span>
-                    <i class="icon w-16" data-lucide="chevron-right"></i>
-                </a>
-            </div>
-        </section>
-        <section class="side-by-side content span cut grid-margin" style="background: hsl(var(--b5))">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh3-theme-oled.png">
-                </div>
-            </div>
             <div class="text flex flex-column flex-gap" style="--gap: 5px; flex: 1">
                 <h2>What's in it for me?</h2>
                 <div class="feature-list">
@@ -291,7 +285,7 @@
             <section class="side-by-side top content panel grid-margin">
                 <div class="cover at-bottom">
                     <div class="figure">
-                        <img src="/img/sm-gallery.png" style="box-shadow: unset">
+                        <img src="/img/sm-gallery.png" style="box-shadow: unset" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -309,7 +303,7 @@
         <section class="side-by-side content panel grid-margin">
             <div class="cover at-bottom">
                 <div class="figure">
-                    <img src="/img/grid.png" style="box-shadow: unset">
+                    <img src="/img/grid.png" style="box-shadow: unset" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 10px">
@@ -335,7 +329,7 @@
             <section class="side-by-side top content panel grid-margin">
                 <div class="cover at-bottom no-radius">
                     <div class="figure">
-                        <img src="/img/bars-sm.png" style="box-shadow: unset">
+                        <img src="/img/bars-sm.png" style="box-shadow: unset" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -343,7 +337,7 @@
         <section class="side-by-side content panel grid-margin">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bio.png" style="box-shadow: unset">
+                    <img src="/img/bio.png" style="box-shadow: unset" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 10px">
@@ -365,7 +359,7 @@
         <section class="side-by-side content span cut grid-margin right" style="background: hsl(var(--b5))">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bleh3-theme-oled.png">
+                    <img src="/img/bleh3-profile-christmas.png" loading="lazy">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="--gap: 5px; flex: 1">
@@ -481,6 +475,15 @@
                         <p>bleh is #awesome : ) i was going to shoot my self in the face but<br>now i can <i class="hi kate">stare at my scrobbles in a beautiful Dark mode</i> thanks to bleh : )</p>
                     </div>
                 </a>
+                <a class="quote" href="https://last.fm/user/RazzBX" target="_blank">
+                    <div class="icon">
+                        <img class="avatar shadow circular" src="/img/avi-RazzBX.png">
+                    </div>
+                    <div class="text">
+                        <h5>RazzBX</h5>
+                        <p><i class="hi kate" id="razz">ezgif-6-663fcc28c9.gif</i></p>
+                    </div>
+                </a>
                 <a class="quote" href="https://last.fm/user/u5c" target="_blank">
                     <div class="icon">
                         <img class="avatar shadow circular" src="/img/avi-u5c.png">
@@ -522,5 +525,10 @@
         tippy(configure, {
             content: 'Can be configured!'
         })
+    });
+
+    tippy(document.getElementById('razz'), {
+        content: '<img src="https://katelyn.s-ul.eu/cy4QuiRs">',
+        allowHTML: true
     });
 </script>
