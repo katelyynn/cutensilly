@@ -375,50 +375,41 @@ h2.flex-header {
 
 
 .side-by-side {
-    gap: 50px;
+    gap: 90px;
     margin-bottom: 50px;
+    padding: 0 var(--card-padding);
 }
 .side-by-side > .cover {
-    max-width: 660px !important;
+    max-width: 600px !important;
 }
 
 
 .frontpage-quotes {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: var(--card-gap);
+    gap: var(--card-padding);
     margin-top: var(--card-padding);
 
     .quote {
         display: flex;
         gap: var(--card-gap);
-        padding: var(--card-gap);
-        border: 5px solid hsla(var(--h3), 20%);
         border-radius: 30px;
+        width: 100%;
         max-width: 620px;
         text-decoration: none;
         color: hsl(var(--c2));
 
-        background-color: hsla(var(--h4), 10%);
-        box-shadow: 0 0 50px hsla(var(--h4), 40%);
-
-        &.primary {
-            max-width: 910px;
-        }
-
         .avatar {
-            --size: 64px;
+            --size: 48px;
         }
         .text {
             display: flex;
             flex-direction: column;
-            gap: 10px;
 
             h5 {
-                font-size: 22px;
-                line-height: 26px;
+                font-size: 16px;
+                line-height: 20px;
             }
             p {
                 font-size: 16px;

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title id="page-title" translate="no">bleh — a cutensilly extension for last.fm</title>
+    <meta name="title" content="bleh — a cutensilly extension for last.fm">
+    <meta name="description" content="a complete overhaul for last.fm with in-built themes, capitalisation corrections, music title tagging decoders, colour customisation, a seasonal system, useful tweaks, and more.">
+    <meta name="keywords" content="kate, katie, last, lastfm, last.fm, lfm, music, streaming, stat, statistics, theme, skin, lastfm skin, lastfm theme, lastfm stylus, stylus theme, stylus, lastfm minimal, lastfm sleek, lastfm dark theme, lastfm dark">
+    <meta property="og:site_name" content="kate">
+    <meta property="og:type" content="website">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://cutensilly.org/bleh/">
+    <meta property="og:title" content="bleh — a cutensilly extension for last.fm">
+    <meta property="og:description" content="a complete overhaul for last.fm with in-built themes, capitalisation corrections, music title tagging decoders, colour customisation, a seasonal system, useful tweaks, and more.">
+    <meta property="og:image" content="/img/bleh3-theme-dark.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="theme-color" content="#000000">
+    <!-- mobile iOS support -->
+    <link rel="apple-touch-icon" href="https://cutensilly.org/img/ios.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="/owo/css/reset.css">
+    <link rel="stylesheet" href="/owo/css/style.css">
+    <link rel="stylesheet" href="/css/style-lfm.css">
+    <link rel="stylesheet" href="/css/bleh.css">
+    <!-- icon -->
+    <link rel="shortcut icon" type="ico" href="/img/avi.png"/>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- icons -->
+    <script src="/js/lucide.js"></script>
+    <!-- tooltips -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+</head>
+<body style="--base-hue: 255">
+    <!-- overlays -->
+    <div class="overlay center-full" id="hook_windows"></div>
+    <div class="overlay center">
+        <div class="chips" id="hook_chips"></div>
+    </div>
+    <link rel="stylesheet" href="/owo/css/modal.css">
+    <script src="/owo/js/modal.js"></script>
+    <script src="/owo/js/input.js"></script>
+    <script src="/js/windows.js"></script>
+    <!-- content -->
+    <!--<link rel="stylesheet" href="/owo/css/snow.css">-->
+    <link rel="stylesheet" href="/owo/css/landing.css">
+    <link rel="stylesheet" href="/owo/css/panel.css">
+    <link rel="stylesheet" href="/owo/css/flex.css">
+    <link rel="stylesheet" href="/owo/css/button.css">
+    <link rel="stylesheet" href="/owo/css/avatar.css">
+    <link rel="stylesheet" href="/owo/css/status.css">
+    <link rel="stylesheet" href="/owo/css/input.css">
+    <link rel="stylesheet" href="/owo/css/grid.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+        :root {--font-brand: Comfortaa, var(--font)}
+
+        h1.hi.kate {
+            font-family: var(--font-brand);
+        }
+        .hi.kate sup {
+            font-family: var(--font);
+        }
+
+
+        .browser-choices {
+            margin-top: var(--card-gap);
+            display: flex;
+            gap: var(--card-gap);
+        }
+
+        .browser {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+            min-width: 230px;
+        }
+        .browser-icon {
+            width: 32px !important;
+            height: 32px;
+            margin: 6px 0;
+        }
+
+        .alert {
+            padding: 7px 12px;
+            background-color: hsl(var(--h4), 20%);
+            color: hsl(var(--l2-c));
+            --hue: -2;
+            --sat: 1;
+            --lit: 1;
+
+            margin-top: 15px;
+            border-radius: var(--item-big-radius);
+        }
+
+        .window {
+            max-width: unset;
+        }
+
+        .browser .caption {
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: var(--font-weight);
+            color: hsl(var(--c3));
+        }
+    </style>
+    <header>
+        <div class="content">
+            <div class="logo">
+                <a href="/bleh/">
+                    bleh
+                </a>
+                <div class="nav">
+                    <a class="btn" href="/">
+                        by cutensilly
+                    </a>
+                </div>
+            </div>
+            <div class="nav">
+                <a class="btn" href="/bleh/">
+                    <i class="icon w-16" data-lucide="home"></i>
+                    Home
+                </a>
+                <a class="btn" href="https://github.com/katelyynn/bleh" target="_blank">
+                    <i class="icon w-16" data-lucide="code"></i>
+                    Source code
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="panel-container">
+        <section class="side-by-side content right span cut under-header" style="margin-bottom: unset; background-image: linear-gradient(180deg, hsl(var(--h4), 30%), transparent)">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh3-theme-dark.png">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="--gap: 5px">
+                <h1 class="big">Music stats<br>viewed from<br>a new lens</h1>
+                <h4>Enter an alternate universe Last.fm redesigned from the ground up for usability.</h4>
+                <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn" style="margin-top: 30px">
+                    <span class="text">Click to install</span>
+                    <i class="icon w-16" data-lucide="chevron-right"></i>
+                </a>
+            </div>
+        </section>
+        <section class="side-by-side content span cut grid-margin" style="background: hsl(var(--b5))">
+            <div class="cover has-gallery">
+                <div class="gallery" id="gallery">
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh3-main-settings.png" loading="lazy">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="settings-2"></i>bleh settings (inside the site)</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh3-theme-oled.png">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Midnight theme selected and a custom colour)</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh3-theme-light.png" loading="lazy">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Light theme selected and a custom colour)</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh3-gallery.png" loading="lazy">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="gallery-vertical-end"></i>Redesigned gallery pages</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-album-custom.png" loading="lazy">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="disc"></i>Album view (showcasing auto page colouring from cover art)</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-track.png" loading="lazy">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="music-3"></i>Track view (with a custom colour)</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-artist.png" loading="lazy">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="star"></i>Artist view (with a custom colour)</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-library.png" loading="lazy">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="library-big"></i>Library view</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-library-grid.png" loading="lazy">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="layout-grid"></i>Library grid view</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="main-image">
+                            <img src="/img/bleh2-obsession.png" loading="lazy">
+                        </div>
+                        <figcaption><i class="icon w-16" data-lucide="activity"></i>Obsession view</figcaption>
+                    </figure>
+                </div>
+                <button class="btn icon-btn arrow-l" onclick="change(-1)">
+                    <i class="icon w-20" data-lucide="chevron-left"></i>
+                </button>
+                <button class="btn icon-btn arrow-r" onclick="change(1)">
+                    <i class="icon w-20" data-lucide="chevron-right"></i>
+                </button>
+            </div>
+            <script src="/js/home-gallery.js"></script>
+            <div class="text flex flex-column flex-gap" style="--gap: 5px; flex: 1">
+                <h2>What's in it for me?</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="swatch-book"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Appear just how you like</h4>
+                            <p>Enjoy a selection of four themes from the lightest to the darkest.</p>
+                            <p>Choose the colour that suits you best from a wide range of presets, the default seasonal colour, or your own personal taste!</p>
+                        </div>
+                    </div>
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="cog"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Interfaces built from user experience</h4>
+                            <p>The layout, look, and feel of bleh is ever-evolving to become the best it can be.</p>
+                        </div>
+                    </div>
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="chart-no-axes-combined"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Find the stats that matter</h4>
+                            <p>Your music library has been upgraded with smarter graphs offering easy-to-read information.</p>
+                        </div>
+                    </div>
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="refresh-cw"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Stay updated</h4>
+                            <p>Never get left behind with automatic update checking. You can even view what's new with the handy in-built changelog.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="side-by-side content panel right grid-margin">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/smart.png" style="box-shadow: unset">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="gap: 10px">
+                <div class="card-item-icon">
+                    <i class="icon w-24" data-lucide="disc-3"></i>
+                </div>
+                <h2>Make your music smarter<span class="header-icon subtext configured-in-settings"><i class="icon w-12" data-lucide="info"></i></span></h2>
+                <p class="text-16">Show guest features how they were always intended, clutter-free.</p>
+                <p class="text-16">Additionally help contribute to a growing capitalisation correction system for you and everyone else.</p>
+            </div>
+        </section>
+        <section class="grid-panels grid-size-2">
+            <section class="side-by-side top content panel grid-margin">
+                <div class="cover at-bottom">
+                    <div class="figure">
+                        <img src="/img/sm-gallery.png" style="box-shadow: unset" loading="lazy">
+                    </div>
+                </div>
+            </section>
+            <section class="side-by-side top content panel grid-margin">
+                <div class="text flex flex-column flex-gap" style="gap: 10px">
+                    <div class="card-item-icon">
+                        <i class="icon w-24" data-lucide="gallery-vertical-end"></i>
+                    </div>
+                    <h2>Browse like never before</h2>
+                    <p class="text-16">Get a full look at gallery images while browsing, with an additional 'Expand' option for the full resolution.</p>
+                    <p class="text-16">Use the save image feature to bookmark photos for another time, very useful for profile layouts.</p>
+                </div>
+            </section>
+        </section>
+        <section class="side-by-side content panel grid-margin right">
+            <div class="cover at-bottom">
+                <div class="figure">
+                    <img src="/img/grid.png" style="box-shadow: unset" loading="lazy">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="gap: 10px">
+                <div class="card-item-icon">
+                    <i class="icon w-24" data-lucide="star"></i>
+                </div>
+                <h2>Redesigned grids</h2>
+                <p class="text-16">Visualise your total artist plays in style with colours derived from a gradient.</p>
+                <p class="text-16">Make photos pop by using the primary colour as a gradient.</p>
+            </div>
+        </section>
+        <section class="grid-panels grid-size-2">
+            <section class="side-by-side top content panel grid-margin">
+                <div class="cover at-bottom no-radius">
+                    <div class="figure">
+                        <img src="/img/bars-sm.png" style="box-shadow: unset" loading="lazy">
+                    </div>
+                </div>
+            </section>
+            <section class="side-by-side top content panel grid-margin">
+                <div class="text flex flex-column flex-gap" style="gap: 10px">
+                    <div class="card-item-icon">
+                        <i class="icon w-24" data-lucide="link"></i>
+                    </div>
+                    <h2>Scrobble music together</h2>
+                    <p class="text-16">Set a profile shortcut to stay up-to-date with their artist, album, or track scrobbles at a glance.</p>
+                    <p class="text-16">Additionally see those colourful gradients in top artist leaderboards.</p>
+                </div>
+            </section>
+        </section>
+        <section class="side-by-side content panel grid-margin right">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bio.png" style="box-shadow: unset" loading="lazy">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="gap: 10px">
+                <div class="card-item-icon">
+                    <i class="icon w-24" data-lucide="message-circle"></i>
+                </div>
+                <h2>Format shouts and profiles<span class="header-icon subtext configured-in-settings"><i class="icon w-12" data-lucide="info"></i></span></h2>
+                <p class="text-16">Welcome new-lines, links, bold, italics, and more back into your life with markdown parsing.</p>
+                <p class="subtext"><i class="icon w-12" data-lucide="users"></i>Only visible to other bleh users</p>
+            </div>
+        </section>
+        <!--<section class="content grid-margin">
+            <div class="cover no-radius">
+                <div class="figure">
+                    <img src="/img/big-gallery.png" style="box-shadow: unset">
+                </div>
+            </div>
+        </section>-->
+        <section class="side-by-side content span cut grid-margin" style="background: hsl(var(--b5))">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh3-profile-christmas.png" loading="lazy">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="--gap: 5px; flex: 1">
+                <h1>and there's even more :3</h1>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="text"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Edit wikis with the tools required</h4>
+                            <p>Get quick reminders for available wiki syntax along with easy symbol presets.</p>
+                        </div>
+                    </div>
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="calendar-clock"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Get in the festive (or spooky) spirit<span class="header-icon subtext configured-in-settings"><i class="icon w-12" data-lucide="info"></i></span></h4>
+                            <p>During special times of the year bleh will become themed for the occasion.</p>
+                        </div>
+                    </div>
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="person-standing"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Accessible to your needs</h4>
+                            <p>As time goes on, options are being made to accomodate everyone.</p>
+                            <p>You can easily change your font within the settings, enable reduced motion, link underlines, and more to come.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--<section class="grid-panels grid-size-2">
+            <section class="side-by-side top content panel grid-margin">
+                <div class="text flex flex-column flex-gap" style="gap: 10px">
+                    <div class="card-item-icon">
+                        <i class="icon w-24" data-lucide="text"></i>
+                    </div>
+                    <h2>Edit wikis with the tools required</h2>
+                    <p class="text-16">Get quick reminders for available wiki syntax along with easy symbol presets.</p>
+                </div>
+            </section>
+            <section class="side-by-side top content panel grid-margin">
+                <div class="cover at-bottom no-radius">
+                    <div class="figure">
+                        <img src="/img/wiki-edit.png" style="box-shadow: unset">
+                    </div>
+                </div>
+            </section>
+        </section>-->
+    </main>
+    <style>
+        .whats-available {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+
+        .btn.brand.primary {
+            box-shadow: 0 0 30px 6px hsl(var(--h4), 40%);
+
+            footer:has(&) {
+                justify-content: center;
+            }
+        }
+
+        .steps-images {
+            display: flex;
+            gap: var(--card-gap);
+            margin-top: var(--card-gap);
+        }
+        .steps-images img {
+            flex: 1;
+        }
+    </style>
+    <main class="panel-container" style="position: relative">
+        <section class="content flex flex-column flex-gap flex-align-center span cut" style="--gap: 20px; background-color: hsl(var(--b5)); background-image: linear-gradient(180deg, hsl(var(--h4), 10%), hsl(var(--h4), 30%), hsl(var(--h4), 10%))">
+            <div class="background-icon">
+                <i class="icon w-48" data-lucide="verified"></i>
+            </div>
+            <h2>Hear what these <i class="hi kate">certified happy customers</i> had to say</h2>
+            <div class="frontpage-quotes">
+                <a class="quote" href="https://last.fm/user/bIeak" target="_blank">
+                    <div class="icon">
+                        <img class="avatar shadow circular" src="/img/avi-bIeak.png">
+                    </div>
+                    <div class="text">
+                        <h5>bIeak</h5>
+                        <p>mynames sneek and i was on the brink of bankruptcy deep in taiwan, my frogs werent selling and all of my breeding attempts were failing. it was over and i was about to give up entirely. then cutensilly contacted me and with the last of my remaining data on my shitty nokia i downloaded bleh™ and instantly i was <i class="hi kate">showered in amazingly bred frogs to sell</i> to other taiwanese citizens and my life was saved im now a millionaire</p>
+                    </div>
+                </a>
+                <a class="quote" href="https://last.fm/user/inozom" target="_blank">
+                    <div class="icon">
+                        <img class="avatar shadow circular" src="/img/avi-inozom.png">
+                    </div>
+                    <div class="text">
+                        <h5>inozom</h5>
+                        <p>quote loading</p>
+                    </div>
+                </a>
+                <a class="quote" href="https://last.fm/user/rainsleep" target="_blank">
+                    <div class="icon">
+                        <img class="avatar shadow circular" src="/img/avi-rainsleep.png">
+                    </div>
+                    <div class="text">
+                        <h5>rainsleep</h5>
+                        <p>bleh is #awesome : ) i was going to shoot my self in the face but<br>now i can <i class="hi kate">stare at my scrobbles in a beautiful Dark mode</i> thanks to bleh : )</p>
+                    </div>
+                </a>
+                <a class="quote" href="https://last.fm/user/RazzBX" target="_blank">
+                    <div class="icon">
+                        <img class="avatar shadow circular" src="/img/avi-RazzBX.png">
+                    </div>
+                    <div class="text">
+                        <h5>RazzBX</h5>
+                        <p><i class="hi kate" id="razz">ezgif-6-663fcc28c9.gif</i></p>
+                    </div>
+                </a>
+                <a class="quote" href="https://last.fm/user/u5c" target="_blank">
+                    <div class="icon">
+                        <img class="avatar shadow circular" src="/img/avi-u5c.png">
+                    </div>
+                    <div class="text">
+                        <h5>u5c</h5>
+                        <p>meow meow meow <i class="hi kate">mrrp mrow</i> purrr ^_^<br>(i endorse bleh theme it saved my marriage)</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <div class="gap" style="--gap: 120px"></div>
+        <section class="content flex flex-column flex-gap flex-align-center" style="--gap: 20px">
+            <h2>peaked your interest?</h2>
+            <p class="text-18">click the big purple button to install now :3</p>
+            <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn">
+                <span class="text">Click to install</span>
+                <i class="icon w-20" data-lucide="chevron-right"></i>
+            </a>
+        </section>
+    </main>
+</body>
+<footer>
+    <div class="content">
+        <span class="main">
+            <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2025</a>
+        </span>
+        <span class="links">
+            <a href="https://github.com/katelyynn/bleh">View theme source</a>
+            <a href="https://github.com/katelyynn/cutensilly">View source</a>
+        </span>
+    </div>
+</footer>
+<script>lucide.createIcons();</script>
+<script>
+    let configures = document.body.querySelectorAll('.configured-in-settings');
+    configures.forEach((configure) => {
+        tippy(configure, {
+            content: 'Can be configured!'
+        })
+    });
+
+    tippy(document.getElementById('razz'), {
+        content: '<img src="/img/ezgif-6-663fcc28c9.gif">',
+        allowHTML: true
+    });
+</script>

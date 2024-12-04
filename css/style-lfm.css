@@ -177,9 +177,6 @@ h1, h2, h3 {
 .windows h3 {
     padding: 8px 0;
 }
-h2 {
-    font-size: 28px;
-}
 
 .flex-down {
     display: flex !important;

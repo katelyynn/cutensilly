@@ -54,6 +54,8 @@
     align-items: center;
     gap: var(--card-padding);
     user-select: none;
+    font-size: 16px;
+    line-height: 20px;
 }
 .window header > .icon {
     display: flex;

@@ -2,31 +2,8 @@
     owo
 */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
-
-@font-face {
-    font-family: 'IBM Plex Sans';
-    src: url('https://fonts.gstatic.com/s/ibmplexsans/v19/zYX7KVElMYYaJe8bpLHnCwDKhdTm5IVcdvfu.woff2') format('woff2');
-    unicode-range: U+002E, U+2026;
-}
-
-@font-face {
-    font-family: 'Spline Sans ALT';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('https://fonts.gstatic.com/s/splinesans/v10/_6_7ED73Uf-2WfU2LzycEbAimC0.woff2') format('woff2');
-    unicode-range: U+0049;
-}
-@font-face {
-    font-family: 'Spline Sans ALT';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url('https://fonts.gstatic.com/s/splinesans/v10/_6_7ED73Uf-2WfU2LzycEbAimC0.woff2') format('woff2');
-    unicode-range: U+0049;
-}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root {
     --hue: var(--base-hue, 255);
@@ -34,18 +11,18 @@
     --lit: var(--lightness, 1);
     --ovr: var(--invert-btn, var(--b7));
 
-    --font: Spline Sans ALT, IBM Plex Sans, IBM Plex Sans JP, Spline Sans, Inter, Roboto, Noto Sans, Noto Sans JP, Noto Color Emoji, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font: Ubuntu Sans, Spline Sans, Inter, Roboto, Noto Sans, Noto Sans JP, Noto Color Emoji, -apple-system, BlinkMacSystemFont, sans-serif;
     --font-code: Spline Sans Mono, Iosevka, JetBrains Mono, Roboto Mono, monospace;
     --font-size: 14px;
     --line-height: calc(var(--font-size) + 4px);
     --font-size-sm: 12px;
     --line-height-sm: calc(var(--font-size-sm) + 4px);
 
-    --font-weight: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 500;
+    --font-weight: 480;
+    --font-weight-medium: 650;
+    --font-weight-bold: 730;
 
-    --trans: 0.4s;
+    --trans: 0.3s;
 	--trans-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 }
 
@@ -64,10 +41,10 @@
     --b4: var(--hue), calc(var(--sat) * 8%), 22%;
 
     /* card */
-    --b5: var(--hue), calc(var(--sat) * 9%), 15%;
+    --b5: var(--hue), calc(var(--sat) * 10%), 15%;
 
     /* root */
-    --b6: var(--hue), calc(var(--sat) * 12%), 10%;
+    --b6: var(--hue), calc(var(--sat) * 14%), 10%;
     --b7: 0, 0%, 0%;
 }
 
@@ -108,10 +85,10 @@ strong,
 /* attributes */
 :root {
     --card-padding: 20px;
-    --card-radius: 8px;
+    --card-radius: var(--item-big-radius);
     --card-shadow: hsla(var(--b7), 0.25) 0 2px 4px 0;
     --card-gap: 15px;
-    --card-border: 1px solid hsl(var(--b4));
+    --card-border: unset;
 
     --cards-main-width: 902px; /* this makes it not 777, the grid looks better okay */
     --cards-sidebar-width: 400px;
@@ -134,16 +111,11 @@ strong,
     --avatar-shadow: 3px 6px 15px 10px hsla(var(--b7), 0.05);
     --standout-shadow: 3px 6px 32px 16px hsla(var(--b7), 0.2);
 
-    --noise: url('/img/noise.png');
-    --gloss: url('/img/gloss.svg');
-    --gloss-opacity: 0.2;
-
-    --interactable-inset: inset hsl(var(--b3)) 0 -1px 0;
     --interactable-outer: hsla(var(--b7), 0.3) 0 2px 3px 0;
     --interactable-active-outer: hsla(var(--c1), 0.03) 0 2px 25px 0;
 
-    --interact-shadow: var(--interactable-inset), var(--interactable-outer);
-    --active-shadow: var(--interactable-inset), var(--interactable-outer), var(--interactable-active-outer);
+    --interact-shadow: var(--interactable-outer);
+    --active-shadow: var(--interactable-outer), var(--interactable-active-outer);
 
     --chartlist-fill: var(--hue-gradient, hsl(var(--l3)));
 
@@ -296,6 +268,8 @@ body:before {
     opacity: 0.23;
     pointer-events: none;
     background-image: var(--noise);
+
+    display: none;
 }
 
 * {
@@ -318,22 +292,29 @@ h1, h2, h3, h4, h5 {
     color: hsl(var(--c1));
     user-select: none;
 }
-h1 {
-    font-weight: 800;
-}
+h3,
+h4,
 h5 {
     font-weight: var(--font-weight-medium);
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 30px;
+    line-height: 34px;
+
+    &.big {
+        font-size: 46px;
+        line-height: 48px;
+        margin-bottom: 10px;
+    }
 }
 h2 {
-    font-size: 32px;
-}
-h3 {
     font-size: 24px;
     line-height: 28px;
+}
+h3 {
+    font-size: 20px;
+    line-height: 24px;
 }
 h4 {
     font-size: 16px;
@@ -441,6 +422,10 @@ svg.icon {
     height: var(--w);
 }
 
+.w-12 {
+    --w: 12px;
+    stroke-width: 2.5;
+}
 .w-16 {
     --w: 16px;
     stroke-width: 2.5;
@@ -486,6 +471,7 @@ svg.icon {
 
 
 .figure {
+    display: flex;
     width: 100%;
 }
 .figure img {
@@ -550,6 +536,7 @@ header:not(.window header) {
         display: flex;
         align-items: center;
         z-index: 11;
+        padding: 0 var(--card-padding);
 
         .logo {
             display: flex;
