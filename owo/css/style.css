@@ -119,8 +119,8 @@ strong,
     --interactable-outer: hsla(var(--b7), 0.3) 0 2px 3px 0;
     --interactable-active-outer: hsla(var(--c1), 0.03) 0 2px 25px 0;
 
-    --interact-shadow: var(--interactable-inset), var(--interactable-outer);
-    --active-shadow: var(--interactable-inset), var(--interactable-outer), var(--interactable-active-outer);
+    --interact-shadow: var(--interactable-outer);
+    --active-shadow: var(--interactable-outer), var(--interactable-active-outer);
 
     --chartlist-fill: var(--hue-gradient, hsl(var(--l3)));
 

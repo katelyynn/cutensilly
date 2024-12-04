@@ -55,7 +55,6 @@
 .toggle:hover,
 .btn:hover {
     background-color: var(--bg-hov);
-    box-shadow: var(--shadow-hov);
     transition: none;
 }
 .toggle:active,
