@@ -8,7 +8,7 @@
     <meta property="og:site_name" content="kate">
     <meta property="og:type" content="website">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="og:url" content="https://cutensilly.org/bleh/fm">
+    <meta property="og:url" content="https://cutensilly.org/bleh/">
     <meta property="og:title" content="bleh — a cutensilly extension for last.fm">
     <meta property="og:description" content="a complete overhaul for last.fm with in-built themes, capitalisation corrections, music title tagging decoders, colour customisation, a seasonal system, useful tweaks, and more.">
     <meta property="og:image" content="/img/bleh3-theme-dark.png">
@@ -33,8 +33,8 @@
     <!-- icons -->
     <script src="/js/lucide.js"></script>
     <!-- tooltips -->
-    <!--<script src="https://unpkg.com/@popperjs/core@2" defer></script>
-    <script src="https://unpkg.com/tippy.js@6" defer></script>-->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
 </head>
 <body style="--base-hue: 255">
     <!-- overlays -->
@@ -114,7 +114,7 @@
     <header>
         <div class="content">
             <div class="logo">
-                <a href="/bleh/fm">
+                <a href="/bleh/">
                     bleh
                 </a>
                 <div class="nav">
@@ -124,7 +124,7 @@
                 </div>
             </div>
             <div class="nav">
-                <a class="btn" href="/bleh/fm">
+                <a class="btn" href="/bleh/">
                     <i class="icon w-16" data-lucide="home"></i>
                     Home
                 </a>
@@ -223,7 +223,7 @@
                 </a>
             </div>
         </section>
-        <section class="side-by-side content span cut" style="background: hsl(var(--b5))">
+        <section class="side-by-side content span cut grid-margin" style="background: hsl(var(--b5))">
             <div class="cover">
                 <div class="figure">
                     <img src="/img/bleh3-theme-oled.png">
@@ -260,10 +260,19 @@
                             <p>Your music library has been upgraded with smarter graphs offering easy-to-read information.</p>
                         </div>
                     </div>
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="refresh-cw"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Stay updated</h4>
+                            <p>Never get left behind with automatic update checking. You can even view what's new with the handy in-built changelog.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="side-by-side content panel right">
+        <section class="side-by-side content panel right grid-margin">
             <div class="cover">
                 <div class="figure">
                     <img src="/img/smart.png" style="box-shadow: unset">
@@ -273,11 +282,144 @@
                 <div class="card-item-icon">
                     <i class="icon w-24" data-lucide="disc-3"></i>
                 </div>
-                <h2>Smarter music titles</h2>
+                <h2>Make your music smarter<span class="header-icon subtext configured-in-settings"><i class="icon w-12" data-lucide="info"></i></span></h2>
                 <p class="text-16">Show guest features how they were always intended, clutter-free.</p>
                 <p class="text-16">Additionally help contribute to a growing capitalisation correction system for you and everyone else.</p>
             </div>
         </section>
+        <section class="grid-panels grid-size-2">
+            <section class="side-by-side top content panel grid-margin">
+                <div class="cover at-bottom">
+                    <div class="figure">
+                        <img src="/img/sm-gallery.png" style="box-shadow: unset">
+                    </div>
+                </div>
+            </section>
+            <section class="side-by-side top content panel grid-margin">
+                <div class="text flex flex-column flex-gap" style="gap: 10px">
+                    <div class="card-item-icon">
+                        <i class="icon w-24" data-lucide="gallery-vertical-end"></i>
+                    </div>
+                    <h2>Browse like never before</h2>
+                    <p class="text-16">Get a full look at gallery images while browsing, with an additional 'Expand' option for the full resolution.</p>
+                    <p class="text-16">Use the save image feature to bookmark photos for another time, very useful for profile layouts.</p>
+                </div>
+            </section>
+        </section>
+        <section class="side-by-side content panel grid-margin">
+            <div class="cover at-bottom">
+                <div class="figure">
+                    <img src="/img/grid.png" style="box-shadow: unset">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="gap: 10px">
+                <div class="card-item-icon">
+                    <i class="icon w-24" data-lucide="star"></i>
+                </div>
+                <h2>Redesigned grids</h2>
+                <p class="text-16">Visualise your total artist plays in style with colours derived from a gradient.</p>
+                <p class="text-16">Make photos pop by accentuating the primary image colour.</p>
+            </div>
+        </section>
+        <section class="grid-panels grid-size-2">
+            <section class="side-by-side top content panel grid-margin">
+                <div class="text flex flex-column flex-gap" style="gap: 10px">
+                    <div class="card-item-icon">
+                        <i class="icon w-24" data-lucide="link"></i>
+                    </div>
+                    <h2>Scrobble music together</h2>
+                    <p class="text-16">Set a profile shortcut to stay up-to-date with their artist, album, or track scrobbles at a glance.</p>
+                    <p class="text-16">Additionally see those colourful gradients carry over to top artist leaderboards.</p>
+                </div>
+            </section>
+            <section class="side-by-side top content panel grid-margin">
+                <div class="cover at-bottom no-radius">
+                    <div class="figure">
+                        <img src="/img/bars-sm.png" style="box-shadow: unset">
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="side-by-side content panel grid-margin">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bio.png" style="box-shadow: unset">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="gap: 10px">
+                <div class="card-item-icon">
+                    <i class="icon w-24" data-lucide="message-circle"></i>
+                </div>
+                <h2>Format shouts and profiles<span class="header-icon subtext configured-in-settings"><i class="icon w-12" data-lucide="info"></i></span></h2>
+                <p class="text-16">Welcome new-lines, links, bold, italics, and more back into your life with markdown parsing.</p>
+                <p class="subtext"><i class="icon w-12" data-lucide="users"></i>Only visible to other bleh users</p>
+            </div>
+        </section>
+        <!--<section class="content grid-margin">
+            <div class="cover no-radius">
+                <div class="figure">
+                    <img src="/img/big-gallery.png" style="box-shadow: unset">
+                </div>
+            </div>
+        </section>-->
+        <section class="side-by-side content span cut grid-margin right" style="background: hsl(var(--b5))">
+            <div class="cover">
+                <div class="figure">
+                    <img src="/img/bleh3-theme-oled.png">
+                </div>
+            </div>
+            <div class="text flex flex-column flex-gap" style="--gap: 5px; flex: 1">
+                <h1>and there's even more :3</h1>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="text"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Edit wikis with the tools required</h4>
+                            <p>Get quick reminders for available wiki syntax along with easy symbol presets.</p>
+                        </div>
+                    </div>
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="calendar-clock"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Get in the festive (or spooky) spirit<span class="header-icon subtext configured-in-settings"><i class="icon w-12" data-lucide="info"></i></span></h4>
+                            <p>During special times of the year bleh will become themed for the occasion.</p>
+                        </div>
+                    </div>
+                    <div class="feature-list-item">
+                        <div class="feature-list-item-icon">
+                            <i class="icon w-24" data-lucide="person-standing"></i>
+                        </div>
+                        <div class="feature-list-item-info">
+                            <h4>Accessible to your needs</h4>
+                            <p>As time goes on, options are being made to accomodate everyone.</p>
+                            <p>You can easily change your font within the settings, enable reduced motion, link underlines, and more to come.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--<section class="grid-panels grid-size-2">
+            <section class="side-by-side top content panel grid-margin">
+                <div class="text flex flex-column flex-gap" style="gap: 10px">
+                    <div class="card-item-icon">
+                        <i class="icon w-24" data-lucide="text"></i>
+                    </div>
+                    <h2>Edit wikis with the tools required</h2>
+                    <p class="text-16">Get quick reminders for available wiki syntax along with easy symbol presets.</p>
+                </div>
+            </section>
+            <section class="side-by-side top content panel grid-margin">
+                <div class="cover at-bottom no-radius">
+                    <div class="figure">
+                        <img src="/img/wiki-edit.png" style="box-shadow: unset">
+                    </div>
+                </div>
+            </section>
+        </section>-->
     </main>
     <style>
         .whats-available {
@@ -306,110 +448,6 @@
         }
     </style>
     <main class="panel-container" style="position: relative">
-        <section class="side-by-side content">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh3-theme-oled.png">
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="gap: 20px">
-                <h2>Refreshing, sleek design for all occasions</h2>
-                <p class="text-18">Try out the new grid and icon-based interface, complete with full in-built range of light to dark themes.</p>
-            </div>
-        </section>
-        <section class="side-by-side content right">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh3-advanced-md.png" loading="lazy">
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="gap: 20px">
-                <h2>Advanced text formatting</h2>
-                <p class="text-18">Remember back when last.fm supported text formatting in profile bios? <i class="hi kate">bleh</i> enables you to use <strong>markdown formatting</strong> (including line-breaks) in shouts and your own about me out of the box.</p>
-                <br>
-                <p class="text-18">To users without bleh, line-breaks will show as regular spaces as last.fm chooses not to display them.</p>
-            </div>
-        </section>
-        <section class="side-by-side content">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh2-settings.png" loading="lazy">
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="gap: 20px">
-                <h2>Tailored to your liking</h2>
-                <p class="text-18">The extension includes an in-built settings page offering a<br><strong>colour customiser, music tag decoder, seasonal system, accessibility options</strong> and more.</p>
-                <br>
-                <p class="text-18">Your settings can also be exported to share and imported hassle-free.</p>
-            </div>
-        </section>
-        <section class="side-by-side content right">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh3-colourful-bars.png" loading="lazy">
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="gap: 20px">
-                <h2>Colourful counts</h2>
-                <p class="text-18">Quickly view colour milestones at a glance by assigning total artist play counts to a large gradient.</p>
-            </div>
-        </section>
-        <section class="side-by-side content">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh3-language.png" loading="lazy">
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="gap: 20px">
-                <h2 class="flex-header">Multi-language support<span class="beta-badge">Beta</span></h2>
-                <p class="text-18">Powered by community-contributions, bleh aims to work alongside Last.fm's native language system to provide bleh translations.</p>
-            </div>
-        </section>
-        <section class="side-by-side content right">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh3-corrections.png" loading="lazy">
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="gap: 20px">
-                <h2>In-built capitalisation corrections</h2>
-                <p class="text-18">Last.fm is a <em>little slow</em> at updating capitalisation corrections.. bleh stores in-built corrections for artists, tracks, and albums - with community contributed additions.</p>
-            </div>
-        </section>
-        <section class="side-by-side content">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh3-images-saved.png" loading="lazy">
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="gap: 20px">
-                <h2>Including new, exclusive features</h2>
-                <p class="text-18">bleh includes a bunch of in-built additions (with more being added overtime). For example, here are saveable artist images, allowing you to keep track of images you like for later on.</p>
-            </div>
-        </section>
-        <section class="side-by-side content right">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh3-settings.png" loading="lazy">
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="gap: 20px">
-                <h2>New and improved aspects of last.fm</h2>
-                <p class="text-18">Ever thought the settings interface was lacking..? confusing? bleh has the solution.</p>
-            </div>
-        </section>
-        <section class="side-by-side content">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh3-gallery.png" loading="lazy">
-                </div>
-            </div>
-            <div class="text flex flex-column flex-gap" style="gap: 20px">
-                <h2>Completely overhauled functionality</h2>
-                <p class="text-18">Many pages are being redesigned to fit the new bleh experience, such as gallery pages.</p>
-            </div>
-        </section>
-        <div class="gap" style="--gap: 60px"></div>
         <section class="content flex flex-column flex-gap flex-align-center span cut" style="--gap: 20px; background-color: hsl(var(--b5)); background-image: linear-gradient(180deg, hsl(var(--h4), 10%), hsl(var(--h4), 30%), hsl(var(--h4), 10%))">
             <div class="background-icon">
                 <i class="icon w-48" data-lucide="verified"></i>
@@ -459,7 +497,7 @@
 <footer>
     <div class="content">
         <span class="main">
-            <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2024</a>
+            <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2025</a>
         </span>
         <span class="links">
             <a href="https://github.com/katelyynn/bleh">View theme source</a>
@@ -469,3 +507,11 @@
 </footer>
 <script src="/js/addons2.js"></script>
 <script>lucide.createIcons();</script>
+<script>
+    let configures = document.body.querySelectorAll('.configured-in-settings');
+    configures.forEach((configure) => {
+        tippy(configure, {
+            content: 'Can be configured!'
+        })
+    });
+</script>

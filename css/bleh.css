@@ -375,7 +375,7 @@ h2.flex-header {
 
 
 .side-by-side {
-    gap: 100px;
+    gap: 90px;
     margin-bottom: 50px;
     padding: 0 var(--card-padding);
 }

@@ -427,6 +427,10 @@ svg.icon {
     height: var(--w);
 }
 
+.w-12 {
+    --w: 12px;
+    stroke-width: 2.5;
+}
 .w-16 {
     --w: 16px;
     stroke-width: 2.5;
@@ -472,6 +476,7 @@ svg.icon {
 
 
 .figure {
+    display: flex;
     width: 100%;
 }
 .figure img {
