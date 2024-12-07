@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title translate="no">bleh sku — cutensilly.org</title>
+    <meta name="theme-color" content="#000000">
+    <link rel="shortcut icon" type="ico" id="favi"/>
+    <!-- mobile iOS support -->
+    <!--<link rel="apple-touch-icon" href="/img/avi.png">-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- icons -->
+    <script src="/js/lucide.js"></script>
+</head>
+<body>
+    <main>
+        <div class="profile-header-subpage-section">
+            <div class="badge-avatar">
+                <img src="/img/avi.png" id="avatar" alt="cutensilly">
+            </div>
+            <div class="badge-info">
+                <a href="/">cutensilly</a>
+                <h1>bleh sku</h1>
+            </div>
+        </div>
+        <h2>configure sku</h2>
+        <div class="button_and_input">
+            <input id="sku" placeholder="enter sku name (default is uwu)">
+            <button id="sku_btn" onclick="submit_sku()">submit</button>
+        </div>
+        <h2 id="sku_header">available links</h2>
+        <ul>
+            <li><a id="sku_js">bleh.js</a></li>
+            <li><a id="sku_css">bleh.css</a></li>
+        </ul>
+</body>
+<style>
+    #sku {
+        width: 200px;
+    }
+</style>
+<script>
+    function submit_sku() {
+        let sku = document.getElementById('sku').value;
+
+        document.getElementById('sku_js').setAttribute('href', `https://github.com/katelyynn/bleh/raw/${sku}/fm/bleh.user.js`);
+        document.getElementById('sku_css').setAttribute('href', `https://github.com/katelyynn/bleh/raw/${sku}/fm/bleh.user.css`);
+    }
+</script>
