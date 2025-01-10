@@ -12,11 +12,13 @@ function create_tile_group({
     main_text = '',
     return_group = false,
     size = 0,
-    gap = false
+    gap = false,
+    index = 1
 }) {
     let tile_group_wrap = document.createElement('div');
     tile_group_wrap.classList.add('tiles-group-wrap');
     tile_group_wrap.setAttribute('data-gap', gap);
+    tile_group_wrap.setAttribute('data-index', index);
     if (main_text != null) {
         tile_group_wrap.innerHTML = (`
             <h1 class="tiles-group-title">${id} ${main_text}</h1>
@@ -44,19 +46,20 @@ function create_tile({
     image = null,
     icon = null,
     icon_image = null,
-    link = null,
-    link_type = 'button',
     main_text = null,
     alt_text = null,
     return_tile = false,
-    active = false
+    active = false,
+    action = {
+        type: 'button'
+    }
 }) {
     // this isnt a custom tile
     if (main_text == null && alt_text == null && trans[lang].apps.hasOwnProperty(id)) {
         main_text = trans[lang].apps[id].name;
     }
 
-    let tile = document.createElement((link_type == 'link') ? 'a' : 'button');
+    let tile = document.createElement((action.type == 'link') ? 'a' : 'button');
     tile.classList.add('tile');
     tile.setAttribute('data-tile-type', type);
     tile.setAttribute('data-tile-id', id);
@@ -74,19 +77,11 @@ function create_tile({
         </div>
     `);
 
-    if (active)
-        tile.classList.add('active');
-
-    if (link != null) {
-        if (link_type == 'link') {
-            tile.setAttribute('href', link);
-
-            tile.addEventListener('click', (e) => {
-                buffer();
-            });
-        } else {
-            tile.setAttribute('onclick', link);
-        }
+    if (action.type == 'link' && action.destination) {
+        tile.setAttribute('href', action.destination);
+        tile.setAttribute('target', '_blank');
+    } else if (action.destination) {
+        tile.setAttribute('onclick', action.destination);
     }
 
     if (width == height)

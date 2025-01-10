@@ -64,17 +64,21 @@ function start() {
 
     create_tile_group({
         id: 'kat',
-        gap: true
+        gap: true,
+        index: 1
     });
     create_tile_group({
-        id: 'kat2'
+        id: 'kat2',
+        index: 2
     });
     create_tile_group({
-        id: 'kat3'
+        id: 'kat3',
+        index: 3
     });
     create_tile_group({
         id: 'kat4',
-        gap: true
+        gap: true,
+        index: 4
     });
 
     create_tile({
@@ -203,7 +207,11 @@ function start() {
         group: 'kat3',
         width: 1,
         height: 1,
-        icon_image: 'lastfm'
+        icon_image: 'lastfm',
+        action: {
+            type: 'link',
+            destination: 'https://last.fm/user/cutensilly'
+        }
     });
 
     create_tile({
