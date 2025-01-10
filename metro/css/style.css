@@ -215,7 +215,7 @@ a:not(.tile),
     inset: 0;
     z-index: 1000;
 
-    height: 30px;
+    height: 40px;
 
     .titlebar {
         height: 30px;
