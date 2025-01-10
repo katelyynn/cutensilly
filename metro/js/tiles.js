@@ -45,7 +45,7 @@ function create_tile({
     height = 2,
     image = null,
     icon = null,
-    icon_image = null,
+    icon_image = 'app',
     main_text = null,
     alt_text = null,
     return_tile = false,
@@ -61,6 +61,12 @@ function create_tile({
         if (!icon)
             icon = trans[lang].apps[id].icon;
     }
+
+    if (icon && icon_image)
+        icon_image = null;
+
+    if (!id && action.destination)
+        id = action.destination;
 
     let tile = document.createElement((action.type == 'link') ? 'a' : 'button');
     tile.classList.add('tile');

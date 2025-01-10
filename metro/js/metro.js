@@ -34,6 +34,12 @@ tippy.setDefaultProps({
     delay: [650, 50]
 });
 
+document.body.addEventListener('click', (e) => {
+    if (page.state.charms && page.state.charms_can_close) {
+        charms_rm();
+    }
+});
+
 document.body.addEventListener('contextmenu', (e) => {
     e.preventDefault();
 

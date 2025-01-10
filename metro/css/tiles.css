@@ -248,7 +248,7 @@
 
 .titlebar-icon,
 .tile {
-    background: #5133AB;
+    background: #595959;
 
     &[data-tile-id="mail"] {
         background: #0072C6;
@@ -256,8 +256,10 @@
     &[data-tile-id="people"] {
         background: #D24726;
     }
-    &[data-tile-id="documents"] {
-        background: #595959;
+    &[data-tile-id="sports"],
+    &[data-tile-id="calendar"],
+    &[data-tile-id="pc_settings"] {
+        background: #5133AB;
     }
     &[data-tile-id="pictures"],
     &[data-tile-id="this_pc"] {

@@ -262,6 +262,14 @@ function start() {
             destination: 'https://last.fm/user/cutensilly'
         }
     });
+    create_tile({
+        group: 'kat3',
+        width: 1,
+        height: 1,
+        action: {
+            destination: `charms()`
+        }
+    });
 
     create_tile({
         id: 'store',
