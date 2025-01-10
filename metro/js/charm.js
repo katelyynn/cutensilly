@@ -15,15 +15,15 @@ function charms(id = 'charms') {
     if (id == 'charms') {
         charms_bar.innerHTML = (`
             <button class="charms-button" onclick="charms('search')">
-                <i class="start-top-button-icon icon" data-lucide="search"></i>
+                <i class="charms-button-icon icon" data-lucide="search"></i>
                 <span class="charms-button-text">Search</span>
             </button>
             <button class="charms-button" onclick="charms('exit_to_start')">
-                <i class="start-top-button-icon icon" data-lucide="grid"></i>
+                <i class="charms-button-icon icon" data-lucide="grid"></i>
                 <span class="charms-button-text">Start</span>
             </button>
             <button class="charms-button" onclick="charms('settings')">
-                <i class="start-top-button-icon icon" data-lucide="settings"></i>
+                <i class="charms-button-icon icon" data-lucide="settings"></i>
                 <span class="charms-button-text">Settings</span>
             </button>
         `);
@@ -37,6 +37,8 @@ function charms(id = 'charms') {
 
     page.state.charms_can_close = false;
     setTimeout(charms_allow_close, 100);
+
+    lucide.createIcons();
 }
 
 function charms_rm() {
