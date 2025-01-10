@@ -1,0 +1,11 @@
+.start-header {
+    display: flex;
+
+    .header-text {
+        font-size: 56px;
+        font-weight: 300;
+        flex: 1;
+
+        filter: grayscale(1);
+    }
+}

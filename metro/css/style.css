@@ -1,0 +1,21 @@
+:root {
+    --bg: #180052;
+    --ac: #4617B4;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+.metro {
+    background: var(--bg);
+    position: fixed;
+    inset: 0;
+
+    .container {
+        padding: 60px 120px;
+    }
+}
