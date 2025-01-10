@@ -57,6 +57,9 @@ function create_tile({
     // this isnt a custom tile
     if (main_text == null && alt_text == null && trans[lang].apps.hasOwnProperty(id)) {
         main_text = trans[lang].apps[id].name;
+
+        if (!icon)
+            icon = trans[lang].apps[id].icon;
     }
 
     let tile = document.createElement((action.type == 'link') ? 'a' : 'button');

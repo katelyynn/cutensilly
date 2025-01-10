@@ -56,3 +56,39 @@ document.body.addEventListener('contextmenu', (e) => {
 
     menu.show();*/
 });
+
+
+function titlebar() {
+    let bar_wrap = page.structure.titlebar;
+
+    if (!bar_wrap)
+        bar_wrap = document.createElement('div');
+    bar_wrap.classList.add('titlebar-wrap');
+    bar_wrap.innerHTML = (`
+        <div class="titlebar">
+            <div class="titlebar-icon-wrap">
+                <div class="titlebar-icon" data-tile-id="${page.state.id}">
+                    <i class="titlebar-icon-inner icon" data-lucide="${(trans[lang].apps.hasOwnProperty(page.state.id)) ? trans[lang].apps[page.state.id].icon : ''}"></i>
+                </div>
+            </div>
+            <div class="titlebar-name">
+                ${(trans[lang].apps.hasOwnProperty(page.state.id)) ? trans[lang].apps[page.state.id].name : page.state.id}
+            </div>
+            <div class="titlebar-buttons">
+                <button class="titlebar-button close" onclick="register({id: 'start'})">
+                    <i class="titlebar-button-icon icon" data-lucide="x"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    `);
+
+    document.body.appendChild(bar_wrap);
+    page.structure.titlebar = bar_wrap;
+
+    lucide.createIcons();
+}
+function titlebar_rm() {
+    if (page.structure.titlebar)
+        document.body.removeChild(page.structure.titlebar);
+}

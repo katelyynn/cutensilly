@@ -206,3 +206,95 @@ a:not(.tile),
 
     stroke-width: var(--icon-stroke, 1);
 }
+
+
+
+
+.titlebar-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    height: 30px;
+
+    .titlebar {
+        height: 30px;
+        position: relative;
+        top: -30px;
+
+        background: #111111;
+        color: #fff;
+
+        font-size: 15px;
+        font-weight: 300px;
+
+        display: flex;
+        align-items: center;
+
+        transition: top;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        .titlebar-name {
+            flex: 1;
+            text-align: center;
+        }
+
+        .titlebar-buttons,
+        .titlebar-icon-wrap {
+            width: 60px;
+            flex-shrink: 0;
+        }
+
+        .titlebar-icon-wrap {
+            padding: 3px;
+
+            .titlebar-icon {
+                width: 24px;
+                height: 24px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .titlebar-icon-inner {
+                    --icon-size: 20px;
+                    --icon-stroke: 2.25;
+                }
+            }
+        }
+
+        .titlebar-buttons {
+            display: flex;
+            justify-content: end;
+
+            .titlebar-button {
+                background: none;
+                color: #fff;
+                appearance: none;
+                border: none;
+                font-size: 0;
+                line-height: 0;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 30px;
+                height: 30px;
+                --icon-size: 16px;
+                --icon-stroke: 2.5;
+
+                &:hover {
+                    background: #E04343;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .titlebar {
+            top: 0;
+        }
+    }
+}

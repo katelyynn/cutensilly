@@ -4,7 +4,8 @@ const trans = {
         start: 'Start',
         apps: {
             pc_settings: {
-                name: 'PC settings'
+                name: 'PC settings',
+                icon: 'settings'
             },
             desktop: {
                 name: 'Desktop'

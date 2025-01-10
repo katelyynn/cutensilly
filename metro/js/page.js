@@ -40,6 +40,8 @@ function register({
 }
 
 function start() {
+    titlebar_rm();
+
     page.structure.wrap.innerHTML = '';
 
     page.structure.container = load_container();
@@ -160,7 +162,6 @@ function start() {
         group: 'kat',
         width: 0,
         height: 0,
-        icon: 'settings',
         action: {
             type: 'app',
             destination: 'pc_settings'
@@ -266,6 +267,8 @@ function start() {
 }
 
 function settings() {
+    titlebar();
+
     page.structure.wrap.innerHTML = '';
 
     let container = document.createElement('div');
