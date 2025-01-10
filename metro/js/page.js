@@ -37,6 +37,27 @@ function start() {
     page.structure.container.appendChild(header);
     page.structure.header = header;
 
+    let user_button = header.querySelector('.user-button');
+    tippy(user_button, {
+        theme: 'menu',
+        content: (`
+            <button class="menu-item">
+                Change account picture
+            </button>
+            <button class="menu-item">
+                Lock
+            </button>
+            <button class="menu-item">
+                Sign out
+            </button>
+        `),
+        allowHTML: true,
+        placement: 'bottom',
+        interactive: true,
+        trigger: 'click',
+        delay: [0, 0]
+    });
+
     page.state.tiles = true;
     page.structure.tiles.wrap = load_tiles();
 

@@ -24,7 +24,7 @@
             font: inherit;
             color: #fff;
 
-            &:hover {
+            &:hover:not([aria-expanded="true"]) {
                 &:before {
                     content: '';
                     position: absolute;
