@@ -80,6 +80,8 @@ function create_tile({
     if (action.type == 'link' && action.destination) {
         tile.setAttribute('href', action.destination);
         tile.setAttribute('target', '_blank');
+    } else if (action.type == 'app' && action.destination) {
+        tile.setAttribute('onclick', `register({id: '${action.destination}'})`);
     } else if (action.destination) {
         tile.setAttribute('onclick', action.destination);
     }

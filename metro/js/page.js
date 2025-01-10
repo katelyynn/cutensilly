@@ -6,11 +6,33 @@ function register({
         return;
     }
 
+    let previous_id = page.state.id;
     page.state.id = id;
     log(`attempting load of ${id}`, 'page');
 
     if (id == 'start') {
         start();
+        return;
+    }
+
+    page.state.id = previous_id;
+
+    try {
+        modal({
+            id: 'error',
+            title: '>o<',
+            body: (`
+                <p>Loading of app id ${id} failed, is there a function for this?</p>
+                <div class="modal-fill"></div>
+                <div class="modal-buttons">
+                    <button class="metro-button primary" onclick="modal_rm({id: 'error'})">
+                        <span class="button-text">Cancel</span>
+                    </button>
+                </div>
+            `)
+        });
+    } catch(e) {
+        alert(`Loading of app id ${id} failed, is there a function for this?`);
     }
 }
 
@@ -131,7 +153,11 @@ function start() {
         group: 'kat',
         width: 0,
         height: 0,
-        icon: 'settings'
+        icon: 'settings',
+        action: {
+            type: 'app',
+            destination: 'pc_settings'
+        }
     });
     create_tile({
         id: 'documents',
