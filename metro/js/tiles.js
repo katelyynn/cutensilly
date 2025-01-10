@@ -11,10 +11,12 @@ function create_tile_group({
     id = id,
     main_text = '',
     return_group = false,
-    size = 1
+    size = 0,
+    gap = false
 }) {
     let tile_group_wrap = document.createElement('div');
     tile_group_wrap.classList.add('tiles-group-wrap');
+    tile_group_wrap.setAttribute('data-gap', gap);
     if (main_text != null) {
         tile_group_wrap.innerHTML = (`
             <h1 class="tiles-group-title">${id} ${main_text}</h1>
@@ -34,7 +36,7 @@ function create_tile_group({
 }
 
 function create_tile({
-    type,
+    type = '',
     id,
     group,
     width = 2,
@@ -49,12 +51,13 @@ function create_tile({
 }) {
     // this isnt a custom tile
     if (main_text == null && alt_text == null && trans[lang].apps.hasOwnProperty(id)) {
-        main_text = trans[lang].app[id].name;
+        main_text = trans[lang].apps[id].name;
     }
 
     let tile = document.createElement((link_type == 'link') ? 'a' : 'button');
     tile.classList.add('tile');
     tile.setAttribute('data-tile-type', type);
+    tile.setAttribute('data-tile-id', id);
     tile.setAttribute('data-tile-width', width);
     tile.setAttribute('data-tile-height', height);
     tile.innerHTML = (`
