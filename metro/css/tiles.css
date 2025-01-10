@@ -1,0 +1,182 @@
+.tiles {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-height: 100vh;
+    padding: calc(var(--margin) * 2 + 62px + 60px) var(--page-sides) 0 var(--page-sides);
+
+    animation: tile var(--trans) var(--trans-function);
+
+    .tiles-group-title {
+        font-size: 21px;
+        line-height: 21px;
+        font-weight: 300;
+
+        filter: grayscale(1);
+        opacity: 0.8;
+
+        padding: 6px 0 8px 0;
+        margin-bottom: 8px;
+
+        &:hover {
+            background: red;
+            padding: 6px 8px 8px 8px;
+        }
+    }
+
+    .tiles-group {
+        display: grid;
+        grid-template-columns: 56px 56px 56px 56px 56px 56px 56px 56px;
+        grid-template-rows: 56px 56px 56px 56px 56px 56px 56px 56px;
+        grid-auto-flow: dense;
+        gap: 8px;
+        height: fit-content;
+
+        margin: unset;
+
+        &[data-size="2"] {
+            grid-template-columns: 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px 56px;
+        }
+    }
+
+    .tile {
+        display: inline-flex;
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+
+        appearance: none;
+        font: inherit;
+        color: #fff;
+        background: #5133AB;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        --icon-size: 40px;
+
+        &[data-tile-width="0"] {
+            width: 56px;
+            grid-column-end: span 1;
+
+            --icon-size: 24px;
+
+            .tile-text {
+                display: none;
+            }
+        }
+        &[data-tile-width="1"] {
+            width: 120px;
+            grid-column-end: span 2;
+
+            &[data-tile-height="0"] {
+                .tile-text {
+                    display: none;
+                }
+            }
+        }
+        &[data-tile-width="2"] {
+            width: calc(120px * 2 + var(--pad));
+            grid-column-end: span 4;
+
+            &[data-tile-height="0"] {
+                .tile-text {
+                    display: none;
+                }
+            }
+        }
+        &[data-tile-width="3"] {
+            width: calc(120px * 3 + var(--pad) + var(--pad));
+            grid-column-end: span 6;
+        }
+        &[data-tile-width="4"] {
+            width: calc(120px * 4 + var(--pad) + var(--pad) + var(--pad));
+            grid-column-end: span 8;
+        }
+        &[data-tile-height="0"] {
+            height: 56px;
+            grid-row-end: span 1;
+
+            --icon-size: 24px;
+        }
+        &[data-tile-height="1"] {
+            height: 120px;
+            grid-row-end: span 2;
+        }
+        &[data-tile-height="2"] {
+            height: calc(120px * 2 + var(--pad));
+            grid-row-end: span 4;
+        }
+
+        transition-property: background-color, transform;
+        transition-duration: var(--trans);
+        transition-timing-function: var(--trans-function);
+
+        &:after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: calc(var(--radius) + 5px);
+            border: 2px solid hsl(var(--h4), 60%);
+            box-shadow: 0 0 30px hsl(var(--h4), 40%);
+            opacity: 0;
+
+            transition-property: opacity;
+            transition-duration: var(--trans);
+            transition-timing-function: var(--trans-function);
+        }
+
+        &:hover {
+            transition-property: transform;
+
+            &:after {
+                transition: none;
+                opacity: 1;
+            }
+        }
+
+        &:active {
+            transform: scale(0.96);
+        }
+
+        &.active {
+            &:after {
+                border: 2px solid hsl(var(--h4), 85%);
+                box-shadow: 0 0 30px hsl(var(--h4), 65%);
+                opacity: 1;
+            }
+        }
+
+        .tile-text {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 6px 14px;
+            text-align: left;
+
+            filter: grayscale(1);
+
+            z-index: 10;
+
+            .alt-text {
+                opacity: 0.8;
+
+                .icon {
+                    display: inline-flex;
+                    width: 14px;
+                    height: 14px;
+                    --icon-size: 14px;
+                    margin-top: -2px;
+                    position: relative;
+                    top: 3px;
+                    margin-right: 4px;
+
+                    &.space-left {
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

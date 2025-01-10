@@ -36,23 +36,21 @@ function start() {
 
 
     create_tile_group({
-        id: 'test'
-    });
-    create_tile_group({
-        id: 'tracks'
-    });
-    create_tile_group({
-        id: 'artists'
-    });
-    create_tile_group({
-        id: 'test2'
+        id: 'kat'
     });
 
     create_tile({
         type: 'wardrobe',
         id: 'wardrobe',
-        group: 'test',
+        group: 'kat',
         width: 1,
+        height: 1
+    });
+    create_tile({
+        type: 'wardrobe',
+        id: 'Calendar',
+        group: 'kat',
+        width: 2,
         height: 1
     });
 }
