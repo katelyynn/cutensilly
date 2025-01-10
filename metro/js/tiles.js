@@ -90,12 +90,7 @@ function create_tile({
         tile.setAttribute('data-tile-square', 'true');
 
     tippy(tile, {
-        content: (`
-            ${type}<br>
-            ${id}<br>
-            ${width}x${height}
-        `),
-        allowHTML: true
+        content: main_text
     });
 
     if (return_tile) {

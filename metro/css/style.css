@@ -21,3 +21,17 @@ body {
         padding: 60px 120px;
     }
 }
+
+
+.tippy-box {
+    background: #fff;
+    border: 2px solid #808080;
+    border-radius: unset;
+    font: inherit;
+    color: #666666;
+
+    .tippy-content {
+        padding: 8px 10px;
+        filter: grayscale(1);
+    }
+}

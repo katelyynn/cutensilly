@@ -27,3 +27,9 @@ function load_container() {
     page.structure.wrap.appendChild(container);
     return container;
 }
+
+tippy.setDefaultProps({
+    arrow: false,
+    duration: [300, 150],
+    delay: [400, 50]
+});
