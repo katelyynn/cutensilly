@@ -59,6 +59,14 @@ function start() {
                 <img class="user-img" src="/metro/img/avi.png">
             </button>
         </div>
+        <button class="start-top-button" onclick="charms('start')">
+            <i class="start-top-button-icon icon" data-lucide="settings"></i>
+            Settings
+        </button>
+        <button class="start-top-button" onclick="charms('search')">
+            <i class="start-top-button-icon icon" data-lucide="search"></i>
+            Search
+        </button>
     `);
 
     page.structure.container.appendChild(header);

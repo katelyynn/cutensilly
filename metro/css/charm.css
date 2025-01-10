@@ -1,0 +1,10 @@
+.charms {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    &[data-id="charms"] {
+        background: #111111;
+    }
+}

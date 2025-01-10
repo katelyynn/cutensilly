@@ -35,7 +35,7 @@ body {
 
     &[data-has-modal="true"] {
         pointer-events: auto;
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.45);
     }
 
     .modal {
@@ -95,7 +95,7 @@ body {
     background: var(--button-bg);
 
     font: inherit;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: #fff;
 

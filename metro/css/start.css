@@ -25,13 +25,7 @@
             color: #fff;
 
             &:hover:not([aria-expanded="true"]) {
-                &:before {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    background: rgb(var(--ac));
-                    opacity: 0.5;
-                }
+                background: rgb(var(--ac), 0.5);
             }
 
             .user-name, .user-img {
@@ -51,7 +45,7 @@
                 height: 40px;
             }
 
-            transition-property: background-color, transform;
+            transition-property: transform;
             transition-duration: 0.3s;
             transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 
@@ -62,6 +56,44 @@
             &:active {
                 transform: scale(0.96);
             }
+        }
+    }
+
+    .start-top-button {
+        appearance: none;
+        background: none;
+        border: none;
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 56px;
+
+        font: inherit;
+        font-size: 0;
+        color: #fff;
+
+        &:hover:not([aria-expanded="true"]) {
+            background: rgb(var(--ac), 0.5);
+        }
+
+        .start-top-button-icon {
+            --icon-size: 24px;
+            --icon-stroke: 2;
+        }
+
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        &:hover {
+            transition-property: transform;
+        }
+
+        &:active {
+            transform: scale(0.96);
         }
     }
 
