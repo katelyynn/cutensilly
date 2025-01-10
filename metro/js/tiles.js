@@ -25,9 +25,9 @@ function create_tile_group({
     tile_group.classList.add('tiles-group');
     tile_group.setAttribute('data-size', size);
 
-    page.specific.tiles.groups[id] = tile_group;
+    page.structure.tiles.groups[id] = tile_group;
     tile_group_wrap.appendChild(tile_group);
-    page.structure.tiles.appendChild(tile_group_wrap);
+    page.structure.tiles.wrap.appendChild(tile_group_wrap);
 
     if (return_group)
         return tile_group_wrap;
@@ -48,8 +48,8 @@ function create_tile({
     active = false
 }) {
     // this isnt a custom tile
-    if (main_text == null && alt_text == null && trans[lang].tiles.hasOwnProperty(id)) {
-        main_text = trans[lang].tiles[id].name;
+    if (main_text == null && alt_text == null && trans[lang].apps.hasOwnProperty(id)) {
+        main_text = trans[lang].app[id].name;
     }
 
     let tile = document.createElement((link_type == 'link') ? 'a' : 'button');
@@ -99,7 +99,7 @@ function create_tile({
         return tile;
     } else {
         try {
-            page.specific.tiles.groups[group].appendChild(tile);
+            page.structure.tiles.groups[group].appendChild(tile);
         } catch(e) {
             log('group does not exist', 'tile', 'error');
             console.error(e);

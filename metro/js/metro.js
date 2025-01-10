@@ -7,7 +7,7 @@ let page = {
         wrap: null,
         tiles: {
             wrap: null,
-            groups: null
+            groups: {}
         }
     }
 }
