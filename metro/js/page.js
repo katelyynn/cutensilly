@@ -93,7 +93,10 @@ function start() {
         group: 'kat',
         width: 2,
         height: 1,
-        icon: 'trophy'
+        icon: 'trophy',
+        action: {
+            destination: 'explode()'
+        }
     });
     create_tile({
         id: 'mail',

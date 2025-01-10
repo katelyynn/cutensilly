@@ -20,7 +20,7 @@
     align-items: center;
     gap: 6px;
     width: fit-content;
-    background-color: var(--bg);
+    background-color: rgb(var(--bg));
     color: var(--col);
     font-weight: var(--font-weight-medium);
     box-shadow: var(--shadow);

@@ -2,7 +2,7 @@ input, select, textarea {
     --bg: hsl(var(--b4));
     padding: var(--padding, 7px 12px);
     height: 32px;
-    background-color: var(--bg);
+    background-color: rgb(var(--bg));
     border: none;
     box-shadow: var(--shadow, var(--interact-shadow));
     border-radius: var(--item-med-radius);

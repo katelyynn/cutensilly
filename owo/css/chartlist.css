@@ -9,7 +9,7 @@
     min-height: 36px;
     max-height: 44px;
     color: hsl(var(--c2));
-    background-color: var(--bg);
+    background-color: rgb(var(--bg));
     border-radius: var(--item-small-radius);
     box-shadow: var(--shadow);
     transition-property: background-color;

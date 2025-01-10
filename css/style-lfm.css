@@ -82,7 +82,7 @@
     --bg-atv: hsla(var(--b5), 60%);
     --col: hsl(var(--c2));
     --indent: 0.985;
-    background-color: var(--bg);
+    background-color: rgb(var(--bg));
     color: var(--col);
     transition-property: background-color, transform !important;
     transition-duration: var(--trans) !important;

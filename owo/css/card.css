@@ -9,7 +9,7 @@
     flex-direction: column;
     border-radius: 10px;
     color: hsl(var(--c2));
-    background-color: var(--bg);
+    background-color: rgb(var(--bg));
     box-shadow: var(--raise-1);
     cursor: pointer;
 

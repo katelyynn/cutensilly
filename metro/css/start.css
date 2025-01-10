@@ -29,7 +29,7 @@
                     content: '';
                     position: absolute;
                     inset: 0;
-                    background: var(--ac);
+                    background: rgb(var(--ac));
                     opacity: 0.5;
                 }
             }

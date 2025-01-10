@@ -1,6 +1,6 @@
 :root {
-    --bg: #180052;
-    --ac: #4617B4;
+    --bg: 24, 0, 82;
+    --ac: 70, 23, 180;
 }
 
 body {
@@ -13,12 +13,133 @@ body {
 }
 
 .metro {
-    background: var(--bg);
+    background: rgb(var(--bg));
     position: fixed;
     inset: 0;
 
     .container {
         padding: 50px 120px;
+    }
+}
+
+.modals {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    pointer-events: none;
+
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+
+    &[data-has-modal="true"] {
+        pointer-events: auto;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .modal {
+        background: rgb(var(--bg));
+        display: flex;
+        justify-content: center;
+
+        padding: 25px 0;
+        width: 100%;
+
+        .modal-inner {
+            width: 700px;
+
+            .modal-fill {
+                height: 200px;
+            }
+
+            .modal-buttons {
+                display: flex;
+                justify-content: end;
+                gap: 20px;
+            }
+
+            .modal-header {
+                font-size: 26px;
+                line-height: 26px;
+                font-weight: 400;
+
+                filter: grayscale(1);
+            }
+
+            .modal-body {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                margin-top: 20px;
+
+                font-size: 14px;
+                line-height: 16px;
+
+                p {
+                    filter: grayscale(1);
+                }
+            }
+        }
+    }
+}
+
+.metro-button {
+    --button-bg: transparent;
+    --button-bg-hov: rgba(var(--ac), 40%);
+    --button-bg-atv: #fff;
+
+    --button-col-atv: #000;
+
+    appearance: none;
+    background: var(--button-bg);
+
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+
+    padding: 0 15px;
+    min-width: 90px;
+    height: 32px;
+
+    border: 2px solid #fff;
+
+    .button-text {
+        filter: grayscale(1);
+    }
+
+    &:hover {
+        background: var(--button-bg-hov);
+    }
+    &:active {
+        background: var(--button-bg-atv);
+        color: var(--button-col-atv);
+    }
+
+    &.primary {
+        --button-bg: rgba(var(--ac), 60%);
+        --button-bg-hov: rgba(var(--ac), 90%);
+    }
+}
+
+a:not(.tile),
+.mimic-link {
+    appearance: none;
+    background: none;
+    border: none;
+
+    font: inherit;
+    color: rgb(var(--ac));
+
+    cursor: pointer;
+
+    filter: contrast(60%);
+
+    width: fit-content;
+
+    &:hover {
+        filter: contrast(90%);
     }
 }
 
