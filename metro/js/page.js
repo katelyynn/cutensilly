@@ -78,11 +78,11 @@ function start() {
     });
 
     create_tile({
-        id: 'mail',
+        id: 'music',
         group: 'kat',
         width: 2,
         height: 1,
-        icon: 'mail'
+        icon: 'music'
     });
     create_tile({
         id: 'sports',
@@ -92,10 +92,11 @@ function start() {
         icon: 'trophy'
     });
     create_tile({
-        id: 'people',
+        id: 'mail',
         group: 'kat',
         width: 1,
-        height: 1
+        height: 1,
+        icon: 'mail'
     });
     create_tile({
         id: 'people',
@@ -148,6 +149,13 @@ function start() {
     });
 
     create_tile({
+        id: 'sponsor',
+        group: 'kat2',
+        width: 2,
+        height: 1,
+        icon: 'heart'
+    });
+    create_tile({
         id: 'money',
         group: 'kat2',
         width: 2,
@@ -189,6 +197,13 @@ function start() {
         width: 2,
         height: 1,
         icon: 'newspaper'
+    });
+    create_tile({
+        id: 'lastfm',
+        group: 'kat3',
+        width: 1,
+        height: 1,
+        icon_image: 'lastfm'
     });
 
     create_tile({

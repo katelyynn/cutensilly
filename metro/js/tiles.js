@@ -43,6 +43,7 @@ function create_tile({
     height = 2,
     image = null,
     icon = null,
+    icon_image = null,
     link = null,
     link_type = 'button',
     main_text = null,
@@ -64,6 +65,7 @@ function create_tile({
     tile.innerHTML = (`
         <div class="tile-bg-wrap">
             ${(icon) ? `<div class="tile-icon-wrap"><i class="tile-icon icon" data-lucide="${icon}"></i></div>` : ''}
+            ${(icon_image) ? `<div class="tile-icon-wrap"><img class="tile-icon-image" src="/metro/img/${icon_image}.png"></div>` : ''}
             ${(image != null) ? `<img class="tile-bg" src="${image}" crossorigin="anonymous">` : ''}
         </div>
         <div class="tile-text">

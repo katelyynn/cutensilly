@@ -4,4 +4,3 @@ node_modules/*
 .svelte-kit/*
 .vercel/*
 .vscode/settings.json
-metro/img/*

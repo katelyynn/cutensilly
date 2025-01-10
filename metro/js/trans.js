@@ -8,6 +8,28 @@ const trans = {
             },
             desktop: {
                 name: 'Desktop'
+            },
+            iexplore: {
+                name: 'Internet Explorer'
+            },
+            help: {
+                name: 'Help'
+            },
+            mail: {
+                name: 'Mail'
+            },
+            music: {
+                name: 'Music'
+            },
+            news: {
+                name: 'News'
+            },
+            sponsor: {
+                name: 'Sponsor'
+            },
+
+            lastfm: {
+                name: 'cutensilly\'s Last.fm'
             }
         }
     }

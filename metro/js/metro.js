@@ -31,5 +31,28 @@ function load_container() {
 tippy.setDefaultProps({
     arrow: false,
     duration: [300, 150],
-    delay: [400, 50]
+    delay: [650, 50]
+});
+
+document.body.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+
+    //alert('hey >o< stop doing that,,');
+
+    /*let menu = tippy(document.body, {
+        content: 'hey >o< stop that'
+    });
+
+    menu.setProps({
+        getReferenceClientRect: () => ({
+            width: 0,
+            height: 0,
+            top: e.clientY,
+            bottom: e.clientY,
+            left: e.clientX,
+            right: e.clientX,
+        }),
+    });
+
+    menu.show();*/
 });
