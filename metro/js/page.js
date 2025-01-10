@@ -13,6 +13,9 @@ function register({
     if (id == 'start') {
         start();
         return;
+    } else if (id == 'pc_settings') {
+        settings();
+        return;
     }
 
     page.state.id = previous_id;
@@ -139,7 +142,11 @@ function start() {
         group: 'kat',
         width: 1,
         height: 1,
-        image: '/metro/img/avi.png'
+        image: '/metro/img/avi.png',
+        action: {
+            type: 'link',
+            destination: '/desktop/'
+        }
     });
     create_tile({
         id: 'this_pc',
@@ -186,7 +193,11 @@ function start() {
         group: 'kat2',
         width: 2,
         height: 1,
-        icon: 'heart'
+        icon: 'heart',
+        action: {
+            type: 'app',
+            destination: 'sponsor'
+        }
     });
     create_tile({
         id: 'money',
@@ -252,4 +263,44 @@ function start() {
     });
 
     lucide.createIcons();
+}
+
+function settings() {
+    page.structure.wrap.innerHTML = '';
+
+    let container = document.createElement('div');
+    container.classList.add('settings-container');
+
+    page.structure.container = container;
+    page.structure.wrap.appendChild(container);
+
+    let nav = document.createElement('div');
+    nav.classList.add('settings-nav');
+    nav.innerHTML = (`
+        <div class="settings-nav-header">
+            <div class="settings-nav-text">
+                ${trans[lang].apps.pc_settings.name}
+            </div>
+        </div>
+    `);
+
+    let nav_list = document.createElement('div');
+    nav_list.classList.add('settings-nav-list');
+
+    page.structure.nav = nav_list;
+
+    nav.appendChild(nav_list);
+    container.appendChild(nav);
+
+
+    let content = document.createElement('div');
+    content.classList.add('settings-content');
+
+    let content_inner = document.createElement('div');
+    content_inner.classList.add('settings-content-inner');
+
+    page.structure.content = content_inner;
+
+    content.appendChild(content_inner);
+    page.structure.container.appendChild(content);
 }

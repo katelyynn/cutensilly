@@ -1,0 +1,36 @@
+.settings-container {
+    display: flex;
+    height: 100%;
+
+    .settings-nav {
+        width: 400px;
+        height: 100%;
+        flex-shrink: 0;
+
+        padding: 60px 0 20px;
+
+        .settings-nav-header {
+            margin-left: 60px;
+            margin-bottom: 40px;
+
+            font-size: 26px;
+            line-height: 26px;
+            font-weight: 300;
+
+            filter: grayscale(1);
+        }
+    }
+
+    .settings-content {
+        height: 100%;
+        flex: 1;
+        background: #fff;
+        color: #000;
+
+        padding: 60px;
+
+        .settings-container-inner {
+            width: 600px;
+        }
+    }
+}
