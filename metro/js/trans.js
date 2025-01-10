@@ -5,6 +5,9 @@ const trans = {
         apps: {
             pc_settings: {
                 name: 'PC settings'
+            },
+            desktop: {
+                name: 'Desktop'
             }
         }
     }

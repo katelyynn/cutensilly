@@ -59,13 +59,14 @@
         display: inline-flex;
         position: relative;
         text-align: center;
-        cursor: pointer;
+        cursor: default;
         user-select: none;
 
         appearance: none;
         font: inherit;
         color: #fff;
         background: #5133AB;
+        background-size: cover;
         border: 1px solid rgba(255, 255, 255, 0.1);
 
         --icon-size: 40px;
@@ -124,8 +125,8 @@
         }
 
         transition-property: background-color, transform;
-        transition-duration: var(--trans);
-        transition-timing-function: var(--trans-function);
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 
         &:after {
             content: '';
@@ -151,6 +152,16 @@
         &.active {
             &:after {
                 opacity: 1;
+            }
+        }
+
+        .tile-bg-wrap {
+            position: absolute;
+            inset: 0;
+            z-index: 8;
+
+            .tile-bg {
+                width: 100%;
             }
         }
 
@@ -185,34 +196,35 @@
                 }
             }
         }
+    }
+}
 
-
-        &[data-tile-id="mail"] {
-            background: #0072C6;
-        }
-        &[data-tile-id="people"] {
-            background: #D24726;
-        }
-        &[data-tile-id="pictures"],
-        &[data-tile-id="this_pc"] {
-            background: #094AB2;
-        }
-        &[data-tile-id="iexplore"],
-        &[data-tile-id="weather"] {
-            background: #2672EC;
-        }
-        &[data-tile-id="store"],
-        &[data-tile-id="money"] {
-            background: #008A00;
-        }
-        &[data-tile-id="help"] {
-            background: #D24726;
-        }
-        &[data-tile-id="photos"] {
-            background: #008299;
-        }
-        &[data-tile-id="news"] {
-            background: #AC193D;
-        }
+.tile {
+    &[data-tile-id="mail"] {
+        background: #0072C6;
+    }
+    &[data-tile-id="people"] {
+        background: #D24726;
+    }
+    &[data-tile-id="pictures"],
+    &[data-tile-id="this_pc"] {
+        background: #094AB2;
+    }
+    &[data-tile-id="iexplore"],
+    &[data-tile-id="weather"] {
+        background: #2672EC;
+    }
+    &[data-tile-id="store"],
+    &[data-tile-id="money"] {
+        background: #008A00;
+    }
+    &[data-tile-id="help"] {
+        background: #D24726;
+    }
+    &[data-tile-id="photos"] {
+        background: #008299;
+    }
+    &[data-tile-id="news"] {
+        background: #AC193D;
     }
 }

@@ -78,7 +78,8 @@ function start() {
         id: 'desktop',
         group: 'kat',
         width: 1,
-        height: 1
+        height: 1,
+        image: '/metro/img/avi.png'
     });
     create_tile({
         id: 'this_pc',
