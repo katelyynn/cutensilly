@@ -69,7 +69,8 @@
         background-size: cover;
         border: 1px solid rgba(255, 255, 255, 0.1);
 
-        --icon-size: 40px;
+        --icon-size: 48px;
+        --icon-stroke: 2.1;
 
         &[data-tile-width="0"] {
             width: 56px;
@@ -114,14 +115,23 @@
             grid-row-end: span 1;
 
             --icon-size: 24px;
+            --icon-stroke: 2;
         }
         &[data-tile-height="1"] {
             height: 120px;
             grid-row-end: span 2;
+
+            .tile-icon-wrap {
+                padding-bottom: 20px;
+            }
         }
         &[data-tile-height="2"] {
             height: 248px;
             grid-row-end: span 4;
+
+            .tile-icon-wrap {
+                padding-bottom: 20px;
+            }
         }
 
         transition-property: background-color, transform;
@@ -165,6 +175,14 @@
             }
         }
 
+        .tile-icon-wrap {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .tile-text {
             position: absolute;
             left: 0;
@@ -205,6 +223,9 @@
     }
     &[data-tile-id="people"] {
         background: #D24726;
+    }
+    &[data-tile-id="documents"] {
+        background: #595959;
     }
     &[data-tile-id="pictures"],
     &[data-tile-id="this_pc"] {

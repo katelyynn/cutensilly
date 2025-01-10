@@ -35,3 +35,11 @@ body {
         filter: grayscale(1);
     }
 }
+
+
+.icon {
+    width: var(--icon-size, 32px);
+    height: var(--icon-size, 32px);
+
+    stroke-width: var(--icon-stroke, 1);
+}

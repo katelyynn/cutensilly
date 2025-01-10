@@ -54,13 +54,15 @@ function start() {
         id: 'mail',
         group: 'kat',
         width: 2,
-        height: 1
+        height: 1,
+        icon: 'mail'
     });
     create_tile({
         id: 'sports',
         group: 'kat',
         width: 2,
-        height: 1
+        height: 1,
+        icon: 'trophy'
     });
     create_tile({
         id: 'people',
@@ -72,7 +74,8 @@ function start() {
         id: 'people',
         group: 'kat',
         width: 1,
-        height: 1
+        height: 1,
+        icon: 'users'
     });
     create_tile({
         id: 'desktop',
@@ -85,75 +88,89 @@ function start() {
         id: 'this_pc',
         group: 'kat',
         width: 0,
-        height: 0
+        height: 0,
+        icon: 'monitor'
     });
     create_tile({
         id: 'pc_settings',
         group: 'kat',
         width: 0,
-        height: 0
+        height: 0,
+        icon: 'settings'
     });
     create_tile({
         id: 'documents',
         group: 'kat',
         width: 0,
-        height: 0
+        height: 0,
+        icon: 'file-text'
     });
     create_tile({
         id: 'pictures',
         group: 'kat',
         width: 0,
-        height: 0
+        height: 0,
+        icon: 'album'
     });
     create_tile({
         id: 'calendar',
         group: 'kat',
         width: 2,
-        height: 1
+        height: 1,
+        icon: 'calendar'
     });
 
     create_tile({
         id: 'money',
         group: 'kat2',
         width: 2,
-        height: 1
+        height: 1,
+        icon: 'chart-no-axes-combined'
     });
     create_tile({
         id: 'weather',
         group: 'kat2',
         width: 2,
-        height: 2
+        height: 2,
+        icon: 'sun'
     });
     create_tile({
         id: 'iexplore',
         group: 'kat2',
         width: 1,
-        height: 1
+        height: 1,
+        icon: 'compass'
     });
     create_tile({
         id: 'help',
         group: 'kat2',
         width: 1,
-        height: 1
+        height: 1,
+        icon: 'circle-help'
     });
 
     create_tile({
         id: 'photos',
         group: 'kat3',
         width: 1,
-        height: 1
+        height: 1,
+        icon: 'book-image'
     });
     create_tile({
         id: 'news',
         group: 'kat3',
         width: 2,
-        height: 1
+        height: 1,
+        icon: 'newspaper'
     });
 
     create_tile({
         id: 'store',
         group: 'kat4',
         width: 2,
-        height: 2
+        height: 2,
+        icon: 'shopping-cart'
     });
+
+    lucide.createIcons();
 }
