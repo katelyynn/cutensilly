@@ -9,5 +9,61 @@
         filter: grayscale(1);
     }
 
+    .user-container {
+        .user-button {
+            appearance: none;
+            background: none;
+            border: none;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+
+            font: inherit;
+            color: #fff;
+
+            &:hover {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background: var(--ac);
+                    opacity: 0.5;
+                }
+            }
+
+            .user-name, .user-img {
+                position: relative;
+                z-index: 4;
+            }
+
+            .user-name {
+                font-size: 26px;
+                font-weight: 350;
+
+                filter: grayscale(1);
+            }
+
+            .user-img {
+                width: 40px;
+                height: 40px;
+            }
+
+            transition-property: background-color, transform;
+            transition-duration: 0.3s;
+            transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+            &:hover {
+                transition-property: transform;
+            }
+
+            &:active {
+                transform: scale(0.96);
+            }
+        }
+    }
+
     margin-bottom: 74px;
 }

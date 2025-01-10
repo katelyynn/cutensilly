@@ -26,6 +26,12 @@ function start() {
         <div class="header-text">
             ${trans[lang].start}
         </div>
+        <div class="user-container">
+            <button class="user-button">
+                <span class="user-name">katelyn</span>
+                <img class="user-img" src="/metro/img/avi.png">
+            </button>
+        </div>
     `);
 
     page.structure.container.appendChild(header);
