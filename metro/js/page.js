@@ -23,6 +23,9 @@ function register({
     } else if (id == 'pc_settings') {
         register_splash();
         return;
+    } else if (id == 'store') {
+        register_splash();
+        return;
     }
 
     page.state.id = previous_id;
@@ -74,6 +77,8 @@ function register_load() {
     try {
         if (page.state.id == 'pc_settings') {
             settings();
+        } else if (page.state.id == 'store') {
+            store();
         }
     } catch(e) {
         modal({
@@ -91,6 +96,7 @@ function register_load() {
                 </div>
             `)
         });
+        console.error(e);
     }
 }
 
@@ -172,35 +178,14 @@ function start() {
     });
 
     create_tile({
-        id: 'music',
+        id: 'store',
         group: 'kat',
         width: 2,
-        height: 1,
-        icon: 'music'
-    });
-    create_tile({
-        id: 'sports',
-        group: 'kat',
-        width: 2,
-        height: 1,
-        icon: 'trophy',
+        height: 2,
         action: {
-            destination: 'explode()'
+            type: 'app',
+            destination: 'store'
         }
-    });
-    create_tile({
-        id: 'mail',
-        group: 'kat',
-        width: 1,
-        height: 1,
-        icon: 'mail'
-    });
-    create_tile({
-        id: 'people',
-        group: 'kat',
-        width: 1,
-        height: 1,
-        icon: 'users'
     });
     create_tile({
         id: 'desktop',
@@ -214,35 +199,31 @@ function start() {
         }
     });
     create_tile({
-        id: 'this_pc',
-        group: 'kat',
-        width: 0,
-        height: 0,
-        icon: 'monitor'
-    });
-    create_tile({
         id: 'pc_settings',
         group: 'kat',
-        width: 0,
-        height: 0,
+        width: 1,
+        height: 1,
         action: {
             type: 'app',
             destination: 'pc_settings'
         }
     });
     create_tile({
-        id: 'documents',
+        id: 'mail',
         group: 'kat',
-        width: 0,
-        height: 0,
-        icon: 'file-text'
+        width: 1,
+        height: 1,
+        icon: 'mail'
     });
     create_tile({
-        id: 'pictures',
+        id: 'sponsor',
         group: 'kat',
-        width: 0,
-        height: 0,
-        icon: 'album'
+        width: 1,
+        height: 1,
+        action: {
+            type: 'app',
+            destination: 'sponsor'
+        }
     });
     create_tile({
         id: 'calendar',
@@ -253,22 +234,18 @@ function start() {
     });
 
     create_tile({
-        id: 'sponsor',
+        id: 'music',
         group: 'kat2',
         width: 2,
         height: 1,
-        icon: 'heart',
-        action: {
-            type: 'app',
-            destination: 'sponsor'
-        }
+        icon: 'music'
     });
     create_tile({
-        id: 'money',
+        id: 'news',
         group: 'kat2',
         width: 2,
         height: 1,
-        icon: 'chart-no-axes-combined'
+        icon: 'newspaper'
     });
     create_tile({
         id: 'weather',
@@ -300,11 +277,14 @@ function start() {
         icon: 'book-image'
     });
     create_tile({
-        id: 'news',
+        id: 'sports',
         group: 'kat3',
         width: 2,
         height: 1,
-        icon: 'newspaper'
+        icon: 'trophy',
+        action: {
+            destination: 'explode()'
+        }
     });
     create_tile({
         id: 'lastfm',
@@ -324,14 +304,6 @@ function start() {
         action: {
             destination: `charms()`
         }
-    });
-
-    create_tile({
-        id: 'store',
-        group: 'kat4',
-        width: 2,
-        height: 2,
-        icon: 'shopping-cart'
     });
 
     lucide.createIcons();

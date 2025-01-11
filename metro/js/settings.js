@@ -55,25 +55,36 @@ function load_settings(page) {
     load_nav(page);
 }
 
-function load_nav(page) {
+function load_nav(id) {
     page.structure.nav.innerHTML = '';
 
-    let list = settings_storage[page].tabs;
+    let list = settings_storage[id].tabs;
     list.forEach((item, index) => {
         let button = document.createElement('button');
         button.classList.add('settings-nav-list-item');
-        button.textContent = trans[lang].apps.pc_settings.pages[page].tabs[item];
+        button.textContent = trans[lang].apps.pc_settings.pages[id].tabs[item];
 
         button.setAttribute('onclick', 'no_settings()');
 
         if (index == 0) {
-            load_page(item);
+            load_page(id, item);
 
             button.classList.add('active');
         }
 
         page.structure.nav.appendChild(button);
     });
+}
+
+function load_page(tab_id, id) {
+    if (tab_id == 'home') {
+        if (id == 'about') {
+            page.structure.content.innerHTML = (`
+                <h1>About</h1>
+                <p>hello!!!</p>
+            `);
+        }
+    }
 }
 
 function no_settings() {

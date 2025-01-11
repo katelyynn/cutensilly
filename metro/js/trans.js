@@ -15,6 +15,10 @@ const trans = {
                     }
                 }
             },
+            store: {
+                name: 'Store',
+                icon: 'shopping-cart'
+            },
             desktop: {
                 name: 'Desktop'
             },
@@ -34,7 +38,8 @@ const trans = {
                 name: 'News'
             },
             sponsor: {
-                name: 'Sponsor'
+                name: 'Sponsors',
+                icon: 'heart'
             },
 
             lastfm: {
