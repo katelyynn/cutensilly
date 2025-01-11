@@ -6,15 +6,22 @@ function register({
         return;
     }
 
+    if (page.state.transitioning) {
+        log('transitioning, rejected', 'page');
+        return;
+    }
+
     let previous_id = page.state.id;
     page.state.id = id;
     log(`attempting load of ${id}`, 'page');
+
+    page.state.id_storage = id;
 
     if (id == 'start') {
         start();
         return;
     } else if (id == 'pc_settings') {
-        settings();
+        register_splash();
         return;
     }
 
@@ -36,6 +43,54 @@ function register({
         });
     } catch(e) {
         alert(`Loading of app id ${id} failed, is there a function for this?`);
+    }
+}
+
+function register_splash() {
+    page.state.transitioning = true;
+
+    let splash = document.createElement('div');
+    splash.classList.add('splash');
+    splash.setAttribute('data-tile-id', page.state.id_storage);
+    splash.innerHTML = (`
+        <i class="splash-icon icon" data-lucide="${trans[lang].apps[page.state.id_storage].icon}"></i>
+    `);
+
+    document.body.appendChild(splash);
+
+    lucide.createIcons();
+
+    setTimeout(function() {
+        register_load();
+    }, 600);
+
+    setTimeout(function() {
+        document.body.removeChild(splash);
+        page.state.transitioning = false;
+    }, 1000);
+}
+
+function register_load() {
+    try {
+        if (page.state.id == 'pc_settings') {
+            settings();
+        }
+    } catch(e) {
+        modal({
+            id: 'error',
+            title: 'eek >w<',
+            body: (`
+                <p>There was an error loading this page (${page.state.id})</p>
+                <p>Error information available:</p>
+                <p>${e}</p>
+                <div class="modal-fill"></div>
+                <div class="modal-buttons">
+                    <button class="metro-button primary" onclick="modal_rm({id: 'error'})">
+                        <span class="button-text">Done</span>
+                    </button>
+                </div>
+            `)
+        });
     }
 }
 
@@ -280,46 +335,4 @@ function start() {
     });
 
     lucide.createIcons();
-}
-
-function settings() {
-    titlebar();
-
-    page.structure.wrap.innerHTML = '';
-
-    let container = document.createElement('div');
-    container.classList.add('settings-container');
-
-    page.structure.container = container;
-    page.structure.wrap.appendChild(container);
-
-    let nav = document.createElement('div');
-    nav.classList.add('settings-nav');
-    nav.innerHTML = (`
-        <div class="settings-nav-header">
-            <div class="settings-nav-text">
-                ${trans[lang].apps.pc_settings.name}
-            </div>
-        </div>
-    `);
-
-    let nav_list = document.createElement('div');
-    nav_list.classList.add('settings-nav-list');
-
-    page.structure.nav = nav_list;
-
-    nav.appendChild(nav_list);
-    container.appendChild(nav);
-
-
-    let content = document.createElement('div');
-    content.classList.add('settings-content');
-
-    let content_inner = document.createElement('div');
-    content_inner.classList.add('settings-content-inner');
-
-    page.structure.content = content_inner;
-
-    content.appendChild(content_inner);
-    page.structure.container.appendChild(content);
 }

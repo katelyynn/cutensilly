@@ -5,7 +5,15 @@ const trans = {
         apps: {
             pc_settings: {
                 name: 'PC settings',
-                icon: 'settings'
+                icon: 'settings',
+                pages: {
+                    home: {
+                        name: 'Home',
+                        tabs: {
+                            about: 'About'
+                        }
+                    }
+                }
             },
             desktop: {
                 name: 'Desktop'

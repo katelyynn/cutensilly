@@ -198,8 +198,17 @@ a:not(.tile),
                 padding: 11px 20px;
                 text-align: left;
 
+                transition-property: transform;
+                transition-duration: 0.3s;
+                transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
                 &:hover {
                     background: #DEDEDE;
+                    transition-property: transform;
+                }
+
+                &:active {
+                    transform: scale(0.96);
                 }
             }
         }
@@ -314,5 +323,58 @@ a:not(.tile),
         .titlebar {
             top: 0;
         }
+    }
+}
+
+
+
+
+.splash {
+    position: fixed;
+    inset: 0;
+    z-index: 1000000000000;
+
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .splash-icon {
+        --icon-size: 72px;
+        --icon-stroke: 2;
+    }
+
+    animation: splash_in 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/*@keyframes splash_in {
+    from {
+        visibility: visible;
+    }
+    25% {
+        perspective: 1000px;
+        perspective-origin: -5% 50%;
+        transform: scaleX(1.9) scaleY(1.6);
+    }
+    45% {
+        perspective: 1000px;
+        perspective-origin: -572% 50%;
+        transform: scaleX(1.9) scaleY(3);
+    }
+    to {
+        visibility: visible;
+        perspective: 1000px;
+        perspective-origin: 50% 50%;
+        transform: scaleX(3) scaleY(3);
+    }
+}*/
+
+@keyframes splash_in {
+    from, to {
+        visibility: visible;
+        opacity: 0;
+    }
+    30%, 70% {
+        opacity: 1;
     }
 }
