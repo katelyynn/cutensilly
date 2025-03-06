@@ -17,12 +17,12 @@
     &.size-md {
         width: 40px;
         height: 40px;
-        border-radius: var(--round);
+        border-radius: 20%;
     }
     &.size-nm {
         width: 56px;
         height: 56px;
-        border-radius: var(--round);
+        border-radius: 20%;
     }
     &.size-lg {
         width: 140px;
