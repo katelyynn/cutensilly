@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    background: hsl(var(--b6));
+    padding: 25px 20px;
+    border-radius: var(--round);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
