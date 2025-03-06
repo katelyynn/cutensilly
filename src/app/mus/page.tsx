@@ -6,10 +6,13 @@ import { KathyAvatar } from '~/app/_components/avatar/avatar';
 export default async function Home() {
   return (
     <main>
-      <h3>listening <span className="kyuu">history</span></h3>
+      <h3>music <span className="kyuu">collection</span></h3>
       <KathyCardList>
         <KathyCard>
-          <h4>find me anywhere</h4>
+          <h4>physical collection</h4>
+        </KathyCard>
+        <KathyCard>
+          <h4>recent listening</h4>
         </KathyCard>
       </KathyCardList>
     </main>
