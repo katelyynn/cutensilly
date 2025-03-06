@@ -4,7 +4,7 @@ import { KathyLinkBlock } from '~/app/_components/link_block/link_block';
 
 interface KathyAvatarProps {
     image?: string,
-    size: 'sm' | 'nm' | 'lg' | 'xl',
+    size: 'sm' | 'md' | 'nm' | 'lg' | 'xl' | 'xxl',
     alt?: string,
     link?: string, link_type?: 'link' | 'a'
 }

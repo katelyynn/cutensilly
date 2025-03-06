@@ -1,0 +1,27 @@
+.quote {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .content {
+        background-color: hsl(var(--l4), 6%);
+        padding: 15px;
+        border-radius: var(--round);
+
+        box-shadow: inset 0 0 0 2px hsl(var(--l3), 10%), 0 0 20px hsl(var(--l4), 10%);
+    }
+
+    .identity {
+        display: flex;
+        gap: 8px;
+        justify-content: end;
+        align-items: center;
+
+        font-weight: var(--font-weight-md);
+
+        .name:not(:hover) {
+            color: hsl(var(--c3));
+            text-decoration: none;
+        }
+    }
+}

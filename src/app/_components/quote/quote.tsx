@@ -2,7 +2,7 @@ import React from 'react';
 import style from "./quote.module.css";
 
 import type { Identity } from '~/app/_components/identity';
-import { KathyAvatar } from '../avatar/avatar';
+import { KathyAvatar } from '~/app/_components/avatar/avatar';
 
 interface KathyQuoteProps {
     who: Identity,
