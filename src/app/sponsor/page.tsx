@@ -61,28 +61,28 @@ export default async function Home() {
               <tr>
                 <th>default heart sponsor badge</th>
                 <td>
-                  <SolarIconSet.CheckCircle iconStyle="BoldDuotone" size={28} className="colourful accent green" />
+                  <SolarIconSet.CheckCircle iconStyle="Bold" size={28} className="colourful accent green" />
                 </td>
                 <td>
-                  <SolarIconSet.CheckCircle iconStyle="BoldDuotone" size={28} className="colourful accent green" />
+                  <SolarIconSet.CheckCircle iconStyle="Bold" size={28} className="colourful accent green" />
                 </td>
               </tr>
               <tr>
                 <th>custom badge of your choosing</th>
                 <td>
-                  <SolarIconSet.CloseCircle iconStyle="BoldDuotone" size={28} className="subtle" />
+                  <SolarIconSet.CloseCircle iconStyle="Outline" size={28} className="subtler" />
                 </td>
                 <td>
-                  <SolarIconSet.CheckCircle iconStyle="BoldDuotone" size={28} className="colourful accent green" />
+                  <SolarIconSet.CheckCircle iconStyle="Bold" size={28} className="colourful accent green" />
                 </td>
               </tr>
               <tr>
                 <th>custom name colour</th>
                 <td>
-                  <SolarIconSet.CloseCircle iconStyle="BoldDuotone" size={28} className="subtle" />
+                  <SolarIconSet.CloseCircle iconStyle="Outline" size={28} className="subtler" />
                 </td>
                 <td>
-                  <SolarIconSet.CheckCircle iconStyle="BoldDuotone" size={28} className="colourful accent green" />
+                  <SolarIconSet.CheckCircle iconStyle="Bold" size={28} className="colourful accent green" />
                 </td>
               </tr>
               <tr>

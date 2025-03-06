@@ -1,0 +1,25 @@
+.feet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    padding: 60px 0;
+
+    a {
+        display: flex;
+        align-items: center;
+
+        transition: transform 0.35s, filter 0.35s;
+
+        padding: 6px;
+        margin: -6px;
+
+        &:hover {
+            filter: drop-shadow(0 0 10px hsl(var(--l4)));
+            transform: scale(1.2);
+        }
+    }
+
+    color: hsl(var(--c3));
+}

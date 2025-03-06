@@ -4,6 +4,7 @@ import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { KathyNav } from '~/app/_components/nav/nav';
+import { KathyFooter } from '~/app/_components/footer/footer';
 
 import NextTopLoader from 'nextjs-toploader';
 
@@ -23,6 +24,7 @@ export default function RootLayout({
           <NextTopLoader />
           <KathyNav />
           {children}
+          <KathyFooter />
         </TRPCReactProvider>
       </body>
     </html>

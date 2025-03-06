@@ -223,6 +223,9 @@ p.big {
 .subtle {
   color: hsl(var(--c3)) !important;
 }
+.subtler {
+  color: hsl(var(--c3), 40%) !important;
+}
 .accent {
   color: hsl(var(--l3)) !important;
 }
@@ -240,7 +243,18 @@ p.big {
 table {
   text-align: left;
 
+  table,
+  thead, tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   thead {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid hsl(var(--b5));
+
     tr {
       th {
         color: hsl(var(--c3));
@@ -248,8 +262,25 @@ table {
     }
   }
 
+  tr {
+    display: flex;
+
+    th:first-child {
+      flex: 1;
+    }
+
+    th, td {
+      flex-shrink: 0;
+      width: 90px;
+
+      display: flex;
+      align-items: center;
+    }
+  }
+
   th:not(:first-child),
   td {
+    justify-content: center;
     text-align: center;
   }
 

@@ -70,6 +70,6 @@
     }
 
     :global(table) & {
-        margin: 6px auto 0;
+        margin-top: 8px;
     }
 }
