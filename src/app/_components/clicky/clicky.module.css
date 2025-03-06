@@ -1,0 +1,48 @@
+.clicky {
+    --bg: hsl(var(--b4));
+    --bg-hov: hsl(var(--b4), 80%);
+    --bg-atv: hsl(var(--b4), 60%);
+    --col: hsl(var(--c2));
+    --shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+
+    appearance: none;
+    padding: 8px 12px;
+    background: var(--bg);
+    border: none;
+    border-radius: var(--round);
+    box-shadow: var(--shadow);
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--col) !important;
+    font: inherit;
+    font-weight: var(--font-weight-nm);
+    text-decoration: none;
+
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        background: var(--bg-hov);
+        transition: none;
+    }
+    &:active {
+        background: var(--bg-atv);
+    }
+
+    width: max-content;
+    transition: background 0.1s;
+
+    &.primary {
+        --bg: hsl(var(--l3));
+        --bg-hov: hsl(var(--l3), 80%);
+        --bg-atv: hsl(var(--l3), 60%);
+        --col: var(--b7);
+
+        &[aria-disabled="true"] {
+            opacity: 0.5;
+        }
+    }
+}

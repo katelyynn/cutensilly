@@ -187,3 +187,18 @@ p.big {
 
   margin-top: -10px;
 }
+
+
+#nprogress {
+  .bar {
+    background: hsl(var(--l3)) !important;
+
+    .peg {
+      box-shadow: 0 4px 10px hsl(var(--l4)) !important;
+    }
+  }
+
+  .spinner {
+    display: none !important;
+  }
+}

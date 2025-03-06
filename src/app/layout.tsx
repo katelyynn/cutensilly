@@ -3,6 +3,9 @@ import "~/styles/globals.css";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { KathyNav } from '~/app/_components/nav/nav';
+
+import NextTopLoader from 'nextjs-toploader';
 
 export const metadata: Metadata = {
   title: "kathy",
@@ -16,7 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <NextTopLoader />
+          <KathyNav />
+          {children}
+        </TRPCReactProvider>
       </body>
     </html>
   );
