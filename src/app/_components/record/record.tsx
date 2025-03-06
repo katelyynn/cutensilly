@@ -24,21 +24,21 @@ interface Artist {
 }
 
 export type Record = {
+    id: number,
     title: string,
     year: number,
     avatar: string,
     formats: Format[],
-    artists: Artist[],
-    link: string
+    artists: Artist[]
 }
 
 export const KathyRecord = ({
+    id,
     title,
     year,
     avatar,
     formats,
-    artists,
-    link
+    artists
 }: Record) => {
     return (
         <li className={style.record}>
@@ -56,7 +56,7 @@ export const KathyRecord = ({
                     {(formats[0]?.descriptions[0]) ? <div className={style.descriptor}>{formats[0].descriptions[0]}</div> : ''}
                 </div>
             </div>
-            <KathyLinkBlock link={link} type="a" />
+            <KathyLinkBlock link={`https://www.discogs.com/release/${id}`} type="a" />
         </li>
     );
 }

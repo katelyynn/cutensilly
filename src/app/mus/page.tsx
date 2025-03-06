@@ -27,12 +27,12 @@ export default async function Home() {
             {collection.collection.map((record: Record, i: number) => (
                 <KathyRecord
                   key={i}
+                  id={record.id}
                   title={record.title}
                   year={record.year}
                   avatar={record.avatar}
                   formats={record.formats}
                   artists={record.artists}
-                  link={record.link}
                 />
               ))}
           </KathyRecordList>

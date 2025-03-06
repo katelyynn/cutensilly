@@ -34,12 +34,12 @@ export const discogsRouter = createTRPCRouter({
         const info = item.basic_information;
 
         collection.push({
+          id: item.id,
           title: info.title,
           year: info.year,
           avatar: info.cover_image,
           formats: info.formats,
-          artists: info.artists,
-          link: info.resource_url
+          artists: info.artists
         });
       });
 
