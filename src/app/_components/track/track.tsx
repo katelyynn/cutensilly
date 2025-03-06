@@ -43,6 +43,7 @@ export const KathyTrack = ({
                 {(active && album) ? <div className={style.album}><a href={`${artist.link}/${album.link}`}>{album.title}</a></div> : null}
             </div>
             {(time) ? <div className={style.time}>{time}</div> : ''}
+            {(active) ? <div className={style.active_time}>right now :3</div> : ''}
             <KathyClicky primary={love} cloak="track" icon>
                 <SolarIconSet.Heart iconStyle={(love) ? "Bold" : "BoldDuotone"} size={20} />
             </KathyClicky>

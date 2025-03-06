@@ -74,6 +74,10 @@
         color: hsl(var(--c3));
         font-size: 13px;
     }
+    .active_time {
+        color: hsl(var(--l2));
+        font-size: 13px;
+    }
 
     button {
         z-index: 1;
