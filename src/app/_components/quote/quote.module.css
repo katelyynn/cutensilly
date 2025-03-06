@@ -3,6 +3,8 @@
     flex-direction: column;
     gap: 8px;
 
+    color: hsl(var(--c2));
+
     .content {
         background-color: hsl(var(--l4), 6%);
         padding: 15px;
