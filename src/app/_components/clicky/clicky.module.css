@@ -68,4 +68,8 @@
             --col: hsl(var(--l3));
         }
     }
+
+    :global(table) & {
+        margin: 6px auto 0;
+    }
 }

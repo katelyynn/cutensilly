@@ -1,0 +1,28 @@
+.perk {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+
+    :global(.perk-icon) {
+        display: flex;
+        padding: 8px;
+        background: hsl(var(--l3));
+        color: var(--b7);
+        border-radius: 50%;
+
+        width: fit-content;
+
+        margin-bottom: 4px;
+    }
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+
+    width: 100%;
+    margin-top: 10px;
+}

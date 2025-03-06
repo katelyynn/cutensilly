@@ -136,6 +136,10 @@ h4 {
   font-size: 20px;
   line-height: 24px;
 }
+h5 {
+  font-size: 18px;
+  line-height: 22px;
+}
 
 
 .kyuu {
@@ -179,6 +183,18 @@ a {
   gap: 20px;
 
   background: radial-gradient(at center, hsl(var(--l4), 20%), transparent 73%);
+
+  & + .sub {
+    margin-top: -90px;
+  }
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  gap: 20px;
 }
 
 p.big {
@@ -200,5 +216,45 @@ p.big {
 
   .spinner {
     display: none !important;
+  }
+}
+
+
+.subtle {
+  color: hsl(var(--c3)) !important;
+}
+.accent {
+  color: hsl(var(--l3)) !important;
+}
+
+.green {
+  --hue: 120;
+}
+.red {
+  --hue: 360;
+  --sat: 1.2;
+}
+
+
+
+table {
+  text-align: left;
+
+  thead {
+    tr {
+      th {
+        color: hsl(var(--c3));
+      }
+    }
+  }
+
+  th:not(:first-child),
+  td {
+    text-align: center;
+  }
+
+  th {
+    vertical-align: middle;
+    padding: 4px 0;
   }
 }

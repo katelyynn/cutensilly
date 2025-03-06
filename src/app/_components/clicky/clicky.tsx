@@ -4,7 +4,7 @@ import style from "./clicky.module.css";
 import Link from "next/link";
 
 interface KathyClickyProps {
-    elem?: 'button' | 'link',
+    elem?: 'button' | 'link' | 'a',
     link?: any,
     primary?: boolean,
     cloak?: string, colour?: string,
@@ -25,6 +25,14 @@ export const KathyClicky = ({
             <Link className={`${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''} ${(icon) ? style.icon : ''}`} href={link}>
                 {children}
             </Link>
+        );
+    }
+
+    if (elem == 'a') {
+        return (
+            <a className={`${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''} ${(icon) ? style.icon : ''}`} href={link} target="_blank">
+                {children}
+            </a>
         );
     }
 

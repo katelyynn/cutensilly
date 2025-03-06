@@ -38,7 +38,7 @@ export const KathyNav = () => {
                 link="/sponsor"
                 primary={route === '/sponsor'}
             >
-                <SolarIconSet.Heart iconStyle={(route === '/sponsor') ? "Bold" : "Outline"} size={20} />
+                <SolarIconSet.BagHeart iconStyle={(route === '/sponsor') ? "BoldDuotone" : "Outline"} size={20} />
                 sponsor
             </KathyClicky>
             <KathyClicky
