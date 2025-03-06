@@ -169,3 +169,21 @@ a {
   background: hsl(var(--l4), 10%);
   color: hsl(var(--l3));
 }
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 160px 0;
+  gap: 20px;
+
+  background: radial-gradient(at center, hsl(var(--l4), 20%), transparent 73%);
+}
+
+p.big {
+  font-size: 18px;
+  line-height: 22px;
+
+  margin-top: -10px;
+}

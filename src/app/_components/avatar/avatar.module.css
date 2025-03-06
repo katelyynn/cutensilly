@@ -1,6 +1,6 @@
 .avatar {
     background: hsl(var(--b5));
-    border-radius: 20%;
+    border-radius: 50%;
     overflow: hidden;
 
     position: relative;
@@ -13,7 +13,12 @@
     &.size-sm {
         width: 28px;
         height: 28px;
-        border-radius: 50%;
+    }
+    &.size-lg {
+        width: 140px;
+        height: 140px;
+
+        background: hsl(var(--l3), 12%);
     }
 
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
