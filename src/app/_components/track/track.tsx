@@ -39,14 +39,14 @@ export const KathyTrack = ({
             <KathyAvatar image={avatar} alt={(album) ? `avatar for ${album.title}` : `avatar for ${title}`} size={(active) ? 'nm' : 'md'} />
             <div className={style.info}>
                 <div className={style.title}>{title}</div>
-                {(artist) ? <div className={style.artist}><a href={`https://last.fm/music/${artist.link}`}>{artist.title}</a></div> : null}
-                {(active && album) ? <div className={style.album}><a href={`https://last.fm/music/${artist.link}/${album.link}`}>{album.title}</a></div> : null}
+                {(artist) ? <div className={style.artist}><a href={`${artist.link}`}>{artist.title}</a></div> : null}
+                {(active && album) ? <div className={style.album}><a href={`${artist.link}/${album.link}`}>{album.title}</a></div> : null}
             </div>
             {(time) ? <div className={style.time}>{time}</div> : ''}
             <KathyClicky primary={active} cloak="track" icon>
                 <SolarIconSet.Heart iconStyle={(active) ? "Bold" : "BoldDuotone"} size={20} />
             </KathyClicky>
-            <KathyLinkBlock link={`https://last.fm/music/${artist.link}/_/${link}`} type="a" />
+            <KathyLinkBlock link={`${link}`} type="a" />
         </li>
     );
 }
