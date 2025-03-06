@@ -72,4 +72,71 @@
     :global(table) & {
         margin-top: 8px;
     }
+
+    :global(.info) {
+        display: flex;
+        flex-direction: column;
+        line-height: 16px;
+
+        margin: 0 6px;
+
+        strong {
+            font-size: 13px;
+            line-height: 13px;
+            opacity: 0.8;
+            font-weight: var(--font-weight-lg);
+        }
+    }
+}
+
+.lastdotfm {
+    --hue: 360;
+    --sat: 1.5;
+}
+.discogs {
+    --hue: 30;
+}
+.rym {
+    --hue: 210;
+    --sat: 1.5;
+    --lit: 0.9;
+}
+.github {
+    --hue: 255;
+    --sat: 1.1;
+}
+.osu {
+    --sat: 1.2;
+}
+.roblox {
+    --sat: 0;
+    --lit: 1.2;
+}
+.modrinth {
+    --hue: 125;
+}
+.steam {
+    --hue: 220;
+    --sat: 1.2;
+    --lit: 0.8;
+}
+
+.list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+
+    .clicky {
+        width: 100%;
+
+        :global(.info) {
+            flex: 1;
+        }
+    }
 }

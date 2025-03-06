@@ -22,7 +22,7 @@ export const KathyClicky = ({
 }: KathyClickyProps) => {
     if (elem == 'link') {
         return (
-            <Link className={`${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''} ${(icon) ? style.icon : ''}`} href={link}>
+            <Link className={`colourful ${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''} ${(icon) ? style.icon : ''}`} href={link}>
                 {children}
             </Link>
         );
@@ -30,15 +30,43 @@ export const KathyClicky = ({
 
     if (elem == 'a') {
         return (
-            <a className={`${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''} ${(icon) ? style.icon : ''}`} href={link} target="_blank">
+            <a className={`colourful ${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''} ${(icon) ? style.icon : ''}`} href={link} target="_blank">
                 {children}
             </a>
         );
     }
 
     return (
-        <button className={`${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''} ${(icon) ? style.icon : ''}`} onClick={link}>
+        <button className={`colourful ${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''} ${(icon) ? style.icon : ''}`} onClick={link}>
             {children}
         </button>
+    );
+}
+
+interface KathyClickyListProps {
+    children: React.ReactNode
+}
+
+export const KathyClickyList = ({
+    children
+}: KathyClickyListProps) => {
+    return (
+        <div className={style.list}>
+            {children}
+        </div>
+    );
+}
+
+interface KathyClickyGridProps {
+    children: React.ReactNode
+}
+
+export const KathyClickyGrid = ({
+    children
+}: KathyClickyGridProps) => {
+    return (
+        <div className={style.grid}>
+            {children}
+        </div>
     );
 }
