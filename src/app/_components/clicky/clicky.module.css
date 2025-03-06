@@ -53,4 +53,19 @@
     :global(svg path) {
         fill: currentColor;
     }
+
+
+    &.track {
+        --bg: transparent;
+        --bg-hov: transparent;
+        --bg-atv: transparent;
+        --col: hsl(var(--c3), 30%);
+
+        padding: 8px 0;
+        --shadow: none;
+
+        &.primary {
+            --col: hsl(var(--l3));
+        }
+    }
 }

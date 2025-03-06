@@ -5,9 +5,9 @@
 
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
 
-    padding: 12px 10px;
+    padding: 12px 14px;
     background: var(--bg);
     border-radius: var(--round);
     box-shadow: var(--shadow);
@@ -19,19 +19,9 @@
     cursor: pointer;
     user-select: none;
 
-    & > button {
-        opacity: 0;
-        transition: opacity 0.1s;
-    }
-
     &:hover, &:focus-within {
         background: var(--bg-hov);
         transition: none;
-
-        & > button {
-            opacity: 1;
-            transition: none;
-        }
     }
 
     transition: background 0.1s;
@@ -82,7 +72,7 @@
 
     .time {
         color: hsl(var(--c3));
-        font-size: 14px;
+        font-size: 13px;
     }
 
     button {
