@@ -44,16 +44,16 @@ export const KathyRecord = ({
         <li className={style.record}>
             <KathyAvatar image={avatar} alt={`image for ${title}`} size="lg" />
             <div className={style.info}>
+                {formats[0] ? <div className={`colourful ${style.format} ${style[`format-${formats[0].name.toLowerCase().replaceAll(' ', '')}`]}`} key={0}>{formats[0].name}</div> : ''}
                 <div className={style.title}>{title}</div>
                 <div className={style.artists}>
                     {artists.map((artist: Artist, i: number) => (
                         <span className={style.artist} key={i}>{artist.name}{(artists.length > 1) ? <span className={style.join}>{(artist.join == '&') ? ' ' : ''}{artist.join} </span> : ''}</span>
                     ))}
                 </div>
-                {(formats[0]?.descriptions[0]) ? <div className={style.descriptor}>{formats[0].descriptions[0]}</div> : ''}
                 <div className={style.extras}>
                     <div className={style.year}>{year}</div>
-                    {formats[0] ? <div className={style.format} key={0}>{formats[0].name}</div> : ''}
+                    {(formats[0]?.descriptions[0]) ? <div className={style.descriptor}>{formats[0].descriptions[0]}</div> : ''}
                 </div>
             </div>
             <KathyLinkBlock link={link} type="a" />
