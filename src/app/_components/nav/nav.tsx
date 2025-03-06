@@ -41,6 +41,14 @@ export const KathyNav = () => {
                 <SolarIconSet.TurntableMusicNote iconStyle={(route === '/mus') ? "BoldDuotone" : "Outline"} size={20} />
                 music
             </KathyClicky>
+            <KathyClicky
+                elem="link"
+                link="/blog"
+                primary={route === '/blog'}
+            >
+                <SolarIconSet.NotebookMinimalistic iconStyle={(route === '/blog') ? "BoldDuotone" : "Outline"} size={20} />
+                blog
+            </KathyClicky>
         </nav>
     );
 }

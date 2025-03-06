@@ -49,4 +49,8 @@
     &.icon {
         padding: 8px;
     }
+
+    :global(svg path) {
+        fill: currentColor;
+    }
 }

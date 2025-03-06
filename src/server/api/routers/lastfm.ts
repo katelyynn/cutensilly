@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { posts } from "~/server/db/schema";
 
 import type { Track } from '~/app/_components/track/track';
+import { env } from 'process';
 
 export type RecentTracks = {
   tracks: Track[]
@@ -12,35 +16,36 @@ export type RecentTracks = {
 export const lastfmRouter = createTRPCRouter({
   getRecentTracks: publicProcedure
     .input(z.object({ username: z.string() }))
-    .query(({ input }): RecentTracks => {
+    .query(async ({ input }): Promise<RecentTracks> => {
+      const response = await fetch(`${env.LASTFM_RECENT_TRACKS_URL}&api_key=${env.LASTFM_API_KEY}&username=${input.username}`);
+
+      //console.log(await response.json());
+
+      const data = await response.json();
+
+      let tracks = [];
+
+      data.recenttracks.track.forEach((track) => {
+        tracks.push({
+          avatar: track.image[2]["#text"],
+          title: track.name,
+          artist: {
+              title: track.artist.name,
+              link: track.artist.url
+          },
+          album: {
+              title: track.album?.["#text"],
+              link: track.album?.["#text"]
+          },
+          time: track.date?.["#text"],
+          love: (track.loved == "1"),
+          active: track["@attr"]?.nowplaying,
+          link: track.url
+        });
+      });
+
       return {
-        tracks: [
-          {
-            title: 'song name',
-            artist: {
-              title: 'artist name',
-              link: ''
-            },
-            album: {
-              title: 'album name',
-              link: ''
-            },
-            link: '',
-            active: true,
-          },
-          {
-            title: 'song name',
-            artist: {
-              title: 'artist name',
-              link: ''
-            },
-            album: {
-              title: 'album name',
-              link: ''
-            },
-            link: '',
-          },
-        ],
+        tracks: tracks,
       };
     }),
 });

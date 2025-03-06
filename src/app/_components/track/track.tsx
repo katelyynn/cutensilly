@@ -36,7 +36,7 @@ export const KathyTrack = ({
 }: Track) => {
     return (
         <li className={`${style.track} ${(active) ? style.active : ''}`}>
-            <KathyAvatar image={avatar} alt={(album) ? `avatar for ${album.title}` : `avatar for ${title}`} size={(active) ? 'md' : 'nm'} />
+            <KathyAvatar image={avatar} alt={(album) ? `avatar for ${album.title}` : `avatar for ${title}`} size={(active) ? 'nm' : 'md'} />
             <div className={style.info}>
                 <div className={style.title}>{title}</div>
                 {(artist) ? <div className={style.artist}><a href={`https://last.fm/music/${artist.link}`}>{artist.title}</a></div> : null}

@@ -82,6 +82,7 @@
 
     .time {
         color: hsl(var(--c3));
+        font-size: 14px;
     }
 
     button {

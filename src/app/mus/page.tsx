@@ -11,6 +11,8 @@ import type { Track } from '../_components/track/track';
 export default async function Home() {
   const recent_tracks = await api.lastfm.getRecentTracks({ username: "cutensilly" });
 
+  console.log(recent_tracks);
+
   return (
     <main>
       <h3>music <span className="kyuu">collection</span></h3>
