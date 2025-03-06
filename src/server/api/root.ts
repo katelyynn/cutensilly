@@ -1,6 +1,7 @@
 import { postRouter } from "~/server/api/routers/post";
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 import { lastfmRouter } from './routers/lastfm';
+import { discogsRouter } from './routers/discogs';
 
 /**
  * This is the primary router for your server.
@@ -9,7 +10,8 @@ import { lastfmRouter } from './routers/lastfm';
  */
 export const appRouter = createTRPCRouter({
   post: postRouter,
-  lastfm: lastfmRouter
+  lastfm: lastfmRouter,
+  discogs: discogsRouter
 });
 
 // export type definition of API

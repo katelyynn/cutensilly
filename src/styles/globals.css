@@ -61,7 +61,7 @@ table {
 
 :root {
   --font: Public Sans, Inter, Roboto, sans-serif;
-  --font-size: 16px;
+  --font-size: 15px;
   --line-height: 20px;
   --font-weight: 400;
   --font-weight-md: 500;
@@ -72,7 +72,7 @@ table {
 
   --round: 12px;
 
-  --page: 800px;
+  --page: 900px;
 }
 
 body {
@@ -83,7 +83,7 @@ body {
 .colourful,
 body {
   --c1: var(--hue), calc(var(--sat) * 40%), 100%;
-  --c2: var(--hue), calc(var(--sat) * 30%), 94%;
+  --c2: var(--hue), calc(var(--sat) * 60%), 94%;
   --c3: var(--hue), calc(var(--sat) * 10%), 60%;
 
   --l2: var(--hue), calc(var(--sat) * 40%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 83%);
@@ -175,7 +175,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 160px 0;
+  padding: 120px 0;
   gap: 20px;
 
   background: radial-gradient(at center, hsl(var(--l4), 20%), transparent 73%);

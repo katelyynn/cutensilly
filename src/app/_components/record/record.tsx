@@ -1,0 +1,70 @@
+import React from 'react';
+import style from "./record.module.css";
+
+import { KathyAvatar } from '~/app/_components/avatar/avatar';
+import { KathyLinkBlock } from '../link_block/link_block';
+import { KathyClicky } from '../clicky/clicky';
+
+import * as SolarIconSet from "solar-icon-set";
+
+interface Format {
+    qty: string,
+    descriptions: string[],
+    name: string
+}
+
+interface Artist {
+    id: number,
+    name: string,
+    join: string,
+    resource_url: string,
+    anv: string,
+    tracks: string,
+    role: string
+}
+
+export type Record = {
+    title: string,
+    year: number,
+    avatar: string,
+    formats: Format[],
+    artists: Artist[],
+    link: string
+}
+
+export const KathyRecord = ({
+    title,
+    year,
+    avatar,
+    formats,
+    artists,
+    link
+}: Record) => {
+    return (
+        <li className={style.record}>
+            <KathyAvatar image={avatar} alt={`image for ${title}`} size="lg" />
+            <div className={style.info}>
+                <div className={style.title}>{title}</div>
+                <div className={style.artists}>
+                    {artists.map((artist: Artist, i: number) => (
+                        <span className={style.artist} key={i}>{artist.name}{(artists.length > 1) ? <span className={style.join}>{(artist.join == '&') ? ' ' : ''}{artist.join} </span> : ''}</span>
+                    ))}
+                </div>
+                {(formats[0]?.descriptions[0]) ? <div className={style.descriptor}>{formats[0].descriptions[0]}</div> : ''}
+                <div className={style.extras}>
+                    <div className={style.year}>{year}</div>
+                    {formats[0] ? <div className={style.format} key={0}>{formats[0].name}</div> : ''}
+                </div>
+            </div>
+            <KathyLinkBlock link={link} type="a" />
+        </li>
+    );
+}
+
+export const KathyRecordList = ({ children } : { children: React.ReactNode }) => {
+    return (
+        <ul className={style.list}>
+            {children}
+        </ul>
+    )
+}

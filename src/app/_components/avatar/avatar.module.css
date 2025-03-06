@@ -25,8 +25,13 @@
         border-radius: 20%;
     }
     &.size-lg {
-        width: 140px;
-        height: 140px;
+        width: 160px;
+        height: 160px;
+        border-radius: var(--round);
+    }
+    &.size-xl {
+        width: 180px;
+        height: 180px;
 
         background: hsl(var(--l3), 12%);
     }

@@ -35,6 +35,14 @@ export const KathyNav = () => {
             </KathyClicky>
             <KathyClicky
                 elem="link"
+                link="/sponsor"
+                primary={route === '/sponsor'}
+            >
+                <SolarIconSet.Heart iconStyle={(route === '/sponsor') ? "Bold" : "Outline"} size={20} />
+                sponsor
+            </KathyClicky>
+            <KathyClicky
+                elem="link"
                 link="/mus"
                 primary={route === '/mus'}
             >

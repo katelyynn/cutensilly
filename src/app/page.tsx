@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <main>
       <div className="hero">
-        <KathyAvatar image="/avatars/kat.png" alt="avatar for kathy" size="lg" />
+        <KathyAvatar image="/avatars/kat.png" alt="avatar for kathy" size="xl" />
         <h2>hey im <span className="kyuu">kathy</span> :3</h2>
         <p className="big">silly lil girl who codes</p>
       </div>

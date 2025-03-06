@@ -16,7 +16,7 @@ export const KathyAvatar = ({
     link, link_type
 }: KathyAvatarProps) => {
     return (
-        <div className={`${style.avatar} ${style[`size-${size}`]}`}>
+        <div className={`avatar ${style.avatar} ${style[`size-${size}`]}`}>
             {(image) ? <img draggable="false" src={image} alt={alt} /> : ''}
             {(link) ? <KathyLinkBlock link={link} type={link_type} /> : ''}
         </div>

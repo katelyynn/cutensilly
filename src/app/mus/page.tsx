@@ -4,14 +4,18 @@ import Link from "next/link";
 import { KathyCard, KathyCardList } from '~/app/_components/card/card';
 import { KathyQuote } from '~/app/_components/quote/quote';
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
-import { KathyTrackList, KathyTrack } from '../_components/track/track';
+import { KathyTrackList, KathyTrack } from '~/app/_components/track/track';
+import { KathyRecordList, KathyRecord } from '~/app/_components/record/record';
 
-import type { Track } from '../_components/track/track';
+import type { Track } from '~/app/_components/track/track';
+import type { Record } from '~/app/_components/record/record';
 
 export default async function Home() {
   const recent_tracks = await api.lastfm.getRecentTracks({ username: "cutensilly" });
-
   console.log(recent_tracks);
+
+  const collection = await api.discogs.getMusicCollection({ username: "katenyaa", page: 1 });
+  console.log(collection);
 
   return (
     <main>
@@ -19,6 +23,19 @@ export default async function Home() {
       <KathyCardList>
         <KathyCard>
           <h4>physical collection</h4>
+          <KathyRecordList>
+            {collection.collection.map((record: Record, i: number) => (
+                <KathyRecord
+                  key={i}
+                  title={record.title}
+                  year={record.year}
+                  avatar={record.avatar}
+                  formats={record.formats}
+                  artists={record.artists}
+                  link={record.link}
+                />
+              ))}
+          </KathyRecordList>
         </KathyCard>
         <KathyCard>
           <h4>recent listening</h4>
