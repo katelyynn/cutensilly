@@ -1,27 +1,96 @@
-.quote {
+.track {
+    --bg: transparent;
+    --bg-hov: hsl(var(--b5), 40%);
+    --col: hsl(var(--c2));
+
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    gap: 10px;
 
-    .content {
-        background-color: hsl(var(--l4), 6%);
-        padding: 15px;
-        border-radius: var(--round);
+    padding: 12px 10px;
+    background: var(--bg);
+    border-radius: var(--round);
+    box-shadow: var(--shadow);
+    color: var(--col);
+    font: inherit;
 
-        box-shadow: inset 0 0 0 2px hsl(var(--l3), 10%), 0 0 20px hsl(var(--l4), 10%);
+    position: relative;
+
+    cursor: pointer;
+    user-select: none;
+
+    & > button {
+        opacity: 0;
+        transition: opacity 0.1s;
     }
 
-    .identity {
-        display: flex;
-        gap: 8px;
-        justify-content: end;
-        align-items: center;
+    &:hover, &:focus-within {
+        background: var(--bg-hov);
+        transition: none;
 
-        font-weight: var(--font-weight-md);
-
-        .name:not(:hover) {
-            color: hsl(var(--c3));
-            text-decoration: none;
+        & > button {
+            opacity: 1;
+            transition: none;
         }
     }
+
+    transition: background 0.1s;
+
+    &.active {
+        --bg: hsl(var(--l4), 25%);
+        --bg-hov: hsl(var(--l4), 35%);
+        --shadow: 0 2px 20px 1px hsl(var(--l4), 20%);
+
+        z-index: 3;
+    }
+
+    .info {
+        z-index: 1;
+        pointer-events: none;
+        flex: 1;
+
+        .name {
+            font-weight: var(--font-weight-md);
+        }
+
+        .artist {
+            display: flex;
+            opacity: 0.7;
+
+            font-size: 14px;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+                pointer-events: auto;
+            }
+        }
+
+        .album {
+            display: flex;
+            opacity: 0.5;
+
+            font-size: 12px;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+                pointer-events: auto;
+            }
+        }
+    }
+
+    .time {
+        color: hsl(var(--c3));
+    }
+
+    button {
+        z-index: 1;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }

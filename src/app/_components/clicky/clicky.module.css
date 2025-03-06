@@ -45,4 +45,8 @@
             opacity: 0.5;
         }
     }
+
+    &.icon {
+        padding: 8px;
+    }
 }

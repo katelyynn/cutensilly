@@ -8,7 +8,8 @@ interface KathyClickyProps {
     link?: any,
     primary?: boolean,
     cloak?: string, colour?: string,
-    children: React.ReactNode
+    children: React.ReactNode,
+    icon?: boolean
 }
 
 export const KathyClicky = ({
@@ -16,18 +17,19 @@ export const KathyClicky = ({
     link,
     primary,
     cloak, colour,
-    children
+    children,
+    icon
 }: KathyClickyProps) => {
     if (elem == 'link') {
         return (
-            <Link className={`${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''}`} href={link}>
+            <Link className={`${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''} ${(icon) ? style.icon : ''}`} href={link}>
                 {children}
             </Link>
         );
     }
 
     return (
-        <button className={`${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''}`} onClick={link}>
+        <button className={`${style.clicky} ${(primary) ? style.primary : ''} ${(cloak) ? style[cloak] : ''} ${(colour) ? style[colour] : ''} ${(icon) ? style.icon : ''}`} onClick={link}>
             {children}
         </button>
     );
