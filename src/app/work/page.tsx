@@ -35,6 +35,18 @@ export default async function Home() {
               }}
               years="2024—2025"
             />
+            <KathyWork
+              title="lotus"
+              bio="name correction system for my last.fm projects, bleh and bwaa"
+              source_url={{
+                link: "https://github.com/katelyynn/lotus",
+                external: true
+              }}
+              view_url={{
+                link: "/work/lotus"
+              }}
+              years="2024—2025"
+            />
           </KathyWorkList>
         </KathyCard>
       </KathyCardList>
