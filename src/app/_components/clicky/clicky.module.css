@@ -41,6 +41,10 @@
         --bg-atv: hsl(var(--l3), 60%);
         --col: var(--b7);
 
+        :global(.hero) & {
+            outline: 8px solid hsl(var(--l2), 10%);
+        }
+
         &[aria-disabled="true"] {
             opacity: 0.5;
         }

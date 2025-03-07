@@ -9,6 +9,7 @@
         display: flex;
         padding: 8px;
         background: hsl(var(--l3));
+        outline: 8px solid hsl(var(--l2), 10%);
         color: var(--b7);
         border-radius: 50%;
 
