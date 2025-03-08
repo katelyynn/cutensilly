@@ -271,7 +271,7 @@ table {
 
     th, td {
       flex-shrink: 0;
-      width: 90px;
+      width: 120px;
 
       display: flex;
       align-items: center;

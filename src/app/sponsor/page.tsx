@@ -25,7 +25,7 @@ export default async function Home() {
         <KathyPerkList>
           <KathyPerk>
             <div className="perk-icon">
-              <SolarIconSet.CalendarMark iconStyle="BoldDuotone" size={28} />
+              <SolarIconSet.StarRainbow iconStyle="BoldDuotone" size={28} />
             </div>
             <h5>support future development</h5>
             <p>just one girl is widely responsible for these projects, so everything helps :3</p>
@@ -39,7 +39,7 @@ export default async function Home() {
           </KathyPerk>
           <KathyPerk>
             <div className="perk-icon">
-              <SolarIconSet.PaletteRound iconStyle="BoldDuotone" size={28} />
+              <SolarIconSet.Pallete2 iconStyle="BoldDuotone" size={28} />
             </div>
             <h5>painted in colour</h5>
             <p>if monthly, pick your favourite colour to display on your name wherever.</p>
@@ -89,12 +89,14 @@ export default async function Home() {
                 <th></th>
                 <td>
                   <KathyClicky link="https://github.com/sponsors/katelyynn?frequency=one-time" elem="a">
-                    choose
+                    $3
+                    <SolarIconSet.SquareArrowRightUp iconStyle="BoldDuotone" size={20} />
                   </KathyClicky>
                 </td>
                 <td>
                   <KathyClicky primary link="https://github.com/sponsors/katelyynn?frequency=monthly" elem="a">
-                    choose
+                    $3/mo
+                    <SolarIconSet.SquareArrowRightUp iconStyle="BoldDuotone" size={20} />
                   </KathyClicky>
                 </td>
               </tr>
