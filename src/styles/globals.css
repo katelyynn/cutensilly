@@ -258,6 +258,7 @@ table {
     tr {
       th {
         color: hsl(var(--c3));
+        padding-bottom: 4px;
       }
     }
   }
@@ -269,7 +270,7 @@ table {
       flex: 1;
     }
 
-    th, td {
+    th:not(:first-child), td {
       flex-shrink: 0;
       width: 120px;
 
@@ -283,9 +284,22 @@ table {
     justify-content: center;
     text-align: center;
   }
+}
 
-  th {
-    vertical-align: middle;
-    padding: 4px 0;
-  }
+.explain,
+.context {
+  font-size: 14px;
+  color: hsl(var(--c3));
+}
+
+.explain {
+  max-width: 440px;
+}
+
+em {
+  font-style: italic;
+}
+sub {
+  font-size: 80%;
+  color: hsl(var(--c3));
 }
