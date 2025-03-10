@@ -87,7 +87,7 @@ export default async function Home() {
           </KathyClickyGrid>
         </KathyCard>
         <KathyCard>
-          <h4>quote from my bf</h4>
+          <h4>quote from my gf</h4>
           <KathyQuote hue={198} sat={1.6} lit={1.2} who={{
             avatar: '/avatars/ino.png',
               name: 'ino',
