@@ -81,7 +81,7 @@ body {
   --lit: 1;
 }
 .colourful,
-body {
+body, main {
   --c1: var(--hue), calc(var(--sat) * 40%), 100%;
   --c2: var(--hue), calc(var(--sat) * 60%), 94%;
   --c3: var(--hue), calc(var(--sat) * 10%), 60%;
@@ -90,7 +90,7 @@ body {
   --l3: var(--hue), calc(var(--sat) * 50%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 70%);
   --l4: var(--hue), calc(var(--sat) * 60%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 50%);
 }
-body {
+body, main {
   --b4: var(--hue), calc(var(--sat) * 12% * var(--sat-bg, 1)), 16%;
   --b5: var(--hue), calc(var(--sat) * 12% * var(--sat-bg, 1)), 12%;
   --b6: var(--hue), calc(var(--sat) * 14% * var(--sat-bg, 1)), 6%;
@@ -112,6 +112,10 @@ body {
 
 main {
   width: var(--page);
+
+  &.wider {
+    --page: 1200px;
+  }
 }
 
 
@@ -186,6 +190,32 @@ a {
 
   & + .sub {
     margin-top: -90px;
+  }
+}
+.hero-left {
+  display: flex;
+  align-items: center;
+  padding: 30px calc((100vw - var(--page)) / 2) 60px;
+  gap: 50px;
+
+  background: linear-gradient(0deg, hsl(var(--l4), 20%), transparent 73%);
+
+  margin: 0 calc(-1 * ((100vw - var(--page)) / 2));
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+
+    strong,
+    p {
+      max-width: 380px;
+    }
+  }
+
+  .image {
+    flex-shrink: 0;
   }
 }
 
@@ -302,4 +332,45 @@ em {
 sub {
   font-size: 80%;
   color: hsl(var(--c3));
+}
+
+.raise {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+
+.full-split {
+  display: flex;
+  gap: 50px;
+
+  margin: 10px 20px;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    flex: 1;
+
+    .perk-icon {
+      margin-bottom: 12px;
+    }
+
+    p {
+      max-width: 500px;
+    }
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+
+    &.solo {
+      img {
+        width: 100%;
+        border-radius: var(--round);
+      }
+    }
+  }
 }

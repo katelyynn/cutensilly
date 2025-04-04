@@ -125,6 +125,10 @@
     --lit: 0.8;
 }
 
+.sponsor {
+    --hue: 333;
+}
+
 .list {
     display: flex;
     gap: 8px;

@@ -4,19 +4,19 @@
     flex-direction: column;
     text-align: center;
     gap: 4px;
+}
 
-    :global(.perk-icon) {
-        display: flex;
-        padding: 8px;
-        background: hsl(var(--l3));
-        outline: 8px solid hsl(var(--l2), 10%);
-        color: var(--b7);
-        border-radius: 50%;
+:global(.perk-icon) {
+    display: flex;
+    padding: 8px;
+    background: hsl(var(--l3));
+    outline: 8px solid hsl(var(--l2), 10%);
+    color: var(--b7);
+    border-radius: 50%;
 
-        width: fit-content;
+    width: fit-content;
 
-        margin-bottom: 4px;
-    }
+    margin-bottom: 4px;
 }
 
 .list {
@@ -25,5 +25,6 @@
     gap: 20px;
 
     width: 100%;
+    max-width: 900px;
     margin-top: 10px;
 }

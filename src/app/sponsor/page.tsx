@@ -21,7 +21,7 @@ export default async function Home() {
       </div>
       <div className="sub">
         <h3>what are the benefits?</h3>
-        <p className="big">the following are visible in my two main projects: bleh and bwaa <sub><em>(soon)</em></sub>.</p>
+        <p className="big">the following are visible in my two main projects: bleh and bwaa.</p>
         <KathyPerkList>
           <KathyPerk>
             <div className="perk-icon">
@@ -73,7 +73,7 @@ export default async function Home() {
               <tr>
                 <th>
                   <strong>custom badge of your choosing</strong>
-                  <p className="explain">choose any badge from either <a href="https://lucide.dev" target="_blank">lucide</a> or in the future, <a href="https://icon-sets.iconify.design/solar" target="_blank">solar</a>. must not be a copy of a pre-existing last.fm or bleh/bwaa badge. can be any text of your choosing as long as its not nsfw or hateful.</p>
+                  <p className="explain">choose any badge from either <a href="https://lucide.dev" target="_blank">lucide</a>. must not be a copy of a pre-existing last.fm or bleh/bwaa badge. can be any text of your choosing as long as its not nsfw or hateful.</p>
                 </th>
                 <td>
                   <SolarIconSet.CloseCircle iconStyle="Outline" size={28} className="subtler" />
@@ -111,7 +111,6 @@ export default async function Home() {
               </tr>
             </tbody>
           </table>
-          <p className="context">perks are only visible in bleh for now, bwaa will receive an update in the future</p>
         </KathyCard>
       </KathyCardList>
     </main>

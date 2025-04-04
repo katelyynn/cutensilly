@@ -87,10 +87,10 @@ export default async function Home() {
           </KathyClickyGrid>
         </KathyCard>
         <KathyCard>
-          <h4>quote from my gf</h4>
+          <h4>quote from stella</h4>
           <KathyQuote hue={198} sat={1.6} lit={1.2} who={{
-            avatar: '/avatars/ino.png',
-              name: 'ino',
+            avatar: '/avatars/stella.png',
+              name: 'stella',
               link: 'https://cutensilly.org'
           }}>
               kathy, katie, kate, katelyn<br />wateva it is im gonna marry her

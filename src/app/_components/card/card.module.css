@@ -6,6 +6,12 @@
     background: hsl(var(--b6));
     padding: 25px 20px;
     border-radius: var(--round);
+
+    &.full {
+        padding: 50px calc((100vw - var(--page)) / 2);
+        margin: 0 calc(-1 * ((100vw - var(--page)) / 2));
+        border-radius: unset;
+    }
 }
 
 .list {
@@ -14,4 +20,14 @@
     gap: 20px;
 
     margin-top: 20px;
+
+    &.orient-h {
+        margin: unset;
+        flex-direction: row;
+
+        .card {
+            width: 50%;
+            justify-content: center;
+        }
+    }
 }
