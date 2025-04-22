@@ -12,8 +12,8 @@
     background-size: cover;
     border: 1px solid rgba(255, 255, 255, 0.1);
 
-    --small: 60px;
-    --gap: 10px;
+    --small: 90px;
+    --gap: 18px;
 
     &.w-1 {
         width: var(--small);
@@ -22,10 +22,19 @@
         .title {
             display: none;
         }
+
+        .icon {
+            font-size: 36px;
+            inset: 0;
+        }
     }
     &.w-2 {
         width: calc((var(--small) * 2) + var(--gap));
         grid-column-end: span 2;
+
+        .icon {
+            font-size: 60px;
+        }
     }
     &.w-3 {
         width: calc((var(--small) * 3) + (var(--gap) * 2));
@@ -66,7 +75,6 @@
         position: absolute;
         inset: -4px;
         border: 3px solid hsl(var(--l3));
-        border-radius: calc(var(--round) + 4px);
         opacity: 0;
     }
 
@@ -85,7 +93,6 @@
 
     padding: unset;
     background: hsl(var(--l4));
-    border-radius: var(--round);
 
     .title {
         position: absolute;
@@ -120,4 +127,12 @@
     &.scheme-orange {
         --hue: 16;
     }
+}
+
+.view {
+    padding: 18px;
+    display: grid;
+    grid-template-columns: 90px 90px 90px 90px 90px 90px;
+    grid-template-rows: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 18px;
 }

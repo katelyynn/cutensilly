@@ -19,43 +19,37 @@ export default async function Home() {
 
   return (
     <main>
-      <h3>music <span className="kyuu">collection</span></h3>
-      <KathyCardList>
-        <KathyCard>
-          <h4>physical collection</h4>
-          <KathyRecordList>
-            {collection.collection.map((record: Record, i: number) => (
-                <KathyRecord
-                  key={i}
-                  id={record.id}
-                  title={record.title}
-                  year={record.year}
-                  avatar={record.avatar}
-                  formats={record.formats}
-                  artists={record.artists}
-                />
-              ))}
-          </KathyRecordList>
-        </KathyCard>
-        <KathyCard>
-          <h4>recent listening</h4>
-          <KathyTrackList>
-            {recent_tracks.tracks.map((track: Track, i: number) => (
-              <KathyTrack
-                key={i}
-                avatar={track.avatar}
-                title={track.title}
-                artist={track.artist}
-                album={track.album}
-                time={track.time}
-                love={track.love}
-                active={track.active}
-                link={track.link}
-              />
-            ))}
-          </KathyTrackList>
-        </KathyCard>
-      </KathyCardList>
+      <h2>MUSIC</h2>
+      <h1>albums</h1>
+      <KathyRecordList>
+        {collection.collection.map((record: Record, i: number) => (
+            <KathyRecord
+              key={i}
+              id={record.id}
+              title={record.title}
+              year={record.year}
+              avatar={record.avatar}
+              formats={record.formats}
+              artists={record.artists}
+            />
+          ))}
+      </KathyRecordList>
+      <h1>recent</h1>
+      <KathyTrackList>
+        {recent_tracks.tracks.map((track: Track, i: number) => (
+          <KathyTrack
+            key={i}
+            avatar={track.avatar}
+            title={track.title}
+            artist={track.artist}
+            album={track.album}
+            time={track.time}
+            love={track.love}
+            active={track.active}
+            link={track.link}
+          />
+        ))}
+      </KathyTrackList>
     </main>
   );
 }
