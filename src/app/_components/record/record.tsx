@@ -42,10 +42,9 @@ export const KathyRecord = ({
 }: Record) => {
     return (
         <li className={style.record}>
-            <KathyAvatar image={avatar} alt={`image for ${title}`} size="lg" />
+            <KathyAvatar image={avatar} alt={`image for ${title}`} size="xl" />
             <div className={style.info}>
-                {formats[0] ? <div className={`colourful ${style.format} ${style[`format-${formats[0].name.toLowerCase().replaceAll(' ', '')}`]}`} key={0}>{formats[0].name}</div> : ''}
-                <div className={style.title}>{title}</div>
+                <h3 className={style.title}>{title}</h3>
                 <div className={style.artists}>
                     {artists.map((artist: Artist, i: number) => (
                         <span className={style.artist} key={i}>{artist.name}{(artists.length > 1) ? <span className={style.join}>{(artist.join == '&') ? ' ' : ''}{artist.join} </span> : ''}</span>
@@ -55,6 +54,7 @@ export const KathyRecord = ({
                     <div className={style.year}>{year}</div>
                     {(formats[0]?.descriptions[0]) ? <div className={style.descriptor}>{formats[0].descriptions[0]}</div> : ''}
                 </div>
+                {formats[0] ? <div className={`colourful ${style.format} ${style[`format-${formats[0].name.toLowerCase().replaceAll(' ', '')}`]}`} key={0}>{formats[0].name}</div> : ''}
             </div>
             <KathyLinkBlock link={`https://www.discogs.com/release/${id}`} type="a" />
         </li>

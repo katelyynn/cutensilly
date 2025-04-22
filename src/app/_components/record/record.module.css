@@ -1,32 +1,12 @@
 .record {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     position: relative;
-
-    padding: 8px 8px 12px;
-    margin: 0 -6px;
-    border-radius: calc(var(--round) + 6px);
-
-    transition: background 0.1s;
-
-    &:hover {
-        transition: none;
-        background: hsl(var(--b5), 40%);
-
-        .format {
-            opacity: 1 !important;
-            transition: none !important;
-        }
-    }
-
-    text-align: center;
 
     .info {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 2px;
+        gap: 6px;
         pointer-events: none;
 
         .title {
@@ -35,8 +15,8 @@
             display: -webkit-box;
             overflow: hidden;
             text-overflow: ellipsis;
-            line-clamp: 1;
-            -webkit-line-clamp: 1;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
         }
 
@@ -44,59 +24,25 @@
             display: -webkit-box;
             overflow: hidden;
             text-overflow: ellipsis;
-            line-clamp: 1;
-            -webkit-line-clamp: 1;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
         }
         .artist {
-            font-size: 14px;
+            font-size: 20px;
             color: hsl(var(--c2), 80%);
         }
         .descriptor,
         .year {
+            font-size: 16px;
+            font-weight: 600;
             color: hsl(var(--c3));
-            font-size: 12px;
-            line-height: 14px;
         }
 
         .format {
-            font-size: 13px;
-            font-weight: var(--font-weight-md);
-            color: hsl(var(--l3));
-            background: hsl(var(--b6), 80%);
-            border-radius: var(--round);
-
-            opacity: 0.4;
-            transition: opacity 0.1s;
-
-            width: fit-content;
-            padding: 0 8px;
-
-            &.format-cd, &.format-cdr {
-                --hue: 265;
-            }
-            &.format-vinyl {
-                --hue: 30;
-                --sat: 1.5;
-            }
-
-            position: absolute;
-            top: 14px;
-            right: 14px;
-
-            backdrop-filter: blur(5px);
-
-            /*&:before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                display: block;
-                background: var(--b7);
-                opacity: 0.5;
-                border-radius: var(--round);
-
-                z-index: -100000;
-            }*/
+            font-size: 16px;
+            font-weight: 600;
+            color: hsl(var(--c3));
         }
 
         a {
@@ -108,29 +54,20 @@
 
     .extras {
         display: flex;
-        justify-content: center;
         gap: 10px;
     }
 
     :global(.avatar) {
-        width: 100%;
-        height: unset;
-        aspect-ratio: 1 / 1;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-shrink: 0;
 
         img {
-            width: 100%;
-            height: unset;
+            object-fit: cover;
         }
     }
-
 }
 
 .list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }

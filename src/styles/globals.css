@@ -81,8 +81,8 @@ body {
 .colourful,
 body, main {
   --c1: var(--hue), calc(var(--sat) * 40%), 100%;
-  --c2: var(--hue), calc(var(--sat) * 60%), 94%;
-  --c3: var(--hue), calc(var(--sat) * 10%), 60%;
+  --c2: var(--hue), 0%, 56%;
+  --c3: var(--hue), 0%, 30%;
 
   --l2: var(--hue), calc(var(--sat) * 40%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 83%);
   --l3: var(--hue), calc(var(--sat) * 50%), calc(clamp(min(0.5), var(--lit), max(1.5)) * 70%);
