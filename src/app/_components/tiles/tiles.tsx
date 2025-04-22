@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import style from "./tiles.module.css";
 
 interface KathyTileProps {
@@ -6,7 +7,8 @@ interface KathyTileProps {
     name: string,
     width?: number,
     height?: number,
-    children: React.ReactNode
+    children: React.ReactNode,
+    link?: string
 }
 
 export const KathyTile = ({
@@ -14,17 +16,18 @@ export const KathyTile = ({
     name,
     width = 2,
     height = 2,
-    children
+    children,
+    link = ''
 }: KathyTileProps) => {
     return (
-        <button className={`colourful ${style.tile} ${style[`scheme-${scheme}`]} ${style[`w-${width}`]} ${style[`h-${height}`]}`}>
+        <Link className={`colourful ${style.tile} ${style[`scheme-${scheme}`]} ${style[`w-${width}`]} ${style[`h-${height}`]}`} href={link}>
             <div className={style.icon}>
                 {children}
             </div>
             <div className={style.title}>
                 <strong>{name}</strong>
             </div>
-        </button>
+        </Link>
     );
 }
 

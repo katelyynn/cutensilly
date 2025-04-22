@@ -109,9 +109,11 @@ body {
 }
 
 main {
+  padding-top: 30px;
   width: var(--page);
 
   &.wider {
+    padding-top: unset;
     --page: 1200px;
   }
 }
