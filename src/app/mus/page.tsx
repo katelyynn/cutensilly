@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <main>
-      <KathyClicky cloak="invisible" elem="a" link="/">
+      <KathyClicky cloak="invisible" elem="link" link="/">
         <KathyIcon state="" hover="" />
       </KathyClicky>
       <h2>MUSIC</h2>
