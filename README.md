@@ -1,4 +1,4 @@
-# [cutensilly](https://cutensilly.org)
+# [cutensilly](https://katelyn.moe)
 my minimal, cute, and silly site
 
 ![image](img/preview.png)

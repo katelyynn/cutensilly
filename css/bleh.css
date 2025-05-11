@@ -1,8 +1,8 @@
 /* bleh */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
-:root {--font-brand: Comfortaa, var(--font)}
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+:root {--font-brand: Darumadrop One, var(--font)}
 
 .hi.kate:not(h2 i, p i) {
     font-family: var(--font-brand);

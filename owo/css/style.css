@@ -544,9 +544,11 @@ header:not(.window header) {
             flex: 1;
 
             a:not(.btn) {
-                font-size: 26px;
-                line-height: 30px;
+                font-size: 28px;
+                line-height: 28px;
+                margin-top: -8px;
                 font-family: var(--font-brand);
+                color: hsl(var(--l3-c));
                 text-decoration: none;
             }
         }

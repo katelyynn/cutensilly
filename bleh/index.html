@@ -8,7 +8,7 @@
     <meta property="og:site_name" content="kate">
     <meta property="og:type" content="website">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="og:url" content="https://cutensilly.org/bleh/">
+    <meta property="og:url" content="https://katelyn.moe/bleh/">
     <meta property="og:title" content="bleh — a cutensilly extension for last.fm">
     <meta property="og:description" content="a complete overhaul for last.fm with in-built themes, capitalisation corrections, music title tagging decoders, colour customisation, a seasonal system, useful tweaks, and more.">
     <meta property="og:image" content="/img/bleh3-theme-dark.png">
@@ -16,7 +16,7 @@
     <meta property="og:image:height" content="630">
     <meta name="theme-color" content="#000000">
     <!-- mobile iOS support -->
-    <link rel="apple-touch-icon" href="https://cutensilly.org/img/ios.png">
+    <link rel="apple-touch-icon" href="https://katelyn.moe/img/ios.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- display -->
     <meta charset="UTF-8">
@@ -57,9 +57,6 @@
     <link rel="stylesheet" href="/owo/css/input.css">
     <link rel="stylesheet" href="/owo/css/grid.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
-        :root {--font-brand: Comfortaa, var(--font)}
-
         h1.hi.kate {
             font-family: var(--font-brand);
         }
@@ -110,44 +107,17 @@
             color: hsl(var(--c3));
         }
     </style>
-    <header>
-        <div class="content">
-            <div class="logo">
-                <a href="/bleh/">
-                    bleh
-                </a>
-                <div class="nav">
-                    <a class="btn" href="/">
-                        by cutensilly
-                    </a>
-                </div>
-            </div>
-            <div class="nav">
-                <a class="btn" href="/bleh/">
-                    <i class="icon w-16" data-lucide="home"></i>
-                    Home
-                </a>
-                <a class="btn" href="https://github.com/katelyynn/bleh" target="_blank">
-                    <i class="icon w-16" data-lucide="code"></i>
-                    Source code
-                </a>
-                <a class="btn" href="https://github.com/sponsors/katelyynn" target="_blank">
-                    <i class="icon w-16" data-lucide="heart"></i>
-                    Sponsor
-                </a>
-            </div>
-        </div>
-    </header>
     <main class="panel-container">
-        <section class="side-by-side content right span cut under-header" style="margin-bottom: unset; background-image: linear-gradient(180deg, hsl(var(--h4), 30%), transparent)">
+        <section class="side-by-side content right span cut under-header" style="margin-bottom: unset; padding-top: 50px; background-image: linear-gradient(180deg, hsl(var(--h4), 30%), transparent)">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bleh3-theme-dark.png">
+                    <img src="/img/bleh-ash.jpg">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="--gap: 5px">
+                <h1 class="medium logo">bleh</h1>
                 <h1 class="big">Music stats<br>viewed from<br>a new lens</h1>
-                <h4>Enter an alternate universe Last.fm redesigned from the ground up for usability.</h4>
+                <h4>Enter an alternate universe Last.fm redesigned from the ground up for usability - and open source!</h4>
                 <div class="btn-row" style="gap: 10px">
                     <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn" style="margin-top: 30px">
                         <span class="text">Click to install</span>
@@ -166,63 +136,63 @@
                 <div class="gallery" id="gallery">
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh3-main-settings.png">
+                            <img src="/img/bleh-colours.jpg">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="settings-2"></i>bleh settings (inside the site)</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="settings-2"></i>bleh Settings (with Void theme)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-library.png" loading="lazy">
+                            <img src="/img/bleh-glacier-list.jpg" loading="lazy">
                         </div>
                         <figcaption><i class="icon w-16" data-lucide="library-big"></i>Library view</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh3-theme-oled.png" loading="lazy">
+                            <img src="/img/bleh-void.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Midnight theme selected and a custom colour)</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Void theme and custom colour)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/glacier.png" loading="lazy">
+                            <img src="/img/bleh-glacier.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="library-big"></i>Library artist view</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="library-big"></i>Library artist view (with Dark theme)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh3-theme-light.png" loading="lazy">
+                            <img src="/img/bleh-light.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Light theme selected and a custom colour)</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Light theme and custom colour)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh3-gallery.png" loading="lazy">
+                            <img src="/img/bleh-gallery.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="gallery-vertical-end"></i>Redesigned gallery pages</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="gallery-vertical-end"></i>Redesigned gallery pages (with Void theme)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-album-custom.png" loading="lazy">
+                            <img src="/img/bleh-album.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="disc"></i>Album view (showcasing auto page colouring from cover art)</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="disc"></i>Album view (with Light theme, auto-coloured from album cover)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-track.png" loading="lazy">
+                            <img src="/img/bleh-track.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="music-3"></i>Track view (with a custom colour)</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="music-3"></i>Track view (with Ink theme and custom colour)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-artist.png" loading="lazy">
+                            <img src="/img/bleh-artist.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="star"></i>Artist view (with a custom colour)</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="star"></i>Artist view (with Dark theme and custom colour)</figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
-                            <img src="/img/bleh2-obsession.png" loading="lazy">
+                            <img src="/img/bleh-obsession.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="activity"></i>Obsession view</figcaption>
+                        <figcaption><i class="icon w-16" data-lucide="activity"></i>Obsession view (with Void theme, auto-coloured from album cover)</figcaption>
                     </figure>
                 </div>
                 <button class="btn icon-btn arrow-l" onclick="change(-1)">
@@ -242,7 +212,7 @@
                         </div>
                         <div class="feature-list-item-info">
                             <h4>Choose your style</h4>
-                            <p>Enjoy a selection of four themes from the lightest to the darkest.</p>
+                            <p>Enjoy a selection of five themes from the lightest to the darkest.</p>
                             <p>Find the colour that suits you best from a wide range of presets, seasonal colours, or your own personal taste!</p>
                         </div>
                     </div>
@@ -295,7 +265,7 @@
             <section class="side-by-side top content panel grid-margin">
                 <div class="cover at-bottom">
                     <div class="figure">
-                        <img src="/img/sm-gallery.png" style="box-shadow: unset">
+                        <img src="/img/bleh-big_gallery.jpg" style="box-shadow: unset">
                     </div>
                 </div>
             </section>
@@ -329,14 +299,14 @@
             <section class="side-by-side top content panel grid-margin">
                 <div class="cover">
                     <div class="figure">
-                        <img src="/img/glacier.png" style="box-shadow: unset">
+                        <img src="/img/bleh-glacier.jpg" style="box-shadow: unset">
                     </div>
                 </div>
             </section>
             <section class="side-by-side top content panel grid-margin">
                 <div class="cover">
                     <div class="figure">
-                        <img src="/img/glacier_graphs.png" style="box-shadow: unset">
+                        <img src="/img/bleh-glacier_graphs.jpg" style="box-shadow: unset">
                     </div>
                 </div>
             </section>
@@ -363,7 +333,7 @@
         <section class="side-by-side content panel grid-margin right">
             <div class="cover">
                 <div class="figure">
-                    <img src="/img/bio.png" style="box-shadow: unset">
+                    <img src="/img/bleh-bio.jpg" style="box-shadow: unset">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 10px">
@@ -491,57 +461,6 @@
             <div class="background-icon">
                 <i class="icon w-48" data-lucide="verified"></i>
             </div>
-            <h2>Hear what these <i class="hi kate">certified happy customers</i> had to say</h2>
-            <div class="frontpage-quotes">
-                <a class="quote" href="https://last.fm/user/bIeak" target="_blank">
-                    <div class="icon">
-                        <img class="avatar shadow circular" src="/img/avi-bIeak.png">
-                    </div>
-                    <div class="text">
-                        <h5>bIeak</h5>
-                        <p>mynames sneek and i was on the brink of bankruptcy deep in taiwan, my frogs werent selling and all of my breeding attempts were failing. it was over and i was about to give up entirely. then cutensilly contacted me and with the last of my remaining data on my shitty nokia i downloaded bleh™ and instantly i was <i class="hi kate">showered in amazingly bred frogs to sell</i> to other taiwanese citizens and my life was saved im now a millionaire</p>
-                    </div>
-                </a>
-                <a class="quote" href="https://last.fm/user/inozom" target="_blank">
-                    <div class="icon">
-                        <img class="avatar shadow circular" src="/img/avi-inozom.png">
-                    </div>
-                    <div class="text">
-                        <h5>inozom</h5>
-                        <p>aaaaaaHUUUYYYYAA</p>
-                    </div>
-                </a>
-                <a class="quote" href="https://last.fm/user/rainsleep" target="_blank">
-                    <div class="icon">
-                        <img class="avatar shadow circular" src="/img/avi-rainsleep.png">
-                    </div>
-                    <div class="text">
-                        <h5>rainsleep</h5>
-                        <p>bleh is #awesome : ) i was going to shoot my self in the face but<br>now i can <i class="hi kate">stare at my scrobbles in a beautiful Dark mode</i> thanks to bleh : )</p>
-                    </div>
-                </a>
-                <a class="quote" href="https://last.fm/user/RazzBX" target="_blank">
-                    <div class="icon">
-                        <img class="avatar shadow circular" src="/img/avi-RazzBX.png">
-                    </div>
-                    <div class="text">
-                        <h5>RazzBX</h5>
-                        <p><i class="hi kate" id="razz">ezgif-6-663fcc28c9.gif</i></p>
-                    </div>
-                </a>
-                <a class="quote" href="https://last.fm/user/u5c" target="_blank">
-                    <div class="icon">
-                        <img class="avatar shadow circular" src="/img/avi-u5c.png">
-                    </div>
-                    <div class="text">
-                        <h5>u5c</h5>
-                        <p>meow meow meow <i class="hi kate">mrrp mrow</i> purrr ^_^<br>(i endorse bleh theme it saved my marriage)</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-        <div class="gap" style="--gap: 120px"></div>
-        <section class="content flex flex-column flex-gap flex-align-center" style="--gap: 20px">
             <h2>peaked your interest?</h2>
             <p class="text-18">click the big purple button to install now :3</p>
             <div class="btn-row" style="gap: 10px">
@@ -561,7 +480,7 @@
 <footer>
     <div class="content">
         <span class="main">
-            <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">kate 2023-2025</a>
+            <a class="over hide" href="https://github.com/katelyynn/cutensilly/blob/uwu/LICENSE" target="_blank">katelyn 2023-2025</a>
         </span>
         <span class="links">
             <p>bleh is in no way associated with Last.fm, this is all a passion project</p>
