@@ -115,7 +115,6 @@ function request_new_info() {
 
 function load_info(data) {
     document.getElementById('avatar').setAttribute('src',data.covers.extra_large);
-    document.getElementById('favi').href = data.covers.extra_large;
 }
 
 
