@@ -27,7 +27,7 @@ function request_new_tracks() {
         load_tracks(JSON.parse(this.response));
 
         let api_expire = new Date();
-        api_expire.setSeconds(api_expire.getSeconds() + 8);
+        api_expire.setSeconds(api_expire.getMinutes() + 6);
         localStorage.setItem('fm_expire',api_expire);
         localStorage.setItem('fm_tracks',this.response);
         is_requesting = false;
@@ -104,7 +104,7 @@ function request_new_info() {
         load_info(JSON.parse(this.response));
 
         let api_info_expire = new Date();
-        api_info_expire.setHours(api_info_expire.getHours() + 2);
+        api_info_expire.setHours(api_info_expire.getHours() + 12);
         localStorage.setItem('fm_info_expire',api_info_expire);
         localStorage.setItem('fm_info',this.response);
         is_requesting_info = false;
@@ -132,5 +132,5 @@ setTimeout(function() {
 
     request_info();
     request_tracks();
-    setInterval(request_tracks, 3000);
+    setInterval(request_tracks, 1000);
 },100);
