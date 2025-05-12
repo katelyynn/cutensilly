@@ -20,7 +20,7 @@ function request_new_tracks() {
     is_requesting = true;
 
     let xhr = new XMLHttpRequest();
-    let url = 'https://api.katelyn.moe/fm/user/katelyness';
+    let url = 'https://api.katelyn.moe/fm';
     xhr.open('GET',url,true);
 
     xhr.onload = function() {
