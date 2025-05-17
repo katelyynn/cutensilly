@@ -37,14 +37,14 @@ h1 {
 
 .bg-cover {
     position: absolute;
-    right: calc((100vw - var(--cards-width)) / 2 + var(--card-padding) - 20px);
-    height: 430px;
+    right: calc((100vw - var(--cards-width)) / 2 + var(--card-padding) - 40px);
+    height: 524px;
 
     display: flex;
     justify-content: center;
     mix-blend-mode: overlay;
 
-    --mask: linear-gradient(90deg,rgba(0, 0, 0, 0) 0%, white 10%, white 90%, rgba(0, 0, 0, 0) 100%);
+    --mask: linear-gradient(90deg,rgba(0, 0, 0, 0) 0%, white 5%, white 90%, rgba(0, 0, 0, 0) 100%);
     mask-image: var(--mask);
     -webkit-mask-image: var(--mask);
 
@@ -59,9 +59,30 @@ h1 {
         img {
             border-radius: 0;
             box-shadow: unset;
-            filter: brightness(120%);
+            filter: brightness(140%);
+            object-fit: cover;
+                object-position: top;
         }
     }
+
+    @media (max-width: 1000px) {
+        left: 0;
+        right: 0;
+        top: -70px;
+        height: 300px;
+
+        .figure {
+            width: 100%;
+        }
+    }
+}
+
+
+h2.bleh {
+    font-family: var(--font-brand);
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: 300;
 }
 
 
