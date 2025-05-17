@@ -27,6 +27,43 @@ html {
     }
 }
 
+h1 {
+    i {
+        color: transparent;
+        -webkit-text-stroke: 0.8px hsl(var(--c1));
+    }
+}
+
+
+.bg-cover {
+    position: absolute;
+    right: calc((100vw - var(--cards-width)) / 2 + var(--card-padding) - 20px);
+    height: 430px;
+
+    display: flex;
+    justify-content: center;
+    mix-blend-mode: overlay;
+
+    --mask: linear-gradient(90deg,rgba(0, 0, 0, 0) 0%, white 10%, white 90%, rgba(0, 0, 0, 0) 100%);
+    mask-image: var(--mask);
+    -webkit-mask-image: var(--mask);
+
+    .figure {
+        height: 100%;
+        width: 800px;
+
+        --mask: linear-gradient(180deg, white, transparent 95%);
+        mask-image: var(--mask);
+        -webkit-mask-image: var(--mask);
+
+        img {
+            border-radius: 0;
+            box-shadow: unset;
+            filter: brightness(120%);
+        }
+    }
+}
+
 
 
 /* home gallery */
@@ -51,10 +88,23 @@ figcaption {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: 16px;
 
     .w-16 {
         --w: 14px;
+        margin-top: -2px;
+    }
+
+    & > svg {
+        margin-right: -10px;
+    }
+
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        color: hsl(var(--c3));
     }
 }
 

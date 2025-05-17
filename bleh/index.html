@@ -109,25 +109,26 @@
     </style>
     <main class="panel-container">
         <section class="side-by-side content right span cut under-header" style="margin-bottom: unset; padding-top: 50px; background-image: linear-gradient(180deg, hsl(var(--h4), 30%), transparent)">
-            <div class="cover">
-                <div class="figure">
-                    <img src="/img/bleh-ash.jpg">
-                </div>
-            </div>
             <div class="text flex flex-column flex-gap" style="--gap: 5px">
                 <h1 class="medium logo">bleh</h1>
-                <h1 class="big">Music stats<br>viewed from<br>a new lens</h1>
+                <h1 class="big bleh">Music stats<br>viewed from<br>a new lens</h1>
                 <h4>Enter an alternate universe Last.fm redesigned from the ground up for usability - and open source!</h4>
                 <div class="btn-row" style="gap: 10px">
                     <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn" style="margin-top: 30px">
-                        <span class="text">Click to install</span>
+                        <i class="icon w-16" data-lucide="square-dashed-mouse-pointer"></i>
+                        <span class="text">Begin install</span>
                         <i class="icon w-16" data-lucide="chevron-right"></i>
                     </a>
                     <a role="button" class="btn primary shine brand sponsor" href="https://github.com/sponsors/katelyynn" target="_blank" style="margin-top: 30px; --hue: 333">
                         <i class="icon w-16" data-lucide="heart"></i>
-                        <span class="text">Sponsor me</span>
+                        <span class="text">Become a sponsor</span>
                         <i class="icon w-16" data-lucide="chevron-right"></i>
                     </a>
+                </div>
+            </div>
+            <div class="bg-cover">
+                <div class="figure">
+                    <img src="/img/bleh-shot.jpg">
                 </div>
             </div>
         </section>
@@ -138,61 +139,159 @@
                         <div class="main-image">
                             <img src="/img/bleh-colours.jpg">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="settings-2"></i>bleh Settings (with Void theme)</figcaption>
+                        <figcaption>
+                            <i class="icon w-16" data-lucide="settings"></i>
+                            bleh Settings
+                            <label>
+                                <i class="icon w-16" data-lucide="swatch-book"></i>
+                                Void
+                            </label>
+                        </figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh-glacier-list.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="library-big"></i>Library view</figcaption>
+                        <figcaption>
+                            <i class="icon w-16" data-lucide="library-big"></i>
+                            Library
+                        </figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh-void.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Void theme and custom colour)</figcaption>
+                        <figcaption>
+                            <i class="icon w-16" data-lucide="user"></i>
+                            Profile
+                            <label>
+                                <i class="icon w-16" data-lucide="swatch-book"></i>
+                                Void
+                            </label>
+                            <label>
+                                <i class="icon w-16" data-lucide="palette"></i>
+                                Custom colour
+                            </label>
+                        </figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh-glacier.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="library-big"></i>Library artist view (with Dark theme)</figcaption>
+                        <figcaption>
+                            <i class="icon w-16" data-lucide="library-big"></i>
+                            Library (Artists)
+                            <label>
+                                <i class="icon w-16" data-lucide="swatch-book"></i>
+                                Void
+                            </label>
+                            <label>
+                                <i class="icon w-16" data-lucide="palette"></i>
+                                Custom colour
+                            </label>
+                        </figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh-light.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="user"></i>Profile (with Light theme and custom colour)</figcaption>
+                        <figcaption>
+                            <i class="icon w-16" data-lucide="user"></i>
+                            Profile
+                            <label>
+                                <i class="icon w-16" data-lucide="swatch-book"></i>
+                                Light
+                            </label>
+                            <label>
+                                <i class="icon w-16" data-lucide="palette"></i>
+                                Custom colour
+                            </label>
+                        </figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh-gallery.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="gallery-vertical-end"></i>Redesigned gallery pages (with Void theme)</figcaption>
+                        <figcaption>
+                            <i class="icon w-16" data-lucide="gallery-vertical-end"></i>
+                            Gallery
+                            <label>
+                                <i class="icon w-16" data-lucide="swatch-book"></i>
+                                Void
+                            </label>
+                            <label>
+                                <i class="icon w-16" data-lucide="palette"></i>
+                                Custom colour
+                            </label>
+                        </figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh-album.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="disc"></i>Album view (with Light theme, auto-coloured from album cover)</figcaption>
+                        <figcaption>
+                            <i class="icon w-16" data-lucide="disc"></i>
+                            Album
+                            <label>
+                                <i class="icon w-16" data-lucide="swatch-book"></i>
+                                Light
+                            </label>
+                            <label>
+                                <i class="icon w-16" data-lucide="palette"></i>
+                                Auto-coloured from cover
+                            </label>
+                        </figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh-track.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="music-3"></i>Track view (with Ink theme and custom colour)</figcaption>
+                        <figcaption>
+                            <i class="icon w-16" data-lucide="music"></i>
+                            Track
+                            <label>
+                                <i class="icon w-16" data-lucide="swatch-book"></i>
+                                Ink
+                            </label>
+                            <label>
+                                <i class="icon w-16" data-lucide="palette"></i>
+                                Custom colour
+                            </label>
+                        </figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh-artist.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="star"></i>Artist view (with Dark theme and custom colour)</figcaption>
+                        <figcaption>
+                            <i class="icon w-16" data-lucide="star"></i>
+                            Artist
+                            <label>
+                                <i class="icon w-16" data-lucide="swatch-book"></i>
+                                Dark
+                            </label>
+                            <label>
+                                <i class="icon w-16" data-lucide="palette"></i>
+                                Custom colour
+                            </label>
+                        </figcaption>
                     </figure>
                     <figure>
                         <div class="main-image">
                             <img src="/img/bleh-obsession.jpg" loading="lazy">
                         </div>
-                        <figcaption><i class="icon w-16" data-lucide="activity"></i>Obsession view (with Void theme, auto-coloured from album cover)</figcaption>
+                        <figcaption>
+                            <i class="icon w-16" data-lucide="iteration-ccw"></i>
+                            Obsession
+                            <label>
+                                <i class="icon w-16" data-lucide="swatch-book"></i>
+                                Void
+                            </label>
+                            <label>
+                                <i class="icon w-16" data-lucide="palette"></i>
+                                Auto-coloured from cover
+                            </label>
+                        </figcaption>
                     </figure>
                 </div>
                 <button class="btn icon-btn arrow-l" onclick="change(-1)">
@@ -263,7 +362,7 @@
         </section>
         <section class="grid-panels grid-size-2">
             <section class="side-by-side top content panel grid-margin">
-                <div class="cover at-bottom">
+                <div class="cover">
                     <div class="figure">
                         <img src="/img/bleh-big_gallery.jpg" style="box-shadow: unset">
                     </div>
@@ -281,9 +380,9 @@
             </section>
         </section>
         <section class="side-by-side content panel grid-margin right">
-            <div class="cover at-bottom">
+            <div class="cover">
                 <div class="figure">
-                    <img src="/img/grid.png" style="box-shadow: unset">
+                    <img src="/img/grid.jpg" style="box-shadow: unset">
                 </div>
             </div>
             <div class="text flex flex-column flex-gap" style="gap: 10px">
@@ -349,7 +448,7 @@
             <section class="side-by-side top content panel grid-margin">
                 <div class="cover">
                     <div class="figure">
-                        <img src="/img/activities.png" style="box-shadow: unset">
+                        <img src="/img/activities.jpg" style="box-shadow: unset">
                     </div>
                 </div>
             </section>
@@ -465,12 +564,13 @@
             <p class="text-18">click the big purple button to install now :3</p>
             <div class="btn-row" style="gap: 10px">
                 <a role="button" class="btn primary shine brand" onclick="create_install_window2()" id="install-btn" style="margin-top: 30px">
-                    <span class="text">Click to install</span>
+                    <i class="icon w-16" data-lucide="square-dashed-mouse-pointer"></i>
+                    <span class="text">Begin install</span>
                     <i class="icon w-16" data-lucide="chevron-right"></i>
                 </a>
                 <a role="button" class="btn primary shine brand sponsor" href="https://github.com/sponsors/katelyynn" target="_blank" style="margin-top: 30px; --hue: 333">
                     <i class="icon w-16" data-lucide="heart"></i>
-                    <span class="text">Sponsor me</span>
+                    <span class="text">Become a sponsor</span>
                     <i class="icon w-16" data-lucide="chevron-right"></i>
                 </a>
             </div>
