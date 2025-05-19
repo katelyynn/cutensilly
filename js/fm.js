@@ -97,7 +97,7 @@ function request_new_info() {
     is_requesting_info = true;
 
     let xhr = new XMLHttpRequest();
-    let url = 'https://api.katelyn.moe/fm/user/katelyness';
+    let url = 'https://api.katelyn.moe/fm/user/katesia';
     xhr.open('GET',url,true);
 
     xhr.onload = function() {
