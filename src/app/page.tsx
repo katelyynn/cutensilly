@@ -14,11 +14,8 @@ export default async function Home() {
   return (
     <main>
       <KathyTileView>
-        <KathyTile name="music" link="/mus" scheme="red">
-          <KathyIcon state="" />
-        </KathyTile>
         <KathyTile name="hai">
-          <KathyIcon state="" />
+          <KathyIcon></KathyIcon>
         </KathyTile>
         <KathyTile name="Twitter" scheme="aqua">
           <SiX size={54} />
@@ -33,7 +30,7 @@ export default async function Home() {
           <SiLastdotfm size={54} />
         </KathyTile>
         <KathyTile name="hai" scheme="aqua" width={1} height={1}>
-          <KathyIcon state="" />
+          <KathyIcon></KathyIcon>
         </KathyTile>
       </KathyTileView>
       <div className="hero">

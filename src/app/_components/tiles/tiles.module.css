@@ -7,8 +7,7 @@
 
     appearance: none;
     font: inherit;
-    color: #fff !important;
-    cursor: pointer;
+    color: #fff;
 
     background-size: cover;
     border: 1px solid rgba(255, 255, 255, 0.1);

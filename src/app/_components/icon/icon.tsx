@@ -1,23 +1,14 @@
-"use client";
-
-import React, { useState } from 'react';
+import React from 'react';
 import style from "./icon.module.css";
 
 export const KathyIcon = ({
-    state,
-    hover
+    children
 }: {
-    state: string,
-    hover?: string
+    children: React.ReactNode
 }) => {
-    const [hovering, setHovering] = useState(false);
-    const onHover = () => {
-        setHovering(!hovering);
-    }
-
     return (
-        <div className={style.icon} onMouseEnter={onHover} onMouseLeave={onHover}>
-            {(hovering && hover) ? hover : state}
+        <div className={style.icon}>
+            {children}
         </div>
     );
 }

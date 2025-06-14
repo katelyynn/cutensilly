@@ -9,8 +9,6 @@ import { KathyRecordList, KathyRecord } from '~/app/_components/record/record';
 
 import type { Track } from '~/app/_components/track/track';
 import type { Record } from '~/app/_components/record/record';
-import { KathyClicky } from '../_components/clicky/clicky';
-import { KathyIcon } from '../_components/icon/icon';
 
 export default async function Home() {
   const recent_tracks = await api.lastfm.getRecentTracks({ username: "cutensilly" });
@@ -21,9 +19,6 @@ export default async function Home() {
 
   return (
     <main>
-      <KathyClicky cloak="invisible" elem="a" link="/">
-        <KathyIcon state="" hover="" />
-      </KathyClicky>
       <h2>MUSIC</h2>
       <h1>albums</h1>
       <KathyRecordList>

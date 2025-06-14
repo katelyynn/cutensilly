@@ -22,6 +22,7 @@ export default function RootLayout({
       <body>
         <TRPCReactProvider>
           <NextTopLoader />
+          <KathyNav />
           {children}
           <KathyFooter />
         </TRPCReactProvider>
