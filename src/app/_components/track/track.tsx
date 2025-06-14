@@ -4,8 +4,7 @@ import style from "./track.module.css";
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyLinkBlock } from '../link_block/link_block';
 import { KathyClicky } from '../clicky/clicky';
-
-import * as SolarIconSet from "solar-icon-set";
+import {IconHeartFilled} from "@tabler/icons-react";
 
 export type Track = {
     avatar?: string,
@@ -45,7 +44,7 @@ export const KathyTrack = ({
             {(time) ? <div className={style.time}>{time}</div> : ''}
             {(active) ? <div className={style.active_time}>right now :3</div> : ''}
             <KathyClicky primary={love} cloak="track" icon>
-                <SolarIconSet.Heart iconStyle={(love) ? "Bold" : "BoldDuotone"} size={20} />
+                <IconHeartFilled size={20} />
             </KathyClicky>
             <KathyLinkBlock link={`${link}`} type="a" />
         </li>

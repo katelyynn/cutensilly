@@ -4,9 +4,8 @@ import { KathyQuote } from '~/app/_components/quote/quote';
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyClicky, KathyClickyGrid } from '~/app/_components/clicky/clicky';
 
-import * as SolarIconSet from "solar-icon-set";
-
 import { SiLastdotfm, SiDiscogs, SiGithub, SiOsu, SiRoblox, SiModrinth, SiSteam } from '@icons-pack/react-simple-icons';
+import {IconCircleArrowUpRightFilled, IconDiscFilled} from "@tabler/icons-react";
 
 export default async function Home() {
   return (
@@ -26,7 +25,7 @@ export default async function Home() {
                 <strong>last.fm</strong>
                 cutensilly
               </div>
-              <SolarIconSet.SquareArrowRightUp iconStyle="BoldDuotone" size={20} />
+              <IconCircleArrowUpRightFilled size={20} />
             </KathyClicky>
             <KathyClicky colour="discogs" link="https://www.discogs.com/user/katenyaa/collection" primary elem="a">
               <SiDiscogs size={20} />
@@ -34,7 +33,7 @@ export default async function Home() {
                 <strong>discogs</strong>
                 katenyaa
               </div>
-              <SolarIconSet.SquareArrowRightUp iconStyle="BoldDuotone" size={20} />
+              <IconCircleArrowUpRightFilled size={20} />
             </KathyClicky>
             <KathyClicky colour="github" link="https://github.com/katelyynn" primary elem="a">
               <SiGithub size={20} />
@@ -42,15 +41,15 @@ export default async function Home() {
                 <strong>github</strong>
                 katelyynn
               </div>
-              <SolarIconSet.SquareArrowRightUp iconStyle="BoldDuotone" size={20} />
+              <IconCircleArrowUpRightFilled size={20} />
             </KathyClicky>
             <KathyClicky colour="rym" link="https://rateyourmusic.com/~kateshapedbox" primary elem="a">
-              <SolarIconSet.MusicNotes iconStyle="BoldDuotone" size={20} />
+              <IconDiscFilled size={20} />
               <div className="info">
                 <strong>rate your music</strong>
                 kateshapedbox
               </div>
-              <SolarIconSet.SquareArrowRightUp iconStyle="BoldDuotone" size={20} />
+              <IconCircleArrowUpRightFilled size={20} />
             </KathyClicky>
             <KathyClicky colour="modrinth" link="https://modrinth.com/user/kate" primary elem="a">
               <SiModrinth size={20} />
@@ -58,7 +57,7 @@ export default async function Home() {
                 <strong>modrinth</strong>
                 kate
               </div>
-              <SolarIconSet.SquareArrowRightUp iconStyle="BoldDuotone" size={20} />
+              <IconCircleArrowUpRightFilled size={20} />
             </KathyClicky>
             <KathyClicky colour="roblox" link="https://www.roblox.com/users/5626179027/profile" primary elem="a">
               <SiRoblox size={20} />
@@ -66,7 +65,7 @@ export default async function Home() {
                 <strong>roblox</strong>
                 kateshapedbox
               </div>
-              <SolarIconSet.SquareArrowRightUp iconStyle="BoldDuotone" size={20} />
+              <IconCircleArrowUpRightFilled size={20} />
             </KathyClicky>
             <KathyClicky colour="osu" link="https://osu.ppy.sh/u/katiecide" primary elem="a">
               <SiOsu size={20} />
@@ -74,7 +73,7 @@ export default async function Home() {
                 <strong>osu!</strong>
                 katiecide
               </div>
-              <SolarIconSet.SquareArrowRightUp iconStyle="BoldDuotone" size={20} />
+              <IconCircleArrowUpRightFilled size={20} />
             </KathyClicky>
             <KathyClicky colour="steam" link="https://steamcommunity.com/id/cutensilly" primary elem="a">
               <SiSteam size={20} />
@@ -82,7 +81,7 @@ export default async function Home() {
                 <strong>steam</strong>
                 kateshapedbox
               </div>
-              <SolarIconSet.SquareArrowRightUp iconStyle="BoldDuotone" size={20} />
+              <IconCircleArrowUpRightFilled size={20} />
             </KathyClicky>
           </KathyClickyGrid>
         </KathyCard>

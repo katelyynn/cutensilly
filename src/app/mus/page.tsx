@@ -2,8 +2,6 @@ import { api } from '~/trpc/server';
 
 import Link from "next/link";
 import { KathyCard, KathyCardList } from '~/app/_components/card/card';
-import { KathyQuote } from '~/app/_components/quote/quote';
-import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyTrackList, KathyTrack } from '~/app/_components/track/track';
 import { KathyRecordList, KathyRecord } from '~/app/_components/record/record';
 
@@ -11,10 +9,10 @@ import type { Track } from '~/app/_components/track/track';
 import type { Record } from '~/app/_components/record/record';
 
 export default async function Home() {
-  const recent_tracks = await api.lastfm.getRecentTracks({ username: "cutensilly" });
+  const recent_tracks = await api.lastfm.getRecentTracks({ username: "hyacines" });
   console.log(recent_tracks);
 
-  const collection = await api.discogs.getMusicCollection({ username: "katenyaa", page: 1 });
+  const collection = await api.discogs.getMusicCollection({ username: "hyacine", page: 1 });
   console.log(collection);
 
   return (

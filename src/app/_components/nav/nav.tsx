@@ -6,8 +6,7 @@ import style from "./nav.module.css";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { KathyClicky } from '../clicky/clicky';
-
-import * as SolarIconSet from "solar-icon-set";
+import {IconApps, IconAppsFilled, IconBookFilled, IconDiscFilled, IconHeartFilled, IconHome} from "@tabler/icons-react";
 
 export const KathyNav = () => {
     const route = usePathname();
@@ -22,7 +21,7 @@ export const KathyNav = () => {
                 link="/"
                 primary={route === '/'}
             >
-                <SolarIconSet.Home2 iconStyle={(route === '/') ? "Bold" : "BoldDuotone"} size={20} />
+                <IconHome size={20} />
                 home
             </KathyClicky>
             <KathyClicky
@@ -30,7 +29,7 @@ export const KathyNav = () => {
                 link="/work"
                 primary={route === '/work'}
             >
-                <SolarIconSet.FolderWithFiles iconStyle={(route === '/work') ? "Bold" : "BoldDuotone"} size={20} />
+                <IconAppsFilled size={20} />
                 work
             </KathyClicky>
             <KathyClicky
@@ -38,7 +37,7 @@ export const KathyNav = () => {
                 link="/sponsor"
                 primary={route === '/sponsor'}
             >
-                <SolarIconSet.BagHeart iconStyle={(route === '/sponsor') ? "Bold" : "BoldDuotone"} size={20} />
+                <IconHeartFilled size={20} />
                 sponsor
             </KathyClicky>
             <KathyClicky
@@ -46,7 +45,7 @@ export const KathyNav = () => {
                 link="/mus"
                 primary={route === '/mus'}
             >
-                <SolarIconSet.TurntableMusicNote iconStyle={(route === '/mus') ? "Bold" : "BoldDuotone"} size={20} />
+                <IconDiscFilled size={20} />
                 music
             </KathyClicky>
             <KathyClicky
@@ -54,7 +53,7 @@ export const KathyNav = () => {
                 link="/blog"
                 primary={route === '/blog'}
             >
-                <SolarIconSet.NotebookMinimalistic iconStyle={(route === '/blog') ? "Bold" : "BoldDuotone"} size={20} />
+                <IconBookFilled size={20} />
                 blog
             </KathyClicky>
         </nav>
