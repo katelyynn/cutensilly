@@ -55,7 +55,7 @@ export default async function Home() {
         <div className="sep"/>
         <KathyQuote who={{
           avatar: '/avatars/stella.png',
-            name: 'stella',
+            name: 'hazel',
             link: 'https://katelyn.moe'
         }}>
             kathy, katie, kate, katelyn<br />wateva it is im gonna marry her
