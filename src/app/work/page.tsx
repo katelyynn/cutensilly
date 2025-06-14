@@ -19,7 +19,7 @@ export default async function Home() {
                 external: true
               }}
               view_url={{
-                link: "/work/bleh"
+                link: "/bleh"
               }}
               years="2022—2025"
             />
@@ -31,7 +31,7 @@ export default async function Home() {
                 external: true
               }}
               view_url={{
-                link: "/work/bwaa"
+                link: "/bwaa"
               }}
               years="2024—2025"
             />
@@ -43,7 +43,7 @@ export default async function Home() {
                 external: true
               }}
               view_url={{
-                link: "/work/lotus"
+                link: "/lotus"
               }}
               years="2024—2025"
             />

@@ -5,6 +5,7 @@ import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyLinkBlock } from '../link_block/link_block';
 import { KathyClicky } from '../clicky/clicky';
 import {IconHeartFilled} from "@tabler/icons-react";
+import {KathySprite} from "~/app/_components/sprite/sprite";
 
 export type Track = {
     avatar?: string,
@@ -41,11 +42,9 @@ export const KathyTrack = ({
                 {(artist) ? <div className={style.artist}><a href={`${artist.link}`}>{artist.title}</a></div> : null}
                 {(active && album) ? <div className={style.album}><a href={`${artist.link}/${album.link}`}>{album.title}</a></div> : null}
             </div>
+            {(love) ? <KathySprite name="heart"/> : ''}
             {(time) ? <div className={style.time}>{time}</div> : ''}
-            {(active) ? <div className={style.active_time}>right now :3</div> : ''}
-            <KathyClicky primary={love} cloak="track" icon>
-                <IconHeartFilled size={20} />
-            </KathyClicky>
+            {(active) ? <div className={style.active_time}>Listening now</div> : ''}
             <KathyLinkBlock link={`${link}`} type="a" />
         </li>
     );

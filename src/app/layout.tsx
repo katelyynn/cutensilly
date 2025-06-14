@@ -9,9 +9,9 @@ import { KathyFooter } from '~/app/_components/footer/footer';
 import NextTopLoader from 'nextjs-toploader';
 
 export const metadata: Metadata = {
-  title: "kathy",
+  title: "katelyn.moe",
   description: "teeheee",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/avatars/kat.png" }],
 };
 
 export default function RootLayout({

@@ -10,92 +10,57 @@ import {IconCircleArrowUpRightFilled, IconDiscFilled} from "@tabler/icons-react"
 export default async function Home() {
   return (
     <main>
-      <div className="hero">
-        <KathyAvatar image="/avatars/kat.png" alt="avatar for kathy" size="xl" />
-        <h2>hey im <span className="kyuu">kathy</span> :3</h2>
-        <p className="big">silly lil girl who codes</p>
-      </div>
-      <KathyCardList>
-        <KathyCard>
-          <h4>find me anywhere</h4>
-          <KathyClickyGrid>
-            <KathyClicky colour="lastdotfm" link="https://last.fm/user/cutensilly" primary elem="a">
-              <SiLastdotfm size={20} />
-              <div className="info">
-                <strong>last.fm</strong>
-                cutensilly
-              </div>
-              <IconCircleArrowUpRightFilled size={20} />
-            </KathyClicky>
-            <KathyClicky colour="discogs" link="https://www.discogs.com/user/katenyaa/collection" primary elem="a">
-              <SiDiscogs size={20} />
-              <div className="info">
-                <strong>discogs</strong>
-                katenyaa
-              </div>
-              <IconCircleArrowUpRightFilled size={20} />
-            </KathyClicky>
-            <KathyClicky colour="github" link="https://github.com/katelyynn" primary elem="a">
-              <SiGithub size={20} />
-              <div className="info">
-                <strong>github</strong>
-                katelyynn
-              </div>
-              <IconCircleArrowUpRightFilled size={20} />
-            </KathyClicky>
-            <KathyClicky colour="rym" link="https://rateyourmusic.com/~kateshapedbox" primary elem="a">
-              <IconDiscFilled size={20} />
-              <div className="info">
-                <strong>rate your music</strong>
-                kateshapedbox
-              </div>
-              <IconCircleArrowUpRightFilled size={20} />
-            </KathyClicky>
-            <KathyClicky colour="modrinth" link="https://modrinth.com/user/kate" primary elem="a">
-              <SiModrinth size={20} />
-              <div className="info">
-                <strong>modrinth</strong>
-                kate
-              </div>
-              <IconCircleArrowUpRightFilled size={20} />
-            </KathyClicky>
-            <KathyClicky colour="roblox" link="https://www.roblox.com/users/5626179027/profile" primary elem="a">
-              <SiRoblox size={20} />
-              <div className="info">
-                <strong>roblox</strong>
-                kateshapedbox
-              </div>
-              <IconCircleArrowUpRightFilled size={20} />
-            </KathyClicky>
-            <KathyClicky colour="osu" link="https://osu.ppy.sh/u/katiecide" primary elem="a">
-              <SiOsu size={20} />
-              <div className="info">
-                <strong>osu!</strong>
-                katiecide
-              </div>
-              <IconCircleArrowUpRightFilled size={20} />
-            </KathyClicky>
-            <KathyClicky colour="steam" link="https://steamcommunity.com/id/cutensilly" primary elem="a">
-              <SiSteam size={20} />
-              <div className="info">
-                <strong>steam</strong>
-                kateshapedbox
-              </div>
-              <IconCircleArrowUpRightFilled size={20} />
-            </KathyClicky>
-          </KathyClickyGrid>
-        </KathyCard>
-        <KathyCard>
-          <h4>quote from stella</h4>
-          <KathyQuote hue={198} sat={1.6} lit={1.2} who={{
-            avatar: '/avatars/stella.png',
-              name: 'stella',
-              link: 'https://cutensilly.org'
-          }}>
-              kathy, katie, kate, katelyn<br />wateva it is im gonna marry her
-          </KathyQuote>
-        </KathyCard>
-      </KathyCardList>
+      <KathyCard>
+        <KathyAvatar image="/avatars/kat.png" alt="avatar for kathy" size="lg"/>
+        <h1>hey im <span className="kyuu">katelyn</span> :3</h1>
+        <p>silly lil girl who codes</p>
+        <div className="sep" />
+        <KathyClickyGrid>
+          <KathyClicky cloak="social" colour="lastdotfm" link="https://last.fm/user/hyacines" primary elem="a">
+            <SiLastdotfm size={16}/>
+            <div className="info">
+              <strong>last.fm</strong>
+              hyacines
+            </div>
+          </KathyClicky>
+          <KathyClicky cloak="social" colour="discogs" link="https://www.discogs.com/user/hyacine/collection" primary elem="a">
+            <SiDiscogs size={16}/>
+            <div className="info">
+              <strong>discogs</strong>
+              hyacine
+            </div>
+          </KathyClicky>
+          <KathyClicky cloak="social" colour="github" link="https://github.com/katelyynn" primary elem="a">
+            <SiGithub size={16}/>
+            <div className="info">
+              <strong>github</strong>
+              katelyynn
+            </div>
+          </KathyClicky>
+          <KathyClicky cloak="social" colour="rym" link="https://www.albumoftheyear.org/user/lynkat/" primary elem="a">
+            <IconDiscFilled size={16}/>
+            <div className="info">
+              <strong>AOTY</strong>
+              lynkat
+            </div>
+          </KathyClicky>
+          <KathyClicky cloak="social" colour="rym" link="https://rateyourmusic.com/~kateshapedbox" primary elem="a">
+            <IconDiscFilled size={16}/>
+            <div className="info">
+              <strong>rate your music</strong>
+              kateshapedbox
+            </div>
+          </KathyClicky>
+        </KathyClickyGrid>
+        <div className="sep"/>
+        <KathyQuote who={{
+          avatar: '/avatars/stella.png',
+            name: 'stella',
+            link: 'https://katelyn.moe'
+        }}>
+            kathy, katie, kate, katelyn<br />wateva it is im gonna marry her
+        </KathyQuote>
+      </KathyCard>
     </main>
   );
 }

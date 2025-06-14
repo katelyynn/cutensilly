@@ -22,7 +22,6 @@ export const KathyQuote = ({
             </blockquote>
             <cite className={style.identity}>
                 <a className={style.name} href={who.link} target="_blank">{who.name}</a>
-                <KathyAvatar image={who.avatar} alt={`avatar for ${who.name}`} size="sm" link={who.link} link_type="a" />
             </cite>
         </div>
     );

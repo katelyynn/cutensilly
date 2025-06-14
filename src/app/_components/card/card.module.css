@@ -1,16 +1,19 @@
 .card {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 3px;
+
     display: flex;
     flex-direction: column;
-    gap: 12px;
-
-    background: hsl(var(--b6));
-    padding: 25px 20px;
-    border-radius: var(--round);
+    align-items: center;
+    text-align: center;
 
     &.full {
-        padding: 50px calc((100vw - var(--page)) / 2);
-        margin: 0 calc(-1 * ((100vw - var(--page)) / 2));
-        border-radius: unset;
+        width: 500px;
     }
 }
 

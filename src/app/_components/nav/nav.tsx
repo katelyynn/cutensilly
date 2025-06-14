@@ -20,41 +20,33 @@ export const KathyNav = () => {
                 elem="link"
                 link="/"
                 primary={route === '/'}
+                cloak="tab"
             >
-                <IconHome size={20} />
                 home
             </KathyClicky>
             <KathyClicky
                 elem="link"
                 link="/work"
                 primary={route === '/work'}
+                cloak="tab"
             >
-                <IconAppsFilled size={20} />
                 work
             </KathyClicky>
             <KathyClicky
                 elem="link"
                 link="/sponsor"
                 primary={route === '/sponsor'}
+                cloak="tab"
             >
-                <IconHeartFilled size={20} />
                 sponsor
             </KathyClicky>
             <KathyClicky
                 elem="link"
                 link="/mus"
                 primary={route === '/mus'}
+                cloak="tab"
             >
-                <IconDiscFilled size={20} />
                 music
-            </KathyClicky>
-            <KathyClicky
-                elem="link"
-                link="/blog"
-                primary={route === '/blog'}
-            >
-                <IconBookFilled size={20} />
-                blog
             </KathyClicky>
         </nav>
     );

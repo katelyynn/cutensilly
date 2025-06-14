@@ -1,18 +1,13 @@
 .track {
-    --bg: transparent;
-    --bg-hov: hsl(var(--b5), 40%);
-    --col: hsl(var(--c2));
-
     display: flex;
     align-items: center;
     gap: 14px;
 
-    padding: 12px 14px;
-    background: var(--bg);
-    border-radius: var(--round);
-    box-shadow: var(--shadow);
-    color: var(--col);
+    padding: 8px 6px;
+    border-bottom: 1px solid #ccc;
+    color: inherit;
     font: inherit;
+    text-align: left;
 
     position: relative;
 
@@ -27,9 +22,7 @@
     transition: background 0.1s;
 
     &.active {
-        --bg: hsl(var(--l4), 25%);
-        --bg-hov: hsl(var(--l4), 35%);
-        --shadow: 0 2px 20px 1px hsl(var(--l4), 20%);
+        background: #feffd6;
 
         z-index: 3;
     }
@@ -39,15 +32,15 @@
         pointer-events: none;
         flex: 1;
 
-        .name {
-            font-weight: var(--font-weight-md);
+        .title {
+            font-weight: bold;
         }
 
         .artist {
             display: flex;
-            opacity: 0.7;
-
-            font-size: 14px;
+            margin-top: 2px;
+            font-size: 11px;
+            color: #666;
 
             a {
                 color: inherit;
@@ -70,13 +63,15 @@
         }
     }
 
+    .active_time,
     .time {
-        color: hsl(var(--c3));
-        font-size: 13px;
+        color: #888;
+        font-size: 10px;
     }
-    .active_time {
-        color: hsl(var(--l2));
-        font-size: 13px;
+
+    .time, .active_time {
+        width: 120px;
+        text-align: right;
     }
 
     button {
@@ -87,5 +82,5 @@
 .list {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    width: 100%;
 }

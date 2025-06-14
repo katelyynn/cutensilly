@@ -4,8 +4,6 @@ import style from "./work.module.css";
 import Image from 'next/image';
 import { KathyClicky, KathyClickyList } from '../clicky/clicky';
 
-import * as SolarIconSet from "solar-icon-set";
-
 interface KathyWorkProps {
     image?: string,
     title: string,
@@ -41,13 +39,11 @@ export const KathyWork = ({
                     {view_url ?
                     <KathyClicky primary link={view_url.link} elem={view_url.external ? 'a' : 'link'}>
                         view
-                        <SolarIconSet.DoubleAltArrowRight iconStyle="BoldDuotone" size={20} />
                     </KathyClicky>
                     : ''}
                     {source_url ?
                     <KathyClicky link={source_url.link} elem={source_url.external ? 'a' : 'link'}>
                         source
-                        <SolarIconSet.Code2 iconStyle="BoldDuotone" size={20} />
                     </KathyClicky>
                     : ''}
                 </KathyClickyList>

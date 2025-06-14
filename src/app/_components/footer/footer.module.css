@@ -1,25 +1,12 @@
 .feet {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
+    text-align: center;
 
-    padding: 60px 0;
+    margin-top: 20px;
+    padding: 20px 0;
 
-    a {
-        display: flex;
-        align-items: center;
+    border-top: 1px solid #d0d2d7;
+    color: #76797c;
+    font-size: 10px;
 
-        transition: transform 0.35s, filter 0.35s;
-
-        padding: 6px;
-        margin: -6px;
-
-        &:hover {
-            filter: drop-shadow(0 0 10px hsl(var(--l4)));
-            transform: scale(1.2);
-        }
-    }
-
-    color: hsl(var(--c3));
+    width: 400px;
 }
