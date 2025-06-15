@@ -2,6 +2,7 @@ import { postRouter } from "~/server/api/routers/post";
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 import { lastfmRouter } from './routers/lastfm';
 import { discogsRouter } from './routers/discogs';
+import {lotusRouter} from './routers/lotus';
 
 /**
  * This is the primary router for your server.
@@ -11,7 +12,8 @@ import { discogsRouter } from './routers/discogs';
 export const appRouter = createTRPCRouter({
   post: postRouter,
   lastfm: lastfmRouter,
-  discogs: discogsRouter
+  discogs: discogsRouter,
+  lotus: lotusRouter,
 });
 
 // export type definition of API

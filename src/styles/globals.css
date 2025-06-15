@@ -363,3 +363,17 @@ sub {
     }
   }
 }
+
+.alert {
+  position: relative;
+  padding: 8px 10px;
+  margin: 10px 0;
+  background: #FFFCE8;
+  border: 1px solid #F5D77B;
+  border-radius: 3px;
+  font-size: 11px;
+  color: #6C5328;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(to bottom, #FFFEF5, #FFF9D7);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}

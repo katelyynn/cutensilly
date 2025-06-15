@@ -1,4 +1,5 @@
 import "~/styles/globals.css";
+import "famfamfam-silk/dist/sprite/famfamfam-silk.min.css";
 
 import { type Metadata } from "next";
 
@@ -11,7 +12,7 @@ import NextTopLoader from 'nextjs-toploader';
 export const metadata: Metadata = {
   title: "katelyn.moe",
   description: "teeheee",
-  icons: [{ rel: "icon", url: "/avatars/kat.png" }],
+  icons: [{ rel: "icon", url: "/avatars/kat.jpg" }],
 };
 
 export default function RootLayout({

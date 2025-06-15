@@ -25,7 +25,7 @@ export default async function Home() {
                         kathy, katie, kate, katelyn<br />wateva it is im gonna marry her
                     </KathyQuote>
                     <KathyQuote who={{
-                        avatar: '/avatars/kat.png',
+                        avatar: '/avatars/kat.jpg',
                         name: 'kat',
                         link: 'https://cutensilly.org'
                     }}>

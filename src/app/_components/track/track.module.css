@@ -15,11 +15,8 @@
     user-select: none;
 
     &:hover, &:focus-within {
-        background: var(--bg-hov);
-        transition: none;
+        background: rgba(0, 0, 0, 0.03);
     }
-
-    transition: background 0.1s;
 
     &.active {
         background: #feffd6;
@@ -34,6 +31,10 @@
 
         .title {
             font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 400px;
         }
 
         .artist {
@@ -41,6 +42,10 @@
             margin-top: 2px;
             font-size: 11px;
             color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 400px;
 
             a {
                 color: inherit;
@@ -51,9 +56,12 @@
 
         .album {
             display: flex;
-            opacity: 0.5;
-
-            font-size: 12px;
+            font-size: 10px;
+            color: #888;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 400px;
 
             a {
                 color: inherit;

@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <main>
       <KathyCard>
-        <KathyAvatar image="/avatars/kat.png" alt="avatar for kathy" size="lg"/>
+        <KathyAvatar image="/avatars/kat.jpg" alt="avatar for kathy" size="lg"/>
         <h1>sponsor <span className="kyuu">katelyn</span> &lt;3</h1>
         <KathyClicky cloak="big" link="https://github.com/sponsors/katelyynn" elem="a">
           click to sponsor
@@ -21,21 +21,21 @@ export default async function Home() {
         <KathyPerkList>
           <KathyPerk>
             <div className="perk-icon">
-              <IconClockFilled size={20}/>
+              <div className="famfamfam-silk bell"/>
             </div>
             <h5>support future development</h5>
             <p>just one girl is widely responsible for these projects, so everything helps :3</p>
           </KathyPerk>
           <KathyPerk>
             <div className="perk-icon">
-              <IconRosetteFilled size={20}/>
+              <div className="famfamfam-silk ruby"/>
             </div>
             <h5>rep a badge</h5>
             <p>receive both a sponsor heart badge and (if monthly) your own custom badge of your choosing</p>
           </KathyPerk>
           <KathyPerk>
             <div className="perk-icon">
-              <IconBrush size={20}/>
+              <div className="famfamfam-silk rainbow"/>
             </div>
             <h5>painted in colour</h5>
             <p>if monthly, pick your favourite colour to display on your name wherever.</p>
@@ -58,10 +58,10 @@ export default async function Home() {
               <p className="explain">a cute heart badge to represent your sponsorship :3</p>
             </th>
             <td>
-              <IconCircleCheckFilled size={20} className="colourful accent green"/>
+              <div className="famfamfam-silk tick"/>
             </td>
             <td>
-              <IconCircleCheckFilled size={20} className="colourful accent green"/>
+              <div className="famfamfam-silk tick"/>
             </td>
           </tr>
           <tr>
@@ -73,10 +73,10 @@ export default async function Home() {
                 hateful.</p>
             </th>
             <td>
-              <IconForbid size={20} className="subtler"/>
+              <div className="famfamfam-silk cross"/>
             </td>
             <td>
-              <IconCircleCheckFilled size={20} className="colourful accent green"/>
+              <div className="famfamfam-silk tick"/>
             </td>
           </tr>
           <tr>
@@ -86,10 +86,10 @@ export default async function Home() {
                 itself. this colour is also used for the custom badge.</p>
             </th>
             <td>
-              <IconForbid size={20} className="subtler"/>
+              <div className="famfamfam-silk cross"/>
             </td>
             <td>
-              <IconCircleCheckFilled size={20} className="colourful accent green"/>
+              <div className="famfamfam-silk tick" />
             </td>
           </tr>
           <tr>
