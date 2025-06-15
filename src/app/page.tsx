@@ -1,12 +1,9 @@
-import Link from "next/link";
 import Image from 'next/image';
-import { KathyCard, KathyCardList } from '~/app/_components/card/card';
+import { KathyCard } from '~/app/_components/card/card';
 import { KathyQuote } from '~/app/_components/quote/quote';
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyClicky, KathyClickyGrid } from '~/app/_components/clicky/clicky';
 
-import { SiLastdotfm, SiDiscogs, SiGithub, SiOsu, SiRoblox, SiModrinth, SiSteam } from '@icons-pack/react-simple-icons';
-import {IconCircleArrowUpRightFilled, IconDiscFilled} from "@tabler/icons-react";
 import {MusClient} from "~/app/music.client";
 
 export default async function Home() {

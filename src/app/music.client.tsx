@@ -1,12 +1,9 @@
 'use client';
 
 import {api} from '~/trpc/react';
-import {KathyCard} from '~/app/_components/card/card';
 import {KathyTrackList, KathyTrack} from '~/app/_components/track/track';
-import {KathyRecordList, KathyRecord} from '~/app/_components/record/record';
 
 import type {Track} from '~/app/_components/track/track';
-import type {Record} from '~/app/_components/record/record';
 
 export function MusClient() {
     const {data: recent_tracks, isLoading: tracksLoading} = api.lastfm.getRecentTracks.useQuery(

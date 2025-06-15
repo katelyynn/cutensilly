@@ -1,10 +1,7 @@
-import Link from "next/link";
-import { KathyCard, KathyCardList } from '~/app/_components/card/card';
-import { KathyQuote } from '~/app/_components/quote/quote';
+import { KathyCard } from '~/app/_components/card/card';
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyClicky } from '../_components/clicky/clicky';
 import { KathyPerk, KathyPerkList } from '~/app/_components/perk/perk';
-import {IconBrush, IconCircleCheckFilled, IconClockFilled, IconForbid, IconRosetteFilled} from "@tabler/icons-react";
 
 export default async function Home() {
   return (
