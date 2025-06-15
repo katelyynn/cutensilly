@@ -21,7 +21,8 @@ export type Track = {
     active?: boolean,
     link: string,
     lotus_album_track?: object,
-    lotus_artist?: object
+    lotus_artist?: object,
+    mini?: boolean
 }
 
 export const KathyTrack = ({
@@ -34,7 +35,8 @@ export const KathyTrack = ({
     active,
     link,
     lotus_album_track,
-    lotus_artist
+    lotus_artist,
+    mini = false
 }: Track) => {
     if (lotus_artist) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -52,7 +54,7 @@ export const KathyTrack = ({
     }
 
     return (
-        <li className={`${style.track} ${(active) ? style.active : ''}`}>
+        <li className={`${style.track} ${(active) ? style.active : ''} ${mini ? style.mini : ''}`}>
             <KathyAvatar image={avatar} alt={(album) ? `avatar for ${album.title}` : `avatar for ${title}`} size={(active) ? 'nm' : 'md'} />
             <div className={style.info}>
                 <div className={style.title}>{title}</div>

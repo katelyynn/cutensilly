@@ -1,4 +1,5 @@
 import "~/styles/globals.css";
+import "public/lucida/stylesheet.css";
 import "famfamfam-silk/dist/sprite/famfamfam-silk.min.css";
 
 import { type Metadata } from "next";

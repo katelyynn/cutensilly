@@ -3,12 +3,22 @@ import { KathyCard, KathyCardList } from '~/app/_components/card/card';
 import { KathyQuote } from '~/app/_components/quote/quote';
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyWork, KathyWorkList } from '../_components/work/work';
+import {KathyClicky} from "~/app/_components/clicky/clicky";
+import Image from "next/image";
 
 export default async function Home() {
   return (
     <main>
         <KathyCard full>
-          <h1>work</h1>
+          <h1>library</h1>
+            <KathyClicky cloak="social" colour="github" link="https://github.com/katelyynn" primary elem="a">
+                <Image src="/avatars/github.png" alt="github logo" width={16} height={16}/>
+                <div className="info">
+                    <strong>github</strong>
+                    katelyynn
+                </div>
+            </KathyClicky>
+            <div className="sep" />
           <KathyWorkList>
             <KathyWork
               title="bleh"

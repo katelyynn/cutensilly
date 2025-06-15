@@ -7,6 +7,8 @@ import {KathyRecordList, KathyRecord} from '~/app/_components/record/record';
 
 import type {Track} from '~/app/_components/track/track';
 import type {Record} from '~/app/_components/record/record';
+import {KathyClicky} from "~/app/_components/clicky/clicky";
+import Image from "next/image";
 
 export function MusClient() {
     const {data: recent_tracks, isLoading: tracksLoading} = api.lastfm.getRecentTracks.useQuery(
@@ -65,6 +67,14 @@ export function MusClient() {
         <main>
             <KathyCard full>
                 <h1>physical collection</h1>
+                <KathyClicky cloak="social" colour="discogs" link="https://www.discogs.com/user/hyacine/collection" primary elem="a">
+                    <Image src="/avatars/discogs.png" alt="discogs logo" width={16} height={16}/>
+                    <div className="info">
+                        <strong>discogs</strong>
+                        hyacine
+                    </div>
+                </KathyClicky>
+                <div className="sep"/>
                 <KathyRecordList>
                     {collection.collection.map((record: Record, i: number) => (
                         <KathyRecord
@@ -80,6 +90,14 @@ export function MusClient() {
                 </KathyRecordList>
                 <div className="sep"/>
                 <h1>recent listening</h1>
+                <KathyClicky cloak="social" colour="lastdotfm" link="https://last.fm/user/hyacines" primary elem="a">
+                    <Image src="/avatars/lastdotfm.png" alt="last.fm logo" width={16} height={16}/>
+                    <div className="info">
+                        <strong>last.fm</strong>
+                        hyacines
+                    </div>
+                </KathyClicky>
+                <div className="sep"/>
                 <KathyTrackList>
                     {recent_tracks.tracks.map((track: Track, i: number) => (
                         <KathyTrack

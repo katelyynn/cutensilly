@@ -7,6 +7,7 @@ import { KathyClicky, KathyClickyGrid } from '~/app/_components/clicky/clicky';
 
 import { SiLastdotfm, SiDiscogs, SiGithub, SiOsu, SiRoblox, SiModrinth, SiSteam } from '@icons-pack/react-simple-icons';
 import {IconCircleArrowUpRightFilled, IconDiscFilled} from "@tabler/icons-react";
+import {MusClient} from "~/app/music.client";
 
 export default async function Home() {
   return (
@@ -61,6 +62,8 @@ export default async function Home() {
         }}>
             kathy, katie, kate, katelyn<br />wateva it is im gonna marry her
         </KathyQuote>
+        <div className="sep"/>
+        <MusClient/>
       </KathyCard>
     </main>
   );

@@ -87,6 +87,16 @@
     }
 }
 
+.mini {
+    .time, .active_time {
+        display: none;
+    }
+
+    .title, .artist, .album {
+        max-width: 250px;
+    }
+}
+
 .list {
     display: flex;
     flex-direction: column;

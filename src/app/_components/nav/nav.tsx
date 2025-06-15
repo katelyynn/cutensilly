@@ -22,7 +22,7 @@ export const KathyNav = () => {
                 primary={route === '/'}
                 cloak="tab"
             >
-                home
+                me!
             </KathyClicky>
             <KathyClicky
                 elem="link"
@@ -30,15 +30,7 @@ export const KathyNav = () => {
                 primary={route === '/work'}
                 cloak="tab"
             >
-                work
-            </KathyClicky>
-            <KathyClicky
-                elem="link"
-                link="/sponsor"
-                primary={route === '/sponsor'}
-                cloak="tab"
-            >
-                sponsor
+                library
             </KathyClicky>
             <KathyClicky
                 elem="link"
@@ -47,6 +39,14 @@ export const KathyNav = () => {
                 cloak="tab"
             >
                 music
+            </KathyClicky>
+            <KathyClicky
+                elem="link"
+                link="/sponsor"
+                primary={route === '/sponsor'}
+                cloak="tab"
+            >
+                sponsor
             </KathyClicky>
         </nav>
     );

@@ -8,6 +8,20 @@
 .work {
     position: relative;
     display: inline-block;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+
+        .image {
+            border-color: #999;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .info .title {
+            color: #000;
+        }
+    }
 
     .image {
         display: inline-block;
@@ -18,6 +32,7 @@
         border: 1px solid #ccc;
         background: #fff;
         box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
 
     .info {
@@ -30,6 +45,7 @@
             font-weight: bold;
             font-size: 13px;
             color: #333;
+            transition: color 0.2s ease-in-out;
         }
 
         .bio {
