@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Lucida Grande';
     src: local('Lucida Grande Bold'), local('LucidaGrande-Bold'),
-        url('LucidaGrande-Bold.woff2') format('woff2'),
-        url('LucidaGrande-Bold.woff') format('woff');
+        url('./LucidaGrande-Bold.woff2') format('woff2'),
+        url('./LucidaGrande-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -11,8 +11,8 @@
 @font-face {
     font-family: 'Lucida Grande';
     src: local('Lucida Grande'), local('LucidaGrande'),
-        url('LucidaGrande.woff2') format('woff2'),
-        url('LucidaGrande.woff') format('woff');
+        url('./LucidaGrande.woff2') format('woff2'),
+        url('./LucidaGrande.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

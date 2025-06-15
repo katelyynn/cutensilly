@@ -11,7 +11,7 @@ export const KathyCard = ({
     children
 }: KathyCardProps) => {
     return (
-        <div className={`${style.card} ${(full) ? style.full : ''}`}>
+        <div className={`card ${style.card} ${(full) ? `full ${style.full}` : ''}`}>
             {children}
         </div>
     );
