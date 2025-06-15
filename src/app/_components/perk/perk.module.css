@@ -4,16 +4,16 @@
     position: relative;
     padding-left: 26px;
     text-align: left;
-}
 
-:global(.perk-icon) {
-    display: flex;
-    position: absolute;
-    top: 2px;
-    left: 0;
+    :global(.perk-icon) {
+        display: flex;
+        position: absolute;
+        top: 2px;
+        left: 0;
 
-    width: fit-content;
-    color: #888;
+        width: fit-content;
+        color: #888;
+    }
 }
 
 .list {
