@@ -37,13 +37,16 @@ export const KathyTrack = ({
     lotus_artist
 }: Track) => {
     if (lotus_artist) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         artist.title = correct_artist(artist.title, lotus_artist);
     }
 
     if (lotus_album_track) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         title = correct_item_by_artist(title, artist.title, lotus_album_track);
 
         if (album) {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             album.title = correct_item_by_artist(album.title, artist.title, lotus_album_track);
         }
     }
@@ -64,12 +67,17 @@ export const KathyTrack = ({
     );
 }
 
-function correct_item_by_artist(item, artist, album_track_corrections = {}) {
+function correct_item_by_artist(item: string, artist: string, album_track_corrections = {}) {
     artist = artist.toLowerCase();
 
     try {
         if (album_track_corrections.hasOwnProperty(artist)) {
+            // @ts-ignore
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
             if (album_track_corrections[artist].hasOwnProperty(item)) {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+                // @ts-ignore
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access
                 return album_track_corrections[artist][item];
             } else {
                 return item;
@@ -82,9 +90,12 @@ function correct_item_by_artist(item, artist, album_track_corrections = {}) {
     }
 }
 
-function correct_artist(artist, artist_corrections = {}) {
+function correct_artist(artist: string, artist_corrections = {}) {
     try {
         if (artist_corrections.hasOwnProperty(artist)) {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+            // @ts-ignore
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             return artist_corrections[artist];
         } else {
             return artist;

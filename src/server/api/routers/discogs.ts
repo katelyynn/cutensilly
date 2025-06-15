@@ -14,7 +14,7 @@ export type MusicCollection = {
     pages: number;
     per_page: number;
     items: number;
-    urls: any;
+    urls: never;
   }
   collection: Record[]
 }
@@ -27,9 +27,18 @@ export const discogsRouter = createTRPCRouter({
 
       const data = await response.json();
 
-      let collection = [];
+      const collection: Record[] = [];
 
-      data.releases.forEach((item) => {
+      data.releases.forEach((item: {
+          id: number,
+          basic_information: {
+              title: string,
+              year: number,
+              cover_image: string,
+              formats: [],
+              artists: []
+          }
+      }) => {
         const info = item.basic_information;
 
         collection.push({

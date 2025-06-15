@@ -23,10 +23,28 @@ export const lastfmRouter = createTRPCRouter({
 
       const data = await response.json();
 
-      let tracks = [];
+      const tracks: Track[] = [];
 
-      data.recenttracks.track.forEach((track) => {
-        tracks.push({
+      data.recenttracks.track.forEach((track: {
+          image: [object, object, { "#text": string }],
+          name: string,
+          artist: {
+              name: string,
+              url: string
+          },
+          album: {
+              "#text": string
+          },
+          date: {
+              "#text": string
+          },
+          loved: string,
+          "@attr": {
+              nowplaying: boolean
+          },
+          url: string
+      }) => {
+          tracks.push({
           avatar: track.image[2]["#text"],
           title: track.name,
           artist: {

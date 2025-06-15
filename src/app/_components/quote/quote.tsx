@@ -6,17 +6,15 @@ import { KathyAvatar } from '~/app/_components/avatar/avatar';
 
 interface KathyQuoteProps {
     who: Identity,
-    hue?: number, sat?: number, lit?: number,
     children: React.ReactNode
 }
 
 export const KathyQuote = ({
     who,
-    hue, sat, lit,
     children
 }: KathyQuoteProps) => {
     return (
-        <div className={`colourful ${style.quote}`} style={{'--hue': hue, '--sat': sat, '--lit': lit}}>
+        <div className={`colourful ${style.quote}`}>
             <blockquote className={style.content}>
                 {children}
             </blockquote>

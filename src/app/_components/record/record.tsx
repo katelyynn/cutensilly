@@ -3,9 +3,6 @@ import style from "./record.module.css";
 
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyLinkBlock } from '../link_block/link_block';
-import { KathyClicky } from '../clicky/clicky';
-
-import * as SolarIconSet from "solar-icon-set";
 
 interface Format {
     qty: string,
