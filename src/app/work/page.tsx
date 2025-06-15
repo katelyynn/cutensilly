@@ -7,9 +7,8 @@ import { KathyWork, KathyWorkList } from '../_components/work/work';
 export default async function Home() {
   return (
     <main>
-      <h3>my <span className="kyuu">work</span></h3>
-      <KathyCardList>
-        <KathyCard>
+        <KathyCard full>
+          <h1>work</h1>
           <KathyWorkList>
             <KathyWork
               title="bleh"
@@ -22,6 +21,7 @@ export default async function Home() {
                 link: "/bleh"
               }}
               years="2022—2025"
+              image="bleh-ash.jpg"
             />
             <KathyWork
               title="bwaa"
@@ -34,6 +34,7 @@ export default async function Home() {
                 link: "/bwaa"
               }}
               years="2024—2025"
+              image="bwaa-image.png"
             />
             <KathyWork
               title="lotus"
@@ -49,7 +50,6 @@ export default async function Home() {
             />
           </KathyWorkList>
         </KathyCard>
-      </KathyCardList>
     </main>
   );
 }

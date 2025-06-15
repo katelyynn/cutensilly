@@ -3,6 +3,7 @@ import style from "./work.module.css";
 
 import Image from 'next/image';
 import { KathyClicky, KathyClickyList } from '../clicky/clicky';
+import {KathyLinkBlock} from "~/app/_components/link_block/link_block";
 
 interface KathyWorkProps {
     image?: string,
@@ -28,26 +29,15 @@ export const KathyWork = ({
 }: KathyWorkProps) => {
     return (
         <li className={style.work}>
-            <div className={style.image}>
-                {image ? <Image src={image} alt={title} /> : ''}
-            </div>
+            {image ? <img className={style.image} src={image} alt={title} /> : <div className={style.image} />}
             <div className={style.info}>
-                <h4 className={style.title}>{title}</h4>
+                <h5 className={style.title}>{title}</h5>
                 <p className={style.bio}>{bio}</p>
                 <p className={style.years}>{years}</p>
-                <KathyClickyList>
-                    {view_url ?
-                    <KathyClicky primary link={view_url.link} elem={view_url.external ? 'a' : 'link'}>
-                        view
-                    </KathyClicky>
-                    : ''}
-                    {source_url ?
-                    <KathyClicky link={source_url.link} elem={source_url.external ? 'a' : 'link'}>
-                        source
-                    </KathyClicky>
-                    : ''}
-                </KathyClickyList>
             </div>
+            {view_url ?
+            <KathyLinkBlock link={view_url.link} type={view_url.external ? 'a' : 'link'}/>
+            : ''}
         </li>
     );
 }

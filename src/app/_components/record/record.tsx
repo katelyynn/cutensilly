@@ -52,7 +52,7 @@ export const KathyRecord = ({
                     ))}
                 </div>
                 <div className={style.extras}>
-                    <div className={style.year}>{year}</div>
+                    <div className={style.year}>{(year > 0) ? year : '-'}</div>
                     {(formats[0]?.descriptions[0]) ? <div className={style.descriptor}>{formats[0].descriptions[0]}</div> : ''}
                 </div>
             </div>
