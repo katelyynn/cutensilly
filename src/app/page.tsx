@@ -22,11 +22,11 @@ export default async function Home() {
               hyacines
             </div>
           </KathyClicky>
-          <KathyClicky cloak="social" colour="discogs" link="https://www.discogs.com/user/hyacine/collection" primary elem="a">
+          <KathyClicky cloak="social" colour="discogs" link="https://www.discogs.com/user/longsocks/collection" primary elem="a">
             <Image src="/avatars/discogs.png" alt="discogs logo" width={16} height={16}/>
             <div className="info">
               <strong>discogs</strong>
-              hyacine
+              longsocks
             </div>
           </KathyClicky>
           <KathyClicky cloak="social" colour="github" link="https://github.com/katelyynn" primary elem="a">

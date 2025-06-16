@@ -21,7 +21,7 @@ export function MusClient() {
     );
 
     const {data: collection, isLoading: collectionLoading} = api.discogs.getMusicCollection.useQuery(
-        {username: "hyacine", page: 1},
+        {username: "longsocks", page: 1},
         {
             staleTime: 60 * 60 * 1000, // Data becomes stale after 1 hour
             gcTime: 24 * 60 * 60 * 1000, // Cache persists for 24 hours
@@ -67,11 +67,11 @@ export function MusClient() {
         <main>
             <KathyCard full>
                 <h1>physical collection</h1>
-                <KathyClicky cloak="social" colour="discogs" link="https://www.discogs.com/user/hyacine/collection" primary elem="a">
+                <KathyClicky cloak="social" colour="discogs" link="https://www.discogs.com/user/longsocks/collection" primary elem="a">
                     <Image src="/avatars/discogs.png" alt="discogs logo" width={16} height={16}/>
                     <div className="info">
                         <strong>discogs</strong>
-                        hyacine
+                        longsocks
                     </div>
                 </KathyClicky>
                 <div className="sep"/>
