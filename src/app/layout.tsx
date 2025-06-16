@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   title: "katelyn.moe",
   description: "teeheee",
   icons: [{ rel: "icon", url: "/avatars/kat.jpg" }],
+  authors: [{name: 'katelyn', url: 'https://katelyn.moe'}],
+  openGraph: {
+    title: 'katelyn.moe',
+    siteName: 'katelyn.moe',
+    type: 'website'
+  }
 };
 
 export default function RootLayout({
