@@ -14,7 +14,7 @@ const config = {
         permanent: true,
       },
       {
-        source: '/bleh/fm/',
+        source: '/bleh/fm',
         destination: 'https://bleh.katelyn.moe',
         permanent: true,
       }
