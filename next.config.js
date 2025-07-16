@@ -4,6 +4,23 @@
  */
 import "./src/env.js";
 
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/bleh/',
+        destination: 'https://bleh.katelyn.moe',
+        permanent: true,
+      },
+      {
+        source: '/bleh/fm/',
+        destination: 'https://bleh.katelyn.moe',
+        permanent: true,
+      }
+    ];
+  },
+};
+
 /** @type {import("next").NextConfig} */
 const config = {};
 
