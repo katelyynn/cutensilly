@@ -4,7 +4,8 @@
  */
 import "./src/env.js";
 
-module.exports = {
+/** @type {import("next").NextConfig} */
+const config = {
   async redirects() {
     return [
       {
@@ -20,8 +21,5 @@ module.exports = {
     ];
   },
 };
-
-/** @type {import("next").NextConfig} */
-const config = {};
 
 export default config;
