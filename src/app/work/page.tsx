@@ -68,7 +68,7 @@ export default async function Home() {
               view_url={{
                 link: "https://crop.katelyn.moe"
               }}
-              years="2024—2025"
+              years="2025"
             />
           </KathyWorkList>
         </KathyCard>
