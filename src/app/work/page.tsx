@@ -41,7 +41,7 @@ export default async function Home() {
                 external: true
               }}
               view_url={{
-                link: "/bwaa"
+                link: "https://bleh.katelyn.moe"
               }}
               years="2024—2025"
               image="bwaa-image.png"
@@ -55,6 +55,18 @@ export default async function Home() {
               }}
               view_url={{
                 link: "/lotus"
+              }}
+              years="2024—2025"
+            />
+            <KathyWork
+              title="yuzuha"
+              bio="simple avatar cropper site "
+              source_url={{
+                link: "https://github.com/katelyynn/yuzuha",
+                external: true
+              }}
+              view_url={{
+                link: "https://crop.katelyn.moe"
               }}
               years="2024—2025"
             />

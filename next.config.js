@@ -9,6 +9,16 @@ const config = {
   async redirects() {
     return [
       {
+        source: '/fm',
+        destination: 'https://bleh.katelyn.moe',
+        permanent: true,
+      },
+      {
+        source: '/fm/',
+        destination: 'https://bleh.katelyn.moe',
+        permanent: true,
+      },
+      {
         source: '/bleh/',
         destination: 'https://bleh.katelyn.moe',
         permanent: true,
@@ -16,6 +26,11 @@ const config = {
       {
         source: '/bleh/fm',
         destination: 'https://bleh.katelyn.moe',
+        permanent: true,
+      },
+      {
+        source: '/bwaa/fm',
+        destination: '/bwaa',
         permanent: true,
       }
     ];
