@@ -15,11 +15,11 @@ export default async function Home() {
         <p>silly lil girl who codes</p>
         <div className="sep" />
         <KathyClickyGrid>
-          <KathyClicky cloak="social" colour="lastdotfm" link="https://last.fm/user/hyacines" primary elem="a">
+          <KathyClicky cloak="social" colour="lastdotfm" link="https://last.fm/user/clairedoll" primary elem="a">
             <Image src="/avatars/lastdotfm.png" alt="last.fm logo" width={16} height={16}/>
             <div className="info">
               <strong>last.fm</strong>
-              hyacines
+              clairedoll
             </div>
           </KathyClicky>
           <KathyClicky cloak="social" colour="discogs" link="https://www.discogs.com/user/longsocks/collection" primary elem="a">
@@ -36,11 +36,11 @@ export default async function Home() {
               katelyynn
             </div>
           </KathyClicky>
-          <KathyClicky cloak="social" colour="aoty" link="https://www.albumoftheyear.org/user/lynkat/" primary elem="a">
+          <KathyClicky cloak="social" colour="aoty" link="https://www.albumoftheyear.org/user/clairedoll/" primary elem="a">
             <Image src="/avatars/aoty.png" alt="AOTY logo" width={16} height={16}/>
             <div className="info">
               <strong>AOTY</strong>
-              lynkat
+              clairedoll
             </div>
           </KathyClicky>
           <KathyClicky cloak="social" colour="rym" link="https://rateyourmusic.com/~kateshapedbox" primary elem="a">

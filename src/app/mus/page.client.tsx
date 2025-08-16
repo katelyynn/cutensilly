@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export function MusClient() {
     const {data: recent_tracks, isLoading: tracksLoading} = api.lastfm.getRecentTracks.useQuery(
-        {username: "hyacines"},
+        {username: "clairedoll"},
         {
             staleTime: 30 * 1000, // Data becomes stale after 30 seconds
             gcTime: 5 * 60 * 1000, // Cache persists for 5 minutes
@@ -90,11 +90,11 @@ export function MusClient() {
                 </KathyRecordList>
                 <div className="sep"/>
                 <h1>recent listening</h1>
-                <KathyClicky cloak="social" colour="lastdotfm" link="https://last.fm/user/hyacines" primary elem="a">
+                <KathyClicky cloak="social" colour="lastdotfm" link="https://last.fm/user/clairedoll" primary elem="a">
                     <Image src="/avatars/lastdotfm.png" alt="last.fm logo" width={16} height={16}/>
                     <div className="info">
                         <strong>last.fm</strong>
-                        hyacines
+                        clairedoll
                     </div>
                 </KathyClicky>
                 <div className="sep"/>

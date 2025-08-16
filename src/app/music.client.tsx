@@ -7,7 +7,7 @@ import type {Track} from '~/app/_components/track/track';
 
 export function MusClient() {
     const {data: recent_tracks, isLoading: tracksLoading} = api.lastfm.getRecentTracks.useQuery(
-        {username: "hyacines", limit: 1},
+        {username: "clairedoll", limit: 1},
         {
             staleTime: 30 * 1000, // Data becomes stale after 30 seconds
             gcTime: 5 * 60 * 1000, // Cache persists for 5 minutes
