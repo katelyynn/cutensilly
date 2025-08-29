@@ -3,8 +3,6 @@
     align-items: center;
     gap: 14px;
 
-    padding: 8px 6px;
-    border-bottom: 1px solid #ccc;
     color: inherit;
     font: inherit;
     text-align: left;
@@ -14,34 +12,25 @@
     cursor: pointer;
     user-select: none;
 
-    &:hover, &:focus-within {
-        background: rgba(0, 0, 0, 0.03);
-    }
-
-    &.active {
-        background: #feffd6;
-
-        z-index: 3;
-    }
-
     .info {
         z-index: 1;
         pointer-events: none;
         flex: 1;
 
         .title {
-            font-weight: bold;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             max-width: 400px;
+            font-size: 14px;
+            font-weight: 600;
         }
 
         .artist {
             display: flex;
             margin-top: 2px;
-            font-size: 11px;
-            color: #666;
+            font-size: 12px;
+            color: var(--txt);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -56,8 +45,8 @@
 
         .album {
             display: flex;
-            font-size: 10px;
-            color: #888;
+            font-size: 12px;
+            color: var(--txt);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -84,6 +73,10 @@
 
     button {
         z-index: 1;
+    }
+
+    &:hover {
+        text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
     }
 }
 

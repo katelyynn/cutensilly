@@ -8,17 +8,9 @@ import Image from "next/image";
 
 export default async function Home() {
   return (
-    <main>
+    <>
         <KathyCard full>
-          <h1>library</h1>
-            <KathyClicky cloak="social" colour="github" link="https://github.com/katelyynn" primary elem="a">
-                <Image src="/avatars/github.png" alt="github logo" width={16} height={16}/>
-                <div className="info">
-                    <strong>github</strong>
-                    katelyynn
-                </div>
-            </KathyClicky>
-            <div className="sep" />
+          <h1>projects</h1>
           <KathyWorkList>
             <KathyWork
               title="bleh"
@@ -69,9 +61,10 @@ export default async function Home() {
                 link: "https://crop.katelyn.moe"
               }}
               years="2025"
+              image="crop.jpg"
             />
           </KathyWorkList>
         </KathyCard>
-    </main>
+    </>
   );
 }

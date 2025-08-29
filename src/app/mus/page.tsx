@@ -1,5 +1,13 @@
-import {MusClient} from './page.client';
+import { KathyCard } from '../_components/card/card';
+import { Mus } from './mus';
 
 export default function MusPage() {
-    return <MusClient/>;
+    return (
+        <>
+            <KathyCard full>
+                <h1>my music collection!!</h1>
+                <Mus />
+            </KathyCard>
+        </>
+    );
 }

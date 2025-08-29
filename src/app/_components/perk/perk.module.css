@@ -14,6 +14,11 @@
         width: fit-content;
         color: #888;
     }
+
+    & > p {
+        margin: 0;
+        font-size: 13px;
+    }
 }
 
 .list {

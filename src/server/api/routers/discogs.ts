@@ -23,7 +23,12 @@ export const discogsRouter = createTRPCRouter({
   getMusicCollection: publicProcedure
     .input(z.object({ username: z.string(), page: z.number() }))
     .query(async ({ input }): Promise<MusicCollection> => {
-      const response = await fetch(`https://api.discogs.com/users/${input.username}/collection/folders/0/releases?token=${env.DISCOGS_API_KEY}&per_page=100&sort=added&sort_order=desc&page=${input.page}`);
+      const response = await fetch(
+        `https://api.discogs.com/users/${input.username}/collection/folders/0/releases?token=${env.DISCOGS_API_KEY}&per_page=100&sort=added&sort_order=desc&page=${input.page}`,
+        {
+          next: {revalidate: 60 * 60}
+        }
+      );
 
       const data = await response.json();
 

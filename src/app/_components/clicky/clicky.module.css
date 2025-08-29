@@ -1,80 +1,25 @@
 .clicky {
     appearance: none;
-    padding: 3px 8px;
-    background: linear-gradient(to bottom, #ffffff 0%, #e6e6e6 100%);
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    padding: 3px 6px;
+    background: var(--bg);
+    border: 1px solid var(--dash);
+    border-radius: 6px;
 
     display: flex;
     align-items: center;
     gap: 6px;
 
     &:hover {
-        background: linear-gradient(to bottom, #ffffff 0%, #d9d9d9 100%);
-        border: 1px solid #999;
-        box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.8);
+        background: var(--quote);
     }
 
     &:active {
-        background: linear-gradient(to bottom, #e6e6e6 0%, #d9d9d9 100%);
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    }
-
-    &.social {
-        padding: 8px 12px;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.15));
-        border: 1px solid rgba(0, 0, 0, 0.3);
-        border-radius: 6px;
-        font-size: 13px;
-        font-weight: bold;
-        color: white !important;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35),
-        0 1px 3px rgba(0, 0, 0, 0.15);
-        text-align: left;
-
-        &.lastdotfm {
-            background-color: #d51007;
-        }
-
-        &.discogs {
-            background-color: #C6A109;
-        }
-
-        &.github {
-            background-color: #758D9C;
-        }
-
-        &.aoty {
-            background-color: #883233;
-        }
-
-        &.rym {
-            background-color: #AAAACC;
-        }
-
-        &:hover {
-            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.25));
-            text-decoration: none;
-        }
-
-        &:active {
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.08));
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
-        }
-
-        strong {
-            color: inherit !important;
-        }
-
-        & + .social {
-            margin-top: 3px;
-        }
+        background: var(--glow);
     }
 
     color: var(--col) !important;
     font: inherit;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     text-decoration: none;
 
@@ -106,60 +51,37 @@
             font-weight: bold;
         }
     }
-
-    &:hover {
-        text-decoration: none;
-
-        strong {
-            color: #0187c5;
-            text-decoration: underline;
-        }
-    }
 }
 
 .tab {
-    background: transparent;
-    border-bottom: unset;
-    margin-bottom: -1px;
+    background: transparent !important;
+    border: unset !important;
+    box-shadow: unset !important;
+    border-radius: unset;
     z-index: 100;
 
-    padding: 3px 6px;
-    border-bottom: unset !important;
-    border-top: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    font-size: 11px;
+    padding: 0;
+    font-size: inherit;
+    display: list-item;
+    list-style: url(/dot.png);
 
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-
-    &:hover {
-        background: #eee;
-    }
+    margin-left: 20px;
+    font-weight: 400;
+    text-decoration: underline !important;
 
     &.primary {
-        color: #5C5AC6 !important;
-        background: #fff;
-        font-weight: bold;
+        text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
+    }
+
+    & > i {
+        font-style: normal;
+        opacity: 0.7;
     }
 }
 
 .big {
     padding: 6px 10px;
-    background: linear-gradient(180deg, #333333, #1b1b1b 50%, #000000 100%);
-    border-radius: 4px;
-    border: 1px solid #000 !important;
-    color: #fff !important;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-
-    &:hover {
-        background: linear-gradient(180deg, #444444, #2b2b2b 50%, #111111 100%);
-    }
-
-    &:active {
-        background: linear-gradient(180deg, #000000, #1b1b1b 100%);
-    }
+    font-size: 14px;
 }
 
 .lastdotfm {

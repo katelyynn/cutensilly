@@ -1,13 +1,12 @@
 .avatar {
-    background: #fff;
     overflow: hidden;
     position: relative;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 
     img {
         width: 100%;
         height: 100%;
+        border-radius: calc(5px - 2px);
     }
 
     &.size-sm {
@@ -36,7 +35,6 @@
         background: #f5f5f5;
     }
 
-    border: 1px solid #c6c6c6;
-    background-image: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
+    border: 1px dotted var(--dash);
     padding: 2px;
 }
