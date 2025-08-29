@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 
 export default async function bwaa() {
     return (
-        <main>
-            <KathyCard>
+        <>
+            <KathyCard full>
                 <img className="picture-frame" alt="bwaa" src="/bwaa-image.png" />
                 <h1>bwaa</h1>
                 <h2>return last.fm to 2012</h2>
@@ -57,6 +57,6 @@ export default async function bwaa() {
                     </KathyPerk>
                 </KathyPerkList>
             </KathyCard>
-        </main>
+        </>
     );
 }
