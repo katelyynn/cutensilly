@@ -1,23 +1,6 @@
 .record {
     display: inline-block;
     position: relative;
-    padding: 8px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
-    &:hover {
-        border-color: #999;
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    &:active {
-        border-color: #666;
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-        position: relative;
-        top: 1px;
-    }
 
     text-align: center;
 
@@ -27,8 +10,8 @@
 
         .title {
             font-weight: bold;
-            font-size: 11px;
-            color: #333;
+            font-size: 13px;
+            color: var(--txt);
             display: block;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -43,48 +26,32 @@
         }
 
         .artist {
-            font-size: 10px;
-            color: #666;
+            font-size: 12px;
         }
 
         .descriptor,
         .year {
-            color: #999;
-            font-size: 10px;
+            font-size: 12px;
         }
 
         .format {
             position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 9px;
-            font-weight: bold;
-            color: #444;
-            padding: 2px 5px;
+            top: 0;
+            right: 20px;
+            font-size: 11px;
+            padding: 1px 3px;
             border-radius: 3px;
-            text-transform: uppercase;
-            border: 1px solid #ccc;
-            background: linear-gradient(to bottom, #fff, #f5f5f5);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-            text-shadow: 0 1px 0 #fff;
+            text-transform: lowercase;
+            border: 1px dashed currentColor;
+            background: var(--bg);
+            text-shadow: none !important;
 
             &.format-cd, &.format-cdr {
-                border-color: #9966ff;
-                background: linear-gradient(to bottom, #efe6ff, #e5d5ff);
+                color: #9966ff;
             }
 
             &.format-vinyl {
-                border-color: #ff9966;
-                background: linear-gradient(to bottom, #ffe6d5, #ffd5bf);
-            }
-        }
-
-        a {
-            color: #0066cc;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
+                color: #d16c3a;
             }
         }
     }
@@ -106,6 +73,10 @@
             height: 100%;
             object-fit: cover;
         }
+    }
+
+    &:hover {
+        text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
     }
 }
 

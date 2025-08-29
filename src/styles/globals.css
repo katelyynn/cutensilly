@@ -79,6 +79,7 @@ body {
   --dash: #DD9FD9;
   --back: #e8e5ff;
   --glow: #f1d3ef;
+  --quote: #f8e8f7;
 
   --gap: 10px;
 
@@ -168,9 +169,6 @@ h4 {
   font-size: 20px;
   line-height: 24px;
 }
-h5 {
-  color: #555;
-}
 
 a:hover {
   text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
@@ -180,8 +178,8 @@ a:hover {
 .sep {
   display: block;
   width: 100%;
-  border-top: 1px dotted #ccc;
-  margin: 15px 0;
+  border-top: 1px dashed var(--dash);
+  margin: 10px 0;
 }
 
 

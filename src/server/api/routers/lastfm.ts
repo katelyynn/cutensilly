@@ -17,7 +17,12 @@ export const lastfmRouter = createTRPCRouter({
   getRecentTracks: publicProcedure
     .input(z.object({ username: z.string(), limit: z.number().optional() }))
     .query(async ({ input }): Promise<RecentTracks> => {
-      const response = await fetch(`http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&format=json&extended=1&api_key=${env.LASTFM_API_KEY}&username=${input.username}&limit=${input.limit ?? 15}`);
+      const response = await fetch(
+        `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&format=json&extended=1&api_key=${env.LASTFM_API_KEY}&username=${input.username}&limit=${input.limit ?? 15}`,
+        {
+          next: {revalidate: 30}
+        }
+      );
 
       //console.log(await response.json());
 

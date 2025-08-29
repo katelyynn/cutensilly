@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <>
         <KathyCard full>
-          <h1>library</h1>
+          <h1>projects</h1>
           <KathyWorkList>
             <KathyWork
               title="bleh"
@@ -61,6 +61,7 @@ export default async function Home() {
                 link: "https://crop.katelyn.moe"
               }}
               years="2025"
+              image="crop.jpg"
             />
           </KathyWorkList>
         </KathyCard>

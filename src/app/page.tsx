@@ -4,7 +4,7 @@ import { KathyQuote } from '~/app/_components/quote/quote';
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyClicky, KathyClickyGrid } from '~/app/_components/clicky/clicky';
 
-import {MusClient} from "~/app/music.client";
+import {Mus} from "~/app/music";
 import Link from 'next/link';
 
 export default async function Home() {
@@ -26,7 +26,7 @@ export default async function Home() {
       </KathyCard>
       <KathyCard classname="music">
         <h3>i'm currently listening to</h3>
-        <MusClient/>
+        <Mus />
       </KathyCard>
     </>
   );

@@ -1,63 +1,50 @@
 .list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px 4px;
     width: 100%;
 }
 
 .work {
     position: relative;
-    display: inline-block;
-    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
 
     &:hover {
-        transform: translateY(-5px);
-
-        .image {
-            border-color: #999;
-            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .info .title {
-            color: #000;
-        }
+        text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
     }
 
     .image {
         display: inline-block;
         aspect-ratio: 4 / 3;
         object-fit: cover;
-        height: 180px;
-        padding: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-        transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        background: var(--bg);
+        border-radius: 4px;
+        border: 1px dashed var(--glow);
     }
 
     .info {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 12px;
+        margin-top: 6px;
+        text-align: center;
 
         .title {
             font-weight: bold;
-            font-size: 13px;
-            color: #333;
-            transition: color 0.2s ease-in-out;
+            font-size: 16px;
         }
 
         .bio {
-            font-size: 11px;
-            margin-bottom: 5px;
+            font-size: 13px;
+            margin-top: 0;
             width: 200px;
         }
 
         .years {
-            font-size: 10px;
-            color: #666;
-            margin-bottom: 15px;
+            font-size: 11px;
+            margin-top: 3px;
+            opacity: 0.7;
         }
     }
 }
