@@ -20,7 +20,7 @@ export default async function Home() {
                 external: true
               }}
               view_url={{
-                link: "/bleh"
+                link: "https://bleh.katelyn.moe"
               }}
               years="2022—2025"
               image="bleh-ash.jpg"
@@ -33,7 +33,7 @@ export default async function Home() {
                 external: true
               }}
               view_url={{
-                link: "https://bleh.katelyn.moe"
+                link: "/bwaa"
               }}
               years="2024—2025"
               image="bwaa-image.png"
