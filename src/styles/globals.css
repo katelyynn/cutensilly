@@ -129,6 +129,24 @@ main {
   }
 }
 
+@media (max-width: 670px) {
+  body {
+    width: unset;
+    min-height: 100vh;
+    height: unset;
+    padding: 60px 0;
+  }
+
+  .content {
+    max-height: unset;
+  }
+
+  main {
+    flex-direction: column;
+    height: unset;
+  }
+}
+
 strong {
   font-weight: 600;
 }
@@ -376,6 +394,17 @@ sub {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
+.top {
+  &:hover {
+    filter: brightness(115%);
+  }
+
+  & > a > img {
+    max-width: 80vw;
+    image-rendering: pixelated;
+  }
+}
+
 .top404 {
   width: 137px;
   margin: 1em 0;
@@ -405,6 +434,12 @@ sub {
 
   &.side {
     width: 200px;
+  }
+}
+
+@media (max-width: 670px) {
+  .card {
+    width: 90vw !important;
   }
 }
 

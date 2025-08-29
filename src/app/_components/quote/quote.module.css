@@ -1,5 +1,5 @@
 .quote {
-    background: var(--quote);
+    background: radial-gradient(ellipse at center, transparent 40%, var(--quote));
     padding: 10px;
     border-radius: 8px;
 

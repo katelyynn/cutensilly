@@ -2,6 +2,7 @@
     overflow: hidden;
     position: relative;
     border-radius: 5px;
+    flex-shrink: 0;
 
     img {
         width: 100%;
