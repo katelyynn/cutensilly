@@ -4,10 +4,9 @@
     border-radius: 8px;
 
     .identity {
-        font-weight: bold;
-        text-align: right;
+        color: var(--hi);
         width: 100%;
         display: block;
-        font-size: 10px;
+        font-size: 12px;
     }
 }

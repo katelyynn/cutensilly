@@ -19,7 +19,7 @@ export const KathyQuote = ({
                 {children}
             </blockquote>
             <cite className={style.identity}>
-                <a className={style.name} href={who.link} target="_blank">{who.name}</a>
+                - {who.name}
             </cite>
         </div>
     );
