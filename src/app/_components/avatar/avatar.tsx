@@ -7,19 +7,21 @@ interface KathyAvatarProps {
     image?: string,
     size: 'sm' | 'md' | 'nm' | 'lg' | 'xl' | 'xxl',
     alt?: string,
-    link?: string, link_type?: 'link' | 'a'
+    link?: string, link_type?: 'link' | 'a',
+    lazy?: boolean
 }
 
 export const KathyAvatar = ({
     image,
     size,
     alt,
-    link, link_type
+    link, link_type,
+    lazy
 }: KathyAvatarProps) => {
     return (
         <Tip content={alt || 'image'} follow>
             <div className={`avatar ${style.avatar} ${style[`size-${size}`]}`}>
-                {(image) ? <img draggable="false" src={image} alt={alt} /> : ''}
+                {(image) ? <img draggable="false" src={image} alt={alt} loading={lazy ? 'lazy' : 'eager'} /> : ''}
                 {(link) ? <KathyLinkBlock link={link} type={link_type} /> : ''}
             </div>
         </Tip>
