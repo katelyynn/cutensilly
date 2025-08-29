@@ -415,3 +415,14 @@ sub {
   margin-top: -5px;
   margin-bottom: -6px;
 }
+
+.badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+  gap: 2px;
+
+  & > a, & > img {
+    width: 88px;
+    height: 31px;
+  }
+}

@@ -60,6 +60,18 @@ export const KathyNav = () => {
             <KathyClicky cloak="tab" colour="rym" link="https://rateyourmusic.com/~kateshapedbox" elem="a">
                 rym : <i>kateshapedbox</i>
             </KathyClicky>
+            <h2>badges:</h2>
+            <div className="badges">
+                <a href='https://katelyn.moe/8831.png' target='_blank'>
+                    <img src='/8831.png' alt='katelyn.moe' />
+                </a>
+                <img src='/sm.jpg' alt='sm' />
+                <img src='/darwin.gif' alt='darwin' />
+                <img src='/apple.gif' alt='apple' />
+                <a href='https://2lay.net/' target='_blank'>
+                    <img src='https://2lay.net/8831.png' alt='2lay.net' />
+                </a>
+            </div>
         </nav>
     );
 }
