@@ -14,6 +14,7 @@ import { Pangolin } from 'next/font/google';
 import Link from 'next/link';
 
 const pangolin = Pangolin({
+  subsets: ['latin'],
   weight: '400'
 });
 
