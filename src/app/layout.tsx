@@ -11,12 +11,9 @@ import { KathyFooter } from '~/app/_components/footer/footer';
 import NextTopLoader from 'nextjs-toploader';
 
 import { Pangolin } from 'next/font/google';
-import { Gluten } from 'next/font/google';
+import Link from 'next/link';
 
 const pangolin = Pangolin({
-  weight: '400'
-});
-const gluten = Gluten({
   weight: '400'
 });
 
@@ -40,6 +37,11 @@ export default function RootLayout({
       <body>
         <TRPCReactProvider>
           <NextTopLoader />
+          <div className="top">
+            <Link href={'/'}>
+              <img src={'/wordmark.png'} alt='katelyn!' />
+            </Link>
+          </div>
           <main>
             <div className="content">
               {children}

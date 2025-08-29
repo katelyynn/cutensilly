@@ -17,11 +17,15 @@
         pointer-events: none;
         flex: 1;
 
+        font-family: Tahoma;
+
         .title {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             max-width: 400px;
+            font-size: 13px;
+            font-weight: 600;
         }
 
         .artist {
@@ -43,7 +47,7 @@
 
         .album {
             display: flex;
-            font-size: 10px;
+            font-size: 11px;
             color: var(--txt);
             white-space: nowrap;
             overflow: hidden;

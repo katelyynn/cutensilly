@@ -120,6 +120,7 @@
 .tab {
     background: transparent !important;
     border: unset !important;
+    box-shadow: unset !important;
     border-radius: unset;
     z-index: 100;
 
@@ -133,7 +134,7 @@
     text-decoration: underline !important;
 
     &.primary {
-        color: var(--hi) !important;
+        text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
     }
 
     & > i {

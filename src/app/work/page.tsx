@@ -11,14 +11,6 @@ export default async function Home() {
     <>
         <KathyCard full>
           <h1>library</h1>
-            <KathyClicky cloak="social" colour="github" link="https://github.com/katelyynn" primary elem="a">
-                <Image src="/avatars/github.png" alt="github logo" width={16} height={16}/>
-                <div className="info">
-                    <strong>github</strong>
-                    katelyynn
-                </div>
-            </KathyClicky>
-            <div className="sep" />
           <KathyWorkList>
             <KathyWork
               title="bleh"

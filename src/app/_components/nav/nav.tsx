@@ -26,7 +26,7 @@ export const KathyNav = () => {
                 primary={route === '/work'}
                 cloak="tab"
             >
-                library
+                projects
             </KathyClicky>
             <KathyClicky
                 elem="link"

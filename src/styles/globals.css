@@ -59,7 +59,7 @@ table {
 
 :root {
   --font: Pangolin, Lucida Grande, Geneva, Arial, Verdana, sans-serif;
-  --font-size: 14px;
+  --font-size: 15px;
   --line-height: auto;
   --font-weight: 400;
   --font-weight-md: 500;
@@ -78,6 +78,7 @@ body {
   --txt-i: #fff;
   --dash: #DD9FD9;
   --back: #e8e5ff;
+  --glow: #f1d3ef;
 
   --gap: 10px;
 
@@ -127,14 +128,30 @@ main {
   }
 }
 
+strong {
+  font-weight: 600;
+}
+
+.kyuu {
+  color: var(--hi);
+}
+
+p {
+  margin-top: 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 
 h1, h2, h3, h4, h5 {
   font-weight: bold;
 }
 
 h1 {
-  font-size: 16px;
-  margin: 6px 0;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 h2 {
   font-size: 13px;
@@ -155,6 +172,10 @@ h5 {
   color: #555;
 }
 
+a:hover {
+  text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
+}
+
 
 .sep {
   display: block;
@@ -164,18 +185,13 @@ h5 {
 }
 
 
-.kyuu {
-  color: hsl(var(--l2));
-}
-
-
 i {
   font-style: italic;
 }
 
 
 a {
-  color: #0066CC;
+  color: var(--hi);
   text-decoration: none;
 
   &:hover {
@@ -357,7 +373,7 @@ sub {
 }
 
 .card {
-  background: var(--bg);
+  background: url(/w.png);
   padding: 10px;
   border: 1px dashed var(--dash);
   width: 450px;
@@ -369,11 +385,5 @@ sub {
 
   &.side {
     width: 200px;
-  }
-
-  &.music {
-    background-image: url(/note.png);
-    background-repeat: no-repeat;
-    background-position: bottom right;
   }
 }

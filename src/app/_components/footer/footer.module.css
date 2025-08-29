@@ -1,12 +1,5 @@
 .feet {
     text-align: center;
-
-    margin-top: 20px;
-    padding: 20px 0;
-
-    border-top: 1px solid #d0d2d7;
-    color: #76797c;
-    font-size: 10px;
-
-    width: 400px;
+    font-weight: 600;
+    color: var(--hi);
 }

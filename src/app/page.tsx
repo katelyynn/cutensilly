@@ -5,14 +5,16 @@ import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyClicky, KathyClickyGrid } from '~/app/_components/clicky/clicky';
 
 import {MusClient} from "~/app/music.client";
+import Link from 'next/link';
 
 export default async function Home() {
   return (
     <>
       <KathyCard>
         <KathyAvatar image="/avatars/kat.jpg" alt="avatar for kathy" size="lg"/>
-        <h1>hey im <span className="kyuu">katelyn</span> :3</h1>
-        <p>silly lil girl who codes</p>
+        <p><strong>hi! i'm <span className="kyuu">katelyn</span></strong> and this is my corner of the internet ^^</p>
+        <p>i am a self-taught programmer mainly focusing on web development for the meantime. you may know me from my popular last.fm userscript, "bleh"? :3</p>
+        <p>you can use the side rail to explore what this site has, here's <Link href={'/work'}>my project list</Link> for example !!</p>
         <div className="sep"/>
         <KathyQuote who={{
           avatar: '/avatars/stella.png',
