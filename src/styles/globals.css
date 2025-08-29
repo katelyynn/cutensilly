@@ -385,3 +385,11 @@ sub {
     width: 200px;
   }
 }
+
+.time {
+  color: var(--hi);
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: -10px;
+  margin-bottom: -6px;
+}
