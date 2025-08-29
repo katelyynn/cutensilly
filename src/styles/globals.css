@@ -409,9 +409,10 @@ sub {
 }
 
 .time {
+  font-family: Short Stack;
   color: var(--hi);
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 800;
   margin-top: -5px;
   margin-bottom: -6px;
 }

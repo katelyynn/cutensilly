@@ -10,10 +10,14 @@ import { KathyFooter } from '~/app/_components/footer/footer';
 
 import NextTopLoader from 'nextjs-toploader';
 
-import { Pangolin } from 'next/font/google';
+import { Pangolin, Short_Stack } from 'next/font/google';
 import Link from 'next/link';
 
 const pangolin = Pangolin({
+  subsets: ['latin'],
+  weight: '400'
+});
+const short = Short_Stack({
   subsets: ['latin'],
   weight: '400'
 });
