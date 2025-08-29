@@ -74,6 +74,10 @@
     button {
         z-index: 1;
     }
+
+    &:hover {
+        text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
+    }
 }
 
 .mini {
