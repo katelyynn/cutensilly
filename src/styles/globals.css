@@ -80,6 +80,8 @@ body {
   --back: #e8e5ff;
   --glow: #f1d3ef;
   --quote: #f8e8f7;
+  --w: url(/w.png);
+  --h2: url(/pink053.gif);
 
   --gap: 10px;
 
@@ -103,8 +105,16 @@ body {
 
   &.dark {
     --bg: #000;
-    --txt: #1F1B6D;
+    --txt: #bbb9d4;
+    --hi: #fdb2d9;
+    --txt-i: #000;
     --dash: #C3BAFF;
+    --glow: #641260;
+    --quote: #2e122c;
+    --w: url(/b.png);
+    --h2: url(/purpl157.jpg);
+
+    background: url(/ss035.gif), var(--bg);
   }
 }
 
@@ -179,7 +189,7 @@ h1 {
 }
 h2 {
   font-size: 13px;
-  background-image: url(/pink053.gif);
+  background-image: var(--h2);
   border: 1px dashed var(--dash);
   border-radius: 10px;
   padding: 5px 8px;
@@ -395,7 +405,11 @@ sub {
 }
 
 .top {
-  &:hover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover > a {
     filter: brightness(115%);
   }
 
@@ -422,7 +436,7 @@ sub {
 }
 
 .card {
-  background: url(/w.png);
+  background: var(--w);
   padding: 10px;
   border: 1px dashed var(--dash);
   width: 450px;

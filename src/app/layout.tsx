@@ -12,6 +12,7 @@ import NextTopLoader from 'nextjs-toploader';
 
 import { Pangolin, Short_Stack } from 'next/font/google';
 import Link from 'next/link';
+import ThemeToggle from './_components/theme/theme';
 
 const pangolin = Pangolin({
   subsets: ['latin'],
@@ -43,9 +44,7 @@ export default function RootLayout({
         <TRPCReactProvider>
           <NextTopLoader />
           <div className="top">
-            <Link href={'/'}>
-              <img src={'/wordmark.png'} alt='katelyn!' />
-            </Link>
+            <ThemeToggle />
           </div>
           <main>
             <div className="content">
