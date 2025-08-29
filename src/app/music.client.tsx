@@ -3,8 +3,6 @@
 import {api} from '~/trpc/react';
 import {KathyTrackList, KathyTrack} from '~/app/_components/track/track';
 
-import type {Track} from '~/app/_components/track/track';
-
 export function MusClient() {
     const {data: recent_tracks, isLoading: tracksLoading} = api.lastfm.getRecentTracks.useQuery(
         {username: "clairedoll", limit: 1},
@@ -43,22 +41,19 @@ export function MusClient() {
 
     return (
         <KathyTrackList>
-            {recent_tracks.tracks.map((track: Track, i: number) => (
-                <KathyTrack
-                    key={i}
-                    avatar={track.avatar}
-                    title={track.title}
-                    artist={track.artist}
-                    album={track.album}
-                    time={track.time}
-                    love={track.love}
-                    active={track.active}
-                    link={track.link}
-                    lotus_album_track={lotusAlbumTrack}
-                    lotus_artist={lotusArtist}
-                    mini
-                />
-            ))}
+            <KathyTrack
+                avatar={recent_tracks.tracks[0].avatar}
+                title={recent_tracks.tracks[0].title}
+                artist={recent_tracks.tracks[0].artist}
+                album={recent_tracks.tracks[0].album}
+                time={recent_tracks.tracks[0].time}
+                love={recent_tracks.tracks[0].love}
+                active={recent_tracks.tracks[0].active}
+                link={recent_tracks.tracks[0].link}
+                lotus_album_track={lotusAlbumTrack}
+                lotus_artist={lotusArtist}
+                mini
+            />
         </KathyTrackList>
     );
 }

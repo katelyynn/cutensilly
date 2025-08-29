@@ -10,6 +10,16 @@ import { KathyFooter } from '~/app/_components/footer/footer';
 
 import NextTopLoader from 'nextjs-toploader';
 
+import { Pangolin } from 'next/font/google';
+import { Gluten } from 'next/font/google';
+
+const pangolin = Pangolin({
+  weight: '400'
+});
+const gluten = Gluten({
+  weight: '400'
+});
+
 export const metadata: Metadata = {
   title: "katelyn.moe",
   description: "teeheee",
@@ -26,12 +36,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={pangolin.className}>
       <body>
         <TRPCReactProvider>
           <NextTopLoader />
-          <KathyNav />
-          {children}
+          <main>
+            <div className="content">
+              {children}
+            </div>
+            <KathyNav />
+          </main>
           <KathyFooter />
         </TRPCReactProvider>
       </body>

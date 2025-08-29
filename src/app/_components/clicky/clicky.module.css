@@ -118,29 +118,27 @@
 }
 
 .tab {
-    background: transparent;
-    border-bottom: unset;
-    margin-bottom: -1px;
+    background: transparent !important;
+    border: unset !important;
+    border-radius: unset;
     z-index: 100;
 
-    padding: 3px 6px;
-    border-bottom: unset !important;
-    border-top: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    font-size: 11px;
+    padding: 0;
+    font-size: inherit;
+    display: list-item;
+    list-style: url(/dot.png);
 
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    margin-left: 20px;
+    font-weight: 400;
+    text-decoration: underline !important;
 
     &:hover {
         background: #eee;
     }
 
     &.primary {
-        color: #5C5AC6 !important;
+        color: var(--hi) !important;
         background: #fff;
-        font-weight: bold;
     }
 }
 

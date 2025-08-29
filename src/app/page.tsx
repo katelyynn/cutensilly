@@ -8,7 +8,7 @@ import {MusClient} from "~/app/music.client";
 
 export default async function Home() {
   return (
-    <main>
+    <>
       <KathyCard>
         <KathyAvatar image="/avatars/kat.jpg" alt="avatar for kathy" size="lg"/>
         <h1>hey im <span className="kyuu">katelyn</span> :3</h1>
@@ -59,9 +59,11 @@ export default async function Home() {
         }}>
             kathy, katie, kate, katelyn<br />wateva it is im gonna marry her
         </KathyQuote>
-        <div className="sep"/>
+      </KathyCard>
+      <KathyCard classname="music">
+        <h3>i'm currently listening to</h3>
         <MusClient/>
       </KathyCard>
-    </main>
+    </>
   );
 }

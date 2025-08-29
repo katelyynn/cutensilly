@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default async function Home() {
   return (
-    <main>
+    <>
         <KathyCard full>
           <h1>library</h1>
             <KathyClicky cloak="social" colour="github" link="https://github.com/katelyynn" primary elem="a">
@@ -72,6 +72,6 @@ export default async function Home() {
             />
           </KathyWorkList>
         </KathyCard>
-    </main>
+    </>
   );
 }

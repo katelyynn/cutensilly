@@ -5,7 +5,7 @@ import { KathyQuote } from '../_components/quote/quote';
 
 export default async function Home() {
     return (
-        <main>
+        <>
             <h1>header 1</h1>
             <h2>header 2</h2>
             <KathyCardList>
@@ -33,6 +33,6 @@ export default async function Home() {
                     </KathyQuote>
                 </KathyCard>
             </KathyCardList>
-        </main>
+        </>
     );
 }

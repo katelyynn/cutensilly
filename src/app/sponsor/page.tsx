@@ -5,7 +5,7 @@ import { KathyPerk, KathyPerkList } from '~/app/_components/perk/perk';
 
 export default async function Home() {
   return (
-    <main>
+    <>
       <KathyCard>
         <KathyAvatar image="/avatars/kat.jpg" alt="avatar for kathy" size="lg"/>
         <h1>sponsor <span className="kyuu">katelyn</span> &lt;3</h1>
@@ -101,6 +101,6 @@ export default async function Home() {
           </tbody>
         </table>
       </KathyCard>
-    </main>
+    </>
   );
 }

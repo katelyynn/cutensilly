@@ -58,8 +58,8 @@ table {
 
 
 :root {
-  --font: Lucida Grande, Geneva, Arial, Verdana, sans-serif;
-  --font-size: 12px;
+  --font: Pangolin, Lucida Grande, Geneva, Arial, Verdana, sans-serif;
+  --font-size: 14px;
   --line-height: auto;
   --font-weight: 400;
   --font-weight-md: 500;
@@ -72,21 +72,59 @@ table {
 }
 
 body {
-  width: 700px;
-  margin: 0 auto;
-}
+  --bg: #fff;
+  --txt: #561A53;
+  --hi: #D56AA2;
+  --txt-i: #fff;
+  --dash: #DD9FD9;
+  --back: #e8e5ff;
 
-body {
-  background: #e3e3e3;
-  color: #000;
+  --gap: 10px;
+
+  background: url(/purpl166.gif), var(--bg);
+  color: var(--txt);
   font-family: var(--font);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
 
+  text-shadow: -1px -1px 0 var(--txt-i), 1px -1px 0 var(--txt-i), -1px 1px 0 var(--txt-i), 1px 1px 0 var(--txt-i);
+
+  width: 100vw;
+  height: 100vh;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: var(--gap);
+
+  &.dark {
+    --bg: #000;
+    --txt: #1F1B6D;
+    --dash: #C3BAFF;
+  }
+}
+
+main {
+  display: flex;
+  gap: var(--gap);
+  height: 600px;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+
+  max-height: 600px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  &:hover {
+    overflow-y: auto;
+  }
 }
 
 
@@ -99,12 +137,15 @@ h1 {
   margin: 6px 0;
 }
 h2 {
-  font-size: 14px;
-  margin-bottom: 2px;
+  font-size: 13px;
+  background-image: url(/pink053.gif);
+  border: 1px dashed var(--dash);
+  border-radius: 10px;
+  padding: 5px 8px;
 }
 h3 {
-  font-size: 30px;
-  line-height: 36px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 h4 {
   font-size: 20px;
@@ -159,9 +200,15 @@ p.big {
 
 
 #nprogress {
+  position: fixed;
+
   .bar {
-    background: linear-gradient(to right, #2e86c1, #3498db, #5dade2, #85c1e9) !important;
+    background: var(--dash) !important;
     height: 4px !important;
+
+    & > * {
+      display: none !important;
+    }
   }
 
   .spinner {
@@ -310,20 +357,23 @@ sub {
 }
 
 .card {
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  width: 400px;
-  margin: 0 auto;
-  border-radius: 3px;
+  background: var(--bg);
+  padding: 10px;
+  border: 1px dashed var(--dash);
+  width: 450px;
+  border-radius: 10px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  text-align: left;
 
-  &.full {
-    width: 800px;
+  &.side {
+    width: 200px;
+  }
+
+  &.music {
+    background-image: url(/note.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
   }
 }

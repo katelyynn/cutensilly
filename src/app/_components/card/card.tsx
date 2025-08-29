@@ -3,15 +3,19 @@ import style from "./card.module.css";
 
 interface KathyCardProps {
     full?: boolean,
+    side?: boolean,
+    classname?: string,
     children: React.ReactNode
 }
 
 export const KathyCard = ({
     full,
+    side,
+    classname,
     children
 }: KathyCardProps) => {
     return (
-        <div className={`card ${style.card} ${(full) ? `full ${style.full}` : ''}`}>
+        <div className={`card ${side ? 'side' : ''} ${(full) ? `full ${style.full}` : ''} ${classname ? classname : ''}`}>
             {children}
         </div>
     );
