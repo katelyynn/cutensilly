@@ -1,6 +1,7 @@
 import React from 'react';
 import style from "./avatar.module.css";
 import { KathyLinkBlock } from '~/app/_components/link_block/link_block';
+import Tip from '../tip/tip';
 
 interface KathyAvatarProps {
     image?: string,
@@ -16,9 +17,11 @@ export const KathyAvatar = ({
     link, link_type
 }: KathyAvatarProps) => {
     return (
-        <div className={`avatar ${style.avatar} ${style[`size-${size}`]}`}>
-            {(image) ? <img draggable="false" src={image} alt={alt} /> : ''}
-            {(link) ? <KathyLinkBlock link={link} type={link_type} /> : ''}
-        </div>
+        <Tip content={alt || 'image'} follow>
+            <div className={`avatar ${style.avatar} ${style[`size-${size}`]}`}>
+                {(image) ? <img draggable="false" src={image} alt={alt} /> : ''}
+                {(link) ? <KathyLinkBlock link={link} type={link_type} /> : ''}
+            </div>
+        </Tip>
     );
 }

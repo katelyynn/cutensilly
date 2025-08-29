@@ -426,3 +426,18 @@ sub {
     height: 31px;
   }
 }
+
+.tippy-box {
+  background: none !important;
+  border-radius: none !important;
+  color: var(--txt) !important;
+  font-size: 13px;
+
+  .tippy-content {
+    padding: 0 !important;
+  }
+
+  .tippy-arrow {
+    display: none !important;
+  }
+}
