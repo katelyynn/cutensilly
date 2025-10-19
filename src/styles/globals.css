@@ -58,7 +58,7 @@ table {
 
 
 :root {
-  --font: Pangolin, Lucida Grande, Geneva, Arial, Verdana, sans-serif;
+  --font: Figtree, Lato, Lucida Grande, Geneva, Arial, Verdana, sans-serif;
   --font-size: 15px;
   --line-height: auto;
   --font-weight: 400;
@@ -101,7 +101,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--gap);
+  gap: 40px;
 
   &.dark {
     --bg: #000;
@@ -409,14 +409,8 @@ sub {
   flex-direction: column;
   align-items: center;
 
-  &:hover > a {
-    filter: brightness(115%);
-  }
-
-  & > a > img {
-    max-width: 80vw;
-    image-rendering: pixelated;
-  }
+  font-size: 40px;
+  font-weight: 600;
 }
 
 .top404 {
