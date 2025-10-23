@@ -5,6 +5,7 @@ import style from "./nav.module.css";
 
 import { usePathname } from 'next/navigation';
 import { KathyClicky } from '../clicky/clicky';
+import { Badge } from '../badge/badge';
 
 export const KathyNav = () => {
     const route = usePathname();
@@ -62,13 +63,11 @@ export const KathyNav = () => {
             </KathyClicky>
             <h2>badges:</h2>
             <div className="badges">
-                <a href='https://katelyn.moe/8831.png' target='_blank'>
-                    <img src='/8831.png' alt='katelyn.moe' />
-                </a>
+                <Badge url="https://katelyn.moe/8831.png" src="/8831.png" alt="katelyn.moe - add my badge!!" />
+                <Badge url="https://acpi.at" src="https://acpi.at/88x31.gif" alt="muxiepuff" />
                 <img src='/sm.jpg' alt='sm' />
                 <img src='/darwin.gif' alt='darwin' />
                 <img src='/apple.gif' alt='apple' />
-                <a href="https://acpi.at"><img src="https://acpi.at/88x31.gif" title="muxiepuff" alt="" /></a>
             </div>
         </nav>
     );

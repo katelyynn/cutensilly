@@ -85,6 +85,9 @@ body {
 
   --gap: 10px;
 
+  --trans: 0.3s;
+  --trans-function: cubic-bezier(0.095, 0.410, 0.055, 0.960);
+
   background: url(/purpl166.gif), var(--bg);
   color: var(--txt);
   font-family: var(--font);
@@ -105,11 +108,11 @@ body {
 
   &.dark {
     --bg: #000;
-    --txt: #bbb9d4;
-    --hi: #fdb2d9;
+    --txt: #C6C6C6;
+    --hi: #fff;
     --txt-i: #000;
-    --dash: #C3BAFF;
-    --glow: #641260;
+    --dash: #545454;
+    --glow: #686868;
     --quote: #2e122c;
     --w: url(/b.png);
     --h2: url(/purpl157.jpg);
@@ -173,9 +176,13 @@ p {
   }
 }
 
+* {
+  cursor: default !important;
+}
+
 
 h1, h2, h3, h4, h5 {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 h1 {
@@ -189,10 +196,7 @@ h1 {
 }
 h2 {
   font-size: 13px;
-  background-image: var(--h2);
-  border: 1px dashed var(--dash);
-  border-radius: 10px;
-  padding: 5px 8px;
+  font-weight: 600;
 }
 h3 {
   font-size: 15px;
@@ -287,7 +291,8 @@ table {
   thead {
     padding-bottom: 2px;
     margin-bottom: 2px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--dash);
+    font-size: 13px;
 
     tr {
       th {
@@ -410,7 +415,11 @@ sub {
   align-items: center;
 
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 400;
+
+  & > a:hover {
+      font-weight: 600;
+  }
 }
 
 .top404 {
@@ -452,10 +461,8 @@ sub {
 }
 
 .time {
-  font-family: Short Stack;
   color: var(--hi);
   font-size: 30px;
-  font-weight: 800;
   margin-top: -5px;
   margin-bottom: -6px;
 }
@@ -465,20 +472,20 @@ sub {
   grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
   gap: 2px;
 
-  & > a, & > img {
+  & > img {
     width: 88px;
     height: 31px;
   }
 }
 
 .tippy-box {
-  background: none !important;
-  border-radius: none !important;
+  background: var(--bg) !important;
+  border-radius: unset !important;
   color: var(--txt) !important;
   font-size: 13px;
 
   .tippy-content {
-    padding: 0 !important;
+    padding: 0 4px !important;
   }
 
   .tippy-arrow {
