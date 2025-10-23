@@ -68,9 +68,7 @@ export const KathyNav = () => {
                 <img src='/sm.jpg' alt='sm' />
                 <img src='/darwin.gif' alt='darwin' />
                 <img src='/apple.gif' alt='apple' />
-                <a href='https://2lay.net/' target='_blank'>
-                    <img src='https://2lay.net/8831.png' alt='2lay.net' />
-                </a>
+                <a href="https://acpi.at"><img src="https://acpi.at/88x31.gif" title="muxiepuff" alt="" /></a>
             </div>
         </nav>
     );
