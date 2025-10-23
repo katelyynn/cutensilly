@@ -1,0 +1,9 @@
+.badge {
+    width: 88px;
+    height: 31px;
+    transition: transform var(--trans) var(--trans-function);
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}

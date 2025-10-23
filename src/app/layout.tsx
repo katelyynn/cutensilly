@@ -10,17 +10,12 @@ import { KathyFooter } from '~/app/_components/footer/footer';
 
 import NextTopLoader from 'nextjs-toploader';
 
-import { Pangolin, Short_Stack } from 'next/font/google';
+import { Figtree } from 'next/font/google';
 import Link from 'next/link';
-import ThemeToggle from './_components/theme/theme';
 
-const pangolin = Pangolin({
+const lato = Figtree({
   subsets: ['latin'],
-  weight: '400'
-});
-const short = Short_Stack({
-  subsets: ['latin'],
-  weight: '400'
+  weight: 'variable',
 });
 
 export const metadata: Metadata = {
@@ -39,12 +34,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={pangolin.className}>
-      <body>
+    <html lang="en" className={lato.className}>
+      <body className="dark">
         <TRPCReactProvider>
           <NextTopLoader />
           <div className="top">
-            <ThemeToggle />
+              <Link href={'/'}>
+                  katelyn.moe
+              </Link>
           </div>
           <main>
             <div className="content">

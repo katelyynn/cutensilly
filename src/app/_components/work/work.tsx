@@ -37,7 +37,10 @@ export const KathyWork = ({
             </div>
             {view_url ?
             <KathyLinkBlock link={view_url.link} type={view_url.external ? 'a' : 'link'}/>
-            : ''}
+            : source_url ?
+            <KathyLinkBlock link={source_url.link} type={source_url.external ? 'a' : 'link'}/>
+            : ''
+            }
         </li>
     );
 }

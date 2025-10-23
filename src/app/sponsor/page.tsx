@@ -13,7 +13,7 @@ export default async function Home() {
           click to sponsor
         </KathyClicky>
         <div className="sep"/>
-        <h2>what are the benefits?</h2>
+        <h3>what are the benefits?</h3>
         <p>the following are visible in both bleh and bwaa.</p>
         <KathyPerkList>
           <KathyPerk>
@@ -39,7 +39,7 @@ export default async function Home() {
           </KathyPerk>
         </KathyPerkList>
         <div className="sep"/>
-        <h2>whats the difference?</h2>
+        <h3>whats the difference?</h3>
         <table>
           <thead>
           <tr>
