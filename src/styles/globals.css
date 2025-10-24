@@ -49,6 +49,8 @@ table {
 
 * {
     box-sizing: border-box;
+    cursor: default !important;
+    text-underline-offset: 3px;
 }
 
 
@@ -108,6 +110,7 @@ body {
 
   &.dark {
     --bg: #000;
+    --bg-glow: #222;
     --txt: #C6C6C6;
     --hi: #fff;
     --txt-i: #000;
@@ -174,10 +177,6 @@ p {
   &:first-child {
     margin-top: 0;
   }
-}
-
-* {
-  cursor: default !important;
 }
 
 

@@ -10,7 +10,7 @@
     gap: 6px;
 
     &:hover {
-        background: var(--quote);
+        background: var(--bg-glow);
     }
 
     &:active {
