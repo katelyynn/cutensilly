@@ -40,18 +40,19 @@
             right: 20px;
             font-size: 11px;
             padding: 1px 3px;
-            border-radius: 3px;
+            border-radius: 6px;
             text-transform: lowercase;
-            border: 1px dashed currentColor;
+            border: 1px solid currentColor;
             background: var(--bg);
             text-shadow: none !important;
+            font-weight: 600;
 
             &.format-cd, &.format-cdr {
-                color: #9966ff;
+                color: #C5A8FF;
             }
 
             &.format-vinyl {
-                color: #d16c3a;
+                color: #CE8A6B;
             }
         }
     }
