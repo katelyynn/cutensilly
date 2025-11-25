@@ -20,7 +20,7 @@ export default async function Home() {
         <div className="sep"/>
         <KathyQuote who={{
           avatar: '/avatars/stella.png',
-            name: 'hazel',
+            name: 'hazel, my lifelong angel',
             link: 'https://katelyn.moe'
         }}>
             kathy, katie, kate, katelyn<br />wateva it is im gonna marry her

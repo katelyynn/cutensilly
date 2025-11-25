@@ -2,4 +2,8 @@
     position: absolute;
     inset: 0;
     z-index: 3;
+
+    &:hover {
+        background: unset !important;
+    }
 }

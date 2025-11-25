@@ -77,6 +77,43 @@ table {
   --font-size-sm: 14px;
 
   --round: 12px;
+
+  --radius-1: polygon(
+        0px calc(100% - 2px),
+        2px calc(100% - 2px),
+        2px 100%,
+        calc(100% - 2px) 100%,
+        calc(100% - 2px) calc(100% - 2px),
+        100% calc(100% - 2px),
+        100% 2px,
+        calc(100% - 2px) 2px,
+        calc(100% - 2px) 0px,
+        2px 0px,
+        2px 2px,
+        0px 2px
+    );
+    --radius-2: polygon(
+        0px calc(100% - 4px),
+        2px calc(100% - 4px),
+        2px calc(100% - 2px),
+        4px calc(100% - 2px),
+        4px 100%,
+        calc(100% - 4px) 100%,
+        calc(100% - 4px) calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 4px),
+        100% calc(100% - 4px),
+        100% 4px,
+        calc(100% - 2px) 4px,
+        calc(100% - 2px) 2px,
+        calc(100% - 4px) 2px,
+        calc(100% - 4px) 0px,
+        4px 0px,
+        4px 2px,
+        2px 2px,
+        2px 4px,
+        0px 4px
+    );
 }
 
 body {
@@ -116,13 +153,13 @@ body {
 
   &.dark {
     --bg: #191B2A;
-    --txt: #C6C6C6;
+    --txt: #C5C7DB;
     --hi: #D884C7;
     --txt-i: #000;
     --dash: transparent;
     --glow: #601651;
     --bg-glow: #151738;
-    --quote: #0A2033;
+    --quote: #CCC0FE22;
     --w: url(/b.png);
     --h2: url(/purpl157.jpg);
 
@@ -142,9 +179,10 @@ main {
   flex-direction: column;
   gap: var(--gap);
 
-  max-height: 600px;
+  max-height: 750px;
   overflow-x: hidden;
   overflow-y: hidden;
+  clip-path: var(--radius-2);
 
   &:hover {
     overflow-y: auto;
@@ -449,9 +487,9 @@ sub {
 .card {
   background: var(--w);
   padding: 10px;
-  border: 1px dashed var(--dash);
-  width: 450px;
-  border-radius: 10px;
+  width: 480px;
+  clip-path: var(--radius-2);
+  image-rendering: pixelated;
 
   display: flex;
   flex-direction: column;
@@ -487,10 +525,11 @@ sub {
 }
 
 .tippy-box {
-  background: var(--quote) !important;
+  background: var(--glow) !important;
   border-radius: unset !important;
   color: var(--txt) !important;
   font-size: 13px;
+  clip-path: var(--radius-1);
 
   .tippy-content {
     padding: 0 4px !important;
