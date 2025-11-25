@@ -46,20 +46,20 @@ export const KathyNav = () => {
                 sponsor
             </KathyClicky>
             <h2>off site:</h2>
-            <KathyClicky cloak="tab" colour="lastdotfm" link="https://last.fm/user/clairedoll" elem="a">
-                last.fm : <i>clairedoll</i>
+            <KathyClicky cloak="tab" colour="social" link="https://last.fm/user/clairedoll" elem="a">
+                last.fm <i>@clairedoll</i>
             </KathyClicky>
-            <KathyClicky cloak="tab" colour="discogs" link="https://www.discogs.com/user/longsocks/collection" elem="a">
-                discogs : <i>longsocks</i>
+            <KathyClicky cloak="tab" colour="social" link="https://www.discogs.com/user/longsocks/collection" elem="a">
+                discogs <i>@longsocks</i>
             </KathyClicky>
-            <KathyClicky cloak="tab" colour="github" link="https://github.com/katelyynn" elem="a">
-                github : <i>katelyynn</i>
+            <KathyClicky cloak="tab" colour="social" link="https://github.com/katelyynn" elem="a">
+                github <i>@katelyynn</i>
             </KathyClicky>
-            <KathyClicky cloak="tab" colour="aoty" link="https://www.albumoftheyear.org/user/clairedoll/" elem="a">
-                aoty : <i>clairedoll</i>
+            <KathyClicky cloak="tab" colour="social" link="https://www.albumoftheyear.org/user/clairedoll/" elem="a">
+                aoty <i>@clairedoll</i>
             </KathyClicky>
-            <KathyClicky cloak="tab" colour="rym" link="https://rateyourmusic.com/~kateshapedbox" elem="a">
-                rym : <i>kateshapedbox</i>
+            <KathyClicky cloak="tab" colour="social" link="https://rateyourmusic.com/~kateshapedbox" elem="a">
+                rym <i>@kateshapedbox</i>
             </KathyClicky>
             <h2>badges:</h2>
             <div className="badges">

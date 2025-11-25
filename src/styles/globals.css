@@ -51,6 +51,14 @@ table {
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Zpix';
+    src: url('/zpix.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 
 
@@ -58,15 +66,15 @@ table {
 
 
 :root {
-  --font: Figtree, Lato, Lucida Grande, Geneva, Arial, Verdana, sans-serif;
-  --font-size: 15px;
+  --font: Zpix, Figtree, Lato, Lucida Grande, Geneva, Arial, Verdana, sans-serif;
+  --font-size: 16px;
   --line-height: auto;
-  --font-weight: 400;
+  --font-weight: 300;
   --font-weight-md: 500;
   --font-weight-nm: 600;
   --font-weight-lg: 700;
 
-  --font-size-sm: 12px;
+  --font-size-sm: 14px;
 
   --round: 12px;
 }
@@ -107,24 +115,25 @@ body {
   gap: 40px;
 
   &.dark {
-    --bg: #000;
+    --bg: #191B2A;
     --txt: #C6C6C6;
-    --hi: #fff;
+    --hi: #D884C7;
     --txt-i: #000;
-    --dash: #545454;
-    --glow: #686868;
-    --quote: #2e122c;
+    --dash: transparent;
+    --glow: #601651;
+    --bg-glow: #151738;
+    --quote: #0A2033;
     --w: url(/b.png);
     --h2: url(/purpl157.jpg);
 
-    background: url(/ss035.gif), var(--bg);
+    background: var(--bg);
   }
 }
 
 main {
   display: flex;
   gap: var(--gap);
-  height: 600px;
+  height: 750px;
   overflow: hidden;
 }
 
@@ -195,8 +204,7 @@ h1 {
   }
 }
 h2 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
 }
 h3 {
   font-size: 15px;
@@ -239,7 +247,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+      background: var(--bg-glow);
   }
 }
 
@@ -479,7 +487,7 @@ sub {
 }
 
 .tippy-box {
-  background: var(--bg) !important;
+  background: var(--quote) !important;
   border-radius: unset !important;
   color: var(--txt) !important;
   font-size: 13px;

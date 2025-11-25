@@ -1,12 +1,13 @@
 .quote {
-    background: radial-gradient(ellipse at center, transparent 40%, var(--quote));
+    background: var(--quote);
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 6px;
 
     .identity {
         color: var(--hi);
         width: 100%;
         display: block;
-        font-size: 12px;
+        font-size: 14px;
+        margin-top: 6px;
     }
 }

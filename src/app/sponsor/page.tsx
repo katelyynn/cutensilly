@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <>
       <KathyCard>
-        <KathyAvatar image="/avatars/kat.jpg" alt="avatar for kathy" size="lg"/>
+        <KathyAvatar image="/avatars/kat.webp" alt="avatar for kathy" size="lg"/>
         <h1>sponsor <span className="kyuu">katelyn</span> &lt;3</h1>
         <KathyClicky cloak="big" link="https://github.com/sponsors/katelyynn" elem="a">
           click to sponsor

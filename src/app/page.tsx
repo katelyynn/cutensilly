@@ -12,11 +12,11 @@ export default async function Home() {
   return (
     <>
       <KathyCard>
-        <KathyAvatar image="/avatars/kat.jpg" alt="avatar for kathy" size="lg"/>
-        <p><strong>hi! i'm <span className="kyuu">katelyn</span></strong> and this is my corner of the internet @w@</p>
+        <KathyAvatar image="/avatars/kat.webp" alt="avatar for kathy" size="lg"/>
+        <p><strong>hi! i'm <span className="kyuu">katelyn</span></strong> and this is my corner of the internet~</p>
         <p>i am a self-taught programmer mainly focusing on web development for the meantime. you may know me from my popular <a href='https://bleh.katelyn.moe' target='_blank'>last.fm extension bleh</a> :3</p>
-        <p>you can use the side rail to explore what this site has, here's <Link href={'/work'}>my project list</Link> for example !!</p>
-        <p>i go by many names <i>(sometimes claire)</i>, so call me whichever you like i don't mind</p>
+        <p>you can use the side rail to explore to your heart's content, here's <Link href={'/work'}>my project list</Link> for example !!</p>
+        <p>i go by many names at various times <i>(such as claire)</i>, so call me whichever you like i don't mind</p>
         <div className="sep"/>
         <KathyQuote who={{
           avatar: '/avatars/stella.png',

@@ -21,7 +21,7 @@ const lato = Figtree({
 export const metadata: Metadata = {
   title: "katelyn.moe",
   description: "teeheee",
-  icons: [{ rel: "icon", url: "/avatars/kat.jpg" }],
+  icons: [{ rel: "icon", url: "/avatars/kat.webp" }],
   authors: [{name: 'katelyn', url: 'https://katelyn.moe'}],
   openGraph: {
     title: 'katelyn.moe',

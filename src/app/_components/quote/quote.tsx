@@ -19,7 +19,7 @@ export const KathyQuote = ({
                 {children}
             </blockquote>
             <cite className={style.identity}>
-                - {who.name}
+                @{who.name}
             </cite>
         </div>
     );
