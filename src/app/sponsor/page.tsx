@@ -55,6 +55,18 @@ export default async function Home() {
           </tr>
           <tr>
             <th>
+              <strong>display name</strong>
+              <p className="explain">customisable in bleh profile settings</p>
+            </th>
+            <td>
+                <div className="famfamfam-silk tick" />
+            </td>
+            <td>
+              <div className="famfamfam-silk tick" />
+            </td>
+          </tr>
+          <tr>
+            <th>
               <strong>profile name font and styling</strong>
               <p className="explain">customisable in bleh profile settings</p>
             </th>
