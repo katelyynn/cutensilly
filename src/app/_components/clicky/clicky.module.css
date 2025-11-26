@@ -1,4 +1,3 @@
-:global(.selector),
 .clicky {
     appearance: none;
     border: none;
@@ -19,7 +18,6 @@
     }
 
     &:not(.tab) {
-        &:global(.selector),
         &.primary {
             background: var(--hi) !important;
             --col: var(--bg) !important;

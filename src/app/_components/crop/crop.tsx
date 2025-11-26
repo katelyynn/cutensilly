@@ -145,7 +145,7 @@ export default function AvatarCropper() {
                             </KathyClicky>
                             <Select.Root value={download_type} onValueChange={value => set_download_type(value as any)}>
                                 <>
-                                    <Select.Trigger className="selector">
+                                    <Select.Trigger className={styles.selector}>
                                         <Select.Value />
                                         <img src={'/chevrondown.png'} />
                                     </Select.Trigger>
