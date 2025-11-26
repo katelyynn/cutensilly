@@ -191,7 +191,7 @@ main {
   }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 840px) {
   body {
     width: unset;
     min-height: 100vh;
@@ -494,7 +494,7 @@ sub {
   }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 840px) {
   .card {
     width: 90vw !important;
   }
