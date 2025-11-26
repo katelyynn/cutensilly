@@ -17,14 +17,14 @@ export default async function Home() {
         <div className="sep"/>
         <h3>what are the benefits?</h3>
         <KathyPerkBigList>
-            <KathyPerkBig image={'/custom_name.webp'} name="present yourself" available="bleh">
-                sponsors can choose a custom display name shown on your profile
-            </KathyPerkBig>
             <KathyPerkBig image={'/name.webp'} name="style your name with flair" available="bleh">
                 sponsors can choose from a selection of custom fonts and custom font styles to show on your profile header
             </KathyPerkBig>
             <KathyPerkBig image={'/accent.webp'} name="painted in colour" available="bleh">
                 sponsors can choose a custom profile accent that is displayed for all users when visiting your profile
+            </KathyPerkBig>
+            <KathyPerkBig image={'/custom_name.webp'} name="present yourself" available="bleh">
+                sponsors can choose a custom display name shown on your profile
             </KathyPerkBig>
             <KathyPerkBig image={'/sponsor.webp'} name="rep a badge">
                 acquire a default sponsorship badge to show your support and additionally (if sponsoring monthly!) a custom badge of your choosing
