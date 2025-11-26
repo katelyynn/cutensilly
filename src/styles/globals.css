@@ -225,7 +225,7 @@ p {
   }
 }
 
-* {
+*:not(.cropper-move) {
   cursor: default !important;
 }
 

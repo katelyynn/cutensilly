@@ -1,0 +1,100 @@
+.upload {
+    width: 100%;
+    height: 575px;
+    clip-path: var(--radius-1);
+    background: rgba(199, 128, 184, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover, &.dragging {
+        background: rgba(199, 128, 184, 0.25);
+    }
+    &:active {
+        background: rgba(199, 128, 184, 0.3);
+    }
+}
+
+.preview, .container {
+    clip-path: var(--radius-1);
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+
+    :global(img) {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.container {
+    & > :global(img) {
+        display: none;
+    }
+
+    :global(.cropper-container) {
+        clip-path: var(--radius-1);
+        overflow: hidden;
+
+        :global(.cropper-point),
+        :global(.cropper-line),
+        :global(.cropper-view-box) {
+            display: none;
+        }
+
+        :global(.cropper-drag-box),
+        :global(.cropper-face) {
+            opacity: 0;
+        }
+
+        :global(.cropper-dashed) {
+            opacity: 0.4;
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.actions_wrap {
+    display: flex;
+    gap: 2px;
+    clip-path: var(--radius-1);
+
+    & > button {
+        clip-path: unset;
+    }
+}
+
+.menu {
+    padding: 2px 0;
+    background: var(--bg-glow);
+    clip-path: var(--radius-1);
+
+    .item {
+        padding: 3px 6px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        clip-path: var(--radius-1);
+
+        &:hover {
+            background: rgba(199, 128, 184, 0.2);
+        }
+
+        &[data-state="checked"] {
+            background: rgba(199, 128, 184, 0.4);
+            font-weight: bold;
+        }
+
+        & > span {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

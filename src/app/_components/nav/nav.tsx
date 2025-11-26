@@ -16,7 +16,7 @@ export const KathyNav = () => {
             <KathyClicky
                 elem="link"
                 link="/"
-                primary={route === '/'}
+                primary={route == '/'}
                 cloak="tab"
             >
                 me!
@@ -24,7 +24,7 @@ export const KathyNav = () => {
             <KathyClicky
                 elem="link"
                 link="/work"
-                primary={route === '/work'}
+                primary={route == '/work'}
                 cloak="tab"
             >
                 projects
@@ -32,7 +32,7 @@ export const KathyNav = () => {
             <KathyClicky
                 elem="link"
                 link="/mus"
-                primary={route === '/mus'}
+                primary={route == '/mus'}
                 cloak="tab"
             >
                 music
@@ -40,16 +40,16 @@ export const KathyNav = () => {
             <KathyClicky
                 elem="link"
                 link="/sponsor"
-                primary={route === '/sponsor'}
+                primary={route == '/sponsor'}
                 cloak="tab"
             >
                 sponsor
             </KathyClicky>
             <KathyClicky
-                elem="a"
-                link="https://crop.katelyn.moe"
+                elem="link"
+                link="/crop"
+                primary={route == '/crop'}
                 cloak="tab"
-                colour="social"
             >
                 crop
             </KathyClicky>
