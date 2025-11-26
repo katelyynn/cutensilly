@@ -16,11 +16,12 @@ export default async function Home() {
         <p><strong>hi! i'm <span className="kyuu">katelyn</span></strong> and this is my corner of the internet~</p>
         <p>i am a self-taught programmer mainly focusing on web development for the meantime. you may know me from my popular <a href='https://bleh.katelyn.moe' target='_blank'>last.fm extension bleh</a> :3</p>
         <p>you can use the side rail to explore to your heart's content, here's <Link href={'/work'}>my project list</Link> for example !!</p>
-        <p>i go by many names at various times <i>(such as claire)</i>, so call me whichever you like i don't mind</p>
+        <p>i go by many names at various times <i>(such as claire)</i>, so call me whichever you like i don't mind,,</p>
+        <p>♪⋆.✮ my pronouns r <span className="kyuu">she/her/it</span> ⋆˚𝜗𝜚˚⋆</p>
         <div className="sep"/>
         <KathyQuote who={{
           avatar: '/avatars/stella.png',
-            name: 'hazel, my lifelong angel',
+            name: 'hazel, my lifelong angel ♡',
             link: 'https://katelyn.moe'
         }}>
             kathy, katie, kate, katelyn<br />wateva it is im gonna marry her

@@ -1,6 +1,6 @@
 .list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
     width: 100%;
 }
@@ -12,6 +12,10 @@
 
     &:hover {
         text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
+
+        .image {
+            transform: scale(1.02);
+        }
     }
 
     .image {
@@ -21,6 +25,7 @@
         background: var(--bg);
         clip-path: var(--radius-2);
         image-rendering: auto;
+        transition: transform var(--trans) var(--trans-function);
     }
 
     .info {

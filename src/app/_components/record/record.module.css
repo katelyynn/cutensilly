@@ -6,12 +6,12 @@
 
     .info {
         display: block;
-        margin-top: 8px;
+        margin-top: 6px;
 
         .title {
             font-weight: bold;
-            font-size: 13px;
-            color: var(--txt);
+            font-size: 16px;
+            color: var(--hi);
             display: block;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -26,12 +26,13 @@
         }
 
         .artist {
-            font-size: 12px;
+            font-size: 14px;
         }
 
         .descriptor,
         .year {
-            font-size: 12px;
+            font-size: 14px;
+            opacity: 0.7;
         }
 
         .format {
@@ -57,7 +58,7 @@
     }
 
     .extras {
-        margin-top: 5px;
+        margin-top: 3px;
         display: flex;
         justify-content: center;
         gap: 4px;
@@ -82,7 +83,7 @@
 
 .list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     width: 100%;
-    gap: 8px;
+    gap: 30px 10px;
 }

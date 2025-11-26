@@ -2,6 +2,7 @@
     width: 88px;
     height: 31px;
     transition: transform var(--trans) var(--trans-function);
+    image-rendering: auto;
 
     &:hover {
         transform: scale(1.05);

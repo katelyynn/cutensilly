@@ -26,13 +26,13 @@ export default async function bwaa() {
                 <img className="picture-frame" alt="bwaa" src="/bwaa-image.png" />
                 <h1>bwaa</h1>
                 <h2>return last.fm to 2012</h2>
+                <div className="sep"/>
                 <KathyClicky cloak="big" link="https://github.com/katelyynn/bwaa/raw/uwu/fm/bwaa.user.js" elem="a">
                     install now
                 </KathyClicky>
                 <div className="alert">
                     if you are using chrome-based browsers (including opera, brave, whatever) you <a href="https://www.tampermonkey.net/faq.php?locale=en#Q209" target="_blank">must enable developer mode</a>
                 </div>
-                <div className="sep"/>
                 <KathyPerkList>
                     <KathyPerk>
                         <div className="perk-icon">
