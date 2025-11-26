@@ -30,3 +30,41 @@
     max-width: 900px;
     margin-top: 10px;
 }
+
+.list_big {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+
+    width: 100%;
+    max-width: 900px;
+    margin-top: 10px;
+}
+
+.perk_big {
+    text-align: center;
+
+    & > img {
+        width: 100%;
+        clip-path: var(--radius-1);
+        margin-bottom: 10px;
+        image-rendering: auto;
+    }
+
+    & > strong {
+        color: var(--hi);
+
+        & > i {
+            margin-left: 6px;
+            font-size: 13px;
+            color: var(--txt);
+            font-style: normal;
+            font-weight: 400;
+        }
+    }
+
+    & > p {
+        font-size: 15px;
+        margin: 4px 0 0 0;
+    }
+}

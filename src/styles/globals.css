@@ -152,9 +152,11 @@ body {
   gap: 40px;
 
   &.dark {
+    --head: #DCDCF7;
     --bg: #191B2A;
     --txt: #C5C7DB;
     --hi: #D884C7;
+    --hi2: #525677;
     --txt-i: #000;
     --dash: transparent;
     --glow: #601651;
@@ -229,10 +231,11 @@ p {
 
 
 h1, h2, h3, h4, h5 {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h1 {
+  color: var(--head);
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -242,9 +245,11 @@ h1 {
   }
 }
 h2 {
-  font-size: 14px;
+  color: var(--head);
+  font-size: 15px;
 }
 h3 {
+  color: var(--hi);
   font-size: 15px;
   margin-bottom: 5px;
 }
@@ -335,10 +340,9 @@ table {
   }
 
   thead {
-    padding-bottom: 2px;
-    margin-bottom: 2px;
-    border-bottom: 1px solid var(--dash);
-    font-size: 13px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
 
     tr {
       th {
@@ -377,7 +381,7 @@ table {
 
 .explain,
 .context {
-  font-size: 13px;
+  font-size: 14px;
   opacity: 0.7;
   margin: 0;
 }
@@ -460,12 +464,9 @@ sub {
   flex-direction: column;
   align-items: center;
 
-  font-size: 40px;
-  font-weight: 400;
-
-  & > a:hover {
-      font-weight: 600;
-  }
+  font-size: 30px;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .top404 {
@@ -538,4 +539,33 @@ sub {
   .tippy-arrow {
     display: none !important;
   }
+}
+
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &.online {
+        color: #B3FF69;
+        animation: online 1.5s infinite;
+    }
+    &.offline {
+        color: #B23C52;
+    }
+
+    & > img {
+        position: relative;
+        top: 1px;
+    }
+}
+
+@keyframes online {
+    from, to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
 }

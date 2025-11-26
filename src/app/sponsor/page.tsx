@@ -1,50 +1,39 @@
 import { KathyCard } from '~/app/_components/card/card';
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyClicky } from '../_components/clicky/clicky';
-import { KathyPerk, KathyPerkList } from '~/app/_components/perk/perk';
+import { KathyPerk, KathyPerkBig, KathyPerkBigList, KathyPerkList } from '~/app/_components/perk/perk';
 
 export default async function Home() {
   return (
     <>
       <KathyCard>
         <KathyAvatar image="/avatars/kat.webp" alt="avatar for kathy" size="lg"/>
-        <h1>sponsor <span className="kyuu">katelyn</span> &lt;3</h1>
+        <p><strong>support <span className="kyuu">katelyn</span> &lt;3</strong></p>
+        <p>any sponsorship goes a long way in ensuring continued development, thank you!!</p>
+        <div className="sep"/>
         <KathyClicky cloak="big" link="https://github.com/sponsors/katelyynn" elem="a">
           click to sponsor
         </KathyClicky>
         <div className="sep"/>
         <h3>what are the benefits?</h3>
-        <p>the following are visible in both bleh and bwaa.</p>
-        <KathyPerkList>
-          <KathyPerk>
-            <div className="perk-icon">
-              <div className="famfamfam-silk bell" />
-            </div>
-            <h5>support future development</h5>
-            <p>just one girl is widely responsible for these projects, so everything helps :3</p>
-          </KathyPerk>
-          <KathyPerk>
-            <div className="perk-icon">
-              <div className="famfamfam-silk ruby" />
-            </div>
-            <h5>rep a badge</h5>
-            <p>receive both a sponsor heart badge and (if monthly) your own custom badge of your choosing</p>
-          </KathyPerk>
-          <KathyPerk>
-            <div className="perk-icon">
-              <div className="famfamfam-silk rainbow" />
-            </div>
-            <h5>painted in colour</h5>
-            <p>if monthly, pick your favourite colour to display on your name wherever.</p>
-          </KathyPerk>
-        </KathyPerkList>
+        <KathyPerkBigList>
+            <KathyPerkBig image={'/name.webp'} name="style your name with flair" available="bleh">
+                sponsors can choose from a selection of custom fonts and custom font styles to show on your profile header
+            </KathyPerkBig>
+            <KathyPerkBig image={'/accent.webp'} name="painted in colour" available="bleh">
+                sponsors can choose a custom profile accent that is displayed for all users when visiting your profile
+            </KathyPerkBig>
+            <KathyPerkBig image={'/sponsor.webp'} name="rep a badge">
+                acquire a default sponsorship badge to show your support and additionally (if sponsoring monthly!) a custom badge of your choosing
+            </KathyPerkBig>
+        </KathyPerkBigList>
         <div className="sep"/>
         <h3>whats the difference?</h3>
         <table>
           <thead>
           <tr>
             <th>perk</th>
-            <th>one-time</th>
+            <th>once</th>
             <th>monthly</th>
           </tr>
           </thead>
@@ -56,6 +45,30 @@ export default async function Home() {
             </th>
             <td>
               <div className="famfamfam-silk tick" />
+            </td>
+            <td>
+              <div className="famfamfam-silk tick" />
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <strong>profile name font and styling</strong>
+              <p className="explain">customisable in bleh profile settings</p>
+            </th>
+            <td>
+                <div className="famfamfam-silk tick" />
+            </td>
+            <td>
+              <div className="famfamfam-silk tick" />
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <strong>profile accent</strong>
+              <p className="explain">customisable in bleh profile settings</p>
+            </th>
+            <td>
+                <div className="famfamfam-silk tick" />
             </td>
             <td>
               <div className="famfamfam-silk tick" />
@@ -89,12 +102,12 @@ export default async function Home() {
             <th></th>
             <td>
               <KathyClicky link="https://github.com/sponsors/katelyynn?frequency=one-time" elem="a">
-                $3
+                once
               </KathyClicky>
             </td>
             <td>
               <KathyClicky primary link="https://github.com/sponsors/katelyynn?frequency=monthly" elem="a">
-                $3/mo
+                monthly
               </KathyClicky>
             </td>
           </tr>

@@ -32,8 +32,8 @@ export const KathyWork = ({
             {image ? <img className={style.image} src={image} alt={title} /> : <div className={style.image} />}
             <div className={style.info}>
                 <h5 className={style.title}>{title}</h5>
-                <p className={style.bio}>{bio}</p>
                 <p className={style.years}>{years}</p>
+                <p className={style.bio}>{bio}</p>
             </div>
             {view_url ?
             <KathyLinkBlock link={view_url.link} type={view_url.external ? 'a' : 'link'}/>

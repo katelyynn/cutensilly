@@ -1,25 +1,24 @@
 .clicky {
     appearance: none;
     padding: 3px 6px;
-    background: var(--bg);
-    border: 1px solid var(--dash);
-    border-radius: 6px;
+    background: var(--hi2) !important;
+    clip-path: var(--radius-1);
 
     display: flex;
     align-items: center;
     gap: 6px;
 
     &:hover {
-        background: var(--quote);
+        filter: brightness(110%);
     }
 
     &:active {
-        background: var(--glow);
+        filter: brightness(120%);
     }
 
     color: var(--col) !important;
     font: inherit;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
     text-decoration: none;
 
@@ -33,6 +32,7 @@
 
     :global(table) & {
         margin-top: 8px;
+        font-size: 13px;
     }
 
     :global(.info) {
@@ -56,7 +56,8 @@
     background: transparent !important;
     border: unset !important;
     box-shadow: unset !important;
-    border-radius: unset;
+    filter: none !important;
+    clip-path: unset;
     z-index: 100;
 
     padding: 0;

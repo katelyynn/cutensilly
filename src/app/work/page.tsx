@@ -23,7 +23,7 @@ export default async function Home() {
                 link: "https://bleh.katelyn.moe"
               }}
               years="2022—2025"
-              image="bleh-ash.jpg"
+              image="https://bleh.katelyn.moe/img/bleh-void.jpg"
             />
             <KathyWork
               title="bwaa"

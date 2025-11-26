@@ -12,7 +12,7 @@ export const KathyNav = () => {
 
     return (
         <nav className={`card side ${style.nav}`}>
-            <h2>on site:</h2>
+            <h2>cute:</h2>
             <KathyClicky
                 elem="link"
                 link="/"
@@ -45,7 +45,15 @@ export const KathyNav = () => {
             >
                 sponsor
             </KathyClicky>
-            <h2>off site:</h2>
+            <KathyClicky
+                elem="a"
+                link="https://crop.katelyn.moe"
+                cloak="tab"
+                colour="social"
+            >
+                crop
+            </KathyClicky>
+            <h2>social:</h2>
             <KathyClicky cloak="tab" colour="social" link="https://last.fm/user/clairedoll" elem="a">
                 last.fm <i>@clairedoll</i>
             </KathyClicky>
