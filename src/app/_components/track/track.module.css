@@ -12,6 +12,10 @@
     cursor: pointer;
     user-select: none;
 
+    &:not(.active) {
+        opacity: 0.8;
+    }
+
     .info {
         z-index: 1;
         pointer-events: none;

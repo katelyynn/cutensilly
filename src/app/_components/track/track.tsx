@@ -59,7 +59,7 @@ export const KathyTrack = ({
             <div className={style.info}>
                 <div className={style.title}>{title}</div>
                 {(artist) ? <div className={style.artist}><a href={`${artist.link}`}>{artist.title}</a></div> : null}
-                {(active && album) ? <div className={style.album}><a href={`${artist.link}/${album.link}`}>{album.title}</a></div> : null}
+                {(album) ? <div className={style.album}><a href={`${artist.link}/${album.link}`}>{album.title}</a></div> : null}
             </div>
             {(love) ? <KathySprite name="heart"/> : ''}
             {(time) ? <div className={style.time}>{time}</div> : ''}
