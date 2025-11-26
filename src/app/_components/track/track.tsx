@@ -55,7 +55,7 @@ export const KathyTrack = ({
 
     return (
         <li className={`${style.track} ${(active) ? style.active : ''} ${mini ? style.mini : ''}`}>
-            <KathyAvatar image={avatar} alt={(album) ? `avatar for ${album.title}` : `avatar for ${title}`} size={(active) ? 'nm' : 'md'} />
+            <KathyAvatar image={avatar} alt={(album) ? `avatar for ${album.title}` : `avatar for ${title}`} size='nm' />
             <div className={style.info}>
                 <div className={style.title}>{title}</div>
                 {(artist) ? <div className={style.artist}><a href={`${artist.link}`}>{artist.title}</a></div> : null}
