@@ -17,6 +17,9 @@ export default async function Home() {
         <div className="sep"/>
         <h3>what are the benefits?</h3>
         <KathyPerkBigList>
+            <KathyPerkBig image={'/custom_name.webp'} name="present yourself" available="bleh">
+                sponsors can choose a custom display name shown on your profile
+            </KathyPerkBig>
             <KathyPerkBig image={'/name.webp'} name="style your name with flair" available="bleh">
                 sponsors can choose from a selection of custom fonts and custom font styles to show on your profile header
             </KathyPerkBig>
