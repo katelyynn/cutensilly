@@ -37,14 +37,15 @@
 
         .format {
             position: absolute;
-            top: 0;
-            right: 20px;
-            font-size: 11px;
-            padding: 1px 3px;
-            border-radius: 3px;
+            bottom: 60px;
+            left: 50%;
+            width: 40px;
+            margin-left: -20px;
+            font-size: 12px;
+            font-weight: bold;
+            clip-path: var(--radius-1);
             text-transform: lowercase;
-            border: 1px dashed currentColor;
-            background: var(--bg);
+            background: var(--bg-glow);
             text-shadow: none !important;
 
             &.format-cd, &.format-cdr {
