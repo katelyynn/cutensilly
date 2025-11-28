@@ -7,6 +7,7 @@ import { KathyClicky, KathyClickyGrid } from '~/app/_components/clicky/clicky';
 import {Mus} from "~/app/music";
 import Link from 'next/link';
 import Timer from './_components/time/time';
+import { StatusAPI } from './_components/status/status_api';
 
 export default async function Home() {
   return (
@@ -29,6 +30,8 @@ export default async function Home() {
       </KathyCard>
       <KathyCard classname="music">
         <Mus />
+        <div className="sep" />
+        <StatusAPI />
       </KathyCard>
       <KathyCard>
         <h3>right now it is</h3>
