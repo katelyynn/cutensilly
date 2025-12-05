@@ -67,6 +67,7 @@
     margin-bottom: 6px;
 
     & > .fill {
+        width: 0%;
         height: 4px;
         background: var(--hi);
         border-radius: 4px;
