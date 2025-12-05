@@ -11,7 +11,9 @@ export async function Marine({
         return <div className="alert">no data available</div>;
     }
 
-    let activities = data.data.Page.activities;
+    console.log('response for marine', data);
+
+    let activities = data.data.Page.activities.filter(item => item.siteUrl != null);
     if (!full) activities = activities.slice(0, 1);
 
     return (

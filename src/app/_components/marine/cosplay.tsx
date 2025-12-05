@@ -24,6 +24,8 @@ export interface CosplayProps {
 }
 
 export const Cosplay = ({item, full = true}: {item: CosplayProps, full?: boolean}) => {
+    console.log('cosplay', item);
+
     let max = item.media.type == 'MANGA' ? item.media.chapters : item.media.episodes;
     if (!max) max = 0;
 
