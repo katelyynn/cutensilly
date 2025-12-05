@@ -29,6 +29,7 @@
     "cropperjs": "1.6.2",
     "drizzle-orm": "^0.33.0",
     "famfamfam-silk": "^1.0.0",
+    "luxon": "^3.7.2",
     "next": "^15.3.3",
     "nextjs-toploader": "^3.7.15",
     "postgres": "^3.4.4",

@@ -1,5 +1,6 @@
-import { kMaxLength } from 'node:buffer';
+import { KathyLinkBlock } from '../link_block/link_block';
 import styles from './cosplay.module.css';
+import { DateTime } from 'luxon';
 
 export interface CosplayProps {
     siteUrl: string,
@@ -29,6 +30,11 @@ export const Cosplay = ({item}: {item: CosplayProps}) => {
     let progress = item.progress ? parseInt(item.progress) : 0;
     if (!item.progress) progress = max;
 
+    let text = item.status + ' ' + progress;
+    if (item.status == 'completed') {
+        text = item.status;
+    }
+
     return (
         <div className={styles.cosplay}>
             <div className={styles.cover}>
@@ -41,11 +47,12 @@ export const Cosplay = ({item}: {item: CosplayProps}) => {
                 {item.media.title.romaji}
             </div>
             <div className={styles.status}>
-                {item.status} - {progress}
+                {text}
             </div>
-            <div className={styles.date}>
-                {item.createdAt}
+            <div className={styles.time}>
+                {DateTime.fromSeconds(item.createdAt).toRelative()}
             </div>
+            <KathyLinkBlock link={item.siteUrl} type="a" />
         </div>
     )
 }

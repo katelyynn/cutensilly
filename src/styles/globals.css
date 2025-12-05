@@ -290,8 +290,7 @@ a, button {
 .sep {
   display: block;
   width: 100%;
-  border-top: 1px dashed var(--dash);
-  margin: 10px 0;
+  margin: 6px 0;
 }
 
 
@@ -506,6 +505,7 @@ sub {
   display: flex;
   flex-direction: column;
   text-align: left;
+  position: relative;
 
   &.side {
     width: 200px;
@@ -562,9 +562,6 @@ sub {
         color: #E5FBC2;
         animation: online 1.5s infinite;
     }
-    &.offline {
-        color: #612736;
-    }
 
     & > img {
         position: relative;
@@ -579,4 +576,32 @@ sub {
     50% {
         opacity: 0.6;
     }
+}
+
+
+.top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+}
+
+
+.see-more {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    margin-top: 12px;
+
+    & > a {
+        font-size: 13px;
+        font-weight: bold;
+
+        & > img {
+            position: relative;
+            top: 1px;
+        }
+    }
+
+    width: 100%;
 }

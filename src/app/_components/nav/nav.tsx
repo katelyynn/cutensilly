@@ -39,6 +39,14 @@ export const KathyNav = () => {
             </KathyClicky>
             <KathyClicky
                 elem="link"
+                link="/marine"
+                primary={route == '/marine'}
+                cloak="tab"
+            >
+                marin
+            </KathyClicky>
+            <KathyClicky
+                elem="link"
                 link="/sponsor"
                 primary={route == '/sponsor'}
                 cloak="tab"

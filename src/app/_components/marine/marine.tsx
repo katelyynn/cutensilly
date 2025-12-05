@@ -2,18 +2,25 @@ import { api } from "~/trpc/server";
 import styles from './cosplay.module.css';
 import { Cosplay, CosplayProps } from "./cosplay";
 
-export async function Marine() {
+export async function Marine({
+    full = false
+}: {full?: boolean}) {
     const data = await api.marine.getFeed();
 
     if (!data || !data.data) {
         return <div className="alert">no data available</div>;
     }
 
+    let activities = data.data.Page.activities;
+    if (!full) activities = activities.slice(0, 3);
+
     return (
-        <div className={styles.list}>
-            {data.data.Page.activities.map((cosplay: CosplayProps) => (
-                <Cosplay item={cosplay} />
-            ))}
-        </div>
+        <>
+            <div className={styles.list}>
+                {activities.map((cosplay: CosplayProps, key) => (
+                    <Cosplay item={cosplay} key={key} />
+                ))}
+            </div>
+        </>
     )
 }
