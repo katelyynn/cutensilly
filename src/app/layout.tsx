@@ -38,18 +38,12 @@ export default function RootLayout({
       <body className="dark">
         <TRPCReactProvider>
           <NextTopLoader />
-          <div className="top">
-              <Link href={'/'}>
-                  katelyn.moe
-              </Link>
-          </div>
           <main>
             <div className="content">
               {children}
             </div>
             <KathyNav />
           </main>
-          <KathyFooter />
         </TRPCReactProvider>
       </body>
     </html>

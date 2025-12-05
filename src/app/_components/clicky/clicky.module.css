@@ -85,6 +85,7 @@
     }
 
     & > i {
+        font-size: 14px;
         display: block;
         text-align: right;
         font-style: normal;

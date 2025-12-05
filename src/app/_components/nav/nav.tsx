@@ -89,6 +89,9 @@ export const KathyNav = () => {
                 <img src='/darwin.gif' alt='darwin' />
                 <img src='/apple.gif' alt='apple' />
             </div>
+            <div className={style.extra}>
+                made with love by me, 2025
+            </div>
         </nav>
     );
 }

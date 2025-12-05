@@ -7,3 +7,15 @@
         margin-top: 10px;
     }
 }
+
+.extra {
+    font-size: 13px;
+    color: var(--b3);
+    text-shadow: none;
+
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
