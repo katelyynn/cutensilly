@@ -16,9 +16,9 @@ export async function Mus() {
     return (
         <>
             {track.active ? (
-                <h3 className="status online"><img src={'/online.png'} width="8" height="8" />active</h3>
+                <h3 className="status online"><img src={'/online.png'} width="8" height="8" />actively listening toooo:</h3>
             ) : (
-                <h3 className="status offline"><img src={'/offline.png'} width="8" height="8" />inactive</h3>
+                <h3 className="status offline"><img src={'/offline.png'} width="8" height="8" />my last song was..</h3>
             )}
             <KathyTrackList>
                 <KathyTrack

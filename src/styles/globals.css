@@ -521,8 +521,8 @@ sub {
 .time {
   color: var(--hi);
   font-size: 30px;
-  margin-top: -5px;
-  margin-bottom: -6px;
+  transform: scaleY(1.3);
+  font-weight: 600;
 }
 
 .badges {
@@ -559,11 +559,11 @@ sub {
     gap: 5px;
 
     &.online {
-        color: #B3FF69;
+        color: #E5FBC2;
         animation: online 1.5s infinite;
     }
     &.offline {
-        color: #B23C52;
+        color: #612736;
     }
 
     & > img {

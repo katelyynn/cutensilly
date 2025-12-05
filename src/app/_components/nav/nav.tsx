@@ -66,6 +66,9 @@ export const KathyNav = () => {
             <KathyClicky cloak="tab" colour="social" link="https://www.albumoftheyear.org/user/clairedoll/" elem="a">
                 aoty <i>@clairedoll</i>
             </KathyClicky>
+            <KathyClicky cloak="tab" colour="social" link="https://anilist.co/user/rizukyun/" elem="a">
+                anilist <i>@rizukyun</i>
+            </KathyClicky>
             <KathyClicky cloak="tab" colour="social" link="https://rateyourmusic.com/~kateshapedbox" elem="a">
                 rym <i>@kateshapedbox</i>
             </KathyClicky>

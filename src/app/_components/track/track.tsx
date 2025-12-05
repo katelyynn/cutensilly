@@ -61,7 +61,7 @@ export const KathyTrack = ({
                 {(artist) ? <div className={style.artist}><a href={`${artist.link}`}>{artist.title}</a></div> : null}
                 {(album) ? <div className={style.album}><a href={`${artist.link}/${album.link}`}>{album.title}</a></div> : null}
             </div>
-            {(love) ? <KathySprite name="heart"/> : ''}
+            {(love) ? <img src={'/heart.png'} width="10" height="10" /> : ''}
             {(time) ? <div className={style.time}>{time}</div> : ''}
             {(active) ? <div className={style.active_time}>Listening now</div> : ''}
             <KathyLinkBlock link={`${link}`} type="a" />
