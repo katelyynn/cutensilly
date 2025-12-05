@@ -65,7 +65,7 @@ export const marineRouter = createTRPCRouter({
                     query,
                     variables
                 }),
-                next: {revalidate: 60 * 60}
+                next: {revalidate: 20 * 60}
             }
         );
 
