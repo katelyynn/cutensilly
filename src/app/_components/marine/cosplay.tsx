@@ -28,11 +28,11 @@ export const Cosplay = ({item, full = true}: {item: CosplayProps, full?: boolean
     if (!max) max = 0;
 
     let progress = item.progress ? parseInt(item.progress) : 0;
-    if (!item.progress) progress = max;
+    if (!item.progress && item.status == 'completed') progress = max;
 
-    let text = item.status + ' ' + progress;
-    if (item.status == 'completed') {
-        text = item.status;
+    let text = item.status;
+    if (item.status == 'read chapter' || item.status == 'watched episode') {
+        text = item.status + ' ' + progress;
     }
 
     return (
