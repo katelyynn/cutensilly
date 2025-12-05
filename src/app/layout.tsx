@@ -10,10 +10,10 @@ import { KathyFooter } from '~/app/_components/footer/footer';
 
 import NextTopLoader from 'nextjs-toploader';
 
-import { Figtree } from 'next/font/google';
+import { Karla } from 'next/font/google';
 import Link from 'next/link';
 
-const lato = Figtree({
+const karla = Karla({
   subsets: ['latin'],
   weight: 'variable',
 });
@@ -34,7 +34,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={lato.className}>
+    <html lang="en" className={karla.className}>
       <body className="dark">
         <TRPCReactProvider>
           <NextTopLoader />

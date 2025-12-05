@@ -93,7 +93,6 @@
 
     &:hover {
         color: var(--hi) !important;
-        background: var(--bg-glow) !important;
     }
 
     &.social {

@@ -66,10 +66,10 @@ table {
 
 
 :root {
-  --font: Zpix, Figtree, Lato, Lucida Grande, Geneva, Arial, Verdana, sans-serif;
+  --font: Karla, Lucida Grande, Geneva, Arial, Verdana, sans-serif;
   --font-size: 16px;
   --line-height: auto;
-  --font-weight: 300;
+  --font-weight: 400;
   --font-weight-md: 500;
   --font-weight-nm: 600;
   --font-weight-lg: 700;
@@ -153,15 +153,16 @@ body {
 
   &.dark {
     --head: #DCDCF7;
-    --bg: #191B2A;
+    --bg: #221F23;
     --txt: #C5C7DB;
-    --hi: #D884C7;
+    --hi: #D14069;
+    --hi3: #FFC1D4;
     --hi2: #525677;
     --txt-i: #000;
     --dash: transparent;
-    --glow: #601651;
+    --glow: #5B1227;
     --bg-glow: #151738;
-    --quote: #CCC0FE22;
+    --quote: #C0466822;
     --w: url(/b.png);
     --h2: url(/purpl157.jpg);
 
@@ -215,6 +216,24 @@ strong {
 
 .kyuu {
   color: var(--hi);
+
+  &.can-hover {
+      background: linear-gradient(270deg, var(--hi), var(--hi3), var(--hi), var(--hi3), var(--hi));
+      background-size: 400% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient 12s linear infinite;
+      text-shadow: none;
+  }
+}
+
+@keyframes gradient {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 400% 0;
+    }
 }
 
 p {
@@ -267,10 +286,6 @@ a, button {
   cursor: pointer;
 }
 
-a:hover {
-  text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
-}
-
 
 .sep {
   display: block;
@@ -289,8 +304,11 @@ a {
   color: var(--hi);
   text-decoration: none;
 
+  transition: font-weight 0.1s;
+
   &:hover {
-      background: var(--bg-glow);
+      text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
+      font-weight: 500;
   }
 }
 
@@ -519,14 +537,14 @@ sub {
 }
 
 .tippy-box {
-  background: var(--glow) !important;
+  background: linear-gradient(transparent, var(--glow) 20%, var(--glow) 80%, transparent) !important;
   border-radius: unset !important;
   color: var(--txt) !important;
-  font-size: 13px;
+  font-size: 14px;
   clip-path: var(--radius-1);
 
   .tippy-content {
-    padding: 0 4px !important;
+    padding: 8px 6px !important;
   }
 
   .tippy-arrow {
