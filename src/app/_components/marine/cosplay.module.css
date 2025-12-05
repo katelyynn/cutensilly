@@ -28,6 +28,7 @@
 
 .mini {
     flex-direction: row;
+    align-items: center;
     gap: 14px;
 
     .info {
@@ -39,7 +40,7 @@
     }
 
     .progress {
-        width: 50px;
+        width: 100px;
     }
 
     .cover {
