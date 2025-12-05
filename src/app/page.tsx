@@ -9,6 +9,7 @@ import Link from 'next/link';
 import Timer from './_components/time/time';
 import { StatusAPI } from './_components/status/status_api';
 import { Name } from './_components/name/name';
+import { Marine } from './_components/marine/marine';
 
 export default async function Home() {
   return (
@@ -36,6 +37,10 @@ export default async function Home() {
       <KathyCard>
         <h3>right now it is</h3>
         <Timer />
+      </KathyCard>
+      <KathyCard>
+          <h3>manga and anime</h3>
+          <Marine />
       </KathyCard>
     </>
   );

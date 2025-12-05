@@ -4,6 +4,7 @@ import { lastfmRouter } from './routers/lastfm';
 import { discogsRouter } from './routers/discogs';
 import {lotusRouter} from './routers/lotus';
 import { statusRouter } from "./routers/status";
+import { marineRouter } from "./routers/marine";
 
 /**
  * This is the primary router for your server.
@@ -16,6 +17,7 @@ export const appRouter = createTRPCRouter({
   discogs: discogsRouter,
   lotus: lotusRouter,
   status: statusRouter,
+  marine: marineRouter
 });
 
 // export type definition of API
