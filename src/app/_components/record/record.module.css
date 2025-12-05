@@ -4,18 +4,20 @@
 
     text-align: center;
 
+    transition: font-weight 0.2s;
+
+    &:hover {
+        text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
+        font-weight: 500;
+    }
+
     .info {
         display: block;
         margin-top: 6px;
 
         .title {
-            font-weight: bold;
-            font-size: 16px;
             color: var(--hi);
             display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
         }
 
         .artists {
@@ -37,7 +39,7 @@
 
         .format {
             position: absolute;
-            bottom: 60px;
+            top: -6px;
             left: 50%;
             width: 40px;
             margin-left: -20px;

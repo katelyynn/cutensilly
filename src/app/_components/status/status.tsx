@@ -10,7 +10,7 @@ export const StatusBlock = ({
 }: Status) => {
     return (
         <>
-            <h3 className="status cafe"><img src={'/home.png'} width="8" height="8" />i'm thinking...</h3>
+            <h3 className="status cafe"><img src={'/home.png'} width="8" height="8" />i’m thinking...</h3>
             <div className={style.status}>
                 <span className={style.emoji}>{face}</span>
                 <span className={style.content}>{content}</span>

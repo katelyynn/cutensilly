@@ -16,7 +16,7 @@ export default async function Home() {
     <>
       <KathyCard>
         <KathyAvatar image="/avatars/kat.webp" alt="avatar for kathy" size="lg"/>
-        <p><strong>hi! i'm <Name /></strong> and this is my corner of the internet~</p>
+        <p><strong>hi! i’m <Name /></strong> and this is my corner of the internet~</p>
         <p>i am a self-taught programmer mainly focusing on web dev for the meantime. you may know me from my popular <a href='https://bleh.katelyn.moe' target='_blank'>last.fm extension bleh</a></p>
         <p>you can use the side rail to explore to your heart's content, here's <Link href={'/work'}>my project list</Link> for example !!</p>
         <p>♪⋆.✮ my pronouns r <span className="kyuu">she/her/it</span> ⋆˚𝜗𝜚˚⋆</p>

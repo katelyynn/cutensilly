@@ -10,10 +10,10 @@ import { KathyFooter } from '~/app/_components/footer/footer';
 
 import NextTopLoader from 'nextjs-toploader';
 
-import { Karla } from 'next/font/google';
+import { Hanken_Grotesk, Karla } from 'next/font/google';
 import Link from 'next/link';
 
-const karla = Karla({
+const karla = Hanken_Grotesk({
   subsets: ['latin'],
   weight: 'variable',
 });
