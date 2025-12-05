@@ -16,6 +16,13 @@
         opacity: 0.8;
     }
 
+    transition: font-weight 0.2s;
+
+    &:hover {
+        text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
+        font-weight: 500;
+    }
+
     .info {
         z-index: 1;
         pointer-events: none;
@@ -28,14 +35,13 @@
             max-width: 400px;
             font-size: 15px;
             color: var(--hi);
-            font-weight: 600;
         }
 
         .artist {
             display: flex;
-            margin-top: 2px;
             font-size: 14px;
-            color: var(--txt);
+            font-weight: 500;
+            opacity: 0.8;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -50,8 +56,9 @@
 
         .album {
             display: flex;
-            font-size: 14px;
-            color: var(--txt);
+            font-size: 13px;
+            font-weight: 500;
+            opacity: 0.6;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;

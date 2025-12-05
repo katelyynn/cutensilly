@@ -23,7 +23,7 @@ export interface CosplayProps {
     createdAt: number
 }
 
-export const Cosplay = ({item}: {item: CosplayProps}) => {
+export const Cosplay = ({item, full = true}: {item: CosplayProps, full?: boolean}) => {
     let max = item.media.type == 'MANGA' ? item.media.chapters : item.media.episodes;
     if (!max) max = 0;
 
@@ -36,21 +36,23 @@ export const Cosplay = ({item}: {item: CosplayProps}) => {
     }
 
     return (
-        <div className={styles.cosplay}>
+        <div className={`${styles.cosplay} ${full ? styles.full : styles.mini}`}>
             <div className={styles.cover}>
                 <img src={item.media.coverImage.large} loading="lazy" />
             </div>
-            <div className={styles.progress}>
-                <div className={styles.fill} style={{width: `${(progress / max) * 100}%`}} />
-            </div>
-            <div className={styles.title}>
-                {item.media.title.romaji}
-            </div>
-            <div className={styles.status}>
-                {text}
-            </div>
-            <div className={styles.time}>
-                {DateTime.fromSeconds(item.createdAt).toRelative()}
+            <div className={styles.info}>
+                <div className={styles.progress}>
+                    <div className={styles.fill} style={{width: `${(progress / max) * 100}%`}} />
+                </div>
+                <div className={styles.title}>
+                    {item.media.title.romaji}
+                </div>
+                <div className={styles.status}>
+                    {text}
+                </div>
+                <div className={styles.time}>
+                    {DateTime.fromSeconds(item.createdAt).toRelative()}
+                </div>
             </div>
             <KathyLinkBlock link={item.siteUrl} type="a" />
         </div>

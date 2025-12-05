@@ -12,13 +12,13 @@ export async function Marine({
     }
 
     let activities = data.data.Page.activities;
-    if (!full) activities = activities.slice(0, 3);
+    if (!full) activities = activities.slice(0, 1);
 
     return (
         <>
             <div className={styles.list}>
                 {activities.map((cosplay: CosplayProps, key) => (
-                    <Cosplay item={cosplay} key={key} />
+                    <Cosplay item={cosplay} key={key} full={full} />
                 ))}
             </div>
         </>

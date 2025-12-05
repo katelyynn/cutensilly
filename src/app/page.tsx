@@ -20,14 +20,6 @@ export default async function Home() {
         <p>i am a self-taught programmer mainly focusing on web dev for the meantime. you may know me from my popular <a href='https://bleh.katelyn.moe' target='_blank'>last.fm extension bleh</a></p>
         <p>you can use the side rail to explore to your heart's content, here's <Link href={'/work'}>my project list</Link> for example !!</p>
         <p>♪⋆.✮ my pronouns r <span className="kyuu">she/her/it</span> ⋆˚𝜗𝜚˚⋆</p>
-        <div className="sep"/>
-        <KathyQuote who={{
-          avatar: '/avatars/stella.png',
-            name: 'hazel, my lifelong angel ♡',
-            link: 'https://katelyn.moe'
-        }}>
-            kathy, katie, kate, katelyn<br />wateva it is im gonna marry her
-        </KathyQuote>
         <div className="top-right">
             <Timer />
         </div>
@@ -35,15 +27,18 @@ export default async function Home() {
       <KathyCard classname="music">
         <Mus />
         <div className="sep" />
+        <h3 className="status"><img src={'/book.png'} width="8" height="8" />watched/read recently</h3>
+        <Marine />
+        <div className="sep" />
         <StatusAPI />
       </KathyCard>
-      <KathyCard>
-          <h3>manga and anime</h3>
-          <Marine />
-          <div className="see-more">
-              <Link href="/marine">see the rest <img src={'/more.png'} width="6" height="10" /></Link>
-          </div>
-      </KathyCard>
+      <KathyQuote who={{
+        avatar: '/avatars/stella.png',
+          name: 'hazel, my lifelong angel ♡',
+          link: 'https://katelyn.moe'
+      }}>
+          kathy, katie, kate, katelyn<br />wateva it is im gonna marry her
+      </KathyQuote>
     </>
   );
 }

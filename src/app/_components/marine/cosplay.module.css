@@ -1,6 +1,6 @@
 .list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 10px;
 }
 
@@ -8,8 +8,6 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-
-    text-align: center;
 
     transition: font-weight 0.2s;
 
@@ -19,6 +17,34 @@
     }
 
     position: relative;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.mini {
+    flex-direction: row;
+    gap: 14px;
+
+    .info {
+        text-align: left;
+    }
+
+    .title {
+        font-size: 15px;
+    }
+
+    .progress {
+        width: 50px;
+    }
+
+    .cover {
+        width: 56px;
+    }
 }
 
 .cover {
@@ -37,6 +63,7 @@
     background: var(--b4);
     height: 4px;
     border-radius: 4px;
+    margin-bottom: 6px;
 
     & > .fill {
         height: 4px;
@@ -59,5 +86,4 @@
     font-size: 13px;
     font-weight: 500;
     opacity: 0.6;
-    margin-top: -6px;
 }
