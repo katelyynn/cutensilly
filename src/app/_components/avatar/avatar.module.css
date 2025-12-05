@@ -1,7 +1,7 @@
 .avatar {
     overflow: hidden;
     position: relative;
-    clip-path: var(--radius-2);
+    border-radius: 8px;
     flex-shrink: 0;
     image-rendering: auto;
 

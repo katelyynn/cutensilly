@@ -1,7 +1,7 @@
 .quote {
     background: var(--quote);
     padding: 10px;
-    clip-path: var(--radius-1);
+    border-radius: 8px;
 
     .identity {
         color: var(--hi);

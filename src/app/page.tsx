@@ -29,7 +29,6 @@ export default async function Home() {
             kathy, katie, kate, katelyn<br />wateva it is im gonna marry her
         </KathyQuote>
         <div className="top-right">
-            <h3>for me it is</h3>
             <Timer />
         </div>
       </KathyCard>
