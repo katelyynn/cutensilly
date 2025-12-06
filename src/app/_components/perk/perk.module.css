@@ -46,7 +46,7 @@
 
     & > img {
         width: 100%;
-        clip-path: var(--radius-1);
+        border-radius: 8px;
         margin-bottom: 10px;
         image-rendering: auto;
     }

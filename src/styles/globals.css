@@ -155,7 +155,7 @@ body {
     --head: #DCDCF7;
     --bg: #221F23;
     --txt: #C5C7DB;
-    --hi: #DB597E;
+    --hi: #FF608D;
     --hi3: #FFC1D4;
     --hi2: #525677;
     --txt-i: #382228;
@@ -260,9 +260,9 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   color: var(--head);
-  font-size: 18px;
+  font-size: 17px;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 
   &:first-child {
     margin-top: unset;

@@ -1,7 +1,7 @@
 .upload {
     width: 100%;
     height: 575px;
-    clip-path: var(--radius-1);
+    border-radius: 10px;
     background: rgba(199, 128, 184, 0.2);
 
     display: flex;
@@ -17,7 +17,7 @@
 }
 
 .preview, .container {
-    clip-path: var(--radius-1);
+    border-radius: 10px;
     width: 100%;
     overflow: hidden;
     aspect-ratio: 1 / 1;
@@ -35,7 +35,7 @@
     }
 
     :global(.cropper-container) {
-        clip-path: var(--radius-1);
+        border-radius: 10px;
         overflow: hidden;
 
         :global(.cropper-point),
@@ -65,24 +65,25 @@
 .actions_wrap {
     display: flex;
     gap: 2px;
-    clip-path: var(--radius-1);
+    border-radius: 10px;
+    overflow: hidden;
 
     & > button {
-        clip-path: unset;
+        border-radius: unset;
     }
 }
 
 .menu {
-    padding: 2px 0;
+    padding: 4px;
     background: var(--bg-glow);
-    clip-path: var(--radius-1);
+    border-radius: calc(10px + 4px);
 
     .item {
         padding: 3px 6px;
         display: flex;
         align-items: center;
         gap: 6px;
-        clip-path: var(--radius-1);
+        border-radius: 10px;
 
         &:hover {
             background: rgba(199, 128, 184, 0.2);
@@ -105,7 +106,7 @@
     border: none;
     padding: 3px 6px;
     background: var(--hi2) !important;
-    clip-path: var(--radius-1);
+    border-radius: 10px;
 
     display: flex;
     align-items: center;

@@ -1,9 +1,9 @@
 .clicky {
     appearance: none;
     border: none;
-    padding: 3px 6px;
+    padding: 4px 10px;
     background: var(--hi2) !important;
-    clip-path: var(--radius-1);
+    border-radius: 10px;
 
     display: flex;
     align-items: center;
@@ -18,19 +18,16 @@
     }
 
     &:not(.tab) {
-        &.primary {
-            background: var(--hi) !important;
-            --col: var(--bg) !important;
-            text-shadow: none !important;
-        }
+        background: var(--hi) !important;
+        --col: var(--bg) !important;
+        text-shadow: none !important;
+        font-weight: bold !important;
+        font-size: 16px;
     }
 
     color: var(--col) !important;
     font: inherit;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    text-shadow: inherit;
+    text-decoration: none !important;
 
     user-select: none;
 
@@ -67,7 +64,7 @@
     border: unset !important;
     box-shadow: unset !important;
     filter: none !important;
-    clip-path: unset;
+    border-radius: unset;
     z-index: 100;
 
     padding: 0;
