@@ -84,7 +84,7 @@ export const KathyNav = () => {
             <div className="badges">
                 <Badge url="https://katelyn.moe/8831.png" src="/8831.png" alt="katelyn.moe - add my badge!!" />
                 <Badge url="https://hazey.moe" src="https://hazey.moe/banner.png" alt="hazey my lovely wife" />
-                <Badge url="https://acpi.at" src="https://acpi.at/88x31.gif" alt="muxiepuff" />
+                <Badge url="https://kyu.re" iframe="https://kyu.re/button.min.html" alt="kyure" />
                 <img src='/sm.jpg' alt='sm' />
                 <img src='/darwin.gif' alt='darwin' />
                 <img src='/apple.gif' alt='apple' />
