@@ -5,7 +5,7 @@ export default function MusPage() {
     return (
         <>
             <KathyCard full>
-                <h1>manga and anime</h1>
+                <h3>manga and anime</h3>
                 <Marine full />
             </KathyCard>
         </>

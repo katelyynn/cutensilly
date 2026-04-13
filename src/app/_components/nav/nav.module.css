@@ -1,11 +1,15 @@
 .nav {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1px;
 
     & > h2:not(:first-child) {
         margin-top: 10px;
     }
+}
+
+.side {
+  margin-top: 38px;
 }
 
 .extra {

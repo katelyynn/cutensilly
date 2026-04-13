@@ -1,7 +1,6 @@
 .quote {
     background: var(--quote);
     padding: 10px;
-    border-radius: 8px;
 
     .identity {
         color: var(--hi);
@@ -10,4 +9,6 @@
         font-size: 14px;
         margin-top: 6px;
     }
+
+    margin-top: 10px;
 }
