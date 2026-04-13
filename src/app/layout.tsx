@@ -10,12 +10,22 @@ import { KathyFooter } from '~/app/_components/footer/footer';
 
 import NextTopLoader from 'nextjs-toploader';
 
-import { Hanken_Grotesk, Karla } from 'next/font/google';
+import { Gamja_Flower, Hanken_Grotesk, Karla } from 'next/font/google';
 import Link from 'next/link';
+import { KathyCard } from "./_components/card/card";
+import { KathyAvatar } from "./_components/avatar/avatar";
+import Timer from "./_components/time/time";
+import { Name } from "./_components/name/name";
+import { KathyQuote } from "./_components/quote/quote";
 
 const karla = Hanken_Grotesk({
   subsets: ['latin'],
   weight: 'variable',
+});
+
+const gamja = Gamja_Flower({
+    subsets: ['latin'],
+    weight: '400'
 });
 
 export const metadata: Metadata = {
@@ -41,6 +51,18 @@ export default function RootLayout({
           <main>
             <KathyNav />
             <div className="content">
+              <KathyCard>
+                <div className="card-top">
+                    <div className="time-top">
+                        <Timer />
+                    </div>
+                    <KathyAvatar image="/avatars/kat.webp" alt="avatar for kathy" size="lg"/>
+                    <div className="top-info">
+                        <h1><Name /></h1>
+                        <p className="info-body">welcome to my corner of the internet~</p>
+                    </div>
+                </div>
+              </KathyCard>
               {children}
             </div>
           </main>

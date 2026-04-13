@@ -133,31 +133,29 @@ body {
   --trans: 0.3s;
   --trans-function: cubic-bezier(0.095, 0.410, 0.055, 0.960);
 
-  background: #CCBBCD;
+  background: #EAE2DF;
   color: var(--txt);
   font-family: var(--font);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
 
-  --border: #C8C0CD;
-  --accent: #EEDDEF;
+  --border: #AD9591;
+  --accent: #EFF1FC;
 
   width: 100vw;
-  height: 100vh;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 40px;
+
+  padding: 100px 0 !important;
 }
 
 main {
   display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-  overflow: hidden;
+  flex-direction: row-reverse;
 }
 
 .content {
@@ -166,9 +164,9 @@ main {
   gap: 1px;
 
   background-color: var(--border);
+  border: 1px solid var(--border);
 
-  overflow-x: hidden;
-  overflow-y: hidden;
+  position: relative;
 
   &:hover {
     overflow-y: auto;
@@ -198,10 +196,14 @@ strong {
 }
 
 .kyuu {
-  color: var(--txt);
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  color: var(--hi);
+
+  &.can-hover {
+    color: var(--txt);
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
 
   /*&.can-hover {
       background: linear-gradient(270deg, var(--hi), var(--hi3), var(--hi), var(--hi3), var(--hi));
@@ -240,10 +242,13 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
+  font-family: Gamja Flower;
   color: var(--head);
-  font-size: 17px;
+  font-size: 24px;
+  line-height: 20px;
   margin-top: 10px;
   margin-bottom: -5px;
+  font-weight: 600;
 
   &:first-child {
     margin-top: unset;
@@ -254,7 +259,8 @@ h2 {
   font-size: 15px;
 }
 h3 {
-  background: var(--accent);
+  padding: 4px 0;
+  background: linear-gradient(180deg, var(--accent), transparent);
   color: var(--txt);
   font-size: 14px;
   margin-bottom: 10px;
@@ -577,13 +583,10 @@ sub {
 
 
 .card-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    border-bottom: 1px solid var(--border);
-    margin: 0 -10px;
-    padding: 0 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
 }
 
 .time-top {

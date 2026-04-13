@@ -12,9 +12,7 @@ export const KathyNav = () => {
 
     return (
         <>
-            <header className={style.top}>
-                <p className={style.logo}>katelyn.moe</p>
-            </header>
+        <div className={style.side}>
             <nav className={style.nav}>
                 <KathyClicky
                     elem="link"
@@ -65,6 +63,7 @@ export const KathyNav = () => {
                     crop
                 </KathyClicky>
             </nav>
+          </div>
         </>
     );
 }
