@@ -1,7 +1,6 @@
 .avatar {
     overflow: hidden;
     position: relative;
-    border-radius: 8px;
     flex-shrink: 0;
     image-rendering: auto;
 
@@ -26,9 +25,11 @@
     }
 
     &.size-lg {
-        width: 130px;
-        height: 130px;
+        width: 110px;
+        height: 110px;
     }
+
+    margin: 0 auto;
 
     &.size-xl {
         width: 180px;

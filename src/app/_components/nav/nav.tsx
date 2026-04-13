@@ -11,56 +11,67 @@ export const KathyNav = () => {
     const route = usePathname();
 
     return (
-        <nav className={`card side ${style.nav}`}>
-            <h2>cute:</h2>
-            <KathyClicky
-                elem="link"
-                link="/"
-                primary={route == '/'}
-                cloak="tab"
-            >
-                me!
-            </KathyClicky>
-            <KathyClicky
-                elem="link"
-                link="/work"
-                primary={route == '/work'}
-                cloak="tab"
-            >
-                projects
-            </KathyClicky>
-            <KathyClicky
-                elem="link"
-                link="/mus"
-                primary={route == '/mus'}
-                cloak="tab"
-            >
-                music
-            </KathyClicky>
-            <KathyClicky
-                elem="link"
-                link="/marine"
-                primary={route == '/marine'}
-                cloak="tab"
-            >
-                marin
-            </KathyClicky>
-            <KathyClicky
-                elem="link"
-                link="/sponsor"
-                primary={route == '/sponsor'}
-                cloak="tab"
-            >
-                sponsor
-            </KathyClicky>
-            <KathyClicky
-                elem="link"
-                link="/crop"
-                primary={route == '/crop'}
-                cloak="tab"
-            >
-                crop
-            </KathyClicky>
+        <>
+            <header className={style.top}>
+                <p className={style.logo}>katelyn.moe</p>
+            </header>
+            <nav className={style.nav}>
+                <KathyClicky
+                    elem="link"
+                    link="/"
+                    primary={route == '/'}
+                    cloak="tab"
+                >
+                    me!
+                </KathyClicky>
+                <KathyClicky
+                    elem="link"
+                    link="/work"
+                    primary={route == '/work'}
+                    cloak="tab"
+                >
+                    projects
+                </KathyClicky>
+                <KathyClicky
+                    elem="link"
+                    link="/mus"
+                    primary={route == '/mus'}
+                    cloak="tab"
+                >
+                    music
+                </KathyClicky>
+                <KathyClicky
+                    elem="link"
+                    link="/marine"
+                    primary={route == '/marine'}
+                    cloak="tab"
+                >
+                    marin
+                </KathyClicky>
+                <KathyClicky
+                    elem="link"
+                    link="/sponsor"
+                    primary={route == '/sponsor'}
+                    cloak="tab"
+                >
+                    sponsor
+                </KathyClicky>
+                <KathyClicky
+                    elem="link"
+                    link="/crop"
+                    primary={route == '/crop'}
+                    cloak="tab"
+                >
+                    crop
+                </KathyClicky>
+            </nav>
+        </>
+    );
+}
+
+/*
+
+<nav className={`card side ${style.nav}`}>
             <h2>social:</h2>
             <KathyClicky cloak="tab" colour="social" link="https://last.fm/user/clairedoll" elem="a">
                 last.fm <i>@clairedoll</i>
@@ -92,6 +103,4 @@ export const KathyNav = () => {
             <div className={style.extra}>
                 made with love by me, 2025
             </div>
-        </nav>
-    );
-}
+        </nav> */

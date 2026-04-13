@@ -39,10 +39,10 @@ export default function RootLayout({
         <TRPCReactProvider>
           <NextTopLoader />
           <main>
+            <KathyNav />
             <div className="content">
               {children}
             </div>
-            <KathyNav />
           </main>
         </TRPCReactProvider>
       </body>

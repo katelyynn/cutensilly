@@ -15,14 +15,19 @@ export default async function Home() {
   return (
     <>
       <KathyCard>
-        <KathyAvatar image="/avatars/kat.webp" alt="avatar for kathy" size="lg"/>
-        <p><strong>hi! i’m <Name /></strong> and this is my corner of the internet~</p>
+        <div className="card-top">
+            <div className="time-top">
+                <Timer />
+            </div>
+            <KathyAvatar image="/avatars/kat.webp" alt="avatar for kathy" size="lg"/>
+            <div className="top-info">
+                <h1><Name /></h1>
+                <p className="info-body">welcome to my corner of the internet~</p>
+            </div>
+        </div>
         <p>i am a self-taught programmer mainly focusing on web dev for the meantime. you may know me from my popular <a href='https://bleh.katelyn.moe' target='_blank'>last.fm extension bleh</a></p>
         <p>you can use the side rail to explore to your heart's content, here's <Link href={'/work'}>my project list</Link> for example !!</p>
         <p>♪⋆.✮ my pronouns r <span className="kyuu">she/her/it</span> ⋆˚𝜗𝜚˚⋆</p>
-        <div className="top-right">
-            <Timer />
-        </div>
       </KathyCard>
       <KathyCard classname="music">
         <Mus />
