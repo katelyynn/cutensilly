@@ -1,10 +1,13 @@
 .status {
     display: flex;
-    align-items: center;
-    gap: 6px;
+    flex-direction: column;
+
+    background: linear-gradient(180deg, transparent, oklch(var(--h4) / 20%));
+    padding: 10px;
+    border-radius: inherit;
 
     .emoji {
-        font-size: 11px;
+        font-size: 13px;
     }
 
     .content {
@@ -12,7 +15,12 @@
     }
 
     .time {
-        opacity: 0.6;
+        color: oklch(var(--c3));
         font-size: 13px;
     }
+}
+
+.bottom {
+    display: flex;
+    gap: 4px;
 }

@@ -1,11 +1,11 @@
-import { KathyCard } from '~/app/_components/card/card';
+import { KathyCard, KathyCardList } from '~/app/_components/card/card';
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyClicky } from '../_components/clicky/clicky';
 import { KathyPerk, KathyPerkBig, KathyPerkBigList, KathyPerkList } from '~/app/_components/perk/perk';
 
 export default async function Home() {
   return (
-    <>
+    <KathyCardList>
       <KathyCard>
         <p>any sponsorship goes a long way in ensuring continued development, thank you!!</p>
         <div className="sep"/>
@@ -127,6 +127,6 @@ export default async function Home() {
           </tbody>
         </table>
       </KathyCard>
-    </>
+    </KathyCardList>
   );
 }

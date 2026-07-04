@@ -1,27 +1,21 @@
 .clicky {
     appearance: none;
     border: none;
-    padding: 2px 6px;
-    background: var(--hi2) !important;
+    padding: 6px 8px;
+    background: oklch(var(--h3)) !important;
+    font-weight: var(--font-weight-md) !important;
+    border-radius: 6px !important;
 
     display: flex;
     align-items: center;
     gap: 6px;
 
     &:hover {
-        filter: brightness(110%);
+        background: oklch(var(--h3) / 80%) !important;
     }
 
     &:active {
-        filter: brightness(120%);
-    }
-
-    &:not(.tab) {
-        background: var(--hi) !important;
-        --col: var(--bg) !important;
-        text-shadow: none !important;
-        font-weight: 500 !important;
-        font-size: 12px;
+        background: oklch(var(--h3) / 60%) !important;
     }
 
     color: var(--col) !important;
@@ -78,6 +72,10 @@
     text-decoration: none !important;
     text-shadow: none !important;
 
+    &:hover, &:active {
+        background: rgb(var(--rgb), var(--op)) !important;
+    }
+
     & > i {
         font-size: 14px;
         display: block;
@@ -95,17 +93,16 @@
         transition: none;
     }
 
+    &:active {
+        --op: 0.8;
+    }
+
     &.primary {
         --op: 0.8 !important;
         font-weight: 500 !important;
     }
 
     width: 210px;
-}
-
-.big {
-  padding: 4px 6px;
-  font-size: 13px !important;
 }
 
 .lastdotfm {

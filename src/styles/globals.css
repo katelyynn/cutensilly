@@ -222,11 +222,6 @@ margin-top: 10px;
 cursor: default !important;
 }
 
-
-h1, h2, h3, h4, h5 {
-font-weight: 600;
-}
-
 h1 {
 font-family: Gamja Flower;
 color: var(--head);
@@ -248,14 +243,10 @@ h2 {
 }
 
 h3 {
-padding: 4px 0;
-background: linear-gradient(180deg, var(--accent), transparent);
-color: var(--txt);
-font-size: 14px;
-margin-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
 
-text-align: center;
-justify-content: center;
+    font-weight: var(--font-weight-md);
 }
 h4 {
 font-size: 20px;
@@ -273,9 +264,9 @@ cursor: pointer;
 
 
 .sep {
-display: block;
-width: 100%;
-margin: 6px 0;
+    display: block;
+    width: 100%;
+    height: 10px;
 }
 
 
@@ -343,12 +334,12 @@ thead, tbody {
 
 thead {
     margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: var(--font-weight);
+    font-size: 13px;
 
     tr {
     th {
-        color: hsl(var(--c3));
+        color: oklch(var(--c3));
     }
     }
 }
@@ -528,10 +519,9 @@ font-weight: 600;
 }
 
 .status {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .top-right {
