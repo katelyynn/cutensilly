@@ -24,6 +24,7 @@ const karla = Bricolage_Grotesque({
 });
 
 const instrument = Instrument_Serif({
+    subsets: ['latin'],
     weight: '400',
     style: ['normal', 'italic']
 });
