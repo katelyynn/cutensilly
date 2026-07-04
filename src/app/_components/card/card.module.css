@@ -1,9 +1,9 @@
 .list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 
-    margin-top: 20px;
+    margin-top: 10px;
 
     &.orient-h {
         margin: unset;
@@ -14,4 +14,12 @@
             justify-content: center;
         }
     }
+}
+
+.card {
+    background-color: oklch(var(--b5));
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px oklch(var(--b7));
+    width: 400px;
 }

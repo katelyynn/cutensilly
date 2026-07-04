@@ -1,23 +1,26 @@
-'use client';
-
-import Tippy from '@tippyjs/react';
-import React, { cloneElement } from 'react';
-
-import { followCursor } from 'tippy.js';
-import 'tippy.js/dist/tippy.css';
+import React from 'react';
+import { Tooltip } from 'radix-ui';
+import styles from "./tip.module.css";
 
 export default function Tip({
     content,
-    children,
-    follow
+    children
 }: {
     content: React.ReactNode,
-    children: React.ReactElement,
-    follow?: boolean
+    children: React.ReactElement
 }) {
     return (
-        <Tippy content={content} followCursor={follow} plugins={[followCursor]} placement={follow ? 'right' : 'auto'} offset={follow ? [30, 36] : [0, 0]}>
-            {cloneElement(children, { ref: (children as any).ref })}
-        </Tippy>
+        <Tooltip.Provider delayDuration={0}>
+            <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                    {children}
+                </Tooltip.Trigger>
+                <Tooltip.Portal>
+                    <Tooltip.Content className={styles.content}>
+                        {content}
+                    </Tooltip.Content>
+                </Tooltip.Portal>
+            </Tooltip.Root>
+        </Tooltip.Provider>
     );
 }

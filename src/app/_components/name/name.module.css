@@ -1,0 +1,28 @@
+.names {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.point {
+    width: 16px;
+    height: 16px;
+    margin: -6px 0;
+    display: none;
+}
+
+.name {
+    color: oklch(var(--l3-c));
+}
+
+.primary {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 900;
+}
+
+.secondary {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.8;
+}

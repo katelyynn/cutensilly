@@ -19,7 +19,7 @@ export const KathyAvatar = ({
     lazy
 }: KathyAvatarProps) => {
     return (
-        <Tip content={alt || 'image'} follow>
+        <Tip content={alt || 'image'}>
             <div className={`avatar ${style.avatar} ${style[`size-${size}`]}`}>
                 {(image) ? <img draggable="false" src={image} alt={alt} loading={lazy ? 'lazy' : 'eager'} /> : ''}
                 {(link) ? <KathyLinkBlock link={link} type={link_type} /> : ''}

@@ -1,0 +1,5 @@
+.time {
+    color: oklch(var(--c3));
+    font-size: 13px;
+    margin-top: 4px;
+}

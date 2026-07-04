@@ -4,7 +4,7 @@ import { RecentTracks } from '~/server/api/routers/lastfm';
 
 export async function Mus() {
     const recent_tracks: RecentTracks = await api.lastfm.getRecentTracks(
-        {username: "clairedoll", limit: 1}
+        {username: "dressupdarling", limit: 1}
     );
 
     if (!recent_tracks || !recent_tracks.tracks || recent_tracks.tracks.length == 0) {

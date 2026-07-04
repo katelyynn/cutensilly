@@ -1,12 +1,13 @@
 .quote {
-    background: var(--quote);
+    background: linear-gradient(180deg, transparent, oklch(var(--h4) / 20%));
     padding: 10px;
+    border-radius: inherit;
 
     .identity {
-        color: var(--hi);
+        color: oklch(var(--l3-c));
         width: 100%;
         display: block;
-        font-size: 14px;
+        font-size: 13px;
         margin-top: 6px;
     }
 

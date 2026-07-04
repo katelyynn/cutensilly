@@ -1,20 +1,20 @@
 .nav {
     display: flex;
     flex-direction: column;
-    gap: 1px;
-
-    & > h2:not(:first-child) {
-        margin-top: 10px;
-    }
+    gap: 4px;
 }
 
 .side {
-  margin-top: 38px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .extra {
-    font-size: 13px;
-    color: var(--b3);
+    font-size: 12px;
+    color: oklch(var(--c3));
+    margin-top: 20px;
     text-shadow: none;
 
     flex: 1;

@@ -1,10 +1,18 @@
 .badge {
     width: 88px;
     height: 31px;
-    transition: transform var(--trans) var(--trans-function);
+    transition-property: transform, opacity;
+    transition-duration: var(--trans);
+    transition-timing-function: var(--trans-function);
     image-rendering: auto;
+    border-radius: 4px;
+    overflow: hidden;
 
     &:hover {
         transform: scale(1.05);
+    }
+
+    iframe {
+        pointer-events: none;
     }
 }

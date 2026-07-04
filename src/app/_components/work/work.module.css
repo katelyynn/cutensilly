@@ -1,6 +1,6 @@
 .list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
     width: 100%;
 }
@@ -9,17 +9,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-
-    transition: font-weight 0.2s;
-
-    &:hover {
-        text-shadow: -1px -1px 0 var(--glow), 1px -1px 0 var(--glow), -1px 1px 0 var(--glow), 1px 1px 0 var(--glow);
-        font-weight: 500;
-
-        .image {
-            transform: scale(1.02);
-        }
-    }
 
     .image {
         display: inline-block;
@@ -39,21 +28,20 @@
         text-align: center;
 
         .title {
-            color: var(--hi);
-            font-weight: bold;
-            font-size: 16px;
+            font-weight: var(--font-weight);
         }
 
         .bio {
-            font-size: 15px;
+            font-size: 13px;
             margin-top: 0;
-            width: 200px;
+            width: 150px;
+            color: oklch(var(--c2) / 80%);
         }
 
         .years {
-            font-size: 14px;
+            font-size: 13px;
             margin-top: 3px;
-            opacity: 0.7;
+            color: oklch(var(--c3));
         }
     }
 }

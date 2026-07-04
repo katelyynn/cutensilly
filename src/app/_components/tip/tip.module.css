@@ -1,0 +1,22 @@
+.content {
+    animation: tip 0.5s var(--trans-function);
+    max-width: 200px;
+    background-color: oklch(var(--b4) / 90%);
+    box-shadow: 0 3px 10px oklch(var(--b7) / 60%);
+    padding: 3px 4px;
+    border-radius: 8px;
+    font-size: 13px;
+    backdrop-filter: var(--blur) !important;
+    z-index: 100000 !important;
+}
+
+@keyframes tip {
+    from {
+        opacity: 0;
+        translate: 0 2px;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}

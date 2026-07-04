@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./card.module.css";
+import styles from "./card.module.css";
 
 interface KathyCardProps {
     full?: boolean,
@@ -15,7 +15,7 @@ export const KathyCard = ({
     children
 }: KathyCardProps) => {
     return (
-        <div className={`card ${side ? 'side' : ''} ${(full) ? `full ${style.full}` : ''} ${classname ? classname : ''}`}>
+        <div className={`${styles.card} ${side ? 'side' : ''} ${(full) ? `full ${styles.full}` : ''} ${classname ? classname : ''}`}>
             {children}
         </div>
     );
@@ -31,7 +31,7 @@ export const KathyCardList = ({
     children
 }: KathyCardListProps) => {
     return (
-        <div className={`${style.list} ${style[`orient-${orient}`]}`}>
+        <div className={`${styles.list} ${styles[`orient-${orient}`]}`}>
             {children}
         </div>
     );

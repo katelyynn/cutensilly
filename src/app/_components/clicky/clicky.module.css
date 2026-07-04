@@ -59,43 +59,48 @@
 }
 
 .tab {
-  --rgb: 255, 255, 255;
-  --op: 0.3;
+    --rgb: 255, 255, 255;
+    --op: 0.2;
 
-  background: rgb(var(--rgb), var(--op)) !important;
-  border: unset !important;
-  box-shadow: unset !important;
-  filter: none !important;
-  border-radius: unset;
-  z-index: 100;
+    background: rgb(var(--rgb), var(--op)) !important;
+    border: unset !important;
+    box-shadow: unset !important;
+    filter: none !important;
+    border-radius: 5px;
+    z-index: 100;
 
-  padding: 5px 14px;
-  font-size: inherit;
-  display: flex;
+    padding: 7px 14px;
+    font-size: inherit;
+    display: flex;
 
-  margin-left: unset;
-  font-weight: 400 !important;
-  text-decoration: none !important;
-  text-shadow: none !important;
+    margin-left: unset;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
 
-  & > i {
-    font-size: 14px;
-    display: block;
-    text-align: right;
-    font-style: normal;
-    opacity: 0.7;
-  }
+    & > i {
+        font-size: 14px;
+        display: block;
+        text-align: right;
+        font-style: normal;
+        opacity: 0.7;
+    }
 
-  &:hover {
-    --op: 0.6;
-  }
+    transition-property: background, font-weight;
+    transition-duration: 0.4s;
+    transition-timing-function: var(--trans-function);
 
-  &.primary {
-    --op: 1 !important;
-    font-weight: 500 !important;
-  }
+    &:hover {
+        --op: 0.5;
+        transition: none;
+    }
 
-  width: 150px;
+    &.primary {
+        --op: 0.8 !important;
+        font-weight: 500 !important;
+    }
+
+    width: 210px;
 }
 
 .big {

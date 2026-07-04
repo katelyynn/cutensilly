@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default async function Home() {
   return (
-    <>
+    <KathyCardList>
         <KathyCard full>
           <h3>projects</h3>
           <KathyWorkList>
@@ -71,6 +71,6 @@ export default async function Home() {
             />
           </KathyWorkList>
         </KathyCard>
-    </>
+    </KathyCardList>
   );
 }

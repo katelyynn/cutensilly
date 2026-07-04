@@ -10,7 +10,7 @@ import { KathyFooter } from '~/app/_components/footer/footer';
 
 import NextTopLoader from 'nextjs-toploader';
 
-import { Gamja_Flower, Hanken_Grotesk, Karla } from 'next/font/google';
+import { Bricolage_Grotesque, Gamja_Flower, Hanken_Grotesk, Instrument_Serif, Karla } from 'next/font/google';
 import Link from 'next/link';
 import { KathyCard } from "./_components/card/card";
 import { KathyAvatar } from "./_components/avatar/avatar";
@@ -18,14 +18,14 @@ import Timer from "./_components/time/time";
 import { Name } from "./_components/name/name";
 import { KathyQuote } from "./_components/quote/quote";
 
-const karla = Hanken_Grotesk({
+const karla = Bricolage_Grotesque({
   subsets: ['latin'],
   weight: 'variable',
 });
 
-const gamja = Gamja_Flower({
-    subsets: ['latin'],
-    weight: '400'
+const instrument = Instrument_Serif({
+    weight: '400',
+    style: ['normal', 'italic']
 });
 
 export const metadata: Metadata = {
@@ -51,17 +51,13 @@ export default function RootLayout({
           <main>
             <KathyNav />
             <div className="content">
-              <KathyCard>
-                <div className="card-top">
-                    <div className="time-top">
-                        <Timer />
+                <KathyCard>
+                    <div className="card-top">
+                        <Name />
+                        <KathyAvatar image="/avatars/kat.webp" alt="avatar for kathy" size="lg"/>
                     </div>
-                    <KathyAvatar image="/avatars/kat.webp" alt="avatar for kathy" size="lg"/>
-                    <div className="top-info">
-                        <h1><Name /></h1>
-                        <p className="info-body">welcome to my corner of the internet~</p>
-                    </div>
-                </div>
+                    <p className="info-body">welcome to my corner of the internet~</p>
+                    <Timer />
               </KathyCard>
               {children}
             </div>

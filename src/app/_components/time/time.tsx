@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
+import styles from "./time.module.css";
+
 export default function Timer() {
     const [time, setTime] = useState('');
 
@@ -27,6 +29,6 @@ export default function Timer() {
     }, []);
 
     return (
-        <div className="time">{time}</div>
+        <div className={styles.time}>{time}</div>
     )
 }

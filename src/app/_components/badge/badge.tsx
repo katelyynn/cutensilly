@@ -7,15 +7,24 @@ export const Badge = ({
     alt,
     iframe
 }: {
-    url: string,
+    url?: string,
     src?: string,
     alt: string,
     iframe?: string
 }) => {
+
+    if (!url) {
+        return (
+            <a className={`${styles.badge} badge`}>
+                <img src={src} alt={alt} />
+            </a>
+        );
+    }
+
     if (iframe) {
         return (
-            <Tip content={alt} follow>
-                <a className={styles.badge} href={url}>
+            <Tip content={alt}>
+                <a className={`${styles.badge} badge`} href={url}>
                     <iframe src={iframe} style={{border: "none"}} width="88" height="31" />
                 </a>
             </Tip>
@@ -23,8 +32,8 @@ export const Badge = ({
     }
 
     return (
-        <Tip content={alt} follow>
-            <a className={styles.badge} href={url}>
+        <Tip content={alt}>
+            <a className={`${styles.badge} badge`} href={url}>
                 <img src={src} alt={alt} />
             </a>
         </Tip>
