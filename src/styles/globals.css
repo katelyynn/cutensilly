@@ -65,6 +65,7 @@ table {
 
 
 
+.table-x, .table-y,
 :root {
     --default-hue: 171;
     --default-sat: 0.71;
@@ -137,14 +138,17 @@ body {
     font-weight: var(--font-weight);
     line-height: var(--line-height);
 
-    width: 100vw;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
 
     padding: 100px 0 !important;
+}
+
+html, body {
+    scrollbar-width: none;
+    scrollbar-gutter: stable both-edges;
 }
 
 main {
@@ -228,17 +232,12 @@ p {
 }
 
 h1 {
-    font-family: Gamja Flower;
-    color: var(--head);
-    font-size: 24px;
+    margin-bottom: 15px;
+    font-size: 16px;
     line-height: 20px;
-    margin-top: 10px;
-    margin-bottom: -5px;
-    font-weight: 600;
 
-    &:first-child {
-        margin-top: unset;
-    }
+    font-weight: 600;
+    color: oklch(var(--l3-c));
 }
 
 h2 {
@@ -248,30 +247,30 @@ h2 {
 }
 
 h3 {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     font-size: 14px;
 
     font-weight: var(--font-weight-md);
 }
 h4 {
-font-size: 20px;
-line-height: 24px;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 * {
-cursor: default;
-user-select: none;
+    cursor: default;
+    user-select: none;
 }
 
 a, button {
-cursor: pointer;
+    cursor: pointer;
 }
 
 
 .sep {
     display: block;
     width: 100%;
-    height: 10px;
+    height: 15px;
 }
 
 
@@ -356,61 +355,88 @@ position: fixed;
 
 
 table {
-text-align: left;
-margin-top: 10px;
+    text-align: left;
+    margin-top: 10px;
 
-table,
-thead, tbody {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+    thead, tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 
-thead {
-    margin-bottom: 8px;
-    font-weight: var(--font-weight);
-    font-size: 13px;
+    thead {
+        margin-bottom: 10px;
+        font-weight: var(--font-weight);
+        font-size: 13px;
+
+        tr {
+            th {
+                color: oklch(var(--c3));
+            }
+        }
+
+        border-bottom: 1px solid oklch(var(--b6));
+        padding-bottom: 10px;
+    }
 
     tr {
-    th {
-        color: oklch(var(--c3));
+        display: flex;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid oklch(var(--b6));
+            padding-bottom: 10px;
+        }
+
+        th:first-child {
+            flex: 1;
+        }
+
+        th:not(:first-child), td {
+            flex-shrink: 0;
+            width: 60px;
+
+            display: flex;
+            align-items: center;
+        }
     }
+
+    strong {
+        font-size: 14px;
+        font-weight: inherit;
+    }
+
+    th:not(:first-child),
+    td {
+        justify-content: center;
+        text-align: center;
     }
 }
 
-tr {
-    display: flex;
-
-    th:first-child {
-    flex: 1;
-    }
-
-    th:not(:first-child), td {
-    flex-shrink: 0;
-    width: 60px;
-
-    display: flex;
-    align-items: center;
-    }
+.table-x, .table-y {
+    width: 18px;
+    height: 18px;
+    stroke-width: 3px;
+    color: oklch(var(--l2-c));
 }
 
-strong {
-    font-size: 14px;
-    font-weight: inherit;
+.table-x {
+    --hue-over: 23;
+    --sat-over: 1.9;
+    --lit-over: 0.83;
+    opacity: 0.6;
 }
 
-th:not(:first-child),
-td {
-    justify-content: center;
-    text-align: center;
-}
+.table-y {
+    --hue-over: 143;
+    --sat-over: 1.49;
+    --lit-over: 0.82;
 }
 
 .explain,
 .context {
-font-size: 14px;
-opacity: 0.7;
-margin: 0;
+    font-size: 13px;
+    color: oklch(var(--c3));
+    margin: 0;
 }
 
 .green {

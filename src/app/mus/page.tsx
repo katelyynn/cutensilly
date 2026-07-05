@@ -5,7 +5,7 @@ export default function MusPage() {
     return (
         <KathyCardList>
             <KathyCard full>
-                <h3>my music collection!!</h3>
+                <h1>my music collection!!</h1>
                 <Mus />
             </KathyCard>
         </KathyCardList>

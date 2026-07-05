@@ -8,7 +8,8 @@ export default async function Home() {
     return (
         <KathyCardList>
             <KathyCard>
-                <p>i am a <b>self-taught programmer</b> mainly focusing on web dev for the meantime. you may know me from my popular <a href='https://bleh.katelyn.moe' target='_blank'>last.fm extension bleh</a> and similar things like that ^^</p>
+                <p>i am a <b>self-taught programmer</b> mainly focusing on web dev at the moment, though im exploring other avenues.</p>
+                <p>you may know me from <a href='https://bleh.katelyn.moe' target='_blank'>bleh, my last.fm extension</a>, and similar things like that ^^</p>
                 <p>i try my best and thats the most you should expect from people i thinks.. everyone should be kind</p>
                 <KathyQuote who={{
                     avatar: '/avatars/stella.png',

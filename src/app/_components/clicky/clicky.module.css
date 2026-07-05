@@ -8,7 +8,7 @@
 
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 
     &:hover {
         background: oklch(var(--h3) / 80%) !important;
@@ -25,6 +25,8 @@
     user-select: none;
 
     width: max-content;
+
+    cursor: pointer !important;
 
     &.icon {
         padding: 8px;
@@ -52,6 +54,13 @@
             font-size: 12px;
             color: inherit;
             font-weight: bold;
+        }
+    }
+
+    &:not(.tab) {
+        & > :global(.tabler-icon) {
+            width: 14px;
+            height: 14px;
         }
     }
 }

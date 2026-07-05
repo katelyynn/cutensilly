@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <KathyCardList>
         <KathyCard full>
-          <h3>projects</h3>
+          <h1>projects</h1>
           <KathyWorkList>
             <KathyWork
               title="bleh"

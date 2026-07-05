@@ -1,11 +1,12 @@
 "use client";
 
 import React from 'react';
-import style from "./nav.module.css";
+import styles from "./nav.module.css";
 
 import { usePathname } from 'next/navigation';
 import { KathyClicky } from '../clicky/clicky';
 import { Badge } from '../badge/badge';
+import { IconBriefcaseFilled, IconClefStaff, IconCrop, IconHeart, IconHeartFilled, IconMeteorFilled } from '@tabler/icons-react';
 
 export const KathyNav = () => {
     const route = usePathname();
@@ -23,14 +24,15 @@ export const KathyNav = () => {
 
     return (
         <>
-            <div className={style.side}>
-                <nav className={style.nav}>
+            <div className={styles.side}>
+                <nav className={styles.nav}>
                     <KathyClicky
                         elem="link"
                         link="/"
                         primary={route == '/'}
                         cloak="tab"
                     >
+                        <IconMeteorFilled className={styles.icon} />
                         me!
                     </KathyClicky>
                     <KathyClicky
@@ -39,6 +41,7 @@ export const KathyNav = () => {
                         primary={route == '/work'}
                         cloak="tab"
                     >
+                        <IconBriefcaseFilled className={styles.icon} />
                         projects
                     </KathyClicky>
                     <KathyClicky
@@ -47,6 +50,7 @@ export const KathyNav = () => {
                         primary={route == '/mus'}
                         cloak="tab"
                     >
+                        <IconClefStaff className={styles.icon} />
                         music
                     </KathyClicky>
                     <KathyClicky
@@ -55,6 +59,7 @@ export const KathyNav = () => {
                         primary={route == '/sponsor'}
                         cloak="tab"
                     >
+                        <IconHeartFilled className={styles.icon} />
                         sponsor
                     </KathyClicky>
                     <KathyClicky
@@ -63,10 +68,11 @@ export const KathyNav = () => {
                         primary={route == '/crop'}
                         cloak="tab"
                     >
+                        <IconCrop className={styles.icon} />
                         crop
                     </KathyClicky>
                 </nav>
-                <nav className={`${style.nav}`}>
+                <nav className={`${styles.nav}`}>
                     <h2>social:</h2>
                     <KathyClicky cloak="tab" colour="social" link={`https://last.fm/user/${links.lastfm}`} elem="a">
                         last.fm <i>@{links.lastfm}</i>
@@ -93,7 +99,7 @@ export const KathyNav = () => {
                         rym <i>@{links.rym}</i>
                     </KathyClicky>
                 </nav>
-                <nav className={`${style.nav}`}>
+                <nav className={`${styles.nav}`}>
                     <h2>badges:</h2>
                     <div className="badges">
                         <Badge url="https://katelyn.moe/8831.png" src="/8831.png" alt="katelyn.moe - add my badge!!" />
@@ -103,7 +109,7 @@ export const KathyNav = () => {
                         <Badge src="/darwin.gif" alt="sm" />
                         <Badge src="/apple.gif" alt="sm" />
                     </div>
-                    <div className={style.extra}>
+                    <div className={styles.extra}>
                         made with love by me, 2026
                     </div>
                 </nav>
@@ -114,7 +120,7 @@ export const KathyNav = () => {
 
 /*
 
-<nav className={`card side ${style.nav}`}>
+<nav className={`card side ${styles.nav}`}>
             <h2>social:</h2>
             <KathyClicky cloak="tab" colour="social" link="https://last.fm/user/clairedoll" elem="a">
                 last.fm <i>@clairedoll</i>
@@ -143,7 +149,7 @@ export const KathyNav = () => {
                 <img src='/darwin.gif' alt='darwin' />
                 <img src='/apple.gif' alt='apple' />
             </div>
-            <div className={style.extra}>
+            <div className={styles.extra}>
                 made with love by me, 2025
             </div>
         </nav> */
