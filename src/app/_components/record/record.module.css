@@ -60,9 +60,9 @@
     }
 
     :global(.avatar) {
-        width: 100%;
-        height: unset;
-        aspect-ratio: 1 / 1;
+        width: 100% !important;
+        height: unset !important;
+        aspect-ratio: 1 / 1 !important;
         border-radius: 4px;
 
         box-shadow: 0 4px 10px oklch(var(--b7));

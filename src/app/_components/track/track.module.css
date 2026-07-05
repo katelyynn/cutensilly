@@ -71,3 +71,10 @@
     flex-direction: column;
     width: 100%;
 }
+
+
+.heart {
+    width: 14px;
+    height: 14px;
+    color: oklch(var(--l3-c));
+}

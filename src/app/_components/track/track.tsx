@@ -4,6 +4,7 @@ import style from "./track.module.css";
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyLinkBlock } from '../link_block/link_block';
 import {KathySprite} from "~/app/_components/sprite/sprite";
+import { IconHeartFilled } from '@tabler/icons-react';
 
 export type Track = {
     avatar?: string,
@@ -60,7 +61,7 @@ export const KathyTrack = ({
                 <div className={style.title}>{title}</div>
                 {(artist) ? <div className={style.artist}><a href={`${artist.link}`}>{artist.title}</a></div> : null}
             </div>
-            {(love) ? <img src={'/heart.png'} width="10" height="10" /> : ''}
+            {(love) ? <IconHeartFilled className={`${style.heart} track-heart`} /> : ''}
             {(time) ? <div className={style.time}>{time}</div> : ''}
             {(active) ? <div className={style.active_time}>Listening now</div> : ''}
             <KathyLinkBlock link={`${link}`} type="a" />
