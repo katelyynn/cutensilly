@@ -1,7 +1,7 @@
 import {api} from '~/trpc/server';
 import {KathyRecordList, KathyRecord} from '~/app/_components/record/record';
 
-import type {Record} from '~/app/_components/record/record';
+import type {RecordItem} from '~/app/_components/record/record';
 
 export async function Mus() {
     const collection = await api.discogs.getMusicCollection(
@@ -14,7 +14,7 @@ export async function Mus() {
 
     return (
         <KathyRecordList>
-            {collection.collection.map((record: Record, i: number) => (
+            {collection.collection.map((record: RecordItem, i: number) => (
                 <KathyRecord
                     key={i}
                     id={record.id}

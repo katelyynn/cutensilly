@@ -5,7 +5,7 @@ import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
-import type { Record } from '~/app/_components/record/record';
+import type { RecordItem } from '~/app/_components/record/record';
 import { env } from 'process';
 
 export type MusicCollection = {
@@ -16,7 +16,7 @@ export type MusicCollection = {
     items: number;
     urls: never;
   }
-  collection: Record[]
+  collection: RecordItem[]
 }
 
 export const discogsRouter = createTRPCRouter({
@@ -32,7 +32,7 @@ export const discogsRouter = createTRPCRouter({
 
       const data = await response.json();
 
-      const collection: Record[] = [];
+      const collection: RecordItem[] = [];
 
       data.releases.forEach((item: {
           id: number,

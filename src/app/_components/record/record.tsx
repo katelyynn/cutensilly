@@ -20,13 +20,18 @@ interface Artist {
     role: string
 }
 
-export type Record = {
+export type RecordItem = {
     id: number,
     title: string,
     year: number,
     avatar: string,
     formats: Format[],
     artists: Artist[]
+}
+
+interface corrected {
+    artists: Record<string, string>,
+    names: Record<string, Record<string, string>>
 }
 
 export const KathyRecord = ({
@@ -36,10 +41,10 @@ export const KathyRecord = ({
     avatar,
     formats,
     artists
-}: Record) => {
+}: RecordItem) => {
     const first_artist = artists[0]?.name || '';
 
-    const corrected = {
+    const corrected: corrected = {
         artists: {
             'Rosé (2)': 'ROSÉ',
             'Charli XCX': 'Charli xcx',
