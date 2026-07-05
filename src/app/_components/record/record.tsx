@@ -37,6 +37,8 @@ export const KathyRecord = ({
     formats,
     artists
 }: Record) => {
+    const first_artist = artists[0]?.name || '';
+
     const corrected = {
         artists: {
             'Rosé (2)': 'ROSÉ',
@@ -46,7 +48,66 @@ export const KathyRecord = ({
             'Brakence': 'brakence'
         },
         names: {
-
+            'Rosé (2)': {
+                'Rosie': 'rosie'
+            },
+            'My Bloody Valentine': {
+                'Loveless': 'loveless'
+            },
+            'Charli XCX': {
+                "Brat And It's Completely Different But Also Still Brat": "brat and it's completely different but also still brat",
+                'Brat': 'brat',
+                "Brat And It's Completely Different": "brat and it's completely different"
+            },
+            'Ariana Grande': {
+                'Eternal Sunshine Deluxe: Brighter Days Ahead': 'eternal sunshine deluxe: brighter days ahead',
+                'Thank U, Next': 'thank u, next'
+            },
+            'julie (103)': {
+                'My Anti-Aircraft Friend': 'my anti-aircraft friend',
+                'Pushing Daisies ': 'pushing daisies'
+            },
+            'Denzel Curry': {
+                'Ta13oo': 'TA13OO'
+            },
+            'Sabrina Carpenter': {
+                'Fruitcake': 'fruitcake',
+                "Short N' Sweet (Deluxe)": "Short n' Sweet (Deluxe)",
+                "Short N' Sweet": "Short n' Sweet",
+                "Emails I Can't Send": "emails i can't send"
+            },
+            'Tyler, The Creator': {
+                'Chromakopia': 'CHROMAKOPIA',
+                'Call Me If You Get Lost': 'CALL ME IF YOU GET LOST',
+                'Igor': 'IGOR'
+            },
+            '21 Savage': {
+                'American Dream': 'american dream'
+            },
+            'Kanye West': {
+                'Ye': 'ye'
+            },
+            'Taylor Swift': {
+                'Folklore': 'folklore',
+                'Evermore': 'evermore',
+                'Reputation': 'reputation'
+            },
+            'Olivia Rodrigo': {
+                'Guts': 'GUTS',
+                'Sour': 'sour'
+            },
+            'Brakence': {
+                'Hypochondriac': 'hypochondriac'
+            },
+            'Glaive (4)': {
+                'Old Dog, New Tricks': 'old dog, new tricks'
+            },
+            'Travis Scott (2)': {
+                'Utopia': 'UTOPIA'
+            },
+            'Playboi Carti': {
+                'Music': 'MUSIC'
+            }
         }
     }
 
@@ -56,11 +117,17 @@ export const KathyRecord = ({
         return name;
     }
 
+    function replace_name(name: string) {
+        if (corrected.names[first_artist]?.[name]) return corrected.names[first_artist][name];
+
+        return name;
+    }
+
     return (
         <li className={style.record}>
             <KathyAvatar image={avatar} alt={`image for ${title}`} size="lg" lazy />
             <div className={style.info}>
-                <div className={style.title}>{title}</div>
+                <div className={style.title}>{replace_name(title)}</div>
                 <div className={style.artists}>
                     {artists.map((artist: Artist, i: number) => (
                         <span className={style.artist} key={i}>{replace_artist(artist.name).replace(/\s*\([^)]*\)\s*\d*$/, '')}{(artists.length > 1) ? <span className={style.join}>{(artist.join == '&') ? ' ' : ''}{artist.join} </span> : ''}</span>
