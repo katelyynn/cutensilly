@@ -18,6 +18,8 @@ import Timer from "./_components/time/time";
 import { Name } from "./_components/name/name";
 import { KathyQuote } from "./_components/quote/quote";
 
+import { ThemeProvider } from 'next-themes';
+
 const karla = Bricolage_Grotesque({
   subsets: ['latin'],
   weight: 'variable',
@@ -44,27 +46,29 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="en" className={karla.className}>
-      <body className="dark">
-        <TRPCReactProvider>
-          <NextTopLoader />
-          <main>
-            <KathyNav />
-            <div className="content">
-                <KathyCard>
-                    <div className="card-top">
-                        <Name />
-                        <KathyAvatar image="/avatars/kat.webp" alt="it's me!!" size="lg"/>
-                    </div>
-                    <p className="info-body">welcome to my corner of the internet~</p>
-                    <Timer />
-              </KathyCard>
-              {children}
-            </div>
-          </main>
-        </TRPCReactProvider>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" className={karla.className} suppressHydrationWarning>
+            <body>
+                <ThemeProvider>
+                    <TRPCReactProvider>
+                        <NextTopLoader />
+                        <main>
+                            <KathyNav />
+                            <div className="content">
+                                <KathyCard>
+                                    <div className="card-top">
+                                        <Name />
+                                        <KathyAvatar image="/avatars/kat.webp" alt="it's me!!" size="lg"/>
+                                    </div>
+                                    <p className="info-body">welcome to my corner of the internet~</p>
+                                    <Timer />
+                            </KathyCard>
+                            {children}
+                            </div>
+                        </main>
+                    </TRPCReactProvider>
+                </ThemeProvider>
+            </body>
+        </html>
+    );
 }

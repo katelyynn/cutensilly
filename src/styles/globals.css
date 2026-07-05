@@ -122,6 +122,30 @@ table {
     --g4: 0.92 calc(clamp(min(0), var(--sat), max(2)) * 0.7) var(--hue);
 
     --blur: blur(8px);
+
+    &[data-theme="dark"] {
+        --b4: 0.3 calc(var(--sat) * 0.15 * var(--sat-bg, 1)) var(--hue);
+        --b5: 0.25 calc(var(--sat) * 0.13 * var(--sat-bg, 1)) var(--hue);
+        --b6: 0.17 calc(var(--sat) * 0.1 * var(--sat-bg, 1)) var(--hue);
+        --b7: 0.2 calc(var(--sat) * 0.12 * var(--sat-bg, 1)) var(--hue);
+
+        --c1: 1 calc(var(--sat) * 0.06) var(--hue);
+        --c2: 0.85 calc(var(--sat) * 0.3) var(--hue);
+        --c3: 0.78 calc(var(--sat) * 0.4) var(--hue);
+
+        --l2-c: calc(clamp(min(0.7), var(--lit), max(1.1)) * 0.93) calc(clamp(min(0), var(--sat), max(2)) * 0.5) var(--hue);
+        --l3-c: var(--l3-c-lit) var(--l3-c-sat) var(--hue);
+        --l4-c: calc(clamp(min(0.7), var(--lit), max(1.1)) * 0.65) calc(clamp(min(0), var(--sat), max(2)) * 0.7) var(--hue);
+
+        --l3-c-sat: calc(clamp(min(0), var(--sat), max(2)) * 0.5);
+        --l3-c-lit: calc(clamp(min(0.7), var(--lit), max(1.1)) * 0.73);
+
+        --h3: var(--h3-lit) var(--h3-sat) var(--hue);
+        --h3-sat: calc(clamp(min(0), var(--sat), max(2)) * 0.42);
+        --h3-lit: calc(clamp(min(0.85), var(--lit), max(1.1)) * 0.78);
+
+        --h4: calc(clamp(min(0.7), var(--lit), max(1.1)) * 0.53) calc(clamp(min(0), var(--sat), max(2)) * 0.5) var(--hue);
+    }
 }
 
 body {
