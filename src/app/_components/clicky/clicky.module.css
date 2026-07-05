@@ -30,6 +30,10 @@
         padding: 8px;
     }
 
+    &:before {
+        display: none;
+    }
+
     :global(table) & {
         margin-top: 8px;
         font-size: 13px;

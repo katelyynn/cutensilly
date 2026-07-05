@@ -14,10 +14,15 @@
         display: inline-block;
         aspect-ratio: 4 / 3;
         object-fit: cover;
-        background: var(--bg);
-        clip-path: var(--radius-2);
+        background: oklch(var(--b6) / 50%);
+        border-radius: 6px;
         image-rendering: auto;
-        transition: transform var(--trans) var(--trans-function);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: oklch(var(--c3) / 60%);
+        font-size: 22px;
     }
 
     .info {

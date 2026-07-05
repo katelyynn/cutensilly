@@ -16,7 +16,9 @@ export const KathyNav = () => {
         github: 'katelyynn',
         aoty: 'clairedoll',
         anilist: 'rizukyun',
-        rym: 'kateshapedbox'
+        rym: 'kateshapedbox',
+        modrinth: 'kate',
+        rec: 'miku'
     }
 
     return (
@@ -75,8 +77,14 @@ export const KathyNav = () => {
                     <KathyClicky cloak="tab" colour="social" link={`https://github.com/${links.github}`} elem="a">
                         github <i>@{links.github}</i>
                     </KathyClicky>
+                    <KathyClicky cloak="tab" colour="social" link={`https://modrinth.com/user/${links.modrinth}`} elem="a">
+                        modrinth <i>@{links.modrinth}</i>
+                    </KathyClicky>
                     <KathyClicky cloak="tab" colour="social" link={`https://www.albumoftheyear.org/user/${links.aoty}`} elem="a">
                         aoty <i>@{links.aoty}</i>
+                    </KathyClicky>
+                    <KathyClicky cloak="tab" colour="social" link={`https://record.club/${links.rec}`} elem="a">
+                        record.club <i>@{links.rec}</i>
                     </KathyClicky>
                     <KathyClicky cloak="tab" colour="social" link={`https://anilist.co/user/${links.anilist}`} elem="a">
                         anilist <i>@{links.anilist}</i>

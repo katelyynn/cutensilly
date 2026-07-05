@@ -29,7 +29,7 @@ export const KathyWork = ({
 }: KathyWorkProps) => {
     return (
         <li className={style.work}>
-            {image ? <img className={style.image} src={image} alt={title} /> : <div className={style.image} />}
+            {image ? <img className={style.image} src={image} alt={title} /> : <div className={style.image}>{title}</div>}
             <div className={style.info}>
                 <h5 className={style.title}>{title}</h5>
                 <p className={style.years}>{years}</p>

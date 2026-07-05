@@ -2,4 +2,10 @@
     color: oklch(var(--c3));
     font-size: 13px;
     margin-top: 4px;
+    width: fit-content;
+
+    &:hover {
+        text-decoration: 1px underline dotted;
+        text-underline-offset: 3px;
+    }
 }

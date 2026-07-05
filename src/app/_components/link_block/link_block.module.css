@@ -6,4 +6,8 @@
     &:hover {
         background: unset !important;
     }
+
+    &:before {
+        display: none;
+    }
 }

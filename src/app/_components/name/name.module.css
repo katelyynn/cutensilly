@@ -16,9 +16,36 @@
 }
 
 .primary {
+    background: linear-gradient(90deg, oklch(var(--l3-c)), oklch(var(--l3-c)), oklch(var(--l2-c)), oklch(var(--l3-c)), oklch(var(--l3-c)));
     font-size: 20px;
     line-height: 30px;
     font-weight: 900;
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: yuzu 16s linear infinite;
+    text-decoration-color: oklch(var(--l3-c) / 30%);
+    text-decoration-thickness: 2;
+    text-decoration-style: dotted;
+    text-decoration-line: underline;
+
+    transition-property: text-decoration-color;
+    transition-duration: 0.4s;
+    transition-timing-function: var(--trans-function);
+
+    &:hover {
+        text-decoration-color: oklch(var(--l3-c) / 60%);
+        transition: none;
+    }
+}
+
+@keyframes yuzu {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 400% 0;
+    }
 }
 
 .secondary {

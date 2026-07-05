@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import styles from "./time.module.css";
+import Tip from '../tip/tip';
 
 export default function Timer() {
     const [time, setTime] = useState('');
@@ -29,6 +30,8 @@ export default function Timer() {
     }, []);
 
     return (
-        <div className={styles.time}>{time}</div>
+        <Tip content="this is my local time">
+            <div className={styles.time}>{time}</div>
+        </Tip>
     )
 }

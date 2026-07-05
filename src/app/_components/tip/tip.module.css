@@ -1,13 +1,15 @@
 .content {
     animation: tip 0.5s var(--trans-function);
     max-width: 200px;
-    background-color: oklch(var(--b4) / 90%);
+    background-color: oklch(var(--b4) / 80%);
     box-shadow: 0 3px 10px oklch(var(--b7) / 60%);
-    padding: 3px 4px;
+    padding: 5px 7px;
     border-radius: 8px;
     font-size: 13px;
     backdrop-filter: var(--blur) !important;
     z-index: 100000 !important;
+
+    transform-origin: var(--radix-tooltip-content-transform-origin);
 }
 
 @keyframes tip {

@@ -22,8 +22,8 @@ export default async function Home() {
               view_url={{
                 link: "https://bleh.katelyn.moe"
               }}
-              years="2022—2025"
-              image="https://bleh.katelyn.moe/img/bleh-void.jpg"
+              years="2022—2026"
+              image="https://bleh.katelyn.moe/appearance.webp"
             />
             <KathyWork
               title="bwaa"
@@ -39,22 +39,41 @@ export default async function Home() {
               image="bwaa-image.png"
             />
             <KathyWork
-              title="florence"
-              bio="the framework powering bleh (and soon bwaa)"
-              source_url={{
-                link: "https://github.com/katelyynn/florence",
-                external: true
-              }}
-              years="2025"
-            />
-            <KathyWork
               title="lotus"
               bio="name correction system for my last.fm projects, bleh and bwaa"
               source_url={{
                 link: "https://github.com/katelyynn/lotus",
                 external: true
               }}
-              years="2024—2025"
+              years="2024—2026"
+            />
+            <KathyWork
+              title="oracle"
+              bio="helper to link last.fm pages to musicbrainz ids for bleh"
+              source_url={{
+                link: "https://github.com/katelyynn/oracle",
+                external: true
+              }}
+              years="2025—2026"
+            />
+            <KathyWork
+              title="clover"
+              bio="all-in-one datapack/mod for pronouns & name colours in chat."
+              source_url={{
+                link: "https://github.com/katelyynn/florence",
+                external: true
+              }}
+              years="2025-2026"
+              image="https://cdn.modrinth.com/data/WG1hTtvW/images/c3574ffa271ce6daa5c3f0ae1f93e9cd7c743d13.png"
+            />
+            <KathyWork
+              title="florence"
+              bio="the framework powering bleh (and soon bwaa)"
+              source_url={{
+                link: "https://modrinth.com/datapack/clover",
+                external: true
+              }}
+              years="2022-2026"
             />
             <KathyWork
               title="yuzuha"
