@@ -106,6 +106,7 @@ export const KathyNav = () => {
                         <Badge url="https://hazey.moe" src="https://hazey.moe/banner.png" alt="hazey my lovely wife" />
                         <Badge url="https://kyu.re" iframe="https://kyu.re/button.min.html" alt="lívia!!" />
                         <Badge url="https://paige.moe" src="https://paige.moe/88x31.gif" alt="paige!!" />
+                        <Badge url="https://nin0.dev" src="https://files.nin0.dev/88x31.png" alt="nina!!" />
                         <Badge src="/sm.jpg" alt="sm" />
                         <Badge src="/darwin.gif" alt="sm" />
                         <Badge src="/apple.gif" alt="sm" />
