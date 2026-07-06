@@ -3,10 +3,9 @@ import style from "./track.module.css";
 
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyLinkBlock } from '../link_block/link_block';
-import {KathySprite} from "~/app/_components/sprite/sprite";
 import { IconHeartFilled } from '@tabler/icons-react';
 
-import { album_track as lotus_album_track, artist as lotus_artist } from '@tealmiku/lotus';
+import * as lotus from '@yuzu/lotus';
 import { DateTime } from 'luxon';
 
 export type Track = {
@@ -38,15 +37,15 @@ export const KathyTrack = ({
     link,
     mini = false
 }: Track) => {
-    if (lotus_artist) {
-        artist.title = correct_artist(artist.title, lotus_artist);
+    if (lotus.artist) {
+        artist.title = correct_artist(artist.title, lotus.artist);
     }
 
-    if (lotus_album_track) {
-        title = correct_item_by_artist(title, artist.title, lotus_album_track);
+    if (lotus.album_track) {
+        title = correct_item_by_artist(title, artist.title, lotus.album_track);
 
         if (album) {
-            album.title = correct_item_by_artist(album.title, artist.title, lotus_album_track);
+            album.title = correct_item_by_artist(album.title, artist.title, lotus.album_track);
         }
     }
 
