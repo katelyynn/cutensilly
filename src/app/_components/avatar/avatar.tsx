@@ -4,6 +4,7 @@ import { KathyLinkBlock } from '~/app/_components/link_block/link_block';
 import Tip from '../tip/tip';
 
 interface KathyAvatarProps {
+    className?: string,
     image?: string,
     size: 'sm' | 'md' | 'nm' | 'lg' | 'xl' | 'xxl',
     alt?: string,
@@ -12,6 +13,7 @@ interface KathyAvatarProps {
 }
 
 export const KathyAvatar = ({
+    className,
     image,
     size,
     alt,
@@ -20,7 +22,7 @@ export const KathyAvatar = ({
 }: KathyAvatarProps) => {
     return (
         <Tip content={alt || 'image'}>
-            <div className={`avatar ${style.avatar} ${style[`size-${size}`]}`}>
+            <div className={`avatar ${style.avatar} ${style[`size-${size}`]} ${className}`}>
                 {(image) ? <img draggable="false" src={image} alt={alt} loading={lazy ? 'lazy' : 'eager'} /> : ''}
                 {(link) ? <KathyLinkBlock link={link} type={link_type} /> : ''}
             </div>

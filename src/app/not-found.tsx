@@ -1,10 +1,15 @@
-import {KathyCard} from "~/app/_components/card/card";
+import { KathyCard, KathyCardList } from "~/app/_components/card/card";
+import styles from "./not-found.module.css";
 
 export default function NotFound() {
-    return <main>
-        <KathyCard>
-            <img className="top404" src="/404.png" alt="404" />
-            <h1>404 not found</h1>
-        </KathyCard>
-    </main>
+    return (
+        <KathyCardList>
+            <KathyCard>
+                <div className={styles.wut}>
+                    <div className={styles.top}>૮◞ ‸ ◟ ა</div>
+                    <div className={styles.bottom}>nothing found..</div>
+                </div>
+            </KathyCard>
+        </KathyCardList>
+    );
 }

@@ -131,7 +131,7 @@ table {
 
         --c1: 1 calc(var(--sat) * 0.06) var(--hue);
         --c2: 0.85 calc(var(--sat) * 0.3) var(--hue);
-        --c3: 0.78 calc(var(--sat) * 0.4) var(--hue);
+        --c3: 0.6 calc(var(--sat) * 0.3) var(--hue);
 
         --l2-c: calc(clamp(min(0.7), var(--lit), max(1.1)) * 0.93) calc(clamp(min(0), var(--sat), max(2)) * 0.5) var(--hue);
         --l3-c: var(--l3-c-lit) var(--l3-c-sat) var(--hue);
@@ -662,4 +662,16 @@ font-weight: 600;
 .info-body {
     margin: unset;
     padding-right: 100px;
+}
+
+.info-avatar {
+    box-shadow: 0 0 0 6px oklch(var(--b6));
+
+    transition-property: box-shadow;
+    transition-duration: 0.6s;
+    transition-timing-function: var(--trans-function);
+
+    &:hover {
+        box-shadow: 0 0 0 2px oklch(var(--h3) / 50%), 0 0 0 6px oklch(var(--b6));
+    }
 }

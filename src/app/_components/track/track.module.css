@@ -17,9 +17,9 @@
     }
 
     :global(.avatar) {
-        border-radius: 6px;
-        width: 36px;
-        height: 36px;
+        border-radius: 6px !important;
+        width: 36px !important;
+        height: 36px !important;
     }
 
     .info {
@@ -29,9 +29,42 @@
 
         .title {
             white-space: nowrap;
-            overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 400px;
+            max-width: 300px;
+
+            overflow: hidden;
+            position: relative;
+            width: fit-content;
+
+            padding: 0 3px;
+            margin: 0 -3px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                inset: -1px 0;
+                background: oklch(var(--h4) / 20%);
+                border-radius: 4px;
+
+                transform-origin: bottom;
+                transform: scaleY(0);
+
+                transition-property: transform;
+                transition-duration: 0.4s;
+                transition-timing-function: var(--trans-function);
+
+                pointer-events: none;
+            }
+
+            color: oklch(var(--l3-c));
+            text-decoration-line: underline;
+            text-decoration-thickness: 2;
+            text-decoration-color: oklch(var(--l3-c) / 20%);
+            text-underline-offset: 3px;
+
+            transition-property: text-decoration-color, color;
+            transition-duration: 0.4s;
+            transition-timing-function: var(--trans-function);
         }
 
         .artist {
@@ -53,6 +86,18 @@
 
     button {
         z-index: 1;
+    }
+
+    &:hover {
+        .title {
+            color: oklch(var(--l4-c));
+            text-decoration-color: oklch(var(--l3-c) / 60%);
+            transition: none;
+
+            &:before {
+                transform: scaleY(1);
+            }
+        }
     }
 }
 

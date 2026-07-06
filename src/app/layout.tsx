@@ -58,7 +58,7 @@ export default function RootLayout({
                                 <KathyCard>
                                     <div className="card-top">
                                         <Name />
-                                        <KathyAvatar image="/avatars/kat.webp" alt="it's me!!" size="lg"/>
+                                        <KathyAvatar className="info-avatar" image="/avatars/kat.webp" alt="it's me!!" size="lg"/>
                                     </div>
                                     <p className="info-body">welcome to my corner of the internet~</p>
                                     <Timer />
