@@ -6,7 +6,7 @@ import styles from "./nav.module.css";
 import { usePathname } from 'next/navigation';
 import { KathyClicky } from '../clicky/clicky';
 import { Badge } from '../badge/badge';
-import { IconBriefcaseFilled, IconClefStaff, IconCrop, IconHeart, IconHeartFilled, IconMeteorFilled } from '@tabler/icons-react';
+import { IconBriefcaseFilled, IconClefStaff, IconCrop, IconHeart, IconHeartFilled, IconMeteorFilled, IconNotebook } from '@tabler/icons-react';
 
 export const KathyNav = () => {
     const route = usePathname();
@@ -52,6 +52,15 @@ export const KathyNav = () => {
                     >
                         <IconClefStaff className={styles.icon} />
                         music
+                    </KathyClicky>
+                    <KathyClicky
+                        elem="link"
+                        link="/diary"
+                        primary={route.startsWith('/diary')}
+                        cloak="tab"
+                    >
+                        <IconNotebook className={styles.icon} />
+                        diary
                     </KathyClicky>
                     <KathyClicky
                         elem="link"

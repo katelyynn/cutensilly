@@ -1,0 +1,32 @@
+.title {
+    font-family: Instrument Serif, var(--font);
+    font-weight: 100 !important;
+    font-size: 22px !important;
+    line-height: 26px !important;
+}
+
+.date {
+    color: oklch(var(--c3));
+    font-size: 13px;
+}
+
+.content {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 10px 0;
+    margin: 20px 0;
+    border-top: 1px solid oklch(var(--b4));
+    border-bottom: 1px solid oklch(var(--b4));
+
+    em {
+        color: oklch(var(--c3));
+    }
+
+    strong {
+        color: oklch(var(--l3-c));
+    }
+}
+
+.credit {
+    color: oklch(var(--c3));
+}

@@ -44,3 +44,7 @@ yarn-error.log*
 
 # idea files
 .idea
+
+bun.lock
+
+package-lock.json
