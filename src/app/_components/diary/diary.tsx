@@ -2,7 +2,7 @@ import { IconNotebook } from "@tabler/icons-react";
 import styles from "./diary.module.css";
 import { KathyLinkBlock } from "../link_block/link_block";
 
-interface DiaryItemProps {
+export interface DiaryItemProps {
     id: string,
     title: string,
     date: string
