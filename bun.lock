@@ -11,7 +11,7 @@
         "@trpc/client": "^11.0.0-rc.446",
         "@trpc/react-query": "^11.0.0-rc.446",
         "@trpc/server": "^11.0.0-rc.446",
-        "@yuzu/lotus": "^2026.76.4",
+        "@yuzu/lotus": "^2026.76.5",
         "cropperjs": "1.6.2",
         "drizzle-orm": "^0.33.0",
         "famfamfam-silk": "^1.0.0",
@@ -384,7 +384,7 @@
 
     "@ungap/structured-clone": ["@ungap/structured-clone@1.3.0", "", {}, "sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g=="],
 
-    "@yuzu/lotus": ["@jsr/yuzu__lotus@2026.76.4", "https://npm.jsr.io/~/11/@jsr/yuzu__lotus/2026.76.4.tgz", {}, "sha512-DcmRuwx7CN/sn/rZWNRoAWoUy514PjngKpNMopgEDsXeL2XFIXqO3WSOVr0gnAhoe4FA2R/uahO08QsiGgUZig=="],
+    "@yuzu/lotus": ["@jsr/yuzu__lotus@2026.76.5", "https://npm.jsr.io/~/11/@jsr/yuzu__lotus/2026.76.5.tgz", {}, "sha512-MVJBnivqEdfENE0QKyR0B1X4itHb+yFDyBHQTCKFZi97OQdcy79llORQzw5Oq/bBz7xB/mVixrC8R//0OnvkRg=="],
 
     "acorn": ["acorn@8.14.1", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg=="],
 

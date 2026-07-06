@@ -9,56 +9,59 @@ import type { RecordItem } from '~/app/_components/record/record';
 import { env } from 'process';
 
 export type MusicCollection = {
-  pages: {
-    page: number;
-    pages: number;
-    per_page: number;
-    items: number;
-    urls: never;
-  }
-  collection: RecordItem[]
+    pages: {
+        page: number;
+        pages: number;
+        per_page: number;
+        items: number;
+        urls: never;
+    }
+    collection: RecordItem[]
 }
 
 export const discogsRouter = createTRPCRouter({
-  getMusicCollection: publicProcedure
-    .input(z.object({ username: z.string(), page: z.number() }))
-    .query(async ({ input }): Promise<MusicCollection> => {
-      const response = await fetch(
-        `https://api.discogs.com/users/${input.username}/collection/folders/0/releases?token=${env.DISCOGS_API_KEY}&per_page=100&sort=added&sort_order=desc&page=${input.page}`,
-        {
-          next: {revalidate: 60 * 60}
-        }
-      );
+    getMusicCollection: publicProcedure
+        .input(z.object({ username: z.string(), page: z.number() }))
+        .query(async ({ input }): Promise<MusicCollection> => {
+            const response = await fetch(
+                `https://api.discogs.com/users/${input.username}/collection/folders/0/releases?token=${env.DISCOGS_API_KEY}&per_page=100&sort=added&sort_order=desc&page=${input.page}`,
+                {
+                    cache: 'force-cache',
+                    next: {
+                        revalidate: 60 * 60
+                    }
+                }
+            );
 
-      const data = await response.json();
+            const data = await response.json();
 
-      const collection: RecordItem[] = [];
+            const collection: RecordItem[] = [];
 
-      data.releases.forEach((item: {
-          id: number,
-          basic_information: {
-              title: string,
-              year: number,
-              cover_image: string,
-              formats: [],
-              artists: []
-          }
-      }) => {
-        const info = item.basic_information;
+            data.releases.forEach((item: {
+                id: number,
+                basic_information: {
+                    title: string,
+                    year: number,
+                    cover_image: string,
+                    formats: [],
+                    artists: []
+                }
+            }) => {
+                const info = item.basic_information;
 
-        collection.push({
-          id: item.id,
-          title: info.title,
-          year: info.year,
-          avatar: info.cover_image,
-          formats: info.formats,
-          artists: info.artists
-        });
-      });
+                collection.push({
+                id: item.id,
+                title: info.title,
+                year: info.year,
+                avatar: info.cover_image,
+                formats: info.formats,
+                artists: info.artists
+                });
+            });
 
-      return {
-        pages: data.pagination,
-        collection: collection,
-      };
-    }),
+            return {
+                pages: data.pagination,
+                collection: collection,
+            };
+        }),
 });

@@ -13,18 +13,21 @@ export type Status = {
 }
 
 export const statusRouter = createTRPCRouter({
-  getStatus: publicProcedure
-    .input(z.object({ username: z.string() }))
-    .query(async ({ input }): Promise<Status> => {
-      const response = await fetch(
-        `https://status.cafe/users/${input.username}/status.json`,
-        {
-          next: {revalidate: 5 * 60}
-        }
-      );
+    getStatus: publicProcedure
+        .input(z.object({ username: z.string() }))
+        .query(async ({ input }): Promise<Status> => {
+            const response = await fetch(
+                `https://status.cafe/users/${input.username}/status.json`,
+                {
+                    cache: 'force-cache',
+                    next: {
+                        revalidate: 5 * 60
+                    }
+                }
+            );
 
-      const data = await response.json();
+            const data = await response.json();
 
-      return data;
-    }),
+            return data;
+        }),
 });
