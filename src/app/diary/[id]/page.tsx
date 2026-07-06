@@ -8,7 +8,7 @@ export default async function Diary({ params }: { params: Promise<{ id: string }
     const { id } = await params;
     const entry = getDiaryEntry(id);
 
-    if (!entry) {
+    if (!entry || !entry.data) {
         return NotFound();
     }
 
