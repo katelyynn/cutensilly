@@ -6,6 +6,9 @@ import { KathyLinkBlock } from '../link_block/link_block';
 import {KathySprite} from "~/app/_components/sprite/sprite";
 import { IconHeartFilled } from '@tabler/icons-react';
 
+import { album_track as lotus_album_track, artist as lotus_artist } from '@tealmiku/lotus';
+import { DateTime } from 'luxon';
+
 export type Track = {
     avatar?: string,
     title: string,
@@ -21,8 +24,6 @@ export type Track = {
     love?: boolean,
     active?: boolean,
     link: string,
-    lotus_album_track?: object,
-    lotus_artist?: object,
     mini?: boolean
 }
 
@@ -35,21 +36,16 @@ export const KathyTrack = ({
     love,
     active,
     link,
-    lotus_album_track,
-    lotus_artist,
     mini = false
 }: Track) => {
     if (lotus_artist) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         artist.title = correct_artist(artist.title, lotus_artist);
     }
 
     if (lotus_album_track) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         title = correct_item_by_artist(title, artist.title, lotus_album_track);
 
         if (album) {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             album.title = correct_item_by_artist(album.title, artist.title, lotus_album_track);
         }
     }
@@ -61,9 +57,13 @@ export const KathyTrack = ({
                 <div className={style.title}>{title}</div>
                 {(artist) ? <div className={style.artist}><a href={`${artist.link}`}>{artist.title}</a></div> : null}
             </div>
-            {(love) ? <IconHeartFilled className={`${style.heart} track-heart`} /> : ''}
-            {(time) ? <div className={style.time}>{time}</div> : ''}
-            {(active) ? <div className={style.active_time}>Listening now</div> : ''}
+            {(love) ? (
+                <div className={style.heartbg}>
+                    <IconHeartFilled className={style.heart} />
+                </div>
+            ) : ''}
+            {(time && !active) ? <div className={style.time}>{DateTime.fromSeconds(Number(time)).toRelative()}</div> : ''}
+            {(active) ? <div className={style.time}>Listening now</div> : ''}
             <KathyLinkBlock link={`${link}`} type="a" />
         </li>
     );

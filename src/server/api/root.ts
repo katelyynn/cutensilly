@@ -2,7 +2,6 @@ import { postRouter } from "~/server/api/routers/post";
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 import { lastfmRouter } from './routers/lastfm';
 import { discogsRouter } from './routers/discogs';
-import {lotusRouter} from './routers/lotus';
 import { statusRouter } from "./routers/status";
 import { marineRouter } from "./routers/marine";
 
@@ -15,7 +14,6 @@ export const appRouter = createTRPCRouter({
   post: postRouter,
   lastfm: lastfmRouter,
   discogs: discogsRouter,
-  lotus: lotusRouter,
   status: statusRouter,
   marine: marineRouter
 });

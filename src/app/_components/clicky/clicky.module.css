@@ -18,7 +18,7 @@
         background: oklch(var(--h3) / 60%) !important;
     }
 
-    color: var(--col) !important;
+    color: oklch(var(--c2)) !important;
     font: inherit;
     text-decoration: none !important;
 
@@ -58,6 +58,8 @@
     }
 
     &:not(.tab) {
+        color: oklch(var(--b7)) !important;
+
         & > :global(.tabler-icon) {
             width: 14px;
             height: 14px;

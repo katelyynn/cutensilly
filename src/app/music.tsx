@@ -4,34 +4,31 @@ import { RecentTracks } from '~/server/api/routers/lastfm';
 
 export async function Mus() {
     const recent_tracks: RecentTracks = await api.lastfm.getRecentTracks(
-        {username: "dressupdarling", limit: 1}
+        {username: "dressupdarling", limit: 5}
     );
 
     if (!recent_tracks || !recent_tracks.tracks || recent_tracks.tracks.length == 0) {
         return <div className="alert">no data available</div>;
     }
 
-    const track = recent_tracks.tracks[0]!;
-
     return (
         <>
-            {track.active ? (
-                <h3 className="status online">actively listening to:</h3>
-            ) : (
-                <h3 className="status offline">my last song was..</h3>
-            )}
+            <h3>listening history</h3>
             <KathyTrackList>
-                <KathyTrack
-                    avatar={track.avatar}
-                    title={track.title}
-                    artist={track.artist}
-                    album={track.album}
-                    time={track.time}
-                    love={track.love}
-                    active={track.active}
-                    link={track.link}
-                    mini
-                />
+                {recent_tracks.tracks.map((track, i) => (
+                    <KathyTrack
+                        avatar={track.avatar}
+                        title={track.title}
+                        artist={track.artist}
+                        album={track.album}
+                        time={track.time}
+                        love={track.love}
+                        active={track.active}
+                        link={track.link}
+                        mini
+                        key={i}
+                    />
+                ))}
             </KathyTrackList>
         </>
     );

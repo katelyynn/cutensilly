@@ -1,7 +1,6 @@
 .track {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
 
     color: inherit;
     font: inherit;
@@ -12,14 +11,20 @@
     cursor: pointer;
     user-select: none;
 
-    &:not(.active) {
-        opacity: 0.8;
-    }
-
     :global(.avatar) {
         border-radius: 6px !important;
-        width: 36px !important;
-        height: 36px !important;
+        width: 96px !important;
+        height: 96px !important;
+
+        box-shadow: 0 4px 10px oklch(var(--b7) / 70%);
+
+        transform: translateY(0) scale(1);
+
+        transition-property: transform;
+        transition-duration: 0.6s;
+        transition-timing-function: var(--trans-function);
+
+        margin-bottom: 6px;
     }
 
     .info {
@@ -27,10 +32,14 @@
         pointer-events: none;
         flex: 1;
 
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
         .title {
             white-space: nowrap;
             text-overflow: ellipsis;
-            max-width: 300px;
+            max-width: 96px;
 
             overflow: hidden;
             position: relative;
@@ -74,7 +83,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 400px;
+            max-width: 96px;
 
             a {
                 color: inherit;
@@ -98,23 +107,39 @@
                 transform: scaleY(1);
             }
         }
+
+        :global(.avatar) {
+            transform: translateY(-1px) scale(1.03);
+        }
     }
 }
 
-.mini {
-    .time, .active_time {
-        display: none;
-    }
-
-    .title, .artist, .album {
-        max-width: 250px;
-    }
+.time {
+    font-size: 12px;
+    color: oklch(var(--c3));
 }
 
 .list {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    gap: 8px;
+    overflow: hidden;
+    padding: 5px 15px;
+    margin: -5px -15px;
+
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100px;
+        display: block;
+
+        background: linear-gradient(90deg, transparent, oklch(var(--b5)));
+        pointer-events: none;
+    }
 }
 
 
@@ -122,4 +147,19 @@
     width: 14px;
     height: 14px;
     color: oklch(var(--l3-c));
+}
+
+.heartbg {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: oklch(var(--b6) / 60%);
+    padding: 4px;
+    border-radius: 6px;
+    backdrop-filter: var(--blur);
 }

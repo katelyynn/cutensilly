@@ -41,6 +41,7 @@ export const lastfmRouter = createTRPCRouter({
               "#text": string
           },
           date: {
+              uts: string,
               "#text": string
           },
           loved: string,
@@ -60,7 +61,7 @@ export const lastfmRouter = createTRPCRouter({
               title: track.album?.["#text"],
               link: track.album?.["#text"]
           },
-          time: track.date?.["#text"],
+          time: track.date?.uts,
           love: (track.loved == "1"),
           active: track["@attr"]?.nowplaying,
           link: track.url
