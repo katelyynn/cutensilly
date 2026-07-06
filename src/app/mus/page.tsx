@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { KathyCard, KathyCardList } from '../_components/card/card';
 import { Mus } from './mus';
 
@@ -6,7 +7,9 @@ export default function MusPage() {
         <KathyCardList>
             <KathyCard full>
                 <h1>my music collection!!</h1>
-                <Mus />
+                <Suspense>
+                    <Mus />
+                </Suspense>
             </KathyCard>
         </KathyCardList>
     );

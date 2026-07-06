@@ -1,40 +1,47 @@
 import Tip from "../tip/tip";
 import styles from "./badge.module.css";
 
+interface BadgeProps {
+    url?: string,
+    src?: string,
+    alt: string,
+    iframe?: string
+}
+
 export const Badge = ({
     url,
     src,
     alt,
     iframe
-}: {
-    url?: string,
-    src?: string,
-    alt: string,
-    iframe?: string
-}) => {
+}: BadgeProps) => {
+    let inner;
+
+    if (src) {
+        inner = (
+            <div className={styles.inner}>
+                <img src={src} alt={alt} />
+            </div>
+        )
+    } else if (iframe) {
+        inner = (
+            <div className={styles.inner}>
+                <iframe src={iframe} style={{border: "none"}} width="88" height="31" />
+            </div>
+        )
+    }
 
     if (!url) {
         return (
             <a className={`${styles.badge} badge`}>
-                <img src={src} alt={alt} />
+                {inner}
             </a>
-        );
-    }
-
-    if (iframe) {
-        return (
-            <Tip content={alt}>
-                <a className={`${styles.badge} badge`} href={url}>
-                    <iframe src={iframe} style={{border: "none"}} width="88" height="31" />
-                </a>
-            </Tip>
         );
     }
 
     return (
         <Tip content={alt}>
             <a className={`${styles.badge} badge`} href={url}>
-                <img src={src} alt={alt} />
+                {inner}
             </a>
         </Tip>
     );

@@ -1,15 +1,16 @@
 .badge {
-    width: 88px;
-    height: 31px;
-    transition-property: transform, opacity;
+    transition-property: opacity, scale;
     transition-duration: var(--trans);
     transition-timing-function: var(--trans-function);
     image-rendering: auto;
-    border-radius: 4px;
-    overflow: hidden;
+
+    padding: 5px;
+    margin: -5px;
+
+    scale: 1;
 
     &:hover {
-        transform: scale(1.05);
+        scale: 1.05;
     }
 
     iframe {
@@ -19,4 +20,11 @@
     &:before {
         display: none;
     }
+}
+
+.inner {
+    width: 88px;
+    height: 31px;
+    border-radius: 4px;
+    overflow: hidden;
 }

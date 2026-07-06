@@ -597,7 +597,7 @@ font-weight: 600;
 
     &:has(> .badge:hover) {
         & > .badge:not(:hover) {
-            opacity: 0.2;
+            opacity: 0.3;
         }
     }
 }

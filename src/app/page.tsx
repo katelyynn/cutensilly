@@ -3,6 +3,7 @@ import { KathyQuote } from '~/app/_components/quote/quote';
 
 import {Mus} from "~/app/music";
 import { StatusAPI } from './_components/status/status_api';
+import { Suspense } from 'react';
 
 export default async function Home() {
     return (
@@ -20,9 +21,13 @@ export default async function Home() {
                 </KathyQuote>
             </KathyCard>
             <KathyCard classname="music">
-                <Mus />
+                <Suspense>
+                    <Mus />
+                </Suspense>
                 <div className="sep" />
-                <StatusAPI />
+                <Suspense>
+                    <StatusAPI />
+                </Suspense>
             </KathyCard>
         </KathyCardList>
     );
