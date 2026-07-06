@@ -4,7 +4,7 @@ import style from "./record.module.css";
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyLinkBlock } from '../link_block/link_block';
 
-interface Format {
+export interface Format {
     qty: string,
     descriptions: string[],
     name: string
@@ -26,7 +26,8 @@ export type RecordItem = {
     year: number,
     avatar: string,
     formats: Format[],
-    artists: Artist[]
+    artists: Artist[],
+    cd: boolean
 }
 
 interface corrected {
@@ -40,7 +41,8 @@ export const KathyRecord = ({
     year,
     avatar,
     formats,
-    artists
+    artists,
+    cd
 }: RecordItem) => {
     const first_artist = artists[0]?.name || '';
 
@@ -62,7 +64,9 @@ export const KathyRecord = ({
             'Charli XCX': {
                 "Brat And It's Completely Different But Also Still Brat": "brat and it's completely different but also still brat",
                 'Brat': 'brat',
-                "Brat And It's Completely Different": "brat and it's completely different"
+                "Brat And It's Completely Different": "brat and it's completely different",
+                "How I'm Feeling Now": "how i'm feeling now",
+                'Crash': 'CRASH'
             },
             'Ariana Grande': {
                 'Eternal Sunshine Deluxe: Brighter Days Ahead': 'eternal sunshine deluxe: brighter days ahead',
@@ -108,10 +112,15 @@ export const KathyRecord = ({
                 'Old Dog, New Tricks': 'old dog, new tricks'
             },
             'Travis Scott (2)': {
-                'Utopia': 'UTOPIA'
+                'Utopia': 'UTOPIA',
+                'Astroworld': 'ASTROWORLD'
             },
             'Playboi Carti': {
                 'Music': 'MUSIC'
+            },
+            'Billie Eilish': {
+                'Hit Me Hard And Soft': 'HIT ME HARD AND SOFT',
+                'When We All Fall Asleep, Where Do We Go?': 'WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?'
             }
         }
     }
@@ -130,7 +139,9 @@ export const KathyRecord = ({
 
     return (
         <li className={style.record}>
-            <KathyAvatar image={avatar} alt={`image for ${title}`} size="lg" lazy />
+            <div className={`${style.avatar} ${formats[0]?.name.toLowerCase().startsWith('cd') ? style.cd : ''}`}>
+                <KathyAvatar image={avatar} alt={`image for ${title}`} size="lg" lazy />
+            </div>
             <div className={style.info}>
                 <div className={style.title}>{replace_name(title)}</div>
                 <div className={style.artists}>
@@ -141,8 +152,8 @@ export const KathyRecord = ({
                 <div className={style.extras}>
                     <div className={style.year}>{(year > 0) ? year : '-'}</div>
                     {(formats[0]?.descriptions[0]) ? <div className={style.descriptor}>{formats[0].descriptions[0]}</div> : ''}
-                    {formats[0] ? <div className={style.format} key={0}>({formats[0].name})</div> : ''}
                 </div>
+                {formats[0] ? <div className={style.format} key={0}>({formats[0].name})</div> : ''}
             </div>
             <KathyLinkBlock link={`https://www.discogs.com/release/${id}`} type="a" />
         </li>

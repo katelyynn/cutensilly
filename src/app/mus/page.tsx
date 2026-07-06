@@ -5,12 +5,9 @@ import { Mus } from './mus';
 export default function MusPage() {
     return (
         <KathyCardList>
-            <KathyCard full>
-                <h1>my music collection!!</h1>
-                <Suspense>
-                    <Mus />
-                </Suspense>
-            </KathyCard>
+            <Suspense>
+                <Mus />
+            </Suspense>
         </KathyCardList>
     );
 }

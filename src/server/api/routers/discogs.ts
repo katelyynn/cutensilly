@@ -5,7 +5,7 @@ import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
-import type { RecordItem } from '~/app/_components/record/record';
+import type { Format, RecordItem } from '~/app/_components/record/record';
 import { env } from 'process';
 
 export type MusicCollection = {
@@ -43,19 +43,24 @@ export const discogsRouter = createTRPCRouter({
                     title: string,
                     year: number,
                     cover_image: string,
-                    formats: [],
+                    formats: Format[],
                     artists: []
                 }
             }) => {
                 const info = item.basic_information;
 
+                const format = info.formats[0]?.name.toLowerCase() || '';
+
+                const cd = format.startsWith('cd');
+
                 collection.push({
-                id: item.id,
-                title: info.title,
-                year: info.year,
-                avatar: info.cover_image,
-                formats: info.formats,
-                artists: info.artists
+                    id: item.id,
+                    title: info.title,
+                    year: info.year,
+                    avatar: info.cover_image,
+                    formats: info.formats,
+                    artists: info.artists,
+                    cd
                 });
             });
 
