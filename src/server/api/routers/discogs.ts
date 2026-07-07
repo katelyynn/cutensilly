@@ -45,7 +45,8 @@ export const discogsRouter = createTRPCRouter({
                     cover_image: string,
                     formats: Format[],
                     artists: []
-                }
+                },
+                notes?: { field_id: number, value: string }[]
             }) => {
                 const info = item.basic_information;
 
@@ -60,7 +61,8 @@ export const discogsRouter = createTRPCRouter({
                     avatar: info.cover_image,
                     formats: info.formats,
                     artists: info.artists,
-                    cd
+                    cd,
+                    notes: item.notes?.filter(note => note.field_id == 3)
                 });
             });
 

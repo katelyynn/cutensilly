@@ -3,6 +3,8 @@ import style from "./record.module.css";
 
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
 import { KathyLinkBlock } from '../link_block/link_block';
+import Tip from '../tip/tip';
+import { IconInfoCircle } from '@tabler/icons-react';
 
 export interface Format {
     qty: string,
@@ -27,7 +29,8 @@ export type RecordItem = {
     avatar: string,
     formats: Format[],
     artists: Artist[],
-    cd: boolean
+    cd: boolean,
+    notes?: { field_id: number, value: string }[]
 }
 
 interface corrected {
@@ -42,7 +45,8 @@ export const KathyRecord = ({
     avatar,
     formats,
     artists,
-    cd
+    cd,
+    notes
 }: RecordItem) => {
     const first_artist = artists[0]?.name || '';
 
@@ -137,7 +141,7 @@ export const KathyRecord = ({
         return name;
     }
 
-    return (
+    let elem = (
         <li className={style.record}>
             <div className={`${style.avatar} ${formats[0]?.name.toLowerCase().startsWith('cd') ? style.cd : ''}`}>
                 <KathyAvatar image={avatar} alt={`image for ${title}`} size="lg" lazy />
@@ -153,11 +157,24 @@ export const KathyRecord = ({
                     <div className={style.year}>{(year > 0) ? year : '-'}</div>
                     {(formats[0]?.descriptions[0]) ? <div className={style.descriptor}>{formats[0].descriptions[0]}</div> : ''}
                 </div>
-                {formats[0] ? <div className={style.format} key={0}>({formats[0].name})</div> : ''}
+                {(notes && notes[0]) ? <div className={style.note}><IconInfoCircle className={style.noteicon} /> {notes[0].value}</div> : ''}
             </div>
             <KathyLinkBlock link={`https://www.discogs.com/release/${id}`} type="a" />
         </li>
     );
+
+    return elem;
+
+    /*
+
+    if (!notes || notes.length == 0 || notes[0]!.value.length < 14) return elem;
+
+    return (
+        <Tip content={notes[0]!.value}>
+            {elem}
+        </Tip>
+    )
+    */
 }
 
 export const KathyRecordList = ({ children } : { children: React.ReactNode }) => {

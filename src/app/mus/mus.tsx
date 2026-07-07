@@ -31,6 +31,7 @@ export async function Mus() {
                             formats={record.formats}
                             artists={record.artists}
                             cd={record.cd}
+                            notes={record.notes}
                         />
                     ))}
                 </KathyRecordList>
@@ -48,6 +49,7 @@ export async function Mus() {
                             formats={record.formats}
                             artists={record.artists}
                             cd={record.cd}
+                            notes={record.notes}
                         />
                     ))}
                 </KathyRecordList>
