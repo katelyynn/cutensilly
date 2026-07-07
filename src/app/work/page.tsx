@@ -60,7 +60,7 @@ export default async function Home() {
               title="clover"
               bio="all-in-one datapack/mod for pronouns & name colours in chat."
               source_url={{
-                link: "https://github.com/katelyynn/florence",
+                link: "https://modrinth.com/datapack/clover",
                 external: true
               }}
               years="2025-2026"
@@ -70,7 +70,7 @@ export default async function Home() {
               title="florence"
               bio="the framework powering bleh (and soon bwaa)"
               source_url={{
-                link: "https://modrinth.com/datapack/clover",
+                link: "https://github.com/katelyynn/florence",
                 external: true
               }}
               years="2022-2026"
