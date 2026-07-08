@@ -1,8 +1,8 @@
 import { KathyCard, KathyCardList } from '~/app/_components/card/card';
 import { KathyQuote } from '~/app/_components/quote/quote';
 
-import {Mus} from "~/app/music";
-import { StatusAPI } from './_components/status/status_api';
+import {Mus} from "./music";
+import { StatusAPI } from '~/app/_components/status/status_api';
 import { Suspense } from 'react';
 
 export default async function Home() {

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { KathyCard, KathyCardList } from '../_components/card/card';
+import { KathyCard, KathyCardList } from '~/app/_components/card/card';
 import { Mus } from './mus';
 
 export default function MusPage() {

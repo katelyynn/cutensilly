@@ -1,6 +1,6 @@
 import { getDiaryEntries } from "~/lib/diary";
-import { KathyCard, KathyCardList } from "../_components/card/card";
-import { DiaryItemProps, DiaryList } from "../_components/diary/diary";
+import { KathyCard, KathyCardList } from "~/app/_components/card/card";
+import { DiaryItemProps, DiaryList } from "~/app/_components/diary/diary";
 
 export default function Diary() {
     const entries: DiaryItemProps[] = getDiaryEntries();
