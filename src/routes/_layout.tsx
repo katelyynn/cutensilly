@@ -1,4 +1,7 @@
 import { css } from '@404/aether';
+import { Content } from '../components/content.tsx';
+import { Side } from '../components/side.tsx';
+import { Nav, NavList } from '../components/nav.tsx';
 
 const Styled = css`
 	/* http://meyerweb.com/eric/tools/css/reset/
@@ -235,6 +238,12 @@ const Styled = css`
 		unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
 	}
 
+	html,
+	* {
+		scrollbar-width: none;
+		scrollbar-gutter: stable both-edges;
+	}
+
 	body {
 		font-family: var(--font);
 		font-size: var(--font-size);
@@ -242,6 +251,12 @@ const Styled = css`
 		font-weight: var(--font-weight);
 		background: oklch(var(--b6));
 		color: oklch(var(--c2));
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
+		padding: 100px 0;
 	}
 `;
 
@@ -249,13 +264,19 @@ export default function Layout({
 	children,
 }: { children: unknown }) {
 	return (
-		<Styled.html>
+		<Styled.html data-theme='dark'>
 			<head>
 				<title>yuzu.pet</title>
 			</head>
 			<body>
-				<p>asasas</p>
-				{children}
+				<main>
+					<Content>
+						{children}
+					</Content>
+					<Side>
+						<NavList />
+					</Side>
+				</main>
 			</body>
 		</Styled.html>
 	);
