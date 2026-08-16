@@ -1,0 +1,53 @@
+{
+	"tasks": {
+		"dev": "deno run -P=default --watch --allow-net src/mod.ts",
+		"build": "deno run -P=default src/mod.ts"
+	},
+	"imports": {
+		"@404/aether": "jsr:@404/aether@^0.1.0",
+		"@std/assert": "jsr:@std/assert@1"
+	},
+	"permissions": {
+		"default": {
+			"net": true,
+			"read": true,
+			"run": true,
+			"env": true,
+			"write": true
+		}
+	},
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "@404/aether",
+		"lib": [
+			"deno.ns",
+			"dom",
+			"dom.iterable"
+		]
+	},
+	"fmt": {
+		"singleQuote": true,
+		"indentWidth": 4,
+		"useTabs": true,
+		"exclude": [
+			"bleh.user.js",
+			"bleh.user.css",
+			"ext/*",
+			"**/*.md"
+		]
+	},
+	"lint": {
+		"rules": {
+			"exclude": [
+				"no-sloppy-imports",
+				"no-window"
+			]
+		},
+		"exclude": [
+			"bleh.user.js",
+			"bleh.user.css",
+			"ext/*",
+			"**/*.md"
+		]
+	}
+}
