@@ -4,6 +4,7 @@ const Styled = css`
 	:scope {
 		display: flex;
 		flex-direction: column;
+		gap: 10px;
 		position: relative;
 	}
 `;

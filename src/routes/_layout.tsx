@@ -257,6 +257,90 @@ const Styled = css`
 		align-items: center;
 		gap: 40px;
 		padding: 100px 0;
+		cursor: default;
+	}
+
+	main {
+		display: flex;
+	}
+
+	strong {
+		color: oklch(var(--l4-c));
+		font-weight: var(--font-weight-md);
+	}
+
+	p {
+		margin-top: 10px;
+
+		&:first-child {
+			margin-top: unset;
+		}
+	}
+
+	h1 {
+		background: linear-gradient(90deg,oklch(var(--l3-c)),oklch(var(--l3-c)),oklch(var(--l2-c)),oklch(var(--l3-c)),oklch(var(--l3-c)));
+		font-size: 20px;
+		line-height: 30px;
+		font-weight: 900;
+		background-size: 400% 100%;
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		animation: yuzu 16s linear infinite;
+
+		text-decoration-color: oklch(var(--l3-c)/30%);
+		text-decoration-style: dotted;
+		text-decoration-line: underline;
+
+		transition-property: text-decoration-color, -webkit-text-decoration-color;
+		transition-duration: 0.4s;
+		transition-timing-function: var(--trans-function);
+	}
+
+	@keyframes yuzu {
+		0% {
+			background-position: 0 0;
+		}
+		to {
+			background-position: 400% 0;
+		}
+	}
+
+	a {
+		position: relative;
+		color: oklch(var(--l3-c));
+		text-decoration-line: underline;
+		text-decoration-color: oklch(var(--l3-c)/20%);
+		text-underline-offset: 3px;
+		transition-property: text-decoration-color, color,
+			-webkit-text-decoration-color;
+		transition-duration: 0.4s;
+		transition-timing-function: var(--trans-function);
+
+		&:before {
+			content: "";
+			position: absolute;
+			inset: -1px -3px;
+			background: oklch(var(--h4) /20%);
+			border-radius: 4px;
+			transform-origin: bottom;
+			transform: scaleY(0);
+			transition-property: transform;
+			transition-duration: .4s;
+			transition-timing-function: var(--trans-function);
+			pointer-events: none;
+		}
+
+		&:hover {
+			color: oklch(var(--l4-c));
+			text-decoration-color: oklch(var(--l3-c)/60%);
+			transition: none;
+
+			&:before {
+				transform: scaleY(1);
+			}
+		}
 	}
 `;
 

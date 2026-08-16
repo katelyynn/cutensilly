@@ -46,6 +46,7 @@ const StyledNav = css`
 		width: 100%;
 
 		&:hover {
+			color: oklch(var(--c2));
 			background: oklch(var(--b5) / 80%);
 			transition: none;
 		}
@@ -53,6 +54,10 @@ const StyledNav = css`
 		&[aria-selected] {
 			background: oklch(var(--b5));
 			font-weight: var(--font-weight-md);
+		}
+
+		&:before {
+			display: none;
 		}
 	}
 `;
