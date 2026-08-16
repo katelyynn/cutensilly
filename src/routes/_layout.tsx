@@ -5,6 +5,7 @@ import { Nav, NavList } from '../components/nav.tsx';
 import { Card } from '../components/card.tsx';
 import { Table, TableEntry } from '../components/table.tsx';
 import { Logo } from '../components/logo.tsx';
+import { Time } from '../components/time.tsx';
 
 export const styles = css`
 	/* http://meyerweb.com/eric/tools/css/reset/
@@ -142,9 +143,9 @@ export const styles = css`
 	}
 
 	html {
-		--default-hue: 171;
-		--default-sat: 0.71;
-		--default-lit: 1.06;
+		--default-hue: 11;
+		--default-sat: 0.95;
+		--default-lit: 0.94;
 
 		--hue: var(--hue-over, var(--hue-album, var(--hue-user, var(--hue-seasonal, var(--default-hue)))));
 		--sat-raw: var(--sat-over, var(--sat-album, var(--sat-user, var(--sat-seasonal, var(--default-sat)))));
@@ -384,12 +385,17 @@ export default function Layout({
 						<Card>
 							<h1>yuzu.pet</h1>
 							<p>welcome to my corner of the interwebs ~</p>
+							<div class='avatar'>
+								<img src='/avi.webp' alt='me' />
+							</div>
 							<Table>
 								<TableEntry k='prns'>it/she</TableEntry>
 								<TableEntry k='height'>
 									about 20cm max
 								</TableEntry>
-								<TableEntry k='time'>23:01</TableEntry>
+								<TableEntry k='time'>
+									<Time />
+								</TableEntry>
 							</Table>
 						</Card>
 						{children}
