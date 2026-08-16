@@ -1,6 +1,6 @@
 import { KathyCard, KathyCardList } from '~/app/_components/card/card';
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
-import { KathyClicky } from '~/app/_components/clicky/clicky';
+import { KathyClicky } from '../_components/clicky/clicky';
 import { KathyPerk, KathyPerkBig, KathyPerkBigList, KathyPerkList } from '~/app/_components/perk/perk';
 import { IconCheck, IconChevronRight, IconX } from '@tabler/icons-react';
 

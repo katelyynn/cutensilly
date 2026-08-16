@@ -2,7 +2,7 @@ import {api} from '~/trpc/server';
 import {KathyRecordList, KathyRecord} from '~/app/_components/record/record';
 
 import type {RecordItem} from '~/app/_components/record/record';
-import { KathyCard } from '~/app/_components/card/card';
+import { KathyCard } from '../_components/card/card';
 
 export async function Mus() {
     const collection = await api.discogs.getMusicCollection(

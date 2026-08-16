@@ -2,7 +2,7 @@ import Link from "next/link";
 import { KathyCard, KathyCardList } from '~/app/_components/card/card';
 import { KathyQuote } from '~/app/_components/quote/quote';
 import { KathyAvatar } from '~/app/_components/avatar/avatar';
-import { KathyWork, KathyWorkList } from '~/app/_components/work/work';
+import { KathyWork, KathyWorkList } from '../_components/work/work';
 import {KathyClicky} from "~/app/_components/clicky/clicky";
 import Image from "next/image";
 

@@ -6,14 +6,17 @@ import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { KathyNav } from '~/app/_components/nav/nav';
+import { KathyFooter } from '~/app/_components/footer/footer';
 
 import NextTopLoader from 'nextjs-toploader';
 
-import { Bricolage_Grotesque, Instrument_Serif } from 'next/font/google';
-import { KathyCard } from "../_components/card/card";
-import { KathyAvatar } from "../_components/avatar/avatar";
-import Timer from "../_components/time/time";
-import { Name } from "../_components/name/name";
+import { Bricolage_Grotesque, Gamja_Flower, Hanken_Grotesk, Instrument_Serif, Karla } from 'next/font/google';
+import Link from 'next/link';
+import { KathyCard } from "./_components/card/card";
+import { KathyAvatar } from "./_components/avatar/avatar";
+import Timer from "./_components/time/time";
+import { Name } from "./_components/name/name";
+import { KathyQuote } from "./_components/quote/quote";
 
 import { ThemeProvider } from 'next-themes';
 
