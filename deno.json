@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"dev": "deno run -P=default --watch --allow-net src/mod.ts",
+		"dev": "deno run -P=default --watch src/mod.ts",
 		"build": "deno run -P=default src/mod.ts"
 	},
 	"imports": {
@@ -28,13 +28,7 @@
 	"fmt": {
 		"singleQuote": true,
 		"indentWidth": 4,
-		"useTabs": true,
-		"exclude": [
-			"bleh.user.js",
-			"bleh.user.css",
-			"ext/*",
-			"**/*.md"
-		]
+		"useTabs": true
 	},
 	"lint": {
 		"rules": {
@@ -42,12 +36,6 @@
 				"no-sloppy-imports",
 				"no-window"
 			]
-		},
-		"exclude": [
-			"bleh.user.js",
-			"bleh.user.css",
-			"ext/*",
-			"**/*.md"
-		]
+		}
 	}
 }
