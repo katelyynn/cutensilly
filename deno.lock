@@ -23,7 +23,7 @@
     "jsr:@std/path@^1.1.5": "1.1.6",
     "jsr:@std/path@^1.1.6": "1.1.6",
     "jsr:@std/streams@^1.1.2": "1.1.2",
-    "npm:@fontsource-variable/bricolage-grotesque@^5.3.0": "5.3.0",
+    "npm:@mingcute/icons@^3.0.2": "3.0.2",
     "npm:esbuild@~0.25.5": "0.25.12",
     "npm:esbuild@~0.28.2": "0.28.2",
     "npm:meriyah@^7.3.1": "7.3.1"
@@ -395,8 +395,8 @@
       "os": ["win32"],
       "cpu": ["x64"]
     },
-    "@fontsource-variable/bricolage-grotesque@5.3.0": {
-      "integrity": "sha512-TLi9Q4hJjS2UvoTMRSS2nHu6c4R56lAw60NR9QYtVRCHn0XtsFpiEhNffZ8Glsoxu6wEEwLKBP8lb94J52PNBA=="
+    "@mingcute/icons@3.0.2": {
+      "integrity": "sha512-NuDZuZy0B/MmrdoVVOodOURS1qPqgcdSHFPKSG9gPEF6/dr0+zm5pfJs0U7Yta5jjoCdX0WZcVbZOov2tMMPTA=="
     },
     "esbuild@0.25.12": {
       "integrity": "sha512-bbPBYYrtZbkt6Os6FiTLCTFxvq4tt3JKall1vRwshA3fdVztsLAatFaZobhkBC8/BrPetoa0oksYoKXoG4ryJg==",
@@ -472,7 +472,7 @@
     "dependencies": [
       "jsr:@404/aether@0.3.0",
       "jsr:@std/assert@1",
-      "npm:@fontsource-variable/bricolage-grotesque@^5.3.0"
+      "npm:@mingcute/icons@^3.0.2"
     ]
   }
 }

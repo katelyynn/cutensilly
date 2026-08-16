@@ -5,7 +5,7 @@
 	},
 	"imports": {
 		"@404/aether": "jsr:@404/aether@0.3.0",
-		"@fontsource-variable/bricolage-grotesque": "npm:@fontsource-variable/bricolage-grotesque@^5.3.0",
+		"@mingcute/icons": "npm:@mingcute/icons@^3.0.2",
 		"@std/assert": "jsr:@std/assert@1"
 	},
 	"permissions": {

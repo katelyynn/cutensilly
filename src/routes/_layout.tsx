@@ -2,6 +2,8 @@ import { css, Head } from '@404/aether';
 import { Content } from '../components/content.tsx';
 import { Side } from '../components/side.tsx';
 import { Nav, NavList } from '../components/nav.tsx';
+import { Card } from '../components/card.tsx';
+import { Table, TableEntry } from '../components/table.tsx';
 
 export const styles = css`
 	/* http://meyerweb.com/eric/tools/css/reset/
@@ -343,6 +345,22 @@ export const styles = css`
 			}
 		}
 	}
+
+	h3 {
+		margin-bottom: 6px;
+		font-weight: var(--font-weight-md);
+	}
+
+	h4 {
+		color: oklch(var(--c3));
+		font-size: 13px;
+		padding: 0 14px;
+	}
+
+	::selection {
+		background: oklch(var(--h3) / 20%);
+		color: oklch(var(--l2-c));
+	}
 `;
 
 export default function Layout({
@@ -361,6 +379,17 @@ export default function Layout({
 			<body>
 				<main>
 					<Content>
+						<Card>
+							<h1>yuzu.pet</h1>
+							<p>welcome to my corner of the interwebs ~</p>
+							<Table>
+								<TableEntry k='prns'>it/she</TableEntry>
+								<TableEntry k='height'>
+									about 20cm max
+								</TableEntry>
+								<TableEntry k='time'>23:01</TableEntry>
+							</Table>
+						</Card>
 						{children}
 					</Content>
 					<Side>

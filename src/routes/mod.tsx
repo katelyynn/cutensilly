@@ -1,11 +1,9 @@
 import { Card } from '../components/card.tsx';
+import { Quote } from '../components/quote.tsx';
 
 export default function Home() {
 	return (
 		<>
-			<Card>
-				<h1>yuzu.pet</h1>
-			</Card>
 			<Card>
 				<p>
 					i am a <b>self taught programmer</b>{' '}
@@ -22,6 +20,14 @@ export default function Home() {
 					i try my best and thats the most you should expect from
 					people i thinks.. everyone should be kind
 				</p>
+				<Quote cite='hazel, my lifelong angel (sis) ♡'>
+					kathy, katie, kate, katelyn<br />wateva it is im gonna marry
+					her
+				</Quote>
+			</Card>
+			<Card>
+				<h3>recent tunes</h3>
+				<h3>i’m thinking...</h3>
 			</Card>
 		</>
 	);
