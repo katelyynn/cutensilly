@@ -1,4 +1,4 @@
-import { css } from '@404/aether';
+import { css, requireContext } from '@404/aether';
 
 const StyledSide = css`
 	:scope {
@@ -10,21 +10,29 @@ const StyledSide = css`
 `;
 
 export function NavList() {
+	const ctx = requireContext();
+
 	return (
 		<StyledSide.nav>
-			<Nav href='/' selected>
+			<Nav href='/' selected={ctx.url.pathname == '/'}>
 				me!
 			</Nav>
-			<Nav href='/projects'>
+			<Nav
+				href='/projects'
+				selected={ctx.url.pathname.startsWith('/projects')}
+			>
 				projects
 			</Nav>
-			<Nav href='/music'>
+			<Nav href='/music' selected={ctx.url.pathname.startsWith('/music')}>
 				music
 			</Nav>
-			<Nav href='/diary'>
+			<Nav href='/diary' selected={ctx.url.pathname.startsWith('/diary')}>
 				diary
 			</Nav>
-			<Nav href='/sponsor'>
+			<Nav
+				href='/sponsor'
+				selected={ctx.url.pathname.startsWith('/sponsor')}
+			>
 				sponsor
 			</Nav>
 		</StyledSide.nav>

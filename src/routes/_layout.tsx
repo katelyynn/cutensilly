@@ -1,9 +1,9 @@
-import { css } from '@404/aether';
+import { css, Head } from '@404/aether';
 import { Content } from '../components/content.tsx';
 import { Side } from '../components/side.tsx';
 import { Nav, NavList } from '../components/nav.tsx';
 
-const Styled = css`
+export const styles = css`
 	/* http://meyerweb.com/eric/tools/css/reset/
 	v2.0 | 20110126
 	License: none (public domain)
@@ -278,7 +278,8 @@ const Styled = css`
 	}
 
 	h1 {
-		background: linear-gradient(90deg,oklch(var(--l3-c)),oklch(var(--l3-c)),oklch(var(--l2-c)),oklch(var(--l3-c)),oklch(var(--l3-c)));
+		background: linear-gradient(90deg, oklch(var(--l3-c)), oklch(var(--l3-c)),
+			oklch(var(--l2-c)), oklch(var(--l3-c)), oklch(var(--l3-c)));
 		font-size: 20px;
 		line-height: 30px;
 		font-weight: 900;
@@ -289,7 +290,7 @@ const Styled = css`
 
 		animation: yuzu 16s linear infinite;
 
-		text-decoration-color: oklch(var(--l3-c)/30%);
+		text-decoration-color: oklch(var(--l3-c)/ 30%);
 		text-decoration-style: dotted;
 		text-decoration-line: underline;
 
@@ -348,10 +349,15 @@ export default function Layout({
 	children,
 }: { children: unknown }) {
 	return (
-		<Styled.html data-theme='dark'>
-			<head>
+		<styles.html data-theme='dark'>
+			<Head>
+				<meta charset='utf-8' />
 				<title>yuzu.pet</title>
-			</head>
+				<meta
+					name='viewport'
+					content='width=device-width, initial-scale=1'
+				/>
+			</Head>
 			<body>
 				<main>
 					<Content>
@@ -362,6 +368,6 @@ export default function Layout({
 					</Side>
 				</main>
 			</body>
-		</Styled.html>
+		</styles.html>
 	);
 }
