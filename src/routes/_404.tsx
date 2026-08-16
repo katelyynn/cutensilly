@@ -4,6 +4,7 @@ import { Content } from '../components/content.tsx';
 import { Side } from '../components/side.tsx';
 import { NavList } from '../components/nav.tsx';
 import { Card } from '../components/card.tsx';
+import { Logo } from '../components/logo.tsx';
 
 export default () => {
 	return (
@@ -17,6 +18,7 @@ export default () => {
 				/>
 			</Head>
 			<body>
+				<Logo />
 				<main>
 					<Content>
 						<Card>

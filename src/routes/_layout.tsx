@@ -4,6 +4,7 @@ import { Side } from '../components/side.tsx';
 import { Nav, NavList } from '../components/nav.tsx';
 import { Card } from '../components/card.tsx';
 import { Table, TableEntry } from '../components/table.tsx';
+import { Logo } from '../components/logo.tsx';
 
 export const styles = css`
 	/* http://meyerweb.com/eric/tools/css/reset/
@@ -377,6 +378,7 @@ export default function Layout({
 				/>
 			</Head>
 			<body>
+				<Logo />
 				<main>
 					<Content>
 						<Card>
