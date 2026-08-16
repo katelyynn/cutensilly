@@ -1,5 +1,7 @@
 import { css } from '@404/aether';
 
+import '@fontsource-variable/bricolage-grotesque/standard.css';
+
 const Styled = css`
 	body {
 		padding: unset;
