@@ -1,11 +1,8 @@
 import { css, Head } from '@404/aether';
 import { Content } from '../components/content.tsx';
 import { Side } from '../components/side.tsx';
-import { Nav, NavList } from '../components/nav.tsx';
-import { Card } from '../components/card.tsx';
-import { Table, TableEntry } from '../components/table.tsx';
+import { NavList } from '../components/nav.tsx';
 import { Logo } from '../components/logo.tsx';
-import { Time } from '../components/time.tsx';
 
 export const styles = css`
 	/* http://meyerweb.com/eric/tools/css/reset/
