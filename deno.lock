@@ -1,7 +1,7 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@404/aether@0.3.0": "0.3.0",
+    "jsr:@404/aether@0.3": "0.3.0",
     "jsr:@404/imouto@~0.2.4": "0.2.4",
     "jsr:@404/varnish@0.2": "0.2.0",
     "jsr:@deno/esbuild-plugin@^1.2.1": "1.2.1",
@@ -470,7 +470,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@404/aether@0.3.0",
+      "jsr:@404/aether@0.3",
       "jsr:@std/assert@1",
       "npm:@mingcute/icons@^3.0.2"
     ]

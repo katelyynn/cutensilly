@@ -142,6 +142,8 @@ export const styles = css`
 		box-sizing: border-box;
 	}
 
+	/* --- */
+
 	html {
 		--default-hue: 11;
 		--default-sat: 0.95;
@@ -167,7 +169,7 @@ export const styles = css`
 		--font-weight-nm: 600;
 		--font-weight-lg: 700;
 
-		--b4: 0.99 calc(var(--sat) * 0.2 * var(--sat-bg, 1)) var(--hue);
+		--b4: 0.9 calc(var(--sat) * 0.1 * var(--sat-bg, 1)) var(--hue);
 		--b5: 0.96 calc(var(--sat) * 0.02 * var(--sat-bg, 1)) var(--hue);
 		--b6: 0.91 calc(var(--sat) * 0.06 * var(--sat-bg, 1)) var(--hue);
 		--b7: 0.87 calc(var(--sat) * 0.12 * var(--sat-bg, 1)) var(--hue);
@@ -195,7 +197,7 @@ export const styles = css`
 
 		--blur: blur(8px);
 
-		&[data-theme="dark"] {
+		@media (prefers-color-scheme: dark) {
 			--b4: 0.3 calc(var(--sat) * 0.15 * var(--sat-bg, 1)) var(--hue);
 			--b5: 0.25 calc(var(--sat) * 0.13 * var(--sat-bg, 1)) var(--hue);
 			--b6: 0.17 calc(var(--sat) * 0.1 * var(--sat-bg, 1)) var(--hue);
