@@ -2,10 +2,15 @@ import { css } from '@404/aether';
 
 const styles = css`
 	:scope {
+		background: oklch(var(--h4) / 5%);
 		border: 1px solid oklch(var(--h4) / 20%);
 		padding: 10px;
-		border-radius: inherit;
+		border-radius: var(--radius);
 		margin-top: 15px;
+	}
+
+	blockquote {
+		font-style: italic;
 	}
 
 	cite {

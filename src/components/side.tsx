@@ -5,7 +5,7 @@ const Styled = css`
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
-		margin-left: 10px;
+		margin-left: 30px;
 	}
 `;
 

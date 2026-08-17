@@ -162,12 +162,14 @@ export const styles = css`
 		--sat-bg: 1;
 
 		--font: 'Bricolage Grotesque Variable', Inter, Roboto, system-ui, sans-serif;
-		--font-size: 14px;
+		--font-size: 15px;
 		--line-height: 18px;
 		--font-weight: 400;
 		--font-weight-md: 500;
 		--font-weight-nm: 600;
 		--font-weight-lg: 700;
+
+		--radius: 6px;
 
 		--b4: 0.9 calc(var(--sat) * 0.1 * var(--sat-bg, 1)) var(--hue);
 		--b5: 0.96 calc(var(--sat) * 0.02 * var(--sat-bg, 1)) var(--hue);
@@ -286,8 +288,8 @@ export const styles = css`
 	h1 {
 		background: linear-gradient(90deg, oklch(var(--l3-c)), oklch(var(--l3-c)),
 			oklch(var(--l2-c)), oklch(var(--l3-c)), oklch(var(--l3-c)));
-		font-size: 20px;
-		line-height: 30px;
+		font-size: 22px;
+		line-height: 32px;
 		font-weight: 900;
 		background-size: 400% 100%;
 
@@ -350,6 +352,13 @@ export const styles = css`
 		}
 	}
 
+	h2 {
+		color: oklch(var(--c1));
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: var(--font-weight-md);
+	}
+
 	h3 {
 		margin-bottom: 6px;
 		font-weight: var(--font-weight-md);
@@ -367,10 +376,6 @@ export const styles = css`
 	}
 
 	.avatar {
-		position: absolute;
-		top: -30px;
-		right: 15px;
-
 		width: 80px;
 		height: 80px;
 		border-radius: 50%;
@@ -397,6 +402,13 @@ export const styles = css`
 			text-align: center;
 		}
 	}
+
+	.top {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
 `;
 
 export default function Layout({
@@ -414,24 +426,14 @@ export default function Layout({
 			</Head>
 			<body>
 				<Logo />
+				<div class='top'>
+					<div class='avatar'>
+						<img src='/avi.webp' alt='me' />
+					</div>
+					<h1>yuzu.pet</h1>
+				</div>
 				<main>
 					<Content>
-						<Card>
-							<h1>yuzu.pet</h1>
-							<p>welcome to my corner of the interwebs ~</p>
-							<div class='avatar'>
-								<img src='/avi.webp' alt='me' />
-							</div>
-							<Table>
-								<TableEntry k='prns'>it/she</TableEntry>
-								<TableEntry k='height'>
-									about 20cm max
-								</TableEntry>
-								<TableEntry k='time'>
-									<Time />
-								</TableEntry>
-							</Table>
-						</Card>
 						{children}
 					</Content>
 					<Side>

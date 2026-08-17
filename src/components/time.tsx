@@ -1,6 +1,6 @@
 import { onMount, signal } from '@404/aether';
 
-export function Time() {
+export default function Time() {
 	const time = signal('');
 
 	onMount(() => {

@@ -3,7 +3,7 @@ import { css } from '@404/aether';
 const tableStyles = css`
 	:scope {
 		border: 1px solid oklch(var(--b4));
-		border-radius: inherit;
+		border-radius: var(--radius);
 		margin-top: 10px;
 
 		display: flex;
