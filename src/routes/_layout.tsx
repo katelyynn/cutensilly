@@ -365,6 +365,38 @@ export const styles = css`
 		background: oklch(var(--h3) / 20%);
 		color: oklch(var(--l2-c));
 	}
+
+	.avatar {
+		position: absolute;
+		top: -30px;
+		right: 15px;
+
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		background: oklch(var(--b6));
+		overflow: hidden;
+		box-shadow: 0 0 0 6px oklch(var(--b6));
+		transition-property: box-shadow;
+		transition-duration: .6s;
+		transition-timing-function: var(--trans-function);
+
+		&:hover {
+			box-shadow: 0 0 0 2px oklch(var(--h3) / 50%), 0 0 0 6px
+				oklch(var(--b6));
+		}
+
+		& > img {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 12px;
+			color: oklch(var(--c3));
+			text-align: center;
+		}
+	}
 `;
 
 export default function Layout({

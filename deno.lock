@@ -1,13 +1,14 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@404/aether@0.3": "0.3.0",
+    "jsr:@404/aether@0.4": "0.4.0",
     "jsr:@404/imouto@~0.2.4": "0.2.4",
     "jsr:@404/varnish@0.2": "0.2.0",
     "jsr:@deno/esbuild-plugin@^1.2.1": "1.2.1",
     "jsr:@deno/loader@~0.3.10": "0.3.14",
-    "jsr:@july/snarl@^1.2.0": "1.3.1",
-    "jsr:@july/snarl@^1.3.1": "1.3.1",
+    "jsr:@july/snarl@^1.2.0": "1.3.2",
+    "jsr:@july/snarl@^1.3.1": "1.3.2",
+    "jsr:@july/snarl@^1.3.2": "1.3.2",
     "jsr:@minify-html/deno@~0.18.1": "0.18.1",
     "jsr:@std/assert@1": "1.0.19",
     "jsr:@std/async@^1.5.0": "1.5.0",
@@ -29,12 +30,12 @@
     "npm:meriyah@^7.3.1": "7.3.1"
   },
   "jsr": {
-    "@404/aether@0.3.0": {
-      "integrity": "6fe926817e2376585d190d97c45e18490de99383e2f9cf7923def02b602e1dcb",
+    "@404/aether@0.4.0": {
+      "integrity": "a75a5531dd380beb8b88a08c00641c6d6b809d380ae42fdb03d31647dfa2e44e",
       "dependencies": [
         "jsr:@404/imouto",
         "jsr:@deno/esbuild-plugin",
-        "jsr:@july/snarl@^1.3.1",
+        "jsr:@july/snarl@^1.3.2",
         "jsr:@std/fmt",
         "jsr:@std/fs",
         "jsr:@std/path@^1.1.6",
@@ -70,8 +71,8 @@
     "@deno/loader@0.3.14": {
       "integrity": "97bc63a6cc2d27a60bcdc953f588c5213331d866d44212eebb24cebfb9b011ca"
     },
-    "@july/snarl@1.3.1": {
-      "integrity": "6a76218666a7c5a143cf4df17e4bdb783e6f6377e3481476832e7611468a57cf",
+    "@july/snarl@1.3.2": {
+      "integrity": "6095d54cb0b2d79c53528415766c7389985dcaa7cd2470056bbf4381c52b5da0",
       "dependencies": [
         "jsr:@std/async",
         "jsr:@std/encoding",
@@ -470,7 +471,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@404/aether@0.3",
+      "jsr:@404/aether@0.4",
       "jsr:@std/assert@1",
       "npm:@mingcute/icons@^3.0.2"
     ]
